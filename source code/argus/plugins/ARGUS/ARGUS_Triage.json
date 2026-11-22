@@ -1,0 +1,17 @@
+{
+  "name": "ARGUS_Triage",
+  "version": "3.0",
+  "author": "ARGUS",
+  "url": "https://github.com/",
+  "license": "MIT",
+  "description": "Coverage-aware SOC triage. Reports what the sensors could not see, and never reads sensor silence as refutation.",
+  "dataTypeList": ["other", "file", "fqdn", "ip"],
+  "command": "ARGUS/cortex_analyzer.py",
+  "baseConfig": "ARGUS",
+  "configurationItems": [
+    {"name": "mode", "description": "local or remote", "type": "string",
+     "multi": false, "required": true, "defaultValue": "local"},
+    {"name": "url", "description": "ARGUS API base URL when mode=remote", "type": "string",
+     "multi": false, "required": false, "defaultValue": "http://localhost:8000"}
+  ]
+}

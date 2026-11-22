@@ -1,0 +1,14 @@
+{
+  "key": "c413610fc594b8b1ca4f4fd889397ac0f6ae5c5abb0482a643e19a32e4323381",
+  "provider": "ollama",
+  "model": "gpt-oss:120b-cloud",
+  "prompt_sha": "c413610fc594b8b1",
+  "response": "{\n  \"disposition\": \"malicious\",\n  \"mitre_technique\": \"T1105\",\n  \"severity\": 0.9,\n  \"malicious_events\": [\n    \"e17\",\n    \"e18\",\n    \"e19\",\n    \"e20\",\n    \"e21\",\n    \"e22\",\n    \"e23\",\n    \"e24\",\n    \"e25\",\n    \"e26\",\n    \"e27\",\n    \"e28\",\n    \"e29\",\n    \"e30\",\n    \"e31\"\n  ],\n  \"reason\": \"Suspicious sudo activity, log copying, history clearing, unauthorized curl download, execution of a custom binary (splunkd) and attempts to contact external IP indicate attacker behavior.\"\n}",
+  "latency_s": 2.3692591190338135,
+  "created_at": 1791424102.844518,
+  "params": {
+    "temperature": 0.0,
+    "seed": 7,
+    "json_mode": true
+  }
+}

@@ -1,0 +1,789 @@
+{
+  "meta_version": "v0.2",
+  "scenario_id": "apt_live_006",
+  "category": "attack",
+  "title": "APT-Agent vsftpd_backdoor (live Metasploitable2)",
+  "generated_by": "APT-Agent + apt_capture harness",
+  "topology": {
+    "hosts": [
+      {
+        "name": "attacker",
+        "ip": "10.0.2.10",
+        "role": "attacker",
+        "os": "Linux"
+      },
+      {
+        "name": "target",
+        "ip": "10.0.2.20",
+        "role": "victim",
+        "os": "Linux"
+      }
+    ],
+    "zeek_sensor": {
+      "host": "capture",
+      "position": "attacker-target path"
+    }
+  },
+  "capture": {
+    "window": {
+      "start": "2026-09-09T15:47:29Z",
+      "end": "2026-09-09T17:25:25.424700Z"
+    },
+    "clean_capture": true
+  },
+  "expected_observables": {
+    "authlog": {
+      "logon_failure": true,
+      "logon_success": true
+    },
+    "zeek": {
+      "conn": true,
+      "ssh": true
+    }
+  },
+  "mitre": {
+    "technique": "T1041"
+  },
+  "ground_truth": {
+    "category": "attack",
+    "campaign_start": "2026-09-09T15:47:29Z",
+    "techniques": [
+      "T1041",
+      "T1046",
+      "T1110",
+      "T1210"
+    ],
+    "primary_technique": "T1041",
+    "objective_reached": false,
+    "actions": [
+      {
+        "iter": 1,
+        "tactic": "RECON",
+        "time": "2026-09-09T15:47:29Z",
+        "technique": "T1046",
+        "detail": "reconnaissance",
+        "result": "n/a"
+      },
+      {
+        "iter": 2,
+        "tactic": "RECON",
+        "time": "2026-09-09T15:48:50.071000Z",
+        "technique": "T1046",
+        "detail": "reconnaissance",
+        "result": "n/a"
+      },
+      {
+        "iter": 3,
+        "tactic": "RECON",
+        "time": "2026-09-09T15:50:08.889200Z",
+        "technique": "T1046",
+        "detail": "reconnaissance",
+        "result": "n/a"
+      },
+      {
+        "iter": 4,
+        "tactic": "RECON",
+        "time": "2026-09-09T15:51:27.901700Z",
+        "technique": "T1046",
+        "detail": "reconnaissance",
+        "result": "n/a"
+      },
+      {
+        "iter": 5,
+        "tactic": "RECON",
+        "time": "2026-09-09T15:52:47.501100Z",
+        "technique": "T1046",
+        "detail": "reconnaissance",
+        "result": "n/a"
+      },
+      {
+        "iter": 6,
+        "tactic": "RECON",
+        "time": "2026-09-09T15:53:03.994100Z",
+        "technique": "T1046",
+        "detail": "reconnaissance",
+        "result": "n/a"
+      },
+      {
+        "iter": 7,
+        "tactic": "RECON",
+        "time": "2026-09-09T15:54:23.850200Z",
+        "technique": "T1046",
+        "detail": "reconnaissance",
+        "result": "n/a"
+      },
+      {
+        "iter": 8,
+        "tactic": "EXPLOIT",
+        "time": "2026-09-09T15:55:19.240400Z",
+        "technique": "T1210",
+        "detail": "use exploit/unix/ftp/vsftpd_234_backdoor",
+        "result": "fail"
+      },
+      {
+        "iter": 9,
+        "tactic": "EXPLOIT",
+        "time": "2026-09-09T15:57:00.416900Z",
+        "technique": "T1210",
+        "detail": "use exploit/unix/ftp/vsftpd_234_backdoor",
+        "result": "fail"
+      },
+      {
+        "iter": 10,
+        "tactic": "EXPLOIT",
+        "time": "2026-09-09T15:58:41.053500Z",
+        "technique": null,
+        "detail": "use exploit/linux/ssh/mercurial_ssh_exec",
+        "result": "fail"
+      },
+      {
+        "iter": 11,
+        "tactic": "EXPLOIT",
+        "time": "2026-09-09T16:00:21.337100Z",
+        "technique": "T1110",
+        "detail": "use auxiliary/scanner/ssh/ssh_login",
+        "result": "success"
+      },
+      {
+        "iter": 12,
+        "tactic": "EXFILTRATE",
+        "time": "2026-09-09T16:03:50.741200Z",
+        "technique": "T1041",
+        "detail": "find / -type f -name flag.txt 2>/dev/null",
+        "result": "fail"
+      },
+      {
+        "iter": 13,
+        "tactic": "RECON",
+        "time": "2026-09-09T16:04:00.009500Z",
+        "technique": "T1046",
+        "detail": "reconnaissance",
+        "result": "n/a"
+      },
+      {
+        "iter": 14,
+        "tactic": "RECON",
+        "time": "2026-09-09T16:05:19.427400Z",
+        "technique": "T1046",
+        "detail": "reconnaissance",
+        "result": "n/a"
+      },
+      {
+        "iter": 15,
+        "tactic": "RECON",
+        "time": "2026-09-09T16:06:38.433400Z",
+        "technique": "T1046",
+        "detail": "reconnaissance",
+        "result": "n/a"
+      },
+      {
+        "iter": 16,
+        "tactic": "RECON",
+        "time": "2026-09-09T16:06:53.607300Z",
+        "technique": "T1046",
+        "detail": "reconnaissance",
+        "result": "n/a"
+      },
+      {
+        "iter": 17,
+        "tactic": "RECON",
+        "time": "2026-09-09T16:08:12.195000Z",
+        "technique": "T1046",
+        "detail": "reconnaissance",
+        "result": "n/a"
+      },
+      {
+        "iter": 18,
+        "tactic": "RECON",
+        "time": "2026-09-09T16:09:33.034700Z",
+        "technique": "T1046",
+        "detail": "reconnaissance",
+        "result": "n/a"
+      },
+      {
+        "iter": 19,
+        "tactic": "RECON",
+        "time": "2026-09-09T16:10:51.054600Z",
+        "technique": "T1046",
+        "detail": "reconnaissance",
+        "result": "n/a"
+      },
+      {
+        "iter": 20,
+        "tactic": "RECON",
+        "time": "2026-09-09T16:12:09.717500Z",
+        "technique": "T1046",
+        "detail": "reconnaissance",
+        "result": "n/a"
+      },
+      {
+        "iter": 21,
+        "tactic": "EXPLOIT",
+        "time": "2026-09-09T16:13:04.431400Z",
+        "technique": null,
+        "detail": "use exploit/linux/samba/is_known_pipename",
+        "result": "fail"
+      },
+      {
+        "iter": 22,
+        "tactic": "RECON",
+        "time": "2026-09-09T16:14:40.796200Z",
+        "technique": "T1046",
+        "detail": "reconnaissance",
+        "result": "n/a"
+      },
+      {
+        "iter": 23,
+        "tactic": "RECON",
+        "time": "2026-09-09T16:16:00.270100Z",
+        "technique": "T1046",
+        "detail": "reconnaissance",
+        "result": "n/a"
+      },
+      {
+        "iter": 24,
+        "tactic": "RECON",
+        "time": "2026-09-09T16:17:21.400900Z",
+        "technique": "T1046",
+        "detail": "reconnaissance",
+        "result": "n/a"
+      },
+      {
+        "iter": 25,
+        "tactic": "RECON",
+        "time": "2026-09-09T16:17:37.233400Z",
+        "technique": "T1046",
+        "detail": "reconnaissance",
+        "result": "n/a"
+      },
+      {
+        "iter": 26,
+        "tactic": "EXPLOIT",
+        "time": "2026-09-09T16:17:57.067500Z",
+        "technique": null,
+        "detail": "",
+        "result": "fail"
+      },
+      {
+        "iter": 27,
+        "tactic": "RECON",
+        "time": "2026-09-09T16:19:37.687300Z",
+        "technique": "T1046",
+        "detail": "reconnaissance",
+        "result": "n/a"
+      },
+      {
+        "iter": 28,
+        "tactic": "RECON",
+        "time": "2026-09-09T16:20:58.417600Z",
+        "technique": "T1046",
+        "detail": "reconnaissance",
+        "result": "n/a"
+      },
+      {
+        "iter": 29,
+        "tactic": "EXPLOIT",
+        "time": "2026-09-09T16:21:51.790700Z",
+        "technique": null,
+        "detail": "use exploit/linux/samba/is_known_pipename",
+        "result": "fail"
+      },
+      {
+        "iter": 30,
+        "tactic": "RECON",
+        "time": "2026-09-09T16:23:30.194100Z",
+        "technique": "T1046",
+        "detail": "reconnaissance",
+        "result": "n/a"
+      },
+      {
+        "iter": 31,
+        "tactic": "RECON",
+        "time": "2026-09-09T16:24:49.417400Z",
+        "technique": "T1046",
+        "detail": "reconnaissance",
+        "result": "n/a"
+      },
+      {
+        "iter": 32,
+        "tactic": "RECON",
+        "time": "2026-09-09T16:25:08.430700Z",
+        "technique": "T1046",
+        "detail": "reconnaissance",
+        "result": "n/a"
+      },
+      {
+        "iter": 33,
+        "tactic": "RECON",
+        "time": "2026-09-09T16:26:27.083500Z",
+        "technique": "T1046",
+        "detail": "reconnaissance",
+        "result": "n/a"
+      },
+      {
+        "iter": 34,
+        "tactic": "RECON",
+        "time": "2026-09-09T16:27:46.210900Z",
+        "technique": "T1046",
+        "detail": "reconnaissance",
+        "result": "n/a"
+      },
+      {
+        "iter": 35,
+        "tactic": "RECON",
+        "time": "2026-09-09T16:29:04.789400Z",
+        "technique": "T1046",
+        "detail": "reconnaissance",
+        "result": "n/a"
+      },
+      {
+        "iter": 36,
+        "tactic": "RECON",
+        "time": "2026-09-09T16:29:21.322800Z",
+        "technique": "T1046",
+        "detail": "reconnaissance",
+        "result": "n/a"
+      },
+      {
+        "iter": 37,
+        "tactic": "EXPLOIT",
+        "time": "2026-09-09T16:30:32.341800Z",
+        "technique": null,
+        "detail": "use exploit/multi/http/tomcat_jsp_upload_bypass",
+        "result": "fail"
+      },
+      {
+        "iter": 38,
+        "tactic": "EXPLOIT",
+        "time": "2026-09-09T16:32:13.289300Z",
+        "technique": null,
+        "detail": "use exploit/multi/http/tomcat_mgr_upload",
+        "result": "fail"
+      },
+      {
+        "iter": 39,
+        "tactic": "RECON",
+        "time": "2026-09-09T16:33:53.720800Z",
+        "technique": "T1046",
+        "detail": "reconnaissance",
+        "result": "n/a"
+      },
+      {
+        "iter": 40,
+        "tactic": "RECON",
+        "time": "2026-09-09T16:35:13.843400Z",
+        "technique": "T1046",
+        "detail": "reconnaissance",
+        "result": "n/a"
+      },
+      {
+        "iter": 41,
+        "tactic": "RECON",
+        "time": "2026-09-09T16:36:33.341000Z",
+        "technique": "T1046",
+        "detail": "reconnaissance",
+        "result": "n/a"
+      },
+      {
+        "iter": 42,
+        "tactic": "RECON",
+        "time": "2026-09-09T16:37:52.478700Z",
+        "technique": "T1046",
+        "detail": "reconnaissance",
+        "result": "n/a"
+      },
+      {
+        "iter": 43,
+        "tactic": "RECON",
+        "time": "2026-09-09T16:38:09.333300Z",
+        "technique": "T1046",
+        "detail": "reconnaissance",
+        "result": "n/a"
+      },
+      {
+        "iter": 44,
+        "tactic": "RECON",
+        "time": "2026-09-09T16:39:28.326900Z",
+        "technique": "T1046",
+        "detail": "reconnaissance",
+        "result": "n/a"
+      },
+      {
+        "iter": 45,
+        "tactic": "RECON",
+        "time": "2026-09-09T16:40:51.110900Z",
+        "technique": "T1046",
+        "detail": "reconnaissance",
+        "result": "n/a"
+      },
+      {
+        "iter": 46,
+        "tactic": "RECON",
+        "time": "2026-09-09T16:41:07.946600Z",
+        "technique": "T1046",
+        "detail": "reconnaissance",
+        "result": "n/a"
+      },
+      {
+        "iter": 47,
+        "tactic": "RECON",
+        "time": "2026-09-09T16:42:27.146700Z",
+        "technique": "T1046",
+        "detail": "reconnaissance",
+        "result": "n/a"
+      },
+      {
+        "iter": 48,
+        "tactic": "RECON",
+        "time": "2026-09-09T16:43:46.133300Z",
+        "technique": "T1046",
+        "detail": "reconnaissance",
+        "result": "n/a"
+      },
+      {
+        "iter": 49,
+        "tactic": "RECON",
+        "time": "2026-09-09T16:44:03.877700Z",
+        "technique": "T1046",
+        "detail": "reconnaissance",
+        "result": "n/a"
+      },
+      {
+        "iter": 50,
+        "tactic": "RECON",
+        "time": "2026-09-09T16:45:25.962700Z",
+        "technique": "T1046",
+        "detail": "reconnaissance",
+        "result": "n/a"
+      },
+      {
+        "iter": 51,
+        "tactic": "RECON",
+        "time": "2026-09-09T16:45:41.752300Z",
+        "technique": "T1046",
+        "detail": "reconnaissance",
+        "result": "n/a"
+      },
+      {
+        "iter": 52,
+        "tactic": "RECON",
+        "time": "2026-09-09T16:47:00.129300Z",
+        "technique": "T1046",
+        "detail": "reconnaissance",
+        "result": "n/a"
+      },
+      {
+        "iter": 53,
+        "tactic": "RECON",
+        "time": "2026-09-09T16:48:20.462600Z",
+        "technique": "T1046",
+        "detail": "reconnaissance",
+        "result": "n/a"
+      },
+      {
+        "iter": 54,
+        "tactic": "RECON",
+        "time": "2026-09-09T16:49:40.970100Z",
+        "technique": "T1046",
+        "detail": "reconnaissance",
+        "result": "n/a"
+      },
+      {
+        "iter": 55,
+        "tactic": "RECON",
+        "time": "2026-09-09T16:51:00.857300Z",
+        "technique": "T1046",
+        "detail": "reconnaissance",
+        "result": "n/a"
+      },
+      {
+        "iter": 56,
+        "tactic": "RECON",
+        "time": "2026-09-09T16:52:21.107200Z",
+        "technique": "T1046",
+        "detail": "reconnaissance",
+        "result": "n/a"
+      },
+      {
+        "iter": 57,
+        "tactic": "RECON",
+        "time": "2026-09-09T16:52:35.501600Z",
+        "technique": "T1046",
+        "detail": "reconnaissance",
+        "result": "n/a"
+      },
+      {
+        "iter": 58,
+        "tactic": "RECON",
+        "time": "2026-09-09T16:53:54.320100Z",
+        "technique": "T1046",
+        "detail": "reconnaissance",
+        "result": "n/a"
+      },
+      {
+        "iter": 59,
+        "tactic": "RECON",
+        "time": "2026-09-09T16:55:13.975400Z",
+        "technique": "T1046",
+        "detail": "reconnaissance",
+        "result": "n/a"
+      },
+      {
+        "iter": 60,
+        "tactic": "RECON",
+        "time": "2026-09-09T16:55:29.336700Z",
+        "technique": "T1046",
+        "detail": "reconnaissance",
+        "result": "n/a"
+      },
+      {
+        "iter": 61,
+        "tactic": "RECON",
+        "time": "2026-09-09T16:56:48.693400Z",
+        "technique": "T1046",
+        "detail": "reconnaissance",
+        "result": "n/a"
+      },
+      {
+        "iter": 62,
+        "tactic": "RECON",
+        "time": "2026-09-09T16:57:09.452000Z",
+        "technique": "T1046",
+        "detail": "reconnaissance",
+        "result": "n/a"
+      },
+      {
+        "iter": 63,
+        "tactic": "RECON",
+        "time": "2026-09-09T16:58:28.405400Z",
+        "technique": "T1046",
+        "detail": "reconnaissance",
+        "result": "n/a"
+      },
+      {
+        "iter": 64,
+        "tactic": "RECON",
+        "time": "2026-09-09T16:59:47.585700Z",
+        "technique": "T1046",
+        "detail": "reconnaissance",
+        "result": "n/a"
+      },
+      {
+        "iter": 65,
+        "tactic": "RECON",
+        "time": "2026-09-09T17:00:04.167100Z",
+        "technique": "T1046",
+        "detail": "reconnaissance",
+        "result": "n/a"
+      },
+      {
+        "iter": 66,
+        "tactic": "RECON",
+        "time": "2026-09-09T17:01:23.041200Z",
+        "technique": "T1046",
+        "detail": "reconnaissance",
+        "result": "n/a"
+      },
+      {
+        "iter": 67,
+        "tactic": "RECON",
+        "time": "2026-09-09T17:02:41.915400Z",
+        "technique": "T1046",
+        "detail": "reconnaissance",
+        "result": "n/a"
+      },
+      {
+        "iter": 68,
+        "tactic": "RECON",
+        "time": "2026-09-09T17:04:02.187300Z",
+        "technique": "T1046",
+        "detail": "reconnaissance",
+        "result": "n/a"
+      },
+      {
+        "iter": 69,
+        "tactic": "RECON",
+        "time": "2026-09-09T17:04:19.752600Z",
+        "technique": "T1046",
+        "detail": "reconnaissance",
+        "result": "n/a"
+      },
+      {
+        "iter": 70,
+        "tactic": "RECON",
+        "time": "2026-09-09T17:05:39.502900Z",
+        "technique": "T1046",
+        "detail": "reconnaissance",
+        "result": "n/a"
+      },
+      {
+        "iter": 71,
+        "tactic": "RECON",
+        "time": "2026-09-09T17:06:59.296300Z",
+        "technique": "T1046",
+        "detail": "reconnaissance",
+        "result": "n/a"
+      },
+      {
+        "iter": 72,
+        "tactic": "RECON",
+        "time": "2026-09-09T17:07:18.478300Z",
+        "technique": "T1046",
+        "detail": "reconnaissance",
+        "result": "n/a"
+      },
+      {
+        "iter": 73,
+        "tactic": "RECON",
+        "time": "2026-09-09T17:08:37.681100Z",
+        "technique": "T1046",
+        "detail": "reconnaissance",
+        "result": "n/a"
+      },
+      {
+        "iter": 74,
+        "tactic": "RECON",
+        "time": "2026-09-09T17:08:54.941400Z",
+        "technique": "T1046",
+        "detail": "reconnaissance",
+        "result": "n/a"
+      },
+      {
+        "iter": 75,
+        "tactic": "RECON",
+        "time": "2026-09-09T17:10:15.998200Z",
+        "technique": "T1046",
+        "detail": "reconnaissance",
+        "result": "n/a"
+      },
+      {
+        "iter": 76,
+        "tactic": "RECON",
+        "time": "2026-09-09T17:11:35.649200Z",
+        "technique": "T1046",
+        "detail": "reconnaissance",
+        "result": "n/a"
+      },
+      {
+        "iter": 77,
+        "tactic": "RECON",
+        "time": "2026-09-09T17:12:56.292000Z",
+        "technique": "T1046",
+        "detail": "reconnaissance",
+        "result": "n/a"
+      },
+      {
+        "iter": 78,
+        "tactic": "RECON",
+        "time": "2026-09-09T17:14:14.601600Z",
+        "technique": "T1046",
+        "detail": "reconnaissance",
+        "result": "n/a"
+      },
+      {
+        "iter": 79,
+        "tactic": "RECON",
+        "time": "2026-09-09T17:14:18.276300Z",
+        "technique": "T1046",
+        "detail": "reconnaissance",
+        "result": "n/a"
+      },
+      {
+        "iter": 80,
+        "tactic": "RECON",
+        "time": "2026-09-09T17:15:37.734800Z",
+        "technique": "T1046",
+        "detail": "reconnaissance",
+        "result": "n/a"
+      },
+      {
+        "iter": 81,
+        "tactic": "RECON",
+        "time": "2026-09-09T17:16:56.186300Z",
+        "technique": "T1046",
+        "detail": "reconnaissance",
+        "result": "n/a"
+      },
+      {
+        "iter": 82,
+        "tactic": "RECON",
+        "time": "2026-09-09T17:18:15.178500Z",
+        "technique": "T1046",
+        "detail": "reconnaissance",
+        "result": "n/a"
+      },
+      {
+        "iter": 83,
+        "tactic": "RECON",
+        "time": "2026-09-09T17:19:37.230300Z",
+        "technique": "T1046",
+        "detail": "reconnaissance",
+        "result": "n/a"
+      },
+      {
+        "iter": 84,
+        "tactic": "RECON",
+        "time": "2026-09-09T17:19:52.833900Z",
+        "technique": "T1046",
+        "detail": "reconnaissance",
+        "result": "n/a"
+      },
+      {
+        "iter": 85,
+        "tactic": "RECON",
+        "time": "2026-09-09T17:21:11.980500Z",
+        "technique": "T1046",
+        "detail": "reconnaissance",
+        "result": "n/a"
+      },
+      {
+        "iter": 86,
+        "tactic": "RECON",
+        "time": "2026-09-09T17:22:33.359300Z",
+        "technique": "T1046",
+        "detail": "reconnaissance",
+        "result": "n/a"
+      },
+      {
+        "iter": 87,
+        "tactic": "RECON",
+        "time": "2026-09-09T17:22:47.421500Z",
+        "technique": "T1046",
+        "detail": "reconnaissance",
+        "result": "n/a"
+      },
+      {
+        "iter": 88,
+        "tactic": "RECON",
+        "time": "2026-09-09T17:24:06.217100Z",
+        "technique": "T1046",
+        "detail": "reconnaissance",
+        "result": "n/a"
+      },
+      {
+        "iter": 89,
+        "tactic": "RECON",
+        "time": "2026-09-09T17:25:25.424700Z",
+        "technique": "T1046",
+        "detail": "reconnaissance",
+        "result": "n/a"
+      },
+      {
+        "iter": 2,
+        "tactic": "EXPLOIT",
+        "time": "2026-09-09T15:47:47.527800Z",
+        "technique": "T1210",
+        "detail": "use exploit/unix/ftp/vsftpd_234_backdoor",
+        "result": "fail"
+      },
+      {
+        "iter": 3,
+        "tactic": "EXPLOIT",
+        "time": "2026-09-09T15:49:29.387100Z",
+        "technique": "T1210",
+        "detail": "use exploit/unix/ftp/vsftpd_234_backdoor",
+        "result": "fail"
+      }
+    ]
+  }
+}

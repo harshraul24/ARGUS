@@ -1,0 +1,2000 @@
+{
+ "snapshot_at": "2026-10-21T02:44:38Z",
+ "status": {
+  "run": "adhoc1",
+  "running": true,
+  "error": null,
+  "hosts": {
+   "app01": {
+    "lines": 928,
+    "last_record": "2026-10-21T02:43:08.889000+00:00",
+    "cases": 27,
+    "events": 115,
+    "quiet_s": 89
+   },
+   "web01": {
+    "lines": 2955,
+    "last_record": "2026-10-21T02:43:56.144000+00:00",
+    "cases": 171,
+    "events": 309,
+    "quiet_s": 42
+   },
+   "ws-dev01": {
+    "lines": 907,
+    "last_record": "2026-10-21T02:43:13.163000+00:00",
+    "cases": 26,
+    "events": 112,
+    "quiet_s": 84
+   },
+   "ws-fin01": {
+    "lines": 1117,
+    "last_record": "2026-10-21T02:43:18.146000+00:00",
+    "cases": 27,
+    "events": 182,
+    "quiet_s": 80
+   }
+  },
+  "runs": [
+   "adhoc1",
+   "app01",
+   "burnin",
+   "run1",
+   "run2",
+   "web01",
+   "ws-dev01",
+   "ws-fin01"
+  ],
+  "cases": 251,
+  "flagged": 12
+ },
+ "listed": [
+  {
+   "case_id": "live:adhoc1:web01:13",
+   "name": "web01 \u00b7 splunkd \u00b7 60 events",
+   "host": "web01",
+   "campaign": "adhoc1",
+   "status": "complete",
+   "start": "2026-10-21T02:27:26.247000+00:00",
+   "end": "2026-10-21T02:32:17.522000+00:00",
+   "last": 1792549937.522,
+   "disposition": "malicious",
+   "severity": 0.8,
+   "priority": 0.8,
+   "blind_spots": 0,
+   "top": "Outbound Connection from User\u2011Writable Binary",
+   "episode": true,
+   "shadow": 0,
+   "revisions": 1
+  },
+  {
+   "case_id": "live:adhoc1:ws-dev01:11",
+   "name": "ws-dev01 \u00b7 splunkd \u00b7 60 events",
+   "host": "ws-dev01",
+   "campaign": "adhoc1",
+   "status": "complete",
+   "start": "2026-10-21T02:27:35.512000+00:00",
+   "end": "2026-10-21T02:32:53.671000+00:00",
+   "last": 1792549973.671,
+   "disposition": "malicious",
+   "severity": 0.8,
+   "priority": 0.8,
+   "blind_spots": 0,
+   "top": "Outbound Connection from User\u2011Writable Binary",
+   "episode": true,
+   "shadow": 0,
+   "revisions": 1
+  },
+  {
+   "case_id": "live:adhoc1:ws-fin01:12",
+   "name": "ws-fin01 \u00b7 splunkd \u00b7 60 events",
+   "host": "ws-fin01",
+   "campaign": "adhoc1",
+   "status": "complete",
+   "start": "2026-10-21T02:27:39.360000+00:00",
+   "end": "2026-10-21T02:32:26.502000+00:00",
+   "last": 1792549946.502,
+   "disposition": "malicious",
+   "severity": 0.8,
+   "priority": 0.8,
+   "blind_spots": 0,
+   "top": "Outbound Connection from User\u2011Writable Binary",
+   "episode": true,
+   "shadow": 0,
+   "revisions": 1
+  },
+  {
+   "case_id": "live:adhoc1:app01:11",
+   "name": "app01 \u00b7 splunkd \u00b7 60 events",
+   "host": "app01",
+   "campaign": "adhoc1",
+   "status": "complete",
+   "start": "2026-10-21T02:27:43.227000+00:00",
+   "end": "2026-10-21T02:32:40.382000+00:00",
+   "last": 1792549960.382,
+   "disposition": "malicious",
+   "severity": 0.8,
+   "priority": 0.8,
+   "blind_spots": 0,
+   "top": "Outbound Connection from User\u2011Writable Binary",
+   "episode": true,
+   "shadow": 0,
+   "revisions": 1
+  },
+  {
+   "case_id": "live:adhoc1:web01:17",
+   "name": "web01 \u00b7 find \u00b7 13 events",
+   "host": "web01",
+   "campaign": "adhoc1",
+   "status": "complete",
+   "start": "2026-10-21T02:30:30.768000+00:00",
+   "end": "2026-10-21T02:30:30.792000+00:00",
+   "last": 1792549830.792,
+   "disposition": "malicious",
+   "severity": 0.51,
+   "priority": 0.51,
+   "blind_spots": 0,
+   "top": "Clear Bash History",
+   "episode": false,
+   "shadow": 0,
+   "revisions": 1
+  },
+  {
+   "case_id": "live:adhoc1:web01:22",
+   "name": "web01 \u00b7 head \u00b7 1 events",
+   "host": "web01",
+   "campaign": "adhoc1",
+   "status": "complete",
+   "start": "2026-10-21T02:30:30.780000+00:00",
+   "end": "2026-10-21T02:30:30.780000+00:00",
+   "last": 1792549830.78,
+   "disposition": "malicious",
+   "severity": 0.51,
+   "priority": 0.51,
+   "blind_spots": 0,
+   "top": "Clear Bash History",
+   "episode": false,
+   "shadow": 0,
+   "revisions": 1
+  },
+  {
+   "case_id": "live:adhoc1:ws-fin01:16",
+   "name": "ws-fin01 \u00b7 find \u00b7 12 events",
+   "host": "ws-fin01",
+   "campaign": "adhoc1",
+   "status": "complete",
+   "start": "2026-10-21T02:30:45.875000+00:00",
+   "end": "2026-10-21T02:30:45.887000+00:00",
+   "last": 1792549845.887,
+   "disposition": "malicious",
+   "severity": 0.51,
+   "priority": 0.51,
+   "blind_spots": 0,
+   "top": "Clear Bash History",
+   "episode": false,
+   "shadow": 0,
+   "revisions": 1
+  },
+  {
+   "case_id": "live:adhoc1:ws-fin01:20",
+   "name": "ws-fin01 \u00b7 head \u00b7 1 events",
+   "host": "ws-fin01",
+   "campaign": "adhoc1",
+   "status": "complete",
+   "start": "2026-10-21T02:30:45.883000+00:00",
+   "end": "2026-10-21T02:30:45.883000+00:00",
+   "last": 1792549845.883,
+   "disposition": "malicious",
+   "severity": 0.51,
+   "priority": 0.51,
+   "blind_spots": 0,
+   "top": "Clear Bash History",
+   "episode": false,
+   "shadow": 0,
+   "revisions": 1
+  },
+  {
+   "case_id": "live:adhoc1:ws-dev01:15",
+   "name": "ws-dev01 \u00b7 find \u00b7 12 events",
+   "host": "ws-dev01",
+   "campaign": "adhoc1",
+   "status": "complete",
+   "start": "2026-10-21T02:30:55.037000+00:00",
+   "end": "2026-10-21T02:30:55.057000+00:00",
+   "last": 1792549855.057,
+   "disposition": "malicious",
+   "severity": 0.51,
+   "priority": 0.51,
+   "blind_spots": 0,
+   "top": "Clear Bash History",
+   "episode": false,
+   "shadow": 0,
+   "revisions": 1
+  },
+  {
+   "case_id": "live:adhoc1:ws-dev01:19",
+   "name": "ws-dev01 \u00b7 head \u00b7 1 events",
+   "host": "ws-dev01",
+   "campaign": "adhoc1",
+   "status": "complete",
+   "start": "2026-10-21T02:30:55.049000+00:00",
+   "end": "2026-10-21T02:30:55.049000+00:00",
+   "last": 1792549855.049,
+   "disposition": "malicious",
+   "severity": 0.51,
+   "priority": 0.51,
+   "blind_spots": 0,
+   "top": "Clear Bash History",
+   "episode": false,
+   "shadow": 0,
+   "revisions": 1
+  },
+  {
+   "case_id": "live:adhoc1:app01:15",
+   "name": "app01 \u00b7 find \u00b7 13 events",
+   "host": "app01",
+   "campaign": "adhoc1",
+   "status": "complete",
+   "start": "2026-10-21T02:30:59.877000+00:00",
+   "end": "2026-10-21T02:30:59.901000+00:00",
+   "last": 1792549859.901,
+   "disposition": "malicious",
+   "severity": 0.51,
+   "priority": 0.51,
+   "blind_spots": 0,
+   "top": "Clear Bash History",
+   "episode": false,
+   "shadow": 0,
+   "revisions": 1
+  },
+  {
+   "case_id": "live:adhoc1:app01:20",
+   "name": "app01 \u00b7 head \u00b7 1 events",
+   "host": "app01",
+   "campaign": "adhoc1",
+   "status": "complete",
+   "start": "2026-10-21T02:30:59.893000+00:00",
+   "end": "2026-10-21T02:30:59.893000+00:00",
+   "last": 1792549859.893,
+   "disposition": "malicious",
+   "severity": 0.51,
+   "priority": 0.51,
+   "blind_spots": 0,
+   "top": "Clear Bash History",
+   "episode": false,
+   "shadow": 0,
+   "revisions": 1
+  },
+  {
+   "case_id": "live:adhoc1:web01:169",
+   "name": "web01 \u00b7 sshd \u00b7 3 events",
+   "host": "web01",
+   "campaign": "adhoc1",
+   "status": "complete",
+   "start": "2026-10-21T02:43:56.136000+00:00",
+   "end": "2026-10-21T02:43:56.144000+00:00",
+   "last": 1792550636.144,
+   "disposition": "benign",
+   "severity": 0.0,
+   "priority": 0.0,
+   "blind_spots": 0,
+   "top": null,
+   "episode": false,
+   "shadow": 0,
+   "revisions": 1
+  },
+  {
+   "case_id": "live:adhoc1:web01:171",
+   "name": "web01 \u00b7 sleep \u00b7 1 events",
+   "host": "web01",
+   "campaign": "adhoc1",
+   "status": "complete",
+   "start": "2026-10-21T02:43:56.140000+00:00",
+   "end": "2026-10-21T02:43:56.140000+00:00",
+   "last": 1792550636.14,
+   "disposition": "benign",
+   "severity": 0.0,
+   "priority": 0.0,
+   "blind_spots": 0,
+   "top": null,
+   "episode": false,
+   "shadow": 0,
+   "revisions": 1
+  },
+  {
+   "case_id": "live:adhoc1:web01:33",
+   "name": "web01 \u00b7 env \u00b7 21 events",
+   "host": "web01",
+   "campaign": "adhoc1",
+   "status": "complete",
+   "start": "2026-10-21T02:35:26.514000+00:00",
+   "end": "2026-10-21T02:43:56.136000+00:00",
+   "last": 1792550636.136,
+   "disposition": "benign",
+   "severity": 0.0,
+   "priority": 0.0,
+   "blind_spots": 0,
+   "top": null,
+   "episode": false,
+   "shadow": 0,
+   "revisions": 1
+  },
+  {
+   "case_id": "live:adhoc1:web01:170",
+   "name": "web01 \u00b7 date \u00b7 1 events",
+   "host": "web01",
+   "campaign": "adhoc1",
+   "status": "complete",
+   "start": "2026-10-21T02:43:56.136000+00:00",
+   "end": "2026-10-21T02:43:56.136000+00:00",
+   "last": 1792550636.136,
+   "disposition": "benign",
+   "severity": 0.0,
+   "priority": 0.0,
+   "blind_spots": 0,
+   "top": null,
+   "episode": false,
+   "shadow": 0,
+   "revisions": 1
+  },
+  {
+   "case_id": "live:adhoc1:web01:167",
+   "name": "web01 \u00b7 df \u00b7 1 events",
+   "host": "web01",
+   "campaign": "adhoc1",
+   "status": "complete",
+   "start": "2026-10-21T02:43:56.132000+00:00",
+   "end": "2026-10-21T02:43:56.132000+00:00",
+   "last": 1792550636.132,
+   "disposition": "benign",
+   "severity": 0.0,
+   "priority": 0.0,
+   "blind_spots": 0,
+   "top": null,
+   "episode": false,
+   "shadow": 0,
+   "revisions": 1
+  },
+  {
+   "case_id": "live:adhoc1:web01:168",
+   "name": "web01 \u00b7 date \u00b7 1 events",
+   "host": "web01",
+   "campaign": "adhoc1",
+   "status": "complete",
+   "start": "2026-10-21T02:43:56.132000+00:00",
+   "end": "2026-10-21T02:43:56.132000+00:00",
+   "last": 1792550636.132,
+   "disposition": "benign",
+   "severity": 0.0,
+   "priority": 0.0,
+   "blind_spots": 0,
+   "top": null,
+   "episode": false,
+   "shadow": 0,
+   "revisions": 1
+  },
+  {
+   "case_id": "live:adhoc1:web01:165",
+   "name": "web01 \u00b7 ss \u00b7 1 events",
+   "host": "web01",
+   "campaign": "adhoc1",
+   "status": "complete",
+   "start": "2026-10-21T02:43:56.124000+00:00",
+   "end": "2026-10-21T02:43:56.124000+00:00",
+   "last": 1792550636.124,
+   "disposition": "benign",
+   "severity": 0.0,
+   "priority": 0.0,
+   "blind_spots": 0,
+   "top": null,
+   "episode": false,
+   "shadow": 0,
+   "revisions": 1
+  },
+  {
+   "case_id": "live:adhoc1:web01:166",
+   "name": "web01 \u00b7 ps \u00b7 1 events",
+   "host": "web01",
+   "campaign": "adhoc1",
+   "status": "complete",
+   "start": "2026-10-21T02:43:56.124000+00:00",
+   "end": "2026-10-21T02:43:56.124000+00:00",
+   "last": 1792550636.124,
+   "disposition": "benign",
+   "severity": 0.0,
+   "priority": 0.0,
+   "blind_spots": 0,
+   "top": null,
+   "episode": false,
+   "shadow": 0,
+   "revisions": 1
+  },
+  {
+   "case_id": "live:adhoc1:web01:163",
+   "name": "web01 \u00b7 id \u00b7 1 events",
+   "host": "web01",
+   "campaign": "adhoc1",
+   "status": "complete",
+   "start": "2026-10-21T02:43:56.120000+00:00",
+   "end": "2026-10-21T02:43:56.120000+00:00",
+   "last": 1792550636.12,
+   "disposition": "benign",
+   "severity": 0.0,
+   "priority": 0.0,
+   "blind_spots": 0,
+   "top": null,
+   "episode": false,
+   "shadow": 0,
+   "revisions": 1
+  },
+  {
+   "case_id": "live:adhoc1:web01:164",
+   "name": "web01 \u00b7 ip \u00b7 1 events",
+   "host": "web01",
+   "campaign": "adhoc1",
+   "status": "complete",
+   "start": "2026-10-21T02:43:56.120000+00:00",
+   "end": "2026-10-21T02:43:56.120000+00:00",
+   "last": 1792550636.12,
+   "disposition": "benign",
+   "severity": 0.0,
+   "priority": 0.0,
+   "blind_spots": 0,
+   "top": null,
+   "episode": false,
+   "shadow": 0,
+   "revisions": 1
+  },
+  {
+   "case_id": "live:adhoc1:web01:162",
+   "name": "web01 \u00b7 uname \u00b7 1 events",
+   "host": "web01",
+   "campaign": "adhoc1",
+   "status": "complete",
+   "start": "2026-10-21T02:43:56.116000+00:00",
+   "end": "2026-10-21T02:43:56.116000+00:00",
+   "last": 1792550636.116,
+   "disposition": "benign",
+   "severity": 0.0,
+   "priority": 0.0,
+   "blind_spots": 0,
+   "top": null,
+   "episode": false,
+   "shadow": 0,
+   "revisions": 1
+  },
+  {
+   "case_id": "live:adhoc1:ws-fin01:27",
+   "name": "ws-fin01 \u00b7 exim4 \u00b7 1 events",
+   "host": "ws-fin01",
+   "campaign": "adhoc1",
+   "status": "complete",
+   "start": "2026-10-21T02:43:18.146000+00:00",
+   "end": "2026-10-21T02:43:18.146000+00:00",
+   "last": 1792550598.146,
+   "disposition": "benign",
+   "severity": 0.0,
+   "priority": 0.0,
+   "blind_spots": 0,
+   "top": null,
+   "episode": false,
+   "shadow": 0,
+   "revisions": 1
+  },
+  {
+   "case_id": "live:adhoc1:ws-dev01:26",
+   "name": "ws-dev01 \u00b7 exim4 \u00b7 1 events",
+   "host": "ws-dev01",
+   "campaign": "adhoc1",
+   "status": "complete",
+   "start": "2026-10-21T02:43:13.155000+00:00",
+   "end": "2026-10-21T02:43:13.155000+00:00",
+   "last": 1792550593.155,
+   "disposition": "benign",
+   "severity": 0.0,
+   "priority": 0.0,
+   "blind_spots": 0,
+   "top": null,
+   "episode": false,
+   "shadow": 0,
+   "revisions": 1
+  },
+  {
+   "case_id": "live:adhoc1:web01:161",
+   "name": "web01 \u00b7 sleep \u00b7 1 events",
+   "host": "web01",
+   "campaign": "adhoc1",
+   "status": "complete",
+   "start": "2026-10-21T02:43:12.113000+00:00",
+   "end": "2026-10-21T02:43:12.113000+00:00",
+   "last": 1792550592.113,
+   "disposition": "benign",
+   "severity": 0.0,
+   "priority": 0.0,
+   "blind_spots": 0,
+   "top": null,
+   "episode": false,
+   "shadow": 0,
+   "revisions": 1
+  },
+  {
+   "case_id": "live:adhoc1:web01:160",
+   "name": "web01 \u00b7 date \u00b7 1 events",
+   "host": "web01",
+   "campaign": "adhoc1",
+   "status": "complete",
+   "start": "2026-10-21T02:43:12.109000+00:00",
+   "end": "2026-10-21T02:43:12.109000+00:00",
+   "last": 1792550592.109,
+   "disposition": "benign",
+   "severity": 0.0,
+   "priority": 0.0,
+   "blind_spots": 0,
+   "top": null,
+   "episode": false,
+   "shadow": 0,
+   "revisions": 1
+  },
+  {
+   "case_id": "live:adhoc1:web01:159",
+   "name": "web01 \u00b7 curl \u00b7 2 events",
+   "host": "web01",
+   "campaign": "adhoc1",
+   "status": "complete",
+   "start": "2026-10-21T02:43:09.020000+00:00",
+   "end": "2026-10-21T02:43:09.024000+00:00",
+   "last": 1792550589.024,
+   "disposition": "benign",
+   "severity": 0.0,
+   "priority": 0.0,
+   "blind_spots": 0,
+   "top": null,
+   "episode": false,
+   "shadow": 0,
+   "revisions": 1
+  },
+  {
+   "case_id": "live:adhoc1:web01:158",
+   "name": "web01 \u00b7 date \u00b7 1 events",
+   "host": "web01",
+   "campaign": "adhoc1",
+   "status": "complete",
+   "start": "2026-10-21T02:43:09.020000+00:00",
+   "end": "2026-10-21T02:43:09.020000+00:00",
+   "last": 1792550589.02,
+   "disposition": "benign",
+   "severity": 0.0,
+   "priority": 0.0,
+   "blind_spots": 0,
+   "top": null,
+   "episode": false,
+   "shadow": 0,
+   "revisions": 1
+  },
+  {
+   "case_id": "live:adhoc1:web01:157",
+   "name": "web01 \u00b7 df \u00b7 1 events",
+   "host": "web01",
+   "campaign": "adhoc1",
+   "status": "complete",
+   "start": "2026-10-21T02:43:09.016000+00:00",
+   "end": "2026-10-21T02:43:09.016000+00:00",
+   "last": 1792550589.016,
+   "disposition": "benign",
+   "severity": 0.0,
+   "priority": 0.0,
+   "blind_spots": 0,
+   "top": null,
+   "episode": false,
+   "shadow": 0,
+   "revisions": 1
+  },
+  {
+   "case_id": "live:adhoc1:web01:155",
+   "name": "web01 \u00b7 ss \u00b7 1 events",
+   "host": "web01",
+   "campaign": "adhoc1",
+   "status": "complete",
+   "start": "2026-10-21T02:43:09.008000+00:00",
+   "end": "2026-10-21T02:43:09.008000+00:00",
+   "last": 1792550589.008,
+   "disposition": "benign",
+   "severity": 0.0,
+   "priority": 0.0,
+   "blind_spots": 0,
+   "top": null,
+   "episode": false,
+   "shadow": 0,
+   "revisions": 1
+  },
+  {
+   "case_id": "live:adhoc1:web01:156",
+   "name": "web01 \u00b7 ps \u00b7 1 events",
+   "host": "web01",
+   "campaign": "adhoc1",
+   "status": "complete",
+   "start": "2026-10-21T02:43:09.008000+00:00",
+   "end": "2026-10-21T02:43:09.008000+00:00",
+   "last": 1792550589.008,
+   "disposition": "benign",
+   "severity": 0.0,
+   "priority": 0.0,
+   "blind_spots": 0,
+   "top": null,
+   "episode": false,
+   "shadow": 0,
+   "revisions": 1
+  },
+  {
+   "case_id": "live:adhoc1:web01:153",
+   "name": "web01 \u00b7 id \u00b7 1 events",
+   "host": "web01",
+   "campaign": "adhoc1",
+   "status": "complete",
+   "start": "2026-10-21T02:43:09.004000+00:00",
+   "end": "2026-10-21T02:43:09.004000+00:00",
+   "last": 1792550589.004,
+   "disposition": "benign",
+   "severity": 0.0,
+   "priority": 0.0,
+   "blind_spots": 0,
+   "top": null,
+   "episode": false,
+   "shadow": 0,
+   "revisions": 1
+  },
+  {
+   "case_id": "live:adhoc1:web01:154",
+   "name": "web01 \u00b7 ip \u00b7 1 events",
+   "host": "web01",
+   "campaign": "adhoc1",
+   "status": "complete",
+   "start": "2026-10-21T02:43:09.004000+00:00",
+   "end": "2026-10-21T02:43:09.004000+00:00",
+   "last": 1792550589.004,
+   "disposition": "benign",
+   "severity": 0.0,
+   "priority": 0.0,
+   "blind_spots": 0,
+   "top": null,
+   "episode": false,
+   "shadow": 0,
+   "revisions": 1
+  },
+  {
+   "case_id": "live:adhoc1:web01:152",
+   "name": "web01 \u00b7 uname \u00b7 1 events",
+   "host": "web01",
+   "campaign": "adhoc1",
+   "status": "complete",
+   "start": "2026-10-21T02:43:09+00:00",
+   "end": "2026-10-21T02:43:09+00:00",
+   "last": 1792550589.0,
+   "disposition": "benign",
+   "severity": 0.0,
+   "priority": 0.0,
+   "blind_spots": 0,
+   "top": null,
+   "episode": false,
+   "shadow": 0,
+   "revisions": 1
+  },
+  {
+   "case_id": "live:adhoc1:app01:27",
+   "name": "app01 \u00b7 exim4 \u00b7 1 events",
+   "host": "app01",
+   "campaign": "adhoc1",
+   "status": "complete",
+   "start": "2026-10-21T02:43:08.877000+00:00",
+   "end": "2026-10-21T02:43:08.877000+00:00",
+   "last": 1792550588.877,
+   "disposition": "benign",
+   "severity": 0.0,
+   "priority": 0.0,
+   "blind_spots": 0,
+   "top": null,
+   "episode": false,
+   "shadow": 0,
+   "revisions": 1
+  },
+  {
+   "case_id": "live:adhoc1:ws-fin01:8",
+   "name": "ws-fin01 \u00b7 chronyd \u00b7 69 events",
+   "host": "ws-fin01",
+   "campaign": "adhoc1",
+   "status": "complete",
+   "start": "2026-10-21T02:19:55.541000+00:00",
+   "end": "2026-10-21T02:42:40.750000+00:00",
+   "last": 1792550560.75,
+   "disposition": "benign",
+   "severity": 0.0,
+   "priority": 0.0,
+   "blind_spots": 0,
+   "top": null,
+   "episode": false,
+   "shadow": 0,
+   "revisions": 1
+  },
+  {
+   "case_id": "live:adhoc1:web01:149",
+   "name": "web01 \u00b7 date \u00b7 1 events",
+   "host": "web01",
+   "campaign": "adhoc1",
+   "status": "complete",
+   "start": "2026-10-21T02:42:30.993000+00:00",
+   "end": "2026-10-21T02:42:30.993000+00:00",
+   "last": 1792550550.993,
+   "disposition": "benign",
+   "severity": 0.0,
+   "priority": 0.0,
+   "blind_spots": 0,
+   "top": null,
+   "episode": false,
+   "shadow": 0,
+   "revisions": 1
+  },
+  {
+   "case_id": "live:adhoc1:web01:150",
+   "name": "web01 \u00b7 date \u00b7 1 events",
+   "host": "web01",
+   "campaign": "adhoc1",
+   "status": "complete",
+   "start": "2026-10-21T02:42:30.993000+00:00",
+   "end": "2026-10-21T02:42:30.993000+00:00",
+   "last": 1792550550.993,
+   "disposition": "benign",
+   "severity": 0.0,
+   "priority": 0.0,
+   "blind_spots": 0,
+   "top": null,
+   "episode": false,
+   "shadow": 0,
+   "revisions": 1
+  },
+  {
+   "case_id": "live:adhoc1:web01:151",
+   "name": "web01 \u00b7 sleep \u00b7 1 events",
+   "host": "web01",
+   "campaign": "adhoc1",
+   "status": "complete",
+   "start": "2026-10-21T02:42:30.993000+00:00",
+   "end": "2026-10-21T02:42:30.993000+00:00",
+   "last": 1792550550.993,
+   "disposition": "benign",
+   "severity": 0.0,
+   "priority": 0.0,
+   "blind_spots": 0,
+   "top": null,
+   "episode": false,
+   "shadow": 0,
+   "revisions": 1
+  },
+  {
+   "case_id": "live:adhoc1:web01:148",
+   "name": "web01 \u00b7 curl \u00b7 3 events",
+   "host": "web01",
+   "campaign": "adhoc1",
+   "status": "complete",
+   "start": "2026-10-21T02:42:30.985000+00:00",
+   "end": "2026-10-21T02:42:30.989000+00:00",
+   "last": 1792550550.989,
+   "disposition": "benign",
+   "severity": 0.0,
+   "priority": 0.0,
+   "blind_spots": 0,
+   "top": null,
+   "episode": false,
+   "shadow": 0,
+   "revisions": 1
+  },
+  {
+   "case_id": "live:adhoc1:web01:146",
+   "name": "web01 \u00b7 df \u00b7 1 events",
+   "host": "web01",
+   "campaign": "adhoc1",
+   "status": "complete",
+   "start": "2026-10-21T02:42:30.981000+00:00",
+   "end": "2026-10-21T02:42:30.981000+00:00",
+   "last": 1792550550.981,
+   "disposition": "benign",
+   "severity": 0.0,
+   "priority": 0.0,
+   "blind_spots": 0,
+   "top": null,
+   "episode": false,
+   "shadow": 0,
+   "revisions": 1
+  },
+  {
+   "case_id": "live:adhoc1:web01:147",
+   "name": "web01 \u00b7 date \u00b7 1 events",
+   "host": "web01",
+   "campaign": "adhoc1",
+   "status": "complete",
+   "start": "2026-10-21T02:42:30.981000+00:00",
+   "end": "2026-10-21T02:42:30.981000+00:00",
+   "last": 1792550550.981,
+   "disposition": "benign",
+   "severity": 0.0,
+   "priority": 0.0,
+   "blind_spots": 0,
+   "top": null,
+   "episode": false,
+   "shadow": 0,
+   "revisions": 1
+  },
+  {
+   "case_id": "live:adhoc1:web01:144",
+   "name": "web01 \u00b7 ss \u00b7 1 events",
+   "host": "web01",
+   "campaign": "adhoc1",
+   "status": "complete",
+   "start": "2026-10-21T02:42:30.973000+00:00",
+   "end": "2026-10-21T02:42:30.973000+00:00",
+   "last": 1792550550.973,
+   "disposition": "benign",
+   "severity": 0.0,
+   "priority": 0.0,
+   "blind_spots": 0,
+   "top": null,
+   "episode": false,
+   "shadow": 0,
+   "revisions": 1
+  },
+  {
+   "case_id": "live:adhoc1:web01:145",
+   "name": "web01 \u00b7 ps \u00b7 1 events",
+   "host": "web01",
+   "campaign": "adhoc1",
+   "status": "complete",
+   "start": "2026-10-21T02:42:30.973000+00:00",
+   "end": "2026-10-21T02:42:30.973000+00:00",
+   "last": 1792550550.973,
+   "disposition": "benign",
+   "severity": 0.0,
+   "priority": 0.0,
+   "blind_spots": 0,
+   "top": null,
+   "episode": false,
+   "shadow": 0,
+   "revisions": 1
+  },
+  {
+   "case_id": "live:adhoc1:web01:142",
+   "name": "web01 \u00b7 id \u00b7 1 events",
+   "host": "web01",
+   "campaign": "adhoc1",
+   "status": "complete",
+   "start": "2026-10-21T02:42:30.969000+00:00",
+   "end": "2026-10-21T02:42:30.969000+00:00",
+   "last": 1792550550.969,
+   "disposition": "benign",
+   "severity": 0.0,
+   "priority": 0.0,
+   "blind_spots": 0,
+   "top": null,
+   "episode": false,
+   "shadow": 0,
+   "revisions": 1
+  },
+  {
+   "case_id": "live:adhoc1:web01:143",
+   "name": "web01 \u00b7 ip \u00b7 1 events",
+   "host": "web01",
+   "campaign": "adhoc1",
+   "status": "complete",
+   "start": "2026-10-21T02:42:30.969000+00:00",
+   "end": "2026-10-21T02:42:30.969000+00:00",
+   "last": 1792550550.969,
+   "disposition": "benign",
+   "severity": 0.0,
+   "priority": 0.0,
+   "blind_spots": 0,
+   "top": null,
+   "episode": false,
+   "shadow": 0,
+   "revisions": 1
+  },
+  {
+   "case_id": "live:adhoc1:web01:141",
+   "name": "web01 \u00b7 uname \u00b7 1 events",
+   "host": "web01",
+   "campaign": "adhoc1",
+   "status": "complete",
+   "start": "2026-10-21T02:42:30.965000+00:00",
+   "end": "2026-10-21T02:42:30.965000+00:00",
+   "last": 1792550550.965,
+   "disposition": "benign",
+   "severity": 0.0,
+   "priority": 0.0,
+   "blind_spots": 0,
+   "top": null,
+   "episode": false,
+   "shadow": 0,
+   "revisions": 1
+  },
+  {
+   "case_id": "live:adhoc1:web01:139",
+   "name": "web01 \u00b7 date \u00b7 1 events",
+   "host": "web01",
+   "campaign": "adhoc1",
+   "status": "complete",
+   "start": "2026-10-21T02:41:33.958000+00:00",
+   "end": "2026-10-21T02:41:33.958000+00:00",
+   "last": 1792550493.958,
+   "disposition": "benign",
+   "severity": 0.0,
+   "priority": 0.0,
+   "blind_spots": 0,
+   "top": null,
+   "episode": false,
+   "shadow": 0,
+   "revisions": 1
+  },
+  {
+   "case_id": "live:adhoc1:web01:140",
+   "name": "web01 \u00b7 sleep \u00b7 1 events",
+   "host": "web01",
+   "campaign": "adhoc1",
+   "status": "complete",
+   "start": "2026-10-21T02:41:33.958000+00:00",
+   "end": "2026-10-21T02:41:33.958000+00:00",
+   "last": 1792550493.958,
+   "disposition": "benign",
+   "severity": 0.0,
+   "priority": 0.0,
+   "blind_spots": 0,
+   "top": null,
+   "episode": false,
+   "shadow": 0,
+   "revisions": 1
+  },
+  {
+   "case_id": "live:adhoc1:web01:138",
+   "name": "web01 \u00b7 df \u00b7 1 events",
+   "host": "web01",
+   "campaign": "adhoc1",
+   "status": "complete",
+   "start": "2026-10-21T02:41:33.954000+00:00",
+   "end": "2026-10-21T02:41:33.954000+00:00",
+   "last": 1792550493.954,
+   "disposition": "benign",
+   "severity": 0.0,
+   "priority": 0.0,
+   "blind_spots": 0,
+   "top": null,
+   "episode": false,
+   "shadow": 0,
+   "revisions": 1
+  },
+  {
+   "case_id": "live:adhoc1:web01:131",
+   "name": "web01 \u00b7 df \u00b7 1 events",
+   "host": "web01",
+   "campaign": "adhoc1",
+   "status": "complete",
+   "start": "2026-10-21T02:41:33.950000+00:00",
+   "end": "2026-10-21T02:41:33.950000+00:00",
+   "last": 1792550493.95,
+   "disposition": "benign",
+   "severity": 0.0,
+   "priority": 0.0,
+   "blind_spots": 0,
+   "top": null,
+   "episode": false,
+   "shadow": 0,
+   "revisions": 1
+  },
+  {
+   "case_id": "live:adhoc1:web01:132",
+   "name": "web01 \u00b7 date \u00b7 1 events",
+   "host": "web01",
+   "campaign": "adhoc1",
+   "status": "complete",
+   "start": "2026-10-21T02:41:33.950000+00:00",
+   "end": "2026-10-21T02:41:33.950000+00:00",
+   "last": 1792550493.95,
+   "disposition": "benign",
+   "severity": 0.0,
+   "priority": 0.0,
+   "blind_spots": 0,
+   "top": null,
+   "episode": false,
+   "shadow": 0,
+   "revisions": 1
+  },
+  {
+   "case_id": "live:adhoc1:web01:133",
+   "name": "web01 \u00b7 uname \u00b7 1 events",
+   "host": "web01",
+   "campaign": "adhoc1",
+   "status": "complete",
+   "start": "2026-10-21T02:41:33.950000+00:00",
+   "end": "2026-10-21T02:41:33.950000+00:00",
+   "last": 1792550493.95,
+   "disposition": "benign",
+   "severity": 0.0,
+   "priority": 0.0,
+   "blind_spots": 0,
+   "top": null,
+   "episode": false,
+   "shadow": 0,
+   "revisions": 1
+  },
+  {
+   "case_id": "live:adhoc1:web01:134",
+   "name": "web01 \u00b7 id \u00b7 1 events",
+   "host": "web01",
+   "campaign": "adhoc1",
+   "status": "complete",
+   "start": "2026-10-21T02:41:33.950000+00:00",
+   "end": "2026-10-21T02:41:33.950000+00:00",
+   "last": 1792550493.95,
+   "disposition": "benign",
+   "severity": 0.0,
+   "priority": 0.0,
+   "blind_spots": 0,
+   "top": null,
+   "episode": false,
+   "shadow": 0,
+   "revisions": 1
+  },
+  {
+   "case_id": "live:adhoc1:web01:135",
+   "name": "web01 \u00b7 ip \u00b7 1 events",
+   "host": "web01",
+   "campaign": "adhoc1",
+   "status": "complete",
+   "start": "2026-10-21T02:41:33.950000+00:00",
+   "end": "2026-10-21T02:41:33.950000+00:00",
+   "last": 1792550493.95,
+   "disposition": "benign",
+   "severity": 0.0,
+   "priority": 0.0,
+   "blind_spots": 0,
+   "top": null,
+   "episode": false,
+   "shadow": 0,
+   "revisions": 1
+  },
+  {
+   "case_id": "live:adhoc1:web01:136",
+   "name": "web01 \u00b7 ss \u00b7 1 events",
+   "host": "web01",
+   "campaign": "adhoc1",
+   "status": "complete",
+   "start": "2026-10-21T02:41:33.950000+00:00",
+   "end": "2026-10-21T02:41:33.950000+00:00",
+   "last": 1792550493.95,
+   "disposition": "benign",
+   "severity": 0.0,
+   "priority": 0.0,
+   "blind_spots": 0,
+   "top": null,
+   "episode": false,
+   "shadow": 0,
+   "revisions": 1
+  },
+  {
+   "case_id": "live:adhoc1:web01:137",
+   "name": "web01 \u00b7 ps \u00b7 1 events",
+   "host": "web01",
+   "campaign": "adhoc1",
+   "status": "complete",
+   "start": "2026-10-21T02:41:33.950000+00:00",
+   "end": "2026-10-21T02:41:33.950000+00:00",
+   "last": 1792550493.95,
+   "disposition": "benign",
+   "severity": 0.0,
+   "priority": 0.0,
+   "blind_spots": 0,
+   "top": null,
+   "episode": false,
+   "shadow": 0,
+   "revisions": 1
+  },
+  {
+   "case_id": "live:adhoc1:web01:129",
+   "name": "web01 \u00b7 ss \u00b7 1 events",
+   "host": "web01",
+   "campaign": "adhoc1",
+   "status": "complete",
+   "start": "2026-10-21T02:41:33.938000+00:00",
+   "end": "2026-10-21T02:41:33.938000+00:00",
+   "last": 1792550493.938,
+   "disposition": "benign",
+   "severity": 0.0,
+   "priority": 0.0,
+   "blind_spots": 0,
+   "top": null,
+   "episode": false,
+   "shadow": 0,
+   "revisions": 1
+  },
+  {
+   "case_id": "live:adhoc1:web01:130",
+   "name": "web01 \u00b7 ps \u00b7 1 events",
+   "host": "web01",
+   "campaign": "adhoc1",
+   "status": "complete",
+   "start": "2026-10-21T02:41:33.938000+00:00",
+   "end": "2026-10-21T02:41:33.938000+00:00",
+   "last": 1792550493.938,
+   "disposition": "benign",
+   "severity": 0.0,
+   "priority": 0.0,
+   "blind_spots": 0,
+   "top": null,
+   "episode": false,
+   "shadow": 0,
+   "revisions": 1
+  },
+  {
+   "case_id": "live:adhoc1:web01:126",
+   "name": "web01 \u00b7 uname \u00b7 1 events",
+   "host": "web01",
+   "campaign": "adhoc1",
+   "status": "complete",
+   "start": "2026-10-21T02:41:33.934000+00:00",
+   "end": "2026-10-21T02:41:33.934000+00:00",
+   "last": 1792550493.934,
+   "disposition": "benign",
+   "severity": 0.0,
+   "priority": 0.0,
+   "blind_spots": 0,
+   "top": null,
+   "episode": false,
+   "shadow": 0,
+   "revisions": 1
+  },
+  {
+   "case_id": "live:adhoc1:web01:127",
+   "name": "web01 \u00b7 id \u00b7 1 events",
+   "host": "web01",
+   "campaign": "adhoc1",
+   "status": "complete",
+   "start": "2026-10-21T02:41:33.934000+00:00",
+   "end": "2026-10-21T02:41:33.934000+00:00",
+   "last": 1792550493.934,
+   "disposition": "benign",
+   "severity": 0.0,
+   "priority": 0.0,
+   "blind_spots": 0,
+   "top": null,
+   "episode": false,
+   "shadow": 0,
+   "revisions": 1
+  },
+  {
+   "case_id": "live:adhoc1:web01:128",
+   "name": "web01 \u00b7 ip \u00b7 1 events",
+   "host": "web01",
+   "campaign": "adhoc1",
+   "status": "complete",
+   "start": "2026-10-21T02:41:33.934000+00:00",
+   "end": "2026-10-21T02:41:33.934000+00:00",
+   "last": 1792550493.934,
+   "disposition": "benign",
+   "severity": 0.0,
+   "priority": 0.0,
+   "blind_spots": 0,
+   "top": null,
+   "episode": false,
+   "shadow": 0,
+   "revisions": 1
+  },
+  {
+   "case_id": "live:adhoc1:web01:125",
+   "name": "web01 \u00b7 exim4 \u00b7 1 events",
+   "host": "web01",
+   "campaign": "adhoc1",
+   "status": "complete",
+   "start": "2026-10-21T02:41:00.877000+00:00",
+   "end": "2026-10-21T02:41:00.877000+00:00",
+   "last": 1792550460.877,
+   "disposition": "benign",
+   "severity": 0.0,
+   "priority": 0.0,
+   "blind_spots": 0,
+   "top": null,
+   "episode": false,
+   "shadow": 0,
+   "revisions": 1
+  },
+  {
+   "case_id": "live:adhoc1:web01:122",
+   "name": "web01 \u00b7 sshd \u00b7 3 events",
+   "host": "web01",
+   "campaign": "adhoc1",
+   "status": "complete",
+   "start": "2026-10-21T02:40:54.921000+00:00",
+   "end": "2026-10-21T02:40:54.929000+00:00",
+   "last": 1792550454.929,
+   "disposition": "benign",
+   "severity": 0.0,
+   "priority": 0.0,
+   "blind_spots": 0,
+   "top": null,
+   "episode": false,
+   "shadow": 0,
+   "revisions": 1
+  },
+  {
+   "case_id": "live:adhoc1:web01:124",
+   "name": "web01 \u00b7 sleep \u00b7 1 events",
+   "host": "web01",
+   "campaign": "adhoc1",
+   "status": "complete",
+   "start": "2026-10-21T02:40:54.929000+00:00",
+   "end": "2026-10-21T02:40:54.929000+00:00",
+   "last": 1792550454.929,
+   "disposition": "benign",
+   "severity": 0.0,
+   "priority": 0.0,
+   "blind_spots": 0,
+   "top": null,
+   "episode": false,
+   "shadow": 0,
+   "revisions": 1
+  },
+  {
+   "case_id": "live:adhoc1:web01:123",
+   "name": "web01 \u00b7 date \u00b7 1 events",
+   "host": "web01",
+   "campaign": "adhoc1",
+   "status": "complete",
+   "start": "2026-10-21T02:40:54.925000+00:00",
+   "end": "2026-10-21T02:40:54.925000+00:00",
+   "last": 1792550454.925,
+   "disposition": "benign",
+   "severity": 0.0,
+   "priority": 0.0,
+   "blind_spots": 0,
+   "top": null,
+   "episode": false,
+   "shadow": 0,
+   "revisions": 1
+  },
+  {
+   "case_id": "live:adhoc1:web01:120",
+   "name": "web01 \u00b7 df \u00b7 1 events",
+   "host": "web01",
+   "campaign": "adhoc1",
+   "status": "complete",
+   "start": "2026-10-21T02:40:54.921000+00:00",
+   "end": "2026-10-21T02:40:54.921000+00:00",
+   "last": 1792550454.921,
+   "disposition": "benign",
+   "severity": 0.0,
+   "priority": 0.0,
+   "blind_spots": 0,
+   "top": null,
+   "episode": false,
+   "shadow": 0,
+   "revisions": 1
+  },
+  {
+   "case_id": "live:adhoc1:web01:121",
+   "name": "web01 \u00b7 date \u00b7 1 events",
+   "host": "web01",
+   "campaign": "adhoc1",
+   "status": "complete",
+   "start": "2026-10-21T02:40:54.921000+00:00",
+   "end": "2026-10-21T02:40:54.921000+00:00",
+   "last": 1792550454.921,
+   "disposition": "benign",
+   "severity": 0.0,
+   "priority": 0.0,
+   "blind_spots": 0,
+   "top": null,
+   "episode": false,
+   "shadow": 0,
+   "revisions": 1
+  },
+  {
+   "case_id": "live:adhoc1:web01:119",
+   "name": "web01 \u00b7 ps \u00b7 1 events",
+   "host": "web01",
+   "campaign": "adhoc1",
+   "status": "complete",
+   "start": "2026-10-21T02:40:54.913000+00:00",
+   "end": "2026-10-21T02:40:54.913000+00:00",
+   "last": 1792550454.913,
+   "disposition": "benign",
+   "severity": 0.0,
+   "priority": 0.0,
+   "blind_spots": 0,
+   "top": null,
+   "episode": false,
+   "shadow": 0,
+   "revisions": 1
+  },
+  {
+   "case_id": "live:adhoc1:web01:117",
+   "name": "web01 \u00b7 ip \u00b7 1 events",
+   "host": "web01",
+   "campaign": "adhoc1",
+   "status": "complete",
+   "start": "2026-10-21T02:40:54.909000+00:00",
+   "end": "2026-10-21T02:40:54.909000+00:00",
+   "last": 1792550454.909,
+   "disposition": "benign",
+   "severity": 0.0,
+   "priority": 0.0,
+   "blind_spots": 0,
+   "top": null,
+   "episode": false,
+   "shadow": 0,
+   "revisions": 1
+  },
+  {
+   "case_id": "live:adhoc1:web01:118",
+   "name": "web01 \u00b7 ss \u00b7 1 events",
+   "host": "web01",
+   "campaign": "adhoc1",
+   "status": "complete",
+   "start": "2026-10-21T02:40:54.909000+00:00",
+   "end": "2026-10-21T02:40:54.909000+00:00",
+   "last": 1792550454.909,
+   "disposition": "benign",
+   "severity": 0.0,
+   "priority": 0.0,
+   "blind_spots": 0,
+   "top": null,
+   "episode": false,
+   "shadow": 0,
+   "revisions": 1
+  }
+ ],
+ "total": 251,
+ "flagged": 12,
+ "revisions": {
+  "live:adhoc1:web01:13": [
+   {
+    "at": "2026-10-21T02:27:26.611809+00:00",
+    "disposition": "malicious",
+    "severity": 0.595,
+    "cause": "1 new event(s)",
+    "event_time": "2026-10-21T02:27:26.247000+00:00"
+   }
+  ],
+  "live:adhoc1:ws-dev01:11": [
+   {
+    "at": "2026-10-21T02:27:35.674573+00:00",
+    "disposition": "malicious",
+    "severity": 0.595,
+    "cause": "1 new event(s)",
+    "event_time": "2026-10-21T02:27:35.512000+00:00"
+   }
+  ],
+  "live:adhoc1:ws-fin01:12": [
+   {
+    "at": "2026-10-21T02:27:39.700351+00:00",
+    "disposition": "malicious",
+    "severity": 0.595,
+    "cause": "1 new event(s)",
+    "event_time": "2026-10-21T02:27:39.360000+00:00"
+   }
+  ],
+  "live:adhoc1:app01:11": [
+   {
+    "at": "2026-10-21T02:27:43.725189+00:00",
+    "disposition": "malicious",
+    "severity": 0.595,
+    "cause": "1 new event(s)",
+    "event_time": "2026-10-21T02:27:43.227000+00:00"
+   }
+  ],
+  "live:adhoc1:web01:17": [
+   {
+    "at": "2026-10-21T02:30:31.643488+00:00",
+    "disposition": "malicious",
+    "severity": 0.51,
+    "cause": "13 new event(s)",
+    "event_time": "2026-10-21T02:30:30.792000+00:00"
+   }
+  ],
+  "live:adhoc1:web01:22": [
+   {
+    "at": "2026-10-21T02:30:31.647447+00:00",
+    "disposition": "malicious",
+    "severity": 0.51,
+    "cause": "1 new event(s)",
+    "event_time": "2026-10-21T02:30:30.780000+00:00"
+   }
+  ],
+  "live:adhoc1:ws-fin01:16": [
+   {
+    "at": "2026-10-21T02:30:46.750397+00:00",
+    "disposition": "malicious",
+    "severity": 0.51,
+    "cause": "12 new event(s)",
+    "event_time": "2026-10-21T02:30:45.887000+00:00"
+   }
+  ],
+  "live:adhoc1:ws-fin01:20": [
+   {
+    "at": "2026-10-21T02:30:46.753507+00:00",
+    "disposition": "malicious",
+    "severity": 0.51,
+    "cause": "1 new event(s)",
+    "event_time": "2026-10-21T02:30:45.883000+00:00"
+   }
+  ],
+  "live:adhoc1:ws-dev01:15": [
+   {
+    "at": "2026-10-21T02:30:55.826735+00:00",
+    "disposition": "malicious",
+    "severity": 0.51,
+    "cause": "12 new event(s)",
+    "event_time": "2026-10-21T02:30:55.057000+00:00"
+   }
+  ],
+  "live:adhoc1:ws-dev01:19": [
+   {
+    "at": "2026-10-21T02:30:55.832731+00:00",
+    "disposition": "malicious",
+    "severity": 0.51,
+    "cause": "1 new event(s)",
+    "event_time": "2026-10-21T02:30:55.049000+00:00"
+   }
+  ],
+  "live:adhoc1:app01:15": [
+   {
+    "at": "2026-10-21T02:30:59.874678+00:00",
+    "disposition": "malicious",
+    "severity": 0.51,
+    "cause": "13 new event(s)",
+    "event_time": "2026-10-21T02:30:59.901000+00:00"
+   }
+  ],
+  "live:adhoc1:app01:20": [
+   {
+    "at": "2026-10-21T02:30:59.878430+00:00",
+    "disposition": "malicious",
+    "severity": 0.51,
+    "cause": "1 new event(s)",
+    "event_time": "2026-10-21T02:30:59.893000+00:00"
+   }
+  ],
+  "live:adhoc1:web01:169": [
+   {
+    "at": "2026-10-21T02:43:56.243925+00:00",
+    "disposition": "benign",
+    "severity": 0.0,
+    "cause": "3 new event(s)",
+    "event_time": "2026-10-21T02:43:56.144000+00:00"
+   }
+  ],
+  "live:adhoc1:web01:171": [
+   {
+    "at": "2026-10-21T02:43:56.245021+00:00",
+    "disposition": "benign",
+    "severity": 0.0,
+    "cause": "1 new event(s)",
+    "event_time": "2026-10-21T02:43:56.140000+00:00"
+   }
+  ],
+  "live:adhoc1:web01:33": [
+   {
+    "at": "2026-10-21T02:35:27.411476+00:00",
+    "disposition": "benign",
+    "severity": 0.0,
+    "cause": "6 new event(s)",
+    "event_time": "2026-10-21T02:35:26.518000+00:00"
+   }
+  ],
+  "live:adhoc1:web01:170": [
+   {
+    "at": "2026-10-21T02:43:56.244460+00:00",
+    "disposition": "benign",
+    "severity": 0.0,
+    "cause": "1 new event(s)",
+    "event_time": "2026-10-21T02:43:56.136000+00:00"
+   }
+  ],
+  "live:adhoc1:web01:167": [
+   {
+    "at": "2026-10-21T02:43:56.242721+00:00",
+    "disposition": "benign",
+    "severity": 0.0,
+    "cause": "1 new event(s)",
+    "event_time": "2026-10-21T02:43:56.132000+00:00"
+   }
+  ],
+  "live:adhoc1:web01:168": [
+   {
+    "at": "2026-10-21T02:43:56.243264+00:00",
+    "disposition": "benign",
+    "severity": 0.0,
+    "cause": "1 new event(s)",
+    "event_time": "2026-10-21T02:43:56.132000+00:00"
+   }
+  ],
+  "live:adhoc1:web01:165": [
+   {
+    "at": "2026-10-21T02:43:56.241632+00:00",
+    "disposition": "benign",
+    "severity": 0.0,
+    "cause": "1 new event(s)",
+    "event_time": "2026-10-21T02:43:56.124000+00:00"
+   }
+  ],
+  "live:adhoc1:web01:166": [
+   {
+    "at": "2026-10-21T02:43:56.242182+00:00",
+    "disposition": "benign",
+    "severity": 0.0,
+    "cause": "1 new event(s)",
+    "event_time": "2026-10-21T02:43:56.124000+00:00"
+   }
+  ],
+  "live:adhoc1:web01:163": [
+   {
+    "at": "2026-10-21T02:43:56.240432+00:00",
+    "disposition": "benign",
+    "severity": 0.0,
+    "cause": "1 new event(s)",
+    "event_time": "2026-10-21T02:43:56.120000+00:00"
+   }
+  ],
+  "live:adhoc1:web01:164": [
+   {
+    "at": "2026-10-21T02:43:56.241039+00:00",
+    "disposition": "benign",
+    "severity": 0.0,
+    "cause": "1 new event(s)",
+    "event_time": "2026-10-21T02:43:56.120000+00:00"
+   }
+  ],
+  "live:adhoc1:web01:162": [
+   {
+    "at": "2026-10-21T02:43:56.239790+00:00",
+    "disposition": "benign",
+    "severity": 0.0,
+    "cause": "1 new event(s)",
+    "event_time": "2026-10-21T02:43:56.116000+00:00"
+   }
+  ],
+  "live:adhoc1:ws-fin01:27": [
+   {
+    "at": "2026-10-21T02:43:18.038828+00:00",
+    "disposition": "benign",
+    "severity": 0.0,
+    "cause": "1 new event(s)",
+    "event_time": "2026-10-21T02:43:18.146000+00:00"
+   }
+  ],
+  "live:adhoc1:ws-dev01:26": [
+   {
+    "at": "2026-10-21T02:43:14.019933+00:00",
+    "disposition": "benign",
+    "severity": 0.0,
+    "cause": "1 new event(s)",
+    "event_time": "2026-10-21T02:43:13.155000+00:00"
+   }
+  ],
+  "live:adhoc1:web01:161": [
+   {
+    "at": "2026-10-21T02:43:13.012360+00:00",
+    "disposition": "benign",
+    "severity": 0.0,
+    "cause": "1 new event(s)",
+    "event_time": "2026-10-21T02:43:12.113000+00:00"
+   }
+  ],
+  "live:adhoc1:web01:160": [
+   {
+    "at": "2026-10-21T02:43:12.001909+00:00",
+    "disposition": "benign",
+    "severity": 0.0,
+    "cause": "1 new event(s)",
+    "event_time": "2026-10-21T02:43:12.109000+00:00"
+   }
+  ],
+  "live:adhoc1:web01:159": [
+   {
+    "at": "2026-10-21T02:43:08.984088+00:00",
+    "disposition": "benign",
+    "severity": 0.0,
+    "cause": "2 new event(s)",
+    "event_time": "2026-10-21T02:43:09.024000+00:00"
+   }
+  ],
+  "live:adhoc1:web01:158": [
+   {
+    "at": "2026-10-21T02:43:08.983153+00:00",
+    "disposition": "benign",
+    "severity": 0.0,
+    "cause": "1 new event(s)",
+    "event_time": "2026-10-21T02:43:09.020000+00:00"
+   }
+  ],
+  "live:adhoc1:web01:157": [
+   {
+    "at": "2026-10-21T02:43:08.982217+00:00",
+    "disposition": "benign",
+    "severity": 0.0,
+    "cause": "1 new event(s)",
+    "event_time": "2026-10-21T02:43:09.016000+00:00"
+   }
+  ],
+  "live:adhoc1:web01:155": [
+   {
+    "at": "2026-10-21T02:43:08.980503+00:00",
+    "disposition": "benign",
+    "severity": 0.0,
+    "cause": "1 new event(s)",
+    "event_time": "2026-10-21T02:43:09.008000+00:00"
+   }
+  ],
+  "live:adhoc1:web01:156": [
+   {
+    "at": "2026-10-21T02:43:08.981378+00:00",
+    "disposition": "benign",
+    "severity": 0.0,
+    "cause": "1 new event(s)",
+    "event_time": "2026-10-21T02:43:09.008000+00:00"
+   }
+  ],
+  "live:adhoc1:web01:153": [
+   {
+    "at": "2026-10-21T02:43:08.978484+00:00",
+    "disposition": "benign",
+    "severity": 0.0,
+    "cause": "1 new event(s)",
+    "event_time": "2026-10-21T02:43:09.004000+00:00"
+   }
+  ],
+  "live:adhoc1:web01:154": [
+   {
+    "at": "2026-10-21T02:43:08.979583+00:00",
+    "disposition": "benign",
+    "severity": 0.0,
+    "cause": "1 new event(s)",
+    "event_time": "2026-10-21T02:43:09.004000+00:00"
+   }
+  ],
+  "live:adhoc1:web01:152": [
+   {
+    "at": "2026-10-21T02:43:08.977230+00:00",
+    "disposition": "benign",
+    "severity": 0.0,
+    "cause": "1 new event(s)",
+    "event_time": "2026-10-21T02:43:09+00:00"
+   }
+  ],
+  "live:adhoc1:app01:27": [
+   {
+    "at": "2026-10-21T02:43:08.984842+00:00",
+    "disposition": "benign",
+    "severity": 0.0,
+    "cause": "1 new event(s)",
+    "event_time": "2026-10-21T02:43:08.877000+00:00"
+   }
+  ],
+  "live:adhoc1:ws-fin01:8": [
+   {
+    "at": "2026-10-21T02:19:56.303318+00:00",
+    "disposition": "benign",
+    "severity": 0.0,
+    "cause": "4 new event(s)",
+    "event_time": "2026-10-21T02:19:56.401000+00:00"
+   }
+  ],
+  "live:adhoc1:web01:149": [
+   {
+    "at": "2026-10-21T02:42:31.782661+00:00",
+    "disposition": "benign",
+    "severity": 0.0,
+    "cause": "1 new event(s)",
+    "event_time": "2026-10-21T02:42:30.993000+00:00"
+   }
+  ],
+  "live:adhoc1:web01:150": [
+   {
+    "at": "2026-10-21T02:42:31.783575+00:00",
+    "disposition": "benign",
+    "severity": 0.0,
+    "cause": "1 new event(s)",
+    "event_time": "2026-10-21T02:42:30.993000+00:00"
+   }
+  ],
+  "live:adhoc1:web01:151": [
+   {
+    "at": "2026-10-21T02:42:31.784428+00:00",
+    "disposition": "benign",
+    "severity": 0.0,
+    "cause": "1 new event(s)",
+    "event_time": "2026-10-21T02:42:30.993000+00:00"
+   }
+  ],
+  "live:adhoc1:web01:148": [
+   {
+    "at": "2026-10-21T02:42:31.781798+00:00",
+    "disposition": "benign",
+    "severity": 0.0,
+    "cause": "3 new event(s)",
+    "event_time": "2026-10-21T02:42:30.989000+00:00"
+   }
+  ],
+  "live:adhoc1:web01:146": [
+   {
+    "at": "2026-10-21T02:42:31.779867+00:00",
+    "disposition": "benign",
+    "severity": 0.0,
+    "cause": "1 new event(s)",
+    "event_time": "2026-10-21T02:42:30.981000+00:00"
+   }
+  ],
+  "live:adhoc1:web01:147": [
+   {
+    "at": "2026-10-21T02:42:31.780802+00:00",
+    "disposition": "benign",
+    "severity": 0.0,
+    "cause": "1 new event(s)",
+    "event_time": "2026-10-21T02:42:30.981000+00:00"
+   }
+  ],
+  "live:adhoc1:web01:144": [
+   {
+    "at": "2026-10-21T02:42:31.777816+00:00",
+    "disposition": "benign",
+    "severity": 0.0,
+    "cause": "1 new event(s)",
+    "event_time": "2026-10-21T02:42:30.973000+00:00"
+   }
+  ],
+  "live:adhoc1:web01:145": [
+   {
+    "at": "2026-10-21T02:42:31.778912+00:00",
+    "disposition": "benign",
+    "severity": 0.0,
+    "cause": "1 new event(s)",
+    "event_time": "2026-10-21T02:42:30.973000+00:00"
+   }
+  ],
+  "live:adhoc1:web01:142": [
+   {
+    "at": "2026-10-21T02:42:31.774859+00:00",
+    "disposition": "benign",
+    "severity": 0.0,
+    "cause": "1 new event(s)",
+    "event_time": "2026-10-21T02:42:30.969000+00:00"
+   }
+  ],
+  "live:adhoc1:web01:143": [
+   {
+    "at": "2026-10-21T02:42:31.776445+00:00",
+    "disposition": "benign",
+    "severity": 0.0,
+    "cause": "1 new event(s)",
+    "event_time": "2026-10-21T02:42:30.969000+00:00"
+   }
+  ],
+  "live:adhoc1:web01:141": [
+   {
+    "at": "2026-10-21T02:42:31.773691+00:00",
+    "disposition": "benign",
+    "severity": 0.0,
+    "cause": "1 new event(s)",
+    "event_time": "2026-10-21T02:42:30.965000+00:00"
+   }
+  ],
+  "live:adhoc1:web01:139": [
+   {
+    "at": "2026-10-21T02:41:34.470842+00:00",
+    "disposition": "benign",
+    "severity": 0.0,
+    "cause": "1 new event(s)",
+    "event_time": "2026-10-21T02:41:33.958000+00:00"
+   }
+  ],
+  "live:adhoc1:web01:140": [
+   {
+    "at": "2026-10-21T02:41:34.471576+00:00",
+    "disposition": "benign",
+    "severity": 0.0,
+    "cause": "1 new event(s)",
+    "event_time": "2026-10-21T02:41:33.958000+00:00"
+   }
+  ],
+  "live:adhoc1:web01:138": [
+   {
+    "at": "2026-10-21T02:41:34.470120+00:00",
+    "disposition": "benign",
+    "severity": 0.0,
+    "cause": "1 new event(s)",
+    "event_time": "2026-10-21T02:41:33.954000+00:00"
+   }
+  ],
+  "live:adhoc1:web01:131": [
+   {
+    "at": "2026-10-21T02:41:34.464445+00:00",
+    "disposition": "benign",
+    "severity": 0.0,
+    "cause": "1 new event(s)",
+    "event_time": "2026-10-21T02:41:33.950000+00:00"
+   }
+  ],
+  "live:adhoc1:web01:132": [
+   {
+    "at": "2026-10-21T02:41:34.465295+00:00",
+    "disposition": "benign",
+    "severity": 0.0,
+    "cause": "1 new event(s)",
+    "event_time": "2026-10-21T02:41:33.950000+00:00"
+   }
+  ],
+  "live:adhoc1:web01:133": [
+   {
+    "at": "2026-10-21T02:41:34.466192+00:00",
+    "disposition": "benign",
+    "severity": 0.0,
+    "cause": "1 new event(s)",
+    "event_time": "2026-10-21T02:41:33.950000+00:00"
+   }
+  ],
+  "live:adhoc1:web01:134": [
+   {
+    "at": "2026-10-21T02:41:34.467046+00:00",
+    "disposition": "benign",
+    "severity": 0.0,
+    "cause": "1 new event(s)",
+    "event_time": "2026-10-21T02:41:33.950000+00:00"
+   }
+  ],
+  "live:adhoc1:web01:135": [
+   {
+    "at": "2026-10-21T02:41:34.467864+00:00",
+    "disposition": "benign",
+    "severity": 0.0,
+    "cause": "1 new event(s)",
+    "event_time": "2026-10-21T02:41:33.950000+00:00"
+   }
+  ],
+  "live:adhoc1:web01:136": [
+   {
+    "at": "2026-10-21T02:41:34.468615+00:00",
+    "disposition": "benign",
+    "severity": 0.0,
+    "cause": "1 new event(s)",
+    "event_time": "2026-10-21T02:41:33.950000+00:00"
+   }
+  ],
+  "live:adhoc1:web01:137": [
+   {
+    "at": "2026-10-21T02:41:34.469359+00:00",
+    "disposition": "benign",
+    "severity": 0.0,
+    "cause": "1 new event(s)",
+    "event_time": "2026-10-21T02:41:33.950000+00:00"
+   }
+  ],
+  "live:adhoc1:web01:129": [
+   {
+    "at": "2026-10-21T02:41:34.462693+00:00",
+    "disposition": "benign",
+    "severity": 0.0,
+    "cause": "1 new event(s)",
+    "event_time": "2026-10-21T02:41:33.938000+00:00"
+   }
+  ],
+  "live:adhoc1:web01:130": [
+   {
+    "at": "2026-10-21T02:41:34.463596+00:00",
+    "disposition": "benign",
+    "severity": 0.0,
+    "cause": "1 new event(s)",
+    "event_time": "2026-10-21T02:41:33.938000+00:00"
+   }
+  ],
+  "live:adhoc1:web01:126": [
+   {
+    "at": "2026-10-21T02:41:34.459617+00:00",
+    "disposition": "benign",
+    "severity": 0.0,
+    "cause": "1 new event(s)",
+    "event_time": "2026-10-21T02:41:33.934000+00:00"
+   }
+  ],
+  "live:adhoc1:web01:127": [
+   {
+    "at": "2026-10-21T02:41:34.460829+00:00",
+    "disposition": "benign",
+    "severity": 0.0,
+    "cause": "1 new event(s)",
+    "event_time": "2026-10-21T02:41:33.934000+00:00"
+   }
+  ],
+  "live:adhoc1:web01:128": [
+   {
+    "at": "2026-10-21T02:41:34.461785+00:00",
+    "disposition": "benign",
+    "severity": 0.0,
+    "cause": "1 new event(s)",
+    "event_time": "2026-10-21T02:41:33.934000+00:00"
+   }
+  ],
+  "live:adhoc1:web01:125": [
+   {
+    "at": "2026-10-21T02:41:01.286361+00:00",
+    "disposition": "benign",
+    "severity": 0.0,
+    "cause": "1 new event(s)",
+    "event_time": "2026-10-21T02:41:00.877000+00:00"
+   }
+  ],
+  "live:adhoc1:web01:122": [
+   {
+    "at": "2026-10-21T02:40:55.247488+00:00",
+    "disposition": "benign",
+    "severity": 0.0,
+    "cause": "3 new event(s)",
+    "event_time": "2026-10-21T02:40:54.929000+00:00"
+   }
+  ],
+  "live:adhoc1:web01:124": [
+   {
+    "at": "2026-10-21T02:40:55.249088+00:00",
+    "disposition": "benign",
+    "severity": 0.0,
+    "cause": "1 new event(s)",
+    "event_time": "2026-10-21T02:40:54.929000+00:00"
+   }
+  ],
+  "live:adhoc1:web01:123": [
+   {
+    "at": "2026-10-21T02:40:55.248162+00:00",
+    "disposition": "benign",
+    "severity": 0.0,
+    "cause": "1 new event(s)",
+    "event_time": "2026-10-21T02:40:54.925000+00:00"
+   }
+  ],
+  "live:adhoc1:web01:120": [
+   {
+    "at": "2026-10-21T02:40:55.245828+00:00",
+    "disposition": "benign",
+    "severity": 0.0,
+    "cause": "1 new event(s)",
+    "event_time": "2026-10-21T02:40:54.921000+00:00"
+   }
+  ],
+  "live:adhoc1:web01:121": [
+   {
+    "at": "2026-10-21T02:40:55.246697+00:00",
+    "disposition": "benign",
+    "severity": 0.0,
+    "cause": "1 new event(s)",
+    "event_time": "2026-10-21T02:40:54.921000+00:00"
+   }
+  ],
+  "live:adhoc1:web01:119": [
+   {
+    "at": "2026-10-21T02:40:55.245164+00:00",
+    "disposition": "benign",
+    "severity": 0.0,
+    "cause": "1 new event(s)",
+    "event_time": "2026-10-21T02:40:54.913000+00:00"
+   }
+  ],
+  "live:adhoc1:web01:117": [
+   {
+    "at": "2026-10-21T02:40:55.243685+00:00",
+    "disposition": "benign",
+    "severity": 0.0,
+    "cause": "1 new event(s)",
+    "event_time": "2026-10-21T02:40:54.909000+00:00"
+   }
+  ],
+  "live:adhoc1:web01:118": [
+   {
+    "at": "2026-10-21T02:40:55.244489+00:00",
+    "disposition": "benign",
+    "severity": 0.0,
+    "cause": "1 new event(s)",
+    "event_time": "2026-10-21T02:40:54.909000+00:00"
+   }
+  ]
+ }
+}

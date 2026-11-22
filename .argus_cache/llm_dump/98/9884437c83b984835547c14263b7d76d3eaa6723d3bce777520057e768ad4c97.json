@@ -1,0 +1,14 @@
+{
+  "key": "9884437c83b984835547c14263b7d76d3eaa6723d3bce777520057e768ad4c97",
+  "provider": "ollama",
+  "model": "gpt-oss:120b-cloud",
+  "prompt_sha": "9884437c83b98483",
+  "response": "{\n  \"disposition\": \"malicious\",\n  \"mitre_technique\": \"T1105\",\n  \"severity\": 0.9,\n  \"malicious_events\": [\n    \"e1\",\"e2\",\"e3\",\"e4\",\"e5\",\n    \"e6\",\"e7\",\"e8\",\"e9\",\"e10\",\"e11\",\n    \"e12\",\"e13\",\"e14\",\n    \"e15\",\"e16\",\"e17\",\n    \"e18\",\"e19\",\"e20\",\n    \"e21\",\"e22\",\"e23\",\n    \"e24\",\"e25\",\"e26\",\n    \"e27\",\"e28\",\"e29\",\n    \"e30\",\"e31\",\"e32\",\n    \"e33\",\"e34\",\"e35\",\n    \"e36\",\"e37\",\"e38\",\n    \"e39\",\"e40\",\"e41\",\n    \"e42\",\"e43\",\"e44\",\n    \"e45\",\"e46\",\"e47\"\n  ],\n  \"reason\": \"A suspicious binary is fetched via curl, made executable, run, and then a series of shell commands enumerate processes and clear history, matching tool transfer and discovery techniques.\"\n}",
+  "latency_s": 2.8010199069976807,
+  "created_at": 1791424266.240793,
+  "params": {
+    "temperature": 0.0,
+    "seed": 7,
+    "json_mode": true
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "key": "47b2bb395447d510bce2613339540226ba79e64c512d77e6ed2c29efb0ce2b94",
+  "provider": "ollama",
+  "model": "gpt-oss:120b-cloud",
+  "prompt_sha": "47b2bb395447d510",
+  "response": "{\n  \"disposition\": \"malicious\",\n  \"mitre_technique\": \"T1105\",\n  \"severity\": 0.85,\n  \"malicious_events\": [\"e7\", \"e9\", \"e10\", \"e12\"],\n  \"reason\": \"Suspicious file download, creation of a rogue executable, execution with C2 server parameters, and clearing of bash history indicate attacker activity.\"\n}",
+  "latency_s": 1.9573047161102295,
+  "created_at": 1791424190.230336,
+  "params": {
+    "temperature": 0.0,
+    "seed": 8,
+    "json_mode": true
+  }
+}

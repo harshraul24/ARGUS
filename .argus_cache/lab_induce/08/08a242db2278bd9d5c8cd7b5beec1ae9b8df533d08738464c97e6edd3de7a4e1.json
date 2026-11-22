@@ -1,0 +1,14 @@
+{
+  "key": "08a242db2278bd9d5c8cd7b5beec1ae9b8df533d08738464c97e6edd3de7a4e1",
+  "provider": "ollama",
+  "model": "gpt-oss:120b-cloud",
+  "prompt_sha": "08a242db2278bd9d",
+  "response": "{\n  \"rules\": [\n    {\n      \"id\": \"llm.credential-dump-passwd.414cfd5de7\",\n      \"technique\": \"T1003.001\",\n      \"name\": \"Read /etc/passwd and write to a user\u2011writable location\",\n      \"tactic\": \"credential-access\",\n      \"severity\": 0.7,\n      \"evidence\": [\n        \"ev_000606\"\n      ],\n      \"indicators\": [\n        {\n          \"name\": \"passwd-to-tmp\",\n          \"weight\": 1.0,\n          \"required\": true,\n          \"select\": {\n            \"claim_type\": \"process_create\",\n            \"facts.image\": {\n              \"in\": [\n                \"sh\",\n                \"dash\",\n                \"bash\",\n                \"zsh\"\n              ]\n            },\n            \"facts.command\": {\n              \"all_of\": [\n                {\n                  \"contains_any\": [\n                    \"passwd\"\n                  ]\n                },\n                {\n                  \"contains_any\": [\n                    \"/tmp/\"\n                  ]\n                }\n              ]\n            }\n          },\n          \"score\": {\n            \"op\": \"threshold\",\n            \"value\": \"n\",\n            \"at\": 1\n          }\n        }\n      ]\n    }\n  ],\n  \"reasoning\": \"The episode shows a shell process that reads the system password file (/etc/passwd) and redirects the output to a file in /tmp, a user\u2011writable directory. This combination of accessing credential data and writing it to a non\u2011system location is a classic credential\u2011dumping behavior and is uncommon in routine activity, satisfying the QUIET requirement. The rule avoids reliance on behaviour.tactics (not present in the capture) and uses robust selectors (shell image names and command tokens) that remain valid if user\u2011writable binaries are renamed.\"\n}",
+  "latency_s": 15.544641017913818,
+  "created_at": 1791394606.906649,
+  "params": {
+    "temperature": 0.0,
+    "seed": 7,
+    "json_mode": true
+  }
+}

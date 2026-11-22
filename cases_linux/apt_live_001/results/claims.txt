@@ -1,0 +1,82 @@
+====================================================================================================
+ CLAIMS — apt_live_001
+====================================================================================================
+
+  total 70   shown 70
+  by modality : endpoint=21  identity=49
+  by type     :
+      session_opened                      34
+      service_control                     16
+      logon_failure                       12
+      privileged_command                   5
+      logon_success                        3
+
+  sensor health:
+      zeek      observability=0.000
+      winsec    observability=1.000
+
+----------------------------------------------------------------------------------------------------
+  claim_id    modality  claim_type                  ctrl  time                      entity
+----------------------------------------------------------------------------------------------------
+  auth_00001  identity  session_opened              L0    2026-09-08T08:07:22Z      msfadmin
+  auth_00002  identity  session_opened              L0    2026-09-08T08:09:01Z      root
+  auth_00003  identity  session_opened              L0    2026-09-08T08:17:01Z      root
+  auth_00004  identity  session_opened              L0    2026-09-08T08:22:02Z      msfadmin
+  auth_00005  endpoint  privileged_command          L2    2026-09-08T08:22:54Z      msfadmin
+  auth_00006  identity  session_opened              L0    2026-09-08T08:22:54Z      root
+  auth_00007  identity  session_opened              L0    2026-09-08T08:39:44Z      msfadmin
+  auth_00008  endpoint  privileged_command          L2    2026-09-08T08:41:32Z      msfadmin
+  auth_00009  identity  session_opened              L0    2026-09-08T08:41:32Z      root
+  auth_00010  identity  session_opened              L0    2026-09-08T08:54:18Z      msfadmin
+  auth_00011  endpoint  privileged_command          L2    2026-09-08T08:58:32Z      msfadmin
+  auth_00012  identity  session_opened              L0    2026-09-08T08:58:32Z      root
+  auth_00013  identity  session_opened              L0    2026-09-08T09:07:08Z      msfadmin
+  auth_00014  endpoint  privileged_command          L2    2026-09-08T09:08:39Z      msfadmin
+  auth_00015  identity  session_opened              L0    2026-09-08T09:08:39Z      root
+  auth_00016  identity  session_opened              L0    2026-09-08T09:09:01Z      root
+  auth_00017  endpoint  privileged_command          L2    2026-09-08T09:09:26Z      msfadmin
+  auth_00018  identity  session_opened              L0    2026-09-08T09:09:26Z      root
+  auth_00019  identity  session_opened              L0    2026-09-08T09:17:01Z      root
+  auth_00020  identity  session_opened              L0    2026-09-08T09:19:50Z      msfadmin
+  auth_00021  identity  session_opened              L0    2026-09-08T09:39:01Z      root
+  auth_00022  identity  session_opened              L0    2026-09-08T10:02:01Z      root
+  auth_00023  identity  session_opened              L0    2026-09-08T10:09:01Z      root
+  auth_00024  identity  session_opened              L0    2026-09-08T10:17:01Z      root
+  auth_00025  identity  session_opened              L0    2026-09-08T10:39:01Z      root
+  auth_00026  identity  session_opened              L0    2026-09-08T11:09:01Z      root
+  auth_00027  identity  session_opened              L0    2026-09-08T11:17:01Z      root
+  auth_00028  identity  session_opened              L0    2026-09-08T11:39:01Z      root
+  auth_00029  identity  session_opened              L0    2026-09-08T12:09:01Z      root
+  auth_00030  identity  session_opened              L0    2026-09-08T12:17:01Z      root
+  auth_00031  identity  session_opened              L0    2026-09-08T12:39:01Z      root
+  auth_00032  identity  logon_failure               L1    2026-09-08T12:40:47Z      admin
+  auth_00033  identity  logon_failure               L1    2026-09-08T12:40:59Z      root
+  auth_00034  identity  logon_failure               L1    2026-09-08T12:41:11Z      user
+  auth_00035  identity  logon_failure               L1    2026-09-08T12:41:23Z      guest
+  auth_00036  identity  logon_failure               L1    2026-09-08T12:41:35Z      test
+  auth_00037  identity  logon_failure               L1    2026-09-08T12:41:46Z      john
+  auth_00038  identity  logon_failure               L1    2026-09-08T12:41:58Z      alice
+  auth_00039  identity  logon_failure               L1    2026-09-08T12:42:10Z      bob
+  auth_00040  identity  logon_failure               L1    2026-09-08T12:42:22Z      manager
+  auth_00041  identity  logon_failure               L1    2026-09-08T12:42:34Z      support
+  auth_00042  identity  logon_success               L0    2026-09-08T12:42:44Z      msfadmin
+  auth_00043  identity  session_opened              L0    2026-09-08T12:42:44Z      msfadmin
+  auth_00044  identity  logon_failure               L1    2026-09-08T12:42:58Z      postgre
+  auth_00045  identity  logon_failure               L1    2026-09-08T12:43:10Z      admin
+  auth_00046  identity  logon_success               L0    2026-09-08T12:43:20Z      postgres
+  auth_00047  identity  session_opened              L0    2026-09-08T12:43:20Z      postgres
+  auth_00048  identity  session_opened              L0    2026-09-08T13:09:01Z      root
+  auth_00049  identity  session_opened              L0    2026-09-08T13:17:01Z      root
+  auth_00050  identity  session_opened              L0    2026-09-08T13:39:01Z      root
+  auth_00051  identity  session_opened              L0    2026-09-08T14:09:01Z      root
+  auth_00052  identity  session_opened              L0    2026-09-08T14:17:01Z      root
+  auth_00053  identity  logon_success               L0    2026-09-08T14:18:36Z      msfadmin
+  auth_00054  identity  session_opened              L0    2026-09-08T14:18:36Z      msfadmin
+  sys_00001   endpoint  service_control             L1    2026-09-08T08:05:43Z      metasploitable
+  sys_00002   endpoint  service_control             L1    2026-09-08T08:05:48Z      metasploitable
+  sys_00003   endpoint  service_control             L1    2026-09-08T08:07:03Z      metasploitable
+  sys_00004   endpoint  service_control             L1    2026-09-08T08:07:09Z      metasploitable
+  sys_00005   endpoint  service_control             L1    2026-09-08T08:21:01Z      metasploitable
+  sys_00006   endpoint  service_control             L1    2026-09-08T08:21:07Z      metasploitable
+
+  ... 10 more (raise --limit or use --json)

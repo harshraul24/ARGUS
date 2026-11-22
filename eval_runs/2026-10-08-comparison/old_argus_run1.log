@@ -1,0 +1,54 @@
+ARGUS freeze None matches=False · 20 windows
+
+[argus]
+  all: {"attack_windows_flagged": "8/8", "benign_windows_flagged": "10/12", "steps_detected": "30/36", "step_recall_ci95": [0.681, 0.921], "event_precision": 0.0085, "steps_by_rule": {"NOVELTY": 28, "TA0010": 4, "T1041": 4}}
+  gate_pass: {"attack_windows_flagged": "8/8", "benign_windows_flagged": "3/3", "steps_detected": "30/36", "step_recall_ci95": [0.681, 0.921], "event_precision": 0.0254, "steps_by_rule": {"NOVELTY": 28, "TA0010": 4, "T1041": 4}}
+  steps_by_status: {"failed": "8/8", "no_result": "4/4", "success": "18/24"}
+  bootstrap_steps: "2/4"
+  run1_app01_1200          benign  -> suspicious   alerts ['NOVELTY'] sel 89 (mal 0/0)
+  run1_app01_1230          attack  -> suspicious   alerts ['NOVELTY', 'TA0010'] sel 18 (mal 8/10)
+  run1_app01_1300          benign  -> malicious    alerts ['NOVELTY', 'TA0011'] sel 814 (mal 0/0)  [gate fail: package_install]
+  run1_app01_1330          attack  -> malicious    alerts ['NOVELTY', 'T1041', 'TA0011'] sel 444 (mal 10/13)
+  run1_app01_1400          benign  -> suspicious   alerts ['NOVELTY'] sel 14 (mal 0/0)  [gate fail: log_collection]
+  run1_web01_1200          benign  -> suspicious   alerts ['NOVELTY', 'TA0011'] sel 175 (mal 0/0)
+  run1_web01_1230          attack  -> suspicious   alerts ['TA0010'] sel 1 (mal 1/10)
+  run1_web01_1300          benign  -> malicious    alerts ['NOVELTY', 'TA0011'] sel 733 (mal 0/0)  [gate fail: package_install]
+  run1_web01_1330          attack  -> malicious    alerts ['NOVELTY', 'T1041', 'TA0011'] sel 465 (mal 10/14)
+  run1_web01_1400          benign  -> suspicious   alerts ['NOVELTY', 'TA0011'] sel 50 (mal 0/0)  [gate fail: log_collection]
+  run1_ws-dev01_1200       benign  -> suspicious   alerts ['NOVELTY'] sel 161 (mal 0/0)
+  run1_ws-dev01_1230       attack  -> suspicious   alerts ['TA0010'] sel 1 (mal 1/10)
+  run1_ws-dev01_1300       benign  -> malicious    alerts ['NOVELTY', 'TA0011'] sel 768 (mal 0/0)  [gate fail: package_install]
+  run1_ws-dev01_1330       attack  -> malicious    alerts ['NOVELTY', 'T1041', 'TA0011'] sel 469 (mal 10/13)
+  run1_ws-dev01_1400       benign  -> benign       alerts [] sel 0 (mal 0/0)  [gate fail: log_collection]
+  run1_ws-fin01_1200       benign  -> malicious    alerts ['NOVELTY', 'TA0011'] sel 1423 (mal 0/0)  [gate fail: first_boot, package_install]
+  run1_ws-fin01_1230       attack  -> malicious    alerts ['NOVELTY', 'TA0010', 'TA0011'] sel 28 (mal 8/10)
+  run1_ws-fin01_1300       benign  -> malicious    alerts ['NOVELTY', 'TA0011'] sel 762 (mal 0/0)  [gate fail: package_install]
+  run1_ws-fin01_1330       attack  -> malicious    alerts ['NOVELTY', 'T1041', 'TA0011'] sel 428 (mal 10/13)
+  run1_ws-fin01_1400       benign  -> benign       alerts [] sel 0 (mal 0/0)  [gate fail: log_collection]
+
+[argus_s3]
+  all: {"attack_windows_flagged": "8/8", "benign_windows_flagged": "10/12", "steps_detected": "30/36", "step_recall_ci95": [0.681, 0.921], "event_precision": 0.0085, "steps_by_rule": {"NOVELTY": 28, "TA0010": 4, "T1041": 4}}
+  gate_pass: {"attack_windows_flagged": "8/8", "benign_windows_flagged": "3/3", "steps_detected": "30/36", "step_recall_ci95": [0.681, 0.921], "event_precision": 0.0254, "steps_by_rule": {"NOVELTY": 28, "TA0010": 4, "T1041": 4}}
+  steps_by_status: {"failed": "8/8", "no_result": "4/4", "success": "18/24"}
+  bootstrap_steps: "2/4"
+  run1_app01_1200          benign  -> suspicious   alerts ['NOVELTY'] sel 89 (mal 0/0)
+  run1_app01_1230          attack  -> suspicious   alerts ['NOVELTY', 'TA0010'] sel 18 (mal 8/10)
+  run1_app01_1300          benign  -> malicious    alerts ['NOVELTY', 'TA0011'] sel 814 (mal 0/0)  [gate fail: package_install]
+  run1_app01_1330          attack  -> malicious    alerts ['NOVELTY', 'T1041', 'TA0011'] sel 444 (mal 10/13)
+  run1_app01_1400          benign  -> suspicious   alerts ['NOVELTY'] sel 14 (mal 0/0)  [gate fail: log_collection]
+  run1_web01_1200          benign  -> suspicious   alerts ['NOVELTY', 'TA0011'] sel 175 (mal 0/0)
+  run1_web01_1230          attack  -> suspicious   alerts ['TA0010'] sel 1 (mal 1/10)
+  run1_web01_1300          benign  -> malicious    alerts ['NOVELTY', 'TA0011'] sel 733 (mal 0/0)  [gate fail: package_install]
+  run1_web01_1330          attack  -> malicious    alerts ['NOVELTY', 'T1041', 'TA0011'] sel 465 (mal 10/14)
+  run1_web01_1400          benign  -> suspicious   alerts ['NOVELTY', 'TA0011'] sel 50 (mal 0/0)  [gate fail: log_collection]
+  run1_ws-dev01_1200       benign  -> suspicious   alerts ['NOVELTY'] sel 161 (mal 0/0)
+  run1_ws-dev01_1230       attack  -> suspicious   alerts ['TA0010'] sel 1 (mal 1/10)
+  run1_ws-dev01_1300       benign  -> malicious    alerts ['NOVELTY', 'TA0011'] sel 768 (mal 0/0)  [gate fail: package_install]
+  run1_ws-dev01_1330       attack  -> malicious    alerts ['NOVELTY', 'T1041', 'TA0011'] sel 469 (mal 10/13)
+  run1_ws-dev01_1400       benign  -> benign       alerts [] sel 0 (mal 0/0)  [gate fail: log_collection]
+  run1_ws-fin01_1200       benign  -> malicious    alerts ['NOVELTY', 'TA0011'] sel 1423 (mal 0/0)  [gate fail: first_boot, package_install]
+  run1_ws-fin01_1230       attack  -> malicious    alerts ['NOVELTY', 'TA0010', 'TA0011'] sel 28 (mal 8/10)
+  run1_ws-fin01_1300       benign  -> malicious    alerts ['NOVELTY', 'TA0011'] sel 762 (mal 0/0)  [gate fail: package_install]
+  run1_ws-fin01_1330       attack  -> malicious    alerts ['NOVELTY', 'T1041', 'TA0011'] sel 428 (mal 10/13)
+  run1_ws-fin01_1400       benign  -> benign       alerts [] sel 0 (mal 0/0)  [gate fail: log_collection]
+wrote /private/tmp/claude-501/-Users-harshraul-Educational-ARGUS-odin/6a46bd39-d946-4646-8eb5-a5eca60e6915/scratchpad/old/results_run1/summary.json

@@ -1,0 +1,6 @@
+The activity was assessed as malicious, specifically exploitation of a remote service (T1210) with a confidence of 0.64.
+Support comes from a post‑exploitation session or privileged commands, comprising 42 claim(s) with a strength of 1.00 (premise trust x0.85, L2).
+Premise trust is reduced because the premise “post‑exploitation session or privileged commands” is adversary‑authored (L2), resulting in trust discounted and the conclusion not attacked.
+Additionally, brute force (T1110) is present with a confidence of 0.44.
+
+[1 sentence(s) dropped: not traceable to the decision]

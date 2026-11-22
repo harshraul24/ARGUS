@@ -1,0 +1,14 @@
+{
+  "key": "d2893c718531948036c05ac4c3ce1500bf4a47bd7d94e0edf32da750884a2adf",
+  "provider": "ollama",
+  "model": "gpt-oss:120b-cloud",
+  "prompt_sha": "d2893c7185319480",
+  "response": "{\n  \"rules\": [\n    {\n      \"id\": \"credential-dump-etc-passwd\",\n      \"technique\": \"T1003.008\",\n      \"name\": \"Read /etc/master.passwd via sudo\",\n      \"tactic\": \"credential-access\",\n      \"severity\": 0.9,\n      \"evidence\": [\"ev_000605\", \"ev_000606\"],\n      \"indicators\": [\n        {\n          \"name\": \"etc-passwd-read\",\n          \"weight\": 1.0,\n          \"required\": true,\n          \"select\": {\n            \"claim_type\": \"file_read\",\n            \"facts.file_path\": { \"contains_any\": [\"/etc/master.passwd\"] },\n            \"facts.image\": [\"cat\"],\n            \"behaviour.tactics\": { \"in\": [\"credential-access\"] }\n          },\n          \"aggregate\": [\n            { \"as\": \"n\", \"op\": \"count\" }\n          ],\n          \"score\": { \"op\": \"threshold\", \"value\": \"n\", \"at\": 1 }\n        }\n      ]\n    }\n  ],\n  \"reasoning\": \"The episode shows a process using sudo to read the system password file (/etc/master.passwd) and write it to a temporary location. Accessing the password file is a classic credential\u2011dumping behavior (T1003.008) and is rare in normal host activity, satisfying the QUIET requirement. The rule matches the file_read claim for /etc/master.passwd by the \\\"cat\\\" utility, tags it with the credential\u2011access tactic, and fires on the provided evidence claims.\"\n}",
+  "latency_s": 23.420947074890137,
+  "created_at": 1791394561.860221,
+  "params": {
+    "temperature": 0.0,
+    "seed": 7,
+    "json_mode": true
+  }
+}

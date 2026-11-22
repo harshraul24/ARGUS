@@ -1,0 +1,14 @@
+{
+  "key": "52a2c62f497bd5254057170935df309bd844442ab17bfa21ebbd5e05d3ec8b81",
+  "provider": "ollama",
+  "model": "gpt-oss:120b-cloud",
+  "prompt_sha": "52a2c62f497bd525",
+  "response": "{\n  \"rules\": [\n    {\n      \"id\": \"credential-dump-etc-passwd\",\n      \"technique\": \"T1003.008\",\n      \"name\": \"Read /etc/master.passwd via sudo\",\n      \"tactic\": \"credential-access\",\n      \"severity\": 0.9,\n      \"evidence\": [\"ev_000581\"],\n      \"indicators\": [\n        {\n          \"name\": \"read-etc-passwd\",\n          \"weight\": 1.0,\n          \"required\": true,\n          \"select\": {\n            \"any_of\": [\n              {\n                \"claim_type\": \"process_create\",\n                \"facts.image\": [\"sudo\"],\n                \"facts.command\": { \"contains_any\": [\"cat\"] }\n              },\n              {\n                \"claim_type\": \"file_read\",\n                \"facts.file_path\": { \"contains_any\": [\"/etc/master.passwd\"] }\n              }\n            ]\n          },\n          \"score\": { \"op\": \"threshold\", \"value\": \"n\", \"at\": 1 }\n        }\n      ]\n    }\n  ],\n  \"reasoning\": \"The episode shows a sudo\u2011invoked cat reading the system password file (/etc/master.passwd) and writing it to a temporary location. Accessing the password database with elevated privileges is a classic credential\u2011dumping behavior (ATT&CK T1003.008). The rule looks for either a sudo process executing a cat command or a direct file read of the password file, ensuring it fires on this event while remaining specific enough to avoid routine activity.\"\n}",
+  "latency_s": 14.461508989334106,
+  "created_at": 1791394687.4177039,
+  "params": {
+    "temperature": 0.0,
+    "seed": 7,
+    "json_mode": true
+  }
+}

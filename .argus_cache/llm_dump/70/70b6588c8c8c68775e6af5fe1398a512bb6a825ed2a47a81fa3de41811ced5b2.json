@@ -1,0 +1,14 @@
+{
+  "key": "70b6588c8c8c68775e6af5fe1398a512bb6a825ed2a47a81fa3de41811ced5b2",
+  "provider": "ollama",
+  "model": "gpt-oss:120b-cloud",
+  "prompt_sha": "70b6588c8c8c6877",
+  "response": "{\n  \"disposition\": \"benign\",\n  \"mitre_technique\": \"none\",\n  \"severity\": 0.0,\n  \"malicious_events\": [],\n  \"reason\": \"All observed activity consists of normal system package management, configuration, and routine network connections (e.g., NTP, apt repository). No evidence of malicious behavior or unauthorized access.\"\n}",
+  "latency_s": 4.500485181808472,
+  "created_at": 1791424152.0524979,
+  "params": {
+    "temperature": 0.0,
+    "seed": 7,
+    "json_mode": true
+  }
+}

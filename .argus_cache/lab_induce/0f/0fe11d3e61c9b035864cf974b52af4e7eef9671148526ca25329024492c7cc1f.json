@@ -1,0 +1,14 @@
+{
+  "key": "0fe11d3e61c9b035864cf974b52af4e7eef9671148526ca25329024492c7cc1f",
+  "provider": "ollama",
+  "model": "gpt-oss:120b-cloud",
+  "prompt_sha": "0fe11d3e61c9b035",
+  "response": "{\n  \"rules\": [\n    {\n      \"id\": \"llm.credential-dump-passwd.e29b984306\",\n      \"technique\": \"T1003.001\",\n      \"name\": \"Read /etc/passwd and write to temporary location\",\n      \"tactic\": \"credential-access\",\n      \"severity\": 0.8,\n      \"evidence\": [\n        \"ev_000574\",\n        \"ev_000575\",\n        \"ev_000576\"\n      ],\n      \"indicators\": [\n        {\n          \"name\": \"suspicious_passwd_dump\",\n          \"weight\": 1.0,\n          \"required\": true,\n          \"select\": {\n            \"claim_type\": \"process_create\",\n            \"any_of\": [\n              { \"facts.image\": \"cat\" },\n              { \"facts.image\": \"sh\" }\n            ],\n            \"facts.command\": {\n              \"all_of\": [\n                { \"contains_any\": [ \"passwd\" ] },\n                { \"contains_any\": [ \"/tmp\" ] }\n              ]\n            }\n          },\n          \"aggregate\": [\n            {\n              \"as\": \"n\",\n              \"op\": \"count\"\n            }\n          ],\n          \"score\": {\n            \"op\": \"threshold\",\n            \"value\": \"n\",\n            \"at\": 1\n          }\n        }\n      ]\n    }\n  ],\n  \"reasoning\": \"The rule captures the suspicious behaviour of reading the system password file and redirecting its contents to a temporary location, a common technique for credential harvesting. It matches processes that invoke either 'cat' or 'sh' and whose command line contains both the token 'passwd' and a temporary path token '/tmp', ensuring the rule fires on the observed episode while remaining robust to renaming of user\u2011writable binaries and quiet enough to avoid routine activity.\"\n}",
+  "latency_s": 13.042786121368408,
+  "created_at": 1791394694.916519,
+  "params": {
+    "temperature": 0.0,
+    "seed": 7,
+    "json_mode": true
+  }
+}

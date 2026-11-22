@@ -1,0 +1,3016 @@
+{
+ "generated": "2026-10-08T11:48:17",
+ "model": "gpt-oss:120b-cloud",
+ "provider": "ollama",
+ "freeze": {
+  "manifest": "ARGUS_FREEZE_2026-10-08-import.json",
+  "matches": true,
+  "aggregate_sha256": "36059e0c6b67eb1ade5132addbc593c9a6998bd1b0696a7f6320707c5f5f1862",
+  "changed": []
+ },
+ "method": "one call per window: events + process/parent, redacted, unfiltered",
+ "operations": {
+  "run1": {
+   "repeats": [
+    {
+     "seed": 7,
+     "metrics": {
+      "all": {
+       "attack_windows_flagged": "8/8",
+       "benign_windows_flagged": "10/12",
+       "steps_detected": "32/36",
+       "step_recall_ci95": [
+        0.747,
+        0.956
+       ],
+       "event_precision": 0.219,
+       "events_cited": 347,
+       "fabricated_ids": 0,
+       "unparseable": 0
+      },
+      "gate_pass": {
+       "attack_windows_flagged": "8/8",
+       "benign_windows_flagged": "2/3",
+       "steps_detected": "32/36",
+       "step_recall_ci95": [
+        0.747,
+        0.956
+       ],
+       "event_precision": 0.3636,
+       "events_cited": 209,
+       "fabricated_ids": 0,
+       "unparseable": 0
+      },
+      "cost": {
+       "calls": 20,
+       "live_calls": 20,
+       "cached": 0,
+       "prompt_chars": 1119420,
+       "seconds": 69.2,
+       "truncated": []
+      }
+     },
+     "windows": [
+      {
+       "window": "run1_app01_1200",
+       "category": "benign",
+       "gate": "pass",
+       "disposition": "malicious",
+       "flagged": true,
+       "technique": "T1003",
+       "severity": 0.8,
+       "selected": 4,
+       "malicious_selected": 0,
+       "malicious": 0,
+       "fabricated": 0,
+       "reason": "The svc account used sudo to read /etc/shadow (credential dumping) and the sudo process made outbound connections, indicating possible credential exfiltration.",
+       "events": 96,
+       "prompt_chars": 20012,
+       "truncated": false
+      },
+      {
+       "window": "run1_app01_1230",
+       "category": "attack",
+       "gate": "pass",
+       "disposition": "malicious",
+       "flagged": true,
+       "technique": "T1105",
+       "severity": 0.9,
+       "selected": 15,
+       "malicious_selected": 10,
+       "malicious": 10,
+       "fabricated": 0,
+       "reason": "Suspicious sudo activity, log copying, history clearing, unauthorized curl download, execution of a custom binary (splunkd) and attempts to contact external IP indicate attacker behavior.",
+       "events": 31,
+       "prompt_chars": 4644,
+       "truncated": false
+      },
+      {
+       "window": "run1_app01_1300",
+       "category": "benign",
+       "gate": "fail: package_install",
+       "disposition": "malicious",
+       "flagged": true,
+       "technique": "T1003.007",
+       "severity": 0.9,
+       "selected": 26,
+       "malicious_selected": 0,
+       "malicious": 0,
+       "fabricated": 0,
+       "reason": "Suspicious sudo usage to read /etc/shadow and install sshpass followed by repeated SSH attempts to internal hosts indicate credential dumping and lateral movement.",
+       "events": 1072,
+       "prompt_chars": 127197,
+       "truncated": false
+      },
+      {
+       "window": "run1_app01_1330",
+       "category": "attack",
+       "gate": "pass",
+       "disposition": "malicious",
+       "flagged": true,
+       "technique": "T1003",
+       "severity": 0.9,
+       "selected": 13,
+       "malicious_selected": 13,
+       "malicious": 13,
+       "fabricated": 0,
+       "reason": "The host executed credential\u2011dumping commands (cat /etc/passwd, cat /etc/master.passwd) and used sudo to read password files, which are clear indicators of attacker activity.",
+       "events": 609,
+       "prompt_chars": 61250,
+       "truncated": false
+      },
+      {
+       "window": "run1_app01_1400",
+       "category": "benign",
+       "gate": "fail: log_collection",
+       "disposition": "malicious",
+       "flagged": true,
+       "technique": "T1003",
+       "severity": 0.8,
+       "selected": 10,
+       "malicious_selected": 0,
+       "malicious": 0,
+       "fabricated": 0,
+       "reason": "User svc used sudo to copy authentication logs and read /etc/shadow, then opened outbound connections to an internal host, indicating credential dumping and data exfiltration.",
+       "events": 30,
+       "prompt_chars": 4451,
+       "truncated": false
+      },
+      {
+       "window": "run1_web01_1200",
+       "category": "benign",
+       "gate": "pass",
+       "disposition": "malicious",
+       "flagged": true,
+       "technique": "T1548.003",
+       "severity": 0.8,
+       "selected": 10,
+       "malicious_selected": 0,
+       "malicious": 0,
+       "fabricated": 0,
+       "reason": "User www repeatedly uses sudo to read /etc/shadow and manipulate auditd, indicating privilege escalation and credential dumping.",
+       "events": 191,
+       "prompt_chars": 38847,
+       "truncated": false
+      },
+      {
+       "window": "run1_web01_1230",
+       "category": "attack",
+       "gate": "pass",
+       "disposition": "malicious",
+       "flagged": true,
+       "technique": "T1105",
+       "severity": 0.9,
+       "selected": 10,
+       "malicious_selected": 10,
+       "malicious": 10,
+       "fabricated": 0,
+       "reason": "Suspicious file download, creation and execution of an unknown binary, clearing of bash history, and enumeration commands indicate attacker activity.",
+       "events": 16,
+       "prompt_chars": 2543,
+       "truncated": false
+      },
+      {
+       "window": "run1_web01_1300",
+       "category": "benign",
+       "gate": "fail: package_install",
+       "disposition": "malicious",
+       "flagged": true,
+       "technique": "T1548.001, T1003.006, T1110.001",
+       "severity": 0.9,
+       "selected": 27,
+       "malicious_selected": 0,
+       "malicious": 0,
+       "fabricated": 0,
+       "reason": "The www user repeatedly used sudo to install packages, enable services, and read /etc/shadow, indicating abuse of elevation (T1548.001) and credential dumping (T1003.006); installation of sshpass and numerous failed SSH connections suggest password\u2011guessing attempts (T1110.001).",
+       "events": 948,
+       "prompt_chars": 113890,
+       "truncated": false
+      },
+      {
+       "window": "run1_web01_1330",
+       "category": "attack",
+       "gate": "pass",
+       "disposition": "malicious",
+       "flagged": true,
+       "technique": "T1003",
+       "severity": 0.9,
+       "selected": 21,
+       "malicious_selected": 6,
+       "malicious": 14,
+       "fabricated": 0,
+       "reason": "Repeated unauthorized SSH connections to internal hosts and credential dumping (cat /etc/passwd and /etc/master.passwd) indicate attacker activity.",
+       "events": 616,
+       "prompt_chars": 61662,
+       "truncated": false
+      },
+      {
+       "window": "run1_web01_1400",
+       "category": "benign",
+       "gate": "fail: log_collection",
+       "disposition": "malicious",
+       "flagged": true,
+       "technique": "T1003",
+       "severity": 0.85,
+       "selected": 26,
+       "malicious_selected": 0,
+       "malicious": 0,
+       "fabricated": 0,
+       "reason": "Repeated reads of /etc/shadow by sshd and sudo\u2011driven copying of auth/audit logs followed by outbound connections indicate credential dumping and log exfiltration.",
+       "events": 92,
+       "prompt_chars": 12294,
+       "truncated": false
+      },
+      {
+       "window": "run1_ws-dev01_1200",
+       "category": "benign",
+       "gate": "pass",
+       "disposition": "benign",
+       "flagged": false,
+       "technique": "none",
+       "severity": 0.1,
+       "selected": 0,
+       "malicious_selected": 0,
+       "malicious": 0,
+       "fabricated": 0,
+       "reason": "All observed activity (package installs, sudo usage, auditd enablement, systemd generator runs) aligns with normal system administration and boot processes, with no clear malicious behavior.",
+       "events": 174,
+       "prompt_chars": 36933,
+       "truncated": false
+      },
+      {
+       "window": "run1_ws-dev01_1230",
+       "category": "attack",
+       "gate": "pass",
+       "disposition": "malicious",
+       "flagged": true,
+       "technique": "T1105",
+       "severity": 0.9,
+       "selected": 16,
+       "malicious_selected": 9,
+       "malicious": 10,
+       "fabricated": 0,
+       "reason": "Multiple indicators of compromise: unauthorized tool download, execution of a suspicious payload, clearing of bash history, privilege\u2011escalation attempts, and reading of /etc/shadow.",
+       "events": 24,
+       "prompt_chars": 3401,
+       "truncated": false
+      },
+      {
+       "window": "run1_ws-dev01_1300",
+       "category": "benign",
+       "gate": "fail: package_install",
+       "disposition": "malicious",
+       "flagged": true,
+       "technique": "T1021.004",
+       "severity": 0.68,
+       "selected": 26,
+       "malicious_selected": 0,
+       "malicious": 0,
+       "fabricated": 0,
+       "reason": "Installation of sshpass (a credential\u2011stealing tool) and repeated SSH connections to multiple internal hosts, combined with sudo reads of /etc/shadow, indicate credential access and lateral movement.",
+       "events": 1008,
+       "prompt_chars": 120724,
+       "truncated": false
+      },
+      {
+       "window": "run1_ws-dev01_1330",
+       "category": "attack",
+       "gate": "pass",
+       "disposition": "malicious",
+       "flagged": true,
+       "technique": "T1003",
+       "severity": 0.92,
+       "selected": 84,
+       "malicious_selected": 13,
+       "malicious": 13,
+       "fabricated": 0,
+       "reason": "Repeated enumeration of system info, reading SSH private keys, failed SSH connections to multiple hosts, and credential dumping of /etc/passwd and /etc/shadow indicate attacker activity.",
+       "events": 632,
+       "prompt_chars": 63471,
+       "truncated": false
+      },
+      {
+       "window": "run1_ws-dev01_1400",
+       "category": "benign",
+       "gate": "fail: log_collection",
+       "disposition": "malicious",
+       "flagged": true,
+       "technique": "T1041",
+       "severity": 0.85,
+       "selected": 7,
+       "malicious_selected": 0,
+       "malicious": 0,
+       "fabricated": 0,
+       "reason": "Bob uses sudo to copy authentication logs and read /etc/shadow, then attempts a network connection to an internal host, indicating credential harvesting and data exfiltration.",
+       "events": 24,
+       "prompt_chars": 3795,
+       "truncated": false
+      },
+      {
+       "window": "run1_ws-fin01_1200",
+       "category": "benign",
+       "gate": "fail: first_boot, package_install",
+       "disposition": "benign",
+       "flagged": false,
+       "technique": "none",
+       "severity": 0.0,
+       "selected": 0,
+       "malicious_selected": 0,
+       "malicious": 0,
+       "fabricated": 0,
+       "reason": "All observed activity consists of normal system package management, configuration, and routine network connections (e.g., NTP, apt repository). No evidence of malicious behavior or unauthorized access.",
+       "events": 1573,
+       "prompt_chars": 248988,
+       "truncated": false
+      },
+      {
+       "window": "run1_ws-fin01_1230",
+       "category": "attack",
+       "gate": "pass",
+       "disposition": "malicious",
+       "flagged": true,
+       "technique": "T1105",
+       "severity": 0.9,
+       "selected": 20,
+       "malicious_selected": 8,
+       "malicious": 10,
+       "fabricated": 0,
+       "reason": "Observed download and execution of a suspicious payload (sandcat), privilege escalation via sudo, reading /etc/shadow, and clearing command history, indicating active compromise.",
+       "events": 63,
+       "prompt_chars": 8433,
+       "truncated": false
+      },
+      {
+       "window": "run1_ws-fin01_1300",
+       "category": "benign",
+       "gate": "fail: package_install",
+       "disposition": "suspicious",
+       "flagged": true,
+       "technique": "T1003.006",
+       "severity": 0.6,
+       "selected": 11,
+       "malicious_selected": 0,
+       "malicious": 0,
+       "fabricated": 0,
+       "reason": "Repeated sudo reads of /etc/shadow and installation of sshpass indicate credential dumping and preparation for unauthorized SSH access.",
+       "events": 1002,
+       "prompt_chars": 121648,
+       "truncated": false
+      },
+      {
+       "window": "run1_ws-fin01_1330",
+       "category": "attack",
+       "gate": "pass",
+       "disposition": "malicious",
+       "flagged": true,
+       "technique": "T1003",
+       "severity": 0.95,
+       "selected": 16,
+       "malicious_selected": 7,
+       "malicious": 13,
+       "fabricated": 0,
+       "reason": "Repeated SSH connection attempts with credential\u2011dumping commands (cat /etc/passwd, sudo cat /etc/shadow) and sudo usage indicate credential access and remote service abuse.",
+       "events": 588,
+       "prompt_chars": 60788,
+       "truncated": false
+      },
+      {
+       "window": "run1_ws-fin01_1400",
+       "category": "benign",
+       "gate": "fail: log_collection",
+       "disposition": "suspicious",
+       "flagged": true,
+       "technique": "T1041",
+       "severity": 0.6,
+       "selected": 5,
+       "malicious_selected": 0,
+       "malicious": 0,
+       "fabricated": 0,
+       "reason": "User alice copies authentication logs to /tmp and initiates unusual network connections, indicating possible credential harvesting and exfiltration.",
+       "events": 29,
+       "prompt_chars": 4449,
+       "truncated": false
+      }
+     ],
+     "steps": [
+      {
+       "window": "run1_app01_1230",
+       "step": "Agent deployment",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": true
+      },
+      {
+       "window": "run1_app01_1230",
+       "step": "Environment variables discovery on freebsd, macos and linux",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": true
+      },
+      {
+       "window": "run1_app01_1230",
+       "step": "Current User",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": true
+      },
+      {
+       "window": "run1_app01_1230",
+       "step": "Bootstrap T1070.003",
+       "status": "success",
+       "bootstrap": true,
+       "gate": "pass",
+       "detected": true
+      },
+      {
+       "window": "run1_app01_1330",
+       "step": "IP Neighbour Show",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": true
+      },
+      {
+       "window": "run1_app01_1330",
+       "step": "Find System Network Connections",
+       "status": "failed",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": true
+      },
+      {
+       "window": "run1_app01_1330",
+       "step": "Enumerate all accounts (Local)",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": true
+      },
+      {
+       "window": "run1_app01_1330",
+       "step": "Check Chrome",
+       "status": "failed",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": true
+      },
+      {
+       "window": "run1_app01_1330",
+       "step": "Access /etc/master.passwd (Local)",
+       "status": "no_result",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": true
+      },
+      {
+       "window": "run1_web01_1230",
+       "step": "Agent deployment",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": true
+      },
+      {
+       "window": "run1_web01_1230",
+       "step": "Environment variables discovery on freebsd, macos and linux",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": true
+      },
+      {
+       "window": "run1_web01_1230",
+       "step": "Current User",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": true
+      },
+      {
+       "window": "run1_web01_1230",
+       "step": "Bootstrap T1070.003",
+       "status": "success",
+       "bootstrap": true,
+       "gate": "pass",
+       "detected": true
+      },
+      {
+       "window": "run1_web01_1330",
+       "step": "IP Neighbour Show",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": false
+      },
+      {
+       "window": "run1_web01_1330",
+       "step": "Find System Network Connections",
+       "status": "failed",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": false
+      },
+      {
+       "window": "run1_web01_1330",
+       "step": "Enumerate all accounts (Local)",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": true
+      },
+      {
+       "window": "run1_web01_1330",
+       "step": "Check Chrome",
+       "status": "failed",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": false
+      },
+      {
+       "window": "run1_web01_1330",
+       "step": "Access /etc/master.passwd (Local)",
+       "status": "no_result",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": true
+      },
+      {
+       "window": "run1_ws-dev01_1230",
+       "step": "Agent deployment",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": true
+      },
+      {
+       "window": "run1_ws-dev01_1230",
+       "step": "Environment variables discovery on freebsd, macos and linux",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": true
+      },
+      {
+       "window": "run1_ws-dev01_1230",
+       "step": "Current User",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": true
+      },
+      {
+       "window": "run1_ws-dev01_1230",
+       "step": "Bootstrap T1070.003",
+       "status": "success",
+       "bootstrap": true,
+       "gate": "pass",
+       "detected": true
+      },
+      {
+       "window": "run1_ws-dev01_1330",
+       "step": "IP Neighbour Show",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": true
+      },
+      {
+       "window": "run1_ws-dev01_1330",
+       "step": "Find System Network Connections",
+       "status": "failed",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": true
+      },
+      {
+       "window": "run1_ws-dev01_1330",
+       "step": "Enumerate all accounts (Local)",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": true
+      },
+      {
+       "window": "run1_ws-dev01_1330",
+       "step": "Check Chrome",
+       "status": "failed",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": true
+      },
+      {
+       "window": "run1_ws-dev01_1330",
+       "step": "Access /etc/master.passwd (Local)",
+       "status": "no_result",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": true
+      },
+      {
+       "window": "run1_ws-fin01_1230",
+       "step": "Agent deployment",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": true
+      },
+      {
+       "window": "run1_ws-fin01_1230",
+       "step": "Environment variables discovery on freebsd, macos and linux",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": true
+      },
+      {
+       "window": "run1_ws-fin01_1230",
+       "step": "Current User",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": true
+      },
+      {
+       "window": "run1_ws-fin01_1230",
+       "step": "Bootstrap T1070.003",
+       "status": "success",
+       "bootstrap": true,
+       "gate": "pass",
+       "detected": true
+      },
+      {
+       "window": "run1_ws-fin01_1330",
+       "step": "IP Neighbour Show",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": true
+      },
+      {
+       "window": "run1_ws-fin01_1330",
+       "step": "Find System Network Connections",
+       "status": "failed",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": true
+      },
+      {
+       "window": "run1_ws-fin01_1330",
+       "step": "Enumerate all accounts (Local)",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": true
+      },
+      {
+       "window": "run1_ws-fin01_1330",
+       "step": "Check Chrome",
+       "status": "failed",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": false
+      },
+      {
+       "window": "run1_ws-fin01_1330",
+       "step": "Access /etc/master.passwd (Local)",
+       "status": "no_result",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": true
+      }
+     ]
+    },
+    {
+     "seed": 8,
+     "metrics": {
+      "all": {
+       "attack_windows_flagged": "8/8",
+       "benign_windows_flagged": "10/12",
+       "steps_detected": "30/36",
+       "step_recall_ci95": [
+        0.681,
+        0.921
+       ],
+       "event_precision": 0.0707,
+       "events_cited": 1004,
+       "fabricated_ids": 1,
+       "unparseable": 0
+      },
+      "gate_pass": {
+       "attack_windows_flagged": "8/8",
+       "benign_windows_flagged": "2/3",
+       "steps_detected": "30/36",
+       "step_recall_ci95": [
+        0.681,
+        0.921
+       ],
+       "event_precision": 0.317,
+       "events_cited": 224,
+       "fabricated_ids": 0,
+       "unparseable": 0
+      },
+      "cost": {
+       "calls": 20,
+       "live_calls": 20,
+       "cached": 0,
+       "prompt_chars": 1119420,
+       "seconds": 72.4,
+       "truncated": []
+      }
+     },
+     "windows": [
+      {
+       "window": "run1_app01_1200",
+       "category": "benign",
+       "gate": "pass",
+       "disposition": "benign",
+       "flagged": false,
+       "technique": "none",
+       "severity": 0.0,
+       "selected": 0,
+       "malicious_selected": 0,
+       "malicious": 0,
+       "fabricated": 0,
+       "reason": "All observed activity matches normal system boot, package installation, audit configuration, and routine network/interface checks with no clear malicious behavior.",
+       "events": 96,
+       "prompt_chars": 20012,
+       "truncated": false
+      },
+      {
+       "window": "run1_app01_1230",
+       "category": "attack",
+       "gate": "pass",
+       "disposition": "malicious",
+       "flagged": true,
+       "technique": "T1105",
+       "severity": 0.9,
+       "selected": 15,
+       "malicious_selected": 10,
+       "malicious": 10,
+       "fabricated": 0,
+       "reason": "Multiple suspicious actions: privileged log copying, credential file reads, outbound connections to external IP, downloading and executing a suspicious binary, clearing bash history, and running discovery commands indicate attacker activity.",
+       "events": 31,
+       "prompt_chars": 4644,
+       "truncated": false
+      },
+      {
+       "window": "run1_app01_1300",
+       "category": "benign",
+       "gate": "fail: package_install",
+       "disposition": "malicious",
+       "flagged": true,
+       "technique": "T1003",
+       "severity": 0.8,
+       "selected": 658,
+       "malicious_selected": 0,
+       "malicious": 0,
+       "fabricated": 1,
+       "reason": "Multiple reads of /etc/shadow (credential dumping) and installation of sshpass followed by repeated SSH attempts to other hosts indicate attacker activity.",
+       "events": 1072,
+       "prompt_chars": 127197,
+       "truncated": false
+      },
+      {
+       "window": "run1_app01_1330",
+       "category": "attack",
+       "gate": "pass",
+       "disposition": "malicious",
+       "flagged": true,
+       "technique": "T1003",
+       "severity": 0.9,
+       "selected": 13,
+       "malicious_selected": 13,
+       "malicious": 13,
+       "fabricated": 0,
+       "reason": "Credential dumping observed (cat /etc/passwd and /etc/master.passwd) and suspicious privileged commands indicate attacker activity.",
+       "events": 609,
+       "prompt_chars": 61250,
+       "truncated": false
+      },
+      {
+       "window": "run1_app01_1400",
+       "category": "benign",
+       "gate": "fail: log_collection",
+       "disposition": "malicious",
+       "flagged": true,
+       "technique": "T1003",
+       "severity": 0.8,
+       "selected": 10,
+       "malicious_selected": 0,
+       "malicious": 0,
+       "fabricated": 0,
+       "reason": "Privileged user 'svc' used sudo to read /etc/shadow and copy authentication logs to /tmp, then opened outbound connections to an external host, indicating credential dumping and data exfiltration.",
+       "events": 30,
+       "prompt_chars": 4451,
+       "truncated": false
+      },
+      {
+       "window": "run1_web01_1200",
+       "category": "benign",
+       "gate": "pass",
+       "disposition": "malicious",
+       "flagged": true,
+       "technique": "T1548.003",
+       "severity": 0.85,
+       "selected": 27,
+       "malicious_selected": 0,
+       "malicious": 0,
+       "fabricated": 0,
+       "reason": "User 'www' repeatedly invoked sudo to run privileged commands and read /etc/shadow, indicating unauthorized privilege escalation and credential access.",
+       "events": 191,
+       "prompt_chars": 38847,
+       "truncated": false
+      },
+      {
+       "window": "run1_web01_1230",
+       "category": "attack",
+       "gate": "pass",
+       "disposition": "malicious",
+       "flagged": true,
+       "technique": "T1105",
+       "severity": 0.85,
+       "selected": 4,
+       "malicious_selected": 4,
+       "malicious": 10,
+       "fabricated": 0,
+       "reason": "Suspicious file download, creation of a rogue executable, execution with C2 server parameters, and clearing of bash history indicate attacker activity.",
+       "events": 16,
+       "prompt_chars": 2543,
+       "truncated": false
+      },
+      {
+       "window": "run1_web01_1300",
+       "category": "benign",
+       "gate": "fail: package_install",
+       "disposition": "malicious",
+       "flagged": true,
+       "technique": "T1548.003",
+       "severity": 0.85,
+       "selected": 46,
+       "malicious_selected": 0,
+       "malicious": 0,
+       "fabricated": 0,
+       "reason": "The host shows repeated use of sudo by the www user to install packages (rsyslog, sshpass) and read /etc/shadow, indicating credential dumping and abuse of sudo for privilege escalation, which matches MITRE T1548.003.",
+       "events": 948,
+       "prompt_chars": 113890,
+       "truncated": false
+      },
+      {
+       "window": "run1_web01_1330",
+       "category": "attack",
+       "gate": "pass",
+       "disposition": "malicious",
+       "flagged": true,
+       "technique": "T1003",
+       "severity": 0.9,
+       "selected": 11,
+       "malicious_selected": 11,
+       "malicious": 14,
+       "fabricated": 0,
+       "reason": "The host runs credential dumping commands (cat /etc/passwd, cat /etc/master.passwd) and uses sudo, indicating unauthorized credential access and discovery activity.",
+       "events": 616,
+       "prompt_chars": 61662,
+       "truncated": false
+      },
+      {
+       "window": "run1_web01_1400",
+       "category": "benign",
+       "gate": "fail: log_collection",
+       "disposition": "malicious",
+       "flagged": true,
+       "technique": "T1041",
+       "severity": 0.8,
+       "selected": 13,
+       "malicious_selected": 0,
+       "malicious": 0,
+       "fabricated": 0,
+       "reason": "Log files are copied to /tmp and exfiltrated via outbound connections, indicating credential/trace harvesting and data exfiltration.",
+       "events": 92,
+       "prompt_chars": 12294,
+       "truncated": false
+      },
+      {
+       "window": "run1_ws-dev01_1200",
+       "category": "benign",
+       "gate": "pass",
+       "disposition": "malicious",
+       "flagged": true,
+       "technique": "T1003",
+       "severity": 0.8,
+       "selected": 10,
+       "malicious_selected": 0,
+       "malicious": 0,
+       "fabricated": 0,
+       "reason": "User bob repeatedly used sudo to read /etc/shadow (credential dumping) and made outbound connections to an internal IP, indicating malicious activity.",
+       "events": 174,
+       "prompt_chars": 36933,
+       "truncated": false
+      },
+      {
+       "window": "run1_ws-dev01_1230",
+       "category": "attack",
+       "gate": "pass",
+       "disposition": "malicious",
+       "flagged": true,
+       "technique": "T1105",
+       "severity": 0.9,
+       "selected": 15,
+       "malicious_selected": 8,
+       "malicious": 10,
+       "fabricated": 0,
+       "reason": "Downloader fetched a payload, executed a suspicious binary, cleared bash history, enumerated the system, used sudo to read auth logs and /etc/shadow, indicating credential dumping and post\u2011exploitation activity.",
+       "events": 24,
+       "prompt_chars": 3401,
+       "truncated": false
+      },
+      {
+       "window": "run1_ws-dev01_1300",
+       "category": "benign",
+       "gate": "fail: package_install",
+       "disposition": "malicious",
+       "flagged": true,
+       "technique": "T1003.006",
+       "severity": 0.85,
+       "selected": 25,
+       "malicious_selected": 0,
+       "malicious": 0,
+       "fabricated": 0,
+       "reason": "Repeated sudo reads of /etc/shadow and installation of credential\u2011stealing tools (sshpass) indicate credential dumping and preparation for lateral movement.",
+       "events": 1008,
+       "prompt_chars": 120724,
+       "truncated": false
+      },
+      {
+       "window": "run1_ws-dev01_1330",
+       "category": "attack",
+       "gate": "pass",
+       "disposition": "malicious",
+       "flagged": true,
+       "technique": "T1021.004",
+       "severity": 0.9,
+       "selected": 98,
+       "malicious_selected": 11,
+       "malicious": 13,
+       "fabricated": 0,
+       "reason": "Repeated unauthorized SSH connections, reading of SSH private keys, and credential dumping of /etc/passwd and /etc/shadow indicate attacker activity (T1021.004).",
+       "events": 632,
+       "prompt_chars": 63471,
+       "truncated": false
+      },
+      {
+       "window": "run1_ws-dev01_1400",
+       "category": "benign",
+       "gate": "fail: log_collection",
+       "disposition": "malicious",
+       "flagged": true,
+       "technique": "T1003.006",
+       "severity": 0.85,
+       "selected": 7,
+       "malicious_selected": 0,
+       "malicious": 0,
+       "fabricated": 0,
+       "reason": "Bob used sudo to copy authentication logs and read /etc/shadow, then attempted an outbound connection, indicating credential dumping and data exfiltration.",
+       "events": 24,
+       "prompt_chars": 3795,
+       "truncated": false
+      },
+      {
+       "window": "run1_ws-fin01_1200",
+       "category": "benign",
+       "gate": "fail: first_boot, package_install",
+       "disposition": "benign",
+       "flagged": false,
+       "technique": "none",
+       "severity": 0.1,
+       "selected": 0,
+       "malicious_selected": 0,
+       "malicious": 0,
+       "fabricated": 0,
+       "reason": "All observed activity corresponds to normal system package installations, updates, and service management; no anomalous outbound connections or credential dumping beyond expected system processes.",
+       "events": 1573,
+       "prompt_chars": 248988,
+       "truncated": false
+      },
+      {
+       "window": "run1_ws-fin01_1230",
+       "category": "attack",
+       "gate": "pass",
+       "disposition": "malicious",
+       "flagged": true,
+       "technique": "T1105",
+       "severity": 0.9,
+       "selected": 18,
+       "malicious_selected": 8,
+       "malicious": 10,
+       "fabricated": 0,
+       "reason": "Observed tool download, execution of a suspicious binary, history clearing, and repeated reads of /etc/shadow indicating credential theft.",
+       "events": 63,
+       "prompt_chars": 8433,
+       "truncated": false
+      },
+      {
+       "window": "run1_ws-fin01_1300",
+       "category": "benign",
+       "gate": "fail: package_install",
+       "disposition": "malicious",
+       "flagged": true,
+       "technique": "T1003",
+       "severity": 0.9,
+       "selected": 16,
+       "malicious_selected": 0,
+       "malicious": 0,
+       "fabricated": 0,
+       "reason": "Multiple sudo reads of /etc/shadow (credential dumping) and repeated non\u2011interactive SSH connections to internal hosts indicate credential abuse and lateral movement.",
+       "events": 1002,
+       "prompt_chars": 121648,
+       "truncated": false
+      },
+      {
+       "window": "run1_ws-fin01_1330",
+       "category": "attack",
+       "gate": "pass",
+       "disposition": "malicious",
+       "flagged": true,
+       "technique": "T1003",
+       "severity": 0.9,
+       "selected": 13,
+       "malicious_selected": 6,
+       "malicious": 13,
+       "fabricated": 0,
+       "reason": "Credential dumping (/etc/passwd, /etc/master.passwd, /etc/shadow) and repeated unauthorized SSH connection attempts indicate attacker activity.",
+       "events": 588,
+       "prompt_chars": 60788,
+       "truncated": false
+      },
+      {
+       "window": "run1_ws-fin01_1400",
+       "category": "benign",
+       "gate": "fail: log_collection",
+       "disposition": "suspicious",
+       "flagged": true,
+       "technique": "T1041",
+       "severity": 0.6,
+       "selected": 5,
+       "malicious_selected": 0,
+       "malicious": 0,
+       "fabricated": 0,
+       "reason": "User alice copies authentication logs to /tmp and immediately initiates a network connection, indicating possible log exfiltration.",
+       "events": 29,
+       "prompt_chars": 4449,
+       "truncated": false
+      }
+     ],
+     "steps": [
+      {
+       "window": "run1_app01_1230",
+       "step": "Agent deployment",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": true
+      },
+      {
+       "window": "run1_app01_1230",
+       "step": "Environment variables discovery on freebsd, macos and linux",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": true
+      },
+      {
+       "window": "run1_app01_1230",
+       "step": "Current User",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": true
+      },
+      {
+       "window": "run1_app01_1230",
+       "step": "Bootstrap T1070.003",
+       "status": "success",
+       "bootstrap": true,
+       "gate": "pass",
+       "detected": true
+      },
+      {
+       "window": "run1_app01_1330",
+       "step": "IP Neighbour Show",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": true
+      },
+      {
+       "window": "run1_app01_1330",
+       "step": "Find System Network Connections",
+       "status": "failed",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": true
+      },
+      {
+       "window": "run1_app01_1330",
+       "step": "Enumerate all accounts (Local)",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": true
+      },
+      {
+       "window": "run1_app01_1330",
+       "step": "Check Chrome",
+       "status": "failed",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": true
+      },
+      {
+       "window": "run1_app01_1330",
+       "step": "Access /etc/master.passwd (Local)",
+       "status": "no_result",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": true
+      },
+      {
+       "window": "run1_web01_1230",
+       "step": "Agent deployment",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": true
+      },
+      {
+       "window": "run1_web01_1230",
+       "step": "Environment variables discovery on freebsd, macos and linux",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": false
+      },
+      {
+       "window": "run1_web01_1230",
+       "step": "Current User",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": false
+      },
+      {
+       "window": "run1_web01_1230",
+       "step": "Bootstrap T1070.003",
+       "status": "success",
+       "bootstrap": true,
+       "gate": "pass",
+       "detected": true
+      },
+      {
+       "window": "run1_web01_1330",
+       "step": "IP Neighbour Show",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": true
+      },
+      {
+       "window": "run1_web01_1330",
+       "step": "Find System Network Connections",
+       "status": "failed",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": true
+      },
+      {
+       "window": "run1_web01_1330",
+       "step": "Enumerate all accounts (Local)",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": true
+      },
+      {
+       "window": "run1_web01_1330",
+       "step": "Check Chrome",
+       "status": "failed",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": false
+      },
+      {
+       "window": "run1_web01_1330",
+       "step": "Access /etc/master.passwd (Local)",
+       "status": "no_result",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": true
+      },
+      {
+       "window": "run1_ws-dev01_1230",
+       "step": "Agent deployment",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": true
+      },
+      {
+       "window": "run1_ws-dev01_1230",
+       "step": "Environment variables discovery on freebsd, macos and linux",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": true
+      },
+      {
+       "window": "run1_ws-dev01_1230",
+       "step": "Current User",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": true
+      },
+      {
+       "window": "run1_ws-dev01_1230",
+       "step": "Bootstrap T1070.003",
+       "status": "success",
+       "bootstrap": true,
+       "gate": "pass",
+       "detected": true
+      },
+      {
+       "window": "run1_ws-dev01_1330",
+       "step": "IP Neighbour Show",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": true
+      },
+      {
+       "window": "run1_ws-dev01_1330",
+       "step": "Find System Network Connections",
+       "status": "failed",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": true
+      },
+      {
+       "window": "run1_ws-dev01_1330",
+       "step": "Enumerate all accounts (Local)",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": true
+      },
+      {
+       "window": "run1_ws-dev01_1330",
+       "step": "Check Chrome",
+       "status": "failed",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": true
+      },
+      {
+       "window": "run1_ws-dev01_1330",
+       "step": "Access /etc/master.passwd (Local)",
+       "status": "no_result",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": true
+      },
+      {
+       "window": "run1_ws-fin01_1230",
+       "step": "Agent deployment",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": true
+      },
+      {
+       "window": "run1_ws-fin01_1230",
+       "step": "Environment variables discovery on freebsd, macos and linux",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": true
+      },
+      {
+       "window": "run1_ws-fin01_1230",
+       "step": "Current User",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": true
+      },
+      {
+       "window": "run1_ws-fin01_1230",
+       "step": "Bootstrap T1070.003",
+       "status": "success",
+       "bootstrap": true,
+       "gate": "pass",
+       "detected": true
+      },
+      {
+       "window": "run1_ws-fin01_1330",
+       "step": "IP Neighbour Show",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": false
+      },
+      {
+       "window": "run1_ws-fin01_1330",
+       "step": "Find System Network Connections",
+       "status": "failed",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": false
+      },
+      {
+       "window": "run1_ws-fin01_1330",
+       "step": "Enumerate all accounts (Local)",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": true
+      },
+      {
+       "window": "run1_ws-fin01_1330",
+       "step": "Check Chrome",
+       "status": "failed",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": false
+      },
+      {
+       "window": "run1_ws-fin01_1330",
+       "step": "Access /etc/master.passwd (Local)",
+       "status": "no_result",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": true
+      }
+     ]
+    }
+   ],
+   "verdict_stable_windows": "18/20"
+  },
+  "smoke": {
+   "repeats": [
+    {
+     "seed": 7,
+     "metrics": {
+      "all": {
+       "attack_windows_flagged": "8/8",
+       "benign_windows_flagged": "0/6",
+       "steps_detected": "22/68",
+       "step_recall_ci95": [
+        0.224,
+        0.442
+       ],
+       "event_precision": 0.8537,
+       "events_cited": 82,
+       "fabricated_ids": 1,
+       "unparseable": 0
+      },
+      "gate_pass": {
+       "attack_windows_flagged": "8/8",
+       "benign_windows_flagged": "0/5",
+       "steps_detected": "22/68",
+       "step_recall_ci95": [
+        0.224,
+        0.442
+       ],
+       "event_precision": 0.8537,
+       "events_cited": 82,
+       "fabricated_ids": 1,
+       "unparseable": 0
+      },
+      "cost": {
+       "calls": 14,
+       "live_calls": 14,
+       "cached": 0,
+       "prompt_chars": 284003,
+       "seconds": 28.6,
+       "truncated": []
+      }
+     },
+     "windows": [
+      {
+       "window": "smoke_app01_1100",
+       "category": "benign",
+       "gate": "pass",
+       "disposition": "benign",
+       "flagged": false,
+       "technique": "none",
+       "severity": 0.1,
+       "selected": 0,
+       "malicious_selected": 0,
+       "malicious": 0,
+       "fabricated": 0,
+       "reason": "All observed processes are standard package management, system initialization, and routine admin commands with no suspicious binaries, network activity, or privilege abuse.",
+       "events": 94,
+       "prompt_chars": 19717,
+       "truncated": false
+      },
+      {
+       "window": "smoke_app01_1200",
+       "category": "attack",
+       "gate": "pass",
+       "disposition": "malicious",
+       "flagged": true,
+       "technique": "T1105",
+       "severity": 0.9,
+       "selected": 7,
+       "malicious_selected": 7,
+       "malicious": 7,
+       "fabricated": 0,
+       "reason": "The host downloads an unknown executable, makes it executable, runs it with remote server parameters, and clears bash history, indicating tool transfer and execution by an attacker.",
+       "events": 7,
+       "prompt_chars": 1655,
+       "truncated": false
+      },
+      {
+       "window": "smoke_app01_1230",
+       "category": "attack",
+       "gate": "pass",
+       "disposition": "suspicious",
+       "flagged": true,
+       "technique": "T1005",
+       "severity": 0.6,
+       "selected": 2,
+       "malicious_selected": 0,
+       "malicious": 45,
+       "fabricated": 0,
+       "reason": "A service user used sudo to copy the system audit log to /tmp, indicating possible credential or log harvesting activity.",
+       "events": 47,
+       "prompt_chars": 5459,
+       "truncated": false
+      },
+      {
+       "window": "smoke_web01_1100",
+       "category": "benign",
+       "gate": "pass",
+       "disposition": "benign",
+       "flagged": false,
+       "technique": "none",
+       "severity": 0.0,
+       "selected": 0,
+       "malicious_selected": 0,
+       "malicious": 0,
+       "fabricated": 0,
+       "reason": "All observed processes are normal system maintenance (package installation, auditd reload, cloud\u2011init generators) with no evidence of exploitation, data exfiltration, or privilege abuse.",
+       "events": 166,
+       "prompt_chars": 36471,
+       "truncated": false
+      },
+      {
+       "window": "smoke_web01_1200",
+       "category": "attack",
+       "gate": "pass",
+       "disposition": "malicious",
+       "flagged": true,
+       "technique": "T1105",
+       "severity": 0.9,
+       "selected": 11,
+       "malicious_selected": 11,
+       "malicious": 11,
+       "fabricated": 1,
+       "reason": "Repeated curl downloads of a suspicious Go payload, chmod to make it executable, execution of the payload with remote server parameters, and clearing of bash history indicate attacker tool transfer and execution.",
+       "events": 11,
+       "prompt_chars": 2191,
+       "truncated": false
+      },
+      {
+       "window": "smoke_web01_1230",
+       "category": "attack",
+       "gate": "pass",
+       "disposition": "malicious",
+       "flagged": true,
+       "technique": "T1005",
+       "severity": 0.7,
+       "selected": 6,
+       "malicious_selected": 0,
+       "malicious": 45,
+       "fabricated": 0,
+       "reason": "Unauthorized sudo copies of /var/log/audit/audit.log to /tmp indicate data exfiltration from a privileged log file.",
+       "events": 71,
+       "prompt_chars": 8833,
+       "truncated": false
+      },
+      {
+       "window": "smoke_ws-dev01_1100",
+       "category": "benign",
+       "gate": "pass",
+       "disposition": "benign",
+       "flagged": false,
+       "technique": "none",
+       "severity": 0.1,
+       "selected": 0,
+       "malicious_selected": 0,
+       "malicious": 0,
+       "fabricated": 0,
+       "reason": "All observed processes are standard package installation, system initialization, and audit configuration activities with no suspicious commands or network activity.",
+       "events": 87,
+       "prompt_chars": 19037,
+       "truncated": false
+      },
+      {
+       "window": "smoke_ws-dev01_1130",
+       "category": "benign",
+       "gate": "pass",
+       "disposition": "benign",
+       "flagged": false,
+       "technique": "none",
+       "severity": 0.0,
+       "selected": 0,
+       "malicious_selected": 0,
+       "malicious": 0,
+       "fabricated": 0,
+       "reason": "All observed commands are routine system status checks performed by a legitimate user.",
+       "events": 3,
+       "prompt_chars": 1023,
+       "truncated": false
+      },
+      {
+       "window": "smoke_ws-dev01_1200",
+       "category": "attack",
+       "gate": "pass",
+       "disposition": "malicious",
+       "flagged": true,
+       "technique": "T1105",
+       "severity": 0.9,
+       "selected": 5,
+       "malicious_selected": 5,
+       "malicious": 5,
+       "fabricated": 0,
+       "reason": "Attacker downloaded and executed a suspicious binary (splunkd) from an internal server and cleared bash history to hide activity.",
+       "events": 5,
+       "prompt_chars": 1390,
+       "truncated": false
+      },
+      {
+       "window": "smoke_ws-dev01_1230",
+       "category": "attack",
+       "gate": "pass",
+       "disposition": "suspicious",
+       "flagged": true,
+       "technique": "T1074.001",
+       "severity": 0.4,
+       "selected": 2,
+       "malicious_selected": 0,
+       "malicious": 45,
+       "fabricated": 0,
+       "reason": "Bob used sudo to copy the system audit log to /tmp, indicating possible local data staging for exfiltration.",
+       "events": 47,
+       "prompt_chars": 5459,
+       "truncated": false
+      },
+      {
+       "window": "smoke_ws-fin01_1100",
+       "category": "benign",
+       "gate": "fail: first_boot",
+       "disposition": "benign",
+       "flagged": false,
+       "technique": "none",
+       "severity": 0.1,
+       "selected": 0,
+       "malicious_selected": 0,
+       "malicious": 0,
+       "fabricated": 0,
+       "reason": "All observed processes are standard package installation, configuration, and system initialization activities (dpkg, ucf, systemd, cloud-init, etc.) with no anomalous commands, outbound connections, or sensitive file accesses indicative of an attack.",
+       "events": 1111,
+       "prompt_chars": 170812,
+       "truncated": false
+      },
+      {
+       "window": "smoke_ws-fin01_1130",
+       "category": "benign",
+       "gate": "pass",
+       "disposition": "benign",
+       "flagged": false,
+       "technique": "none",
+       "severity": 0.0,
+       "selected": 0,
+       "malicious_selected": 0,
+       "malicious": 0,
+       "fabricated": 0,
+       "reason": "All observed processes are standard system and user activities with no anomalous commands, network connections, or sensitive file accesses.",
+       "events": 30,
+       "prompt_chars": 4990,
+       "truncated": false
+      },
+      {
+       "window": "smoke_ws-fin01_1200",
+       "category": "attack",
+       "gate": "pass",
+       "disposition": "malicious",
+       "flagged": true,
+       "technique": "T1105",
+       "severity": 0.9,
+       "selected": 47,
+       "malicious_selected": 47,
+       "malicious": 47,
+       "fabricated": 0,
+       "reason": "A suspicious binary is fetched via curl, made executable, run, and then a series of shell commands enumerate processes and clear history, matching tool transfer and discovery techniques.",
+       "events": 47,
+       "prompt_chars": 5681,
+       "truncated": false
+      },
+      {
+       "window": "smoke_ws-fin01_1230",
+       "category": "attack",
+       "gate": "pass",
+       "disposition": "malicious",
+       "flagged": true,
+       "technique": "T1005",
+       "severity": 0.7,
+       "selected": 2,
+       "malicious_selected": 0,
+       "malicious": 3,
+       "fabricated": 0,
+       "reason": "User alice used sudo to copy the system audit log to /tmp, indicating unauthorized collection of sensitive log data.",
+       "events": 5,
+       "prompt_chars": 1285,
+       "truncated": false
+      }
+     ],
+     "steps": [
+      {
+       "window": "smoke_app01_1200",
+       "step": "Agent deployment",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": true
+      },
+      {
+       "window": "smoke_app01_1200",
+       "step": "Bootstrap T1070.003",
+       "status": "success",
+       "bootstrap": true,
+       "gate": "pass",
+       "detected": true
+      },
+      {
+       "window": "smoke_app01_1230",
+       "step": "Identify active user",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": false
+      },
+      {
+       "window": "smoke_app01_1230",
+       "step": "Find local users",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": false
+      },
+      {
+       "window": "smoke_app01_1230",
+       "step": "Find user processes",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": false
+      },
+      {
+       "window": "smoke_app01_1230",
+       "step": "Find user processes",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": false
+      },
+      {
+       "window": "smoke_app01_1230",
+       "step": "Find user processes",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": false
+      },
+      {
+       "window": "smoke_app01_1230",
+       "step": "Find user processes",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": false
+      },
+      {
+       "window": "smoke_app01_1230",
+       "step": "Find user processes",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": false
+      },
+      {
+       "window": "smoke_app01_1230",
+       "step": "Find user processes",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": false
+      },
+      {
+       "window": "smoke_app01_1230",
+       "step": "Find user processes",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": false
+      },
+      {
+       "window": "smoke_app01_1230",
+       "step": "Find user processes",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": false
+      },
+      {
+       "window": "smoke_app01_1230",
+       "step": "Find user processes",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": false
+      },
+      {
+       "window": "smoke_app01_1230",
+       "step": "Find user processes",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": false
+      },
+      {
+       "window": "smoke_app01_1230",
+       "step": "Find user processes",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": false
+      },
+      {
+       "window": "smoke_app01_1230",
+       "step": "Find user processes",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": false
+      },
+      {
+       "window": "smoke_app01_1230",
+       "step": "Find user processes",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": false
+      },
+      {
+       "window": "smoke_web01_1200",
+       "step": "Agent deployment",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": true
+      },
+      {
+       "window": "smoke_web01_1200",
+       "step": "Bootstrap T1070.003",
+       "status": "success",
+       "bootstrap": true,
+       "gate": "pass",
+       "detected": true
+      },
+      {
+       "window": "smoke_web01_1230",
+       "step": "Identify active user",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": false
+      },
+      {
+       "window": "smoke_web01_1230",
+       "step": "Find local users",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": false
+      },
+      {
+       "window": "smoke_web01_1230",
+       "step": "Find user processes",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": false
+      },
+      {
+       "window": "smoke_web01_1230",
+       "step": "Find user processes",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": false
+      },
+      {
+       "window": "smoke_web01_1230",
+       "step": "Find user processes",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": false
+      },
+      {
+       "window": "smoke_web01_1230",
+       "step": "Find user processes",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": false
+      },
+      {
+       "window": "smoke_web01_1230",
+       "step": "Find user processes",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": false
+      },
+      {
+       "window": "smoke_web01_1230",
+       "step": "Find user processes",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": false
+      },
+      {
+       "window": "smoke_web01_1230",
+       "step": "Find user processes",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": false
+      },
+      {
+       "window": "smoke_web01_1230",
+       "step": "Find user processes",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": false
+      },
+      {
+       "window": "smoke_web01_1230",
+       "step": "Find user processes",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": false
+      },
+      {
+       "window": "smoke_web01_1230",
+       "step": "Find user processes",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": false
+      },
+      {
+       "window": "smoke_web01_1230",
+       "step": "Find user processes",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": false
+      },
+      {
+       "window": "smoke_web01_1230",
+       "step": "Find user processes",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": false
+      },
+      {
+       "window": "smoke_web01_1230",
+       "step": "Find user processes",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": false
+      },
+      {
+       "window": "smoke_ws-dev01_1200",
+       "step": "Agent deployment",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": true
+      },
+      {
+       "window": "smoke_ws-dev01_1200",
+       "step": "Bootstrap T1070.003",
+       "status": "success",
+       "bootstrap": true,
+       "gate": "pass",
+       "detected": true
+      },
+      {
+       "window": "smoke_ws-dev01_1230",
+       "step": "Identify active user",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": false
+      },
+      {
+       "window": "smoke_ws-dev01_1230",
+       "step": "Find local users",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": false
+      },
+      {
+       "window": "smoke_ws-dev01_1230",
+       "step": "Find user processes",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": false
+      },
+      {
+       "window": "smoke_ws-dev01_1230",
+       "step": "Find user processes",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": false
+      },
+      {
+       "window": "smoke_ws-dev01_1230",
+       "step": "Find user processes",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": false
+      },
+      {
+       "window": "smoke_ws-dev01_1230",
+       "step": "Find user processes",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": false
+      },
+      {
+       "window": "smoke_ws-dev01_1230",
+       "step": "Find user processes",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": false
+      },
+      {
+       "window": "smoke_ws-dev01_1230",
+       "step": "Find user processes",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": false
+      },
+      {
+       "window": "smoke_ws-dev01_1230",
+       "step": "Find user processes",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": false
+      },
+      {
+       "window": "smoke_ws-dev01_1230",
+       "step": "Find user processes",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": false
+      },
+      {
+       "window": "smoke_ws-dev01_1230",
+       "step": "Find user processes",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": false
+      },
+      {
+       "window": "smoke_ws-dev01_1230",
+       "step": "Find user processes",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": false
+      },
+      {
+       "window": "smoke_ws-dev01_1230",
+       "step": "Find user processes",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": false
+      },
+      {
+       "window": "smoke_ws-dev01_1230",
+       "step": "Find user processes",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": false
+      },
+      {
+       "window": "smoke_ws-dev01_1230",
+       "step": "Find user processes",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": false
+      },
+      {
+       "window": "smoke_ws-fin01_1200",
+       "step": "Agent deployment",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": true
+      },
+      {
+       "window": "smoke_ws-fin01_1200",
+       "step": "Identify active user",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": true
+      },
+      {
+       "window": "smoke_ws-fin01_1200",
+       "step": "Find local users",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": true
+      },
+      {
+       "window": "smoke_ws-fin01_1200",
+       "step": "Find user processes",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": true
+      },
+      {
+       "window": "smoke_ws-fin01_1200",
+       "step": "Find user processes",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": true
+      },
+      {
+       "window": "smoke_ws-fin01_1200",
+       "step": "Find user processes",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": true
+      },
+      {
+       "window": "smoke_ws-fin01_1200",
+       "step": "Find user processes",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": true
+      },
+      {
+       "window": "smoke_ws-fin01_1200",
+       "step": "Find user processes",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": true
+      },
+      {
+       "window": "smoke_ws-fin01_1200",
+       "step": "Find user processes",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": true
+      },
+      {
+       "window": "smoke_ws-fin01_1200",
+       "step": "Find user processes",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": true
+      },
+      {
+       "window": "smoke_ws-fin01_1200",
+       "step": "Find user processes",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": true
+      },
+      {
+       "window": "smoke_ws-fin01_1200",
+       "step": "Find user processes",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": true
+      },
+      {
+       "window": "smoke_ws-fin01_1200",
+       "step": "Find user processes",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": true
+      },
+      {
+       "window": "smoke_ws-fin01_1200",
+       "step": "Find user processes",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": true
+      },
+      {
+       "window": "smoke_ws-fin01_1200",
+       "step": "Find user processes",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": true
+      },
+      {
+       "window": "smoke_ws-fin01_1200",
+       "step": "Bootstrap T1070.003",
+       "status": "success",
+       "bootstrap": true,
+       "gate": "pass",
+       "detected": true
+      },
+      {
+       "window": "smoke_ws-fin01_1230",
+       "step": "Find user processes",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": false
+      }
+     ]
+    },
+    {
+     "seed": 8,
+     "metrics": {
+      "all": {
+       "attack_windows_flagged": "8/8",
+       "benign_windows_flagged": "1/6",
+       "steps_detected": "22/68",
+       "step_recall_ci95": [
+        0.224,
+        0.442
+       ],
+       "event_precision": 0.814,
+       "events_cited": 86,
+       "fabricated_ids": 0,
+       "unparseable": 0
+      },
+      "gate_pass": {
+       "attack_windows_flagged": "8/8",
+       "benign_windows_flagged": "1/5",
+       "steps_detected": "22/68",
+       "step_recall_ci95": [
+        0.224,
+        0.442
+       ],
+       "event_precision": 0.814,
+       "events_cited": 86,
+       "fabricated_ids": 0,
+       "unparseable": 0
+      },
+      "cost": {
+       "calls": 14,
+       "live_calls": 14,
+       "cached": 0,
+       "prompt_chars": 284003,
+       "seconds": 29.3,
+       "truncated": []
+      }
+     },
+     "windows": [
+      {
+       "window": "smoke_app01_1100",
+       "category": "benign",
+       "gate": "pass",
+       "disposition": "benign",
+       "flagged": false,
+       "technique": "none",
+       "severity": 0.0,
+       "selected": 0,
+       "malicious_selected": 0,
+       "malicious": 0,
+       "fabricated": 0,
+       "reason": "All observed processes are standard system utilities (dpkg, systemd generators, auditctl, systemctl, ls, ip) with no abnormal behavior, privilege escalation, or suspicious network activity.",
+       "events": 94,
+       "prompt_chars": 19717,
+       "truncated": false
+      },
+      {
+       "window": "smoke_app01_1200",
+       "category": "attack",
+       "gate": "pass",
+       "disposition": "malicious",
+       "flagged": true,
+       "technique": "T1105",
+       "severity": 0.9,
+       "selected": 7,
+       "malicious_selected": 7,
+       "malicious": 7,
+       "fabricated": 0,
+       "reason": "Downloader fetched a binary, set it executable, executed it, and attempted to hide activity by clearing bash history",
+       "events": 7,
+       "prompt_chars": 1655,
+       "truncated": false
+      },
+      {
+       "window": "smoke_app01_1230",
+       "category": "attack",
+       "gate": "pass",
+       "disposition": "suspicious",
+       "flagged": true,
+       "technique": "T1074.001",
+       "severity": 0.6,
+       "selected": 2,
+       "malicious_selected": 0,
+       "malicious": 45,
+       "fabricated": 0,
+       "reason": "Use of sudo to copy the system audit log to /tmp suggests local data staging for potential exfiltration, which is atypical for routine monitoring.",
+       "events": 47,
+       "prompt_chars": 5459,
+       "truncated": false
+      },
+      {
+       "window": "smoke_web01_1100",
+       "category": "benign",
+       "gate": "pass",
+       "disposition": "suspicious",
+       "flagged": true,
+       "technique": "T1548.003",
+       "severity": 0.6,
+       "selected": 4,
+       "malicious_selected": 0,
+       "malicious": 0,
+       "fabricated": 0,
+       "reason": "Web\u2011user 'www' repeatedly invoked sudo to load audit rules and enable auditd, indicating possible abuse of sudo for privilege escalation.",
+       "events": 166,
+       "prompt_chars": 36471,
+       "truncated": false
+      },
+      {
+       "window": "smoke_web01_1200",
+       "category": "attack",
+       "gate": "pass",
+       "disposition": "malicious",
+       "flagged": true,
+       "technique": "T1105",
+       "severity": 0.9,
+       "selected": 11,
+       "malicious_selected": 11,
+       "malicious": 11,
+       "fabricated": 0,
+       "reason": "Repeated curl downloads of sandcat.go (a known Cobalt Strike payload), chmod +x and execution of a malicious splunkd binary with remote server parameters, followed by clearing bash history, indicate attacker activity.",
+       "events": 11,
+       "prompt_chars": 2191,
+       "truncated": false
+      },
+      {
+       "window": "smoke_web01_1230",
+       "category": "attack",
+       "gate": "pass",
+       "disposition": "malicious",
+       "flagged": true,
+       "technique": "T1005",
+       "severity": 0.6,
+       "selected": 6,
+       "malicious_selected": 0,
+       "malicious": 45,
+       "fabricated": 0,
+       "reason": "Unauthorized sudo copies of /var/log/audit/audit.log to /tmp indicate credential/log collection and possible exfiltration.",
+       "events": 71,
+       "prompt_chars": 8833,
+       "truncated": false
+      },
+      {
+       "window": "smoke_ws-dev01_1100",
+       "category": "benign",
+       "gate": "pass",
+       "disposition": "benign",
+       "flagged": false,
+       "technique": "none",
+       "severity": 0.0,
+       "selected": 0,
+       "malicious_selected": 0,
+       "malicious": 0,
+       "fabricated": 0,
+       "reason": "All observed processes are typical package installation, system initialization, and audit configuration activities with no anomalous commands or data exfiltration.",
+       "events": 87,
+       "prompt_chars": 19037,
+       "truncated": false
+      },
+      {
+       "window": "smoke_ws-dev01_1130",
+       "category": "benign",
+       "gate": "pass",
+       "disposition": "benign",
+       "flagged": false,
+       "technique": "none",
+       "severity": 0.1,
+       "selected": 0,
+       "malicious_selected": 0,
+       "malicious": 0,
+       "fabricated": 0,
+       "reason": "All recorded events are routine system queries (auditd status, network interface list, and grep) with no suspicious behavior.",
+       "events": 3,
+       "prompt_chars": 1023,
+       "truncated": false
+      },
+      {
+       "window": "smoke_ws-dev01_1200",
+       "category": "attack",
+       "gate": "pass",
+       "disposition": "malicious",
+       "flagged": true,
+       "technique": "T1105",
+       "severity": 0.9,
+       "selected": 5,
+       "malicious_selected": 5,
+       "malicious": 5,
+       "fabricated": 0,
+       "reason": "Attacker fetched a binary from a remote server, made it executable, ran it, and cleared bash history to hide activity.",
+       "events": 5,
+       "prompt_chars": 1390,
+       "truncated": false
+      },
+      {
+       "window": "smoke_ws-dev01_1230",
+       "category": "attack",
+       "gate": "pass",
+       "disposition": "suspicious",
+       "flagged": true,
+       "technique": "T1005",
+       "severity": 0.4,
+       "selected": 2,
+       "malicious_selected": 0,
+       "malicious": 45,
+       "fabricated": 0,
+       "reason": "A sudo command copies the audit log to /tmp, indicating possible data staging for exfiltration, while the rest of the activity appears to be routine system monitoring.",
+       "events": 47,
+       "prompt_chars": 5459,
+       "truncated": false
+      },
+      {
+       "window": "smoke_ws-fin01_1100",
+       "category": "benign",
+       "gate": "fail: first_boot",
+       "disposition": "benign",
+       "flagged": false,
+       "technique": "none",
+       "severity": 0.1,
+       "selected": 0,
+       "malicious_selected": 0,
+       "malicious": 0,
+       "fabricated": 0,
+       "reason": "All observed activity consists of normal package installation, configuration, and system initialization processes with no suspicious commands, network connections, or sensitive file accesses.",
+       "events": 1111,
+       "prompt_chars": 170812,
+       "truncated": false
+      },
+      {
+       "window": "smoke_ws-fin01_1130",
+       "category": "benign",
+       "gate": "pass",
+       "disposition": "benign",
+       "flagged": false,
+       "technique": "none",
+       "severity": 0.0,
+       "selected": 0,
+       "malicious_selected": 0,
+       "malicious": 0,
+       "fabricated": 0,
+       "reason": "All observed processes are normal system maintenance, user shell activity, and internal network checks with no evidence of malicious behavior.",
+       "events": 30,
+       "prompt_chars": 4990,
+       "truncated": false
+      },
+      {
+       "window": "smoke_ws-fin01_1200",
+       "category": "attack",
+       "gate": "pass",
+       "disposition": "malicious",
+       "flagged": true,
+       "technique": "T1105",
+       "severity": 0.95,
+       "selected": 47,
+       "malicious_selected": 47,
+       "malicious": 47,
+       "fabricated": 0,
+       "reason": "A suspicious binary (sandcat) was downloaded from a C2 server, made executable, run, and then used to enumerate processes and services, matching ingress tool transfer and discovery behavior.",
+       "events": 47,
+       "prompt_chars": 5681,
+       "truncated": false
+      },
+      {
+       "window": "smoke_ws-fin01_1230",
+       "category": "attack",
+       "gate": "pass",
+       "disposition": "suspicious",
+       "flagged": true,
+       "technique": "T1005",
+       "severity": 0.4,
+       "selected": 2,
+       "malicious_selected": 0,
+       "malicious": 3,
+       "fabricated": 0,
+       "reason": "User copied the system audit log to /tmp, a typical step for log harvesting before exfiltration.",
+       "events": 5,
+       "prompt_chars": 1285,
+       "truncated": false
+      }
+     ],
+     "steps": [
+      {
+       "window": "smoke_app01_1200",
+       "step": "Agent deployment",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": true
+      },
+      {
+       "window": "smoke_app01_1200",
+       "step": "Bootstrap T1070.003",
+       "status": "success",
+       "bootstrap": true,
+       "gate": "pass",
+       "detected": true
+      },
+      {
+       "window": "smoke_app01_1230",
+       "step": "Identify active user",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": false
+      },
+      {
+       "window": "smoke_app01_1230",
+       "step": "Find local users",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": false
+      },
+      {
+       "window": "smoke_app01_1230",
+       "step": "Find user processes",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": false
+      },
+      {
+       "window": "smoke_app01_1230",
+       "step": "Find user processes",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": false
+      },
+      {
+       "window": "smoke_app01_1230",
+       "step": "Find user processes",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": false
+      },
+      {
+       "window": "smoke_app01_1230",
+       "step": "Find user processes",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": false
+      },
+      {
+       "window": "smoke_app01_1230",
+       "step": "Find user processes",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": false
+      },
+      {
+       "window": "smoke_app01_1230",
+       "step": "Find user processes",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": false
+      },
+      {
+       "window": "smoke_app01_1230",
+       "step": "Find user processes",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": false
+      },
+      {
+       "window": "smoke_app01_1230",
+       "step": "Find user processes",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": false
+      },
+      {
+       "window": "smoke_app01_1230",
+       "step": "Find user processes",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": false
+      },
+      {
+       "window": "smoke_app01_1230",
+       "step": "Find user processes",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": false
+      },
+      {
+       "window": "smoke_app01_1230",
+       "step": "Find user processes",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": false
+      },
+      {
+       "window": "smoke_app01_1230",
+       "step": "Find user processes",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": false
+      },
+      {
+       "window": "smoke_app01_1230",
+       "step": "Find user processes",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": false
+      },
+      {
+       "window": "smoke_web01_1200",
+       "step": "Agent deployment",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": true
+      },
+      {
+       "window": "smoke_web01_1200",
+       "step": "Bootstrap T1070.003",
+       "status": "success",
+       "bootstrap": true,
+       "gate": "pass",
+       "detected": true
+      },
+      {
+       "window": "smoke_web01_1230",
+       "step": "Identify active user",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": false
+      },
+      {
+       "window": "smoke_web01_1230",
+       "step": "Find local users",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": false
+      },
+      {
+       "window": "smoke_web01_1230",
+       "step": "Find user processes",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": false
+      },
+      {
+       "window": "smoke_web01_1230",
+       "step": "Find user processes",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": false
+      },
+      {
+       "window": "smoke_web01_1230",
+       "step": "Find user processes",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": false
+      },
+      {
+       "window": "smoke_web01_1230",
+       "step": "Find user processes",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": false
+      },
+      {
+       "window": "smoke_web01_1230",
+       "step": "Find user processes",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": false
+      },
+      {
+       "window": "smoke_web01_1230",
+       "step": "Find user processes",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": false
+      },
+      {
+       "window": "smoke_web01_1230",
+       "step": "Find user processes",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": false
+      },
+      {
+       "window": "smoke_web01_1230",
+       "step": "Find user processes",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": false
+      },
+      {
+       "window": "smoke_web01_1230",
+       "step": "Find user processes",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": false
+      },
+      {
+       "window": "smoke_web01_1230",
+       "step": "Find user processes",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": false
+      },
+      {
+       "window": "smoke_web01_1230",
+       "step": "Find user processes",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": false
+      },
+      {
+       "window": "smoke_web01_1230",
+       "step": "Find user processes",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": false
+      },
+      {
+       "window": "smoke_web01_1230",
+       "step": "Find user processes",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": false
+      },
+      {
+       "window": "smoke_ws-dev01_1200",
+       "step": "Agent deployment",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": true
+      },
+      {
+       "window": "smoke_ws-dev01_1200",
+       "step": "Bootstrap T1070.003",
+       "status": "success",
+       "bootstrap": true,
+       "gate": "pass",
+       "detected": true
+      },
+      {
+       "window": "smoke_ws-dev01_1230",
+       "step": "Identify active user",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": false
+      },
+      {
+       "window": "smoke_ws-dev01_1230",
+       "step": "Find local users",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": false
+      },
+      {
+       "window": "smoke_ws-dev01_1230",
+       "step": "Find user processes",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": false
+      },
+      {
+       "window": "smoke_ws-dev01_1230",
+       "step": "Find user processes",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": false
+      },
+      {
+       "window": "smoke_ws-dev01_1230",
+       "step": "Find user processes",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": false
+      },
+      {
+       "window": "smoke_ws-dev01_1230",
+       "step": "Find user processes",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": false
+      },
+      {
+       "window": "smoke_ws-dev01_1230",
+       "step": "Find user processes",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": false
+      },
+      {
+       "window": "smoke_ws-dev01_1230",
+       "step": "Find user processes",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": false
+      },
+      {
+       "window": "smoke_ws-dev01_1230",
+       "step": "Find user processes",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": false
+      },
+      {
+       "window": "smoke_ws-dev01_1230",
+       "step": "Find user processes",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": false
+      },
+      {
+       "window": "smoke_ws-dev01_1230",
+       "step": "Find user processes",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": false
+      },
+      {
+       "window": "smoke_ws-dev01_1230",
+       "step": "Find user processes",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": false
+      },
+      {
+       "window": "smoke_ws-dev01_1230",
+       "step": "Find user processes",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": false
+      },
+      {
+       "window": "smoke_ws-dev01_1230",
+       "step": "Find user processes",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": false
+      },
+      {
+       "window": "smoke_ws-dev01_1230",
+       "step": "Find user processes",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": false
+      },
+      {
+       "window": "smoke_ws-fin01_1200",
+       "step": "Agent deployment",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": true
+      },
+      {
+       "window": "smoke_ws-fin01_1200",
+       "step": "Identify active user",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": true
+      },
+      {
+       "window": "smoke_ws-fin01_1200",
+       "step": "Find local users",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": true
+      },
+      {
+       "window": "smoke_ws-fin01_1200",
+       "step": "Find user processes",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": true
+      },
+      {
+       "window": "smoke_ws-fin01_1200",
+       "step": "Find user processes",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": true
+      },
+      {
+       "window": "smoke_ws-fin01_1200",
+       "step": "Find user processes",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": true
+      },
+      {
+       "window": "smoke_ws-fin01_1200",
+       "step": "Find user processes",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": true
+      },
+      {
+       "window": "smoke_ws-fin01_1200",
+       "step": "Find user processes",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": true
+      },
+      {
+       "window": "smoke_ws-fin01_1200",
+       "step": "Find user processes",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": true
+      },
+      {
+       "window": "smoke_ws-fin01_1200",
+       "step": "Find user processes",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": true
+      },
+      {
+       "window": "smoke_ws-fin01_1200",
+       "step": "Find user processes",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": true
+      },
+      {
+       "window": "smoke_ws-fin01_1200",
+       "step": "Find user processes",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": true
+      },
+      {
+       "window": "smoke_ws-fin01_1200",
+       "step": "Find user processes",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": true
+      },
+      {
+       "window": "smoke_ws-fin01_1200",
+       "step": "Find user processes",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": true
+      },
+      {
+       "window": "smoke_ws-fin01_1200",
+       "step": "Find user processes",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": true
+      },
+      {
+       "window": "smoke_ws-fin01_1200",
+       "step": "Bootstrap T1070.003",
+       "status": "success",
+       "bootstrap": true,
+       "gate": "pass",
+       "detected": true
+      },
+      {
+       "window": "smoke_ws-fin01_1230",
+       "step": "Find user processes",
+       "status": "success",
+       "bootstrap": false,
+       "gate": "pass",
+       "detected": false
+      }
+     ]
+    }
+   ],
+   "verdict_stable_windows": "13/14"
+  }
+ }
+}

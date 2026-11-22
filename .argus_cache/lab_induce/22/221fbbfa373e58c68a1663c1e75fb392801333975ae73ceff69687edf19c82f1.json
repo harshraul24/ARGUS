@@ -1,0 +1,14 @@
+{
+  "key": "221fbbfa373e58c68a1663c1e75fb392801333975ae73ceff69687edf19c82f1",
+  "provider": "ollama",
+  "model": "gpt-oss:120b-cloud",
+  "prompt_sha": "221fbbfa373e58c6",
+  "response": "{\n  \"rules\": [\n    {\n      \"id\": \"llm.user-writable-outbound-connection.b85e043ed0\",\n      \"technique\": \"T1041\",\n      \"name\": \"Outbound Connection from User\u2011Writable Binary\",\n      \"tactic\": \"command-and-control\",\n      \"severity\": 0.8,\n      \"evidence\": [\n        \"ev_000011\"\n      ],\n      \"indicators\": [\n        {\n          \"name\": \"uw_outbound\",\n          \"weight\": 1.0,\n          \"required\": true,\n          \"select\": {\n            \"claim_type\": \"host_network_connection\",\n            \"lineage.user_writable\": {\n              \"truthy\": true\n            },\n            \"facts.direction\": \"outbound\"\n          },\n          \"score\": {\n            \"op\": \"threshold\",\n            \"value\": \"n\",\n            \"at\": 1\n          }\n        }\n      ]\n    }\n  ],\n  \"reasoning\": \"The episode shows a network connection (outbound on port 8888) made by a process that was executed from a user\u2011writable directory (the splunkd binary). Using the lineage.user_writable flag captures the behaviour without relying on the binary name, satisfying robustness, while the direction outbound and host_network_connection claim type ensure the rule fires on this specific event and remains quiet for routine traffic. This matches the ATT&CK technique T1041 (Command\u2011and\u2011Control) and is corroborated by community knowledge of outbound C2 traffic from non\u2011system binaries.\"\n}",
+  "latency_s": 10.634184837341309,
+  "created_at": 1791394582.7702458,
+  "params": {
+    "temperature": 0.0,
+    "seed": 7,
+    "json_mode": true
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "key": "a219a55e7130e6ab5f9105b1785e763ba786db188bee5b8239cf4a5a78658f7a",
+  "provider": "ollama",
+  "model": "gpt-oss:120b-cloud",
+  "prompt_sha": "a219a55e7130e6ab",
+  "response": "{\n  \"rules\": [\n    {\n      \"id\": \"credential-dump-master-passwd\",\n      \"technique\": \"T1003.008\",\n      \"name\": \"Read /etc/master.passwd via sudo\",\n      \"tactic\": \"credential-access\",\n      \"severity\": 0.9,\n      \"evidence\": [\"ev_000611\", \"ev_000612\"],\n      \"indicators\": [\n        {\n          \"name\": \"sudo cat master.passwd\",\n          \"weight\": 1.0,\n          \"required\": true,\n          \"select\": {\n            \"claim_type\": \"process_create\",\n            \"facts.command\": {\n              \"all_of\": [\n                { \"contains_any\": [\"sudo\"] },\n                { \"contains_any\": [\"cat\"] },\n                { \"contains_any\": [\"master.passwd\"] }\n              ]\n            }\n          },\n          \"aggregate\": [\n            { \"as\": \"n\", \"op\": \"count\" }\n          ],\n          \"score\": { \"op\": \"threshold\", \"value\": \"n\", \"at\": 1 }\n        }\n      ]\n    }\n  ],\n  \"reasoning\": \"The episode shows a process that invokes sudo to read the system password file (/etc/master.passwd) using cat. Accessing the password database via elevated privileges is a classic credential\u2011dumping behavior (T1003.008) and is rare in normal host activity, making the rule both specific and quiet. The rule matches any process_create where the command line contains the tokens \\\"sudo\\\", \\\"cat\\\", and \\\"master.passwd\\\", covering variations in how the command is invoked while ignoring user\u2011writable executable names.\"\n}",
+  "latency_s": 18.98169493675232,
+  "created_at": 1791394601.7553122,
+  "params": {
+    "temperature": 0.0,
+    "seed": 7,
+    "json_mode": true
+  }
+}

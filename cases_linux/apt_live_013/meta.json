@@ -1,0 +1,107 @@
+{
+  "meta_version": "v0.2",
+  "scenario_id": "apt_live_013",
+  "category": "attack",
+  "title": "APT-Agent unreal_ircd (live Metasploitable2)",
+  "generated_by": "APT-Agent + apt_capture harness",
+  "topology": {
+    "hosts": [
+      {
+        "name": "attacker",
+        "ip": "10.0.2.10",
+        "role": "attacker",
+        "os": "Linux"
+      },
+      {
+        "name": "target",
+        "ip": "10.0.2.20",
+        "role": "victim",
+        "os": "Linux"
+      }
+    ],
+    "zeek_sensor": {
+      "host": "capture",
+      "position": "attacker-target path"
+    }
+  },
+  "capture": {
+    "window": {
+      "start": "2026-09-09T17:10:38Z",
+      "end": "2026-09-09T17:13:24.556900Z"
+    },
+    "clean_capture": true
+  },
+  "expected_observables": {
+    "authlog": {
+      "logon_failure": false,
+      "logon_success": true
+    },
+    "zeek": {
+      "conn": true,
+      "ssh": true
+    }
+  },
+  "mitre": {
+    "technique": "T1210"
+  },
+  "ground_truth": {
+    "category": "attack",
+    "campaign_start": "2026-09-09T17:10:38Z",
+    "techniques": [
+      "T1046",
+      "T1210"
+    ],
+    "primary_technique": "T1210",
+    "objective_reached": false,
+    "actions": [
+      {
+        "iter": 1,
+        "tactic": "RECON",
+        "time": "2026-09-09T17:10:38Z",
+        "technique": "T1046",
+        "detail": "reconnaissance",
+        "result": "n/a"
+      },
+      {
+        "iter": 2,
+        "tactic": "RECON",
+        "time": "2026-09-09T17:10:57.230900Z",
+        "technique": "T1046",
+        "detail": "reconnaissance",
+        "result": "n/a"
+      },
+      {
+        "iter": 3,
+        "tactic": "RECON",
+        "time": "2026-09-09T17:11:11.277600Z",
+        "technique": "T1046",
+        "detail": "reconnaissance",
+        "result": "n/a"
+      },
+      {
+        "iter": 4,
+        "tactic": "RECON",
+        "time": "2026-09-09T17:11:27.620200Z",
+        "technique": "T1046",
+        "detail": "reconnaissance",
+        "result": "n/a"
+      },
+      {
+        "iter": 5,
+        "tactic": "EXPLOIT",
+        "time": "2026-09-09T17:11:44.244800Z",
+        "technique": "T1210",
+        "detail": "use exploit/unix/irc/unreal_ircd_3281_backdoor",
+        "result": "fail"
+      },
+      {
+        "iter": 6,
+        "tactic": "EXPLOIT",
+        "time": "2026-09-09T17:13:24.556900Z",
+        "technique": "T1210",
+        "detail": "use exploit/unix/irc/unreal_ircd_3281_backdoor",
+        "result": "fail"
+      }
+    ]
+  }
+}

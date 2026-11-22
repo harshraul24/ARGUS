@@ -1,0 +1,14 @@
+#separator \x09
+#set_separator	,
+#empty_field	(empty)
+#unset_field	-
+#path	conn
+#fields	ts	uid	id.orig_h	id.orig_p	id.resp_h	id.resp_p	proto	service	duration	conn_state
+#types	time	string	addr	port	addr	port	enum	string	interval	string
+1772842140.000000	C0000200Bx	10.0.2.20	41000	10.0.2.2	123	udp	ntp	0.1	SF
+1772849340.000000	C0000201Bx	10.0.2.20	41001	10.0.2.2	123	udp	ntp	0.1	SF
+1772856540.000000	C0000202Bx	10.0.2.20	41002	10.0.2.2	123	udp	ntp	0.1	SF
+1772863740.000000	C0000203Bx	10.0.2.20	41003	10.0.2.2	123	udp	ntp	0.1	SF
+1772870940.000000	C0000204Bx	10.0.2.20	41004	10.0.2.2	123	udp	ntp	0.1	SF
+1772878140.000000	C0000205Bx	10.0.2.20	41005	10.0.2.2	123	udp	ntp	0.1	SF
+#close	-

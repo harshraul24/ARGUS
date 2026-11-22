@@ -1,0 +1,6 @@
+Mar  4 09:12:00 appsrv01 sshd[2101]: Accepted publickey for sysadmin from 10.0.2.5 port 51120 ssh2: RSA SHA256:9c1f
+Mar  4 09:12:00 appsrv01 sshd[2101]: pam_unix(sshd:session): session opened for user sysadmin by (uid=0)
+Mar  4 09:13:00 appsrv01 sudo: sysadmin : TTY=pts/0 ; PWD=/home/sysadmin ; USER=root ; COMMAND=/usr/bin/apt-get update
+Mar  4 09:16:00 appsrv01 sudo: sysadmin : TTY=pts/0 ; PWD=/home/sysadmin ; USER=root ; COMMAND=/usr/bin/apt-get -y upgrade
+Mar  4 09:23:00 appsrv01 sudo: sysadmin : TTY=pts/0 ; PWD=/home/sysadmin ; USER=root ; COMMAND=/bin/systemctl restart nginx
+Mar  4 09:25:00 appsrv01 sshd[2101]: pam_unix(sshd:session): session closed for user sysadmin

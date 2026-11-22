@@ -1,0 +1,4990 @@
+{
+ "format": "argus.rules.library/1",
+ "counts": {
+  "candidate": 0,
+  "shadow": 0,
+  "active": 8,
+  "retired": 17,
+  "rejected": 17
+ },
+ "entries": [
+  {
+   "uid": "llm.clear-bash-history-6f2c1d.b1bd756a50.r1",
+   "rule": {
+    "id": "llm.clear-bash-history-6f2c1d.b1bd756a50.r1",
+    "technique": "T1070.003",
+    "name": "Clear Bash History",
+    "tactic": "defense-evasion",
+    "severity": 0.6,
+    "evidence": [
+     "ev_000012"
+    ],
+    "indicators": [
+     {
+      "name": "bash_history_cleared",
+      "weight": 1.0,
+      "required": true,
+      "select": {
+       "claim_type": "process_create",
+       "facts.command": {
+        "contains_any": [
+         "bash_history"
+        ]
+       }
+      },
+      "score": {
+       "op": "threshold",
+       "value": "n",
+       "at": 1
+      }
+     }
+    ],
+    "provenance": {
+     "authored_by": "argus.rules.induce",
+     "model": "gpt-oss:120b-cloud",
+     "origin": "run1_ws-dev01_1230#ws-dev01/1157@1791377549.712",
+     "round": 1,
+     "semantic_id": "b1bd753fcf51",
+     "evidence": [
+      "ev_000012"
+     ]
+    }
+   },
+   "status": "active",
+   "origin": {
+    "capture": "run1_ws-dev01_1230",
+    "recording": "run1",
+    "host": "ws-dev01",
+    "episode": "run1_ws-dev01_1230#ws-dev01/1157@1791377549.712",
+    "episode_root_image": "splunkd",
+    "round": 1
+   },
+   "checks": {
+    "C1_valid": {
+     "check": "C1_valid",
+     "passed": true,
+     "detail": "",
+     "errors": []
+    },
+    "C2_own_evidence": {
+     "check": "C2_own_evidence",
+     "passed": true,
+     "detail": "",
+     "hard": [],
+     "soft": [],
+     "causes": {},
+     "origin_score": 1.0
+    },
+    "C3_robust": {
+     "check": "C3_robust",
+     "passed": true,
+     "detail": "",
+     "lost_under": [],
+     "static_rename_survival": 0.0,
+     "static_brittle": true,
+     "breaking_literals": {
+      "bash_history_cleared": [
+       "facts.command contains_any 'bash_history'"
+      ]
+     }
+    },
+    "C4_quiet": {
+     "check": "C4_quiet",
+     "passed": true,
+     "detail": "",
+     "history_rate": 0.0,
+     "fired_on": []
+    },
+    "C5_confirmed": {
+     "check": "C5_confirmed",
+     "passed": true,
+     "detail": "",
+     "confirmed_by": [
+      "analyst"
+     ],
+     "source": "analyst",
+     "why": "analyst-approved: analyst verdicts 4 malicious / 0 benign (mean 0.83, lower 0.51; all 4 alert(s) reviewed)",
+     "llm_agreement": []
+    }
+   },
+   "history": [
+    {
+     "at": "2026-10-08T03:38:22",
+     "from": null,
+     "to": "candidate",
+     "reason": "written"
+    },
+    {
+     "at": "2026-10-08T03:38:25",
+     "from": "candidate",
+     "to": "shadow",
+     "reason": "passed C1\u2013C4"
+    },
+    {
+     "at": "2026-10-08T03:38:25",
+     "from": "shadow",
+     "to": "active",
+     "reason": "analyst-approved: analyst verdicts 4 malicious / 0 benign (mean 0.83, lower 0.51; all 4 alert(s) reviewed)"
+    }
+   ]
+  },
+  {
+   "uid": "llm.clear-bash-history.547eba2a21",
+   "rule": {
+    "id": "llm.clear-bash-history.547eba2a21",
+    "technique": "T1070.003",
+    "name": "Shell clears bash history and unsets HISTFILE",
+    "tactic": "defense-evasion",
+    "severity": 0.6,
+    "evidence": [
+     "ev_000027"
+    ],
+    "indicators": [
+     {
+      "name": "history_erase_command",
+      "weight": 1.0,
+      "required": true,
+      "select": {
+       "claim_type": "process_create",
+       "facts.image": [
+        "dash"
+       ],
+       "facts.command": {
+        "contains_any": [
+         "HISTFILE",
+         "bash_history"
+        ]
+       }
+      },
+      "score": {
+       "op": "threshold",
+       "value": "1",
+       "at": 1
+      }
+     }
+    ],
+    "provenance": {
+     "authored_by": "argus.rules.induce",
+     "model": "gpt-oss:120b-cloud",
+     "origin": "run1_app01_1230#app01/1094@1791377547.402",
+     "round": 0,
+     "semantic_id": "547eba5ecec9",
+     "evidence": [
+      "ev_000027"
+     ]
+    }
+   },
+   "status": "rejected",
+   "origin": {
+    "capture": "run1_app01_1230",
+    "recording": "run1",
+    "host": "app01",
+    "episode": "run1_app01_1230#app01/1094@1791377547.402",
+    "episode_root_image": "splunkd",
+    "round": 0
+   },
+   "checks": {
+    "C1_valid": {
+     "check": "C1_valid",
+     "passed": false,
+     "detail": "indicator[0].score: references undefined value '1'",
+     "errors": [
+      "indicator[0].score: references undefined value '1'"
+     ]
+    }
+   },
+   "history": [
+    {
+     "at": "2026-10-08T03:38:22",
+     "from": null,
+     "to": "candidate",
+     "reason": "written"
+    },
+    {
+     "at": "2026-10-08T03:38:22",
+     "from": "candidate",
+     "to": "rejected",
+     "reason": "repaired: superseded by llm.llm-user-writable-outbound-server-c5a7a22a21.174bd32a21.r1,llm.llm-clear-bash-history-547eba2a21.f68ca72a21.r1,llm.llm-discovery-from-user-writable-ancestor-e333f0.b528532a21.r1"
+    }
+   ]
+  },
+  {
+   "uid": "llm.clear-bash-history.f07f113ed0",
+   "rule": {
+    "id": "llm.clear-bash-history.f07f113ed0",
+    "technique": "T1070.003",
+    "name": "Clear Bash History",
+    "tactic": "defense-evasion",
+    "severity": 0.7,
+    "evidence": [
+     "ev_000012"
+    ],
+    "indicators": [
+     {
+      "name": "clear_history",
+      "weight": 1.0,
+      "required": true,
+      "select": {
+       "claim_type": "process_create",
+       "facts.command": {
+        "contains_any": [
+         "bash_history",
+         "unset"
+        ]
+       }
+      },
+      "score": {
+       "op": "threshold",
+       "value": "n",
+       "at": 1
+      }
+     }
+    ],
+    "provenance": {
+     "authored_by": "argus.rules.induce",
+     "model": "gpt-oss:120b-cloud",
+     "origin": "run1_web01_1230#web01/1187@1791377542.462",
+     "round": 0,
+     "semantic_id": "f07f11bfcc7d",
+     "evidence": [
+      "ev_000012"
+     ]
+    }
+   },
+   "status": "retired",
+   "origin": {
+    "capture": "run1_web01_1230",
+    "recording": "run1",
+    "host": "web01",
+    "episode": "run1_web01_1230#web01/1187@1791377542.462",
+    "episode_root_image": "splunkd",
+    "round": 0
+   },
+   "checks": {
+    "C1_valid": {
+     "check": "C1_valid",
+     "passed": true,
+     "detail": "",
+     "errors": []
+    },
+    "C2_own_evidence": {
+     "check": "C2_own_evidence",
+     "passed": true,
+     "detail": "",
+     "hard": [],
+     "soft": [],
+     "causes": {},
+     "origin_score": 1.0
+    },
+    "C3_robust": {
+     "check": "C3_robust",
+     "passed": true,
+     "detail": "",
+     "lost_under": [],
+     "static_rename_survival": 0.0,
+     "static_brittle": true,
+     "breaking_literals": {
+      "clear_history": [
+       "facts.command contains_any 'bash_history'",
+       "facts.command contains_any 'unset'"
+      ]
+     }
+    },
+    "C4_quiet": {
+     "check": "C4_quiet",
+     "passed": true,
+     "detail": "",
+     "history_rate": 0.0,
+     "fired_on": []
+    },
+    "C5_confirmed": {
+     "check": "C5_confirmed",
+     "passed": true,
+     "detail": "",
+     "confirmed_by": [
+      "analyst"
+     ],
+     "source": "analyst",
+     "why": "analyst-approved: analyst verdicts 4 malicious / 0 benign (mean 0.83, lower 0.51; all 4 alert(s) reviewed)",
+     "llm_agreement": []
+    }
+   },
+   "history": [
+    {
+     "at": "2026-10-08T03:38:22",
+     "from": null,
+     "to": "candidate",
+     "reason": "written"
+    },
+    {
+     "at": "2026-10-08T03:38:25",
+     "from": "candidate",
+     "to": "shadow",
+     "reason": "passed C1\u2013C4"
+    },
+    {
+     "at": "2026-10-08T03:38:25",
+     "from": "shadow",
+     "to": "active",
+     "reason": "analyst-approved: analyst verdicts 4 malicious / 0 benign (mean 0.83, lower 0.51; all 4 alert(s) reviewed)"
+    },
+    {
+     "at": "2026-10-08T03:47:07",
+     "from": "active",
+     "to": "retired",
+     "reason": "duplicate of llm.clear-bash-history-6f2c1d.b1bd756a50.r1: fires on exactly the same events in every design capture"
+    }
+   ]
+  },
+  {
+   "uid": "llm.clear-bash-history.f07f116a50",
+   "rule": {
+    "id": "llm.clear-bash-history.f07f116a50",
+    "technique": "T1070.003",
+    "name": "Clear Bash History",
+    "tactic": "defense-evasion",
+    "severity": 0.7,
+    "evidence": [
+     "ev_000012"
+    ],
+    "indicators": [
+     {
+      "name": "clear_history",
+      "weight": 1.0,
+      "required": true,
+      "select": {
+       "claim_type": "process_create",
+       "facts.command": {
+        "contains_any": [
+         "bash_history",
+         "unset"
+        ]
+       }
+      },
+      "score": {
+       "op": "threshold",
+       "value": "n",
+       "at": 1
+      }
+     }
+    ],
+    "provenance": {
+     "authored_by": "argus.rules.induce",
+     "model": "gpt-oss:120b-cloud",
+     "origin": "run1_ws-dev01_1230#ws-dev01/1157@1791377549.712",
+     "round": 0,
+     "semantic_id": "f07f11bfcc7d",
+     "evidence": [
+      "ev_000012"
+     ]
+    }
+   },
+   "status": "retired",
+   "origin": {
+    "capture": "run1_ws-dev01_1230",
+    "recording": "run1",
+    "host": "ws-dev01",
+    "episode": "run1_ws-dev01_1230#ws-dev01/1157@1791377549.712",
+    "episode_root_image": "splunkd",
+    "round": 0
+   },
+   "checks": {
+    "C1_valid": {
+     "check": "C1_valid",
+     "passed": true,
+     "detail": "",
+     "errors": []
+    },
+    "C2_own_evidence": {
+     "check": "C2_own_evidence",
+     "passed": true,
+     "detail": "",
+     "hard": [],
+     "soft": [],
+     "causes": {},
+     "origin_score": 1.0
+    },
+    "C3_robust": {
+     "check": "C3_robust",
+     "passed": true,
+     "detail": "",
+     "lost_under": [],
+     "static_rename_survival": 0.0,
+     "static_brittle": true,
+     "breaking_literals": {
+      "clear_history": [
+       "facts.command contains_any 'bash_history'",
+       "facts.command contains_any 'unset'"
+      ]
+     }
+    },
+    "C4_quiet": {
+     "check": "C4_quiet",
+     "passed": true,
+     "detail": "",
+     "history_rate": 0.0,
+     "fired_on": []
+    },
+    "C5_confirmed": {
+     "check": "C5_confirmed",
+     "passed": true,
+     "detail": "",
+     "confirmed_by": [
+      "analyst"
+     ],
+     "source": "analyst",
+     "why": "analyst-approved: analyst verdicts 4 malicious / 0 benign (mean 0.83, lower 0.51; all 4 alert(s) reviewed)",
+     "llm_agreement": []
+    }
+   },
+   "history": [
+    {
+     "at": "2026-10-08T03:38:22",
+     "from": null,
+     "to": "candidate",
+     "reason": "written"
+    },
+    {
+     "at": "2026-10-08T03:38:25",
+     "from": "candidate",
+     "to": "shadow",
+     "reason": "passed C1\u2013C4"
+    },
+    {
+     "at": "2026-10-08T03:38:25",
+     "from": "shadow",
+     "to": "active",
+     "reason": "analyst-approved: analyst verdicts 4 malicious / 0 benign (mean 0.83, lower 0.51; all 4 alert(s) reviewed)"
+    },
+    {
+     "at": "2026-10-08T03:38:25",
+     "from": "active",
+     "to": "retired",
+     "reason": "duplicate of llm.clear-bash-history.f07f113ed0"
+    }
+   ]
+  },
+  {
+   "uid": "llm.copy-auth-logs-to-tmp.1aee330795",
+   "rule": {
+    "id": "llm.copy-auth-logs-to-tmp.1aee330795",
+    "technique": "T1005",
+    "name": "Copy authentication logs to a user\u2011writable directory",
+    "tactic": "collection",
+    "severity": 0.8,
+    "evidence": [
+     "ev_000017",
+     "ev_000018"
+    ],
+    "indicators": [
+     {
+      "name": "auth_log_copy",
+      "weight": 1.0,
+      "required": true,
+      "select": {
+       "claim_type": "process_create",
+       "any_of": [
+        {
+         "facts.image": "sudo",
+         "facts.command": {
+          "all_of": [
+           {
+            "contains_any": [
+             "cp"
+            ]
+           },
+           {
+            "contains_any": [
+             "auth.log"
+            ]
+           },
+           {
+            "contains_any": [
+             "/tmp"
+            ]
+           }
+          ]
+         }
+        },
+        {
+         "facts.image": "bash",
+         "facts.command": {
+          "all_of": [
+           {
+            "contains_any": [
+             "sudo"
+            ]
+           },
+           {
+            "contains_any": [
+             "cp"
+            ]
+           },
+           {
+            "contains_any": [
+             "auth.log"
+            ]
+           },
+           {
+            "contains_any": [
+             "/tmp"
+            ]
+           }
+          ]
+         }
+        }
+       ]
+      },
+      "aggregate": [
+       {
+        "as": "n",
+        "op": "count"
+       }
+      ],
+      "score": {
+       "op": "threshold",
+       "value": "n",
+       "at": 1
+      }
+     }
+    ],
+    "provenance": {
+     "authored_by": "argus.rules.induce",
+     "model": "gpt-oss:120b-cloud",
+     "origin": "run1_ws-dev01_1400#ws-dev01/2428@1791382477.698",
+     "round": 0,
+     "semantic_id": "1aee33fa8f30",
+     "evidence": [
+      "ev_000017",
+      "ev_000018"
+     ]
+    }
+   },
+   "status": "retired",
+   "origin": {
+    "capture": "run1_ws-dev01_1400",
+    "recording": "run1",
+    "host": "ws-dev01",
+    "episode": "run1_ws-dev01_1400#ws-dev01/2428@1791382477.698",
+    "episode_root_image": "bash",
+    "round": 0
+   },
+   "checks": {
+    "C1_valid": {
+     "check": "C1_valid",
+     "passed": true,
+     "detail": "",
+     "errors": []
+    },
+    "C2_own_evidence": {
+     "check": "C2_own_evidence",
+     "passed": true,
+     "detail": "",
+     "hard": [],
+     "soft": [],
+     "causes": {},
+     "origin_score": 1.0
+    },
+    "C3_robust": {
+     "check": "C3_robust",
+     "passed": true,
+     "detail": "",
+     "lost_under": [],
+     "static_rename_survival": 0.0,
+     "static_brittle": true,
+     "breaking_literals": {
+      "auth_log_copy": [
+       "facts.command contains_any '/tmp'",
+       "facts.command contains_any 'auth.log'",
+       "facts.command contains_any 'cp'",
+       "facts.command contains_any 'sudo'",
+       "facts.image eq 'bash'",
+       "facts.image eq 'sudo'"
+      ]
+     }
+    },
+    "C4_quiet": {
+     "check": "C4_quiet",
+     "passed": true,
+     "detail": "",
+     "history_rate": 0.0,
+     "fired_on": []
+    },
+    "C5_confirmed": {
+     "check": "C5_confirmed",
+     "passed": false,
+     "detail": "no independent source flags the same events",
+     "confirmed_by": [],
+     "llm_agreement": []
+    }
+   },
+   "history": [
+    {
+     "at": "2026-10-08T03:38:22",
+     "from": null,
+     "to": "candidate",
+     "reason": "written"
+    },
+    {
+     "at": "2026-10-08T03:38:25",
+     "from": "candidate",
+     "to": "shadow",
+     "reason": "passed C1\u2013C4"
+    },
+    {
+     "at": "2026-10-08T03:38:25",
+     "from": "shadow",
+     "to": "retired",
+     "reason": "analyst: analyst verdicts 0 malicious / 5 benign (mean 0.14, lower 0.00; all 5 alert(s) reviewed)"
+    }
+   ]
+  },
+  {
+   "uid": "llm.credential-dump-etc-master-passwd.60d65985b1.r1",
+   "rule": {
+    "id": "llm.credential-dump-etc-master-passwd.60d65985b1.r1",
+    "technique": "T1003.008",
+    "name": "Read /etc/master.passwd",
+    "tactic": "credential-access",
+    "severity": 0.9,
+    "evidence": [
+     "ev_000605",
+     "ev_000606"
+    ],
+    "indicators": [
+     {
+      "name": "read-master-passwd",
+      "weight": 1.0,
+      "required": true,
+      "select": {
+       "claim_type": "process_create",
+       "facts.command": {
+        "contains_any": [
+         "/etc/master.passwd"
+        ]
+       }
+      },
+      "aggregate": [
+       {
+        "as": "n",
+        "op": "count"
+       }
+      ],
+      "score": {
+       "op": "threshold",
+       "value": "n",
+       "at": 1
+      }
+     }
+    ],
+    "provenance": {
+     "authored_by": "argus.rules.induce",
+     "model": "gpt-oss:120b-cloud",
+     "origin": "run1_app01_1330#app01/2364@1791380894.309",
+     "round": 1,
+     "semantic_id": "60d65952c91c",
+     "evidence": [
+      "ev_000605",
+      "ev_000606"
+     ]
+    }
+   },
+   "status": "active",
+   "origin": {
+    "capture": "run1_app01_1330",
+    "recording": "run1",
+    "host": "app01",
+    "episode": "run1_app01_1330#app01/2364@1791380894.309",
+    "episode_root_image": "dash",
+    "round": 1
+   },
+   "checks": {
+    "C1_valid": {
+     "check": "C1_valid",
+     "passed": true,
+     "detail": "",
+     "errors": []
+    },
+    "C2_own_evidence": {
+     "check": "C2_own_evidence",
+     "passed": true,
+     "detail": "",
+     "hard": [],
+     "soft": [],
+     "causes": {},
+     "origin_score": 1.0
+    },
+    "C3_robust": {
+     "check": "C3_robust",
+     "passed": true,
+     "detail": "",
+     "lost_under": [],
+     "static_rename_survival": 0.0,
+     "static_brittle": true,
+     "breaking_literals": {
+      "read-master-passwd": [
+       "facts.command contains_any '/etc/master.passwd'"
+      ]
+     }
+    },
+    "C4_quiet": {
+     "check": "C4_quiet",
+     "passed": true,
+     "detail": "",
+     "history_rate": 0.0,
+     "fired_on": []
+    },
+    "C5_confirmed": {
+     "check": "C5_confirmed",
+     "passed": true,
+     "detail": "",
+     "confirmed_by": [
+      "analyst"
+     ],
+     "source": "analyst",
+     "why": "analyst-approved: analyst verdicts 4 malicious / 0 benign (mean 0.83, lower 0.51; all 4 alert(s) reviewed)",
+     "llm_agreement": []
+    }
+   },
+   "history": [
+    {
+     "at": "2026-10-08T03:38:22",
+     "from": null,
+     "to": "candidate",
+     "reason": "written"
+    },
+    {
+     "at": "2026-10-08T03:38:25",
+     "from": "candidate",
+     "to": "shadow",
+     "reason": "passed C1\u2013C4"
+    },
+    {
+     "at": "2026-10-08T03:38:25",
+     "from": "shadow",
+     "to": "active",
+     "reason": "analyst-approved: analyst verdicts 4 malicious / 0 benign (mean 0.83, lower 0.51; all 4 alert(s) reviewed)"
+    }
+   ]
+  },
+  {
+   "uid": "llm.credential-dump-etc-passwd.33e7af8567",
+   "rule": {
+    "id": "llm.credential-dump-etc-passwd.33e7af8567",
+    "technique": "T1003.008",
+    "name": "Read /etc/master.passwd via sudo",
+    "tactic": "credential-access",
+    "severity": 0.9,
+    "evidence": [
+     "ev_000581"
+    ],
+    "indicators": [
+     {
+      "name": "read-etc-passwd",
+      "weight": 1.0,
+      "required": true,
+      "select": {
+       "any_of": [
+        {
+         "claim_type": "process_create",
+         "facts.image": [
+          "sudo"
+         ],
+         "facts.command": {
+          "contains_any": [
+           "cat"
+          ]
+         }
+        },
+        {
+         "claim_type": "file_read",
+         "facts.file_path": {
+          "contains_any": [
+           "/etc/master.passwd"
+          ]
+         }
+        }
+       ]
+      },
+      "score": {
+       "op": "threshold",
+       "value": "n",
+       "at": 1
+      }
+     }
+    ],
+    "provenance": {
+     "authored_by": "argus.rules.induce",
+     "model": "gpt-oss:120b-cloud",
+     "origin": "run1_ws-fin01_1330#ws-fin01/12759@1791380924.911",
+     "round": 0,
+     "semantic_id": "33e7af19a400",
+     "evidence": [
+      "ev_000581"
+     ]
+    }
+   },
+   "status": "retired",
+   "origin": {
+    "capture": "run1_ws-fin01_1330",
+    "recording": "run1",
+    "host": "ws-fin01",
+    "episode": "run1_ws-fin01_1330#ws-fin01/12759@1791380924.911",
+    "episode_root_image": "dash",
+    "round": 0
+   },
+   "checks": {
+    "C1_valid": {
+     "check": "C1_valid",
+     "passed": true,
+     "detail": "",
+     "errors": []
+    },
+    "C2_own_evidence": {
+     "check": "C2_own_evidence",
+     "passed": true,
+     "detail": "",
+     "hard": [],
+     "soft": [],
+     "causes": {},
+     "origin_score": 1.0
+    },
+    "C3_robust": {
+     "check": "C3_robust",
+     "passed": true,
+     "detail": "",
+     "lost_under": [],
+     "static_rename_survival": 0.0,
+     "static_brittle": true,
+     "breaking_literals": {
+      "read-etc-passwd": [
+       "facts.command contains_any 'cat'",
+       "facts.file_path contains_any '/etc/master.passwd'",
+       "facts.image eq 'sudo'"
+      ]
+     }
+    },
+    "C4_quiet": {
+     "check": "C4_quiet",
+     "passed": true,
+     "detail": "",
+     "history_rate": 0.0,
+     "fired_on": []
+    },
+    "C5_confirmed": {
+     "check": "C5_confirmed",
+     "passed": true,
+     "detail": "",
+     "confirmed_by": [
+      "analyst"
+     ],
+     "source": "analyst",
+     "why": "analyst-approved: analyst verdicts 4 malicious / 0 benign (mean 0.83, lower 0.51; all 4 alert(s) reviewed)",
+     "llm_agreement": []
+    }
+   },
+   "history": [
+    {
+     "at": "2026-10-08T03:38:22",
+     "from": null,
+     "to": "candidate",
+     "reason": "written"
+    },
+    {
+     "at": "2026-10-08T03:38:25",
+     "from": "candidate",
+     "to": "shadow",
+     "reason": "passed C1\u2013C4"
+    },
+    {
+     "at": "2026-10-08T03:38:25",
+     "from": "shadow",
+     "to": "active",
+     "reason": "analyst-approved: analyst verdicts 4 malicious / 0 benign (mean 0.83, lower 0.51; all 4 alert(s) reviewed)"
+    },
+    {
+     "at": "2026-11-16T13:33:43",
+     "from": "active",
+     "to": "retired",
+     "reason": "analyst retired it (2026-11-16): too broad. It matches any `sudo ... cat`, and alerted on 3 benign burn-in windows (burnin_app01_0000, burnin_app01_0030, burnin_web01_0000: the experimenter's log collection). A burn-in holds no attack, so every alert there is false; no attack label was used"
+    }
+   ]
+  },
+  {
+   "uid": "llm.credential-dump-etc-passwd.69392085b1",
+   "rule": {
+    "id": "llm.credential-dump-etc-passwd.69392085b1",
+    "technique": "T1003.008",
+    "name": "Read /etc/master.passwd via sudo",
+    "tactic": "credential-access",
+    "severity": 0.9,
+    "evidence": [
+     "ev_000605",
+     "ev_000606"
+    ],
+    "indicators": [
+     {
+      "name": "etc-passwd-read",
+      "weight": 1.0,
+      "required": true,
+      "select": {
+       "claim_type": "file_read",
+       "facts.file_path": {
+        "contains_any": [
+         "/etc/master.passwd"
+        ]
+       },
+       "facts.image": [
+        "cat"
+       ],
+       "behaviour.tactics": {
+        "in": [
+         "credential-access"
+        ]
+       }
+      },
+      "aggregate": [
+       {
+        "as": "n",
+        "op": "count"
+       }
+      ],
+      "score": {
+       "op": "threshold",
+       "value": "n",
+       "at": 1
+      }
+     }
+    ],
+    "provenance": {
+     "authored_by": "argus.rules.induce",
+     "model": "gpt-oss:120b-cloud",
+     "origin": "run1_app01_1330#app01/2364@1791380894.309",
+     "round": 0,
+     "semantic_id": "693920a76932",
+     "evidence": [
+      "ev_000605",
+      "ev_000606"
+     ]
+    }
+   },
+   "status": "rejected",
+   "origin": {
+    "capture": "run1_app01_1330",
+    "recording": "run1",
+    "host": "app01",
+    "episode": "run1_app01_1330#app01/2364@1791380894.309",
+    "episode_root_image": "dash",
+    "round": 0
+   },
+   "checks": {
+    "C1_valid": {
+     "check": "C1_valid",
+     "passed": true,
+     "detail": "",
+     "errors": []
+    },
+    "C2_own_evidence": {
+     "check": "C2_own_evidence",
+     "passed": false,
+     "detail": "[etc-passwd-read] requires facts.file_path contains_any '/etc/master.passwd': no claim of the origin capture satisfies it (wrong_field); [etc-passwd-read] requires facts.image eq 'cat': no claim of the origin capture satisfies it (not_observed)",
+     "hard": [
+      "[etc-passwd-read] requires facts.file_path contains_any '/etc/master.passwd': no claim of the origin capture satisfies it (wrong_field)",
+      "[etc-passwd-read] requires facts.image eq 'cat': no claim of the origin capture satisfies it (not_observed)",
+      "[etc-passwd-read] requires behaviour.tactics eq 'credential-access': no claim of the origin capture satisfies it (not_observed)"
+     ],
+     "soft": [],
+     "causes": {
+      "wrong_field": 1,
+      "not_observed": 2
+     },
+     "origin_score": 0.0
+    }
+   },
+   "history": [
+    {
+     "at": "2026-10-08T03:38:22",
+     "from": null,
+     "to": "candidate",
+     "reason": "written"
+    },
+    {
+     "at": "2026-10-08T03:38:22",
+     "from": "candidate",
+     "to": "rejected",
+     "reason": "repaired: superseded by llm.credential-dump-etc-master-passwd.60d65985b1.r1"
+    }
+   ]
+  },
+  {
+   "uid": "llm.credential-dump-master-passwd.a769aceab0",
+   "rule": {
+    "id": "llm.credential-dump-master-passwd.a769aceab0",
+    "technique": "T1003.008",
+    "name": "Read /etc/master.passwd via sudo",
+    "tactic": "credential-access",
+    "severity": 0.9,
+    "evidence": [
+     "ev_000611",
+     "ev_000612"
+    ],
+    "indicators": [
+     {
+      "name": "sudo cat master.passwd",
+      "weight": 1.0,
+      "required": true,
+      "select": {
+       "claim_type": "process_create",
+       "facts.command": {
+        "all_of": [
+         {
+          "contains_any": [
+           "sudo"
+          ]
+         },
+         {
+          "contains_any": [
+           "cat"
+          ]
+         },
+         {
+          "contains_any": [
+           "master.passwd"
+          ]
+         }
+        ]
+       }
+      },
+      "aggregate": [
+       {
+        "as": "n",
+        "op": "count"
+       }
+      ],
+      "score": {
+       "op": "threshold",
+       "value": "n",
+       "at": 1
+      }
+     }
+    ],
+    "provenance": {
+     "authored_by": "argus.rules.induce",
+     "model": "gpt-oss:120b-cloud",
+     "origin": "run1_web01_1330#web01/2402@1791380892.117",
+     "round": 0,
+     "semantic_id": "a769ac576ca6",
+     "evidence": [
+      "ev_000611",
+      "ev_000612"
+     ]
+    }
+   },
+   "status": "retired",
+   "origin": {
+    "capture": "run1_web01_1330",
+    "recording": "run1",
+    "host": "web01",
+    "episode": "run1_web01_1330#web01/2402@1791380892.117",
+    "episode_root_image": "dash",
+    "round": 0
+   },
+   "checks": {
+    "C1_valid": {
+     "check": "C1_valid",
+     "passed": true,
+     "detail": "",
+     "errors": []
+    },
+    "C2_own_evidence": {
+     "check": "C2_own_evidence",
+     "passed": true,
+     "detail": "",
+     "hard": [],
+     "soft": [],
+     "causes": {},
+     "origin_score": 1.0
+    },
+    "C3_robust": {
+     "check": "C3_robust",
+     "passed": true,
+     "detail": "",
+     "lost_under": [],
+     "static_rename_survival": 0.0,
+     "static_brittle": true,
+     "breaking_literals": {
+      "sudo cat master.passwd": [
+       "facts.command contains_any 'cat'",
+       "facts.command contains_any 'master.passwd'",
+       "facts.command contains_any 'sudo'"
+      ]
+     }
+    },
+    "C4_quiet": {
+     "check": "C4_quiet",
+     "passed": true,
+     "detail": "",
+     "history_rate": 0.0,
+     "fired_on": []
+    },
+    "C5_confirmed": {
+     "check": "C5_confirmed",
+     "passed": true,
+     "detail": "",
+     "confirmed_by": [
+      "analyst"
+     ],
+     "source": "analyst",
+     "why": "analyst-approved: analyst verdicts 4 malicious / 0 benign (mean 0.83, lower 0.51; all 4 alert(s) reviewed)",
+     "llm_agreement": []
+    }
+   },
+   "history": [
+    {
+     "at": "2026-10-08T03:38:22",
+     "from": null,
+     "to": "candidate",
+     "reason": "written"
+    },
+    {
+     "at": "2026-10-08T03:38:25",
+     "from": "candidate",
+     "to": "shadow",
+     "reason": "passed C1\u2013C4"
+    },
+    {
+     "at": "2026-10-08T03:38:25",
+     "from": "shadow",
+     "to": "active",
+     "reason": "analyst-approved: analyst verdicts 4 malicious / 0 benign (mean 0.83, lower 0.51; all 4 alert(s) reviewed)"
+    },
+    {
+     "at": "2026-10-08T03:47:07",
+     "from": "active",
+     "to": "retired",
+     "reason": "duplicate of llm.credential-dump-etc-master-passwd.60d65985b1.r1: fires on exactly the same events in every design capture"
+    }
+   ]
+  },
+  {
+   "uid": "llm.credential-dump-master-passwd.b0f086460c",
+   "rule": {
+    "id": "llm.credential-dump-master-passwd.b0f086460c",
+    "technique": "T1003.008",
+    "name": "Read /etc/master.passwd (credential dumping)",
+    "tactic": "credential-access",
+    "severity": 0.9,
+    "evidence": [
+     "ev_000629"
+    ],
+    "indicators": [
+     {
+      "name": "access_master_passwd",
+      "weight": 1.0,
+      "required": true,
+      "select": {
+       "claim_type": "process_create",
+       "facts.command": {
+        "contains_any": [
+         "master.passwd"
+        ]
+       },
+       "behaviour.tactics": {
+        "in": [
+         "credential-access"
+        ]
+       }
+      },
+      "score": {
+       "op": "threshold",
+       "value": "1",
+       "at": 1
+      }
+     }
+    ],
+    "provenance": {
+     "authored_by": "argus.rules.induce",
+     "model": "gpt-oss:120b-cloud",
+     "origin": "run1_ws-dev01_1330#ws-dev01/2413@1791380888.731",
+     "round": 0,
+     "semantic_id": "b0f086306a73",
+     "evidence": [
+      "ev_000629"
+     ]
+    }
+   },
+   "status": "rejected",
+   "origin": {
+    "capture": "run1_ws-dev01_1330",
+    "recording": "run1",
+    "host": "ws-dev01",
+    "episode": "run1_ws-dev01_1330#ws-dev01/2413@1791380888.731",
+    "episode_root_image": "dash",
+    "round": 0
+   },
+   "checks": {
+    "C1_valid": {
+     "check": "C1_valid",
+     "passed": false,
+     "detail": "indicator[0].score: references undefined value '1'",
+     "errors": [
+      "indicator[0].score: references undefined value '1'"
+     ]
+    }
+   },
+   "history": [
+    {
+     "at": "2026-10-08T03:38:22",
+     "from": null,
+     "to": "candidate",
+     "reason": "written"
+    },
+    {
+     "at": "2026-10-08T03:38:22",
+     "from": "candidate",
+     "to": "rejected",
+     "reason": "repaired: superseded by llm.llm-credential-dump-master-passwd-b0f086460c.dfe510460c.r1"
+    }
+   ]
+  },
+  {
+   "uid": "llm.credential-dump-passwd.414cfd5de7",
+   "rule": {
+    "id": "llm.credential-dump-passwd.414cfd5de7",
+    "technique": "T1003.001",
+    "name": "Read /etc/passwd and write to user-writable location",
+    "tactic": "credential-access",
+    "severity": 0.7,
+    "evidence": [
+     "ev_000606"
+    ],
+    "indicators": [
+     {
+      "name": "passwd-to-tmp",
+      "weight": 1.0,
+      "required": true,
+      "select": {
+       "claim_type": "process_create",
+       "facts.command": {
+        "all_of": [
+         {
+          "contains_any": [
+           "etc/passwd"
+          ]
+         },
+         {
+          "contains_any": [
+           "/tmp/"
+          ]
+         }
+        ]
+       },
+       "behaviour.tactics": {
+        "in": [
+         "credential-access"
+        ]
+       }
+      },
+      "score": {
+       "op": "threshold",
+       "value": "n",
+       "at": 1
+      }
+     }
+    ],
+    "provenance": {
+     "authored_by": "argus.rules.induce",
+     "model": "gpt-oss:120b-cloud",
+     "origin": "run1_web01_1330#web01/2397@1791380790.049",
+     "round": 0,
+     "semantic_id": "414cfd3ccddb",
+     "evidence": [
+      "ev_000606"
+     ]
+    }
+   },
+   "status": "rejected",
+   "origin": {
+    "capture": "run1_web01_1330",
+    "recording": "run1",
+    "host": "web01",
+    "episode": "run1_web01_1330#web01/2397@1791380790.049",
+    "episode_root_image": "dash",
+    "round": 0
+   },
+   "checks": {
+    "C1_valid": {
+     "check": "C1_valid",
+     "passed": true,
+     "detail": "",
+     "errors": []
+    },
+    "C2_own_evidence": {
+     "check": "C2_own_evidence",
+     "passed": false,
+     "detail": "[passwd-to-tmp] requires behaviour.tactics eq 'credential-access': no claim of the origin capture satisfies it (not_observed)",
+     "hard": [
+      "[passwd-to-tmp] requires behaviour.tactics eq 'credential-access': no claim of the origin capture satisfies it (not_observed)"
+     ],
+     "soft": [],
+     "causes": {
+      "not_observed": 1
+     },
+     "origin_score": 0.0
+    }
+   },
+   "history": [
+    {
+     "at": "2026-10-08T03:38:22",
+     "from": null,
+     "to": "candidate",
+     "reason": "written"
+    },
+    {
+     "at": "2026-10-08T03:38:22",
+     "from": "candidate",
+     "to": "rejected",
+     "reason": "repaired: superseded by llm.llm-credential-dump-passwd-414cfd5de7.0d5af25de7.r1"
+    }
+   ]
+  },
+  {
+   "uid": "llm.credential-dump-passwd.e29b984306",
+   "rule": {
+    "id": "llm.credential-dump-passwd.e29b984306",
+    "technique": "T1003.001",
+    "name": "Read /etc/passwd and write to temporary location",
+    "tactic": "credential-access",
+    "severity": 0.8,
+    "evidence": [
+     "ev_000574",
+     "ev_000575",
+     "ev_000576"
+    ],
+    "indicators": [
+     {
+      "name": "suspicious_passwd_dump",
+      "weight": 1.0,
+      "required": true,
+      "select": {
+       "claim_type": "process_create",
+       "any_of": [
+        {
+         "facts.image": "cat"
+        },
+        {
+         "facts.image": "sh"
+        }
+       ],
+       "facts.command": {
+        "all_of": [
+         {
+          "contains_any": [
+           "passwd"
+          ]
+         },
+         {
+          "contains_any": [
+           "/tmp"
+          ]
+         }
+        ]
+       },
+       "behaviour.tactics": {
+        "in": [
+         "credential-access"
+        ]
+       }
+      },
+      "aggregate": [
+       {
+        "as": "n",
+        "op": "count"
+       }
+      ],
+      "score": {
+       "op": "threshold",
+       "value": "n",
+       "at": 1
+      }
+     }
+    ],
+    "provenance": {
+     "authored_by": "argus.rules.induce",
+     "model": "gpt-oss:120b-cloud",
+     "origin": "run1_ws-fin01_1330#ws-fin01/12754@1791380833.890",
+     "round": 0,
+     "semantic_id": "e29b9845de91",
+     "evidence": [
+      "ev_000574",
+      "ev_000575",
+      "ev_000576"
+     ]
+    }
+   },
+   "status": "rejected",
+   "origin": {
+    "capture": "run1_ws-fin01_1330",
+    "recording": "run1",
+    "host": "ws-fin01",
+    "episode": "run1_ws-fin01_1330#ws-fin01/12754@1791380833.890",
+    "episode_root_image": "dash",
+    "round": 0
+   },
+   "checks": {
+    "C1_valid": {
+     "check": "C1_valid",
+     "passed": true,
+     "detail": "",
+     "errors": []
+    },
+    "C2_own_evidence": {
+     "check": "C2_own_evidence",
+     "passed": false,
+     "detail": "[suspicious_passwd_dump] requires behaviour.tactics eq 'credential-access': no claim of the origin capture satisfies it (not_observed)",
+     "hard": [
+      "[suspicious_passwd_dump] requires behaviour.tactics eq 'credential-access': no claim of the origin capture satisfies it (not_observed)"
+     ],
+     "soft": [],
+     "causes": {
+      "not_observed": 1
+     },
+     "origin_score": 0.0
+    }
+   },
+   "history": [
+    {
+     "at": "2026-10-08T03:38:22",
+     "from": null,
+     "to": "candidate",
+     "reason": "written"
+    },
+    {
+     "at": "2026-10-08T03:38:22",
+     "from": "candidate",
+     "to": "rejected",
+     "reason": "repaired: superseded by llm.llm-credential-dump-passwd-e29b984306.71ac014306.r1"
+    }
+   ]
+  },
+  {
+   "uid": "llm.discovery-from-user-writable-parent.e333f02a21",
+   "rule": {
+    "id": "llm.discovery-from-user-writable-parent.e333f02a21",
+    "technique": "T1082",
+    "name": "Discovery commands executed by child of user\u2011writable process",
+    "tactic": "discovery",
+    "severity": 0.6,
+    "evidence": [
+     "ev_000031"
+    ],
+    "indicators": [
+     {
+      "name": "whoami_from_user_writable_parent",
+      "weight": 1.0,
+      "required": true,
+      "select": {
+       "claim_type": "process_create",
+       "lineage.parent_user_writable": {
+        "truthy": true
+       },
+       "facts.command": {
+        "contains_any": [
+         "whoami"
+        ]
+       }
+      },
+      "score": {
+       "op": "threshold",
+       "value": "1",
+       "at": 1
+      }
+     }
+    ],
+    "provenance": {
+     "authored_by": "argus.rules.induce",
+     "model": "gpt-oss:120b-cloud",
+     "origin": "run1_app01_1230#app01/1094@1791377547.402",
+     "round": 0,
+     "semantic_id": "e333f0534405",
+     "evidence": [
+      "ev_000031"
+     ]
+    }
+   },
+   "status": "rejected",
+   "origin": {
+    "capture": "run1_app01_1230",
+    "recording": "run1",
+    "host": "app01",
+    "episode": "run1_app01_1230#app01/1094@1791377547.402",
+    "episode_root_image": "splunkd",
+    "round": 0
+   },
+   "checks": {
+    "C1_valid": {
+     "check": "C1_valid",
+     "passed": false,
+     "detail": "indicator[0].score: references undefined value '1'",
+     "errors": [
+      "indicator[0].score: references undefined value '1'"
+     ]
+    }
+   },
+   "history": [
+    {
+     "at": "2026-10-08T03:38:22",
+     "from": null,
+     "to": "candidate",
+     "reason": "written"
+    },
+    {
+     "at": "2026-10-08T03:38:22",
+     "from": "candidate",
+     "to": "rejected",
+     "reason": "repaired: superseded by llm.llm-user-writable-outbound-server-c5a7a22a21.174bd32a21.r1,llm.llm-clear-bash-history-547eba2a21.f68ca72a21.r1,llm.llm-discovery-from-user-writable-ancestor-e333f0.b528532a21.r1"
+    }
+   ]
+  },
+  {
+   "uid": "llm.install-iproute2-apt-get.adfcdace38.r1",
+   "rule": {
+    "id": "llm.install-iproute2-apt-get.adfcdace38.r1",
+    "technique": "T1588.002",
+    "name": "Install iproute2 via package manager",
+    "tactic": "defense-evasion",
+    "severity": 0.6,
+    "evidence": [
+     "ev_000620"
+    ],
+    "indicators": [
+     {
+      "name": "apt-get-install-iproute2",
+      "weight": 1.0,
+      "required": true,
+      "select": {
+       "claim_type": "process_create",
+       "facts.image": [
+        "dash",
+        "sh",
+        "bash"
+       ],
+       "facts.command": {
+        "contains_any": [
+         "apt-get",
+         "install",
+         "iproute2"
+        ]
+       }
+      },
+      "aggregate": [
+       {
+        "as": "n",
+        "op": "count"
+       }
+      ],
+      "score": {
+       "op": "threshold",
+       "value": "n",
+       "at": 1
+      }
+     }
+    ],
+    "provenance": {
+     "authored_by": "argus.rules.induce",
+     "model": "gpt-oss:120b-cloud",
+     "origin": "run1_ws-dev01_1330#ws-dev01/2404@1791380699.574",
+     "round": 1,
+     "semantic_id": "adfcda59a724",
+     "evidence": [
+      "ev_000620"
+     ]
+    }
+   },
+   "status": "rejected",
+   "origin": {
+    "capture": "run1_ws-dev01_1330",
+    "recording": "run1",
+    "host": "ws-dev01",
+    "episode": "run1_ws-dev01_1330#ws-dev01/2404@1791380699.574",
+    "episode_root_image": "dash",
+    "round": 1
+   },
+   "checks": {
+    "C1_valid": {
+     "check": "C1_valid",
+     "passed": true,
+     "detail": "",
+     "errors": []
+    },
+    "C2_own_evidence": {
+     "check": "C2_own_evidence",
+     "passed": true,
+     "detail": "",
+     "hard": [],
+     "soft": [],
+     "causes": {},
+     "origin_score": 1.0
+    },
+    "C3_robust": {
+     "check": "C3_robust",
+     "passed": true,
+     "detail": "",
+     "lost_under": [],
+     "static_rename_survival": 0.0,
+     "static_brittle": true,
+     "breaking_literals": {
+      "apt-get-install-iproute2": [
+       "facts.command contains_any 'apt-get'",
+       "facts.command contains_any 'install'",
+       "facts.command contains_any 'iproute2'",
+       "facts.image eq 'bash'",
+       "facts.image eq 'dash'",
+       "facts.image eq 'sh'"
+      ]
+     }
+    },
+    "C4_quiet": {
+     "check": "C4_quiet",
+     "passed": false,
+     "detail": "fires on 50% of the host's other captures (max 25%)",
+     "history_rate": 0.5,
+     "fired_on": [
+      "run1_ws-dev01_1200",
+      "run1_ws-dev01_1300"
+     ]
+    }
+   },
+   "history": [
+    {
+     "at": "2026-10-08T03:38:22",
+     "from": null,
+     "to": "candidate",
+     "reason": "written"
+    },
+    {
+     "at": "2026-10-08T03:38:25",
+     "from": "candidate",
+     "to": "rejected",
+     "reason": "C4_rare_history: fires on 50% of the host's other captures (max 25%)"
+    }
+   ]
+  },
+  {
+   "uid": "llm.install-iproute2-apt.4452b6ce38",
+   "rule": {
+    "id": "llm.install-iproute2-apt.4452b6ce38",
+    "technique": "T1588.002",
+    "name": "Package Installation of iproute2 via apt-get",
+    "tactic": "credential-access",
+    "severity": 0.6,
+    "evidence": [
+     "ev_000620"
+    ],
+    "indicators": [
+     {
+      "name": "apt-get-install-iproute2",
+      "weight": 1.0,
+      "required": true,
+      "select": {
+       "claim_type": "process_create",
+       "facts.image": [
+        "sh",
+        "bash"
+       ],
+       "facts.command": {
+        "contains_any": [
+         "apt-get",
+         "install",
+         "iproute2"
+        ]
+       }
+      },
+      "aggregate": [
+       {
+        "as": "n",
+        "op": "count"
+       }
+      ],
+      "score": {
+       "op": "threshold",
+       "value": "n",
+       "at": 1
+      }
+     }
+    ],
+    "provenance": {
+     "authored_by": "argus.rules.induce",
+     "model": "gpt-oss:120b-cloud",
+     "origin": "run1_ws-dev01_1330#ws-dev01/2404@1791380699.574",
+     "round": 0,
+     "semantic_id": "4452b6c65cd1",
+     "evidence": [
+      "ev_000620"
+     ]
+    }
+   },
+   "status": "rejected",
+   "origin": {
+    "capture": "run1_ws-dev01_1330",
+    "recording": "run1",
+    "host": "ws-dev01",
+    "episode": "run1_ws-dev01_1330#ws-dev01/2404@1791380699.574",
+    "episode_root_image": "dash",
+    "round": 0
+   },
+   "checks": {
+    "C1_valid": {
+     "check": "C1_valid",
+     "passed": true,
+     "detail": "",
+     "errors": []
+    },
+    "C2_own_evidence": {
+     "check": "C2_own_evidence",
+     "passed": false,
+     "detail": "[apt-get-install-iproute2] none of facts.image eq 'sh', facts.image eq 'bash' occurs in the origin capture",
+     "hard": [
+      "[apt-get-install-iproute2] none of facts.image eq 'sh', facts.image eq 'bash' occurs in the origin capture"
+     ],
+     "soft": [],
+     "causes": {
+      "partial": 1
+     },
+     "origin_score": 0.0
+    }
+   },
+   "history": [
+    {
+     "at": "2026-10-08T03:38:22",
+     "from": null,
+     "to": "candidate",
+     "reason": "written"
+    },
+    {
+     "at": "2026-10-08T03:38:22",
+     "from": "candidate",
+     "to": "rejected",
+     "reason": "repaired: superseded by llm.install-iproute2-apt-get.adfcdace38.r1"
+    }
+   ]
+  },
+  {
+   "uid": "llm.linux-etc-passwd-temp-dump.4fd26e7236",
+   "rule": {
+    "id": "llm.linux-etc-passwd-temp-dump.4fd26e7236",
+    "technique": "T1003.001",
+    "name": "Linux /etc/passwd credential dump to temporary file",
+    "tactic": "credential-access",
+    "severity": 0.7,
+    "evidence": [
+     "ev_000600"
+    ],
+    "indicators": [
+     {
+      "name": "dump_passwd_to_tmp",
+      "weight": 1.0,
+      "required": true,
+      "select": {
+       "claim_type": "process_create",
+       "facts.command": {
+        "contains_any": [
+         "passwd",
+         "/tmp/"
+        ]
+       }
+      },
+      "score": {
+       "op": "threshold",
+       "value": "n",
+       "at": 1
+      }
+     }
+    ],
+    "provenance": {
+     "authored_by": "argus.rules.induce",
+     "model": "gpt-oss:120b-cloud",
+     "origin": "run1_app01_1330#app01/2359@1791380802.237",
+     "round": 0,
+     "semantic_id": "4fd26e376885",
+     "evidence": [
+      "ev_000600"
+     ]
+    }
+   },
+   "status": "rejected",
+   "origin": {
+    "capture": "run1_app01_1330",
+    "recording": "run1",
+    "host": "app01",
+    "episode": "run1_app01_1330#app01/2359@1791380802.237",
+    "episode_root_image": "dash",
+    "round": 0
+   },
+   "checks": {
+    "C1_valid": {
+     "check": "C1_valid",
+     "passed": true,
+     "detail": "",
+     "errors": []
+    },
+    "C2_own_evidence": {
+     "check": "C2_own_evidence",
+     "passed": true,
+     "detail": "",
+     "hard": [],
+     "soft": [],
+     "causes": {},
+     "origin_score": 1.0
+    },
+    "C3_robust": {
+     "check": "C3_robust",
+     "passed": true,
+     "detail": "",
+     "lost_under": [],
+     "static_rename_survival": 0.0,
+     "static_brittle": true,
+     "breaking_literals": {
+      "dump_passwd_to_tmp": [
+       "facts.command contains_any '/tmp/'",
+       "facts.command contains_any 'passwd'"
+      ]
+     }
+    },
+    "C4_quiet": {
+     "check": "C4_quiet",
+     "passed": false,
+     "detail": "fires on 75% of the host's other captures (max 25%)",
+     "history_rate": 0.75,
+     "fired_on": [
+      "run1_app01_1200",
+      "run1_app01_1230",
+      "run1_app01_1400"
+     ]
+    }
+   },
+   "history": [
+    {
+     "at": "2026-10-08T03:38:22",
+     "from": null,
+     "to": "candidate",
+     "reason": "written"
+    },
+    {
+     "at": "2026-10-08T03:38:25",
+     "from": "candidate",
+     "to": "rejected",
+     "reason": "C4_rare_history: fires on 75% of the host's other captures (max 25%)"
+    }
+   ]
+  },
+  {
+   "uid": "llm.llm-clear-bash-history-547eba2a21.f68ca72a21.r1",
+   "rule": {
+    "id": "llm.llm-clear-bash-history-547eba2a21.f68ca72a21.r1",
+    "technique": "T1070.003",
+    "name": "Shell clears bash history and unsets HISTFILE",
+    "tactic": "defense-evasion",
+    "severity": 0.6,
+    "evidence": [
+     "ev_000027"
+    ],
+    "indicators": [
+     {
+      "name": "history_erase_command",
+      "weight": 1.0,
+      "required": true,
+      "select": {
+       "claim_type": "process_create",
+       "facts.image": [
+        "dash"
+       ],
+       "facts.command": {
+        "contains_any": [
+         "HISTFILE",
+         "bash_history"
+        ]
+       }
+      },
+      "score": {
+       "op": "threshold",
+       "value": "n",
+       "at": 1
+      }
+     }
+    ],
+    "provenance": {
+     "authored_by": "argus.rules.induce",
+     "model": "gpt-oss:120b-cloud",
+     "origin": "run1_app01_1230#app01/1094@1791377547.402",
+     "round": 1,
+     "semantic_id": "f68ca73465e6",
+     "evidence": [
+      "ev_000027"
+     ]
+    }
+   },
+   "status": "retired",
+   "origin": {
+    "capture": "run1_app01_1230",
+    "recording": "run1",
+    "host": "app01",
+    "episode": "run1_app01_1230#app01/1094@1791377547.402",
+    "episode_root_image": "splunkd",
+    "round": 1
+   },
+   "checks": {
+    "C1_valid": {
+     "check": "C1_valid",
+     "passed": true,
+     "detail": "",
+     "errors": []
+    },
+    "C2_own_evidence": {
+     "check": "C2_own_evidence",
+     "passed": true,
+     "detail": "",
+     "hard": [],
+     "soft": [],
+     "causes": {},
+     "origin_score": 1.0
+    },
+    "C3_robust": {
+     "check": "C3_robust",
+     "passed": true,
+     "detail": "",
+     "lost_under": [],
+     "static_rename_survival": 0.0,
+     "static_brittle": true,
+     "breaking_literals": {
+      "history_erase_command": [
+       "facts.command contains_any 'HISTFILE'",
+       "facts.command contains_any 'bash_history'",
+       "facts.image eq 'dash'"
+      ]
+     }
+    },
+    "C4_quiet": {
+     "check": "C4_quiet",
+     "passed": true,
+     "detail": "",
+     "history_rate": 0.0,
+     "fired_on": []
+    },
+    "C5_confirmed": {
+     "check": "C5_confirmed",
+     "passed": true,
+     "detail": "",
+     "confirmed_by": [
+      "analyst"
+     ],
+     "source": "analyst",
+     "why": "analyst-approved: analyst verdicts 4 malicious / 0 benign (mean 0.83, lower 0.51; all 4 alert(s) reviewed)",
+     "llm_agreement": []
+    }
+   },
+   "history": [
+    {
+     "at": "2026-10-08T03:38:22",
+     "from": null,
+     "to": "candidate",
+     "reason": "written"
+    },
+    {
+     "at": "2026-10-08T03:38:25",
+     "from": "candidate",
+     "to": "shadow",
+     "reason": "passed C1\u2013C4"
+    },
+    {
+     "at": "2026-10-08T03:38:25",
+     "from": "shadow",
+     "to": "active",
+     "reason": "analyst-approved: analyst verdicts 4 malicious / 0 benign (mean 0.83, lower 0.51; all 4 alert(s) reviewed)"
+    },
+    {
+     "at": "2026-10-08T03:47:07",
+     "from": "active",
+     "to": "retired",
+     "reason": "duplicate of llm.clear-bash-history-6f2c1d.b1bd756a50.r1: fires on exactly the same events in every design capture"
+    }
+   ]
+  },
+  {
+   "uid": "llm.llm-credential-dump-master-passwd-b0f086460c.dfe510460c.r1",
+   "rule": {
+    "id": "llm.llm-credential-dump-master-passwd-b0f086460c.dfe510460c.r1",
+    "technique": "T1003.008",
+    "name": "Read /etc/master.passwd (credential dumping)",
+    "tactic": "credential-access",
+    "severity": 0.9,
+    "evidence": [
+     "ev_000629"
+    ],
+    "indicators": [
+     {
+      "name": "access_master_passwd",
+      "weight": 1.0,
+      "required": true,
+      "select": {
+       "claim_type": "process_create",
+       "facts.command": {
+        "contains_any": [
+         "master.passwd"
+        ]
+       }
+      },
+      "score": {
+       "op": "threshold",
+       "value": 1,
+       "at": 1
+      }
+     }
+    ],
+    "provenance": {
+     "authored_by": "argus.rules.induce",
+     "model": "gpt-oss:120b-cloud",
+     "origin": "run1_ws-dev01_1330#ws-dev01/2413@1791380888.731",
+     "round": 1,
+     "semantic_id": "dfe5100fee8b",
+     "evidence": [
+      "ev_000629"
+     ]
+    }
+   },
+   "status": "rejected",
+   "origin": {
+    "capture": "run1_ws-dev01_1330",
+    "recording": "run1",
+    "host": "ws-dev01",
+    "episode": "run1_ws-dev01_1330#ws-dev01/2413@1791380888.731",
+    "episode_root_image": "dash",
+    "round": 1
+   },
+   "checks": {
+    "C1_valid": {
+     "check": "C1_valid",
+     "passed": false,
+     "detail": "indicator[0].score: references undefined value 1",
+     "errors": [
+      "indicator[0].score: references undefined value 1"
+     ]
+    }
+   },
+   "history": [
+    {
+     "at": "2026-10-08T03:38:22",
+     "from": null,
+     "to": "candidate",
+     "reason": "written"
+    },
+    {
+     "at": "2026-10-08T03:38:22",
+     "from": "candidate",
+     "to": "rejected",
+     "reason": "repaired: superseded by llm.llm-llm-credential-dump-master-passwd-b0f086460c.18b09c460c.r2"
+    }
+   ]
+  },
+  {
+   "uid": "llm.llm-credential-dump-passwd-414cfd5de7.0d5af25de7.r1",
+   "rule": {
+    "id": "llm.llm-credential-dump-passwd-414cfd5de7.0d5af25de7.r1",
+    "technique": "T1003.001",
+    "name": "Read /etc/passwd and write to a user\u2011writable location",
+    "tactic": "credential-access",
+    "severity": 0.7,
+    "evidence": [
+     "ev_000606"
+    ],
+    "indicators": [
+     {
+      "name": "passwd-to-tmp",
+      "weight": 1.0,
+      "required": true,
+      "select": {
+       "claim_type": "process_create",
+       "facts.image": {
+        "in": [
+         "sh",
+         "dash",
+         "bash",
+         "zsh"
+        ]
+       },
+       "facts.command": {
+        "all_of": [
+         {
+          "contains_any": [
+           "passwd"
+          ]
+         },
+         {
+          "contains_any": [
+           "/tmp/"
+          ]
+         }
+        ]
+       }
+      },
+      "score": {
+       "op": "threshold",
+       "value": "n",
+       "at": 1
+      }
+     }
+    ],
+    "provenance": {
+     "authored_by": "argus.rules.induce",
+     "model": "gpt-oss:120b-cloud",
+     "origin": "run1_web01_1330#web01/2397@1791380790.049",
+     "round": 1,
+     "semantic_id": "0d5af2f83a6a",
+     "evidence": [
+      "ev_000606"
+     ]
+    }
+   },
+   "status": "retired",
+   "origin": {
+    "capture": "run1_web01_1330",
+    "recording": "run1",
+    "host": "web01",
+    "episode": "run1_web01_1330#web01/2397@1791380790.049",
+    "episode_root_image": "dash",
+    "round": 1
+   },
+   "checks": {
+    "C1_valid": {
+     "check": "C1_valid",
+     "passed": true,
+     "detail": "",
+     "errors": []
+    },
+    "C2_own_evidence": {
+     "check": "C2_own_evidence",
+     "passed": true,
+     "detail": "",
+     "hard": [],
+     "soft": [],
+     "causes": {},
+     "origin_score": 1.0
+    },
+    "C3_robust": {
+     "check": "C3_robust",
+     "passed": true,
+     "detail": "",
+     "lost_under": [],
+     "static_rename_survival": 0.0,
+     "static_brittle": true,
+     "breaking_literals": {
+      "passwd-to-tmp": [
+       "facts.command contains_any '/tmp/'",
+       "facts.command contains_any 'passwd'",
+       "facts.image eq 'bash'",
+       "facts.image eq 'dash'",
+       "facts.image eq 'sh'",
+       "facts.image eq 'zsh'"
+      ]
+     }
+    },
+    "C4_quiet": {
+     "check": "C4_quiet",
+     "passed": true,
+     "detail": "",
+     "history_rate": 0.0,
+     "fired_on": []
+    },
+    "C5_confirmed": {
+     "check": "C5_confirmed",
+     "passed": true,
+     "detail": "",
+     "confirmed_by": [
+      "analyst"
+     ],
+     "source": "analyst",
+     "why": "analyst-approved: analyst verdicts 4 malicious / 0 benign (mean 0.83, lower 0.51; all 4 alert(s) reviewed)",
+     "llm_agreement": []
+    }
+   },
+   "history": [
+    {
+     "at": "2026-10-08T03:38:22",
+     "from": null,
+     "to": "candidate",
+     "reason": "written"
+    },
+    {
+     "at": "2026-10-08T03:38:25",
+     "from": "candidate",
+     "to": "shadow",
+     "reason": "passed C1\u2013C4"
+    },
+    {
+     "at": "2026-10-08T03:38:25",
+     "from": "shadow",
+     "to": "active",
+     "reason": "analyst-approved: analyst verdicts 4 malicious / 0 benign (mean 0.83, lower 0.51; all 4 alert(s) reviewed)"
+    },
+    {
+     "at": "2026-10-08T03:47:07",
+     "from": "active",
+     "to": "retired",
+     "reason": "duplicate of llm.llm-llm-credential-dump-passwd-e29b984306-71ac01.831b8b4306.r2: fires on exactly the same events in every design capture"
+    }
+   ]
+  },
+  {
+   "uid": "llm.llm-credential-dump-passwd-e29b984306.71ac014306.r1",
+   "rule": {
+    "id": "llm.llm-credential-dump-passwd-e29b984306.71ac014306.r1",
+    "technique": "T1003.001",
+    "name": "Read /etc/passwd and write to temporary location",
+    "tactic": "credential-access",
+    "severity": 0.8,
+    "evidence": [
+     "ev_000574",
+     "ev_000575",
+     "ev_000576"
+    ],
+    "indicators": [
+     {
+      "name": "suspicious_passwd_dump",
+      "weight": 1.0,
+      "required": true,
+      "select": {
+       "claim_type": "process_create",
+       "any_of": [
+        {
+         "facts.image": "cat"
+        },
+        {
+         "facts.image": "sh"
+        }
+       ],
+       "facts.command": {
+        "all_of": [
+         {
+          "contains_any": [
+           "passwd"
+          ]
+         },
+         {
+          "contains_any": [
+           "/tmp"
+          ]
+         }
+        ]
+       }
+      },
+      "aggregate": [
+       {
+        "as": "n",
+        "op": "count"
+       }
+      ],
+      "score": {
+       "op": "threshold",
+       "value": "n",
+       "at": 1
+      }
+     }
+    ],
+    "provenance": {
+     "authored_by": "argus.rules.induce",
+     "model": "gpt-oss:120b-cloud",
+     "origin": "run1_ws-fin01_1330#ws-fin01/12754@1791380833.890",
+     "round": 1,
+     "semantic_id": "71ac010cb582",
+     "evidence": [
+      "ev_000574",
+      "ev_000575",
+      "ev_000576"
+     ]
+    }
+   },
+   "status": "rejected",
+   "origin": {
+    "capture": "run1_ws-fin01_1330",
+    "recording": "run1",
+    "host": "ws-fin01",
+    "episode": "run1_ws-fin01_1330#ws-fin01/12754@1791380833.890",
+    "episode_root_image": "dash",
+    "round": 1
+   },
+   "checks": {
+    "C1_valid": {
+     "check": "C1_valid",
+     "passed": true,
+     "detail": "",
+     "errors": []
+    },
+    "C2_own_evidence": {
+     "check": "C2_own_evidence",
+     "passed": false,
+     "detail": "[suspicious_passwd_dump] is required but selects no claim of the origin capture",
+     "hard": [
+      "[suspicious_passwd_dump] is required but selects no claim of the origin capture"
+     ],
+     "soft": [],
+     "causes": {
+      "jointly_unsatisfied": 1
+     },
+     "origin_score": 0.0
+    }
+   },
+   "history": [
+    {
+     "at": "2026-10-08T03:38:22",
+     "from": null,
+     "to": "candidate",
+     "reason": "written"
+    },
+    {
+     "at": "2026-10-08T03:38:22",
+     "from": "candidate",
+     "to": "rejected",
+     "reason": "repaired: superseded by llm.llm-llm-credential-dump-passwd-e29b984306-71ac01.831b8b4306.r2"
+    }
+   ]
+  },
+  {
+   "uid": "llm.llm-discovery-from-user-writable-ancestor-e333f0.b528532a21.r1",
+   "rule": {
+    "id": "llm.llm-discovery-from-user-writable-ancestor-e333f0.b528532a21.r1",
+    "technique": "T1082",
+    "name": "Discovery commands executed by descendant of user\u2011writable process",
+    "tactic": "discovery",
+    "severity": 0.6,
+    "evidence": [
+     "ev_000031"
+    ],
+    "indicators": [
+     {
+      "name": "whoami_from_user_writable_ancestor",
+      "weight": 1.0,
+      "required": true,
+      "select": {
+       "claim_type": "process_create",
+       "lineage.ancestor_user_writable": {
+        "truthy": true
+       },
+       "facts.command": {
+        "contains_any": [
+         "whoami"
+        ]
+       }
+      },
+      "score": {
+       "op": "threshold",
+       "value": "n",
+       "at": 1
+      }
+     }
+    ],
+    "provenance": {
+     "authored_by": "argus.rules.induce",
+     "model": "gpt-oss:120b-cloud",
+     "origin": "run1_app01_1230#app01/1094@1791377547.402",
+     "round": 1,
+     "semantic_id": "b528538f06df",
+     "evidence": [
+      "ev_000031"
+     ]
+    }
+   },
+   "status": "active",
+   "origin": {
+    "capture": "run1_app01_1230",
+    "recording": "run1",
+    "host": "app01",
+    "episode": "run1_app01_1230#app01/1094@1791377547.402",
+    "episode_root_image": "splunkd",
+    "round": 1
+   },
+   "checks": {
+    "C1_valid": {
+     "check": "C1_valid",
+     "passed": true,
+     "detail": "",
+     "errors": []
+    },
+    "C2_own_evidence": {
+     "check": "C2_own_evidence",
+     "passed": true,
+     "detail": "",
+     "hard": [],
+     "soft": [],
+     "causes": {},
+     "origin_score": 1.0
+    },
+    "C3_robust": {
+     "check": "C3_robust",
+     "passed": true,
+     "detail": "",
+     "lost_under": [],
+     "static_rename_survival": 0.0,
+     "static_brittle": true,
+     "breaking_literals": {
+      "whoami_from_user_writable_ancestor": [
+       "facts.command contains_any 'whoami'"
+      ]
+     }
+    },
+    "C4_quiet": {
+     "check": "C4_quiet",
+     "passed": true,
+     "detail": "",
+     "history_rate": 0.0,
+     "fired_on": []
+    },
+    "C5_confirmed": {
+     "check": "C5_confirmed",
+     "passed": true,
+     "detail": "",
+     "confirmed_by": [
+      "analyst"
+     ],
+     "source": "analyst",
+     "why": "analyst-approved: analyst verdicts 4 malicious / 0 benign (mean 0.83, lower 0.51; all 4 alert(s) reviewed)",
+     "llm_agreement": []
+    }
+   },
+   "history": [
+    {
+     "at": "2026-10-08T03:38:22",
+     "from": null,
+     "to": "candidate",
+     "reason": "written"
+    },
+    {
+     "at": "2026-10-08T03:38:25",
+     "from": "candidate",
+     "to": "shadow",
+     "reason": "passed C1\u2013C4"
+    },
+    {
+     "at": "2026-10-08T03:38:25",
+     "from": "shadow",
+     "to": "active",
+     "reason": "analyst-approved: analyst verdicts 4 malicious / 0 benign (mean 0.83, lower 0.51; all 4 alert(s) reviewed)"
+    }
+   ]
+  },
+  {
+   "uid": "llm.llm-llm-credential-dump-master-passwd-b0f086460c.18b09c460c.r2",
+   "rule": {
+    "id": "llm.llm-llm-credential-dump-master-passwd-b0f086460c.18b09c460c.r2",
+    "technique": "T1003.008",
+    "name": "Read /etc/master.passwd (credential dumping)",
+    "tactic": "credential-access",
+    "severity": 0.9,
+    "evidence": [
+     "ev_000629"
+    ],
+    "indicators": [
+     {
+      "name": "access_master_passwd",
+      "weight": 1.0,
+      "required": true,
+      "select": {
+       "claim_type": "process_create",
+       "facts.command": {
+        "contains_any": [
+         "master.passwd"
+        ]
+       }
+      },
+      "score": {
+       "op": "threshold",
+       "value": "n",
+       "at": 1
+      }
+     }
+    ],
+    "provenance": {
+     "authored_by": "argus.rules.induce",
+     "model": "gpt-oss:120b-cloud",
+     "origin": "run1_ws-dev01_1330#ws-dev01/2413@1791380888.731",
+     "round": 2,
+     "semantic_id": "18b09cbbbb35",
+     "evidence": [
+      "ev_000629"
+     ]
+    }
+   },
+   "status": "retired",
+   "origin": {
+    "capture": "run1_ws-dev01_1330",
+    "recording": "run1",
+    "host": "ws-dev01",
+    "episode": "run1_ws-dev01_1330#ws-dev01/2413@1791380888.731",
+    "episode_root_image": "dash",
+    "round": 2
+   },
+   "checks": {
+    "C1_valid": {
+     "check": "C1_valid",
+     "passed": true,
+     "detail": "",
+     "errors": []
+    },
+    "C2_own_evidence": {
+     "check": "C2_own_evidence",
+     "passed": true,
+     "detail": "",
+     "hard": [],
+     "soft": [],
+     "causes": {},
+     "origin_score": 1.0
+    },
+    "C3_robust": {
+     "check": "C3_robust",
+     "passed": true,
+     "detail": "",
+     "lost_under": [],
+     "static_rename_survival": 0.0,
+     "static_brittle": true,
+     "breaking_literals": {
+      "access_master_passwd": [
+       "facts.command contains_any 'master.passwd'"
+      ]
+     }
+    },
+    "C4_quiet": {
+     "check": "C4_quiet",
+     "passed": true,
+     "detail": "",
+     "history_rate": 0.0,
+     "fired_on": []
+    },
+    "C5_confirmed": {
+     "check": "C5_confirmed",
+     "passed": true,
+     "detail": "",
+     "confirmed_by": [
+      "analyst"
+     ],
+     "source": "analyst",
+     "why": "analyst-approved: analyst verdicts 4 malicious / 0 benign (mean 0.83, lower 0.51; all 4 alert(s) reviewed)",
+     "llm_agreement": []
+    }
+   },
+   "history": [
+    {
+     "at": "2026-10-08T03:38:22",
+     "from": null,
+     "to": "candidate",
+     "reason": "written"
+    },
+    {
+     "at": "2026-10-08T03:38:25",
+     "from": "candidate",
+     "to": "shadow",
+     "reason": "passed C1\u2013C4"
+    },
+    {
+     "at": "2026-10-08T03:38:25",
+     "from": "shadow",
+     "to": "active",
+     "reason": "analyst-approved: analyst verdicts 4 malicious / 0 benign (mean 0.83, lower 0.51; all 4 alert(s) reviewed)"
+    },
+    {
+     "at": "2026-10-08T03:47:07",
+     "from": "active",
+     "to": "retired",
+     "reason": "duplicate of llm.credential-dump-etc-master-passwd.60d65985b1.r1: fires on exactly the same events in every design capture"
+    }
+   ]
+  },
+  {
+   "uid": "llm.llm-llm-credential-dump-passwd-e29b984306-71ac01.831b8b4306.r2",
+   "rule": {
+    "id": "llm.llm-llm-credential-dump-passwd-e29b984306-71ac01.831b8b4306.r2",
+    "technique": "T1003.001",
+    "name": "Read /etc/passwd and write to temporary location",
+    "tactic": "credential-access",
+    "severity": 0.8,
+    "evidence": [
+     "ev_000574",
+     "ev_000575",
+     "ev_000576"
+    ],
+    "indicators": [
+     {
+      "name": "suspicious_passwd_dump",
+      "weight": 1.0,
+      "required": true,
+      "select": {
+       "claim_type": "process_create",
+       "facts.command": {
+        "all_of": [
+         {
+          "contains_any": [
+           "passwd"
+          ]
+         },
+         {
+          "contains_any": [
+           "/tmp"
+          ]
+         },
+         {
+          "contains_any": [
+           "cat"
+          ]
+         }
+        ]
+       }
+      },
+      "aggregate": [
+       {
+        "as": "n",
+        "op": "count"
+       }
+      ],
+      "score": {
+       "op": "threshold",
+       "value": "n",
+       "at": 1
+      }
+     }
+    ],
+    "provenance": {
+     "authored_by": "argus.rules.induce",
+     "model": "gpt-oss:120b-cloud",
+     "origin": "run1_ws-fin01_1330#ws-fin01/12754@1791380833.890",
+     "round": 2,
+     "semantic_id": "831b8bb4986e",
+     "evidence": [
+      "ev_000574",
+      "ev_000575",
+      "ev_000576"
+     ]
+    }
+   },
+   "status": "active",
+   "origin": {
+    "capture": "run1_ws-fin01_1330",
+    "recording": "run1",
+    "host": "ws-fin01",
+    "episode": "run1_ws-fin01_1330#ws-fin01/12754@1791380833.890",
+    "episode_root_image": "dash",
+    "round": 2
+   },
+   "checks": {
+    "C1_valid": {
+     "check": "C1_valid",
+     "passed": true,
+     "detail": "",
+     "errors": []
+    },
+    "C2_own_evidence": {
+     "check": "C2_own_evidence",
+     "passed": true,
+     "detail": "",
+     "hard": [],
+     "soft": [],
+     "causes": {},
+     "origin_score": 1.0
+    },
+    "C3_robust": {
+     "check": "C3_robust",
+     "passed": true,
+     "detail": "",
+     "lost_under": [],
+     "static_rename_survival": 0.0,
+     "static_brittle": true,
+     "breaking_literals": {
+      "suspicious_passwd_dump": [
+       "facts.command contains_any '/tmp'",
+       "facts.command contains_any 'cat'",
+       "facts.command contains_any 'passwd'"
+      ]
+     }
+    },
+    "C4_quiet": {
+     "check": "C4_quiet",
+     "passed": true,
+     "detail": "",
+     "history_rate": 0.0,
+     "fired_on": []
+    },
+    "C5_confirmed": {
+     "check": "C5_confirmed",
+     "passed": true,
+     "detail": "",
+     "confirmed_by": [
+      "analyst"
+     ],
+     "source": "analyst",
+     "why": "analyst-approved: analyst verdicts 4 malicious / 0 benign (mean 0.83, lower 0.51; all 4 alert(s) reviewed)",
+     "llm_agreement": []
+    }
+   },
+   "history": [
+    {
+     "at": "2026-10-08T03:38:22",
+     "from": null,
+     "to": "candidate",
+     "reason": "written"
+    },
+    {
+     "at": "2026-10-08T03:38:25",
+     "from": "candidate",
+     "to": "shadow",
+     "reason": "passed C1\u2013C4"
+    },
+    {
+     "at": "2026-10-08T03:38:25",
+     "from": "shadow",
+     "to": "active",
+     "reason": "analyst-approved: analyst verdicts 4 malicious / 0 benign (mean 0.83, lower 0.51; all 4 alert(s) reviewed)"
+    }
+   ]
+  },
+  {
+   "uid": "llm.llm-user-writable-outbound-connection-b85e043ed0.9811af3ed0.r1",
+   "rule": {
+    "id": "llm.llm-user-writable-outbound-connection-b85e043ed0.9811af3ed0.r1",
+    "technique": "T1041",
+    "name": "Outbound Connection from User\u2011Writable Binary",
+    "tactic": "command-and-control",
+    "severity": 0.8,
+    "evidence": [
+     "ev_000011"
+    ],
+    "indicators": [
+     {
+      "name": "uw_outbound",
+      "weight": 1.0,
+      "required": true,
+      "select": {
+       "claim_type": "host_network_connection",
+       "lineage.user_writable": {
+        "truthy": true
+       },
+       "facts.direction": "outbound"
+      },
+      "score": {
+       "op": "threshold",
+       "value": "n",
+       "at": 1
+      }
+     }
+    ],
+    "provenance": {
+     "authored_by": "argus.rules.induce",
+     "model": "gpt-oss:120b-cloud",
+     "origin": "run1_web01_1230#web01/1187@1791377542.462",
+     "round": 1,
+     "semantic_id": "9811af59839a",
+     "evidence": [
+      "ev_000011"
+     ]
+    }
+   },
+   "status": "active",
+   "origin": {
+    "capture": "run1_web01_1230",
+    "recording": "run1",
+    "host": "web01",
+    "episode": "run1_web01_1230#web01/1187@1791377542.462",
+    "episode_root_image": "splunkd",
+    "round": 1
+   },
+   "checks": {
+    "C1_valid": {
+     "check": "C1_valid",
+     "passed": true,
+     "detail": "",
+     "errors": []
+    },
+    "C2_own_evidence": {
+     "check": "C2_own_evidence",
+     "passed": true,
+     "detail": "",
+     "hard": [],
+     "soft": [],
+     "causes": {},
+     "origin_score": 1.0
+    },
+    "C3_robust": {
+     "check": "C3_robust",
+     "passed": true,
+     "detail": "",
+     "lost_under": [],
+     "static_rename_survival": 1.0,
+     "static_brittle": false,
+     "breaking_literals": {}
+    },
+    "C4_quiet": {
+     "check": "C4_quiet",
+     "passed": true,
+     "detail": "",
+     "history_rate": 0.0,
+     "fired_on": []
+    },
+    "C5_confirmed": {
+     "check": "C5_confirmed",
+     "passed": true,
+     "detail": "",
+     "confirmed_by": [
+      "analyst"
+     ],
+     "source": "analyst",
+     "why": "analyst-approved: analyst verdicts 4 malicious / 0 benign (mean 0.83, lower 0.51; all 4 alert(s) reviewed)",
+     "llm_agreement": []
+    }
+   },
+   "history": [
+    {
+     "at": "2026-10-08T03:38:22",
+     "from": null,
+     "to": "candidate",
+     "reason": "written"
+    },
+    {
+     "at": "2026-10-08T03:38:25",
+     "from": "candidate",
+     "to": "shadow",
+     "reason": "passed C1\u2013C4"
+    },
+    {
+     "at": "2026-10-08T03:38:25",
+     "from": "shadow",
+     "to": "active",
+     "reason": "analyst-approved: analyst verdicts 4 malicious / 0 benign (mean 0.83, lower 0.51; all 4 alert(s) reviewed)"
+    }
+   ]
+  },
+  {
+   "uid": "llm.llm-user-writable-outbound-server-c5a7a22a21.174bd32a21.r1",
+   "rule": {
+    "id": "llm.llm-user-writable-outbound-server-c5a7a22a21.174bd32a21.r1",
+    "technique": "T1041",
+    "name": "User\u2011writable binary initiates outbound connection with server flag",
+    "tactic": "command-and-control",
+    "severity": 0.7,
+    "evidence": [
+     "ev_000025"
+    ],
+    "indicators": [
+     {
+      "name": "user_writable_server_process",
+      "weight": 1.0,
+      "required": true,
+      "select": {
+       "claim_type": "process_create",
+       "lineage.user_writable": {
+        "truthy": true
+       },
+       "facts.command": {
+        "contains_any": [
+         "-server"
+        ]
+       }
+      },
+      "score": {
+       "op": "threshold",
+       "value": "n",
+       "at": 1
+      }
+     }
+    ],
+    "provenance": {
+     "authored_by": "argus.rules.induce",
+     "model": "gpt-oss:120b-cloud",
+     "origin": "run1_app01_1230#app01/1094@1791377547.402",
+     "round": 1,
+     "semantic_id": "174bd3dad3d1",
+     "evidence": [
+      "ev_000025"
+     ]
+    }
+   },
+   "status": "active",
+   "origin": {
+    "capture": "run1_app01_1230",
+    "recording": "run1",
+    "host": "app01",
+    "episode": "run1_app01_1230#app01/1094@1791377547.402",
+    "episode_root_image": "splunkd",
+    "round": 1
+   },
+   "checks": {
+    "C1_valid": {
+     "check": "C1_valid",
+     "passed": true,
+     "detail": "",
+     "errors": []
+    },
+    "C2_own_evidence": {
+     "check": "C2_own_evidence",
+     "passed": true,
+     "detail": "",
+     "hard": [],
+     "soft": [],
+     "causes": {},
+     "origin_score": 1.0
+    },
+    "C3_robust": {
+     "check": "C3_robust",
+     "passed": true,
+     "detail": "",
+     "lost_under": [],
+     "static_rename_survival": 0.0,
+     "static_brittle": true,
+     "breaking_literals": {
+      "user_writable_server_process": [
+       "facts.command contains_any '-server'"
+      ]
+     }
+    },
+    "C4_quiet": {
+     "check": "C4_quiet",
+     "passed": true,
+     "detail": "",
+     "history_rate": 0.0,
+     "fired_on": []
+    },
+    "C5_confirmed": {
+     "check": "C5_confirmed",
+     "passed": true,
+     "detail": "",
+     "confirmed_by": [
+      "analyst"
+     ],
+     "source": "analyst",
+     "why": "analyst-approved: analyst verdicts 4 malicious / 0 benign (mean 0.83, lower 0.51; all 4 alert(s) reviewed)",
+     "llm_agreement": []
+    }
+   },
+   "history": [
+    {
+     "at": "2026-10-08T03:38:22",
+     "from": null,
+     "to": "candidate",
+     "reason": "written"
+    },
+    {
+     "at": "2026-10-08T03:38:25",
+     "from": "candidate",
+     "to": "shadow",
+     "reason": "passed C1\u2013C4"
+    },
+    {
+     "at": "2026-10-08T03:38:25",
+     "from": "shadow",
+     "to": "active",
+     "reason": "analyst-approved: analyst verdicts 4 malicious / 0 benign (mean 0.83, lower 0.51; all 4 alert(s) reviewed)"
+    }
+   ]
+  },
+  {
+   "uid": "llm.network-neighbor-discovery.60f1e49074",
+   "rule": {
+    "id": "llm.network-neighbor-discovery.60f1e49074",
+    "technique": "T1016.001",
+    "name": "Network Neighbor Discovery via ip/arp",
+    "tactic": "discovery",
+    "severity": 0.6,
+    "evidence": [
+     "ev_000598"
+    ],
+    "indicators": [
+     {
+      "name": "ip-neighbor-show",
+      "weight": 1.0,
+      "required": true,
+      "select": {
+       "claim_type": "process_create",
+       "any_of": [
+        {
+         "facts.image": "ip"
+        },
+        {
+         "facts.image": "arp"
+        }
+       ],
+       "facts.command": {
+        "contains_any": [
+         "neighbour",
+         "neighbor",
+         "arp"
+        ]
+       }
+      },
+      "exclude": {
+       "lineage.parent_user_writable": {
+        "truthy": true
+       }
+      },
+      "score": {
+       "op": "threshold",
+       "value": "n",
+       "at": 1
+      }
+     }
+    ],
+    "provenance": {
+     "authored_by": "argus.rules.induce",
+     "model": "gpt-oss:120b-cloud",
+     "origin": "run1_app01_1330#app01/2354@1791380703.197",
+     "round": 0,
+     "semantic_id": "60f1e49871fd",
+     "evidence": [
+      "ev_000598"
+     ]
+    }
+   },
+   "status": "retired",
+   "origin": {
+    "capture": "run1_app01_1330",
+    "recording": "run1",
+    "host": "app01",
+    "episode": "run1_app01_1330#app01/2354@1791380703.197",
+    "episode_root_image": "dash",
+    "round": 0
+   },
+   "checks": {
+    "C1_valid": {
+     "check": "C1_valid",
+     "passed": true,
+     "detail": "",
+     "errors": []
+    },
+    "C2_own_evidence": {
+     "check": "C2_own_evidence",
+     "passed": true,
+     "detail": "",
+     "hard": [],
+     "soft": [],
+     "causes": {},
+     "origin_score": 1.0
+    },
+    "C3_robust": {
+     "check": "C3_robust",
+     "passed": true,
+     "detail": "",
+     "lost_under": [],
+     "static_rename_survival": 0.0,
+     "static_brittle": true,
+     "breaking_literals": {
+      "ip-neighbor-show": [
+       "facts.command contains_any 'arp'",
+       "facts.command contains_any 'neighbor'",
+       "facts.command contains_any 'neighbour'",
+       "facts.image eq 'arp'",
+       "facts.image eq 'ip'"
+      ]
+     }
+    },
+    "C4_quiet": {
+     "check": "C4_quiet",
+     "passed": true,
+     "detail": "",
+     "history_rate": 0.0,
+     "fired_on": []
+    },
+    "C5_confirmed": {
+     "check": "C5_confirmed",
+     "passed": true,
+     "detail": "",
+     "confirmed_by": [
+      "hand:TA0007@run1_app01_1330",
+      "hand:KILLCHAIN@run1_ws-fin01_1330"
+     ],
+     "llm_agreement": [],
+     "source": "hand-written rule"
+    }
+   },
+   "history": [
+    {
+     "at": "2026-10-08T03:38:22",
+     "from": null,
+     "to": "candidate",
+     "reason": "written"
+    },
+    {
+     "at": "2026-10-08T03:38:25",
+     "from": "candidate",
+     "to": "shadow",
+     "reason": "passed C1\u2013C4"
+    },
+    {
+     "at": "2026-10-08T03:38:25",
+     "from": "shadow",
+     "to": "active",
+     "reason": "passed C5: agrees with hand:TA0007@run1_app01_1330, hand:KILLCHAIN@run1_ws-fin01_1330"
+    },
+    {
+     "at": "2026-10-08T03:47:07",
+     "from": "active",
+     "to": "retired",
+     "reason": "duplicate of llm.network-neighbor-discovery.fa93f564ae: fires on exactly the same events in every design capture"
+    }
+   ]
+  },
+  {
+   "uid": "llm.network-neighbor-discovery.9c1dbbce38",
+   "rule": {
+    "id": "llm.network-neighbor-discovery.9c1dbbce38",
+    "technique": "T1016.001",
+    "name": "Network Neighbor Discovery via ip/arp",
+    "tactic": "discovery",
+    "severity": 0.7,
+    "evidence": [
+     "ev_000621"
+    ],
+    "indicators": [
+     {
+      "name": "ip-or-arp-neighbor-show",
+      "weight": 1.0,
+      "required": true,
+      "select": {
+       "claim_type": "process_create",
+       "facts.image": [
+        "ip",
+        "arp"
+       ],
+       "facts.command": {
+        "contains_any": [
+         "neighbour",
+         "-a"
+        ]
+       }
+      },
+      "aggregate": [
+       {
+        "as": "n",
+        "op": "count"
+       }
+      ],
+      "score": {
+       "op": "threshold",
+       "value": "n",
+       "at": 1
+      }
+     }
+    ],
+    "provenance": {
+     "authored_by": "argus.rules.induce",
+     "model": "gpt-oss:120b-cloud",
+     "origin": "run1_ws-dev01_1330#ws-dev01/2404@1791380699.574",
+     "round": 0,
+     "semantic_id": "9c1dbb977404",
+     "evidence": [
+      "ev_000621"
+     ]
+    }
+   },
+   "status": "retired",
+   "origin": {
+    "capture": "run1_ws-dev01_1330",
+    "recording": "run1",
+    "host": "ws-dev01",
+    "episode": "run1_ws-dev01_1330#ws-dev01/2404@1791380699.574",
+    "episode_root_image": "dash",
+    "round": 0
+   },
+   "checks": {
+    "C1_valid": {
+     "check": "C1_valid",
+     "passed": true,
+     "detail": "",
+     "errors": []
+    },
+    "C2_own_evidence": {
+     "check": "C2_own_evidence",
+     "passed": true,
+     "detail": "",
+     "hard": [],
+     "soft": [],
+     "causes": {},
+     "origin_score": 1.0
+    },
+    "C3_robust": {
+     "check": "C3_robust",
+     "passed": true,
+     "detail": "",
+     "lost_under": [],
+     "static_rename_survival": 0.0,
+     "static_brittle": true,
+     "breaking_literals": {
+      "ip-or-arp-neighbor-show": [
+       "facts.command contains_any '-a'",
+       "facts.command contains_any 'neighbour'",
+       "facts.image eq 'arp'",
+       "facts.image eq 'ip'"
+      ]
+     }
+    },
+    "C4_quiet": {
+     "check": "C4_quiet",
+     "passed": true,
+     "detail": "",
+     "history_rate": 0.0,
+     "fired_on": []
+    },
+    "C5_confirmed": {
+     "check": "C5_confirmed",
+     "passed": true,
+     "detail": "",
+     "confirmed_by": [
+      "hand:TA0007@run1_app01_1330",
+      "hand:KILLCHAIN@run1_ws-fin01_1330"
+     ],
+     "llm_agreement": [],
+     "source": "hand-written rule"
+    }
+   },
+   "history": [
+    {
+     "at": "2026-10-08T03:38:22",
+     "from": null,
+     "to": "candidate",
+     "reason": "written"
+    },
+    {
+     "at": "2026-10-08T03:38:25",
+     "from": "candidate",
+     "to": "shadow",
+     "reason": "passed C1\u2013C4"
+    },
+    {
+     "at": "2026-10-08T03:38:25",
+     "from": "shadow",
+     "to": "active",
+     "reason": "passed C5: agrees with hand:TA0007@run1_app01_1330, hand:KILLCHAIN@run1_ws-fin01_1330"
+    },
+    {
+     "at": "2026-10-08T03:47:07",
+     "from": "active",
+     "to": "retired",
+     "reason": "duplicate of llm.network-neighbor-discovery.fa93f564ae: fires on exactly the same events in every design capture"
+    }
+   ]
+  },
+  {
+   "uid": "llm.network-neighbor-discovery.fa93f564ae",
+   "rule": {
+    "id": "llm.network-neighbor-discovery.fa93f564ae",
+    "technique": "T1018",
+    "name": "Network Neighbor Table Discovery",
+    "tactic": "discovery",
+    "severity": 0.6,
+    "evidence": [
+     "ev_000604"
+    ],
+    "indicators": [
+     {
+      "name": "ip_neighbor_show",
+      "weight": 1.0,
+      "required": true,
+      "select": {
+       "claim_type": "process_create",
+       "facts.image": [
+        "ip"
+       ],
+       "facts.command": {
+        "contains_any": [
+         "neighbour",
+         "show"
+        ]
+       }
+      },
+      "score": {
+       "op": "threshold",
+       "value": "n",
+       "at": 1
+      }
+     }
+    ],
+    "provenance": {
+     "authored_by": "argus.rules.induce",
+     "model": "gpt-oss:120b-cloud",
+     "origin": "run1_web01_1330#web01/2393@1791380706.961",
+     "round": 0,
+     "semantic_id": "fa93f5ecb906",
+     "evidence": [
+      "ev_000604"
+     ]
+    }
+   },
+   "status": "retired",
+   "origin": {
+    "capture": "run1_web01_1330",
+    "recording": "run1",
+    "host": "web01",
+    "episode": "run1_web01_1330#web01/2393@1791380706.961",
+    "episode_root_image": "dash",
+    "round": 0
+   },
+   "checks": {
+    "C1_valid": {
+     "check": "C1_valid",
+     "passed": true,
+     "detail": "",
+     "errors": []
+    },
+    "C2_own_evidence": {
+     "check": "C2_own_evidence",
+     "passed": true,
+     "detail": "",
+     "hard": [],
+     "soft": [],
+     "causes": {},
+     "origin_score": 1.0
+    },
+    "C3_robust": {
+     "check": "C3_robust",
+     "passed": true,
+     "detail": "",
+     "lost_under": [],
+     "static_rename_survival": 0.0,
+     "static_brittle": true,
+     "breaking_literals": {
+      "ip_neighbor_show": [
+       "facts.command contains_any 'neighbour'",
+       "facts.command contains_any 'show'",
+       "facts.image eq 'ip'"
+      ]
+     }
+    },
+    "C4_quiet": {
+     "check": "C4_quiet",
+     "passed": true,
+     "detail": "",
+     "history_rate": 0.0,
+     "fired_on": []
+    },
+    "C5_confirmed": {
+     "check": "C5_confirmed",
+     "passed": true,
+     "detail": "",
+     "confirmed_by": [
+      "hand:TA0007@run1_app01_1330",
+      "hand:KILLCHAIN@run1_ws-fin01_1330"
+     ],
+     "llm_agreement": [],
+     "source": "hand-written rule"
+    }
+   },
+   "history": [
+    {
+     "at": "2026-10-08T03:38:22",
+     "from": null,
+     "to": "candidate",
+     "reason": "written"
+    },
+    {
+     "at": "2026-10-08T03:38:25",
+     "from": "candidate",
+     "to": "shadow",
+     "reason": "passed C1\u2013C4"
+    },
+    {
+     "at": "2026-10-08T03:38:25",
+     "from": "shadow",
+     "to": "active",
+     "reason": "passed C5: agrees with hand:TA0007@run1_app01_1330, hand:KILLCHAIN@run1_ws-fin01_1330"
+    },
+    {
+     "at": "2026-11-16T13:33:43",
+     "from": "active",
+     "to": "retired",
+     "reason": "analyst retired it (2026-11-16): too broad. It matches any `ip ... show`, and alerted on 2 benign burn-in windows (burnin_app01_0000, burnin_web01_0000: an address query after a reboot). Its C5 pass came from the discovery primitive, which may not confirm since amendment A3. A burn-in holds no attack, so every alert there is false; no attack label was used"
+    }
+   ]
+  },
+  {
+   "uid": "llm.read-passwd-to-tmp.952833f90c",
+   "rule": {
+    "id": "llm.read-passwd-to-tmp.952833f90c",
+    "technique": "T1003.006",
+    "name": "Read /etc/passwd and copy to temporary location",
+    "tactic": "credential-access",
+    "severity": 0.7,
+    "evidence": [
+     "ev_000623",
+     "ev_000624",
+     "ev_000625"
+    ],
+    "indicators": [
+     {
+      "name": "read-passwd-temp",
+      "weight": 1.0,
+      "required": true,
+      "select": {
+       "claim_type": "process_create",
+       "facts.command": {
+        "all_of": [
+         {
+          "contains_any": [
+           "/etc/passwd"
+          ]
+         },
+         {
+          "contains_any": [
+           "/tmp/"
+          ]
+         }
+        ]
+       }
+      },
+      "aggregate": [
+       {
+        "as": "n",
+        "op": "count"
+       }
+      ],
+      "score": {
+       "op": "threshold",
+       "value": "n",
+       "at": 1
+      }
+     }
+    ],
+    "provenance": {
+     "authored_by": "argus.rules.induce",
+     "model": "gpt-oss:120b-cloud",
+     "origin": "run1_ws-dev01_1330#ws-dev01/2408@1791380796.651",
+     "round": 0,
+     "semantic_id": "952833528b1e",
+     "evidence": [
+      "ev_000623",
+      "ev_000624",
+      "ev_000625"
+     ]
+    }
+   },
+   "status": "active",
+   "origin": {
+    "capture": "run1_ws-dev01_1330",
+    "recording": "run1",
+    "host": "ws-dev01",
+    "episode": "run1_ws-dev01_1330#ws-dev01/2408@1791380796.651",
+    "episode_root_image": "dash",
+    "round": 0
+   },
+   "checks": {
+    "C1_valid": {
+     "check": "C1_valid",
+     "passed": true,
+     "detail": "",
+     "errors": []
+    },
+    "C2_own_evidence": {
+     "check": "C2_own_evidence",
+     "passed": true,
+     "detail": "",
+     "hard": [],
+     "soft": [],
+     "causes": {},
+     "origin_score": 1.0
+    },
+    "C3_robust": {
+     "check": "C3_robust",
+     "passed": true,
+     "detail": "",
+     "lost_under": [],
+     "static_rename_survival": 0.0,
+     "static_brittle": true,
+     "breaking_literals": {
+      "read-passwd-temp": [
+       "facts.command contains_any '/etc/passwd'",
+       "facts.command contains_any '/tmp/'"
+      ]
+     }
+    },
+    "C4_quiet": {
+     "check": "C4_quiet",
+     "passed": true,
+     "detail": "",
+     "history_rate": 0.0,
+     "fired_on": []
+    },
+    "C5_confirmed": {
+     "check": "C5_confirmed",
+     "passed": true,
+     "detail": "",
+     "confirmed_by": [
+      "analyst"
+     ],
+     "source": "analyst",
+     "why": "analyst-approved: analyst verdicts 4 malicious / 0 benign (mean 0.83, lower 0.51; all 4 alert(s) reviewed)",
+     "llm_agreement": []
+    }
+   },
+   "history": [
+    {
+     "at": "2026-10-08T03:38:22",
+     "from": null,
+     "to": "candidate",
+     "reason": "written"
+    },
+    {
+     "at": "2026-10-08T03:38:25",
+     "from": "candidate",
+     "to": "shadow",
+     "reason": "passed C1\u2013C4"
+    },
+    {
+     "at": "2026-10-08T03:38:25",
+     "from": "shadow",
+     "to": "active",
+     "reason": "analyst-approved: analyst verdicts 4 malicious / 0 benign (mean 0.83, lower 0.51; all 4 alert(s) reviewed)"
+    }
+   ]
+  },
+  {
+   "uid": "llm.shadow-file-read.27bd464f25",
+   "rule": {
+    "id": "llm.shadow-file-read.27bd464f25",
+    "technique": "T1552.004",
+    "name": "Read of /etc/shadow by non-authentication process",
+    "tactic": "credential-access",
+    "severity": 0.8,
+    "evidence": [
+     "ev_000843"
+    ],
+    "indicators": [
+     {
+      "name": "shadow-read",
+      "weight": 1.0,
+      "required": true,
+      "select": {
+       "claim_type": "file_read",
+       "facts.file_path": "/etc/shadow",
+       "facts.image": {
+        "not_in": [
+         "login",
+         "sshd",
+         "su",
+         "passwd",
+         "pam_unix",
+         "systemd",
+         "init"
+        ]
+       }
+      },
+      "aggregate": [
+       {
+        "as": "n",
+        "op": "count"
+       }
+      ],
+      "score": {
+       "op": "threshold",
+       "value": "n",
+       "at": 1
+      }
+     }
+    ],
+    "provenance": {
+     "authored_by": "argus.rules.induce",
+     "model": "gpt-oss:120b-cloud",
+     "origin": "run1_ws-fin01_1200#ws-fin01/10789@1791374838.175",
+     "round": 0,
+     "semantic_id": "27bd46ffdf10",
+     "evidence": [
+      "ev_000843"
+     ]
+    }
+   },
+   "status": "rejected",
+   "origin": {
+    "capture": "run1_ws-fin01_1200",
+    "recording": "run1",
+    "host": "ws-fin01",
+    "episode": "run1_ws-fin01_1200#ws-fin01/10789@1791374838.175",
+    "episode_root_image": "dash",
+    "round": 0
+   },
+   "checks": {
+    "C1_valid": {
+     "check": "C1_valid",
+     "passed": true,
+     "detail": "",
+     "errors": []
+    },
+    "C2_own_evidence": {
+     "check": "C2_own_evidence",
+     "passed": true,
+     "detail": "",
+     "hard": [],
+     "soft": [
+      "excludes facts.image eq 'login', never seen in the origin capture",
+      "excludes facts.image eq 'sshd', never seen in the origin capture",
+      "excludes facts.image eq 'su', never seen in the origin capture",
+      "excludes facts.image eq 'passwd', never seen in the origin capture",
+      "excludes facts.image eq 'pam_unix', never seen in the origin capture",
+      "excludes facts.image eq 'systemd', never seen in the origin capture",
+      "excludes facts.image eq 'init', never seen in the origin capture"
+     ],
+     "causes": {},
+     "origin_score": 1.0
+    },
+    "C3_robust": {
+     "check": "C3_robust",
+     "passed": true,
+     "detail": "",
+     "lost_under": [],
+     "static_rename_survival": 0.0,
+     "static_brittle": true,
+     "breaking_literals": {
+      "shadow-read": [
+       "facts.file_path eq '/etc/shadow'"
+      ]
+     }
+    },
+    "C4_quiet": {
+     "check": "C4_quiet",
+     "passed": false,
+     "detail": "fires on 100% of the host's other captures (max 25%)",
+     "history_rate": 1.0,
+     "fired_on": [
+      "run1_ws-fin01_1230",
+      "run1_ws-fin01_1300",
+      "run1_ws-fin01_1330",
+      "run1_ws-fin01_1400"
+     ]
+    }
+   },
+   "history": [
+    {
+     "at": "2026-10-08T03:38:22",
+     "from": null,
+     "to": "candidate",
+     "reason": "written"
+    },
+    {
+     "at": "2026-10-08T03:38:25",
+     "from": "candidate",
+     "to": "rejected",
+     "reason": "C4_rare_history: fires on 100% of the host's other captures (max 25%)"
+    }
+   ]
+  },
+  {
+   "uid": "llm.shadow-read-detection.c794b7815c",
+   "rule": {
+    "id": "llm.shadow-read-detection.c794b7815c",
+    "technique": "T1555.004",
+    "name": "Read /etc/shadow by non\u2011authenticator process",
+    "tactic": "credential-access",
+    "severity": 0.9,
+    "evidence": [
+     "ev_000038"
+    ],
+    "indicators": [
+     {
+      "name": "shadow_file_read",
+      "weight": 1.0,
+      "required": true,
+      "select": {
+       "claim_type": "file_read",
+       "facts.file_path": {
+        "contains_any": [
+         "shadow"
+        ]
+       },
+       "facts.image": {
+        "not_in": [
+         "login",
+         "sshd",
+         "passwd",
+         "su",
+         "sudo",
+         "systemd",
+         "polkit"
+        ]
+       }
+      },
+      "score": {
+       "op": "threshold",
+       "value": "n",
+       "at": 1
+      }
+     }
+    ],
+    "provenance": {
+     "authored_by": "argus.rules.induce",
+     "model": "gpt-oss:120b-cloud",
+     "origin": "run1_ws-dev01_1300#ws-dev01/1200@1791378383.340",
+     "round": 0,
+     "semantic_id": "c794b7af4f31",
+     "evidence": [
+      "ev_000038"
+     ]
+    }
+   },
+   "status": "retired",
+   "origin": {
+    "capture": "run1_ws-dev01_1300",
+    "recording": "run1",
+    "host": "ws-dev01",
+    "episode": "run1_ws-dev01_1300#ws-dev01/1200@1791378383.340",
+    "episode_root_image": "dash",
+    "round": 0
+   },
+   "checks": {
+    "C1_valid": {
+     "check": "C1_valid",
+     "passed": true,
+     "detail": "",
+     "errors": []
+    },
+    "C2_own_evidence": {
+     "check": "C2_own_evidence",
+     "passed": true,
+     "detail": "",
+     "hard": [],
+     "soft": [
+      "excludes facts.image eq 'login', never seen in the origin capture",
+      "excludes facts.image eq 'sshd', never seen in the origin capture",
+      "excludes facts.image eq 'passwd', never seen in the origin capture",
+      "excludes facts.image eq 'su', never seen in the origin capture",
+      "excludes facts.image eq 'sudo', never seen in the origin capture",
+      "excludes facts.image eq 'systemd', never seen in the origin capture",
+      "excludes facts.image eq 'polkit', never seen in the origin capture"
+     ],
+     "causes": {},
+     "origin_score": 1.0
+    },
+    "C3_robust": {
+     "check": "C3_robust",
+     "passed": true,
+     "detail": "",
+     "lost_under": [],
+     "static_rename_survival": 0.0,
+     "static_brittle": true,
+     "breaking_literals": {
+      "shadow_file_read": [
+       "facts.file_path contains_any 'shadow'"
+      ]
+     }
+    },
+    "C4_quiet": {
+     "check": "C4_quiet",
+     "passed": true,
+     "detail": "",
+     "history_rate": 0.0,
+     "fired_on": []
+    },
+    "C5_confirmed": {
+     "check": "C5_confirmed",
+     "passed": false,
+     "detail": "no independent source flags the same events",
+     "confirmed_by": [],
+     "llm_agreement": []
+    }
+   },
+   "history": [
+    {
+     "at": "2026-10-08T03:38:22",
+     "from": null,
+     "to": "candidate",
+     "reason": "written"
+    },
+    {
+     "at": "2026-10-08T03:38:25",
+     "from": "candidate",
+     "to": "shadow",
+     "reason": "passed C1\u2013C4"
+    },
+    {
+     "at": "2026-10-08T03:38:25",
+     "from": "shadow",
+     "to": "retired",
+     "reason": "analyst: analyst verdicts 0 malicious / 5 benign (mean 0.14, lower 0.00; all 5 alert(s) reviewed)"
+    }
+   ]
+  },
+  {
+   "uid": "llm.user-writable-discovery-commands.604cde8671",
+   "rule": {
+    "id": "llm.user-writable-discovery-commands.604cde8671",
+    "technique": "T1082",
+    "name": "User\u2011writable ancestor runs discovery commands (whoami, env)",
+    "tactic": "discovery",
+    "severity": 0.7,
+    "evidence": [
+     "ev_000045",
+     "ev_000047"
+    ],
+    "indicators": [
+     {
+      "name": "discovery-from-user-writable-ancestor",
+      "weight": 1.0,
+      "required": true,
+      "select": {
+       "claim_type": "process_create",
+       "lineage.ancestor_user_writable": {
+        "truthy": true
+       },
+       "facts.command": {
+        "contains_any": [
+         "whoami",
+         "env"
+        ]
+       }
+      },
+      "score": {
+       "op": "threshold",
+       "value": "n",
+       "at": 1
+      }
+     }
+    ],
+    "provenance": {
+     "authored_by": "argus.rules.induce",
+     "model": "gpt-oss:120b-cloud",
+     "origin": "run1_ws-fin01_1230#ws-fin01/11544@1791377551.823",
+     "round": 0,
+     "semantic_id": "604cde41c700",
+     "evidence": [
+      "ev_000045",
+      "ev_000047"
+     ]
+    }
+   },
+   "status": "active",
+   "origin": {
+    "capture": "run1_ws-fin01_1230",
+    "recording": "run1",
+    "host": "ws-fin01",
+    "episode": "run1_ws-fin01_1230#ws-fin01/11544@1791377551.823",
+    "episode_root_image": "splunkd",
+    "round": 0
+   },
+   "checks": {
+    "C1_valid": {
+     "check": "C1_valid",
+     "passed": true,
+     "detail": "",
+     "errors": []
+    },
+    "C2_own_evidence": {
+     "check": "C2_own_evidence",
+     "passed": true,
+     "detail": "",
+     "hard": [],
+     "soft": [],
+     "causes": {},
+     "origin_score": 1.0
+    },
+    "C3_robust": {
+     "check": "C3_robust",
+     "passed": true,
+     "detail": "",
+     "lost_under": [],
+     "static_rename_survival": 0.0,
+     "static_brittle": true,
+     "breaking_literals": {
+      "discovery-from-user-writable-ancestor": [
+       "facts.command contains_any 'env'",
+       "facts.command contains_any 'whoami'"
+      ]
+     }
+    },
+    "C4_quiet": {
+     "check": "C4_quiet",
+     "passed": true,
+     "detail": "",
+     "history_rate": 0.0,
+     "fired_on": []
+    },
+    "C5_confirmed": {
+     "check": "C5_confirmed",
+     "passed": true,
+     "detail": "",
+     "confirmed_by": [
+      "analyst"
+     ],
+     "source": "analyst",
+     "why": "analyst-approved: analyst verdicts 4 malicious / 0 benign (mean 0.83, lower 0.51; all 4 alert(s) reviewed)",
+     "llm_agreement": []
+    }
+   },
+   "history": [
+    {
+     "at": "2026-10-08T03:38:22",
+     "from": null,
+     "to": "candidate",
+     "reason": "written"
+    },
+    {
+     "at": "2026-10-08T03:38:25",
+     "from": "candidate",
+     "to": "shadow",
+     "reason": "passed C1\u2013C4"
+    },
+    {
+     "at": "2026-10-08T03:38:25",
+     "from": "shadow",
+     "to": "active",
+     "reason": "analyst-approved: analyst verdicts 4 malicious / 0 benign (mean 0.83, lower 0.51; all 4 alert(s) reviewed)"
+    }
+   ]
+  },
+  {
+   "uid": "llm.user-writable-history-clear.7670068671",
+   "rule": {
+    "id": "llm.user-writable-history-clear.7670068671",
+    "technique": "T1070.003",
+    "name": "User\u2011writable parent spawns shell that clears command history",
+    "tactic": "defense-evasion",
+    "severity": 0.7,
+    "evidence": [
+     "ev_000041"
+    ],
+    "indicators": [
+     {
+      "name": "history-clear-from-user-writable-parent",
+      "weight": 1.0,
+      "required": true,
+      "select": {
+       "claim_type": "process_create",
+       "facts.image": [
+        "dash",
+        "sh"
+       ],
+       "lineage.parent_user_writable": {
+        "truthy": true
+       },
+       "facts.command": {
+        "all_of": [
+         {
+          "contains_any": [
+           "bash_history"
+          ]
+         },
+         {
+          "contains_any": [
+           "unset"
+          ]
+         }
+        ]
+       }
+      },
+      "score": {
+       "op": "threshold",
+       "value": "n",
+       "at": 1
+      }
+     }
+    ],
+    "provenance": {
+     "authored_by": "argus.rules.induce",
+     "model": "gpt-oss:120b-cloud",
+     "origin": "run1_ws-fin01_1230#ws-fin01/11544@1791377551.823",
+     "round": 0,
+     "semantic_id": "767006bf03fd",
+     "evidence": [
+      "ev_000041"
+     ]
+    }
+   },
+   "status": "retired",
+   "origin": {
+    "capture": "run1_ws-fin01_1230",
+    "recording": "run1",
+    "host": "ws-fin01",
+    "episode": "run1_ws-fin01_1230#ws-fin01/11544@1791377551.823",
+    "episode_root_image": "splunkd",
+    "round": 0
+   },
+   "checks": {
+    "C1_valid": {
+     "check": "C1_valid",
+     "passed": true,
+     "detail": "",
+     "errors": []
+    },
+    "C2_own_evidence": {
+     "check": "C2_own_evidence",
+     "passed": true,
+     "detail": "",
+     "hard": [],
+     "soft": [],
+     "causes": {},
+     "origin_score": 1.0
+    },
+    "C3_robust": {
+     "check": "C3_robust",
+     "passed": true,
+     "detail": "",
+     "lost_under": [],
+     "static_rename_survival": 0.0,
+     "static_brittle": true,
+     "breaking_literals": {
+      "history-clear-from-user-writable-parent": [
+       "facts.command contains_any 'bash_history'",
+       "facts.command contains_any 'unset'",
+       "facts.image eq 'dash'",
+       "facts.image eq 'sh'"
+      ]
+     }
+    },
+    "C4_quiet": {
+     "check": "C4_quiet",
+     "passed": true,
+     "detail": "",
+     "history_rate": 0.0,
+     "fired_on": []
+    },
+    "C5_confirmed": {
+     "check": "C5_confirmed",
+     "passed": true,
+     "detail": "",
+     "confirmed_by": [
+      "analyst"
+     ],
+     "source": "analyst",
+     "why": "analyst-approved: analyst verdicts 4 malicious / 0 benign (mean 0.83, lower 0.51; all 4 alert(s) reviewed)",
+     "llm_agreement": []
+    }
+   },
+   "history": [
+    {
+     "at": "2026-10-08T03:38:22",
+     "from": null,
+     "to": "candidate",
+     "reason": "written"
+    },
+    {
+     "at": "2026-10-08T03:38:25",
+     "from": "candidate",
+     "to": "shadow",
+     "reason": "passed C1\u2013C4"
+    },
+    {
+     "at": "2026-10-08T03:38:25",
+     "from": "shadow",
+     "to": "active",
+     "reason": "analyst-approved: analyst verdicts 4 malicious / 0 benign (mean 0.83, lower 0.51; all 4 alert(s) reviewed)"
+    },
+    {
+     "at": "2026-10-08T03:47:07",
+     "from": "active",
+     "to": "retired",
+     "reason": "duplicate of llm.clear-bash-history-6f2c1d.b1bd756a50.r1: fires on exactly the same events in every design capture"
+    }
+   ]
+  },
+  {
+   "uid": "llm.user-writable-outbound-connection-b85e046a50.9811af6a50.r1",
+   "rule": {
+    "id": "llm.user-writable-outbound-connection-b85e046a50.9811af6a50.r1",
+    "technique": "T1041",
+    "name": "Outbound Connection from User-Writable Binary",
+    "tactic": "command-and-control",
+    "severity": 0.8,
+    "evidence": [
+     "ev_000011"
+    ],
+    "indicators": [
+     {
+      "name": "uw_outbound",
+      "weight": 1.0,
+      "required": true,
+      "select": {
+       "claim_type": "host_network_connection",
+       "lineage.user_writable": {
+        "truthy": true
+       },
+       "facts.direction": "outbound"
+      },
+      "score": {
+       "op": "threshold",
+       "value": "n",
+       "at": 1
+      }
+     }
+    ],
+    "provenance": {
+     "authored_by": "argus.rules.induce",
+     "model": "gpt-oss:120b-cloud",
+     "origin": "run1_ws-dev01_1230#ws-dev01/1157@1791377549.712",
+     "round": 1,
+     "semantic_id": "9811af59839a",
+     "evidence": [
+      "ev_000011"
+     ]
+    }
+   },
+   "status": "retired",
+   "origin": {
+    "capture": "run1_ws-dev01_1230",
+    "recording": "run1",
+    "host": "ws-dev01",
+    "episode": "run1_ws-dev01_1230#ws-dev01/1157@1791377549.712",
+    "episode_root_image": "splunkd",
+    "round": 1
+   },
+   "checks": {
+    "C1_valid": {
+     "check": "C1_valid",
+     "passed": true,
+     "detail": "",
+     "errors": []
+    },
+    "C2_own_evidence": {
+     "check": "C2_own_evidence",
+     "passed": true,
+     "detail": "",
+     "hard": [],
+     "soft": [],
+     "causes": {},
+     "origin_score": 1.0
+    },
+    "C3_robust": {
+     "check": "C3_robust",
+     "passed": true,
+     "detail": "",
+     "lost_under": [],
+     "static_rename_survival": 1.0,
+     "static_brittle": false,
+     "breaking_literals": {}
+    },
+    "C4_quiet": {
+     "check": "C4_quiet",
+     "passed": true,
+     "detail": "",
+     "history_rate": 0.0,
+     "fired_on": []
+    },
+    "C5_confirmed": {
+     "check": "C5_confirmed",
+     "passed": true,
+     "detail": "",
+     "confirmed_by": [
+      "analyst"
+     ],
+     "source": "analyst",
+     "why": "analyst-approved: analyst verdicts 4 malicious / 0 benign (mean 0.83, lower 0.51; all 4 alert(s) reviewed)",
+     "llm_agreement": []
+    }
+   },
+   "history": [
+    {
+     "at": "2026-10-08T03:38:22",
+     "from": null,
+     "to": "candidate",
+     "reason": "written"
+    },
+    {
+     "at": "2026-10-08T03:38:25",
+     "from": "candidate",
+     "to": "shadow",
+     "reason": "passed C1\u2013C4"
+    },
+    {
+     "at": "2026-10-08T03:38:25",
+     "from": "shadow",
+     "to": "active",
+     "reason": "analyst-approved: analyst verdicts 4 malicious / 0 benign (mean 0.83, lower 0.51; all 4 alert(s) reviewed)"
+    },
+    {
+     "at": "2026-10-08T03:38:25",
+     "from": "active",
+     "to": "retired",
+     "reason": "duplicate of llm.llm-user-writable-outbound-connection-b85e043ed0.9811af3ed0.r1"
+    }
+   ]
+  },
+  {
+   "uid": "llm.user-writable-outbound-connection-c031a58671.5f1dd48671.r1",
+   "rule": {
+    "id": "llm.user-writable-outbound-connection-c031a58671.5f1dd48671.r1",
+    "technique": "T1041",
+    "name": "User\u2011writable executable makes outbound network connection",
+    "tactic": "command-and-control",
+    "severity": 0.8,
+    "evidence": [
+     "ev_000040"
+    ],
+    "indicators": [
+     {
+      "name": "outbound-from-user-writable",
+      "weight": 1.0,
+      "required": true,
+      "select": {
+       "claim_type": "host_network_connection",
+       "facts.direction": "outbound",
+       "lineage.ancestor_user_writable": {
+        "truthy": true
+       }
+      },
+      "score": {
+       "op": "threshold",
+       "value": "n",
+       "at": 1
+      }
+     }
+    ],
+    "provenance": {
+     "authored_by": "argus.rules.induce",
+     "model": "gpt-oss:120b-cloud",
+     "origin": "run1_ws-fin01_1230#ws-fin01/11544@1791377551.823",
+     "round": 1,
+     "semantic_id": "5f1dd4b4d368",
+     "evidence": [
+      "ev_000040"
+     ]
+    }
+   },
+   "status": "rejected",
+   "origin": {
+    "capture": "run1_ws-fin01_1230",
+    "recording": "run1",
+    "host": "ws-fin01",
+    "episode": "run1_ws-fin01_1230#ws-fin01/11544@1791377551.823",
+    "episode_root_image": "splunkd",
+    "round": 1
+   },
+   "checks": {
+    "C1_valid": {
+     "check": "C1_valid",
+     "passed": true,
+     "detail": "",
+     "errors": []
+    },
+    "C2_own_evidence": {
+     "check": "C2_own_evidence",
+     "passed": false,
+     "detail": "[outbound-from-user-writable] is required but selects no claim of the origin capture",
+     "hard": [
+      "[outbound-from-user-writable] is required but selects no claim of the origin capture"
+     ],
+     "soft": [],
+     "causes": {
+      "jointly_unsatisfied": 1
+     },
+     "origin_score": 0.0
+    }
+   },
+   "history": [
+    {
+     "at": "2026-10-08T03:38:22",
+     "from": null,
+     "to": "candidate",
+     "reason": "written"
+    },
+    {
+     "at": "2026-10-08T03:38:22",
+     "from": "candidate",
+     "to": "rejected",
+     "reason": "repaired: superseded by llm.user-writable-outbound-connection.89fb558671.r2"
+    }
+   ]
+  },
+  {
+   "uid": "llm.user-writable-outbound-connection.89fb558671.r2",
+   "rule": {
+    "id": "llm.user-writable-outbound-connection.89fb558671.r2",
+    "technique": "T1041",
+    "name": "User\u2011writable executable makes outbound network connection",
+    "tactic": "command-and-control",
+    "severity": 0.8,
+    "evidence": [
+     "ev_000040"
+    ],
+    "indicators": [
+     {
+      "name": "outbound-from-user-writable",
+      "weight": 1.0,
+      "required": true,
+      "select": {
+       "claim_type": "host_network_connection",
+       "facts.direction": "outbound",
+       "lineage.user_writable": {
+        "truthy": true
+       }
+      },
+      "score": {
+       "op": "threshold",
+       "value": "n",
+       "at": 1
+      }
+     }
+    ],
+    "provenance": {
+     "authored_by": "argus.rules.induce",
+     "model": "gpt-oss:120b-cloud",
+     "origin": "run1_ws-fin01_1230#ws-fin01/11544@1791377551.823",
+     "round": 2,
+     "semantic_id": "89fb55efaedb",
+     "evidence": [
+      "ev_000040"
+     ]
+    }
+   },
+   "status": "retired",
+   "origin": {
+    "capture": "run1_ws-fin01_1230",
+    "recording": "run1",
+    "host": "ws-fin01",
+    "episode": "run1_ws-fin01_1230#ws-fin01/11544@1791377551.823",
+    "episode_root_image": "splunkd",
+    "round": 2
+   },
+   "checks": {
+    "C1_valid": {
+     "check": "C1_valid",
+     "passed": true,
+     "detail": "",
+     "errors": []
+    },
+    "C2_own_evidence": {
+     "check": "C2_own_evidence",
+     "passed": true,
+     "detail": "",
+     "hard": [],
+     "soft": [],
+     "causes": {},
+     "origin_score": 1.0
+    },
+    "C3_robust": {
+     "check": "C3_robust",
+     "passed": true,
+     "detail": "",
+     "lost_under": [],
+     "static_rename_survival": 1.0,
+     "static_brittle": false,
+     "breaking_literals": {}
+    },
+    "C4_quiet": {
+     "check": "C4_quiet",
+     "passed": true,
+     "detail": "",
+     "history_rate": 0.0,
+     "fired_on": []
+    },
+    "C5_confirmed": {
+     "check": "C5_confirmed",
+     "passed": true,
+     "detail": "",
+     "confirmed_by": [
+      "analyst"
+     ],
+     "source": "analyst",
+     "why": "analyst-approved: analyst verdicts 4 malicious / 0 benign (mean 0.83, lower 0.51; all 4 alert(s) reviewed)",
+     "llm_agreement": []
+    }
+   },
+   "history": [
+    {
+     "at": "2026-10-08T03:38:22",
+     "from": null,
+     "to": "candidate",
+     "reason": "written"
+    },
+    {
+     "at": "2026-10-08T03:38:25",
+     "from": "candidate",
+     "to": "shadow",
+     "reason": "passed C1\u2013C4"
+    },
+    {
+     "at": "2026-10-08T03:38:25",
+     "from": "shadow",
+     "to": "active",
+     "reason": "analyst-approved: analyst verdicts 4 malicious / 0 benign (mean 0.83, lower 0.51; all 4 alert(s) reviewed)"
+    },
+    {
+     "at": "2026-10-08T03:47:07",
+     "from": "active",
+     "to": "retired",
+     "reason": "duplicate of llm.llm-user-writable-outbound-connection-b85e043ed0.9811af3ed0.r1: fires on exactly the same events in every design capture"
+    }
+   ]
+  },
+  {
+   "uid": "llm.user-writable-outbound-connection.b85e043ed0",
+   "rule": {
+    "id": "llm.user-writable-outbound-connection.b85e043ed0",
+    "technique": "T1041",
+    "name": "Outbound Connection from User-Writable Binary",
+    "tactic": "command-and-control",
+    "severity": 0.8,
+    "evidence": [
+     "ev_000011"
+    ],
+    "indicators": [
+     {
+      "name": "uw_outbound",
+      "weight": 1.0,
+      "required": true,
+      "select": {
+       "claim_type": "host_network_connection",
+       "lineage.ancestor_user_writable": {
+        "truthy": true
+       },
+       "facts.direction": "outbound"
+      },
+      "score": {
+       "op": "threshold",
+       "value": "n",
+       "at": 1
+      }
+     }
+    ],
+    "provenance": {
+     "authored_by": "argus.rules.induce",
+     "model": "gpt-oss:120b-cloud",
+     "origin": "run1_web01_1230#web01/1187@1791377542.462",
+     "round": 0,
+     "semantic_id": "b85e04ffc5f5",
+     "evidence": [
+      "ev_000011"
+     ]
+    }
+   },
+   "status": "rejected",
+   "origin": {
+    "capture": "run1_web01_1230",
+    "recording": "run1",
+    "host": "web01",
+    "episode": "run1_web01_1230#web01/1187@1791377542.462",
+    "episode_root_image": "splunkd",
+    "round": 0
+   },
+   "checks": {
+    "C1_valid": {
+     "check": "C1_valid",
+     "passed": true,
+     "detail": "",
+     "errors": []
+    },
+    "C2_own_evidence": {
+     "check": "C2_own_evidence",
+     "passed": false,
+     "detail": "[uw_outbound] is required but selects no claim of the origin capture",
+     "hard": [
+      "[uw_outbound] is required but selects no claim of the origin capture"
+     ],
+     "soft": [],
+     "causes": {
+      "jointly_unsatisfied": 1
+     },
+     "origin_score": 0.0
+    }
+   },
+   "history": [
+    {
+     "at": "2026-10-08T03:38:22",
+     "from": null,
+     "to": "candidate",
+     "reason": "written"
+    },
+    {
+     "at": "2026-10-08T03:38:22",
+     "from": "candidate",
+     "to": "rejected",
+     "reason": "repaired: superseded by llm.llm-user-writable-outbound-connection-b85e043ed0.9811af3ed0.r1"
+    }
+   ]
+  },
+  {
+   "uid": "llm.user-writable-outbound-connection.b85e046a50",
+   "rule": {
+    "id": "llm.user-writable-outbound-connection.b85e046a50",
+    "technique": "T1041",
+    "name": "Outbound Connection from User-Writable Binary",
+    "tactic": "command-and-control",
+    "severity": 0.8,
+    "evidence": [
+     "ev_000011"
+    ],
+    "indicators": [
+     {
+      "name": "uw_outbound",
+      "weight": 1.0,
+      "required": true,
+      "select": {
+       "claim_type": "host_network_connection",
+       "lineage.ancestor_user_writable": {
+        "truthy": true
+       },
+       "facts.direction": "outbound"
+      },
+      "score": {
+       "op": "threshold",
+       "value": "n",
+       "at": 1
+      }
+     }
+    ],
+    "provenance": {
+     "authored_by": "argus.rules.induce",
+     "model": "gpt-oss:120b-cloud",
+     "origin": "run1_ws-dev01_1230#ws-dev01/1157@1791377549.712",
+     "round": 0,
+     "semantic_id": "b85e04ffc5f5",
+     "evidence": [
+      "ev_000011"
+     ]
+    }
+   },
+   "status": "rejected",
+   "origin": {
+    "capture": "run1_ws-dev01_1230",
+    "recording": "run1",
+    "host": "ws-dev01",
+    "episode": "run1_ws-dev01_1230#ws-dev01/1157@1791377549.712",
+    "episode_root_image": "splunkd",
+    "round": 0
+   },
+   "checks": {
+    "C1_valid": {
+     "check": "C1_valid",
+     "passed": true,
+     "detail": "",
+     "errors": []
+    },
+    "C2_own_evidence": {
+     "check": "C2_own_evidence",
+     "passed": false,
+     "detail": "[uw_outbound] is required but selects no claim of the origin capture",
+     "hard": [
+      "[uw_outbound] is required but selects no claim of the origin capture"
+     ],
+     "soft": [],
+     "causes": {
+      "jointly_unsatisfied": 1
+     },
+     "origin_score": 0.0
+    }
+   },
+   "history": [
+    {
+     "at": "2026-10-08T03:38:22",
+     "from": null,
+     "to": "candidate",
+     "reason": "written"
+    },
+    {
+     "at": "2026-10-08T03:38:22",
+     "from": "candidate",
+     "to": "rejected",
+     "reason": "repaired: superseded by llm.user-writable-outbound-connection-b85e046a50.9811af6a50.r1,llm.clear-bash-history-6f2c1d.b1bd756a50.r1"
+    }
+   ]
+  },
+  {
+   "uid": "llm.user-writable-outbound-connection.c031a58671",
+   "rule": {
+    "id": "llm.user-writable-outbound-connection.c031a58671",
+    "technique": "T1041",
+    "name": "User\u2011writable executable makes outbound network connection",
+    "tactic": "command-and-control",
+    "severity": 0.8,
+    "evidence": [
+     "ev_000040"
+    ],
+    "indicators": [
+     {
+      "name": "outbound-from-user-writable",
+      "weight": 1.0,
+      "required": true,
+      "select": {
+       "claim_type": "host_network_connection",
+       "direction": "outbound",
+       "lineage.ancestor_user_writable": {
+        "truthy": true
+       }
+      },
+      "score": {
+       "op": "threshold",
+       "value": "n",
+       "at": 1
+      }
+     }
+    ],
+    "provenance": {
+     "authored_by": "argus.rules.induce",
+     "model": "gpt-oss:120b-cloud",
+     "origin": "run1_ws-fin01_1230#ws-fin01/11544@1791377551.823",
+     "round": 0,
+     "semantic_id": "c031a55fb513",
+     "evidence": [
+      "ev_000040"
+     ]
+    }
+   },
+   "status": "rejected",
+   "origin": {
+    "capture": "run1_ws-fin01_1230",
+    "recording": "run1",
+    "host": "ws-fin01",
+    "episode": "run1_ws-fin01_1230#ws-fin01/11544@1791377551.823",
+    "episode_root_image": "splunkd",
+    "round": 0
+   },
+   "checks": {
+    "C1_valid": {
+     "check": "C1_valid",
+     "passed": false,
+     "detail": "indicator[0].select: unknown field path 'direction' \u2014 use ['claim_id', 'claim_type', 'entity', 'event', 'modality', 'time'], ['baseline.image_seen', 'baseline.lineage_seen', 'behaviour.tactics', 'lineage.ancestor_user_writable', 'lineage.parent_user_writable', 'lineage.user_writable', 'provenance.sensor_id'] or \"facts.<name>\"; combine clauses with ['any_of', 'all_of', 'none_of']",
+     "errors": [
+      "indicator[0].select: unknown field path 'direction' \u2014 use ['claim_id', 'claim_type', 'entity', 'event', 'modality', 'time'], ['baseline.image_seen', 'baseline.lineage_seen', 'behaviour.tactics', 'lineage.ancestor_user_writable', 'lineage.parent_user_writable', 'lineage.user_writable', 'provenance.sensor_id'] or \"facts.<name>\"; combine clauses with ['any_of', 'all_of', 'none_of']"
+     ]
+    }
+   },
+   "history": [
+    {
+     "at": "2026-10-08T03:38:22",
+     "from": null,
+     "to": "candidate",
+     "reason": "written"
+    },
+    {
+     "at": "2026-10-08T03:38:22",
+     "from": "candidate",
+     "to": "rejected",
+     "reason": "repaired: superseded by llm.user-writable-outbound-connection-c031a58671.5f1dd48671.r1"
+    }
+   ]
+  },
+  {
+   "uid": "llm.user-writable-outbound-server.c5a7a22a21",
+   "rule": {
+    "id": "llm.user-writable-outbound-server.c5a7a22a21",
+    "technique": "T1041",
+    "name": "User\u2011writable binary initiates outbound connection with server flag",
+    "tactic": "command-and-control",
+    "severity": 0.7,
+    "evidence": [
+     "ev_000025"
+    ],
+    "indicators": [
+     {
+      "name": "user_writable_server_process",
+      "weight": 1.0,
+      "required": true,
+      "select": {
+       "claim_type": "process_create",
+       "lineage.user_writable": {
+        "truthy": true
+       },
+       "facts.command": {
+        "contains_any": [
+         "-server"
+        ]
+       }
+      },
+      "score": {
+       "op": "threshold",
+       "value": "1",
+       "at": 1
+      }
+     }
+    ],
+    "provenance": {
+     "authored_by": "argus.rules.induce",
+     "model": "gpt-oss:120b-cloud",
+     "origin": "run1_app01_1230#app01/1094@1791377547.402",
+     "round": 0,
+     "semantic_id": "c5a7a232f23d",
+     "evidence": [
+      "ev_000025"
+     ]
+    }
+   },
+   "status": "rejected",
+   "origin": {
+    "capture": "run1_app01_1230",
+    "recording": "run1",
+    "host": "app01",
+    "episode": "run1_app01_1230#app01/1094@1791377547.402",
+    "episode_root_image": "splunkd",
+    "round": 0
+   },
+   "checks": {
+    "C1_valid": {
+     "check": "C1_valid",
+     "passed": false,
+     "detail": "indicator[0].score: references undefined value '1'",
+     "errors": [
+      "indicator[0].score: references undefined value '1'"
+     ]
+    }
+   },
+   "history": [
+    {
+     "at": "2026-10-08T03:38:22",
+     "from": null,
+     "to": "candidate",
+     "reason": "written"
+    },
+    {
+     "at": "2026-10-08T03:38:22",
+     "from": "candidate",
+     "to": "rejected",
+     "reason": "repaired: superseded by llm.llm-user-writable-outbound-server-c5a7a22a21.174bd32a21.r1,llm.llm-clear-bash-history-547eba2a21.f68ca72a21.r1,llm.llm-discovery-from-user-writable-ancestor-e333f0.b528532a21.r1"
+    }
+   ]
+  },
+  {
+   "uid": "llm.whoami-from-user-writable-ancestor.5f35e53ed0",
+   "rule": {
+    "id": "llm.whoami-from-user-writable-ancestor.5f35e53ed0",
+    "technique": "T1033",
+    "name": "User Identity Discovery via User-Writable Ancestor",
+    "tactic": "discovery",
+    "severity": 0.6,
+    "evidence": [
+     "ev_000015"
+    ],
+    "indicators": [
+     {
+      "name": "whoami_uw",
+      "weight": 1.0,
+      "required": true,
+      "select": {
+       "claim_type": "process_create",
+       "facts.command": {
+        "contains_any": [
+         "whoami"
+        ]
+       },
+       "lineage.ancestor_user_writable": {
+        "truthy": true
+       }
+      },
+      "score": {
+       "op": "threshold",
+       "value": "n",
+       "at": 1
+      }
+     }
+    ],
+    "provenance": {
+     "authored_by": "argus.rules.induce",
+     "model": "gpt-oss:120b-cloud",
+     "origin": "run1_web01_1230#web01/1187@1791377542.462",
+     "round": 0,
+     "semantic_id": "5f35e5bb818c",
+     "evidence": [
+      "ev_000015"
+     ]
+    }
+   },
+   "status": "retired",
+   "origin": {
+    "capture": "run1_web01_1230",
+    "recording": "run1",
+    "host": "web01",
+    "episode": "run1_web01_1230#web01/1187@1791377542.462",
+    "episode_root_image": "splunkd",
+    "round": 0
+   },
+   "checks": {
+    "C1_valid": {
+     "check": "C1_valid",
+     "passed": true,
+     "detail": "",
+     "errors": []
+    },
+    "C2_own_evidence": {
+     "check": "C2_own_evidence",
+     "passed": true,
+     "detail": "",
+     "hard": [],
+     "soft": [],
+     "causes": {},
+     "origin_score": 1.0
+    },
+    "C3_robust": {
+     "check": "C3_robust",
+     "passed": true,
+     "detail": "",
+     "lost_under": [],
+     "static_rename_survival": 0.0,
+     "static_brittle": true,
+     "breaking_literals": {
+      "whoami_uw": [
+       "facts.command contains_any 'whoami'"
+      ]
+     }
+    },
+    "C4_quiet": {
+     "check": "C4_quiet",
+     "passed": true,
+     "detail": "",
+     "history_rate": 0.0,
+     "fired_on": []
+    },
+    "C5_confirmed": {
+     "check": "C5_confirmed",
+     "passed": true,
+     "detail": "",
+     "confirmed_by": [
+      "analyst"
+     ],
+     "source": "analyst",
+     "why": "analyst-approved: analyst verdicts 4 malicious / 0 benign (mean 0.83, lower 0.51; all 4 alert(s) reviewed)",
+     "llm_agreement": []
+    }
+   },
+   "history": [
+    {
+     "at": "2026-10-08T03:38:22",
+     "from": null,
+     "to": "candidate",
+     "reason": "written"
+    },
+    {
+     "at": "2026-10-08T03:38:25",
+     "from": "candidate",
+     "to": "shadow",
+     "reason": "passed C1\u2013C4"
+    },
+    {
+     "at": "2026-10-08T03:38:25",
+     "from": "shadow",
+     "to": "active",
+     "reason": "analyst-approved: analyst verdicts 4 malicious / 0 benign (mean 0.83, lower 0.51; all 4 alert(s) reviewed)"
+    },
+    {
+     "at": "2026-10-08T03:47:07",
+     "from": "active",
+     "to": "retired",
+     "reason": "duplicate of llm.llm-discovery-from-user-writable-ancestor-e333f0.b528532a21.r1: fires on exactly the same events in every design capture"
+    }
+   ]
+  },
+  {
+   "uid": "llm.whoami-from-user-writable-ancestor.5f35e56a50",
+   "rule": {
+    "id": "llm.whoami-from-user-writable-ancestor.5f35e56a50",
+    "technique": "T1033",
+    "name": "User Identity Discovery via User-Writable Ancestor",
+    "tactic": "discovery",
+    "severity": 0.6,
+    "evidence": [
+     "ev_000015"
+    ],
+    "indicators": [
+     {
+      "name": "whoami_uw",
+      "weight": 1.0,
+      "required": true,
+      "select": {
+       "claim_type": "process_create",
+       "facts.command": {
+        "contains_any": [
+         "whoami"
+        ]
+       },
+       "lineage.ancestor_user_writable": {
+        "truthy": true
+       }
+      },
+      "score": {
+       "op": "threshold",
+       "value": "n",
+       "at": 1
+      }
+     }
+    ],
+    "provenance": {
+     "authored_by": "argus.rules.induce",
+     "model": "gpt-oss:120b-cloud",
+     "origin": "run1_ws-dev01_1230#ws-dev01/1157@1791377549.712",
+     "round": 0,
+     "semantic_id": "5f35e5bb818c",
+     "evidence": [
+      "ev_000015"
+     ]
+    }
+   },
+   "status": "retired",
+   "origin": {
+    "capture": "run1_ws-dev01_1230",
+    "recording": "run1",
+    "host": "ws-dev01",
+    "episode": "run1_ws-dev01_1230#ws-dev01/1157@1791377549.712",
+    "episode_root_image": "splunkd",
+    "round": 0
+   },
+   "checks": {
+    "C1_valid": {
+     "check": "C1_valid",
+     "passed": true,
+     "detail": "",
+     "errors": []
+    },
+    "C2_own_evidence": {
+     "check": "C2_own_evidence",
+     "passed": true,
+     "detail": "",
+     "hard": [],
+     "soft": [],
+     "causes": {},
+     "origin_score": 1.0
+    },
+    "C3_robust": {
+     "check": "C3_robust",
+     "passed": true,
+     "detail": "",
+     "lost_under": [],
+     "static_rename_survival": 0.0,
+     "static_brittle": true,
+     "breaking_literals": {
+      "whoami_uw": [
+       "facts.command contains_any 'whoami'"
+      ]
+     }
+    },
+    "C4_quiet": {
+     "check": "C4_quiet",
+     "passed": true,
+     "detail": "",
+     "history_rate": 0.0,
+     "fired_on": []
+    },
+    "C5_confirmed": {
+     "check": "C5_confirmed",
+     "passed": true,
+     "detail": "",
+     "confirmed_by": [
+      "analyst"
+     ],
+     "source": "analyst",
+     "why": "analyst-approved: analyst verdicts 4 malicious / 0 benign (mean 0.83, lower 0.51; all 4 alert(s) reviewed)",
+     "llm_agreement": []
+    }
+   },
+   "history": [
+    {
+     "at": "2026-10-08T03:38:22",
+     "from": null,
+     "to": "candidate",
+     "reason": "written"
+    },
+    {
+     "at": "2026-10-08T03:38:25",
+     "from": "candidate",
+     "to": "shadow",
+     "reason": "passed C1\u2013C4"
+    },
+    {
+     "at": "2026-10-08T03:38:25",
+     "from": "shadow",
+     "to": "active",
+     "reason": "analyst-approved: analyst verdicts 4 malicious / 0 benign (mean 0.83, lower 0.51; all 4 alert(s) reviewed)"
+    },
+    {
+     "at": "2026-10-08T03:38:25",
+     "from": "active",
+     "to": "retired",
+     "reason": "duplicate of llm.whoami-from-user-writable-ancestor.5f35e53ed0"
+    }
+   ]
+  }
+ ]
+}

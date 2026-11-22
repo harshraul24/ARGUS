@@ -1,0 +1,14 @@
+{
+  "key": "9e2920f6acc22fa2e45de467fdeb8bf5578c3c1b0f6efcdf01790ac12d40525d",
+  "provider": "ollama",
+  "model": "gpt-oss:120b-cloud",
+  "prompt_sha": "9e2920f6acc22fa2",
+  "response": "{\n  \"rules\": [\n    {\n      \"id\": \"network-neighbor-discovery\",\n      \"technique\": \"T1018\",\n      \"name\": \"Network Neighbor Table Discovery\",\n      \"tactic\": \"discovery\",\n      \"severity\": 0.6,\n      \"evidence\": [\"ev_000604\"],\n      \"indicators\": [\n        {\n          \"name\": \"ip_neighbor_show\",\n          \"weight\": 1.0,\n          \"required\": true,\n          \"select\": {\n            \"claim_type\": \"process_create\",\n            \"facts.image\": [\"ip\"],\n            \"facts.command\": {\n              \"contains_any\": [\"neighbour\", \"show\"]\n            }\n          },\n          \"score\": {\n            \"op\": \"threshold\",\n            \"value\": \"n\",\n            \"at\": 1\n          }\n        }\n      ]\n    }\n  ],\n  \"reasoning\": \"The captured episode installs (if needed) and runs \\\"ip neighbour show\\\", which enumerates the system's ARP/neighbor table\u2014a classic network discovery technique (MITRE ATT&CK T1018). Detecting the execution of the ip utility with the tokens \\\"neighbour\\\" and \\\"show\\\" captures this behavior across different command variations while avoiding noisy short tokens. The rule is based on system\u2011folder binaries, uses only stable literals from the episode, and aligns with existing community detections for network discovery.\"\n}",
+  "latency_s": 16.959208965301514,
+  "created_at": 1791394595.49047,
+  "params": {
+    "temperature": 0.0,
+    "seed": 7,
+    "json_mode": true
+  }
+}

@@ -1,0 +1,47 @@
+{
+ "scenario_id": "run1_ws-fin01_1300",
+ "dataset": "lab",
+ "campaign": "run1",
+ "host": "ws-fin01",
+ "format": "argus-events-v1",
+ "generated_by": "tools/apt_capture/auditd_to_windows.py (real auditd capture)",
+ "capture": {
+  "window": {
+   "start": "2026-10-07T13:00:00+00:00",
+   "end": "2026-10-07T13:30:00+00:00"
+  }
+ },
+ "events": 1002,
+ "event_types": {
+  "file_create": 4,
+  "file_read": 138,
+  "network_connection": 138,
+  "process_create": 722
+ },
+ "sensor": "auditd",
+ "audit_rules_loaded": [
+  "auditconfig",
+  "auditlog",
+  "exec",
+  "identity",
+  "net",
+  "privilege",
+  "schedule",
+  "service",
+  "sshkeys"
+ ],
+ "sensor_contract": [
+  "process_create",
+  "network_connection"
+ ],
+ "sensor_gaps": [],
+ "captured_not_ingested": [
+  "auth.log",
+  "zeek (network/*.log)"
+ ],
+ "clock_offset_vs_caldera_s": 0.8,
+ "protocol_activity": {
+  "package_install": 2
+ },
+ "capture_gate": "fail: package_install"
+}

@@ -1,0 +1,11 @@
+#separator \x09
+#set_separator	,
+#empty_field	(empty)
+#unset_field	-
+#path	conn
+#fields	ts	uid	id.orig_h	id.orig_p	id.resp_h	id.resp_p	proto	service	duration	conn_state
+#types	time	string	addr	port	addr	port	enum	string	interval	string
+1772700072.000000	C0000030Bx	10.0.2.31	44810	10.0.2.20	22	tcp	ssh	2.1	RSTO
+1772700081.000000	C0000031Bx	10.0.2.31	44812	10.0.2.20	22	tcp	ssh	2.1	RSTO
+1772700093.000000	C0000032Bx	10.0.2.31	44814	10.0.2.20	22	tcp	ssh	372.0	SF
+#close	-

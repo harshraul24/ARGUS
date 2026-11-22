@@ -1,0 +1,14 @@
+{
+  "key": "6f38eb41dc6814e8b644b85beb12cbed5caf2c20feb16a6cf682448df9ea579c",
+  "provider": "ollama",
+  "model": "gpt-oss:120b-cloud",
+  "prompt_sha": "6f38eb41dc6814e8",
+  "response": "{\n  \"disposition\": \"benign\",\n  \"mitre_technique\": \"none\",\n  \"severity\": 0.1,\n  \"malicious_events\": [],\n  \"reason\": \"All observed activity (package installs, sudo usage, auditd enablement, systemd generator runs) aligns with normal system administration and boot processes, with no clear malicious behavior.\"\n}",
+  "latency_s": 1.942507028579712,
+  "created_at": 1791424133.622831,
+  "params": {
+    "temperature": 0.0,
+    "seed": 7,
+    "json_mode": true
+  }
+}

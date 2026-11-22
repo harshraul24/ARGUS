@@ -1,0 +1,14 @@
+{
+  "key": "0f2e72754f9bed25fd19e864a8b5bb276ba4d841a4b61be0cb5876dba8efd3f7",
+  "provider": "ollama",
+  "model": "gpt-oss:120b-cloud",
+  "prompt_sha": "0f2e72754f9bed25",
+  "response": "{\n  \"rules\": [\n    {\n      \"id\": \"credential-dump-passwd\",\n      \"technique\": \"T1003.001\",\n      \"name\": \"Read /etc/passwd and write to user-writable location\",\n      \"tactic\": \"credential-access\",\n      \"severity\": 0.7,\n      \"evidence\": [\"ev_000606\"],\n      \"indicators\": [\n        {\n          \"name\": \"passwd-to-tmp\",\n          \"weight\": 1.0,\n          \"required\": true,\n          \"select\": {\n            \"claim_type\": \"process_create\",\n            \"facts.command\": {\n              \"all_of\": [\n                { \"contains_any\": [\"etc/passwd\"] },\n                { \"contains_any\": [\"/tmp/\"] }\n              ]\n            },\n            \"behaviour.tactics\": {\n              \"in\": [\"credential-access\"]\n            }\n          },\n          \"score\": {\n            \"op\": \"threshold\",\n            \"value\": \"n\",\n            \"at\": 1\n          }\n        }\n      ]\n    }\n  ],\n  \"reasoning\": \"The episode shows a newly seen shell process that reads the system password file (/etc/passwd) and redirects the output to a file in /tmp, a user\u2011writable directory, before displaying it. Accessing /etc/passwd and writing its contents to a temporary location is a classic credential\u2011access technique (OS Credential Dumping). The rule captures this behaviour by requiring both the \\\"etc/passwd\\\" and \\\"/tmp/\\\" substrings in the command line, ensuring it fires on the observed event while remaining robust to renaming of user\u2011writable executables and avoiding overly generic tokens.\"\n}",
+  "latency_s": 14.95903491973877,
+  "created_at": 1791394591.358787,
+  "params": {
+    "temperature": 0.0,
+    "seed": 7,
+    "json_mode": true
+  }
+}

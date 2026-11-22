@@ -1,0 +1,1884 @@
+{
+ "freeze": {
+  "manifest": "ARGUS_FREEZE_2026-10-08-import.json",
+  "matches": true,
+  "aggregate_sha256": "36059e0c6b67eb1ade5132addbc593c9a6998bd1b0696a7f6320707c5f5f1862",
+  "changed": []
+ },
+ "operations": {
+  "smoke": "excluded"
+ },
+ "arms": {
+  "argus": {
+   "metrics": {
+    "all": {
+     "attack_windows_flagged": "0/8",
+     "benign_windows_flagged": "0/6",
+     "steps_detected": "0/68",
+     "step_recall_ci95": [
+      0.0,
+      0.053
+     ],
+     "event_precision": null,
+     "steps_by_rule": {}
+    },
+    "gate_pass": {
+     "attack_windows_flagged": "0/8",
+     "benign_windows_flagged": "0/5",
+     "steps_detected": "0/68",
+     "step_recall_ci95": [
+      0.0,
+      0.053
+     ],
+     "event_precision": null,
+     "steps_by_rule": {}
+    },
+    "steps_by_status": {
+     "success": "0/68"
+    },
+    "bootstrap_steps": "0/4",
+    "deployment_steps": "0/4"
+   },
+   "windows": [
+    {
+     "window": "smoke_app01_1100",
+     "category": "benign",
+     "gate": "pass",
+     "disposition": "benign",
+     "alerts": [],
+     "context": [
+      "TA0007"
+     ],
+     "selected": 0,
+     "malicious_selected": 0,
+     "malicious": 0,
+     "blind_spots": [],
+     "claims": 94
+    },
+    {
+     "window": "smoke_app01_1200",
+     "category": "attack",
+     "gate": "pass",
+     "disposition": "benign",
+     "alerts": [],
+     "context": [],
+     "selected": 0,
+     "malicious_selected": 0,
+     "malicious": 7,
+     "blind_spots": [],
+     "claims": 7
+    },
+    {
+     "window": "smoke_app01_1230",
+     "category": "attack",
+     "gate": "pass",
+     "disposition": "benign",
+     "alerts": [],
+     "context": [],
+     "selected": 0,
+     "malicious_selected": 0,
+     "malicious": 45,
+     "blind_spots": [],
+     "claims": 47
+    },
+    {
+     "window": "smoke_web01_1100",
+     "category": "benign",
+     "gate": "pass",
+     "disposition": "benign",
+     "alerts": [],
+     "context": [
+      "TA0007"
+     ],
+     "selected": 0,
+     "malicious_selected": 0,
+     "malicious": 0,
+     "blind_spots": [],
+     "claims": 166
+    },
+    {
+     "window": "smoke_web01_1200",
+     "category": "attack",
+     "gate": "pass",
+     "disposition": "benign",
+     "alerts": [],
+     "context": [],
+     "selected": 0,
+     "malicious_selected": 0,
+     "malicious": 11,
+     "blind_spots": [],
+     "claims": 11
+    },
+    {
+     "window": "smoke_web01_1230",
+     "category": "attack",
+     "gate": "pass",
+     "disposition": "benign",
+     "alerts": [],
+     "context": [],
+     "selected": 0,
+     "malicious_selected": 0,
+     "malicious": 45,
+     "blind_spots": [],
+     "claims": 71
+    },
+    {
+     "window": "smoke_ws-dev01_1100",
+     "category": "benign",
+     "gate": "pass",
+     "disposition": "benign",
+     "alerts": [],
+     "context": [],
+     "selected": 0,
+     "malicious_selected": 0,
+     "malicious": 0,
+     "blind_spots": [],
+     "claims": 87
+    },
+    {
+     "window": "smoke_ws-dev01_1130",
+     "category": "benign",
+     "gate": "pass",
+     "disposition": "benign",
+     "alerts": [],
+     "context": [],
+     "selected": 0,
+     "malicious_selected": 0,
+     "malicious": 0,
+     "blind_spots": [],
+     "claims": 3
+    },
+    {
+     "window": "smoke_ws-dev01_1200",
+     "category": "attack",
+     "gate": "pass",
+     "disposition": "benign",
+     "alerts": [],
+     "context": [],
+     "selected": 0,
+     "malicious_selected": 0,
+     "malicious": 5,
+     "blind_spots": [],
+     "claims": 5
+    },
+    {
+     "window": "smoke_ws-dev01_1230",
+     "category": "attack",
+     "gate": "pass",
+     "disposition": "benign",
+     "alerts": [],
+     "context": [],
+     "selected": 0,
+     "malicious_selected": 0,
+     "malicious": 45,
+     "blind_spots": [],
+     "claims": 47
+    },
+    {
+     "window": "smoke_ws-fin01_1100",
+     "category": "benign",
+     "gate": "fail: first_boot",
+     "disposition": "benign",
+     "alerts": [],
+     "context": [
+      "TA0007"
+     ],
+     "selected": 0,
+     "malicious_selected": 0,
+     "malicious": 0,
+     "blind_spots": [],
+     "claims": 1111
+    },
+    {
+     "window": "smoke_ws-fin01_1130",
+     "category": "benign",
+     "gate": "pass",
+     "disposition": "benign",
+     "alerts": [],
+     "context": [
+      "TA0007"
+     ],
+     "selected": 0,
+     "malicious_selected": 0,
+     "malicious": 0,
+     "blind_spots": [],
+     "claims": 30
+    },
+    {
+     "window": "smoke_ws-fin01_1200",
+     "category": "attack",
+     "gate": "pass",
+     "disposition": "benign",
+     "alerts": [],
+     "context": [],
+     "selected": 0,
+     "malicious_selected": 0,
+     "malicious": 47,
+     "blind_spots": [],
+     "claims": 47
+    },
+    {
+     "window": "smoke_ws-fin01_1230",
+     "category": "attack",
+     "gate": "pass",
+     "disposition": "benign",
+     "alerts": [],
+     "context": [],
+     "selected": 0,
+     "malicious_selected": 0,
+     "malicious": 3,
+     "blind_spots": [],
+     "claims": 5
+    }
+   ],
+   "steps": [
+    {
+     "window": "smoke_app01_1200",
+     "step": "Agent deployment",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": true,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "smoke_app01_1200",
+     "step": "Bootstrap T1070.003",
+     "status": "success",
+     "bootstrap": true,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "smoke_app01_1230",
+     "step": "Identify active user",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "smoke_app01_1230",
+     "step": "Find local users",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "smoke_app01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "smoke_app01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "smoke_app01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "smoke_app01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "smoke_app01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "smoke_app01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "smoke_app01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "smoke_app01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "smoke_app01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "smoke_app01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "smoke_app01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "smoke_app01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "smoke_app01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "smoke_web01_1200",
+     "step": "Agent deployment",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": true,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "smoke_web01_1200",
+     "step": "Bootstrap T1070.003",
+     "status": "success",
+     "bootstrap": true,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "smoke_web01_1230",
+     "step": "Identify active user",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "smoke_web01_1230",
+     "step": "Find local users",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "smoke_web01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "smoke_web01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "smoke_web01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "smoke_web01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "smoke_web01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "smoke_web01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "smoke_web01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "smoke_web01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "smoke_web01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "smoke_web01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "smoke_web01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "smoke_web01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "smoke_web01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "smoke_ws-dev01_1200",
+     "step": "Agent deployment",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": true,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "smoke_ws-dev01_1200",
+     "step": "Bootstrap T1070.003",
+     "status": "success",
+     "bootstrap": true,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "smoke_ws-dev01_1230",
+     "step": "Identify active user",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "smoke_ws-dev01_1230",
+     "step": "Find local users",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "smoke_ws-dev01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "smoke_ws-dev01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "smoke_ws-dev01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "smoke_ws-dev01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "smoke_ws-dev01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "smoke_ws-dev01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "smoke_ws-dev01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "smoke_ws-dev01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "smoke_ws-dev01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "smoke_ws-dev01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "smoke_ws-dev01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "smoke_ws-dev01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "smoke_ws-dev01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "smoke_ws-fin01_1200",
+     "step": "Agent deployment",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": true,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "smoke_ws-fin01_1200",
+     "step": "Identify active user",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "smoke_ws-fin01_1200",
+     "step": "Find local users",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "smoke_ws-fin01_1200",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "smoke_ws-fin01_1200",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "smoke_ws-fin01_1200",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "smoke_ws-fin01_1200",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "smoke_ws-fin01_1200",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "smoke_ws-fin01_1200",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "smoke_ws-fin01_1200",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "smoke_ws-fin01_1200",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "smoke_ws-fin01_1200",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "smoke_ws-fin01_1200",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "smoke_ws-fin01_1200",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "smoke_ws-fin01_1200",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "smoke_ws-fin01_1200",
+     "step": "Bootstrap T1070.003",
+     "status": "success",
+     "bootstrap": true,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "smoke_ws-fin01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    }
+   ]
+  },
+  "argus_s3": {
+   "metrics": {
+    "all": {
+     "attack_windows_flagged": "7/8",
+     "benign_windows_flagged": "0/6",
+     "steps_detected": "12/68",
+     "step_recall_ci95": [
+      0.104,
+      0.284
+     ],
+     "event_precision": 1.0,
+     "steps_by_rule": {
+      "llm.llm-user-writable-outbound-server-c5a7a22a21.174bd32a21.r1": 4,
+      "llm.clear-bash-history-6f2c1d.b1bd756a50.r1": 4,
+      "llm.llm-discovery-from-user-writable-ancestor-e333f0.b528532a21.r1": 4,
+      "llm.user-writable-discovery-commands.604cde8671": 4
+     }
+    },
+    "gate_pass": {
+     "attack_windows_flagged": "7/8",
+     "benign_windows_flagged": "0/5",
+     "steps_detected": "12/68",
+     "step_recall_ci95": [
+      0.104,
+      0.284
+     ],
+     "event_precision": 1.0,
+     "steps_by_rule": {
+      "llm.llm-user-writable-outbound-server-c5a7a22a21.174bd32a21.r1": 4,
+      "llm.clear-bash-history-6f2c1d.b1bd756a50.r1": 4,
+      "llm.llm-discovery-from-user-writable-ancestor-e333f0.b528532a21.r1": 4,
+      "llm.user-writable-discovery-commands.604cde8671": 4
+     }
+    },
+    "steps_by_status": {
+     "success": "12/68"
+    },
+    "bootstrap_steps": "4/4",
+    "deployment_steps": "4/4"
+   },
+   "windows": [
+    {
+     "window": "smoke_app01_1100",
+     "category": "benign",
+     "gate": "pass",
+     "disposition": "benign",
+     "alerts": [],
+     "context": [
+      "TA0007"
+     ],
+     "selected": 0,
+     "malicious_selected": 0,
+     "malicious": 0,
+     "blind_spots": [],
+     "claims": 94
+    },
+    {
+     "window": "smoke_app01_1200",
+     "category": "attack",
+     "gate": "pass",
+     "disposition": "malicious",
+     "alerts": [
+      "llm.clear-bash-history-6f2c1d.b1bd756a50.r1",
+      "llm.llm-user-writable-outbound-server-c5a7a22a21.174bd32a21.r1"
+     ],
+     "context": [],
+     "selected": 2,
+     "malicious_selected": 2,
+     "malicious": 7,
+     "blind_spots": [],
+     "claims": 7
+    },
+    {
+     "window": "smoke_app01_1230",
+     "category": "attack",
+     "gate": "pass",
+     "disposition": "malicious",
+     "alerts": [
+      "llm.llm-discovery-from-user-writable-ancestor-e333f0.b528532a21.r1",
+      "llm.user-writable-discovery-commands.604cde8671"
+     ],
+     "context": [],
+     "selected": 2,
+     "malicious_selected": 2,
+     "malicious": 45,
+     "blind_spots": [],
+     "claims": 47
+    },
+    {
+     "window": "smoke_web01_1100",
+     "category": "benign",
+     "gate": "pass",
+     "disposition": "benign",
+     "alerts": [],
+     "context": [
+      "TA0007"
+     ],
+     "selected": 0,
+     "malicious_selected": 0,
+     "malicious": 0,
+     "blind_spots": [],
+     "claims": 166
+    },
+    {
+     "window": "smoke_web01_1200",
+     "category": "attack",
+     "gate": "pass",
+     "disposition": "malicious",
+     "alerts": [
+      "llm.clear-bash-history-6f2c1d.b1bd756a50.r1",
+      "llm.llm-user-writable-outbound-server-c5a7a22a21.174bd32a21.r1"
+     ],
+     "context": [],
+     "selected": 2,
+     "malicious_selected": 2,
+     "malicious": 11,
+     "blind_spots": [],
+     "claims": 11
+    },
+    {
+     "window": "smoke_web01_1230",
+     "category": "attack",
+     "gate": "pass",
+     "disposition": "malicious",
+     "alerts": [
+      "llm.llm-discovery-from-user-writable-ancestor-e333f0.b528532a21.r1",
+      "llm.user-writable-discovery-commands.604cde8671"
+     ],
+     "context": [],
+     "selected": 2,
+     "malicious_selected": 2,
+     "malicious": 45,
+     "blind_spots": [],
+     "claims": 71
+    },
+    {
+     "window": "smoke_ws-dev01_1100",
+     "category": "benign",
+     "gate": "pass",
+     "disposition": "benign",
+     "alerts": [],
+     "context": [],
+     "selected": 0,
+     "malicious_selected": 0,
+     "malicious": 0,
+     "blind_spots": [],
+     "claims": 87
+    },
+    {
+     "window": "smoke_ws-dev01_1130",
+     "category": "benign",
+     "gate": "pass",
+     "disposition": "benign",
+     "alerts": [],
+     "context": [],
+     "selected": 0,
+     "malicious_selected": 0,
+     "malicious": 0,
+     "blind_spots": [],
+     "claims": 3
+    },
+    {
+     "window": "smoke_ws-dev01_1200",
+     "category": "attack",
+     "gate": "pass",
+     "disposition": "malicious",
+     "alerts": [
+      "llm.clear-bash-history-6f2c1d.b1bd756a50.r1",
+      "llm.llm-user-writable-outbound-server-c5a7a22a21.174bd32a21.r1"
+     ],
+     "context": [],
+     "selected": 2,
+     "malicious_selected": 2,
+     "malicious": 5,
+     "blind_spots": [],
+     "claims": 5
+    },
+    {
+     "window": "smoke_ws-dev01_1230",
+     "category": "attack",
+     "gate": "pass",
+     "disposition": "malicious",
+     "alerts": [
+      "llm.llm-discovery-from-user-writable-ancestor-e333f0.b528532a21.r1",
+      "llm.user-writable-discovery-commands.604cde8671"
+     ],
+     "context": [],
+     "selected": 2,
+     "malicious_selected": 2,
+     "malicious": 45,
+     "blind_spots": [],
+     "claims": 47
+    },
+    {
+     "window": "smoke_ws-fin01_1100",
+     "category": "benign",
+     "gate": "fail: first_boot",
+     "disposition": "benign",
+     "alerts": [],
+     "context": [
+      "TA0007"
+     ],
+     "selected": 0,
+     "malicious_selected": 0,
+     "malicious": 0,
+     "blind_spots": [],
+     "claims": 1111
+    },
+    {
+     "window": "smoke_ws-fin01_1130",
+     "category": "benign",
+     "gate": "pass",
+     "disposition": "benign",
+     "alerts": [],
+     "context": [
+      "TA0007"
+     ],
+     "selected": 0,
+     "malicious_selected": 0,
+     "malicious": 0,
+     "blind_spots": [],
+     "claims": 30
+    },
+    {
+     "window": "smoke_ws-fin01_1200",
+     "category": "attack",
+     "gate": "pass",
+     "disposition": "malicious",
+     "alerts": [
+      "llm.clear-bash-history-6f2c1d.b1bd756a50.r1",
+      "llm.llm-discovery-from-user-writable-ancestor-e333f0.b528532a21.r1",
+      "llm.llm-user-writable-outbound-server-c5a7a22a21.174bd32a21.r1",
+      "llm.user-writable-discovery-commands.604cde8671"
+     ],
+     "context": [],
+     "selected": 4,
+     "malicious_selected": 4,
+     "malicious": 47,
+     "blind_spots": [],
+     "claims": 47
+    },
+    {
+     "window": "smoke_ws-fin01_1230",
+     "category": "attack",
+     "gate": "pass",
+     "disposition": "benign",
+     "alerts": [],
+     "context": [],
+     "selected": 0,
+     "malicious_selected": 0,
+     "malicious": 3,
+     "blind_spots": [],
+     "claims": 5
+    }
+   ],
+   "steps": [
+    {
+     "window": "smoke_app01_1200",
+     "step": "Agent deployment",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": true,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "llm.llm-user-writable-outbound-server-c5a7a22a21.174bd32a21.r1"
+     ]
+    },
+    {
+     "window": "smoke_app01_1200",
+     "step": "Bootstrap T1070.003",
+     "status": "success",
+     "bootstrap": true,
+     "deployment": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "llm.clear-bash-history-6f2c1d.b1bd756a50.r1"
+     ]
+    },
+    {
+     "window": "smoke_app01_1230",
+     "step": "Identify active user",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "llm.llm-discovery-from-user-writable-ancestor-e333f0.b528532a21.r1",
+      "llm.user-writable-discovery-commands.604cde8671"
+     ]
+    },
+    {
+     "window": "smoke_app01_1230",
+     "step": "Find local users",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "smoke_app01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "smoke_app01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "smoke_app01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "smoke_app01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "smoke_app01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "smoke_app01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "smoke_app01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "smoke_app01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "smoke_app01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "smoke_app01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "smoke_app01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "smoke_app01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "smoke_app01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "smoke_web01_1200",
+     "step": "Agent deployment",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": true,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "llm.llm-user-writable-outbound-server-c5a7a22a21.174bd32a21.r1"
+     ]
+    },
+    {
+     "window": "smoke_web01_1200",
+     "step": "Bootstrap T1070.003",
+     "status": "success",
+     "bootstrap": true,
+     "deployment": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "llm.clear-bash-history-6f2c1d.b1bd756a50.r1"
+     ]
+    },
+    {
+     "window": "smoke_web01_1230",
+     "step": "Identify active user",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "llm.llm-discovery-from-user-writable-ancestor-e333f0.b528532a21.r1",
+      "llm.user-writable-discovery-commands.604cde8671"
+     ]
+    },
+    {
+     "window": "smoke_web01_1230",
+     "step": "Find local users",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "smoke_web01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "smoke_web01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "smoke_web01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "smoke_web01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "smoke_web01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "smoke_web01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "smoke_web01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "smoke_web01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "smoke_web01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "smoke_web01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "smoke_web01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "smoke_web01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "smoke_web01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "smoke_ws-dev01_1200",
+     "step": "Agent deployment",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": true,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "llm.llm-user-writable-outbound-server-c5a7a22a21.174bd32a21.r1"
+     ]
+    },
+    {
+     "window": "smoke_ws-dev01_1200",
+     "step": "Bootstrap T1070.003",
+     "status": "success",
+     "bootstrap": true,
+     "deployment": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "llm.clear-bash-history-6f2c1d.b1bd756a50.r1"
+     ]
+    },
+    {
+     "window": "smoke_ws-dev01_1230",
+     "step": "Identify active user",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "llm.llm-discovery-from-user-writable-ancestor-e333f0.b528532a21.r1",
+      "llm.user-writable-discovery-commands.604cde8671"
+     ]
+    },
+    {
+     "window": "smoke_ws-dev01_1230",
+     "step": "Find local users",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "smoke_ws-dev01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "smoke_ws-dev01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "smoke_ws-dev01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "smoke_ws-dev01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "smoke_ws-dev01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "smoke_ws-dev01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "smoke_ws-dev01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "smoke_ws-dev01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "smoke_ws-dev01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "smoke_ws-dev01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "smoke_ws-dev01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "smoke_ws-dev01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "smoke_ws-dev01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "smoke_ws-fin01_1200",
+     "step": "Agent deployment",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": true,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "llm.llm-user-writable-outbound-server-c5a7a22a21.174bd32a21.r1"
+     ]
+    },
+    {
+     "window": "smoke_ws-fin01_1200",
+     "step": "Identify active user",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "llm.llm-discovery-from-user-writable-ancestor-e333f0.b528532a21.r1",
+      "llm.user-writable-discovery-commands.604cde8671"
+     ]
+    },
+    {
+     "window": "smoke_ws-fin01_1200",
+     "step": "Find local users",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "smoke_ws-fin01_1200",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "smoke_ws-fin01_1200",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "smoke_ws-fin01_1200",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "smoke_ws-fin01_1200",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "smoke_ws-fin01_1200",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "smoke_ws-fin01_1200",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "smoke_ws-fin01_1200",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "smoke_ws-fin01_1200",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "smoke_ws-fin01_1200",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "smoke_ws-fin01_1200",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "smoke_ws-fin01_1200",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "smoke_ws-fin01_1200",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "smoke_ws-fin01_1200",
+     "step": "Bootstrap T1070.003",
+     "status": "success",
+     "bootstrap": true,
+     "deployment": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "llm.clear-bash-history-6f2c1d.b1bd756a50.r1"
+     ]
+    },
+    {
+     "window": "smoke_ws-fin01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    }
+   ]
+  }
+ }
+}

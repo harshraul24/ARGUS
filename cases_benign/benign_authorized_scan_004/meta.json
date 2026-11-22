@@ -1,0 +1,59 @@
+{
+  "meta_version": "v0.2",
+  "scenario_id": "benign_authorized_scan_004",
+  "category": "benign",
+  "title": "Authorised vulnerability scan from the inventoried scanner",
+  "generated_by": "tools/make_benign_cases.py (synthetic benign corpus)",
+  "topology": {
+    "hosts": [
+      {
+        "name": "target",
+        "ip": "10.0.2.20",
+        "role": "victim",
+        "os": "Linux"
+      },
+      {
+        "name": "jumphost",
+        "ip": "10.0.2.5",
+        "role": "admin",
+        "os": "Linux"
+      }
+    ],
+    "zeek_sensor": {
+      "host": "capture",
+      "position": "target segment"
+    }
+  },
+  "capture": {
+    "window": {
+      "start": "2026-03-06T01:20:00Z",
+      "end": "2026-03-06T02:40:00Z"
+    },
+    "clean_capture": true
+  },
+  "expected_observables": {
+    "authlog": {
+      "logon_success": false,
+      "logon_failure": false
+    },
+    "zeek": {
+      "conn": true
+    }
+  },
+  "mitre": {
+    "technique": null
+  },
+  "ground_truth": {
+    "category": "benign",
+    "objective_reached": false,
+    "techniques": [],
+    "primary_technique": null,
+    "why_benign": "The source is the asset-inventory scanner, inside its approved Sunday 01:30 window; no authentication follows the scan.",
+    "confounds": [
+      "port sweep across 30 ports (T1046 shape)",
+      "multi-service probe against one target",
+      "no host-side evidence to corroborate intent"
+    ],
+    "actions": []
+  }
+}

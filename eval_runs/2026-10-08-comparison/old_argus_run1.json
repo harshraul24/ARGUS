@@ -1,0 +1,1669 @@
+{
+ "freeze": {
+  "manifest": null,
+  "matches": false,
+  "aggregate_sha256": "48143ba32948bce7f638583311069a48a11afbbbfdb342c25cb320b7866723c8",
+  "changed": [
+   "no freeze manifest found"
+  ]
+ },
+ "windows": {},
+ "arms": {
+  "argus": {
+   "metrics": {
+    "all": {
+     "attack_windows_flagged": "8/8",
+     "benign_windows_flagged": "10/12",
+     "steps_detected": "30/36",
+     "step_recall_ci95": [
+      0.681,
+      0.921
+     ],
+     "event_precision": 0.0085,
+     "steps_by_rule": {
+      "NOVELTY": 28,
+      "TA0010": 4,
+      "T1041": 4
+     }
+    },
+    "gate_pass": {
+     "attack_windows_flagged": "8/8",
+     "benign_windows_flagged": "3/3",
+     "steps_detected": "30/36",
+     "step_recall_ci95": [
+      0.681,
+      0.921
+     ],
+     "event_precision": 0.0254,
+     "steps_by_rule": {
+      "NOVELTY": 28,
+      "TA0010": 4,
+      "T1041": 4
+     }
+    },
+    "steps_by_status": {
+     "failed": "8/8",
+     "no_result": "4/4",
+     "success": "18/24"
+    },
+    "bootstrap_steps": "2/4"
+   },
+   "windows": [
+    {
+     "window": "run1_app01_1200",
+     "category": "benign",
+     "gate": "pass",
+     "disposition": "suspicious",
+     "alerts": [
+      "NOVELTY"
+     ],
+     "selected": 89,
+     "malicious_selected": 0,
+     "malicious": 0,
+     "blind_spots": [
+      "ecar: recorded no file_create events in this capture",
+      "ecar: recorded no file_delete events in this capture",
+      "ecar: recorded no file_rename events in this capture",
+      "ecar: recorded no file_write events in this capture"
+     ],
+     "claims": 96
+    },
+    {
+     "window": "run1_app01_1230",
+     "category": "attack",
+     "gate": "pass",
+     "disposition": "suspicious",
+     "alerts": [
+      "NOVELTY",
+      "TA0010"
+     ],
+     "selected": 18,
+     "malicious_selected": 8,
+     "malicious": 10,
+     "blind_spots": [
+      "ecar: recorded no file_create events in this capture",
+      "ecar: recorded no file_delete events in this capture",
+      "ecar: recorded no file_rename events in this capture",
+      "ecar: recorded no file_write events in this capture"
+     ],
+     "claims": 31
+    },
+    {
+     "window": "run1_app01_1300",
+     "category": "benign",
+     "gate": "fail: package_install",
+     "disposition": "malicious",
+     "alerts": [
+      "NOVELTY",
+      "TA0011"
+     ],
+     "selected": 814,
+     "malicious_selected": 0,
+     "malicious": 0,
+     "blind_spots": [
+      "ecar: recorded no file_delete events in this capture",
+      "ecar: recorded no file_rename events in this capture",
+      "ecar: recorded no file_write events in this capture",
+      "ecar: recorded no module_load events in this capture"
+     ],
+     "claims": 1072
+    },
+    {
+     "window": "run1_app01_1330",
+     "category": "attack",
+     "gate": "pass",
+     "disposition": "malicious",
+     "alerts": [
+      "NOVELTY",
+      "T1041",
+      "TA0011"
+     ],
+     "selected": 444,
+     "malicious_selected": 10,
+     "malicious": 13,
+     "blind_spots": [
+      "ecar: recorded no file_create events in this capture",
+      "ecar: recorded no file_delete events in this capture",
+      "ecar: recorded no file_rename events in this capture",
+      "ecar: recorded no file_write events in this capture"
+     ],
+     "claims": 609
+    },
+    {
+     "window": "run1_app01_1400",
+     "category": "benign",
+     "gate": "fail: log_collection",
+     "disposition": "suspicious",
+     "alerts": [
+      "NOVELTY"
+     ],
+     "selected": 14,
+     "malicious_selected": 0,
+     "malicious": 0,
+     "blind_spots": [
+      "ecar: recorded no file_create events in this capture",
+      "ecar: recorded no file_delete events in this capture",
+      "ecar: recorded no file_rename events in this capture",
+      "ecar: recorded no file_write events in this capture"
+     ],
+     "claims": 30
+    },
+    {
+     "window": "run1_web01_1200",
+     "category": "benign",
+     "gate": "pass",
+     "disposition": "suspicious",
+     "alerts": [
+      "NOVELTY",
+      "TA0011"
+     ],
+     "selected": 175,
+     "malicious_selected": 0,
+     "malicious": 0,
+     "blind_spots": [
+      "ecar: recorded no file_create events in this capture",
+      "ecar: recorded no file_delete events in this capture",
+      "ecar: recorded no file_rename events in this capture",
+      "ecar: recorded no file_write events in this capture"
+     ],
+     "claims": 191
+    },
+    {
+     "window": "run1_web01_1230",
+     "category": "attack",
+     "gate": "pass",
+     "disposition": "suspicious",
+     "alerts": [
+      "TA0010"
+     ],
+     "selected": 1,
+     "malicious_selected": 1,
+     "malicious": 10,
+     "blind_spots": [
+      "ecar: recorded no file_create events in this capture",
+      "ecar: recorded no file_delete events in this capture",
+      "ecar: recorded no file_rename events in this capture",
+      "ecar: recorded no file_write events in this capture"
+     ],
+     "claims": 16
+    },
+    {
+     "window": "run1_web01_1300",
+     "category": "benign",
+     "gate": "fail: package_install",
+     "disposition": "malicious",
+     "alerts": [
+      "NOVELTY",
+      "TA0011"
+     ],
+     "selected": 733,
+     "malicious_selected": 0,
+     "malicious": 0,
+     "blind_spots": [
+      "ecar: recorded no file_delete events in this capture",
+      "ecar: recorded no file_rename events in this capture",
+      "ecar: recorded no file_write events in this capture",
+      "ecar: recorded no module_load events in this capture"
+     ],
+     "claims": 948
+    },
+    {
+     "window": "run1_web01_1330",
+     "category": "attack",
+     "gate": "pass",
+     "disposition": "malicious",
+     "alerts": [
+      "NOVELTY",
+      "T1041",
+      "TA0011"
+     ],
+     "selected": 465,
+     "malicious_selected": 10,
+     "malicious": 14,
+     "blind_spots": [
+      "ecar: recorded no file_create events in this capture",
+      "ecar: recorded no file_delete events in this capture",
+      "ecar: recorded no file_rename events in this capture",
+      "ecar: recorded no file_write events in this capture"
+     ],
+     "claims": 616
+    },
+    {
+     "window": "run1_web01_1400",
+     "category": "benign",
+     "gate": "fail: log_collection",
+     "disposition": "suspicious",
+     "alerts": [
+      "NOVELTY",
+      "TA0011"
+     ],
+     "selected": 50,
+     "malicious_selected": 0,
+     "malicious": 0,
+     "blind_spots": [
+      "ecar: recorded no file_create events in this capture",
+      "ecar: recorded no file_delete events in this capture",
+      "ecar: recorded no file_rename events in this capture",
+      "ecar: recorded no file_write events in this capture"
+     ],
+     "claims": 92
+    },
+    {
+     "window": "run1_ws-dev01_1200",
+     "category": "benign",
+     "gate": "pass",
+     "disposition": "suspicious",
+     "alerts": [
+      "NOVELTY"
+     ],
+     "selected": 161,
+     "malicious_selected": 0,
+     "malicious": 0,
+     "blind_spots": [
+      "ecar: recorded no file_create events in this capture",
+      "ecar: recorded no file_delete events in this capture",
+      "ecar: recorded no file_rename events in this capture",
+      "ecar: recorded no file_write events in this capture"
+     ],
+     "claims": 174
+    },
+    {
+     "window": "run1_ws-dev01_1230",
+     "category": "attack",
+     "gate": "pass",
+     "disposition": "suspicious",
+     "alerts": [
+      "TA0010"
+     ],
+     "selected": 1,
+     "malicious_selected": 1,
+     "malicious": 10,
+     "blind_spots": [
+      "ecar: recorded no file_create events in this capture",
+      "ecar: recorded no file_delete events in this capture",
+      "ecar: recorded no file_rename events in this capture",
+      "ecar: recorded no file_write events in this capture"
+     ],
+     "claims": 24
+    },
+    {
+     "window": "run1_ws-dev01_1300",
+     "category": "benign",
+     "gate": "fail: package_install",
+     "disposition": "malicious",
+     "alerts": [
+      "NOVELTY",
+      "TA0011"
+     ],
+     "selected": 768,
+     "malicious_selected": 0,
+     "malicious": 0,
+     "blind_spots": [
+      "ecar: recorded no file_delete events in this capture",
+      "ecar: recorded no file_rename events in this capture",
+      "ecar: recorded no file_write events in this capture",
+      "ecar: recorded no module_load events in this capture"
+     ],
+     "claims": 1008
+    },
+    {
+     "window": "run1_ws-dev01_1330",
+     "category": "attack",
+     "gate": "pass",
+     "disposition": "malicious",
+     "alerts": [
+      "NOVELTY",
+      "T1041",
+      "TA0011"
+     ],
+     "selected": 469,
+     "malicious_selected": 10,
+     "malicious": 13,
+     "blind_spots": [
+      "ecar: recorded no file_create events in this capture",
+      "ecar: recorded no file_delete events in this capture",
+      "ecar: recorded no file_rename events in this capture",
+      "ecar: recorded no file_write events in this capture"
+     ],
+     "claims": 632
+    },
+    {
+     "window": "run1_ws-dev01_1400",
+     "category": "benign",
+     "gate": "fail: log_collection",
+     "disposition": "benign",
+     "alerts": [],
+     "selected": 0,
+     "malicious_selected": 0,
+     "malicious": 0,
+     "blind_spots": [
+      "ecar: recorded no file_create events in this capture",
+      "ecar: recorded no file_delete events in this capture",
+      "ecar: recorded no file_rename events in this capture",
+      "ecar: recorded no file_write events in this capture"
+     ],
+     "claims": 24
+    },
+    {
+     "window": "run1_ws-fin01_1200",
+     "category": "benign",
+     "gate": "fail: first_boot, package_install",
+     "disposition": "malicious",
+     "alerts": [
+      "NOVELTY",
+      "TA0011"
+     ],
+     "selected": 1423,
+     "malicious_selected": 0,
+     "malicious": 0,
+     "blind_spots": [
+      "ecar: recorded no file_create events in this capture",
+      "ecar: recorded no file_delete events in this capture",
+      "ecar: recorded no file_rename events in this capture",
+      "ecar: recorded no file_write events in this capture"
+     ],
+     "claims": 1573
+    },
+    {
+     "window": "run1_ws-fin01_1230",
+     "category": "attack",
+     "gate": "pass",
+     "disposition": "malicious",
+     "alerts": [
+      "NOVELTY",
+      "TA0010",
+      "TA0011"
+     ],
+     "selected": 28,
+     "malicious_selected": 8,
+     "malicious": 10,
+     "blind_spots": [
+      "ecar: recorded no file_create events in this capture",
+      "ecar: recorded no file_delete events in this capture",
+      "ecar: recorded no file_rename events in this capture",
+      "ecar: recorded no file_write events in this capture"
+     ],
+     "claims": 63
+    },
+    {
+     "window": "run1_ws-fin01_1300",
+     "category": "benign",
+     "gate": "fail: package_install",
+     "disposition": "malicious",
+     "alerts": [
+      "NOVELTY",
+      "TA0011"
+     ],
+     "selected": 762,
+     "malicious_selected": 0,
+     "malicious": 0,
+     "blind_spots": [
+      "ecar: recorded no file_delete events in this capture",
+      "ecar: recorded no file_rename events in this capture",
+      "ecar: recorded no file_write events in this capture",
+      "ecar: recorded no module_load events in this capture"
+     ],
+     "claims": 1002
+    },
+    {
+     "window": "run1_ws-fin01_1330",
+     "category": "attack",
+     "gate": "pass",
+     "disposition": "malicious",
+     "alerts": [
+      "NOVELTY",
+      "T1041",
+      "TA0011"
+     ],
+     "selected": 428,
+     "malicious_selected": 10,
+     "malicious": 13,
+     "blind_spots": [
+      "ecar: recorded no file_create events in this capture",
+      "ecar: recorded no file_delete events in this capture",
+      "ecar: recorded no file_rename events in this capture",
+      "ecar: recorded no file_write events in this capture"
+     ],
+     "claims": 588
+    },
+    {
+     "window": "run1_ws-fin01_1400",
+     "category": "benign",
+     "gate": "fail: log_collection",
+     "disposition": "benign",
+     "alerts": [],
+     "selected": 0,
+     "malicious_selected": 0,
+     "malicious": 0,
+     "blind_spots": [
+      "ecar: recorded no file_create events in this capture",
+      "ecar: recorded no file_delete events in this capture",
+      "ecar: recorded no file_rename events in this capture",
+      "ecar: recorded no file_write events in this capture"
+     ],
+     "claims": 29
+    }
+   ],
+   "steps": [
+    {
+     "window": "run1_app01_1230",
+     "step": "Agent deployment",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY",
+      "TA0010"
+     ]
+    },
+    {
+     "window": "run1_app01_1230",
+     "step": "Environment variables discovery on freebsd, macos and linux",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "run1_app01_1230",
+     "step": "Current User",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "run1_app01_1230",
+     "step": "Bootstrap T1070.003",
+     "status": "success",
+     "bootstrap": true,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "run1_app01_1330",
+     "step": "IP Neighbour Show",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "run1_app01_1330",
+     "step": "Find System Network Connections",
+     "status": "failed",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "run1_app01_1330",
+     "step": "Enumerate all accounts (Local)",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY",
+      "T1041"
+     ]
+    },
+    {
+     "window": "run1_app01_1330",
+     "step": "Check Chrome",
+     "status": "failed",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "run1_app01_1330",
+     "step": "Access /etc/master.passwd (Local)",
+     "status": "no_result",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "run1_web01_1230",
+     "step": "Agent deployment",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "TA0010"
+     ]
+    },
+    {
+     "window": "run1_web01_1230",
+     "step": "Environment variables discovery on freebsd, macos and linux",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "run1_web01_1230",
+     "step": "Current User",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "run1_web01_1230",
+     "step": "Bootstrap T1070.003",
+     "status": "success",
+     "bootstrap": true,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "run1_web01_1330",
+     "step": "IP Neighbour Show",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "run1_web01_1330",
+     "step": "Find System Network Connections",
+     "status": "failed",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "run1_web01_1330",
+     "step": "Enumerate all accounts (Local)",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY",
+      "T1041"
+     ]
+    },
+    {
+     "window": "run1_web01_1330",
+     "step": "Check Chrome",
+     "status": "failed",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "run1_web01_1330",
+     "step": "Access /etc/master.passwd (Local)",
+     "status": "no_result",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "run1_ws-dev01_1230",
+     "step": "Agent deployment",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "TA0010"
+     ]
+    },
+    {
+     "window": "run1_ws-dev01_1230",
+     "step": "Environment variables discovery on freebsd, macos and linux",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "run1_ws-dev01_1230",
+     "step": "Current User",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "run1_ws-dev01_1230",
+     "step": "Bootstrap T1070.003",
+     "status": "success",
+     "bootstrap": true,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "run1_ws-dev01_1330",
+     "step": "IP Neighbour Show",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "run1_ws-dev01_1330",
+     "step": "Find System Network Connections",
+     "status": "failed",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "run1_ws-dev01_1330",
+     "step": "Enumerate all accounts (Local)",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY",
+      "T1041"
+     ]
+    },
+    {
+     "window": "run1_ws-dev01_1330",
+     "step": "Check Chrome",
+     "status": "failed",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "run1_ws-dev01_1330",
+     "step": "Access /etc/master.passwd (Local)",
+     "status": "no_result",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "run1_ws-fin01_1230",
+     "step": "Agent deployment",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY",
+      "TA0010"
+     ]
+    },
+    {
+     "window": "run1_ws-fin01_1230",
+     "step": "Environment variables discovery on freebsd, macos and linux",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "run1_ws-fin01_1230",
+     "step": "Current User",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "run1_ws-fin01_1230",
+     "step": "Bootstrap T1070.003",
+     "status": "success",
+     "bootstrap": true,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "run1_ws-fin01_1330",
+     "step": "IP Neighbour Show",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "run1_ws-fin01_1330",
+     "step": "Find System Network Connections",
+     "status": "failed",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "run1_ws-fin01_1330",
+     "step": "Enumerate all accounts (Local)",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY",
+      "T1041"
+     ]
+    },
+    {
+     "window": "run1_ws-fin01_1330",
+     "step": "Check Chrome",
+     "status": "failed",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "run1_ws-fin01_1330",
+     "step": "Access /etc/master.passwd (Local)",
+     "status": "no_result",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    }
+   ]
+  },
+  "argus_s3": {
+   "metrics": {
+    "all": {
+     "attack_windows_flagged": "8/8",
+     "benign_windows_flagged": "10/12",
+     "steps_detected": "30/36",
+     "step_recall_ci95": [
+      0.681,
+      0.921
+     ],
+     "event_precision": 0.0085,
+     "steps_by_rule": {
+      "NOVELTY": 28,
+      "TA0010": 4,
+      "T1041": 4
+     }
+    },
+    "gate_pass": {
+     "attack_windows_flagged": "8/8",
+     "benign_windows_flagged": "3/3",
+     "steps_detected": "30/36",
+     "step_recall_ci95": [
+      0.681,
+      0.921
+     ],
+     "event_precision": 0.0254,
+     "steps_by_rule": {
+      "NOVELTY": 28,
+      "TA0010": 4,
+      "T1041": 4
+     }
+    },
+    "steps_by_status": {
+     "failed": "8/8",
+     "no_result": "4/4",
+     "success": "18/24"
+    },
+    "bootstrap_steps": "2/4"
+   },
+   "windows": [
+    {
+     "window": "run1_app01_1200",
+     "category": "benign",
+     "gate": "pass",
+     "disposition": "suspicious",
+     "alerts": [
+      "NOVELTY"
+     ],
+     "selected": 89,
+     "malicious_selected": 0,
+     "malicious": 0,
+     "blind_spots": [
+      "ecar: recorded no file_create events in this capture",
+      "ecar: recorded no file_delete events in this capture",
+      "ecar: recorded no file_rename events in this capture",
+      "ecar: recorded no file_write events in this capture"
+     ],
+     "claims": 96
+    },
+    {
+     "window": "run1_app01_1230",
+     "category": "attack",
+     "gate": "pass",
+     "disposition": "suspicious",
+     "alerts": [
+      "NOVELTY",
+      "TA0010"
+     ],
+     "selected": 18,
+     "malicious_selected": 8,
+     "malicious": 10,
+     "blind_spots": [
+      "ecar: recorded no file_create events in this capture",
+      "ecar: recorded no file_delete events in this capture",
+      "ecar: recorded no file_rename events in this capture",
+      "ecar: recorded no file_write events in this capture"
+     ],
+     "claims": 31
+    },
+    {
+     "window": "run1_app01_1300",
+     "category": "benign",
+     "gate": "fail: package_install",
+     "disposition": "malicious",
+     "alerts": [
+      "NOVELTY",
+      "TA0011"
+     ],
+     "selected": 814,
+     "malicious_selected": 0,
+     "malicious": 0,
+     "blind_spots": [
+      "ecar: recorded no file_delete events in this capture",
+      "ecar: recorded no file_rename events in this capture",
+      "ecar: recorded no file_write events in this capture",
+      "ecar: recorded no module_load events in this capture"
+     ],
+     "claims": 1072
+    },
+    {
+     "window": "run1_app01_1330",
+     "category": "attack",
+     "gate": "pass",
+     "disposition": "malicious",
+     "alerts": [
+      "NOVELTY",
+      "T1041",
+      "TA0011"
+     ],
+     "selected": 444,
+     "malicious_selected": 10,
+     "malicious": 13,
+     "blind_spots": [
+      "ecar: recorded no file_create events in this capture",
+      "ecar: recorded no file_delete events in this capture",
+      "ecar: recorded no file_rename events in this capture",
+      "ecar: recorded no file_write events in this capture"
+     ],
+     "claims": 609
+    },
+    {
+     "window": "run1_app01_1400",
+     "category": "benign",
+     "gate": "fail: log_collection",
+     "disposition": "suspicious",
+     "alerts": [
+      "NOVELTY"
+     ],
+     "selected": 14,
+     "malicious_selected": 0,
+     "malicious": 0,
+     "blind_spots": [
+      "ecar: recorded no file_create events in this capture",
+      "ecar: recorded no file_delete events in this capture",
+      "ecar: recorded no file_rename events in this capture",
+      "ecar: recorded no file_write events in this capture"
+     ],
+     "claims": 30
+    },
+    {
+     "window": "run1_web01_1200",
+     "category": "benign",
+     "gate": "pass",
+     "disposition": "suspicious",
+     "alerts": [
+      "NOVELTY",
+      "TA0011"
+     ],
+     "selected": 175,
+     "malicious_selected": 0,
+     "malicious": 0,
+     "blind_spots": [
+      "ecar: recorded no file_create events in this capture",
+      "ecar: recorded no file_delete events in this capture",
+      "ecar: recorded no file_rename events in this capture",
+      "ecar: recorded no file_write events in this capture"
+     ],
+     "claims": 191
+    },
+    {
+     "window": "run1_web01_1230",
+     "category": "attack",
+     "gate": "pass",
+     "disposition": "suspicious",
+     "alerts": [
+      "TA0010"
+     ],
+     "selected": 1,
+     "malicious_selected": 1,
+     "malicious": 10,
+     "blind_spots": [
+      "ecar: recorded no file_create events in this capture",
+      "ecar: recorded no file_delete events in this capture",
+      "ecar: recorded no file_rename events in this capture",
+      "ecar: recorded no file_write events in this capture"
+     ],
+     "claims": 16
+    },
+    {
+     "window": "run1_web01_1300",
+     "category": "benign",
+     "gate": "fail: package_install",
+     "disposition": "malicious",
+     "alerts": [
+      "NOVELTY",
+      "TA0011"
+     ],
+     "selected": 733,
+     "malicious_selected": 0,
+     "malicious": 0,
+     "blind_spots": [
+      "ecar: recorded no file_delete events in this capture",
+      "ecar: recorded no file_rename events in this capture",
+      "ecar: recorded no file_write events in this capture",
+      "ecar: recorded no module_load events in this capture"
+     ],
+     "claims": 948
+    },
+    {
+     "window": "run1_web01_1330",
+     "category": "attack",
+     "gate": "pass",
+     "disposition": "malicious",
+     "alerts": [
+      "NOVELTY",
+      "T1041",
+      "TA0011"
+     ],
+     "selected": 465,
+     "malicious_selected": 10,
+     "malicious": 14,
+     "blind_spots": [
+      "ecar: recorded no file_create events in this capture",
+      "ecar: recorded no file_delete events in this capture",
+      "ecar: recorded no file_rename events in this capture",
+      "ecar: recorded no file_write events in this capture"
+     ],
+     "claims": 616
+    },
+    {
+     "window": "run1_web01_1400",
+     "category": "benign",
+     "gate": "fail: log_collection",
+     "disposition": "suspicious",
+     "alerts": [
+      "NOVELTY",
+      "TA0011"
+     ],
+     "selected": 50,
+     "malicious_selected": 0,
+     "malicious": 0,
+     "blind_spots": [
+      "ecar: recorded no file_create events in this capture",
+      "ecar: recorded no file_delete events in this capture",
+      "ecar: recorded no file_rename events in this capture",
+      "ecar: recorded no file_write events in this capture"
+     ],
+     "claims": 92
+    },
+    {
+     "window": "run1_ws-dev01_1200",
+     "category": "benign",
+     "gate": "pass",
+     "disposition": "suspicious",
+     "alerts": [
+      "NOVELTY"
+     ],
+     "selected": 161,
+     "malicious_selected": 0,
+     "malicious": 0,
+     "blind_spots": [
+      "ecar: recorded no file_create events in this capture",
+      "ecar: recorded no file_delete events in this capture",
+      "ecar: recorded no file_rename events in this capture",
+      "ecar: recorded no file_write events in this capture"
+     ],
+     "claims": 174
+    },
+    {
+     "window": "run1_ws-dev01_1230",
+     "category": "attack",
+     "gate": "pass",
+     "disposition": "suspicious",
+     "alerts": [
+      "TA0010"
+     ],
+     "selected": 1,
+     "malicious_selected": 1,
+     "malicious": 10,
+     "blind_spots": [
+      "ecar: recorded no file_create events in this capture",
+      "ecar: recorded no file_delete events in this capture",
+      "ecar: recorded no file_rename events in this capture",
+      "ecar: recorded no file_write events in this capture"
+     ],
+     "claims": 24
+    },
+    {
+     "window": "run1_ws-dev01_1300",
+     "category": "benign",
+     "gate": "fail: package_install",
+     "disposition": "malicious",
+     "alerts": [
+      "NOVELTY",
+      "TA0011"
+     ],
+     "selected": 768,
+     "malicious_selected": 0,
+     "malicious": 0,
+     "blind_spots": [
+      "ecar: recorded no file_delete events in this capture",
+      "ecar: recorded no file_rename events in this capture",
+      "ecar: recorded no file_write events in this capture",
+      "ecar: recorded no module_load events in this capture"
+     ],
+     "claims": 1008
+    },
+    {
+     "window": "run1_ws-dev01_1330",
+     "category": "attack",
+     "gate": "pass",
+     "disposition": "malicious",
+     "alerts": [
+      "NOVELTY",
+      "T1041",
+      "TA0011"
+     ],
+     "selected": 469,
+     "malicious_selected": 10,
+     "malicious": 13,
+     "blind_spots": [
+      "ecar: recorded no file_create events in this capture",
+      "ecar: recorded no file_delete events in this capture",
+      "ecar: recorded no file_rename events in this capture",
+      "ecar: recorded no file_write events in this capture"
+     ],
+     "claims": 632
+    },
+    {
+     "window": "run1_ws-dev01_1400",
+     "category": "benign",
+     "gate": "fail: log_collection",
+     "disposition": "benign",
+     "alerts": [],
+     "selected": 0,
+     "malicious_selected": 0,
+     "malicious": 0,
+     "blind_spots": [
+      "ecar: recorded no file_create events in this capture",
+      "ecar: recorded no file_delete events in this capture",
+      "ecar: recorded no file_rename events in this capture",
+      "ecar: recorded no file_write events in this capture"
+     ],
+     "claims": 24
+    },
+    {
+     "window": "run1_ws-fin01_1200",
+     "category": "benign",
+     "gate": "fail: first_boot, package_install",
+     "disposition": "malicious",
+     "alerts": [
+      "NOVELTY",
+      "TA0011"
+     ],
+     "selected": 1423,
+     "malicious_selected": 0,
+     "malicious": 0,
+     "blind_spots": [
+      "ecar: recorded no file_create events in this capture",
+      "ecar: recorded no file_delete events in this capture",
+      "ecar: recorded no file_rename events in this capture",
+      "ecar: recorded no file_write events in this capture"
+     ],
+     "claims": 1573
+    },
+    {
+     "window": "run1_ws-fin01_1230",
+     "category": "attack",
+     "gate": "pass",
+     "disposition": "malicious",
+     "alerts": [
+      "NOVELTY",
+      "TA0010",
+      "TA0011"
+     ],
+     "selected": 28,
+     "malicious_selected": 8,
+     "malicious": 10,
+     "blind_spots": [
+      "ecar: recorded no file_create events in this capture",
+      "ecar: recorded no file_delete events in this capture",
+      "ecar: recorded no file_rename events in this capture",
+      "ecar: recorded no file_write events in this capture"
+     ],
+     "claims": 63
+    },
+    {
+     "window": "run1_ws-fin01_1300",
+     "category": "benign",
+     "gate": "fail: package_install",
+     "disposition": "malicious",
+     "alerts": [
+      "NOVELTY",
+      "TA0011"
+     ],
+     "selected": 762,
+     "malicious_selected": 0,
+     "malicious": 0,
+     "blind_spots": [
+      "ecar: recorded no file_delete events in this capture",
+      "ecar: recorded no file_rename events in this capture",
+      "ecar: recorded no file_write events in this capture",
+      "ecar: recorded no module_load events in this capture"
+     ],
+     "claims": 1002
+    },
+    {
+     "window": "run1_ws-fin01_1330",
+     "category": "attack",
+     "gate": "pass",
+     "disposition": "malicious",
+     "alerts": [
+      "NOVELTY",
+      "T1041",
+      "TA0011"
+     ],
+     "selected": 428,
+     "malicious_selected": 10,
+     "malicious": 13,
+     "blind_spots": [
+      "ecar: recorded no file_create events in this capture",
+      "ecar: recorded no file_delete events in this capture",
+      "ecar: recorded no file_rename events in this capture",
+      "ecar: recorded no file_write events in this capture"
+     ],
+     "claims": 588
+    },
+    {
+     "window": "run1_ws-fin01_1400",
+     "category": "benign",
+     "gate": "fail: log_collection",
+     "disposition": "benign",
+     "alerts": [],
+     "selected": 0,
+     "malicious_selected": 0,
+     "malicious": 0,
+     "blind_spots": [
+      "ecar: recorded no file_create events in this capture",
+      "ecar: recorded no file_delete events in this capture",
+      "ecar: recorded no file_rename events in this capture",
+      "ecar: recorded no file_write events in this capture"
+     ],
+     "claims": 29
+    }
+   ],
+   "steps": [
+    {
+     "window": "run1_app01_1230",
+     "step": "Agent deployment",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY",
+      "TA0010"
+     ]
+    },
+    {
+     "window": "run1_app01_1230",
+     "step": "Environment variables discovery on freebsd, macos and linux",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "run1_app01_1230",
+     "step": "Current User",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "run1_app01_1230",
+     "step": "Bootstrap T1070.003",
+     "status": "success",
+     "bootstrap": true,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "run1_app01_1330",
+     "step": "IP Neighbour Show",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "run1_app01_1330",
+     "step": "Find System Network Connections",
+     "status": "failed",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "run1_app01_1330",
+     "step": "Enumerate all accounts (Local)",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY",
+      "T1041"
+     ]
+    },
+    {
+     "window": "run1_app01_1330",
+     "step": "Check Chrome",
+     "status": "failed",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "run1_app01_1330",
+     "step": "Access /etc/master.passwd (Local)",
+     "status": "no_result",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "run1_web01_1230",
+     "step": "Agent deployment",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "TA0010"
+     ]
+    },
+    {
+     "window": "run1_web01_1230",
+     "step": "Environment variables discovery on freebsd, macos and linux",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "run1_web01_1230",
+     "step": "Current User",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "run1_web01_1230",
+     "step": "Bootstrap T1070.003",
+     "status": "success",
+     "bootstrap": true,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "run1_web01_1330",
+     "step": "IP Neighbour Show",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "run1_web01_1330",
+     "step": "Find System Network Connections",
+     "status": "failed",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "run1_web01_1330",
+     "step": "Enumerate all accounts (Local)",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY",
+      "T1041"
+     ]
+    },
+    {
+     "window": "run1_web01_1330",
+     "step": "Check Chrome",
+     "status": "failed",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "run1_web01_1330",
+     "step": "Access /etc/master.passwd (Local)",
+     "status": "no_result",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "run1_ws-dev01_1230",
+     "step": "Agent deployment",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "TA0010"
+     ]
+    },
+    {
+     "window": "run1_ws-dev01_1230",
+     "step": "Environment variables discovery on freebsd, macos and linux",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "run1_ws-dev01_1230",
+     "step": "Current User",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "run1_ws-dev01_1230",
+     "step": "Bootstrap T1070.003",
+     "status": "success",
+     "bootstrap": true,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "run1_ws-dev01_1330",
+     "step": "IP Neighbour Show",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "run1_ws-dev01_1330",
+     "step": "Find System Network Connections",
+     "status": "failed",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "run1_ws-dev01_1330",
+     "step": "Enumerate all accounts (Local)",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY",
+      "T1041"
+     ]
+    },
+    {
+     "window": "run1_ws-dev01_1330",
+     "step": "Check Chrome",
+     "status": "failed",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "run1_ws-dev01_1330",
+     "step": "Access /etc/master.passwd (Local)",
+     "status": "no_result",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "run1_ws-fin01_1230",
+     "step": "Agent deployment",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY",
+      "TA0010"
+     ]
+    },
+    {
+     "window": "run1_ws-fin01_1230",
+     "step": "Environment variables discovery on freebsd, macos and linux",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "run1_ws-fin01_1230",
+     "step": "Current User",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "run1_ws-fin01_1230",
+     "step": "Bootstrap T1070.003",
+     "status": "success",
+     "bootstrap": true,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "run1_ws-fin01_1330",
+     "step": "IP Neighbour Show",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "run1_ws-fin01_1330",
+     "step": "Find System Network Connections",
+     "status": "failed",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "run1_ws-fin01_1330",
+     "step": "Enumerate all accounts (Local)",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY",
+      "T1041"
+     ]
+    },
+    {
+     "window": "run1_ws-fin01_1330",
+     "step": "Check Chrome",
+     "status": "failed",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "run1_ws-fin01_1330",
+     "step": "Access /etc/master.passwd (Local)",
+     "status": "no_result",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    }
+   ]
+  }
+ }
+}

@@ -1,0 +1,14 @@
+{
+  "key": "cc9ae8b065c9e63a2eba79451e781a7750cd5112ceef701232d10c79df6abca5",
+  "provider": "ollama",
+  "model": "gpt-oss:120b-cloud",
+  "prompt_sha": "cc9ae8b065c9e63a",
+  "response": "{\n  \"rules\": [\n    {\n      \"id\": \"llm.llm-credential-dump-master-passwd-b0f086460c.dfe510460c.r1\",\n      \"technique\": \"T1003.008\",\n      \"name\": \"Read /etc/master.passwd (credential dumping)\",\n      \"tactic\": \"credential-access\",\n      \"severity\": 0.9,\n      \"evidence\": [\n        \"ev_000629\"\n      ],\n      \"indicators\": [\n        {\n          \"name\": \"access_master_passwd\",\n          \"weight\": 1.0,\n          \"required\": true,\n          \"select\": {\n            \"claim_type\": \"process_create\",\n            \"facts.command\": {\n              \"contains_any\": [\n                \"master.passwd\"\n              ]\n            }\n          },\n          \"score\": {\n            \"op\": \"threshold\",\n            \"value\": \"n\",\n            \"at\": 1\n          }\n        }\n      ]\n    }\n  ],\n  \"reasoning\": \"The rule captures the suspicious behaviour of reading the system password database file /etc/master.passwd, a classic credential\u2011dumping technique (T1003.008). It fires on the process_create claim where the command line contains the token \\\"master.passwd\\\", which is present in the observed episode (ev_000629). The rule uses only stable indicators (command token) and does not depend on executable names or user\u2011writable paths, satisfying robustness, and it is a low\u2011frequency event on typical hosts, meeting the quiet requirement. A known community detection for credential dumping of /etc/passwd validates the CONFIRMED check.\"\n}",
+  "latency_s": 8.611808061599731,
+  "created_at": 1791394660.4448042,
+  "params": {
+    "temperature": 0.0,
+    "seed": 7,
+    "json_mode": true
+  }
+}

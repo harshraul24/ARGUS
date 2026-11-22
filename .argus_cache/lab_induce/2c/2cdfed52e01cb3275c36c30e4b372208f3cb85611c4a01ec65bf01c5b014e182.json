@@ -1,0 +1,14 @@
+{
+  "key": "2cdfed52e01cb3275c36c30e4b372208f3cb85611c4a01ec65bf01c5b014e182",
+  "provider": "ollama",
+  "model": "gpt-oss:120b-cloud",
+  "prompt_sha": "2cdfed52e01cb327",
+  "response": "{\n  \"rules\": [],\n  \"reasoning\": \"The episode consists of a shell script that checks for the presence of the standard 'ip' utility, optionally installs the iproute2 package, and then runs 'ip neighbour show' to list ARP entries. This is a common administrative or diagnostic activity for network discovery and package management on Linux systems. No independent external rule or community detection source flags this specific pattern as malicious, and the behavior aligns with routine system maintenance. Therefore, creating a detection rule would likely generate many false positives and fail the QUIET requirement.\"\n}",
+  "latency_s": 11.383653163909912,
+  "created_at": 1791394682.916849,
+  "params": {
+    "temperature": 0.0,
+    "seed": 7,
+    "json_mode": true
+  }
+}

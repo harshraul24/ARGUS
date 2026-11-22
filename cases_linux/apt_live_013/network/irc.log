@@ -1,0 +1,14 @@
+#separator \x09
+#set_separator	,
+#empty_field	(empty)
+#unset_field	-
+#path	irc
+#open	2026-09-09-17-26-50
+#fields	ts	uid	id.orig_h	id.orig_p	id.resp_h	id.resp_p	nick	user	command	value	addl	dcc_file_name	dcc_file_size	dcc_mime_type	fuid
+#types	time	string	addr	port	addr	port	string	string	string	string	string	string	count	string	string
+1788973929.359957	Cd82E74dcPfYw6N0bf	10.0.2.10	36441	10.0.2.20	6667	-	-	NICK	santos	-	-	-	-	-
+1788973936.708770	Cd82E74dcPfYw6N0bf	10.0.2.10	36441	10.0.2.20	6667	santos	-	USER	santos	0 * santos	-	-	-	-
+1788974029.072746	CWDnCNScpOCGUBB61	10.0.2.10	38767	10.0.2.20	6667	-	-	NICK	leroy	-	-	-	-	-
+1788974038.071744	CWDnCNScpOCGUBB61	10.0.2.10	38767	10.0.2.20	6667	leroy	-	USER	leroy	0 * leroy	-	-	-	-
+1788974130.916663	CjON5B21mW7EnIZTae	10.0.2.10	45641	10.0.2.20	6667	-	-	NICK	sidsid	-	-	-	-	-
+#close	2026-09-09-17-26-50

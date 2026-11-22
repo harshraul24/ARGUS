@@ -1,0 +1,14 @@
+{
+  "key": "e72f9f7dc79c76fc125c53291a9c0f22511ee8dedefd6463cdd155d3ee47db8c",
+  "provider": "ollama",
+  "model": "gpt-oss:120b-cloud",
+  "prompt_sha": "e72f9f7dc79c76fc",
+  "response": "{\n  \"rules\": [\n    {\n      \"id\": \"copy-auth-logs-to-tmp\",\n      \"technique\": \"T1005\",\n      \"name\": \"Copy authentication logs to a user\u2011writable directory\",\n      \"tactic\": \"collection\",\n      \"severity\": 0.8,\n      \"evidence\": [\"ev_000017\", \"ev_000018\"],\n      \"indicators\": [\n        {\n          \"name\": \"auth_log_copy\",\n          \"weight\": 1.0,\n          \"required\": true,\n          \"select\": {\n            \"claim_type\": \"process_create\",\n            \"any_of\": [\n              {\n                \"facts.image\": \"sudo\",\n                \"facts.command\": {\n                  \"all_of\": [\n                    { \"contains_any\": [\"cp\"] },\n                    { \"contains_any\": [\"auth.log\"] },\n                    { \"contains_any\": [\"/tmp\"] }\n                  ]\n                }\n              },\n              {\n                \"facts.image\": \"bash\",\n                \"facts.command\": {\n                  \"all_of\": [\n                    { \"contains_any\": [\"sudo\"] },\n                    { \"contains_any\": [\"cp\"] },\n                    { \"contains_any\": [\"auth.log\"] },\n                    { \"contains_any\": [\"/tmp\"] }\n                  ]\n                }\n              }\n            ]\n          },\n          \"aggregate\": [\n            { \"as\": \"n\", \"op\": \"count\" }\n          ],\n          \"score\": {\n            \"op\": \"threshold\",\n            \"value\": \"n\",\n            \"at\": 1\n          }\n        }\n      ]\n    }\n  ],\n  \"reasoning\": \"The episode shows a privileged process (sudo or a bash shell invoking sudo) copying the system authentication logs (/var/log/auth.log and /var/log/audit.log) into /tmp, a user\u2011writable location. Moving sensitive credential logs to a temporary directory is a classic data\u2011collection technique used for credential harvesting or later exfiltration, and is uncommon in normal system operation, making it a suitable indicator of suspicious behaviour.\"\n}",
+  "latency_s": 15.78706407546997,
+  "created_at": 1791394647.270608,
+  "params": {
+    "temperature": 0.0,
+    "seed": 7,
+    "json_mode": true
+  }
+}

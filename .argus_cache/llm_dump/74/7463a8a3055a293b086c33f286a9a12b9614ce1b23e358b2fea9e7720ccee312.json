@@ -1,0 +1,14 @@
+{
+  "key": "7463a8a3055a293b086c33f286a9a12b9614ce1b23e358b2fea9e7720ccee312",
+  "provider": "ollama",
+  "model": "gpt-oss:120b-cloud",
+  "prompt_sha": "7463a8a3055a293b",
+  "response": "{\n  \"disposition\": \"malicious\",\n  \"mitre_technique\": \"T1021.004\",\n  \"severity\": 0.9,\n  \"malicious_events\": [\n    \"e4\",\"e5\",\"e6\",\n    \"e17\",\"e18\",\n    \"e24\",\"e25\",\"e26\",\n    \"e41\",\"e42\",\"e43\",\n    \"e58\",\"e59\",\"e60\",\n    \"e70\",\"e71\",\"e72\",\"e73\",\"e74\",\n    \"e81\",\"e82\",\"e83\",\n    \"e99\",\"e100\",\"e101\",\n    \"e116\",\"e117\",\"e118\",\n    \"e126\",\"e127\",\"e128\",\n    \"e135\",\"e136\",\"e137\",\n    \"e152\",\"e153\",\"e154\",\n    \"e169\",\"e170\",\"e171\",\n    \"e179\",\"e180\",\"e181\",\"e182\",\n    \"e205\",\"e206\",\"e207\",\n    \"e222\",\"e223\",\"e224\",\n    \"e241\",\"e242\",\"e243\",\n    \"e269\",\"e270\",\"e271\",\n    \"e295\",\"e296\",\"e297\",\n    \"e322\",\"e323\",\"e324\",\n    \"e364\",\"e365\",\"e366\",\n    \"e381\",\"e382\",\"e383\",\n    \"e388\",\"e389\",\"e390\",\n    \"e401\",\"e402\",\"e403\",\n    \"e620\",\"e621\",\"e622\",\n    \"e626\",\"e627\",\n    \"e623\",\"e624\",\"e625\",\n    \"e628\",\"e629\",\n    \"e632\",\n    \"e234\",\"e235\",\"e236\",\n    \"e340\",\"e341\",\"e342\",\n    \"e391\",\"e392\",\"e393\",\"e394\",\n    \"e445\",\"e447\",\n    \"e610\"\n  ],\n  \"reason\": \"Repeated unauthorized SSH connections, reading of SSH private keys, and credential dumping of /etc/passwd and /etc/shadow indicate attacker activity (T1021.004).\"\n}",
+  "latency_s": 13.21498703956604,
+  "created_at": 1791424220.73717,
+  "params": {
+    "temperature": 0.0,
+    "seed": 8,
+    "json_mode": true
+  }
+}

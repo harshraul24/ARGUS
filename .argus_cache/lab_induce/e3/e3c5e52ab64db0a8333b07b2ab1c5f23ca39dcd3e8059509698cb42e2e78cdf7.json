@@ -1,0 +1,14 @@
+{
+  "key": "e3c5e52ab64db0a8333b07b2ab1c5f23ca39dcd3e8059509698cb42e2e78cdf7",
+  "provider": "ollama",
+  "model": "gpt-oss:120b-cloud",
+  "prompt_sha": "e3c5e52ab64db0a8",
+  "response": "{\n  \"rules\": [\n    {\n      \"id\": \"llm.llm-credential-dump-passwd-e29b984306.71ac014306.r1\",\n      \"technique\": \"T1003.001\",\n      \"name\": \"Read /etc/passwd and write to temporary location\",\n      \"tactic\": \"credential-access\",\n      \"severity\": 0.8,\n      \"evidence\": [\n        \"ev_000574\",\n        \"ev_000575\",\n        \"ev_000576\"\n      ],\n      \"indicators\": [\n        {\n          \"name\": \"suspicious_passwd_dump\",\n          \"weight\": 1.0,\n          \"required\": true,\n          \"select\": {\n            \"claim_type\": \"process_create\",\n            \"facts.command\": {\n              \"all_of\": [\n                {\n                  \"contains_any\": [\n                    \"passwd\"\n                  ]\n                },\n                {\n                  \"contains_any\": [\n                    \"/tmp\"\n                  ]\n                },\n                {\n                  \"contains_any\": [\n                    \"cat\"\n                  ]\n                }\n              ]\n            }\n          },\n          \"aggregate\": [\n            {\n              \"as\": \"n\",\n              \"op\": \"count\"\n            }\n          ],\n          \"score\": {\n            \"op\": \"threshold\",\n            \"value\": \"n\",\n            \"at\": 1\n          }\n        }\n      ]\n    }\n  ],\n  \"reasoning\": \"The episode shows a shell invoking \\\"cat /etc/passwd\\\" and redirecting the output to a file under /tmp, a classic credential\u2011access technique (T1003.001). By focusing on the command line containing the substrings \\\"passwd\\\", \\\"/tmp\\\", and \\\"cat\\\" we capture the behavior regardless of the exact executable name, satisfying robustness while remaining specific enough to stay quiet on normal host activity.\"\n}",
+  "latency_s": 7.2266669273376465,
+  "created_at": 1791394702.1448598,
+  "params": {
+    "temperature": 0.0,
+    "seed": 7,
+    "json_mode": true
+  }
+}

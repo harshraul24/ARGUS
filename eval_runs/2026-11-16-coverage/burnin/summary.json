@@ -1,0 +1,2662 @@
+{
+ "freeze": {
+  "manifest": "ARGUS_FREEZE_2026-11-16-coverage.json",
+  "matches": true,
+  "aggregate_sha256": "bf8f0ad1efc8089225cdb163ebce69709450ca6579d78f1b26b05e9f4ae664d6",
+  "changed": []
+ },
+ "operation": "burnin",
+ "windows": 60,
+ "per_host": {
+  "app01": 24,
+  "web01": 23,
+  "ws-dev01": 6,
+  "ws-fin01": 7
+ },
+ "daemon_gaps": {
+  "ws-dev01": [
+   {
+    "stopped": "2026-10-14T13:47:01",
+    "seconds": 1
+   },
+   {
+    "stopped": "2026-10-14T14:47:01",
+    "seconds": 0
+   }
+  ],
+  "web01": [
+   {
+    "stopped": "2026-10-14T13:47:01",
+    "seconds": 0
+   },
+   {
+    "stopped": "2026-10-14T14:47:01",
+    "seconds": 0
+   },
+   {
+    "stopped": "2026-10-14T15:47:01",
+    "seconds": 0
+   },
+   {
+    "stopped": "2026-10-14T16:47:01",
+    "seconds": 0
+   },
+   {
+    "stopped": "2026-10-14T16:58:39",
+    "seconds": 0
+   },
+   {
+    "stopped": "2026-10-14T17:47:01",
+    "seconds": 0
+   },
+   {
+    "stopped": "2026-10-14T18:47:01",
+    "seconds": 0
+   },
+   {
+    "stopped": "2026-10-14T19:47:01",
+    "seconds": 0
+   },
+   {
+    "stopped": "2026-10-14T20:47:01",
+    "seconds": 0
+   },
+   {
+    "stopped": "2026-10-14T21:47:01",
+    "seconds": 0
+   },
+   {
+    "stopped": "2026-10-14T22:47:01",
+    "seconds": 1
+   },
+   {
+    "stopped": "2026-10-14T23:47:01",
+    "seconds": 0
+   },
+   {
+    "stopped": "2026-10-15T00:11:11",
+    "seconds": 428
+   }
+  ],
+  "ws-fin01": [
+   {
+    "stopped": "2026-10-14T13:47:01",
+    "seconds": 0
+   },
+   {
+    "stopped": "2026-10-14T14:47:01",
+    "seconds": 0
+   }
+  ],
+  "app01": [
+   {
+    "stopped": "2026-10-14T13:47:01",
+    "seconds": 1
+   },
+   {
+    "stopped": "2026-10-14T14:47:01",
+    "seconds": 0
+   },
+   {
+    "stopped": "2026-10-14T15:47:01",
+    "seconds": 0
+   },
+   {
+    "stopped": "2026-10-14T16:47:01",
+    "seconds": 0
+   },
+   {
+    "stopped": "2026-10-14T16:59:08",
+    "seconds": 0
+   },
+   {
+    "stopped": "2026-10-14T17:47:01",
+    "seconds": 1
+   },
+   {
+    "stopped": "2026-10-14T18:47:01",
+    "seconds": 0
+   },
+   {
+    "stopped": "2026-10-14T19:47:01",
+    "seconds": 0
+   },
+   {
+    "stopped": "2026-10-14T20:47:01",
+    "seconds": 0
+   },
+   {
+    "stopped": "2026-10-14T21:47:01",
+    "seconds": 0
+   },
+   {
+    "stopped": "2026-10-14T22:47:01",
+    "seconds": 1
+   },
+   {
+    "stopped": "2026-10-14T23:47:01",
+    "seconds": 0
+   },
+   {
+    "stopped": "2026-10-15T00:11:06",
+    "seconds": 445
+   }
+  ]
+ },
+ "arms": {
+  "argus": {
+   "metrics": {
+    "all": {
+     "windows": 60,
+     "flagged": 0,
+     "per_20_host_windows": 0.0,
+     "undecidable": 0,
+     "with_blind_spot": 33
+    },
+    "gate_pass": {
+     "windows": 42,
+     "flagged": 0,
+     "per_20_host_windows": 0.0,
+     "undecidable": 0,
+     "with_blind_spot": 22
+    },
+    "by_host": {
+     "app01": {
+      "windows": 24,
+      "flagged": 0,
+      "per_20_host_windows": 0.0,
+      "undecidable": 0,
+      "with_blind_spot": 13
+     },
+     "web01": {
+      "windows": 23,
+      "flagged": 0,
+      "per_20_host_windows": 0.0,
+      "undecidable": 0,
+      "with_blind_spot": 13
+     },
+     "ws-dev01": {
+      "windows": 6,
+      "flagged": 0,
+      "per_20_host_windows": 0.0,
+      "undecidable": 0,
+      "with_blind_spot": 3
+     },
+     "ws-fin01": {
+      "windows": 7,
+      "flagged": 0,
+      "per_20_host_windows": 0.0,
+      "undecidable": 0,
+      "with_blind_spot": 4
+     }
+    },
+    "alerting_rules": {},
+    "context_primitives": {
+     "TA0007": 59,
+     "TA0011": 51,
+     "TA0010": 22,
+     "TA0009": 3
+    }
+   },
+   "windows": [
+    {
+     "window": "burnin_app01_0000",
+     "host": "app01",
+     "gate": "fail: log_collection, persona_control, power",
+     "disposition": "benign",
+     "flagged": false,
+     "alerts": {},
+     "context": [
+      "TA0007",
+      "TA0009"
+     ],
+     "blind_spots": [
+      "auditd: not recording 2026-10-15 00:11:06 to 00:18:31 UTC (444 s): audit daemon stopped"
+     ],
+     "episodes": [],
+     "lookalikes": {
+      "lookalike=discovery": 17,
+      "work=app": 4
+     }
+    },
+    {
+     "window": "burnin_app01_0030",
+     "host": "app01",
+     "gate": "fail: log_collection",
+     "disposition": "benign",
+     "flagged": false,
+     "alerts": {},
+     "context": [
+      "TA0009"
+     ],
+     "blind_spots": [],
+     "episodes": [],
+     "lookalikes": {}
+    },
+    {
+     "window": "burnin_app01_1300",
+     "host": "app01",
+     "gate": "fail: package_install, sensor_check",
+     "disposition": "benign",
+     "flagged": false,
+     "alerts": {},
+     "context": [
+      "TA0011",
+      "TA0007"
+     ],
+     "blind_spots": [
+      "auditd: not recording 2026-10-14 13:25:00 to 13:25:00 UTC (under 1 s): audit rule removed"
+     ],
+     "episodes": [],
+     "lookalikes": {}
+    },
+    {
+     "window": "burnin_app01_1330",
+     "host": "app01",
+     "gate": "fail: provisioning, sensor_check",
+     "disposition": "benign",
+     "flagged": false,
+     "alerts": {},
+     "context": [
+      "TA0007"
+     ],
+     "blind_spots": [
+      "auditd: not recording 2026-10-14 13:46:15 to 13:46:16 UTC (under 1 s): audit rule removed",
+      "auditd: not recording 2026-10-14 13:47:01 to 13:47:02 UTC (under 1 s): audit daemon stopped; audit rule removed"
+     ],
+     "episodes": [],
+     "lookalikes": {}
+    },
+    {
+     "window": "burnin_app01_1400",
+     "host": "app01",
+     "gate": "fail: persona_control",
+     "disposition": "benign",
+     "flagged": false,
+     "alerts": {},
+     "context": [
+      "TA0011",
+      "TA0007"
+     ],
+     "blind_spots": [],
+     "episodes": [],
+     "lookalikes": {
+      "lookalike=discovery": 59,
+      "work=app": 15
+     }
+    },
+    {
+     "window": "burnin_app01_1430",
+     "host": "app01",
+     "gate": "pass",
+     "disposition": "benign",
+     "flagged": false,
+     "alerts": {},
+     "context": [
+      "TA0011",
+      "TA0007"
+     ],
+     "blind_spots": [
+      "auditd: not recording 2026-10-14 14:47:01 to 14:47:02 UTC (under 1 s): audit daemon stopped; audit rule removed"
+     ],
+     "episodes": [],
+     "lookalikes": {
+      "lookalike=discovery": 61,
+      "work=app": 15
+     }
+    },
+    {
+     "window": "burnin_app01_1500",
+     "host": "app01",
+     "gate": "pass",
+     "disposition": "benign",
+     "flagged": false,
+     "alerts": {},
+     "context": [
+      "TA0011",
+      "TA0007"
+     ],
+     "blind_spots": [],
+     "episodes": [],
+     "lookalikes": {
+      "lookalike=discovery": 58,
+      "work=app": 14
+     }
+    },
+    {
+     "window": "burnin_app01_1530",
+     "host": "app01",
+     "gate": "pass",
+     "disposition": "benign",
+     "flagged": false,
+     "alerts": {},
+     "context": [
+      "TA0011",
+      "TA0007"
+     ],
+     "blind_spots": [
+      "auditd: not recording 2026-10-14 15:47:01 to 15:47:01 UTC (under 1 s): audit daemon stopped; audit rule removed"
+     ],
+     "episodes": [],
+     "lookalikes": {
+      "lookalike=discovery": 61,
+      "work=app": 16
+     }
+    },
+    {
+     "window": "burnin_app01_1600",
+     "host": "app01",
+     "gate": "fail: sensor_check",
+     "disposition": "benign",
+     "flagged": false,
+     "alerts": {},
+     "context": [
+      "TA0011",
+      "TA0007"
+     ],
+     "blind_spots": [],
+     "episodes": [],
+     "lookalikes": {
+      "lookalike=discovery": 59,
+      "work=app": 14
+     }
+    },
+    {
+     "window": "burnin_app01_1630",
+     "host": "app01",
+     "gate": "pass",
+     "disposition": "benign",
+     "flagged": false,
+     "alerts": {},
+     "context": [
+      "TA0011",
+      "TA0007"
+     ],
+     "blind_spots": [
+      "auditd: not recording 2026-10-14 16:47:01 to 16:47:01 UTC (under 1 s): audit daemon stopped; audit rule removed",
+      "auditd: not recording 2026-10-14 16:59:08 to 16:59:09 UTC (under 1 s): audit daemon stopped; audit rule removed"
+     ],
+     "episodes": [],
+     "lookalikes": {
+      "lookalike=discovery": 56,
+      "work=app": 14
+     }
+    },
+    {
+     "window": "burnin_app01_1700",
+     "host": "app01",
+     "gate": "pass",
+     "disposition": "benign",
+     "flagged": false,
+     "alerts": {},
+     "context": [
+      "TA0011",
+      "TA0007"
+     ],
+     "blind_spots": [],
+     "episodes": [],
+     "lookalikes": {
+      "lookalike=discovery": 56,
+      "work=app": 14
+     }
+    },
+    {
+     "window": "burnin_app01_1730",
+     "host": "app01",
+     "gate": "pass",
+     "disposition": "benign",
+     "flagged": false,
+     "alerts": {},
+     "context": [
+      "TA0011",
+      "TA0007"
+     ],
+     "blind_spots": [
+      "auditd: not recording 2026-10-14 17:47:01 to 17:47:02 UTC (under 1 s): audit daemon stopped; audit rule removed"
+     ],
+     "episodes": [],
+     "lookalikes": {
+      "lookalike=discovery": 58,
+      "work=app": 15
+     }
+    },
+    {
+     "window": "burnin_app01_1800",
+     "host": "app01",
+     "gate": "pass",
+     "disposition": "benign",
+     "flagged": false,
+     "alerts": {},
+     "context": [
+      "TA0011",
+      "TA0007"
+     ],
+     "blind_spots": [],
+     "episodes": [],
+     "lookalikes": {
+      "lookalike=discovery": 62,
+      "work=app": 15
+     }
+    },
+    {
+     "window": "burnin_app01_1830",
+     "host": "app01",
+     "gate": "pass",
+     "disposition": "benign",
+     "flagged": false,
+     "alerts": {},
+     "context": [
+      "TA0011",
+      "TA0007"
+     ],
+     "blind_spots": [
+      "auditd: not recording 2026-10-14 18:47:01 to 18:47:01 UTC (under 1 s): audit daemon stopped; audit rule removed"
+     ],
+     "episodes": [],
+     "lookalikes": {
+      "lookalike=discovery": 57,
+      "work=app": 15
+     }
+    },
+    {
+     "window": "burnin_app01_1900",
+     "host": "app01",
+     "gate": "pass",
+     "disposition": "benign",
+     "flagged": false,
+     "alerts": {},
+     "context": [
+      "TA0007",
+      "TA0011"
+     ],
+     "blind_spots": [],
+     "episodes": [],
+     "lookalikes": {
+      "lookalike=discovery": 56,
+      "work=app": 14
+     }
+    },
+    {
+     "window": "burnin_app01_1930",
+     "host": "app01",
+     "gate": "pass",
+     "disposition": "benign",
+     "flagged": false,
+     "alerts": {},
+     "context": [
+      "TA0011",
+      "TA0007"
+     ],
+     "blind_spots": [
+      "auditd: not recording 2026-10-14 19:47:01 to 19:47:01 UTC (under 1 s): audit daemon stopped; audit rule removed"
+     ],
+     "episodes": [],
+     "lookalikes": {
+      "lookalike=discovery": 63,
+      "work=app": 15
+     }
+    },
+    {
+     "window": "burnin_app01_2000",
+     "host": "app01",
+     "gate": "pass",
+     "disposition": "benign",
+     "flagged": false,
+     "alerts": {},
+     "context": [
+      "TA0011",
+      "TA0007"
+     ],
+     "blind_spots": [],
+     "episodes": [],
+     "lookalikes": {
+      "lookalike=discovery": 57,
+      "work=app": 15
+     }
+    },
+    {
+     "window": "burnin_app01_2030",
+     "host": "app01",
+     "gate": "pass",
+     "disposition": "benign",
+     "flagged": false,
+     "alerts": {},
+     "context": [
+      "TA0011",
+      "TA0007"
+     ],
+     "blind_spots": [
+      "auditd: not recording 2026-10-14 20:47:01 to 20:47:01 UTC (under 1 s): audit daemon stopped; audit rule removed"
+     ],
+     "episodes": [],
+     "lookalikes": {
+      "lookalike=discovery": 59,
+      "work=app": 14
+     }
+    },
+    {
+     "window": "burnin_app01_2100",
+     "host": "app01",
+     "gate": "pass",
+     "disposition": "benign",
+     "flagged": false,
+     "alerts": {},
+     "context": [
+      "TA0011",
+      "TA0007"
+     ],
+     "blind_spots": [],
+     "episodes": [],
+     "lookalikes": {
+      "lookalike=discovery": 56,
+      "work=app": 14
+     }
+    },
+    {
+     "window": "burnin_app01_2130",
+     "host": "app01",
+     "gate": "pass",
+     "disposition": "benign",
+     "flagged": false,
+     "alerts": {},
+     "context": [
+      "TA0011",
+      "TA0007"
+     ],
+     "blind_spots": [
+      "auditd: not recording 2026-10-14 21:47:01 to 21:47:01 UTC (under 1 s): audit daemon stopped; audit rule removed"
+     ],
+     "episodes": [],
+     "lookalikes": {
+      "lookalike=discovery": 58,
+      "work=app": 15
+     }
+    },
+    {
+     "window": "burnin_app01_2200",
+     "host": "app01",
+     "gate": "pass",
+     "disposition": "benign",
+     "flagged": false,
+     "alerts": {},
+     "context": [
+      "TA0011",
+      "TA0007"
+     ],
+     "blind_spots": [],
+     "episodes": [],
+     "lookalikes": {
+      "lookalike=discovery": 60,
+      "work=app": 15
+     }
+    },
+    {
+     "window": "burnin_app01_2230",
+     "host": "app01",
+     "gate": "pass",
+     "disposition": "benign",
+     "flagged": false,
+     "alerts": {},
+     "context": [
+      "TA0011",
+      "TA0007"
+     ],
+     "blind_spots": [
+      "auditd: not recording 2026-10-14 22:47:01 to 22:47:02 UTC (under 1 s): audit daemon stopped; audit rule removed"
+     ],
+     "episodes": [],
+     "lookalikes": {
+      "lookalike=discovery": 63,
+      "work=app": 16
+     }
+    },
+    {
+     "window": "burnin_app01_2300",
+     "host": "app01",
+     "gate": "pass",
+     "disposition": "benign",
+     "flagged": false,
+     "alerts": {},
+     "context": [
+      "TA0011",
+      "TA0007"
+     ],
+     "blind_spots": [],
+     "episodes": [],
+     "lookalikes": {
+      "lookalike=discovery": 63,
+      "work=app": 15
+     }
+    },
+    {
+     "window": "burnin_app01_2330",
+     "host": "app01",
+     "gate": "pass",
+     "disposition": "benign",
+     "flagged": false,
+     "alerts": {},
+     "context": [
+      "TA0011",
+      "TA0007"
+     ],
+     "blind_spots": [
+      "auditd: not recording 2026-10-14 23:47:01 to 23:47:02 UTC (under 1 s): audit daemon stopped; audit rule removed"
+     ],
+     "episodes": [],
+     "lookalikes": {
+      "lookalike=discovery": 61,
+      "work=app": 16
+     }
+    },
+    {
+     "window": "burnin_web01_0000",
+     "host": "web01",
+     "gate": "fail: log_collection, persona_control, power",
+     "disposition": "benign",
+     "flagged": false,
+     "alerts": {},
+     "context": [
+      "TA0010",
+      "TA0007",
+      "TA0009"
+     ],
+     "blind_spots": [
+      "auditd: not recording 2026-10-15 00:11:11 to 00:18:19 UTC (428 s): audit daemon stopped"
+     ],
+     "episodes": [],
+     "lookalikes": {
+      "lookalike=discovery": 17,
+      "work=web": 4,
+      "lookalike=ingress": 4,
+      "lookalike=portscan": 3
+     }
+    },
+    {
+     "window": "burnin_web01_1300",
+     "host": "web01",
+     "gate": "fail: package_install, sensor_check",
+     "disposition": "benign",
+     "flagged": false,
+     "alerts": {},
+     "context": [
+      "TA0011",
+      "TA0007"
+     ],
+     "blind_spots": [
+      "auditd: not recording 2026-10-14 13:24:30 to 13:24:30 UTC (under 1 s): audit rule removed"
+     ],
+     "episodes": [],
+     "lookalikes": {}
+    },
+    {
+     "window": "burnin_web01_1330",
+     "host": "web01",
+     "gate": "fail: persona_control, provisioning, sensor_check",
+     "disposition": "benign",
+     "flagged": false,
+     "alerts": {},
+     "context": [
+      "TA0007",
+      "TA0010"
+     ],
+     "blind_spots": [
+      "auditd: not recording 2026-10-14 13:46:08 to 13:46:09 UTC (under 1 s): audit rule removed",
+      "auditd: not recording 2026-10-14 13:47:01 to 13:47:01 UTC (under 1 s): audit daemon stopped; audit rule removed"
+     ],
+     "episodes": [],
+     "lookalikes": {
+      "lookalike=discovery": 13,
+      "work=web": 3,
+      "lookalike=portscan": 1,
+      "lookalike=ingress": 1
+     }
+    },
+    {
+     "window": "burnin_web01_1400",
+     "host": "web01",
+     "gate": "fail: persona_control, sensor_check",
+     "disposition": "benign",
+     "flagged": false,
+     "alerts": {},
+     "context": [
+      "TA0010",
+      "TA0011",
+      "TA0007"
+     ],
+     "blind_spots": [],
+     "episodes": [],
+     "lookalikes": {
+      "lookalike=discovery": 54,
+      "lookalike=portscan": 11,
+      "work=web": 11,
+      "lookalike=ingress": 10
+     }
+    },
+    {
+     "window": "burnin_web01_1430",
+     "host": "web01",
+     "gate": "pass",
+     "disposition": "benign",
+     "flagged": false,
+     "alerts": {},
+     "context": [
+      "TA0010",
+      "TA0011",
+      "TA0007"
+     ],
+     "blind_spots": [
+      "auditd: not recording 2026-10-14 14:47:01 to 14:47:02 UTC (under 1 s): audit daemon stopped; audit rule removed"
+     ],
+     "episodes": [],
+     "lookalikes": {
+      "lookalike=discovery": 55,
+      "lookalike=ingress": 11,
+      "lookalike=portscan": 11,
+      "work=web": 11
+     }
+    },
+    {
+     "window": "burnin_web01_1500",
+     "host": "web01",
+     "gate": "pass",
+     "disposition": "benign",
+     "flagged": false,
+     "alerts": {},
+     "context": [
+      "TA0010",
+      "TA0011",
+      "TA0007"
+     ],
+     "blind_spots": [],
+     "episodes": [],
+     "lookalikes": {
+      "lookalike=discovery": 51,
+      "lookalike=ingress": 11,
+      "lookalike=portscan": 10,
+      "work=web": 10
+     }
+    },
+    {
+     "window": "burnin_web01_1530",
+     "host": "web01",
+     "gate": "pass",
+     "disposition": "benign",
+     "flagged": false,
+     "alerts": {},
+     "context": [
+      "TA0010",
+      "TA0011",
+      "TA0007"
+     ],
+     "blind_spots": [
+      "auditd: not recording 2026-10-14 15:47:01 to 15:47:01 UTC (under 1 s): audit daemon stopped; audit rule removed"
+     ],
+     "episodes": [],
+     "lookalikes": {
+      "lookalike=discovery": 49,
+      "lookalike=portscan": 10,
+      "work=web": 10,
+      "lookalike=ingress": 9
+     }
+    },
+    {
+     "window": "burnin_web01_1600",
+     "host": "web01",
+     "gate": "fail: sensor_check",
+     "disposition": "benign",
+     "flagged": false,
+     "alerts": {},
+     "context": [
+      "TA0010",
+      "TA0011",
+      "TA0007"
+     ],
+     "blind_spots": [],
+     "episodes": [],
+     "lookalikes": {
+      "lookalike=discovery": 55,
+      "lookalike=ingress": 11,
+      "lookalike=portscan": 11,
+      "work=web": 11
+     }
+    },
+    {
+     "window": "burnin_web01_1630",
+     "host": "web01",
+     "gate": "pass",
+     "disposition": "benign",
+     "flagged": false,
+     "alerts": {},
+     "context": [
+      "TA0010",
+      "TA0011",
+      "TA0007"
+     ],
+     "blind_spots": [
+      "auditd: not recording 2026-10-14 16:47:01 to 16:47:01 UTC (under 1 s): audit daemon stopped; audit rule removed",
+      "auditd: not recording 2026-10-14 16:58:39 to 16:58:39 UTC (under 1 s): audit daemon stopped; audit rule removed"
+     ],
+     "episodes": [],
+     "lookalikes": {
+      "lookalike=discovery": 51,
+      "lookalike=ingress": 10,
+      "lookalike=portscan": 10,
+      "work=web": 10
+     }
+    },
+    {
+     "window": "burnin_web01_1700",
+     "host": "web01",
+     "gate": "pass",
+     "disposition": "benign",
+     "flagged": false,
+     "alerts": {},
+     "context": [
+      "TA0010",
+      "TA0011",
+      "TA0007"
+     ],
+     "blind_spots": [],
+     "episodes": [],
+     "lookalikes": {
+      "lookalike=ingress": 11,
+      "lookalike=discovery": 54,
+      "lookalike=portscan": 11,
+      "work=web": 11
+     }
+    },
+    {
+     "window": "burnin_web01_1730",
+     "host": "web01",
+     "gate": "pass",
+     "disposition": "benign",
+     "flagged": false,
+     "alerts": {},
+     "context": [
+      "TA0010",
+      "TA0011",
+      "TA0007"
+     ],
+     "blind_spots": [
+      "auditd: not recording 2026-10-14 17:47:01 to 17:47:02 UTC (under 1 s): audit daemon stopped; audit rule removed"
+     ],
+     "episodes": [],
+     "lookalikes": {
+      "lookalike=discovery": 51,
+      "lookalike=ingress": 11,
+      "lookalike=portscan": 10,
+      "work=web": 10
+     }
+    },
+    {
+     "window": "burnin_web01_1800",
+     "host": "web01",
+     "gate": "pass",
+     "disposition": "benign",
+     "flagged": false,
+     "alerts": {},
+     "context": [
+      "TA0010",
+      "TA0011",
+      "TA0007"
+     ],
+     "blind_spots": [],
+     "episodes": [],
+     "lookalikes": {
+      "lookalike=discovery": 54,
+      "lookalike=portscan": 11,
+      "work=web": 11,
+      "lookalike=ingress": 10
+     }
+    },
+    {
+     "window": "burnin_web01_1830",
+     "host": "web01",
+     "gate": "pass",
+     "disposition": "benign",
+     "flagged": false,
+     "alerts": {},
+     "context": [
+      "TA0010",
+      "TA0011",
+      "TA0007"
+     ],
+     "blind_spots": [
+      "auditd: not recording 2026-10-14 18:47:01 to 18:47:02 UTC (under 1 s): audit daemon stopped; audit rule removed"
+     ],
+     "episodes": [],
+     "lookalikes": {
+      "lookalike=discovery": 51,
+      "lookalike=ingress": 10,
+      "lookalike=portscan": 10,
+      "work=web": 10
+     }
+    },
+    {
+     "window": "burnin_web01_1900",
+     "host": "web01",
+     "gate": "pass",
+     "disposition": "benign",
+     "flagged": false,
+     "alerts": {},
+     "context": [
+      "TA0010",
+      "TA0011",
+      "TA0007"
+     ],
+     "blind_spots": [],
+     "episodes": [],
+     "lookalikes": {
+      "lookalike=ingress": 11,
+      "lookalike=discovery": 55,
+      "lookalike=portscan": 11,
+      "work=web": 11
+     }
+    },
+    {
+     "window": "burnin_web01_1930",
+     "host": "web01",
+     "gate": "pass",
+     "disposition": "benign",
+     "flagged": false,
+     "alerts": {},
+     "context": [
+      "TA0010",
+      "TA0011",
+      "TA0007"
+     ],
+     "blind_spots": [
+      "auditd: not recording 2026-10-14 19:47:01 to 19:47:01 UTC (under 1 s): audit daemon stopped; audit rule removed"
+     ],
+     "episodes": [],
+     "lookalikes": {
+      "lookalike=ingress": 11,
+      "lookalike=discovery": 53,
+      "lookalike=portscan": 11,
+      "work=web": 10
+     }
+    },
+    {
+     "window": "burnin_web01_2000",
+     "host": "web01",
+     "gate": "pass",
+     "disposition": "benign",
+     "flagged": false,
+     "alerts": {},
+     "context": [
+      "TA0010",
+      "TA0011",
+      "TA0007"
+     ],
+     "blind_spots": [],
+     "episodes": [],
+     "lookalikes": {
+      "lookalike=discovery": 52,
+      "work=web": 11,
+      "lookalike=ingress": 11,
+      "lookalike=portscan": 10
+     }
+    },
+    {
+     "window": "burnin_web01_2030",
+     "host": "web01",
+     "gate": "pass",
+     "disposition": "benign",
+     "flagged": false,
+     "alerts": {},
+     "context": [
+      "TA0010",
+      "TA0011",
+      "TA0007"
+     ],
+     "blind_spots": [
+      "auditd: not recording 2026-10-14 20:47:01 to 20:47:01 UTC (under 1 s): audit daemon stopped; audit rule removed"
+     ],
+     "episodes": [],
+     "lookalikes": {
+      "lookalike=discovery": 50,
+      "lookalike=portscan": 10,
+      "work=web": 10,
+      "lookalike=ingress": 9
+     }
+    },
+    {
+     "window": "burnin_web01_2100",
+     "host": "web01",
+     "gate": "pass",
+     "disposition": "benign",
+     "flagged": false,
+     "alerts": {},
+     "context": [
+      "TA0010",
+      "TA0011",
+      "TA0007"
+     ],
+     "blind_spots": [],
+     "episodes": [],
+     "lookalikes": {
+      "lookalike=ingress": 11,
+      "lookalike=discovery": 53,
+      "lookalike=portscan": 11,
+      "work=web": 10
+     }
+    },
+    {
+     "window": "burnin_web01_2130",
+     "host": "web01",
+     "gate": "pass",
+     "disposition": "benign",
+     "flagged": false,
+     "alerts": {},
+     "context": [
+      "TA0010",
+      "TA0011",
+      "TA0007"
+     ],
+     "blind_spots": [
+      "auditd: not recording 2026-10-14 21:47:01 to 21:47:01 UTC (under 1 s): audit daemon stopped; audit rule removed"
+     ],
+     "episodes": [],
+     "lookalikes": {
+      "lookalike=discovery": 53,
+      "work=web": 11,
+      "lookalike=ingress": 11,
+      "lookalike=portscan": 11
+     }
+    },
+    {
+     "window": "burnin_web01_2200",
+     "host": "web01",
+     "gate": "pass",
+     "disposition": "benign",
+     "flagged": false,
+     "alerts": {},
+     "context": [
+      "TA0010",
+      "TA0011",
+      "TA0007"
+     ],
+     "blind_spots": [],
+     "episodes": [],
+     "lookalikes": {
+      "lookalike=discovery": 54,
+      "work=web": 11,
+      "lookalike=ingress": 11,
+      "lookalike=portscan": 10
+     }
+    },
+    {
+     "window": "burnin_web01_2230",
+     "host": "web01",
+     "gate": "pass",
+     "disposition": "benign",
+     "flagged": false,
+     "alerts": {},
+     "context": [
+      "TA0010",
+      "TA0011",
+      "TA0007"
+     ],
+     "blind_spots": [
+      "auditd: not recording 2026-10-14 22:47:01 to 22:47:02 UTC (under 1 s): audit daemon stopped; audit rule removed"
+     ],
+     "episodes": [],
+     "lookalikes": {
+      "lookalike=discovery": 54,
+      "lookalike=portscan": 11,
+      "work=web": 11,
+      "lookalike=ingress": 10
+     }
+    },
+    {
+     "window": "burnin_web01_2300",
+     "host": "web01",
+     "gate": "pass",
+     "disposition": "benign",
+     "flagged": false,
+     "alerts": {},
+     "context": [
+      "TA0010",
+      "TA0011",
+      "TA0007"
+     ],
+     "blind_spots": [],
+     "episodes": [],
+     "lookalikes": {
+      "lookalike=discovery": 55,
+      "lookalike=ingress": 11,
+      "lookalike=portscan": 11,
+      "work=web": 11
+     }
+    },
+    {
+     "window": "burnin_web01_2330",
+     "host": "web01",
+     "gate": "pass",
+     "disposition": "benign",
+     "flagged": false,
+     "alerts": {},
+     "context": [
+      "TA0010",
+      "TA0011",
+      "TA0007"
+     ],
+     "blind_spots": [
+      "auditd: not recording 2026-10-14 23:47:01 to 23:47:02 UTC (under 1 s): audit daemon stopped; audit rule removed"
+     ],
+     "episodes": [],
+     "lookalikes": {
+      "lookalike=discovery": 59,
+      "lookalike=ingress": 12,
+      "lookalike=portscan": 12,
+      "work=web": 11
+     }
+    },
+    {
+     "window": "burnin_ws-dev01_1300",
+     "host": "ws-dev01",
+     "gate": "fail: package_install, sensor_check",
+     "disposition": "benign",
+     "flagged": false,
+     "alerts": {},
+     "context": [
+      "TA0011",
+      "TA0007"
+     ],
+     "blind_spots": [
+      "auditd: not recording 2026-10-14 13:24:35 to 13:24:35 UTC (under 1 s): audit rule removed"
+     ],
+     "episodes": [],
+     "lookalikes": {}
+    },
+    {
+     "window": "burnin_ws-dev01_1330",
+     "host": "ws-dev01",
+     "gate": "fail: provisioning, sensor_check",
+     "disposition": "benign",
+     "flagged": false,
+     "alerts": {},
+     "context": [
+      "TA0007"
+     ],
+     "blind_spots": [
+      "auditd: not recording 2026-10-14 13:46:20 to 13:46:20 UTC (under 1 s): audit rule removed",
+      "auditd: not recording 2026-10-14 13:47:01 to 13:47:02 UTC (under 1 s): audit daemon stopped; audit rule removed"
+     ],
+     "episodes": [],
+     "lookalikes": {}
+    },
+    {
+     "window": "burnin_ws-dev01_1400",
+     "host": "ws-dev01",
+     "gate": "fail: persona_control, sensor_check",
+     "disposition": "benign",
+     "flagged": false,
+     "alerts": {},
+     "context": [
+      "TA0007"
+     ],
+     "blind_spots": [],
+     "episodes": [],
+     "lookalikes": {
+      "lookalike=discovery": 51,
+      "work=dev": 9,
+      "lookalike=staging": 8,
+      "lookalike=defense-evasion": 8
+     }
+    },
+    {
+     "window": "burnin_ws-dev01_1430",
+     "host": "ws-dev01",
+     "gate": "pass",
+     "disposition": "benign",
+     "flagged": false,
+     "alerts": {},
+     "context": [
+      "TA0011",
+      "TA0007"
+     ],
+     "blind_spots": [
+      "auditd: not recording 2026-10-14 14:47:01 to 14:47:02 UTC (under 1 s): audit daemon stopped; audit rule removed"
+     ],
+     "episodes": [],
+     "lookalikes": {
+      "lookalike=discovery": 51,
+      "lookalike=staging": 9,
+      "lookalike=defense-evasion": 9,
+      "work=dev": 8
+     }
+    },
+    {
+     "window": "burnin_ws-dev01_1500",
+     "host": "ws-dev01",
+     "gate": "pass",
+     "disposition": "benign",
+     "flagged": false,
+     "alerts": {},
+     "context": [
+      "TA0011",
+      "TA0007"
+     ],
+     "blind_spots": [],
+     "episodes": [],
+     "lookalikes": {
+      "lookalike=discovery": 52,
+      "work=dev": 9,
+      "lookalike=staging": 8,
+      "lookalike=defense-evasion": 8
+     }
+    },
+    {
+     "window": "burnin_ws-dev01_1530",
+     "host": "ws-dev01",
+     "gate": "pass",
+     "disposition": "benign",
+     "flagged": false,
+     "alerts": {},
+     "context": [
+      "TA0007"
+     ],
+     "blind_spots": [],
+     "episodes": [],
+     "lookalikes": {
+      "lookalike=discovery": 12,
+      "lookalike=staging": 2,
+      "lookalike=defense-evasion": 2,
+      "work=dev": 2
+     }
+    },
+    {
+     "window": "burnin_ws-fin01_1230",
+     "host": "ws-fin01",
+     "gate": "fail: first_boot, sensor_check",
+     "disposition": "benign",
+     "flagged": false,
+     "alerts": {},
+     "context": [
+      "TA0011",
+      "TA0007"
+     ],
+     "blind_spots": [
+      "auditd: not recording 2026-10-14 12:49:32 to 12:49:32 UTC (under 1 s): audit rule removed"
+     ],
+     "episodes": [],
+     "lookalikes": {}
+    },
+    {
+     "window": "burnin_ws-fin01_1300",
+     "host": "ws-fin01",
+     "gate": "fail: provisioning, sensor_check",
+     "disposition": "benign",
+     "flagged": false,
+     "alerts": {},
+     "context": [
+      "TA0011",
+      "TA0007"
+     ],
+     "blind_spots": [
+      "auditd: not recording 2026-10-14 13:24:34 to 13:24:34 UTC (under 1 s): audit rule removed"
+     ],
+     "episodes": [],
+     "lookalikes": {}
+    },
+    {
+     "window": "burnin_ws-fin01_1330",
+     "host": "ws-fin01",
+     "gate": "fail: provisioning, sensor_check",
+     "disposition": "benign",
+     "flagged": false,
+     "alerts": {},
+     "context": [
+      "TA0011",
+      "TA0007"
+     ],
+     "blind_spots": [
+      "auditd: not recording 2026-10-14 13:46:31 to 13:46:31 UTC (under 1 s): audit rule removed",
+      "auditd: not recording 2026-10-14 13:47:01 to 13:47:01 UTC (under 1 s): audit daemon stopped; audit rule removed"
+     ],
+     "episodes": [],
+     "lookalikes": {}
+    },
+    {
+     "window": "burnin_ws-fin01_1400",
+     "host": "ws-fin01",
+     "gate": "fail: persona_control, sensor_check",
+     "disposition": "benign",
+     "flagged": false,
+     "alerts": {},
+     "context": [
+      "TA0011",
+      "TA0007"
+     ],
+     "blind_spots": [],
+     "episodes": [],
+     "lookalikes": {
+      "lookalike=discovery": 48,
+      "work=fin": 8,
+      "lookalike=bruteforce": 8,
+      "lookalike=staging": 8
+     }
+    },
+    {
+     "window": "burnin_ws-fin01_1430",
+     "host": "ws-fin01",
+     "gate": "pass",
+     "disposition": "benign",
+     "flagged": false,
+     "alerts": {},
+     "context": [
+      "TA0011",
+      "TA0007"
+     ],
+     "blind_spots": [
+      "auditd: not recording 2026-10-14 14:47:01 to 14:47:01 UTC (under 1 s): audit daemon stopped; audit rule removed"
+     ],
+     "episodes": [],
+     "lookalikes": {
+      "lookalike=discovery": 52,
+      "work=fin": 9,
+      "lookalike=bruteforce": 9,
+      "lookalike=staging": 8
+     }
+    },
+    {
+     "window": "burnin_ws-fin01_1500",
+     "host": "ws-fin01",
+     "gate": "pass",
+     "disposition": "benign",
+     "flagged": false,
+     "alerts": {},
+     "context": [
+      "TA0011",
+      "TA0007"
+     ],
+     "blind_spots": [],
+     "episodes": [],
+     "lookalikes": {
+      "lookalike=discovery": 46,
+      "lookalike=staging": 8,
+      "work=fin": 7,
+      "lookalike=bruteforce": 7
+     }
+    },
+    {
+     "window": "burnin_ws-fin01_1530",
+     "host": "ws-fin01",
+     "gate": "pass",
+     "disposition": "benign",
+     "flagged": false,
+     "alerts": {},
+     "context": [
+      "TA0007"
+     ],
+     "blind_spots": [],
+     "episodes": [],
+     "lookalikes": {
+      "lookalike=discovery": 19,
+      "work=fin": 3,
+      "lookalike=bruteforce": 3,
+      "lookalike=staging": 3
+     }
+    }
+   ]
+  },
+  "argus_s3": {
+   "metrics": {
+    "all": {
+     "windows": 60,
+     "flagged": 0,
+     "per_20_host_windows": 0.0,
+     "undecidable": 0,
+     "with_blind_spot": 33
+    },
+    "gate_pass": {
+     "windows": 42,
+     "flagged": 0,
+     "per_20_host_windows": 0.0,
+     "undecidable": 0,
+     "with_blind_spot": 22
+    },
+    "by_host": {
+     "app01": {
+      "windows": 24,
+      "flagged": 0,
+      "per_20_host_windows": 0.0,
+      "undecidable": 0,
+      "with_blind_spot": 13
+     },
+     "web01": {
+      "windows": 23,
+      "flagged": 0,
+      "per_20_host_windows": 0.0,
+      "undecidable": 0,
+      "with_blind_spot": 13
+     },
+     "ws-dev01": {
+      "windows": 6,
+      "flagged": 0,
+      "per_20_host_windows": 0.0,
+      "undecidable": 0,
+      "with_blind_spot": 3
+     },
+     "ws-fin01": {
+      "windows": 7,
+      "flagged": 0,
+      "per_20_host_windows": 0.0,
+      "undecidable": 0,
+      "with_blind_spot": 4
+     }
+    },
+    "alerting_rules": {},
+    "context_primitives": {
+     "TA0007": 59,
+     "TA0011": 51,
+     "TA0010": 22,
+     "TA0009": 3
+    }
+   },
+   "windows": [
+    {
+     "window": "burnin_app01_0000",
+     "host": "app01",
+     "gate": "fail: log_collection, persona_control, power",
+     "disposition": "benign",
+     "flagged": false,
+     "alerts": {},
+     "context": [
+      "TA0007",
+      "TA0009"
+     ],
+     "blind_spots": [
+      "auditd: not recording 2026-10-15 00:11:06 to 00:18:31 UTC (444 s): audit daemon stopped"
+     ],
+     "episodes": [],
+     "lookalikes": {
+      "lookalike=discovery": 17,
+      "work=app": 4
+     }
+    },
+    {
+     "window": "burnin_app01_0030",
+     "host": "app01",
+     "gate": "fail: log_collection",
+     "disposition": "benign",
+     "flagged": false,
+     "alerts": {},
+     "context": [
+      "TA0009"
+     ],
+     "blind_spots": [],
+     "episodes": [],
+     "lookalikes": {}
+    },
+    {
+     "window": "burnin_app01_1300",
+     "host": "app01",
+     "gate": "fail: package_install, sensor_check",
+     "disposition": "benign",
+     "flagged": false,
+     "alerts": {},
+     "context": [
+      "TA0011",
+      "TA0007"
+     ],
+     "blind_spots": [
+      "auditd: not recording 2026-10-14 13:25:00 to 13:25:00 UTC (under 1 s): audit rule removed"
+     ],
+     "episodes": [],
+     "lookalikes": {}
+    },
+    {
+     "window": "burnin_app01_1330",
+     "host": "app01",
+     "gate": "fail: provisioning, sensor_check",
+     "disposition": "benign",
+     "flagged": false,
+     "alerts": {},
+     "context": [
+      "TA0007"
+     ],
+     "blind_spots": [
+      "auditd: not recording 2026-10-14 13:46:15 to 13:46:16 UTC (under 1 s): audit rule removed",
+      "auditd: not recording 2026-10-14 13:47:01 to 13:47:02 UTC (under 1 s): audit daemon stopped; audit rule removed"
+     ],
+     "episodes": [],
+     "lookalikes": {}
+    },
+    {
+     "window": "burnin_app01_1400",
+     "host": "app01",
+     "gate": "fail: persona_control",
+     "disposition": "benign",
+     "flagged": false,
+     "alerts": {},
+     "context": [
+      "TA0011",
+      "TA0007"
+     ],
+     "blind_spots": [],
+     "episodes": [],
+     "lookalikes": {
+      "lookalike=discovery": 59,
+      "work=app": 15
+     }
+    },
+    {
+     "window": "burnin_app01_1430",
+     "host": "app01",
+     "gate": "pass",
+     "disposition": "benign",
+     "flagged": false,
+     "alerts": {},
+     "context": [
+      "TA0011",
+      "TA0007"
+     ],
+     "blind_spots": [
+      "auditd: not recording 2026-10-14 14:47:01 to 14:47:02 UTC (under 1 s): audit daemon stopped; audit rule removed"
+     ],
+     "episodes": [],
+     "lookalikes": {
+      "lookalike=discovery": 61,
+      "work=app": 15
+     }
+    },
+    {
+     "window": "burnin_app01_1500",
+     "host": "app01",
+     "gate": "pass",
+     "disposition": "benign",
+     "flagged": false,
+     "alerts": {},
+     "context": [
+      "TA0011",
+      "TA0007"
+     ],
+     "blind_spots": [],
+     "episodes": [],
+     "lookalikes": {
+      "lookalike=discovery": 58,
+      "work=app": 14
+     }
+    },
+    {
+     "window": "burnin_app01_1530",
+     "host": "app01",
+     "gate": "pass",
+     "disposition": "benign",
+     "flagged": false,
+     "alerts": {},
+     "context": [
+      "TA0011",
+      "TA0007"
+     ],
+     "blind_spots": [
+      "auditd: not recording 2026-10-14 15:47:01 to 15:47:01 UTC (under 1 s): audit daemon stopped; audit rule removed"
+     ],
+     "episodes": [],
+     "lookalikes": {
+      "lookalike=discovery": 61,
+      "work=app": 16
+     }
+    },
+    {
+     "window": "burnin_app01_1600",
+     "host": "app01",
+     "gate": "fail: sensor_check",
+     "disposition": "benign",
+     "flagged": false,
+     "alerts": {},
+     "context": [
+      "TA0011",
+      "TA0007"
+     ],
+     "blind_spots": [],
+     "episodes": [],
+     "lookalikes": {
+      "lookalike=discovery": 59,
+      "work=app": 14
+     }
+    },
+    {
+     "window": "burnin_app01_1630",
+     "host": "app01",
+     "gate": "pass",
+     "disposition": "benign",
+     "flagged": false,
+     "alerts": {},
+     "context": [
+      "TA0011",
+      "TA0007"
+     ],
+     "blind_spots": [
+      "auditd: not recording 2026-10-14 16:47:01 to 16:47:01 UTC (under 1 s): audit daemon stopped; audit rule removed",
+      "auditd: not recording 2026-10-14 16:59:08 to 16:59:09 UTC (under 1 s): audit daemon stopped; audit rule removed"
+     ],
+     "episodes": [],
+     "lookalikes": {
+      "lookalike=discovery": 56,
+      "work=app": 14
+     }
+    },
+    {
+     "window": "burnin_app01_1700",
+     "host": "app01",
+     "gate": "pass",
+     "disposition": "benign",
+     "flagged": false,
+     "alerts": {},
+     "context": [
+      "TA0011",
+      "TA0007"
+     ],
+     "blind_spots": [],
+     "episodes": [],
+     "lookalikes": {
+      "lookalike=discovery": 56,
+      "work=app": 14
+     }
+    },
+    {
+     "window": "burnin_app01_1730",
+     "host": "app01",
+     "gate": "pass",
+     "disposition": "benign",
+     "flagged": false,
+     "alerts": {},
+     "context": [
+      "TA0011",
+      "TA0007"
+     ],
+     "blind_spots": [
+      "auditd: not recording 2026-10-14 17:47:01 to 17:47:02 UTC (under 1 s): audit daemon stopped; audit rule removed"
+     ],
+     "episodes": [],
+     "lookalikes": {
+      "lookalike=discovery": 58,
+      "work=app": 15
+     }
+    },
+    {
+     "window": "burnin_app01_1800",
+     "host": "app01",
+     "gate": "pass",
+     "disposition": "benign",
+     "flagged": false,
+     "alerts": {},
+     "context": [
+      "TA0011",
+      "TA0007"
+     ],
+     "blind_spots": [],
+     "episodes": [],
+     "lookalikes": {
+      "lookalike=discovery": 62,
+      "work=app": 15
+     }
+    },
+    {
+     "window": "burnin_app01_1830",
+     "host": "app01",
+     "gate": "pass",
+     "disposition": "benign",
+     "flagged": false,
+     "alerts": {},
+     "context": [
+      "TA0011",
+      "TA0007"
+     ],
+     "blind_spots": [
+      "auditd: not recording 2026-10-14 18:47:01 to 18:47:01 UTC (under 1 s): audit daemon stopped; audit rule removed"
+     ],
+     "episodes": [],
+     "lookalikes": {
+      "lookalike=discovery": 57,
+      "work=app": 15
+     }
+    },
+    {
+     "window": "burnin_app01_1900",
+     "host": "app01",
+     "gate": "pass",
+     "disposition": "benign",
+     "flagged": false,
+     "alerts": {},
+     "context": [
+      "TA0007",
+      "TA0011"
+     ],
+     "blind_spots": [],
+     "episodes": [],
+     "lookalikes": {
+      "lookalike=discovery": 56,
+      "work=app": 14
+     }
+    },
+    {
+     "window": "burnin_app01_1930",
+     "host": "app01",
+     "gate": "pass",
+     "disposition": "benign",
+     "flagged": false,
+     "alerts": {},
+     "context": [
+      "TA0011",
+      "TA0007"
+     ],
+     "blind_spots": [
+      "auditd: not recording 2026-10-14 19:47:01 to 19:47:01 UTC (under 1 s): audit daemon stopped; audit rule removed"
+     ],
+     "episodes": [],
+     "lookalikes": {
+      "lookalike=discovery": 63,
+      "work=app": 15
+     }
+    },
+    {
+     "window": "burnin_app01_2000",
+     "host": "app01",
+     "gate": "pass",
+     "disposition": "benign",
+     "flagged": false,
+     "alerts": {},
+     "context": [
+      "TA0011",
+      "TA0007"
+     ],
+     "blind_spots": [],
+     "episodes": [],
+     "lookalikes": {
+      "lookalike=discovery": 57,
+      "work=app": 15
+     }
+    },
+    {
+     "window": "burnin_app01_2030",
+     "host": "app01",
+     "gate": "pass",
+     "disposition": "benign",
+     "flagged": false,
+     "alerts": {},
+     "context": [
+      "TA0011",
+      "TA0007"
+     ],
+     "blind_spots": [
+      "auditd: not recording 2026-10-14 20:47:01 to 20:47:01 UTC (under 1 s): audit daemon stopped; audit rule removed"
+     ],
+     "episodes": [],
+     "lookalikes": {
+      "lookalike=discovery": 59,
+      "work=app": 14
+     }
+    },
+    {
+     "window": "burnin_app01_2100",
+     "host": "app01",
+     "gate": "pass",
+     "disposition": "benign",
+     "flagged": false,
+     "alerts": {},
+     "context": [
+      "TA0011",
+      "TA0007"
+     ],
+     "blind_spots": [],
+     "episodes": [],
+     "lookalikes": {
+      "lookalike=discovery": 56,
+      "work=app": 14
+     }
+    },
+    {
+     "window": "burnin_app01_2130",
+     "host": "app01",
+     "gate": "pass",
+     "disposition": "benign",
+     "flagged": false,
+     "alerts": {},
+     "context": [
+      "TA0011",
+      "TA0007"
+     ],
+     "blind_spots": [
+      "auditd: not recording 2026-10-14 21:47:01 to 21:47:01 UTC (under 1 s): audit daemon stopped; audit rule removed"
+     ],
+     "episodes": [],
+     "lookalikes": {
+      "lookalike=discovery": 58,
+      "work=app": 15
+     }
+    },
+    {
+     "window": "burnin_app01_2200",
+     "host": "app01",
+     "gate": "pass",
+     "disposition": "benign",
+     "flagged": false,
+     "alerts": {},
+     "context": [
+      "TA0011",
+      "TA0007"
+     ],
+     "blind_spots": [],
+     "episodes": [],
+     "lookalikes": {
+      "lookalike=discovery": 60,
+      "work=app": 15
+     }
+    },
+    {
+     "window": "burnin_app01_2230",
+     "host": "app01",
+     "gate": "pass",
+     "disposition": "benign",
+     "flagged": false,
+     "alerts": {},
+     "context": [
+      "TA0011",
+      "TA0007"
+     ],
+     "blind_spots": [
+      "auditd: not recording 2026-10-14 22:47:01 to 22:47:02 UTC (under 1 s): audit daemon stopped; audit rule removed"
+     ],
+     "episodes": [],
+     "lookalikes": {
+      "lookalike=discovery": 63,
+      "work=app": 16
+     }
+    },
+    {
+     "window": "burnin_app01_2300",
+     "host": "app01",
+     "gate": "pass",
+     "disposition": "benign",
+     "flagged": false,
+     "alerts": {},
+     "context": [
+      "TA0011",
+      "TA0007"
+     ],
+     "blind_spots": [],
+     "episodes": [],
+     "lookalikes": {
+      "lookalike=discovery": 63,
+      "work=app": 15
+     }
+    },
+    {
+     "window": "burnin_app01_2330",
+     "host": "app01",
+     "gate": "pass",
+     "disposition": "benign",
+     "flagged": false,
+     "alerts": {},
+     "context": [
+      "TA0011",
+      "TA0007"
+     ],
+     "blind_spots": [
+      "auditd: not recording 2026-10-14 23:47:01 to 23:47:02 UTC (under 1 s): audit daemon stopped; audit rule removed"
+     ],
+     "episodes": [],
+     "lookalikes": {
+      "lookalike=discovery": 61,
+      "work=app": 16
+     }
+    },
+    {
+     "window": "burnin_web01_0000",
+     "host": "web01",
+     "gate": "fail: log_collection, persona_control, power",
+     "disposition": "benign",
+     "flagged": false,
+     "alerts": {},
+     "context": [
+      "TA0010",
+      "TA0007",
+      "TA0009"
+     ],
+     "blind_spots": [
+      "auditd: not recording 2026-10-15 00:11:11 to 00:18:19 UTC (428 s): audit daemon stopped"
+     ],
+     "episodes": [],
+     "lookalikes": {
+      "lookalike=discovery": 17,
+      "work=web": 4,
+      "lookalike=ingress": 4,
+      "lookalike=portscan": 3
+     }
+    },
+    {
+     "window": "burnin_web01_1300",
+     "host": "web01",
+     "gate": "fail: package_install, sensor_check",
+     "disposition": "benign",
+     "flagged": false,
+     "alerts": {},
+     "context": [
+      "TA0011",
+      "TA0007"
+     ],
+     "blind_spots": [
+      "auditd: not recording 2026-10-14 13:24:30 to 13:24:30 UTC (under 1 s): audit rule removed"
+     ],
+     "episodes": [],
+     "lookalikes": {}
+    },
+    {
+     "window": "burnin_web01_1330",
+     "host": "web01",
+     "gate": "fail: persona_control, provisioning, sensor_check",
+     "disposition": "benign",
+     "flagged": false,
+     "alerts": {},
+     "context": [
+      "TA0007",
+      "TA0010"
+     ],
+     "blind_spots": [
+      "auditd: not recording 2026-10-14 13:46:08 to 13:46:09 UTC (under 1 s): audit rule removed",
+      "auditd: not recording 2026-10-14 13:47:01 to 13:47:01 UTC (under 1 s): audit daemon stopped; audit rule removed"
+     ],
+     "episodes": [],
+     "lookalikes": {
+      "lookalike=discovery": 13,
+      "work=web": 3,
+      "lookalike=portscan": 1,
+      "lookalike=ingress": 1
+     }
+    },
+    {
+     "window": "burnin_web01_1400",
+     "host": "web01",
+     "gate": "fail: persona_control, sensor_check",
+     "disposition": "benign",
+     "flagged": false,
+     "alerts": {},
+     "context": [
+      "TA0010",
+      "TA0011",
+      "TA0007"
+     ],
+     "blind_spots": [],
+     "episodes": [],
+     "lookalikes": {
+      "lookalike=discovery": 54,
+      "lookalike=portscan": 11,
+      "work=web": 11,
+      "lookalike=ingress": 10
+     }
+    },
+    {
+     "window": "burnin_web01_1430",
+     "host": "web01",
+     "gate": "pass",
+     "disposition": "benign",
+     "flagged": false,
+     "alerts": {},
+     "context": [
+      "TA0010",
+      "TA0011",
+      "TA0007"
+     ],
+     "blind_spots": [
+      "auditd: not recording 2026-10-14 14:47:01 to 14:47:02 UTC (under 1 s): audit daemon stopped; audit rule removed"
+     ],
+     "episodes": [],
+     "lookalikes": {
+      "lookalike=discovery": 55,
+      "lookalike=ingress": 11,
+      "lookalike=portscan": 11,
+      "work=web": 11
+     }
+    },
+    {
+     "window": "burnin_web01_1500",
+     "host": "web01",
+     "gate": "pass",
+     "disposition": "benign",
+     "flagged": false,
+     "alerts": {},
+     "context": [
+      "TA0010",
+      "TA0011",
+      "TA0007"
+     ],
+     "blind_spots": [],
+     "episodes": [],
+     "lookalikes": {
+      "lookalike=discovery": 51,
+      "lookalike=ingress": 11,
+      "lookalike=portscan": 10,
+      "work=web": 10
+     }
+    },
+    {
+     "window": "burnin_web01_1530",
+     "host": "web01",
+     "gate": "pass",
+     "disposition": "benign",
+     "flagged": false,
+     "alerts": {},
+     "context": [
+      "TA0010",
+      "TA0011",
+      "TA0007"
+     ],
+     "blind_spots": [
+      "auditd: not recording 2026-10-14 15:47:01 to 15:47:01 UTC (under 1 s): audit daemon stopped; audit rule removed"
+     ],
+     "episodes": [],
+     "lookalikes": {
+      "lookalike=discovery": 49,
+      "lookalike=portscan": 10,
+      "work=web": 10,
+      "lookalike=ingress": 9
+     }
+    },
+    {
+     "window": "burnin_web01_1600",
+     "host": "web01",
+     "gate": "fail: sensor_check",
+     "disposition": "benign",
+     "flagged": false,
+     "alerts": {},
+     "context": [
+      "TA0010",
+      "TA0011",
+      "TA0007"
+     ],
+     "blind_spots": [],
+     "episodes": [],
+     "lookalikes": {
+      "lookalike=discovery": 55,
+      "lookalike=ingress": 11,
+      "lookalike=portscan": 11,
+      "work=web": 11
+     }
+    },
+    {
+     "window": "burnin_web01_1630",
+     "host": "web01",
+     "gate": "pass",
+     "disposition": "benign",
+     "flagged": false,
+     "alerts": {},
+     "context": [
+      "TA0010",
+      "TA0011",
+      "TA0007"
+     ],
+     "blind_spots": [
+      "auditd: not recording 2026-10-14 16:47:01 to 16:47:01 UTC (under 1 s): audit daemon stopped; audit rule removed",
+      "auditd: not recording 2026-10-14 16:58:39 to 16:58:39 UTC (under 1 s): audit daemon stopped; audit rule removed"
+     ],
+     "episodes": [],
+     "lookalikes": {
+      "lookalike=discovery": 51,
+      "lookalike=ingress": 10,
+      "lookalike=portscan": 10,
+      "work=web": 10
+     }
+    },
+    {
+     "window": "burnin_web01_1700",
+     "host": "web01",
+     "gate": "pass",
+     "disposition": "benign",
+     "flagged": false,
+     "alerts": {},
+     "context": [
+      "TA0010",
+      "TA0011",
+      "TA0007"
+     ],
+     "blind_spots": [],
+     "episodes": [],
+     "lookalikes": {
+      "lookalike=ingress": 11,
+      "lookalike=discovery": 54,
+      "lookalike=portscan": 11,
+      "work=web": 11
+     }
+    },
+    {
+     "window": "burnin_web01_1730",
+     "host": "web01",
+     "gate": "pass",
+     "disposition": "benign",
+     "flagged": false,
+     "alerts": {},
+     "context": [
+      "TA0010",
+      "TA0011",
+      "TA0007"
+     ],
+     "blind_spots": [
+      "auditd: not recording 2026-10-14 17:47:01 to 17:47:02 UTC (under 1 s): audit daemon stopped; audit rule removed"
+     ],
+     "episodes": [],
+     "lookalikes": {
+      "lookalike=discovery": 51,
+      "lookalike=ingress": 11,
+      "lookalike=portscan": 10,
+      "work=web": 10
+     }
+    },
+    {
+     "window": "burnin_web01_1800",
+     "host": "web01",
+     "gate": "pass",
+     "disposition": "benign",
+     "flagged": false,
+     "alerts": {},
+     "context": [
+      "TA0010",
+      "TA0011",
+      "TA0007"
+     ],
+     "blind_spots": [],
+     "episodes": [],
+     "lookalikes": {
+      "lookalike=discovery": 54,
+      "lookalike=portscan": 11,
+      "work=web": 11,
+      "lookalike=ingress": 10
+     }
+    },
+    {
+     "window": "burnin_web01_1830",
+     "host": "web01",
+     "gate": "pass",
+     "disposition": "benign",
+     "flagged": false,
+     "alerts": {},
+     "context": [
+      "TA0010",
+      "TA0011",
+      "TA0007"
+     ],
+     "blind_spots": [
+      "auditd: not recording 2026-10-14 18:47:01 to 18:47:02 UTC (under 1 s): audit daemon stopped; audit rule removed"
+     ],
+     "episodes": [],
+     "lookalikes": {
+      "lookalike=discovery": 51,
+      "lookalike=ingress": 10,
+      "lookalike=portscan": 10,
+      "work=web": 10
+     }
+    },
+    {
+     "window": "burnin_web01_1900",
+     "host": "web01",
+     "gate": "pass",
+     "disposition": "benign",
+     "flagged": false,
+     "alerts": {},
+     "context": [
+      "TA0010",
+      "TA0011",
+      "TA0007"
+     ],
+     "blind_spots": [],
+     "episodes": [],
+     "lookalikes": {
+      "lookalike=ingress": 11,
+      "lookalike=discovery": 55,
+      "lookalike=portscan": 11,
+      "work=web": 11
+     }
+    },
+    {
+     "window": "burnin_web01_1930",
+     "host": "web01",
+     "gate": "pass",
+     "disposition": "benign",
+     "flagged": false,
+     "alerts": {},
+     "context": [
+      "TA0010",
+      "TA0011",
+      "TA0007"
+     ],
+     "blind_spots": [
+      "auditd: not recording 2026-10-14 19:47:01 to 19:47:01 UTC (under 1 s): audit daemon stopped; audit rule removed"
+     ],
+     "episodes": [],
+     "lookalikes": {
+      "lookalike=ingress": 11,
+      "lookalike=discovery": 53,
+      "lookalike=portscan": 11,
+      "work=web": 10
+     }
+    },
+    {
+     "window": "burnin_web01_2000",
+     "host": "web01",
+     "gate": "pass",
+     "disposition": "benign",
+     "flagged": false,
+     "alerts": {},
+     "context": [
+      "TA0010",
+      "TA0011",
+      "TA0007"
+     ],
+     "blind_spots": [],
+     "episodes": [],
+     "lookalikes": {
+      "lookalike=discovery": 52,
+      "work=web": 11,
+      "lookalike=ingress": 11,
+      "lookalike=portscan": 10
+     }
+    },
+    {
+     "window": "burnin_web01_2030",
+     "host": "web01",
+     "gate": "pass",
+     "disposition": "benign",
+     "flagged": false,
+     "alerts": {},
+     "context": [
+      "TA0010",
+      "TA0011",
+      "TA0007"
+     ],
+     "blind_spots": [
+      "auditd: not recording 2026-10-14 20:47:01 to 20:47:01 UTC (under 1 s): audit daemon stopped; audit rule removed"
+     ],
+     "episodes": [],
+     "lookalikes": {
+      "lookalike=discovery": 50,
+      "lookalike=portscan": 10,
+      "work=web": 10,
+      "lookalike=ingress": 9
+     }
+    },
+    {
+     "window": "burnin_web01_2100",
+     "host": "web01",
+     "gate": "pass",
+     "disposition": "benign",
+     "flagged": false,
+     "alerts": {},
+     "context": [
+      "TA0010",
+      "TA0011",
+      "TA0007"
+     ],
+     "blind_spots": [],
+     "episodes": [],
+     "lookalikes": {
+      "lookalike=ingress": 11,
+      "lookalike=discovery": 53,
+      "lookalike=portscan": 11,
+      "work=web": 10
+     }
+    },
+    {
+     "window": "burnin_web01_2130",
+     "host": "web01",
+     "gate": "pass",
+     "disposition": "benign",
+     "flagged": false,
+     "alerts": {},
+     "context": [
+      "TA0010",
+      "TA0011",
+      "TA0007"
+     ],
+     "blind_spots": [
+      "auditd: not recording 2026-10-14 21:47:01 to 21:47:01 UTC (under 1 s): audit daemon stopped; audit rule removed"
+     ],
+     "episodes": [],
+     "lookalikes": {
+      "lookalike=discovery": 53,
+      "work=web": 11,
+      "lookalike=ingress": 11,
+      "lookalike=portscan": 11
+     }
+    },
+    {
+     "window": "burnin_web01_2200",
+     "host": "web01",
+     "gate": "pass",
+     "disposition": "benign",
+     "flagged": false,
+     "alerts": {},
+     "context": [
+      "TA0010",
+      "TA0011",
+      "TA0007"
+     ],
+     "blind_spots": [],
+     "episodes": [],
+     "lookalikes": {
+      "lookalike=discovery": 54,
+      "work=web": 11,
+      "lookalike=ingress": 11,
+      "lookalike=portscan": 10
+     }
+    },
+    {
+     "window": "burnin_web01_2230",
+     "host": "web01",
+     "gate": "pass",
+     "disposition": "benign",
+     "flagged": false,
+     "alerts": {},
+     "context": [
+      "TA0010",
+      "TA0011",
+      "TA0007"
+     ],
+     "blind_spots": [
+      "auditd: not recording 2026-10-14 22:47:01 to 22:47:02 UTC (under 1 s): audit daemon stopped; audit rule removed"
+     ],
+     "episodes": [],
+     "lookalikes": {
+      "lookalike=discovery": 54,
+      "lookalike=portscan": 11,
+      "work=web": 11,
+      "lookalike=ingress": 10
+     }
+    },
+    {
+     "window": "burnin_web01_2300",
+     "host": "web01",
+     "gate": "pass",
+     "disposition": "benign",
+     "flagged": false,
+     "alerts": {},
+     "context": [
+      "TA0010",
+      "TA0011",
+      "TA0007"
+     ],
+     "blind_spots": [],
+     "episodes": [],
+     "lookalikes": {
+      "lookalike=discovery": 55,
+      "lookalike=ingress": 11,
+      "lookalike=portscan": 11,
+      "work=web": 11
+     }
+    },
+    {
+     "window": "burnin_web01_2330",
+     "host": "web01",
+     "gate": "pass",
+     "disposition": "benign",
+     "flagged": false,
+     "alerts": {},
+     "context": [
+      "TA0010",
+      "TA0011",
+      "TA0007"
+     ],
+     "blind_spots": [
+      "auditd: not recording 2026-10-14 23:47:01 to 23:47:02 UTC (under 1 s): audit daemon stopped; audit rule removed"
+     ],
+     "episodes": [],
+     "lookalikes": {
+      "lookalike=discovery": 59,
+      "lookalike=ingress": 12,
+      "lookalike=portscan": 12,
+      "work=web": 11
+     }
+    },
+    {
+     "window": "burnin_ws-dev01_1300",
+     "host": "ws-dev01",
+     "gate": "fail: package_install, sensor_check",
+     "disposition": "benign",
+     "flagged": false,
+     "alerts": {},
+     "context": [
+      "TA0011",
+      "TA0007"
+     ],
+     "blind_spots": [
+      "auditd: not recording 2026-10-14 13:24:35 to 13:24:35 UTC (under 1 s): audit rule removed"
+     ],
+     "episodes": [],
+     "lookalikes": {}
+    },
+    {
+     "window": "burnin_ws-dev01_1330",
+     "host": "ws-dev01",
+     "gate": "fail: provisioning, sensor_check",
+     "disposition": "benign",
+     "flagged": false,
+     "alerts": {},
+     "context": [
+      "TA0007"
+     ],
+     "blind_spots": [
+      "auditd: not recording 2026-10-14 13:46:20 to 13:46:20 UTC (under 1 s): audit rule removed",
+      "auditd: not recording 2026-10-14 13:47:01 to 13:47:02 UTC (under 1 s): audit daemon stopped; audit rule removed"
+     ],
+     "episodes": [],
+     "lookalikes": {}
+    },
+    {
+     "window": "burnin_ws-dev01_1400",
+     "host": "ws-dev01",
+     "gate": "fail: persona_control, sensor_check",
+     "disposition": "benign",
+     "flagged": false,
+     "alerts": {},
+     "context": [
+      "TA0007"
+     ],
+     "blind_spots": [],
+     "episodes": [],
+     "lookalikes": {
+      "lookalike=discovery": 51,
+      "work=dev": 9,
+      "lookalike=staging": 8,
+      "lookalike=defense-evasion": 8
+     }
+    },
+    {
+     "window": "burnin_ws-dev01_1430",
+     "host": "ws-dev01",
+     "gate": "pass",
+     "disposition": "benign",
+     "flagged": false,
+     "alerts": {},
+     "context": [
+      "TA0011",
+      "TA0007"
+     ],
+     "blind_spots": [
+      "auditd: not recording 2026-10-14 14:47:01 to 14:47:02 UTC (under 1 s): audit daemon stopped; audit rule removed"
+     ],
+     "episodes": [],
+     "lookalikes": {
+      "lookalike=discovery": 51,
+      "lookalike=staging": 9,
+      "lookalike=defense-evasion": 9,
+      "work=dev": 8
+     }
+    },
+    {
+     "window": "burnin_ws-dev01_1500",
+     "host": "ws-dev01",
+     "gate": "pass",
+     "disposition": "benign",
+     "flagged": false,
+     "alerts": {},
+     "context": [
+      "TA0011",
+      "TA0007"
+     ],
+     "blind_spots": [],
+     "episodes": [],
+     "lookalikes": {
+      "lookalike=discovery": 52,
+      "work=dev": 9,
+      "lookalike=staging": 8,
+      "lookalike=defense-evasion": 8
+     }
+    },
+    {
+     "window": "burnin_ws-dev01_1530",
+     "host": "ws-dev01",
+     "gate": "pass",
+     "disposition": "benign",
+     "flagged": false,
+     "alerts": {},
+     "context": [
+      "TA0007"
+     ],
+     "blind_spots": [],
+     "episodes": [],
+     "lookalikes": {
+      "lookalike=discovery": 12,
+      "lookalike=staging": 2,
+      "lookalike=defense-evasion": 2,
+      "work=dev": 2
+     }
+    },
+    {
+     "window": "burnin_ws-fin01_1230",
+     "host": "ws-fin01",
+     "gate": "fail: first_boot, sensor_check",
+     "disposition": "benign",
+     "flagged": false,
+     "alerts": {},
+     "context": [
+      "TA0011",
+      "TA0007"
+     ],
+     "blind_spots": [
+      "auditd: not recording 2026-10-14 12:49:32 to 12:49:32 UTC (under 1 s): audit rule removed"
+     ],
+     "episodes": [],
+     "lookalikes": {}
+    },
+    {
+     "window": "burnin_ws-fin01_1300",
+     "host": "ws-fin01",
+     "gate": "fail: provisioning, sensor_check",
+     "disposition": "benign",
+     "flagged": false,
+     "alerts": {},
+     "context": [
+      "TA0011",
+      "TA0007"
+     ],
+     "blind_spots": [
+      "auditd: not recording 2026-10-14 13:24:34 to 13:24:34 UTC (under 1 s): audit rule removed"
+     ],
+     "episodes": [],
+     "lookalikes": {}
+    },
+    {
+     "window": "burnin_ws-fin01_1330",
+     "host": "ws-fin01",
+     "gate": "fail: provisioning, sensor_check",
+     "disposition": "benign",
+     "flagged": false,
+     "alerts": {},
+     "context": [
+      "TA0011",
+      "TA0007"
+     ],
+     "blind_spots": [
+      "auditd: not recording 2026-10-14 13:46:31 to 13:46:31 UTC (under 1 s): audit rule removed",
+      "auditd: not recording 2026-10-14 13:47:01 to 13:47:01 UTC (under 1 s): audit daemon stopped; audit rule removed"
+     ],
+     "episodes": [],
+     "lookalikes": {}
+    },
+    {
+     "window": "burnin_ws-fin01_1400",
+     "host": "ws-fin01",
+     "gate": "fail: persona_control, sensor_check",
+     "disposition": "benign",
+     "flagged": false,
+     "alerts": {},
+     "context": [
+      "TA0011",
+      "TA0007"
+     ],
+     "blind_spots": [],
+     "episodes": [],
+     "lookalikes": {
+      "lookalike=discovery": 48,
+      "work=fin": 8,
+      "lookalike=bruteforce": 8,
+      "lookalike=staging": 8
+     }
+    },
+    {
+     "window": "burnin_ws-fin01_1430",
+     "host": "ws-fin01",
+     "gate": "pass",
+     "disposition": "benign",
+     "flagged": false,
+     "alerts": {},
+     "context": [
+      "TA0011",
+      "TA0007"
+     ],
+     "blind_spots": [
+      "auditd: not recording 2026-10-14 14:47:01 to 14:47:01 UTC (under 1 s): audit daemon stopped; audit rule removed"
+     ],
+     "episodes": [],
+     "lookalikes": {
+      "lookalike=discovery": 52,
+      "work=fin": 9,
+      "lookalike=bruteforce": 9,
+      "lookalike=staging": 8
+     }
+    },
+    {
+     "window": "burnin_ws-fin01_1500",
+     "host": "ws-fin01",
+     "gate": "pass",
+     "disposition": "benign",
+     "flagged": false,
+     "alerts": {},
+     "context": [
+      "TA0011",
+      "TA0007"
+     ],
+     "blind_spots": [],
+     "episodes": [],
+     "lookalikes": {
+      "lookalike=discovery": 46,
+      "lookalike=staging": 8,
+      "work=fin": 7,
+      "lookalike=bruteforce": 7
+     }
+    },
+    {
+     "window": "burnin_ws-fin01_1530",
+     "host": "ws-fin01",
+     "gate": "pass",
+     "disposition": "benign",
+     "flagged": false,
+     "alerts": {},
+     "context": [
+      "TA0007"
+     ],
+     "blind_spots": [],
+     "episodes": [],
+     "lookalikes": {
+      "lookalike=discovery": 19,
+      "work=fin": 3,
+      "lookalike=bruteforce": 3,
+      "lookalike=staging": 3
+     }
+    }
+   ]
+  }
+ }
+}

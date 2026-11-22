@@ -1,0 +1,104 @@
+{
+ "category": "attack",
+ "malicious_event_ids": [
+  "run1_app01_1330:auditd:596",
+  "run1_app01_1330:auditd:597",
+  "run1_app01_1330:auditd:598",
+  "run1_app01_1330:auditd:599",
+  "run1_app01_1330:auditd:600",
+  "run1_app01_1330:auditd:601",
+  "run1_app01_1330:auditd:602",
+  "run1_app01_1330:auditd:603",
+  "run1_app01_1330:auditd:604",
+  "run1_app01_1330:auditd:605",
+  "run1_app01_1330:auditd:606",
+  "run1_app01_1330:auditd:607",
+  "run1_app01_1330:auditd:608"
+ ],
+ "abilities": [
+  {
+   "name": "IP Neighbour Show",
+   "status": "success",
+   "technique_id": "T1016",
+   "command": "if [ -x \"$(command -v ip)\" ]; then : ; else apt-get install iproute2 -y; fi; ip neighbour show",
+   "event_ids": [
+    "run1_app01_1330:auditd:596",
+    "run1_app01_1330:auditd:597"
+   ],
+   "bootstrap": false,
+   "deployment": false,
+   "process_event_ids": [
+    "run1_app01_1330:auditd:596",
+    "run1_app01_1330:auditd:597"
+   ]
+  },
+  {
+   "name": "Find System Network Connections",
+   "status": "failed",
+   "technique_id": "T1049",
+   "command": "netstat -anto",
+   "event_ids": [
+    "run1_app01_1330:auditd:598"
+   ],
+   "bootstrap": false,
+   "deployment": false,
+   "process_event_ids": [
+    "run1_app01_1330:auditd:598"
+   ]
+  },
+  {
+   "name": "Enumerate all accounts (Local)",
+   "status": "success",
+   "technique_id": "T1087.001",
+   "command": "cat /etc/passwd > /tmp/T1087.001.txt; cat /tmp/T1087.001.txt",
+   "event_ids": [
+    "run1_app01_1330:auditd:599",
+    "run1_app01_1330:auditd:600",
+    "run1_app01_1330:auditd:601"
+   ],
+   "bootstrap": false,
+   "deployment": false,
+   "process_event_ids": [
+    "run1_app01_1330:auditd:599",
+    "run1_app01_1330:auditd:600",
+    "run1_app01_1330:auditd:601"
+   ]
+  },
+  {
+   "name": "Check Chrome",
+   "status": "failed",
+   "technique_id": "T1518",
+   "command": "which google-chrome",
+   "event_ids": [
+    "run1_app01_1330:auditd:602",
+    "run1_app01_1330:auditd:603"
+   ],
+   "bootstrap": false,
+   "deployment": false,
+   "process_event_ids": [
+    "run1_app01_1330:auditd:602",
+    "run1_app01_1330:auditd:603"
+   ]
+  },
+  {
+   "name": "Access /etc/master.passwd (Local)",
+   "status": "no_result",
+   "technique_id": "T1003.008",
+   "command": "sudo cat /etc/master.passwd > /tmp/T1003.008.txt; cat /tmp/T1003.008.txt",
+   "event_ids": [
+    "run1_app01_1330:auditd:604",
+    "run1_app01_1330:auditd:605",
+    "run1_app01_1330:auditd:606",
+    "run1_app01_1330:auditd:607",
+    "run1_app01_1330:auditd:608"
+   ],
+   "bootstrap": false,
+   "deployment": false,
+   "process_event_ids": [
+    "run1_app01_1330:auditd:604",
+    "run1_app01_1330:auditd:605"
+   ]
+  }
+ ],
+ "source": "CALDERA report test2_report.json + bootstrap actions from ground_truth.json: step pid + descendants, agent lineage"
+}

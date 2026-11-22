@@ -1,0 +1,14 @@
+{
+  "key": "5d0035d83471ea03a87e81dd773097ef7729b6916c5eb181993139cd44672cc3",
+  "provider": "ollama",
+  "model": "gpt-oss:120b-cloud",
+  "prompt_sha": "5d0035d83471ea03",
+  "response": "{\n  \"rules\": [],\n  \"reasoning\": \"The episode consists of standard system utilities (dpkg-preconfigure, perl, stty, whiptail) being invoked during package configuration. These are common, benign operations that occur during updates or installations and do not exhibit suspicious behaviour such as credential dumping, remote code execution, or persistence mechanisms. Therefore no detection rule is warranted.\"\n}",
+  "latency_s": 9.34847617149353,
+  "created_at": 1791394620.009085,
+  "params": {
+    "temperature": 0.0,
+    "seed": 7,
+    "json_mode": true
+  }
+}

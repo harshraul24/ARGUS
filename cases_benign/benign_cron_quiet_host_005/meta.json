@@ -1,0 +1,58 @@
+{
+  "meta_version": "v0.2",
+  "scenario_id": "benign_cron_quiet_host_005",
+  "category": "benign",
+  "title": "Quiet production host: cron, NTP and log rotation only",
+  "generated_by": "tools/make_benign_cases.py (synthetic benign corpus)",
+  "topology": {
+    "hosts": [
+      {
+        "name": "target",
+        "ip": "10.0.2.20",
+        "role": "victim",
+        "os": "Linux"
+      },
+      {
+        "name": "jumphost",
+        "ip": "10.0.2.5",
+        "role": "admin",
+        "os": "Linux"
+      }
+    ],
+    "zeek_sensor": {
+      "host": "capture",
+      "position": "target segment"
+    }
+  },
+  "capture": {
+    "window": {
+      "start": "2026-03-07T00:09:00Z",
+      "end": "2026-03-07T12:09:00Z"
+    },
+    "clean_capture": true
+  },
+  "expected_observables": {
+    "authlog": {
+      "logon_success": false,
+      "logon_failure": false
+    },
+    "zeek": {
+      "conn": true
+    }
+  },
+  "mitre": {
+    "technique": null
+  },
+  "ground_truth": {
+    "category": "benign",
+    "objective_reached": false,
+    "techniques": [],
+    "primary_technique": null,
+    "why_benign": "No interactive logins and no remote access at all during the window; the only sessions are local cron jobs run as root.",
+    "confounds": [
+      "root sessions opened repeatedly",
+      "near-total absence of security-relevant telemetry"
+    ],
+    "actions": []
+  }
+}

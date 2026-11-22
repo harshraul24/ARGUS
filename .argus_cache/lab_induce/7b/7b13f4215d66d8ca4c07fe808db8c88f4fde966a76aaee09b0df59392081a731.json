@@ -1,0 +1,14 @@
+{
+  "key": "7b13f4215d66d8ca4c07fe808db8c88f4fde966a76aaee09b0df59392081a731",
+  "provider": "ollama",
+  "model": "gpt-oss:120b-cloud",
+  "prompt_sha": "7b13f4215d66d8ca",
+  "response": "{\n  \"rules\": [],\n  \"reasoning\": \"The episode consists of standard system administration commands (systemctl enable auditd, update-rc.d, daemon-reload) that are typical for configuring the audit daemon on a Linux host. These actions are routine, not indicative of malicious behaviour, and would fire on many legitimate captures, violating the QUIET requirement. Therefore no detection rule is generated.\"\n}",
+  "latency_s": 3.7492318153381348,
+  "created_at": 1791394610.658829,
+  "params": {
+    "temperature": 0.0,
+    "seed": 7,
+    "json_mode": true
+  }
+}

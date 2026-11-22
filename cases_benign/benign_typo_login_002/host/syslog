@@ -1,0 +1,8 @@
+Mar  5 05:41:12 appsrv01 CRON[5000]: pam_unix(cron:session): session opened for user root by (uid=0)
+Mar  5 05:41:13 appsrv01 CRON[5000]: pam_unix(cron:session): session closed for user root
+Mar  5 06:41:12 appsrv01 CRON[5001]: pam_unix(cron:session): session opened for user root by (uid=0)
+Mar  5 06:41:13 appsrv01 CRON[5001]: pam_unix(cron:session): session closed for user root
+Mar  5 07:41:12 appsrv01 CRON[5002]: pam_unix(cron:session): session opened for user root by (uid=0)
+Mar  5 07:41:13 appsrv01 CRON[5002]: pam_unix(cron:session): session closed for user root
+Mar  5 08:41:12 appsrv01 CRON[5003]: pam_unix(cron:session): session opened for user root by (uid=0)
+Mar  5 08:41:13 appsrv01 CRON[5003]: pam_unix(cron:session): session closed for user root

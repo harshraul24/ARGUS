@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>ARGUS Live</title>
+<link rel="stylesheet" href="app.css?v=13">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand"><span class="logo">ARGUS</span></div>
+  <nav class="segmented" role="tablist" aria-label="Pages">
+    <button class="nav-btn active" data-page="queue" role="tab">Live</button>
+    <button class="nav-btn" data-page="gaps" role="tab">Coverage</button>
+    <button class="nav-btn" data-page="library" role="tab">Rules</button>
+  </nav>
+  <div class="controls">
+    <span id="live-state" class="live-state" aria-live="polite"></span>
+    <select id="live-run" aria-label="Run the log receiver is writing" title="The run the log receiver is writing"></select>
+    <button id="live-start" class="btn small">Start</button>
+    <button id="live-stop" class="btn secondary small" hidden>Stop</button>
+  </div>
+</header>
+
+<main id="page-queue" class="page live-page">
+  <section id="hosts" class="hosts" aria-label="Hosts"></section>
+  <div class="queue-page">
+    <aside class="queue">
+      <div class="queue-head">
+        <div class="segmented seg-small" role="tablist" aria-label="Show">
+          <button class="seg-btn active" data-show="attention" role="tab">Attention <span id="n-attention" class="seg-n"></span></button>
+          <button class="seg-btn" data-show="all" role="tab">All <span id="n-all" class="seg-n"></span></button>
+        </div>
+        <button type="button" id="host-filter" class="host-filter" hidden></button>
+      </div>
+      <div class="queue-tools">
+        <input id="search" type="search" placeholder="Search process, command or host" aria-label="Filter cases">
+      </div>
+      <ul id="queue-list" class="queue-list" role="listbox" aria-label="Cases" tabindex="0"></ul>
+      <div id="queue-stats" class="queue-stats"></div>
+    </aside>
+    <section id="detail" class="detail"></section>
+  </div>
+</main>
+
+<main id="page-gaps" class="page scroll" hidden>
+  <div class="column">
+    <h1>Coverage</h1>
+    <p class="lede">Blind spots across the live cases decided so far, ranked by how many decisions they left undecidable. This is where a sensor investment pays off.</p>
+    <section class="panel"><div id="gaps-body"></div></section>
+  </div>
+</main>
+
+<main id="page-library" class="page scroll" hidden>
+  <div class="column">
+    <h1>Rules</h1>
+    <p class="lede" id="library-meta"></p>
+    <section class="panel learn">
+      <h2>Learn new rules</h2>
+      <p class="muted" id="learn-source">ARGUS writes rules from new process activity in the lab's design operations, checks each one
+         without labels, and adds the ones that pass to the library. Rules no independent source confirms wait for your review below.</p>
+      <form id="learn-form" class="learn-form" autocomplete="off">
+        <label class="field">Model <input id="learn-model" type="text" spellcheck="false"></label>
+        <label class="field">API key <input id="learn-key" type="password" autocomplete="new-password"
+               placeholder="Used for this run only, never saved"></label>
+        <button class="btn" id="learn-start" type="submit">Learn rules</button>
+      </form>
+      <div id="learn-status" class="learn-status" aria-live="polite"></div>
+    </section>
+    <section class="panel">
+      <div class="panel-head">
+        <h2>Library</h2>
+        <select id="lib-filter" aria-label="Status filter">
+          <option value="">All statuses</option>
+          <option value="shadow">Awaiting review</option>
+          <option value="active">Active</option>
+          <option value="retired">Retired</option>
+          <option value="rejected">Rejected</option>
+        </select>
+      </div>
+      <p class="muted legend">Checks run in order, C1 to C5: ✓ passed · ✗ failed · · not reached. A rule decides cases only once C5 is passed, by an independent rule or by your approval. Hover a check for its question.</p>
+      <div id="library-body"></div>
+    </section>
+  </div>
+</main>
+
+<script src="app.js?v=8"></script>
+</body>
+</html>

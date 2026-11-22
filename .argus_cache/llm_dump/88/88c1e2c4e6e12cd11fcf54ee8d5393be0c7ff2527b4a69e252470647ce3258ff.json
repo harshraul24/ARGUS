@@ -1,0 +1,14 @@
+{
+  "key": "88c1e2c4e6e12cd11fcf54ee8d5393be0c7ff2527b4a69e252470647ce3258ff",
+  "provider": "ollama",
+  "model": "gpt-oss:120b-cloud",
+  "prompt_sha": "88c1e2c4e6e12cd1",
+  "response": "{\n  \"disposition\": \"malicious\",\n  \"mitre_technique\": \"T1005\",\n  \"severity\": 0.7,\n  \"malicious_events\": [\"e46\", \"e47\", \"e48\", \"e49\", \"e70\", \"e71\"],\n  \"reason\": \"Unauthorized sudo copies of /var/log/audit/audit.log to /tmp indicate data exfiltration from a privileged log file.\"\n}",
+  "latency_s": 1.671354055404663,
+  "created_at": 1791424251.721715,
+  "params": {
+    "temperature": 0.0,
+    "seed": 7,
+    "json_mode": true
+  }
+}

@@ -1,0 +1,323 @@
+{
+ "category": "attack",
+ "malicious_event_ids": [
+  "smoke_app01_1230:auditd:0",
+  "smoke_app01_1230:auditd:1",
+  "smoke_app01_1230:auditd:2",
+  "smoke_app01_1230:auditd:3",
+  "smoke_app01_1230:auditd:4",
+  "smoke_app01_1230:auditd:5",
+  "smoke_app01_1230:auditd:6",
+  "smoke_app01_1230:auditd:7",
+  "smoke_app01_1230:auditd:8",
+  "smoke_app01_1230:auditd:9",
+  "smoke_app01_1230:auditd:10",
+  "smoke_app01_1230:auditd:11",
+  "smoke_app01_1230:auditd:12",
+  "smoke_app01_1230:auditd:13",
+  "smoke_app01_1230:auditd:14",
+  "smoke_app01_1230:auditd:15",
+  "smoke_app01_1230:auditd:16",
+  "smoke_app01_1230:auditd:17",
+  "smoke_app01_1230:auditd:18",
+  "smoke_app01_1230:auditd:19",
+  "smoke_app01_1230:auditd:20",
+  "smoke_app01_1230:auditd:21",
+  "smoke_app01_1230:auditd:22",
+  "smoke_app01_1230:auditd:23",
+  "smoke_app01_1230:auditd:24",
+  "smoke_app01_1230:auditd:25",
+  "smoke_app01_1230:auditd:26",
+  "smoke_app01_1230:auditd:27",
+  "smoke_app01_1230:auditd:28",
+  "smoke_app01_1230:auditd:29",
+  "smoke_app01_1230:auditd:30",
+  "smoke_app01_1230:auditd:31",
+  "smoke_app01_1230:auditd:32",
+  "smoke_app01_1230:auditd:33",
+  "smoke_app01_1230:auditd:34",
+  "smoke_app01_1230:auditd:35",
+  "smoke_app01_1230:auditd:36",
+  "smoke_app01_1230:auditd:37",
+  "smoke_app01_1230:auditd:38",
+  "smoke_app01_1230:auditd:39",
+  "smoke_app01_1230:auditd:40",
+  "smoke_app01_1230:auditd:41",
+  "smoke_app01_1230:auditd:42",
+  "smoke_app01_1230:auditd:43",
+  "smoke_app01_1230:auditd:44"
+ ],
+ "abilities": [
+  {
+   "name": "Identify active user",
+   "status": "success",
+   "technique_id": "T1033",
+   "command": "whoami",
+   "event_ids": [
+    "smoke_app01_1230:auditd:0",
+    "smoke_app01_1230:auditd:1"
+   ],
+   "bootstrap": false,
+   "deployment": false,
+   "process_event_ids": [
+    "smoke_app01_1230:auditd:0",
+    "smoke_app01_1230:auditd:1"
+   ]
+  },
+  {
+   "name": "Find local users",
+   "status": "success",
+   "technique_id": "T1087.001",
+   "command": "cut -d: -f1 /etc/passwd | grep -v '_' | grep -v '#'",
+   "event_ids": [
+    "smoke_app01_1230:auditd:2",
+    "smoke_app01_1230:auditd:3",
+    "smoke_app01_1230:auditd:4",
+    "smoke_app01_1230:auditd:5"
+   ],
+   "bootstrap": false,
+   "deployment": false,
+   "process_event_ids": [
+    "smoke_app01_1230:auditd:2",
+    "smoke_app01_1230:auditd:3",
+    "smoke_app01_1230:auditd:4",
+    "smoke_app01_1230:auditd:5"
+   ]
+  },
+  {
+   "name": "Find user processes",
+   "status": "success",
+   "technique_id": "T1057",
+   "command": "ps aux | grep polkitd",
+   "event_ids": [
+    "smoke_app01_1230:auditd:6",
+    "smoke_app01_1230:auditd:7",
+    "smoke_app01_1230:auditd:8"
+   ],
+   "bootstrap": false,
+   "deployment": false,
+   "process_event_ids": [
+    "smoke_app01_1230:auditd:6",
+    "smoke_app01_1230:auditd:7",
+    "smoke_app01_1230:auditd:8"
+   ]
+  },
+  {
+   "name": "Find user processes",
+   "status": "success",
+   "technique_id": "T1057",
+   "command": "ps aux | grep sshd",
+   "event_ids": [
+    "smoke_app01_1230:auditd:9",
+    "smoke_app01_1230:auditd:10",
+    "smoke_app01_1230:auditd:11"
+   ],
+   "bootstrap": false,
+   "deployment": false,
+   "process_event_ids": [
+    "smoke_app01_1230:auditd:9",
+    "smoke_app01_1230:auditd:10",
+    "smoke_app01_1230:auditd:11"
+   ]
+  },
+  {
+   "name": "Find user processes",
+   "status": "success",
+   "technique_id": "T1057",
+   "command": "ps aux | grep tcpdump",
+   "event_ids": [
+    "smoke_app01_1230:auditd:12",
+    "smoke_app01_1230:auditd:13",
+    "smoke_app01_1230:auditd:14"
+   ],
+   "bootstrap": false,
+   "deployment": false,
+   "process_event_ids": [
+    "smoke_app01_1230:auditd:12",
+    "smoke_app01_1230:auditd:13",
+    "smoke_app01_1230:auditd:14"
+   ]
+  },
+  {
+   "name": "Find user processes",
+   "status": "success",
+   "technique_id": "T1057",
+   "command": "ps aux | grep systemd-resolve",
+   "event_ids": [
+    "smoke_app01_1230:auditd:15",
+    "smoke_app01_1230:auditd:16",
+    "smoke_app01_1230:auditd:17"
+   ],
+   "bootstrap": false,
+   "deployment": false,
+   "process_event_ids": [
+    "smoke_app01_1230:auditd:15",
+    "smoke_app01_1230:auditd:16",
+    "smoke_app01_1230:auditd:17"
+   ]
+  },
+  {
+   "name": "Find user processes",
+   "status": "success",
+   "technique_id": "T1057",
+   "command": "ps aux | grep messagebus",
+   "event_ids": [
+    "smoke_app01_1230:auditd:18",
+    "smoke_app01_1230:auditd:19",
+    "smoke_app01_1230:auditd:20"
+   ],
+   "bootstrap": false,
+   "deployment": false,
+   "process_event_ids": [
+    "smoke_app01_1230:auditd:18",
+    "smoke_app01_1230:auditd:19",
+    "smoke_app01_1230:auditd:20"
+   ]
+  },
+  {
+   "name": "Find user processes",
+   "status": "success",
+   "technique_id": "T1057",
+   "command": "ps aux | grep uuidd",
+   "event_ids": [
+    "smoke_app01_1230:auditd:21",
+    "smoke_app01_1230:auditd:22",
+    "smoke_app01_1230:auditd:23"
+   ],
+   "bootstrap": false,
+   "deployment": false,
+   "process_event_ids": [
+    "smoke_app01_1230:auditd:21",
+    "smoke_app01_1230:auditd:22",
+    "smoke_app01_1230:auditd:23"
+   ]
+  },
+  {
+   "name": "Find user processes",
+   "status": "success",
+   "technique_id": "T1057",
+   "command": "ps aux | grep systemd-timesync",
+   "event_ids": [
+    "smoke_app01_1230:auditd:24",
+    "smoke_app01_1230:auditd:25",
+    "smoke_app01_1230:auditd:26"
+   ],
+   "bootstrap": false,
+   "deployment": false,
+   "process_event_ids": [
+    "smoke_app01_1230:auditd:24",
+    "smoke_app01_1230:auditd:25",
+    "smoke_app01_1230:auditd:26"
+   ]
+  },
+  {
+   "name": "Find user processes",
+   "status": "success",
+   "technique_id": "T1057",
+   "command": "ps aux | grep systemd-network",
+   "event_ids": [
+    "smoke_app01_1230:auditd:27",
+    "smoke_app01_1230:auditd:28",
+    "smoke_app01_1230:auditd:29"
+   ],
+   "bootstrap": false,
+   "deployment": false,
+   "process_event_ids": [
+    "smoke_app01_1230:auditd:27",
+    "smoke_app01_1230:auditd:28",
+    "smoke_app01_1230:auditd:29"
+   ]
+  },
+  {
+   "name": "Find user processes",
+   "status": "success",
+   "technique_id": "T1057",
+   "command": "ps aux | grep nobody",
+   "event_ids": [
+    "smoke_app01_1230:auditd:30",
+    "smoke_app01_1230:auditd:31",
+    "smoke_app01_1230:auditd:32"
+   ],
+   "bootstrap": false,
+   "deployment": false,
+   "process_event_ids": [
+    "smoke_app01_1230:auditd:30",
+    "smoke_app01_1230:auditd:31",
+    "smoke_app01_1230:auditd:32"
+   ]
+  },
+  {
+   "name": "Find user processes",
+   "status": "success",
+   "technique_id": "T1057",
+   "command": "ps aux | grep irc",
+   "event_ids": [
+    "smoke_app01_1230:auditd:33",
+    "smoke_app01_1230:auditd:34",
+    "smoke_app01_1230:auditd:35"
+   ],
+   "bootstrap": false,
+   "deployment": false,
+   "process_event_ids": [
+    "smoke_app01_1230:auditd:33",
+    "smoke_app01_1230:auditd:34",
+    "smoke_app01_1230:auditd:35"
+   ]
+  },
+  {
+   "name": "Find user processes",
+   "status": "success",
+   "technique_id": "T1057",
+   "command": "ps aux | grep list",
+   "event_ids": [
+    "smoke_app01_1230:auditd:36",
+    "smoke_app01_1230:auditd:37",
+    "smoke_app01_1230:auditd:38"
+   ],
+   "bootstrap": false,
+   "deployment": false,
+   "process_event_ids": [
+    "smoke_app01_1230:auditd:36",
+    "smoke_app01_1230:auditd:37",
+    "smoke_app01_1230:auditd:38"
+   ]
+  },
+  {
+   "name": "Find user processes",
+   "status": "success",
+   "technique_id": "T1057",
+   "command": "ps aux | grep backup",
+   "event_ids": [
+    "smoke_app01_1230:auditd:39",
+    "smoke_app01_1230:auditd:40",
+    "smoke_app01_1230:auditd:41"
+   ],
+   "bootstrap": false,
+   "deployment": false,
+   "process_event_ids": [
+    "smoke_app01_1230:auditd:39",
+    "smoke_app01_1230:auditd:40",
+    "smoke_app01_1230:auditd:41"
+   ]
+  },
+  {
+   "name": "Find user processes",
+   "status": "success",
+   "technique_id": "T1057",
+   "command": "ps aux | grep www-data",
+   "event_ids": [
+    "smoke_app01_1230:auditd:42",
+    "smoke_app01_1230:auditd:43",
+    "smoke_app01_1230:auditd:44"
+   ],
+   "bootstrap": false,
+   "deployment": false,
+   "process_event_ids": [
+    "smoke_app01_1230:auditd:42",
+    "smoke_app01_1230:auditd:43",
+    "smoke_app01_1230:auditd:44"
+   ]
+  }
+ ],
+ "source": "CALDERA report smoke-discovery_report.json + bootstrap actions from ground_truth.json: step pid + descendants, agent lineage"
+}

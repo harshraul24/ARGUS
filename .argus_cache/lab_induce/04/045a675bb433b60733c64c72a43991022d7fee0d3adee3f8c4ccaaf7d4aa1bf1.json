@@ -1,0 +1,14 @@
+{
+  "key": "045a675bb433b60733c64c72a43991022d7fee0d3adee3f8c4ccaaf7d4aa1bf1",
+  "provider": "ollama",
+  "model": "gpt-oss:120b-cloud",
+  "prompt_sha": "045a675bb433b607",
+  "response": "{\n  \"rules\": [],\n  \"reasoning\": \"The episode consists of standard system utilities (dpkg-preconfigure, perl, stty, whiptail) being invoked during package configuration, including a harmless read of /etc/shadow for identity verification. All binaries are from system directories, no user\u2011writable executables are involved, and the actions match normal package management behavior. Therefore the behavior is routine and does not warrant a detection rule.\"\n}",
+  "latency_s": 8.803086042404175,
+  "created_at": 1791394584.04439,
+  "params": {
+    "temperature": 0.0,
+    "seed": 7,
+    "json_mode": true
+  }
+}

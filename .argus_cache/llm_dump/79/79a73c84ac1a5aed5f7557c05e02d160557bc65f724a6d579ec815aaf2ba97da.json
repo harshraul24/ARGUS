@@ -1,0 +1,14 @@
+{
+  "key": "79a73c84ac1a5aed5f7557c05e02d160557bc65f724a6d579ec815aaf2ba97da",
+  "provider": "ollama",
+  "model": "gpt-oss:120b-cloud",
+  "prompt_sha": "79a73c84ac1a5aed",
+  "response": "{\n  \"disposition\": \"malicious\",\n  \"mitre_technique\": \"T1105\",\n  \"severity\": 0.95,\n  \"malicious_events\": [\n    \"e1\",\"e2\",\"e3\",\"e4\",\"e5\",\"e6\",\"e7\",\"e8\",\"e9\",\"e10\",\"e11\",\"e12\",\"e13\",\"e14\",\n    \"e15\",\"e16\",\"e17\",\"e18\",\"e19\",\"e20\",\"e21\",\"e22\",\"e23\",\"e24\",\"e25\",\"e26\",\n    \"e27\",\"e28\",\"e29\",\"e30\",\"e31\",\"e32\",\"e33\",\"e34\",\"e35\",\"e36\",\"e37\",\"e38\",\n    \"e39\",\"e40\",\"e41\",\"e42\",\"e43\",\"e44\",\"e45\",\"e46\",\"e47\"\n  ],\n  \"reason\": \"A suspicious binary (sandcat) was downloaded from a C2 server, made executable, run, and then used to enumerate processes and services, matching ingress tool transfer and discovery behavior.\"\n}",
+  "latency_s": 2.55298113822937,
+  "created_at": 1791424294.800592,
+  "params": {
+    "temperature": 0.0,
+    "seed": 8,
+    "json_mode": true
+  }
+}

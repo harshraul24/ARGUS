@@ -1,0 +1,14 @@
+{
+  "key": "7b794d1f8de1d1e2fedb2bfb9de023d6945c44b12d9d36e193ea57c01cfe8e30",
+  "provider": "ollama",
+  "model": "gpt-oss:120b-cloud",
+  "prompt_sha": "7b794d1f8de1d1e2",
+  "response": "{\n  \"disposition\": \"benign\",\n  \"mitre_technique\": \"none\",\n  \"severity\": 0.1,\n  \"malicious_events\": [],\n  \"reason\": \"All observed processes are standard package installation, configuration, and system initialization activities (dpkg, ucf, systemd, cloud-init, etc.) with no anomalous commands, outbound connections, or sensitive file accesses indicative of an attack.\"\n}",
+  "latency_s": 3.3786191940307617,
+  "created_at": 1791424262.004331,
+  "params": {
+    "temperature": 0.0,
+    "seed": 7,
+    "json_mode": true
+  }
+}

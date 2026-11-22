@@ -1,0 +1,18 @@
+ARGUS
+Copyright (c) 2026 Harsh Rajesh Raul
+
+Third-party material
+
+The MIT licence above covers this project's own code, data and documentation.
+It does not cover the following, which keep their original licences:
+
+- intel/snapshots/lab/argus_sigma_rules.json, import_report.json and the
+  Sigma-derived parts of behaviour_vocab.json (also installed as
+  source code/argus/normalize/behaviour_vocab.json): derived from SigmaHQ rules
+  (https://github.com/SigmaHQ/sigma), Detection Rule License (DRL) 1.1.
+- Parts of the behaviour vocabulary derived from GTFOBins
+  (https://github.com/GTFOBins/GTFOBins.github.io), GPL-3.0.
+- MITRE ATT&CK technique identifiers and names: MITRE ATT&CK Terms of Use.
+  ATT&CK and CALDERA are trademarks of The MITRE Corporation.
+
+The source commits are pinned in intel/snapshots/lab/MANIFEST.json.

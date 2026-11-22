@@ -1,0 +1,14 @@
+{
+  "key": "222a80d70ef46604d2e1fd4af3b7f3bfb5a9b1c128deb45211e5498aa79df697",
+  "provider": "ollama",
+  "model": "gpt-oss:120b-cloud",
+  "prompt_sha": "222a80d70ef46604",
+  "response": "{\n  \"disposition\": \"benign\",\n  \"mitre_technique\": \"none\",\n  \"severity\": 0.0,\n  \"malicious_events\": [],\n  \"reason\": \"All observed processes are standard system and user activities with no anomalous commands, network connections, or sensitive file accesses.\"\n}",
+  "latency_s": 1.4198188781738281,
+  "created_at": 1791424263.432207,
+  "params": {
+    "temperature": 0.0,
+    "seed": 7,
+    "json_mode": true
+  }
+}

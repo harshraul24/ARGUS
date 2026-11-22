@@ -1,0 +1,14 @@
+{
+  "key": "0b05f926ab2b1c57ba7b7851162d23b844c10d1187380bc4b06cdf375ce96fd3",
+  "provider": "ollama",
+  "model": "gpt-oss:120b-cloud",
+  "prompt_sha": "0b05f926ab2b1c57",
+  "response": "{\n  \"rules\": [\n    {\n      \"id\": \"llm.credential-dump-master-passwd.b0f086460c\",\n      \"technique\": \"T1003.008\",\n      \"name\": \"Read /etc/master.passwd (credential dumping)\",\n      \"tactic\": \"credential-access\",\n      \"severity\": 0.9,\n      \"evidence\": [\n        \"ev_000629\"\n      ],\n      \"indicators\": [\n        {\n          \"name\": \"access_master_passwd\",\n          \"weight\": 1.0,\n          \"required\": true,\n          \"select\": {\n            \"claim_type\": \"process_create\",\n            \"facts.command\": {\n              \"contains_any\": [\n                \"master.passwd\"\n              ]\n            }\n          },\n          \"score\": {\n            \"op\": \"threshold\",\n            \"value\": 1,\n            \"at\": 1\n          }\n        }\n      ]\n    }\n  ],\n  \"reasoning\": \"The rule now correctly matches any process creation whose command line contains the substring \\\"master.passwd\\\", which is the hallmark of credential dumping from the system password file. The selector no longer relies on optional behaviour.tactics metadata, ensuring the rule fires on the observed episode. The score definition uses a numeric value, fixing the syntax error. This behaviour is rare on typical hosts, satisfying the quiet requirement, and aligns with the ATT&CK technique T1003.008.\"\n}",
+  "latency_s": 11.26492691040039,
+  "created_at": 1791394651.831486,
+  "params": {
+    "temperature": 0.0,
+    "seed": 7,
+    "json_mode": true
+  }
+}

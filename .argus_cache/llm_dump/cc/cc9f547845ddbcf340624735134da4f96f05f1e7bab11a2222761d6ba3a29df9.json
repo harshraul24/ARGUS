@@ -1,0 +1,14 @@
+{
+  "key": "cc9f547845ddbcf340624735134da4f96f05f1e7bab11a2222761d6ba3a29df9",
+  "provider": "ollama",
+  "model": "gpt-oss:120b-cloud",
+  "prompt_sha": "cc9f547845ddbcf3",
+  "response": "{\n  \"disposition\": \"malicious\",\n  \"mitre_technique\": \"T1548.003\",\n  \"severity\": 0.85,\n  \"malicious_events\": [\n    \"e1\",\"e5\",\"e6\",\"e7\",\"e8\",\"e9\",\"e10\",\"e11\",\"e12\",\"e13\",\"e14\",\"e15\",\"e16\",\"e17\",\"e18\",\"e19\",\"e20\",\"e21\",\n    \"e22\",\"e23\",\"e24\",\"e25\",\"e26\",\"e158\",\"e159\",\"e160\",\"e161\",\"e162\",\"e163\",\"e184\",\"e185\",\"e186\",\"e187\",\n    \"e188\",\"e189\",\"e190\",\"e198\",\"e199\",\"e200\",\"e201\",\"e202\",\"e203\",\"e221\",\"e258\",\"e259\",\"e260\"\n  ],\n  \"reason\": \"The host shows repeated use of sudo by the www user to install packages (rsyslog, sshpass) and read /etc/shadow, indicating credential dumping and abuse of sudo for privilege escalation, which matches MITRE T1548.003.\"\n}",
+  "latency_s": 3.6350202560424805,
+  "created_at": 1791424193.9051661,
+  "params": {
+    "temperature": 0.0,
+    "seed": 8,
+    "json_mode": true
+  }
+}

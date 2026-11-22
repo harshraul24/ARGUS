@@ -1,0 +1,14 @@
+{
+  "key": "2942b8a77106944d52885b8f10a46d270e629bd6493c0357436ce949c9dbf309",
+  "provider": "ollama",
+  "model": "gpt-oss:120b-cloud",
+  "prompt_sha": "2942b8a77106944d",
+  "response": "{\n  \"disposition\": \"malicious\",\n  \"mitre_technique\": \"T1548.003\",\n  \"severity\": 0.85,\n  \"malicious_events\": [\n    \"e10\",\n    \"e13\",\n    \"e14\",\n    \"e15\",\n    \"e16\",\n    \"e25\",\n    \"e26\",\n    \"e27\",\n    \"e28\",\n    \"e29\",\n    \"e95\",\n    \"e97\",\n    \"e98\",\n    \"e99\",\n    \"e100\",\n    \"e101\",\n    \"e105\",\n    \"e106\",\n    \"e107\",\n    \"e108\",\n    \"e109\",\n    \"e110\",\n    \"e176\",\n    \"e178\",\n    \"e179\",\n    \"e180\",\n    \"e181\"\n  ],\n  \"reason\": \"User 'www' repeatedly invoked sudo to run privileged commands and read /etc/shadow, indicating unauthorized privilege escalation and credential access.\"\n}",
+  "latency_s": 2.3394110202789307,
+  "created_at": 1791424188.2693791,
+  "params": {
+    "temperature": 0.0,
+    "seed": 8,
+    "json_mode": true
+  }
+}

@@ -1,0 +1,39 @@
+{
+ "name": "lab",
+ "as_of": "2026-10-06",
+ "created": "2026-10-06T23:41:27",
+ "sources": {
+  "sigma": {
+   "url": "https://github.com/SigmaHQ/sigma",
+   "commit": "ca24243a6e3f94353a54176f83c4c3b7f579224a",
+   "commit_date": "2026-10-02T13:46:31+02:00",
+   "paths": [
+    "rules"
+   ],
+   "licence": "Detection Rule License (DRL) 1.1",
+   "files": 3151,
+   "sha256": "829d2d53dab68a5938a31414bcea3d0e6ea328fdb3ac79d369d05a5ade613f78"
+  },
+  "gtfobins": {
+   "url": "https://github.com/GTFOBins/GTFOBins.github.io",
+   "commit": "acd524623f9c406acedd2754ebd9c2431f3675ad",
+   "commit_date": "2026-05-27T14:01:45+02:00",
+   "paths": [
+    "_gtfobins"
+   ],
+   "licence": "GPL-3.0",
+   "files": 478,
+   "sha256": "4df3fbc879ab13b9ddd67c8668154ae312b4249d4ee8d37dac45260ed7b660ea"
+  },
+  "attack": {
+   "url": "https://raw.githubusercontent.com/mitre-attack/attack-stix-data/master/enterprise-attack/enterprise-attack-19.2.json",
+   "version": "19.2",
+   "modified": "2026-08-05T21:33:58.496Z",
+   "licence": "MITRE ATT&CK Terms of Use (royalty-free, attribution)",
+   "files": 1,
+   "sha256": "dc1639caa5501d720e280cf1cbd8fbe009884a0c9b3e6e9ed9d0c25166c3d8f4"
+  }
+ },
+ "aggregate_sha256": "f830cdaae7beb2eefcb12c5fb0022d1ab1fc8cae3a836ca2577b10036be532cf",
+ "amended": "2026-10-08: LOLBAS (Windows) removed when ARGUS became Linux-only; aggregate recomputed over the remaining sources"
+}

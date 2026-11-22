@@ -1,0 +1,14 @@
+{
+  "key": "8c28f8eabfd1293e0efc4e6a5a9a3a938fb1d941aedfe28c72d45578d64c9084",
+  "provider": "ollama",
+  "model": "gpt-oss:120b-cloud",
+  "prompt_sha": "8c28f8eabfd1293e",
+  "response": "{\n  \"rules\": [],\n  \"reasoning\": \"The episode consists of standard package management activity: the post\u2011inst script for a font package invokes /bin/sh (dash) to run dpkg\u2011maintscript\u2011helper, which in turn calls basename and dpkg to validate versions and remove configuration files. All binaries are from system directories and the pattern matches normal dpkg post\u2011install processing, not a suspicious behaviour class. Therefore no detection rule is appropriate.\"\n}",
+  "latency_s": 11.191113233566284,
+  "created_at": 1791394652.74036,
+  "params": {
+    "temperature": 0.0,
+    "seed": 7,
+    "json_mode": true
+  }
+}

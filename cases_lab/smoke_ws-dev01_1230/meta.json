@@ -1,0 +1,30 @@
+{
+ "scenario_id": "smoke_ws-dev01_1230",
+ "dataset": "lab",
+ "campaign": "smoke",
+ "host": "ws-dev01",
+ "format": "argus-events-v1",
+ "generated_by": "tools/apt_capture/auditd_to_windows.py (real auditd capture)",
+ "capture": {
+  "window": {
+   "start": "2026-10-06T12:30:00+00:00",
+   "end": "2026-10-06T13:00:00+00:00"
+  }
+ },
+ "events": 47,
+ "event_types": {
+  "process_create": 47
+ },
+ "sensor": "auditd",
+ "audit_rules_loaded": [
+  "exec"
+ ],
+ "sensor_contract": [
+  "process_create"
+ ],
+ "sensor_gaps": [],
+ "captured_not_ingested": [],
+ "clock_offset_vs_caldera_s": 0.5,
+ "protocol_activity": {},
+ "capture_gate": "pass"
+}

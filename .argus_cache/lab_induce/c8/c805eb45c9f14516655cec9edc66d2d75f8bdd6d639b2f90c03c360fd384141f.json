@@ -1,0 +1,14 @@
+{
+  "key": "c805eb45c9f14516655cec9edc66d2d75f8bdd6d639b2f90c03c360fd384141f",
+  "provider": "ollama",
+  "model": "gpt-oss:120b-cloud",
+  "prompt_sha": "c805eb45c9f14516",
+  "response": "{\n  \"rules\": [],\n  \"reasoning\": \"The episode consists of standard system processes (sshd, dash, env, run-parts, uname) executing the update\u2011motd scripts that generate the dynamic message of the day. These actions are typical for routine system maintenance and not indicative of suspicious behaviour, so no detection rule is warranted.\"\n}",
+  "latency_s": 12.543671131134033,
+  "created_at": 1791394608.0367959,
+  "params": {
+    "temperature": 0.0,
+    "seed": 7,
+    "json_mode": true
+  }
+}

@@ -1,0 +1,40 @@
+#separator \x09
+#set_separator	,
+#empty_field	(empty)
+#unset_field	-
+#path	ntlm
+#open	2026-09-09-17-26-49
+#fields	ts	uid	id.orig_h	id.orig_p	id.resp_h	id.resp_p	username	hostname	domainname	server_nb_computer_name	server_dns_computer_name	server_tree_name	success
+#types	time	string	addr	port	addr	port	string	string	string	string	string	string	bool
+1788973744.584414	CpTcBt4RqWM3hrCakl	10.0.2.10	34958	10.0.2.20	445	guest	nmap	METASPLOITABLE	METASPLOITABLE	metasploitable.localdomain	-	F
+1788973744.724024	CTyDrf4KxfjlIh7uI3	10.0.2.10	34980	10.0.2.20	445	-	nmap	-	METASPLOITABLE	metasploitable.localdomain	-	T
+1788973744.734447	Czr6Mh4UULXYPnRR5l	10.0.2.10	34996	10.0.2.20	445	-	nmap	-	METASPLOITABLE	metasploitable.localdomain	-	T
+1788973744.842785	CKWMMu1RHGWSYMqt7b	10.0.2.10	35012	10.0.2.20	445	-	nmap	-	METASPLOITABLE	metasploitable.localdomain	-	T
+1788973744.940851	Cf3XVZ2JO4LhCBuYV2	10.0.2.10	35028	10.0.2.20	445	-	nmap	-	METASPLOITABLE	metasploitable.localdomain	-	T
+1788973744.953933	CO35CR3kuoaIAy4Ba9	10.0.2.10	35044	10.0.2.20	445	-	nmap	-	METASPLOITABLE	metasploitable.localdomain	-	T
+1788973744.964400	CIMlQg2MXJhWhsoVe7	10.0.2.10	35064	10.0.2.20	445	-	nmap	-	METASPLOITABLE	metasploitable.localdomain	-	T
+1788973744.975266	CA7le61idmSikWevHj	10.0.2.10	35078	10.0.2.20	445	-	nmap	-	METASPLOITABLE	metasploitable.localdomain	-	T
+1788973744.984044	C3syJU3MACx4JPS26	10.0.2.10	35092	10.0.2.20	445	-	nmap	-	METASPLOITABLE	metasploitable.localdomain	-	T
+1788973744.996540	CHhWRj3MiQnHHeQE57	10.0.2.10	35096	10.0.2.20	445	-	nmap	-	METASPLOITABLE	metasploitable.localdomain	-	T
+1788973745.005586	CShLKG3jvfthU8bCM1	10.0.2.10	35108	10.0.2.20	445	-	nmap	-	METASPLOITABLE	metasploitable.localdomain	-	T
+1788973745.012950	CB8Geq34zsqxUZNtO6	10.0.2.10	35122	10.0.2.20	445	-	nmap	-	METASPLOITABLE	metasploitable.localdomain	-	T
+1788973745.020839	CiIra8OZvI69pEtpk	10.0.2.10	35124	10.0.2.20	445	-	nmap	-	METASPLOITABLE	metasploitable.localdomain	-	T
+1788973745.030840	CXDeQz35asT8visph3	10.0.2.10	35138	10.0.2.20	445	-	nmap	-	METASPLOITABLE	metasploitable.localdomain	-	T
+1788973745.041392	Cv3ZT34a6PLu8EaRz8	10.0.2.10	35154	10.0.2.20	445	-	nmap	-	METASPLOITABLE	metasploitable.localdomain	-	T
+1788973745.049984	CoO48o4BpvJBYmVJBi	10.0.2.10	35170	10.0.2.20	445	-	nmap	-	METASPLOITABLE	metasploitable.localdomain	-	T
+1788973745.057001	CCqlko25DQSrvpuI38	10.0.2.10	35176	10.0.2.20	445	-	nmap	-	METASPLOITABLE	metasploitable.localdomain	-	T
+1788973745.065494	CNY0oZ3QVMNZtSBTC7	10.0.2.10	35178	10.0.2.20	445	-	nmap	-	METASPLOITABLE	metasploitable.localdomain	-	T
+1788973745.073127	Cm7Iiq34SaWtd5jrU9	10.0.2.10	35188	10.0.2.20	445	-	nmap	-	METASPLOITABLE	metasploitable.localdomain	-	T
+1788973745.085721	C7BgYl1BzEnV0UIA3i	10.0.2.10	35194	10.0.2.20	445	-	nmap	-	METASPLOITABLE	metasploitable.localdomain	-	T
+1788973745.092955	CFCkTl3E6UAms7mFk2	10.0.2.10	35202	10.0.2.20	445	-	nmap	-	METASPLOITABLE	metasploitable.localdomain	-	T
+1788973745.100056	CHbt5p1hvHb2tue4Mk	10.0.2.10	35218	10.0.2.20	445	-	nmap	-	METASPLOITABLE	metasploitable.localdomain	-	T
+1788973745.105638	CHyfDQN4YFVTYACCk	10.0.2.10	35232	10.0.2.20	445	-	nmap	-	METASPLOITABLE	metasploitable.localdomain	-	T
+1788973745.114257	CKAvXs2R6tEZGn0x95	10.0.2.10	35242	10.0.2.20	445	-	nmap	-	METASPLOITABLE	metasploitable.localdomain	-	T
+1788973745.126646	CyhTw52aGfwOfX0Vhg	10.0.2.10	35246	10.0.2.20	445	-	nmap	-	METASPLOITABLE	metasploitable.localdomain	-	T
+1788973745.142681	CofIoSUkPdM2zR6Pg	10.0.2.10	35252	10.0.2.20	445	-	nmap	-	METASPLOITABLE	metasploitable.localdomain	-	T
+1788973745.153547	CExjoaW5AJ5xPNDkj	10.0.2.10	35260	10.0.2.20	445	-	nmap	-	METASPLOITABLE	metasploitable.localdomain	-	T
+1788973745.166177	C8cRUf6ukpxIksSph	10.0.2.10	35276	10.0.2.20	445	-	nmap	-	METASPLOITABLE	metasploitable.localdomain	-	T
+1788973745.175335	CnLNkni06RPa73XRa	10.0.2.10	35292	10.0.2.20	445	-	nmap	-	METASPLOITABLE	metasploitable.localdomain	-	T
+1788973745.186508	CrQEuL1EB8Oe68bUrj	10.0.2.10	35296	10.0.2.20	445	-	nmap	-	METASPLOITABLE	metasploitable.localdomain	-	T
+1788973745.197273	Cuk8B11u9nF7zWZrwg	10.0.2.10	35306	10.0.2.20	445	-	nmap	-	METASPLOITABLE	metasploitable.localdomain	-	T
+#close	2026-09-09-17-26-49

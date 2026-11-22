@@ -1,0 +1,10 @@
+{
+ "_comment": [
+  "Lab operations in capture order (LAB_EVAL_PLAN.md section 3). An operation is assigned to",
+  "design or test by its order alone, never by its result: the first three are design, every",
+  "later one is test. Append each new run here BEFORE converting or scoring it."
+ ],
+ "excluded": {"smoke": "pipeline check only (2026-10-06)"},
+ "operations": ["run1"],
+ "design_count": 3
+}

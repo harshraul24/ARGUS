@@ -1,0 +1,59 @@
+{
+  "meta_version": "v0.2",
+  "scenario_id": "benign_typo_login_002",
+  "category": "benign",
+  "title": "User mistypes a password twice, then logs in",
+  "generated_by": "tools/make_benign_cases.py (synthetic benign corpus)",
+  "topology": {
+    "hosts": [
+      {
+        "name": "target",
+        "ip": "10.0.2.20",
+        "role": "victim",
+        "os": "Linux"
+      },
+      {
+        "name": "jumphost",
+        "ip": "10.0.2.5",
+        "role": "admin",
+        "os": "Linux"
+      }
+    ],
+    "zeek_sensor": {
+      "host": "capture",
+      "position": "target segment"
+    }
+  },
+  "capture": {
+    "window": {
+      "start": "2026-03-05T08:36:12Z",
+      "end": "2026-03-05T08:51:12Z"
+    },
+    "clean_capture": true
+  },
+  "expected_observables": {
+    "authlog": {
+      "logon_success": true,
+      "logon_failure": true
+    },
+    "zeek": {
+      "conn": true,
+      "ssh": true
+    }
+  },
+  "mitre": {
+    "technique": null
+  },
+  "ground_truth": {
+    "category": "benign",
+    "objective_reached": false,
+    "techniques": [],
+    "primary_technique": null,
+    "why_benign": "Two failures and one success, one username, one source, inside 21 seconds \u2014 the shape of a human at a keyboard, not a credential attack.",
+    "confounds": [
+      "logon_failure burst (small)",
+      "failure followed by success"
+    ],
+    "actions": []
+  }
+}

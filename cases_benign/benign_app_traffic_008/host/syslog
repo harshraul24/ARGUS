@@ -1,0 +1,2 @@
+Mar 10 10:00:00 appsrv01 CRON[5000]: pam_unix(cron:session): session opened for user root by (uid=0)
+Mar 10 10:00:01 appsrv01 CRON[5000]: pam_unix(cron:session): session closed for user root

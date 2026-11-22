@@ -1,0 +1,14 @@
+{
+  "key": "9ad363e931da608d84f451af1084b72be493dc9734c319444a7669b27718cfd0",
+  "provider": "ollama",
+  "model": "gpt-oss:120b-cloud",
+  "prompt_sha": "9ad363e931da608d",
+  "response": "{\n  \"disposition\": \"malicious\",\n  \"mitre_technique\": \"T1021.004\",\n  \"severity\": 0.68,\n  \"malicious_events\": [\n    \"e207\",\n    \"e211\",\n    \"e229\",\n    \"e236\",\n    \"e242\",\n    \"e243\",\n    \"e244\",\n    \"e245\",\n    \"e246\",\n    \"e247\",\n    \"e248\",\n    \"e249\",\n    \"e250\",\n    \"e251\",\n    \"e252\",\n    \"e253\",\n    \"e254\",\n    \"e255\",\n    \"e312\",\n    \"e365\",\n    \"e418\",\n    \"e526\",\n    \"e638\",\n    \"e675\",\n    \"e712\",\n    \"e967\"\n  ],\n  \"reason\": \"Installation of sshpass (a credential\u2011stealing tool) and repeated SSH connections to multiple internal hosts, combined with sudo reads of /etc/shadow, indicate credential access and lateral movement.\"\n}",
+  "latency_s": 4.743289947509766,
+  "created_at": 1791424141.0996659,
+  "params": {
+    "temperature": 0.0,
+    "seed": 7,
+    "json_mode": true
+  }
+}

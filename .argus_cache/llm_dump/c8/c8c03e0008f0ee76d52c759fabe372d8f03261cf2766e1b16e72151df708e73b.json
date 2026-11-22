@@ -1,0 +1,14 @@
+{
+  "key": "c8c03e0008f0ee76d52c759fabe372d8f03261cf2766e1b16e72151df708e73b",
+  "provider": "ollama",
+  "model": "gpt-oss:120b-cloud",
+  "prompt_sha": "c8c03e0008f0ee76",
+  "response": "{\n  \"disposition\": \"malicious\",\n  \"mitre_technique\": \"T1548.001, T1003.006, T1110.001\",\n  \"severity\": 0.9,\n  \"malicious_events\": [\n    \"e1\",\n    \"e5\",\n    \"e6\",\n    \"e7\",\n    \"e158\",\n    \"e163\",\n    \"e190\",\n    \"e197\",\n    \"e203\",\n    \"e221\",\n    \"e260\",\n    \"e261\",\n    \"e262\",\n    \"e198\",\n    \"e199\",\n    \"e200\",\n    \"e201\",\n    \"e202\",\n    \"e293\",\n    \"e344\",\n    \"e399\",\n    \"e432\",\n    \"e506\",\n    \"e580\",\n    \"e632\",\n    \"e691\",\n    \"e770\"\n  ],\n  \"reason\": \"The www user repeatedly used sudo to install packages, enable services, and read /etc/shadow, indicating abuse of elevation (T1548.001) and credential dumping (T1003.006); installation of sshpass and numerous failed SSH connections suggest password\u2011guessing attempts (T1110.001).\"\n}",
+  "latency_s": 6.026724100112915,
+  "created_at": 1791424125.13793,
+  "params": {
+    "temperature": 0.0,
+    "seed": 7,
+    "json_mode": true
+  }
+}

@@ -1,0 +1,8 @@
+Mar  2 21:10:05 target sshd[1201]: Failed password for invalid user admin from 10.0.2.10 port 40112 ssh2
+Mar  2 21:10:06 target sshd[1201]: Failed password for root from 10.0.2.10 port 40114 ssh2
+Mar  2 21:10:07 target sshd[1201]: Failed password for msfadmin from 10.0.2.10 port 40116 ssh2
+Mar  2 21:10:08 target sshd[1201]: Failed password for postgres from 10.0.2.10 port 40118 ssh2
+Mar  2 21:10:09 target sshd[1201]: Failed password for user from 10.0.2.10 port 40120 ssh2
+Mar  2 21:11:20 target sshd[1240]: Accepted password for msfadmin from 10.0.2.10 port 40130 ssh2
+Mar  2 21:11:20 target sshd[1240]: pam_unix(sshd:session): session opened for user msfadmin by (uid=0)
+Mar  2 21:11:40 target sudo:  msfadmin : TTY=pts/0 ; PWD=/home/msfadmin ; USER=root ; COMMAND=/bin/cat /root/flag.txt

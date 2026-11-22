@@ -1,0 +1,14 @@
+{
+  "key": "a970f6f95fb36976c1f1fb1f13b67c2ab56f4415e4a40cd9f353122e89c6202a",
+  "provider": "ollama",
+  "model": "gpt-oss:120b-cloud",
+  "prompt_sha": "a970f6f95fb36976",
+  "response": "{\n  \"rules\": [],\n  \"reasoning\": \"The episode consists of standard system administration actions: enabling the auditd service via systemctl and update-rc.d, reloading the systemd daemon, and invoking the systemd password agent. These are routine, expected operations on a Linux host and do not exhibit suspicious behavior such as credential dumping, lateral movement, or unauthorized persistence. Therefore no detection rule is warranted.\"\n}",
+  "latency_s": 17.03924298286438,
+  "created_at": 1791394563.286999,
+  "params": {
+    "temperature": 0.0,
+    "seed": 7,
+    "json_mode": true
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "key": "7a357312194faad72eefcca8564131f9d8a888838e1bcf7657085047a6064a05",
+  "provider": "ollama",
+  "model": "gpt-oss:120b-cloud",
+  "prompt_sha": "7a357312194faad7",
+  "response": "{\n  \"disposition\": \"benign\",\n  \"mitre_technique\": \"none\",\n  \"severity\": 0.1,\n  \"malicious_events\": [],\n  \"reason\": \"All observed processes are standard package installation, system initialization, and audit configuration activities with no suspicious commands or network activity.\"\n}",
+  "latency_s": 1.4199607372283936,
+  "created_at": 1791424253.148841,
+  "params": {
+    "temperature": 0.0,
+    "seed": 7,
+    "json_mode": true
+  }
+}

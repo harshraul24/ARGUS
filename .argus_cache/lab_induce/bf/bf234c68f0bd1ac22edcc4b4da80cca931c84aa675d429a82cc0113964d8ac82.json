@@ -1,0 +1,14 @@
+{
+  "key": "bf234c68f0bd1ac22edcc4b4da80cca931c84aa675d429a82cc0113964d8ac82",
+  "provider": "ollama",
+  "model": "gpt-oss:120b-cloud",
+  "prompt_sha": "bf234c68f0bd1ac2",
+  "response": "{\n  \"rules\": [\n    {\n      \"id\": \"credential-dump-etc-master-passwd\",\n      \"technique\": \"T1003.008\",\n      \"name\": \"Read /etc/master.passwd\",\n      \"tactic\": \"credential-access\",\n      \"severity\": 0.9,\n      \"evidence\": [\n        \"ev_000605\",\n        \"ev_000606\"\n      ],\n      \"indicators\": [\n        {\n          \"name\": \"read-master-passwd\",\n          \"weight\": 1.0,\n          \"required\": true,\n          \"select\": {\n            \"claim_type\": \"process_create\",\n            \"facts.command\": {\n              \"contains_any\": [\n                \"/etc/master.passwd\"\n              ]\n            }\n          },\n          \"aggregate\": [\n            {\n              \"as\": \"n\",\n              \"op\": \"count\"\n            }\n          ],\n          \"score\": {\n            \"op\": \"threshold\",\n            \"value\": \"n\",\n            \"at\": 1\n          }\n        }\n      ]\n    }\n  ],\n  \"reasoning\": \"The episode shows processes invoking \\\"cat /etc/master.passwd\\\" (directly via sudo and indirectly via a shell). Detecting any process_create whose command line contains the path \\\"/etc/master.passwd\\\" captures this credential\u2011access behavior while remaining robust to renamed binaries, full\u2011path invocations, and unrelated activity.\"\n}",
+  "latency_s": 13.366039991378784,
+  "created_at": 1791394575.227884,
+  "params": {
+    "temperature": 0.0,
+    "seed": 7,
+    "json_mode": true
+  }
+}

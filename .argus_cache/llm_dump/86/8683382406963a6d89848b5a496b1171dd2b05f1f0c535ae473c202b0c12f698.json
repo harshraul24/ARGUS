@@ -1,0 +1,14 @@
+{
+  "key": "8683382406963a6d89848b5a496b1171dd2b05f1f0c535ae473c202b0c12f698",
+  "provider": "ollama",
+  "model": "gpt-oss:120b-cloud",
+  "prompt_sha": "8683382406963a6d",
+  "response": "{\n  \"disposition\": \"suspicious\",\n  \"mitre_technique\": \"T1005\",\n  \"severity\": 0.6,\n  \"malicious_events\": [\"e46\", \"e47\"],\n  \"reason\": \"A service user used sudo to copy the system audit log to /tmp, indicating possible credential or log harvesting activity.\"\n}",
+  "latency_s": 2.1325109004974365,
+  "created_at": 1791424245.885992,
+  "params": {
+    "temperature": 0.0,
+    "seed": 7,
+    "json_mode": true
+  }
+}

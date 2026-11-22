@@ -1,0 +1,14 @@
+{
+  "key": "cbd5217feb088dda336b3af22d7644f02fb13587f51d854c530a803d3fcb0427",
+  "provider": "ollama",
+  "model": "gpt-oss:120b-cloud",
+  "prompt_sha": "cbd5217feb088dda",
+  "response": "{\n  \"disposition\": \"malicious\",\n  \"mitre_technique\": \"T1003\",\n  \"severity\": 0.9,\n  \"malicious_events\": [\n    \"e603\",\n    \"e604\",\n    \"e605\",\n    \"e606\",\n    \"e607\",\n    \"e608\",\n    \"e612\",\n    \"e613\",\n    \"e614\",\n    \"e615\",\n    \"e616\"\n  ],\n  \"reason\": \"The host runs credential dumping commands (cat /etc/passwd, cat /etc/master.passwd) and uses sudo, indicating unauthorized credential access and discovery activity.\"\n}",
+  "latency_s": 1.9897329807281494,
+  "created_at": 1791424195.922657,
+  "params": {
+    "temperature": 0.0,
+    "seed": 8,
+    "json_mode": true
+  }
+}

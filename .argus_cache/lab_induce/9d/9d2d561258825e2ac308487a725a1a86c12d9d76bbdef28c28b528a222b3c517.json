@@ -1,0 +1,14 @@
+{
+  "key": "9d2d561258825e2ac308487a725a1a86c12d9d76bbdef28c28b528a222b3c517",
+  "provider": "ollama",
+  "model": "gpt-oss:120b-cloud",
+  "prompt_sha": "9d2d561258825e2a",
+  "response": "{\n  \"rules\": [],\n  \"reasoning\": \"The episode consists entirely of standard package management and system maintenance actions: dpkg configuring pending packages, logrotate timer setup via deb-systemd-helper, systemctl preset and status checks, daemon-reload, ldconfig, and mandb indexing. All processes run from system directories and no user-writable executables are involved. This behavior matches normal software update/install routines and does not exhibit any suspicious tactics, so no detection rule is appropriate.\"\n}",
+  "latency_s": 13.109245777130127,
+  "created_at": 1791394576.398227,
+  "params": {
+    "temperature": 0.0,
+    "seed": 7,
+    "json_mode": true
+  }
+}

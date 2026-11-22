@@ -1,0 +1,14 @@
+{
+  "key": "1c7a9e37daf1ee48d0d0160c7ab27c931096c88553b78719cfe774fcd5255777",
+  "provider": "ollama",
+  "model": "gpt-oss:120b-cloud",
+  "prompt_sha": "1c7a9e37daf1ee48",
+  "response": "{\n  \"rules\": [],\n  \"reasoning\": \"The episode consists of standard system administration actions: enabling the auditd service via systemctl, updating init scripts with update-rc.d, and reloading the systemd daemon. These are common, benign operations performed during legitimate configuration changes and do not exhibit suspicious behaviour. Therefore, no detection rules are generated.\"\n}",
+  "latency_s": 2.9655439853668213,
+  "created_at": 1791394527.5463622,
+  "params": {
+    "temperature": 0.0,
+    "seed": 7,
+    "json_mode": true
+  }
+}

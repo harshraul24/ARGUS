@@ -1,0 +1,14 @@
+{
+  "key": "71ab600b0c8dac995eeeec8cd738a5d52c7a6d21c598c3da772aeef0ea2a88fd",
+  "provider": "ollama",
+  "model": "gpt-oss:120b-cloud",
+  "prompt_sha": "71ab600b0c8dac99",
+  "response": "{\n  \"rules\": [],\n  \"reasoning\": \"The episode only shows normal system processes: sshd handling connections and reading /etc/shadow for authentication, and the standard update\u2011motd mechanism executed via run\u2011parts and dash scripts. All binaries are from system directories, no user\u2011writable executables are involved, and there is no unusual network activity or file manipulation. This behavior matches routine OS maintenance and login handling, so no detection rule is warranted.\"\n}",
+  "latency_s": 19.147353887557983,
+  "created_at": 1791394603.193407,
+  "params": {
+    "temperature": 0.0,
+    "seed": 7,
+    "json_mode": true
+  }
+}

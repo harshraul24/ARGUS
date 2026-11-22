@@ -1,0 +1,14 @@
+{
+  "key": "0a846e7dc3fbc4b13ee9d8eaf48a2488f0d6cff14cdea8cb36dab0e5d50ec611",
+  "provider": "ollama",
+  "model": "gpt-oss:120b-cloud",
+  "prompt_sha": "0a846e7dc3fbc4b1",
+  "response": "{\n  \"rules\": [\n    {\n      \"id\": \"shadow-file-read\",\n      \"technique\": \"T1552.004\",\n      \"name\": \"Read of /etc/shadow by non-authentication process\",\n      \"tactic\": \"credential-access\",\n      \"severity\": 0.8,\n      \"evidence\": [\"ev_000843\"],\n      \"indicators\": [\n        {\n          \"name\": \"shadow-read\",\n          \"weight\": 1.0,\n          \"required\": true,\n          \"select\": {\n            \"claim_type\": \"file_read\",\n            \"facts.file_path\": \"/etc/shadow\",\n            \"facts.image\": {\n              \"not_in\": [\n                \"login\",\n                \"sshd\",\n                \"su\",\n                \"passwd\",\n                \"pam_unix\",\n                \"systemd\",\n                \"init\"\n              ]\n            }\n          },\n          \"aggregate\": [\n            {\n              \"as\": \"n\",\n              \"op\": \"count\"\n            }\n          ],\n          \"score\": {\n            \"op\": \"threshold\",\n            \"value\": \"n\",\n            \"at\": 1\n          }\n        }\n      ]\n    }\n  ],\n  \"reasoning\": \"The episode includes a file_read claim where a Perl script (part of a package post\u2011install) accesses /etc/shadow. Direct reads of the shadow password file by processes that are not standard authentication daemons (login, sshd, su, passwd, pam_unix, systemd, init) are rare and are flagged by community Sigma rules as credential\u2011access activity. This rule captures that suspicious class while remaining robust to renaming of the executing binary and avoids over\u2011matching routine system behavior.\"\n}",
+  "latency_s": 8.058624029159546,
+  "created_at": 1791394658.109132,
+  "params": {
+    "temperature": 0.0,
+    "seed": 7,
+    "json_mode": true
+  }
+}

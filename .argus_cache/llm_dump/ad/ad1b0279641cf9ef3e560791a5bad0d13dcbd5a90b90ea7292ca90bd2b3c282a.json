@@ -1,0 +1,14 @@
+{
+  "key": "ad1b0279641cf9ef3e560791a5bad0d13dcbd5a90b90ea7292ca90bd2b3c282a",
+  "provider": "ollama",
+  "model": "gpt-oss:120b-cloud",
+  "prompt_sha": "ad1b0279641cf9ef",
+  "response": "{\n  \"disposition\": \"malicious\",\n  \"mitre_technique\": \"T1105\",\n  \"severity\": 0.9,\n  \"malicious_events\": [\n    \"e36\",\n    \"e38\",\n    \"e39\",\n    \"e41\",\n    \"e44\",\n    \"e45\",\n    \"e47\",\n    \"e48\",\n    \"e50\",\n    \"e51\",\n    \"e52\",\n    \"e54\",\n    \"e55\",\n    \"e56\",\n    \"e57\",\n    \"e58\",\n    \"e59\",\n    \"e60\",\n    \"e62\",\n    \"e63\"\n  ],\n  \"reason\": \"Observed download and execution of a suspicious payload (sandcat), privilege escalation via sudo, reading /etc/shadow, and clearing command history, indicating active compromise.\"\n}",
+  "latency_s": 2.8875839710235596,
+  "created_at": 1791424154.950457,
+  "params": {
+    "temperature": 0.0,
+    "seed": 7,
+    "json_mode": true
+  }
+}

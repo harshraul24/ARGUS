@@ -1,0 +1,14 @@
+{
+  "key": "6bc1b0b1afc59a10adc9aa66f6b15a80a2e5d5c86bd26f06ddef3b8381da5b5b",
+  "provider": "ollama",
+  "model": "gpt-oss:120b-cloud",
+  "prompt_sha": "6bc1b0b1afc59a10",
+  "response": "{\n  \"disposition\": \"malicious\",\n  \"mitre_technique\": \"T1105\",\n  \"severity\": 0.9,\n  \"malicious_events\": [\n    \"e17\",\n    \"e18\",\n    \"e19\",\n    \"e20\",\n    \"e21\",\n    \"e22\",\n    \"e23\",\n    \"e24\",\n    \"e25\",\n    \"e26\",\n    \"e27\",\n    \"e28\",\n    \"e29\",\n    \"e30\",\n    \"e31\"\n  ],\n  \"reason\": \"Multiple suspicious actions: privileged log copying, credential file reads, outbound connections to external IP, downloading and executing a suspicious binary, clearing bash history, and running discovery commands indicate attacker activity.\"\n}",
+  "latency_s": 3.556191921234131,
+  "created_at": 1791424172.28477,
+  "params": {
+    "temperature": 0.0,
+    "seed": 8,
+    "json_mode": true
+  }
+}

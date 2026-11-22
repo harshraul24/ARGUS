@@ -1,0 +1,14 @@
+{
+  "key": "606167769b229bb39929679ae3f296640186c58de93820903041700682ed9ae9",
+  "provider": "ollama",
+  "model": "gpt-oss:120b-cloud",
+  "prompt_sha": "606167769b229bb3",
+  "response": "{\n  \"rules\": [],\n  \"reasoning\": \"The episode consists of standard package installation and configuration steps (dpkg-trigger, perl postinst scripts, touch, dpkg-query) that are typical for system updates on a Linux host. These actions are routine, not suspicious, and would fire on many legitimate captures, so no detection rule is appropriate.\"\n}",
+  "latency_s": 6.587862014770508,
+  "created_at": 1791394653.863263,
+  "params": {
+    "temperature": 0.0,
+    "seed": 7,
+    "json_mode": true
+  }
+}

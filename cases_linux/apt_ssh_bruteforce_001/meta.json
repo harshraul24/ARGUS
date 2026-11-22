@@ -1,0 +1,84 @@
+{
+  "meta_version": "v0.2",
+  "scenario_id": "apt_ssh_bruteforce_001",
+  "category": "attack",
+  "title": "SSH Brute Force then Exfiltration",
+  "generated_by": "APT-Agent + apt_capture harness",
+  "topology": {
+    "hosts": [
+      {
+        "name": "attacker",
+        "ip": "10.0.2.10",
+        "role": "attacker",
+        "os": "Linux"
+      },
+      {
+        "name": "target",
+        "ip": "10.0.2.20",
+        "role": "victim",
+        "os": "Linux"
+      }
+    ],
+    "zeek_sensor": {
+      "host": "capture",
+      "position": "attacker-target path"
+    }
+  },
+  "capture": {
+    "window": {
+      "start": "2026-03-02T21:10:00Z",
+      "end": "2026-03-02T21:11:35Z"
+    },
+    "clean_capture": true
+  },
+  "expected_observables": {
+    "authlog": {
+      "logon_failure": true,
+      "logon_success": true
+    },
+    "zeek": {
+      "conn": true,
+      "ssh": true
+    }
+  },
+  "mitre": {
+    "technique": "T1041"
+  },
+  "ground_truth": {
+    "category": "attack",
+    "campaign_start": "2026-03-02T21:10:00Z",
+    "techniques": [
+      "T1041",
+      "T1046",
+      "T1110"
+    ],
+    "primary_technique": "T1041",
+    "objective_reached": true,
+    "actions": [
+      {
+        "iter": 1,
+        "tactic": "RECON",
+        "time": "2026-03-02T21:10:00Z",
+        "technique": "T1046",
+        "detail": "reconnaissance",
+        "result": "n/a"
+      },
+      {
+        "iter": 3,
+        "tactic": "EXPLOIT",
+        "time": "2026-03-02T21:10:20.500000Z",
+        "technique": "T1110",
+        "detail": "use auxiliary/scanner/ssh/ssh_login",
+        "result": "success"
+      },
+      {
+        "iter": 4,
+        "tactic": "EXFILTRATE",
+        "time": "2026-03-02T21:11:35Z",
+        "technique": "T1041",
+        "detail": "cat /root/flag.txt",
+        "result": "success"
+      }
+    ]
+  }
+}

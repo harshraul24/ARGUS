@@ -1,0 +1,14 @@
+{
+  "key": "85e2944f16f45e3b2e4e36543a5a16b361799561a911412e71f9768f728b5210",
+  "provider": "ollama",
+  "model": "gpt-oss:120b-cloud",
+  "prompt_sha": "85e2944f16f45e3b",
+  "response": "{\n  \"disposition\": \"suspicious\",\n  \"mitre_technique\": \"T1003.006\",\n  \"severity\": 0.6,\n  \"malicious_events\": [\n    \"e9\",\n    \"e29\",\n    \"e223\",\n    \"e264\",\n    \"e298\",\n    \"e351\",\n    \"e565\",\n    \"e782\",\n    \"e200\",\n    \"e204\",\n    \"e295\",\n    \"e351\",\n    \"e565\",\n    \"e782\"\n  ],\n  \"reason\": \"Repeated sudo reads of /etc/shadow and installation of sshpass indicate credential dumping and preparation for unauthorized SSH access.\"\n}",
+  "latency_s": 4.959439277648926,
+  "created_at": 1791424159.951435,
+  "params": {
+    "temperature": 0.0,
+    "seed": 7,
+    "json_mode": true
+  }
+}

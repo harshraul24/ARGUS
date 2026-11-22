@@ -1,0 +1,20 @@
+#separator \x09
+#set_separator	,
+#empty_field	(empty)
+#unset_field	-
+#path	dns
+#fields	ts	uid	id.orig_h	id.orig_p	id.resp_h	id.resp_p	proto	query	qtype_name	rcode_name
+#types	time	string	addr	port	addr	port	enum	string	string	string
+1773136800.000000	C0000700Bx	10.0.2.20	53400	10.0.2.2	53	udp	api.internal.lan	A	NOERROR
+1773136980.000000	C0000701Bx	10.0.2.20	53401	10.0.2.2	53	udp	api.internal.lan	A	NOERROR
+1773137160.000000	C0000702Bx	10.0.2.20	53402	10.0.2.2	53	udp	api.internal.lan	A	NOERROR
+1773137340.000000	C0000703Bx	10.0.2.20	53403	10.0.2.2	53	udp	api.internal.lan	A	NOERROR
+1773137520.000000	C0000704Bx	10.0.2.20	53404	10.0.2.2	53	udp	api.internal.lan	A	NOERROR
+1773137700.000000	C0000705Bx	10.0.2.20	53405	10.0.2.2	53	udp	api.internal.lan	A	NOERROR
+1773137880.000000	C0000706Bx	10.0.2.20	53406	10.0.2.2	53	udp	api.internal.lan	A	NOERROR
+1773138060.000000	C0000707Bx	10.0.2.20	53407	10.0.2.2	53	udp	api.internal.lan	A	NOERROR
+1773138240.000000	C0000708Bx	10.0.2.20	53408	10.0.2.2	53	udp	api.internal.lan	A	NOERROR
+1773138420.000000	C0000709Bx	10.0.2.20	53409	10.0.2.2	53	udp	api.internal.lan	A	NOERROR
+1773138600.000000	C0000710Bx	10.0.2.20	53410	10.0.2.2	53	udp	api.internal.lan	A	NOERROR
+1773138780.000000	C0000711Bx	10.0.2.20	53411	10.0.2.2	53	udp	api.internal.lan	A	NOERROR
+#close	-

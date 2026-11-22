@@ -1,0 +1,8 @@
+# victim fleet — one line:  name  ssh-user  ip
+# IPs are DHCP and vmnet may change the subnet between boots, so update them after booting
+# (ip a on each). capture.sh derives the capture subnet from the first IP below.
+web01     www    192.168.2.8
+app01     svc    192.168.2.9
+ws-dev01  bob    192.168.2.10
+ws-fin01  alice  192.168.2.11
+KALI 	  attacker 192.168.2.7

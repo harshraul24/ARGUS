@@ -1,0 +1,14 @@
+{
+  "key": "ee8af19e5498fc8ee8e3a8424162d6824050e0df221cb9eec960b99e28ea0402",
+  "provider": "ollama",
+  "model": "gpt-oss:120b-cloud",
+  "prompt_sha": "ee8af19e5498fc8e",
+  "response": "{\n  \"disposition\": \"suspicious\",\n  \"mitre_technique\": \"T1041\",\n  \"severity\": 0.6,\n  \"malicious_events\": [\"e22\", \"e23\", \"e24\", \"e25\", \"e28\"],\n  \"reason\": \"User alice copies authentication logs to /tmp and initiates unusual network connections, indicating possible credential harvesting and exfiltration.\"\n}",
+  "latency_s": 2.156648874282837,
+  "created_at": 1791424166.812512,
+  "params": {
+    "temperature": 0.0,
+    "seed": 7,
+    "json_mode": true
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "key": "2fa0c0c46a081b452bcca504ff0ef7d1a98783d73facab911c35e3bd12822c5e",
+  "provider": "ollama",
+  "model": "gpt-oss:120b-cloud",
+  "prompt_sha": "2fa0c0c46a081b45",
+  "response": "{\n  \"disposition\": \"malicious\",\n  \"mitre_technique\": \"T1041\",\n  \"severity\": 0.85,\n  \"malicious_events\": [\"e17\", \"e18\", \"e19\", \"e20\", \"e21\", \"e22\", \"e24\"],\n  \"reason\": \"Bob uses sudo to copy authentication logs and read /etc/shadow, then attempts a network connection to an internal host, indicating credential harvesting and data exfiltration.\"\n}",
+  "latency_s": 2.6823999881744385,
+  "created_at": 1791424147.4924622,
+  "params": {
+    "temperature": 0.0,
+    "seed": 7,
+    "json_mode": true
+  }
+}

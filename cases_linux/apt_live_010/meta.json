@@ -1,0 +1,108 @@
+{
+  "meta_version": "v0.2",
+  "scenario_id": "apt_live_010",
+  "category": "attack",
+  "title": "APT-Agent postgres_payload (live Metasploitable2)",
+  "generated_by": "APT-Agent + apt_capture harness",
+  "topology": {
+    "hosts": [
+      {
+        "name": "attacker",
+        "ip": "10.0.2.10",
+        "role": "attacker",
+        "os": "Linux"
+      },
+      {
+        "name": "target",
+        "ip": "10.0.2.20",
+        "role": "victim",
+        "os": "Linux"
+      }
+    ],
+    "zeek_sensor": {
+      "host": "capture",
+      "position": "attacker-target path"
+    }
+  },
+  "capture": {
+    "window": {
+      "start": "2026-09-09T17:16:37.705000Z",
+      "end": "2026-09-09T17:20:59.923800Z"
+    },
+    "clean_capture": true
+  },
+  "expected_observables": {
+    "authlog": {
+      "logon_failure": false,
+      "logon_success": true
+    },
+    "zeek": {
+      "conn": true,
+      "ssh": true
+    }
+  },
+  "mitre": {
+    "technique": "T1041"
+  },
+  "ground_truth": {
+    "category": "attack",
+    "campaign_start": "2026-09-09T17:16:28Z",
+    "techniques": [
+      "T1041",
+      "T1046",
+      "T1210"
+    ],
+    "primary_technique": "T1041",
+    "objective_reached": false,
+    "actions": [
+      {
+        "iter": 2,
+        "tactic": "EXPLOIT",
+        "time": "2026-09-09T17:16:37.705000Z",
+        "technique": null,
+        "detail": "use exploit/multi/postgres/postgres_copy_from_program_cmd_exec",
+        "result": "fail"
+      },
+      {
+        "iter": 3,
+        "tactic": "EXPLOIT",
+        "time": "2026-09-09T17:18:17.500000Z",
+        "technique": null,
+        "detail": "use exploit/multi/postgres/postgres_copy_from_program_cmd_exec",
+        "result": "fail"
+      },
+      {
+        "iter": 4,
+        "tactic": "RECON",
+        "time": "2026-09-09T17:19:54.615600Z",
+        "technique": "T1046",
+        "detail": "reconnaissance",
+        "result": "n/a"
+      },
+      {
+        "iter": 5,
+        "tactic": "RECON",
+        "time": "2026-09-09T17:19:59.864100Z",
+        "technique": "T1046",
+        "detail": "reconnaissance",
+        "result": "n/a"
+      },
+      {
+        "iter": 6,
+        "tactic": "EXPLOIT",
+        "time": "2026-09-09T17:20:16.559800Z",
+        "technique": "T1210",
+        "detail": "use exploit/linux/postgres/postgres_payload",
+        "result": "success"
+      },
+      {
+        "iter": 7,
+        "tactic": "EXFILTRATE",
+        "time": "2026-09-09T17:20:59.923800Z",
+        "technique": "T1041",
+        "detail": "search -f flag.txt",
+        "result": "fail"
+      }
+    ]
+  }
+}

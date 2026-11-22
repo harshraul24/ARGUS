@@ -1,0 +1,14 @@
+{
+  "key": "44c1f215d5893b87daad35bcb7c0615547b35bf636e0bb9d6f7481d9e4c8620a",
+  "provider": "ollama",
+  "model": "gpt-oss:120b-cloud",
+  "prompt_sha": "44c1f215d5893b87",
+  "response": "{\n  \"disposition\": \"malicious\",\n  \"mitre_technique\": \"T1003\",\n  \"severity\": 0.8,\n  \"malicious_events\": [\"e13\", \"e28\", \"e11\", \"e25\"],\n  \"reason\": \"The svc account used sudo to read /etc/shadow (credential dumping) and the sudo process made outbound connections, indicating possible credential exfiltration.\"\n}",
+  "latency_s": 3.184033155441284,
+  "created_at": 1791424100.468842,
+  "params": {
+    "temperature": 0.0,
+    "seed": 7,
+    "json_mode": true
+  }
+}

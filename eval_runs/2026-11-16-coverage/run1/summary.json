@@ -1,0 +1,1571 @@
+{
+ "freeze": {
+  "manifest": "ARGUS_FREEZE_2026-11-16-coverage.json",
+  "matches": true,
+  "aggregate_sha256": "bf8f0ad1efc8089225cdb163ebce69709450ca6579d78f1b26b05e9f4ae664d6",
+  "changed": []
+ },
+ "operations": {
+  "run1": "design"
+ },
+ "arms": {
+  "argus": {
+   "metrics": {
+    "all": {
+     "attack_windows_flagged": "1/8",
+     "benign_windows_flagged": "1/12",
+     "steps_detected": "2/36",
+     "step_recall_ci95": [
+      0.015,
+      0.181
+     ],
+     "event_precision": 0.0101,
+     "steps_by_rule": {
+      "KILLCHAIN": 2
+     }
+    },
+    "gate_pass": {
+     "attack_windows_flagged": "1/8",
+     "benign_windows_flagged": "0/3",
+     "steps_detected": "2/36",
+     "step_recall_ci95": [
+      0.015,
+      0.181
+     ],
+     "event_precision": 0.0226,
+     "steps_by_rule": {
+      "KILLCHAIN": 2
+     }
+    },
+    "steps_by_status": {
+     "failed": "0/8",
+     "no_result": "0/4",
+     "success": "2/24"
+    },
+    "bootstrap_steps": "0/4",
+    "deployment_steps": "0/4"
+   },
+   "windows": [
+    {
+     "window": "run1_app01_1200",
+     "category": "benign",
+     "gate": "pass",
+     "disposition": "benign",
+     "alerts": [],
+     "context": [
+      "TA0007"
+     ],
+     "selected": 0,
+     "malicious_selected": 0,
+     "malicious": 0,
+     "blind_spots": [
+      "auditd: not recording 2026-10-07 12:15:08 to 12:15:08 UTC (under 1 s): audit rule removed"
+     ],
+     "claims": 96
+    },
+    {
+     "window": "run1_app01_1230",
+     "category": "attack",
+     "gate": "pass",
+     "disposition": "benign",
+     "alerts": [],
+     "context": [
+      "TA0010"
+     ],
+     "selected": 0,
+     "malicious_selected": 0,
+     "malicious": 10,
+     "blind_spots": [],
+     "claims": 31
+    },
+    {
+     "window": "run1_app01_1300",
+     "category": "benign",
+     "gate": "fail: package_install",
+     "disposition": "benign",
+     "alerts": [],
+     "context": [
+      "TA0011",
+      "TA0007"
+     ],
+     "selected": 0,
+     "malicious_selected": 0,
+     "malicious": 0,
+     "blind_spots": [],
+     "claims": 1072
+    },
+    {
+     "window": "run1_app01_1330",
+     "category": "attack",
+     "gate": "pass",
+     "disposition": "benign",
+     "alerts": [],
+     "context": [
+      "TA0011",
+      "TA0007"
+     ],
+     "selected": 0,
+     "malicious_selected": 0,
+     "malicious": 13,
+     "blind_spots": [],
+     "claims": 609
+    },
+    {
+     "window": "run1_app01_1400",
+     "category": "benign",
+     "gate": "fail: log_collection",
+     "disposition": "benign",
+     "alerts": [],
+     "context": [],
+     "selected": 0,
+     "malicious_selected": 0,
+     "malicious": 0,
+     "blind_spots": [],
+     "claims": 30
+    },
+    {
+     "window": "run1_web01_1200",
+     "category": "benign",
+     "gate": "pass",
+     "disposition": "benign",
+     "alerts": [],
+     "context": [
+      "TA0007"
+     ],
+     "selected": 0,
+     "malicious_selected": 0,
+     "malicious": 0,
+     "blind_spots": [
+      "auditd: not recording 2026-10-07 12:13:56 to 12:13:57 UTC (under 1 s): audit rule removed"
+     ],
+     "claims": 191
+    },
+    {
+     "window": "run1_web01_1230",
+     "category": "attack",
+     "gate": "pass",
+     "disposition": "benign",
+     "alerts": [],
+     "context": [
+      "TA0010"
+     ],
+     "selected": 0,
+     "malicious_selected": 0,
+     "malicious": 10,
+     "blind_spots": [],
+     "claims": 16
+    },
+    {
+     "window": "run1_web01_1300",
+     "category": "benign",
+     "gate": "fail: package_install",
+     "disposition": "benign",
+     "alerts": [],
+     "context": [
+      "TA0011",
+      "TA0007"
+     ],
+     "selected": 0,
+     "malicious_selected": 0,
+     "malicious": 0,
+     "blind_spots": [],
+     "claims": 948
+    },
+    {
+     "window": "run1_web01_1330",
+     "category": "attack",
+     "gate": "pass",
+     "disposition": "benign",
+     "alerts": [],
+     "context": [
+      "TA0011",
+      "TA0007"
+     ],
+     "selected": 0,
+     "malicious_selected": 0,
+     "malicious": 14,
+     "blind_spots": [],
+     "claims": 616
+    },
+    {
+     "window": "run1_web01_1400",
+     "category": "benign",
+     "gate": "fail: log_collection",
+     "disposition": "benign",
+     "alerts": [],
+     "context": [],
+     "selected": 0,
+     "malicious_selected": 0,
+     "malicious": 0,
+     "blind_spots": [],
+     "claims": 92
+    },
+    {
+     "window": "run1_ws-dev01_1200",
+     "category": "benign",
+     "gate": "pass",
+     "disposition": "benign",
+     "alerts": [],
+     "context": [
+      "TA0007"
+     ],
+     "selected": 0,
+     "malicious_selected": 0,
+     "malicious": 0,
+     "blind_spots": [
+      "auditd: not recording 2026-10-07 12:15:21 to 12:15:22 UTC (under 1 s): audit daemon started with no recorded stop; audit rule removed"
+     ],
+     "claims": 174
+    },
+    {
+     "window": "run1_ws-dev01_1230",
+     "category": "attack",
+     "gate": "pass",
+     "disposition": "benign",
+     "alerts": [],
+     "context": [
+      "TA0010"
+     ],
+     "selected": 0,
+     "malicious_selected": 0,
+     "malicious": 10,
+     "blind_spots": [],
+     "claims": 24
+    },
+    {
+     "window": "run1_ws-dev01_1300",
+     "category": "benign",
+     "gate": "fail: package_install",
+     "disposition": "benign",
+     "alerts": [],
+     "context": [
+      "TA0007",
+      "TA0011"
+     ],
+     "selected": 0,
+     "malicious_selected": 0,
+     "malicious": 0,
+     "blind_spots": [],
+     "claims": 1008
+    },
+    {
+     "window": "run1_ws-dev01_1330",
+     "category": "attack",
+     "gate": "pass",
+     "disposition": "benign",
+     "alerts": [],
+     "context": [
+      "TA0011",
+      "TA0007"
+     ],
+     "selected": 0,
+     "malicious_selected": 0,
+     "malicious": 13,
+     "blind_spots": [],
+     "claims": 632
+    },
+    {
+     "window": "run1_ws-dev01_1400",
+     "category": "benign",
+     "gate": "fail: log_collection",
+     "disposition": "benign",
+     "alerts": [],
+     "context": [],
+     "selected": 0,
+     "malicious_selected": 0,
+     "malicious": 0,
+     "blind_spots": [],
+     "claims": 24
+    },
+    {
+     "window": "run1_ws-fin01_1200",
+     "category": "benign",
+     "gate": "fail: first_boot, package_install",
+     "disposition": "benign",
+     "alerts": [],
+     "context": [
+      "TA0011",
+      "TA0007"
+     ],
+     "selected": 0,
+     "malicious_selected": 0,
+     "malicious": 0,
+     "blind_spots": [
+      "auditd: not recording 2026-10-07 12:07:18 to 12:07:18 UTC (under 1 s): audit rule removed",
+      "auditd: not recording 2026-10-07 12:15:46 to 12:15:46 UTC (under 1 s): audit rule removed"
+     ],
+     "claims": 1573
+    },
+    {
+     "window": "run1_ws-fin01_1230",
+     "category": "attack",
+     "gate": "pass",
+     "disposition": "benign",
+     "alerts": [],
+     "context": [
+      "TA0011",
+      "TA0010"
+     ],
+     "selected": 0,
+     "malicious_selected": 0,
+     "malicious": 10,
+     "blind_spots": [],
+     "claims": 63
+    },
+    {
+     "window": "run1_ws-fin01_1300",
+     "category": "benign",
+     "gate": "fail: package_install",
+     "disposition": "suspicious",
+     "alerts": [
+      "KILLCHAIN"
+     ],
+     "context": [
+      "TA0011",
+      "TA0007"
+     ],
+     "selected": 165,
+     "malicious_selected": 0,
+     "malicious": 0,
+     "blind_spots": [],
+     "claims": 1002
+    },
+    {
+     "window": "run1_ws-fin01_1330",
+     "category": "attack",
+     "gate": "pass",
+     "disposition": "suspicious",
+     "alerts": [
+      "KILLCHAIN"
+     ],
+     "context": [
+      "TA0011",
+      "TA0007"
+     ],
+     "selected": 133,
+     "malicious_selected": 3,
+     "malicious": 13,
+     "blind_spots": [],
+     "claims": 588
+    },
+    {
+     "window": "run1_ws-fin01_1400",
+     "category": "benign",
+     "gate": "fail: log_collection",
+     "disposition": "benign",
+     "alerts": [],
+     "context": [],
+     "selected": 0,
+     "malicious_selected": 0,
+     "malicious": 0,
+     "blind_spots": [],
+     "claims": 29
+    }
+   ],
+   "steps": [
+    {
+     "window": "run1_app01_1230",
+     "step": "Agent deployment",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": true,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "run1_app01_1230",
+     "step": "Environment variables discovery on freebsd, macos and linux",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "run1_app01_1230",
+     "step": "Current User",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "run1_app01_1230",
+     "step": "Bootstrap T1070.003",
+     "status": "success",
+     "bootstrap": true,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "run1_app01_1330",
+     "step": "IP Neighbour Show",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "run1_app01_1330",
+     "step": "Find System Network Connections",
+     "status": "failed",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "run1_app01_1330",
+     "step": "Enumerate all accounts (Local)",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "run1_app01_1330",
+     "step": "Check Chrome",
+     "status": "failed",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "run1_app01_1330",
+     "step": "Access /etc/master.passwd (Local)",
+     "status": "no_result",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "run1_web01_1230",
+     "step": "Agent deployment",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": true,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "run1_web01_1230",
+     "step": "Environment variables discovery on freebsd, macos and linux",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "run1_web01_1230",
+     "step": "Current User",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "run1_web01_1230",
+     "step": "Bootstrap T1070.003",
+     "status": "success",
+     "bootstrap": true,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "run1_web01_1330",
+     "step": "IP Neighbour Show",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "run1_web01_1330",
+     "step": "Find System Network Connections",
+     "status": "failed",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "run1_web01_1330",
+     "step": "Enumerate all accounts (Local)",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "run1_web01_1330",
+     "step": "Check Chrome",
+     "status": "failed",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "run1_web01_1330",
+     "step": "Access /etc/master.passwd (Local)",
+     "status": "no_result",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "run1_ws-dev01_1230",
+     "step": "Agent deployment",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": true,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "run1_ws-dev01_1230",
+     "step": "Environment variables discovery on freebsd, macos and linux",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "run1_ws-dev01_1230",
+     "step": "Current User",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "run1_ws-dev01_1230",
+     "step": "Bootstrap T1070.003",
+     "status": "success",
+     "bootstrap": true,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "run1_ws-dev01_1330",
+     "step": "IP Neighbour Show",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "run1_ws-dev01_1330",
+     "step": "Find System Network Connections",
+     "status": "failed",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "run1_ws-dev01_1330",
+     "step": "Enumerate all accounts (Local)",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "run1_ws-dev01_1330",
+     "step": "Check Chrome",
+     "status": "failed",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "run1_ws-dev01_1330",
+     "step": "Access /etc/master.passwd (Local)",
+     "status": "no_result",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "run1_ws-fin01_1230",
+     "step": "Agent deployment",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": true,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "run1_ws-fin01_1230",
+     "step": "Environment variables discovery on freebsd, macos and linux",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "run1_ws-fin01_1230",
+     "step": "Current User",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "run1_ws-fin01_1230",
+     "step": "Bootstrap T1070.003",
+     "status": "success",
+     "bootstrap": true,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "run1_ws-fin01_1330",
+     "step": "IP Neighbour Show",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "KILLCHAIN"
+     ]
+    },
+    {
+     "window": "run1_ws-fin01_1330",
+     "step": "Find System Network Connections",
+     "status": "failed",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "run1_ws-fin01_1330",
+     "step": "Enumerate all accounts (Local)",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "KILLCHAIN"
+     ]
+    },
+    {
+     "window": "run1_ws-fin01_1330",
+     "step": "Check Chrome",
+     "status": "failed",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "run1_ws-fin01_1330",
+     "step": "Access /etc/master.passwd (Local)",
+     "status": "no_result",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    }
+   ]
+  },
+  "argus_s3": {
+   "metrics": {
+    "all": {
+     "attack_windows_flagged": "8/8",
+     "benign_windows_flagged": "1/12",
+     "steps_detected": "25/36",
+     "step_recall_ci95": [
+      0.531,
+      0.82
+     ],
+     "event_precision": 0.1272,
+     "steps_by_rule": {
+      "llm.user-writable-discovery-commands.604cde8671": 8,
+      "llm.llm-llm-credential-dump-passwd-e29b984306-71ac01.831b8b4306.r2": 8,
+      "llm.llm-user-writable-outbound-connection-b85e043ed0.9811af3ed0.r1": 4,
+      "llm.llm-user-writable-outbound-server-c5a7a22a21.174bd32a21.r1": 4,
+      "llm.llm-discovery-from-user-writable-ancestor-e333f0.b528532a21.r1": 4,
+      "llm.clear-bash-history-6f2c1d.b1bd756a50.r1": 4,
+      "llm.read-passwd-to-tmp.952833f90c": 4,
+      "llm.credential-dump-etc-master-passwd.60d65985b1.r1": 4,
+      "KILLCHAIN": 2
+     }
+    },
+    "gate_pass": {
+     "attack_windows_flagged": "8/8",
+     "benign_windows_flagged": "0/3",
+     "steps_detected": "25/36",
+     "step_recall_ci95": [
+      0.531,
+      0.82
+     ],
+     "event_precision": 0.2486,
+     "steps_by_rule": {
+      "llm.user-writable-discovery-commands.604cde8671": 8,
+      "llm.llm-llm-credential-dump-passwd-e29b984306-71ac01.831b8b4306.r2": 8,
+      "llm.llm-user-writable-outbound-connection-b85e043ed0.9811af3ed0.r1": 4,
+      "llm.llm-user-writable-outbound-server-c5a7a22a21.174bd32a21.r1": 4,
+      "llm.llm-discovery-from-user-writable-ancestor-e333f0.b528532a21.r1": 4,
+      "llm.clear-bash-history-6f2c1d.b1bd756a50.r1": 4,
+      "llm.read-passwd-to-tmp.952833f90c": 4,
+      "llm.credential-dump-etc-master-passwd.60d65985b1.r1": 4,
+      "KILLCHAIN": 2
+     }
+    },
+    "steps_by_status": {
+     "failed": "0/8",
+     "no_result": "4/4",
+     "success": "21/24"
+    },
+    "bootstrap_steps": "4/4",
+    "deployment_steps": "4/4"
+   },
+   "windows": [
+    {
+     "window": "run1_app01_1200",
+     "category": "benign",
+     "gate": "pass",
+     "disposition": "benign",
+     "alerts": [],
+     "context": [
+      "TA0007"
+     ],
+     "selected": 0,
+     "malicious_selected": 0,
+     "malicious": 0,
+     "blind_spots": [
+      "auditd: not recording 2026-10-07 12:15:08 to 12:15:08 UTC (under 1 s): audit rule removed"
+     ],
+     "claims": 96
+    },
+    {
+     "window": "run1_app01_1230",
+     "category": "attack",
+     "gate": "pass",
+     "disposition": "malicious",
+     "alerts": [
+      "llm.clear-bash-history-6f2c1d.b1bd756a50.r1",
+      "llm.llm-discovery-from-user-writable-ancestor-e333f0.b528532a21.r1",
+      "llm.llm-user-writable-outbound-connection-b85e043ed0.9811af3ed0.r1",
+      "llm.llm-user-writable-outbound-server-c5a7a22a21.174bd32a21.r1",
+      "llm.user-writable-discovery-commands.604cde8671"
+     ],
+     "context": [
+      "TA0010"
+     ],
+     "selected": 7,
+     "malicious_selected": 7,
+     "malicious": 10,
+     "blind_spots": [],
+     "claims": 31
+    },
+    {
+     "window": "run1_app01_1300",
+     "category": "benign",
+     "gate": "fail: package_install",
+     "disposition": "benign",
+     "alerts": [],
+     "context": [
+      "TA0011",
+      "TA0007"
+     ],
+     "selected": 0,
+     "malicious_selected": 0,
+     "malicious": 0,
+     "blind_spots": [],
+     "claims": 1072
+    },
+    {
+     "window": "run1_app01_1330",
+     "category": "attack",
+     "gate": "pass",
+     "disposition": "malicious",
+     "alerts": [
+      "llm.credential-dump-etc-master-passwd.60d65985b1.r1",
+      "llm.llm-llm-credential-dump-passwd-e29b984306-71ac01.831b8b4306.r2",
+      "llm.read-passwd-to-tmp.952833f90c"
+     ],
+     "context": [
+      "TA0011",
+      "TA0007"
+     ],
+     "selected": 3,
+     "malicious_selected": 3,
+     "malicious": 13,
+     "blind_spots": [],
+     "claims": 609
+    },
+    {
+     "window": "run1_app01_1400",
+     "category": "benign",
+     "gate": "fail: log_collection",
+     "disposition": "benign",
+     "alerts": [],
+     "context": [],
+     "selected": 0,
+     "malicious_selected": 0,
+     "malicious": 0,
+     "blind_spots": [],
+     "claims": 30
+    },
+    {
+     "window": "run1_web01_1200",
+     "category": "benign",
+     "gate": "pass",
+     "disposition": "benign",
+     "alerts": [],
+     "context": [
+      "TA0007"
+     ],
+     "selected": 0,
+     "malicious_selected": 0,
+     "malicious": 0,
+     "blind_spots": [
+      "auditd: not recording 2026-10-07 12:13:56 to 12:13:57 UTC (under 1 s): audit rule removed"
+     ],
+     "claims": 191
+    },
+    {
+     "window": "run1_web01_1230",
+     "category": "attack",
+     "gate": "pass",
+     "disposition": "malicious",
+     "alerts": [
+      "llm.clear-bash-history-6f2c1d.b1bd756a50.r1",
+      "llm.llm-discovery-from-user-writable-ancestor-e333f0.b528532a21.r1",
+      "llm.llm-user-writable-outbound-connection-b85e043ed0.9811af3ed0.r1",
+      "llm.llm-user-writable-outbound-server-c5a7a22a21.174bd32a21.r1",
+      "llm.user-writable-discovery-commands.604cde8671"
+     ],
+     "context": [
+      "TA0010"
+     ],
+     "selected": 7,
+     "malicious_selected": 7,
+     "malicious": 10,
+     "blind_spots": [],
+     "claims": 16
+    },
+    {
+     "window": "run1_web01_1300",
+     "category": "benign",
+     "gate": "fail: package_install",
+     "disposition": "benign",
+     "alerts": [],
+     "context": [
+      "TA0011",
+      "TA0007"
+     ],
+     "selected": 0,
+     "malicious_selected": 0,
+     "malicious": 0,
+     "blind_spots": [],
+     "claims": 948
+    },
+    {
+     "window": "run1_web01_1330",
+     "category": "attack",
+     "gate": "pass",
+     "disposition": "malicious",
+     "alerts": [
+      "llm.credential-dump-etc-master-passwd.60d65985b1.r1",
+      "llm.llm-llm-credential-dump-passwd-e29b984306-71ac01.831b8b4306.r2",
+      "llm.read-passwd-to-tmp.952833f90c"
+     ],
+     "context": [
+      "TA0011",
+      "TA0007"
+     ],
+     "selected": 3,
+     "malicious_selected": 3,
+     "malicious": 14,
+     "blind_spots": [],
+     "claims": 616
+    },
+    {
+     "window": "run1_web01_1400",
+     "category": "benign",
+     "gate": "fail: log_collection",
+     "disposition": "benign",
+     "alerts": [],
+     "context": [],
+     "selected": 0,
+     "malicious_selected": 0,
+     "malicious": 0,
+     "blind_spots": [],
+     "claims": 92
+    },
+    {
+     "window": "run1_ws-dev01_1200",
+     "category": "benign",
+     "gate": "pass",
+     "disposition": "benign",
+     "alerts": [],
+     "context": [
+      "TA0007"
+     ],
+     "selected": 0,
+     "malicious_selected": 0,
+     "malicious": 0,
+     "blind_spots": [
+      "auditd: not recording 2026-10-07 12:15:21 to 12:15:22 UTC (under 1 s): audit daemon started with no recorded stop; audit rule removed"
+     ],
+     "claims": 174
+    },
+    {
+     "window": "run1_ws-dev01_1230",
+     "category": "attack",
+     "gate": "pass",
+     "disposition": "malicious",
+     "alerts": [
+      "llm.clear-bash-history-6f2c1d.b1bd756a50.r1",
+      "llm.llm-discovery-from-user-writable-ancestor-e333f0.b528532a21.r1",
+      "llm.llm-user-writable-outbound-connection-b85e043ed0.9811af3ed0.r1",
+      "llm.llm-user-writable-outbound-server-c5a7a22a21.174bd32a21.r1",
+      "llm.user-writable-discovery-commands.604cde8671"
+     ],
+     "context": [
+      "TA0010"
+     ],
+     "selected": 7,
+     "malicious_selected": 7,
+     "malicious": 10,
+     "blind_spots": [],
+     "claims": 24
+    },
+    {
+     "window": "run1_ws-dev01_1300",
+     "category": "benign",
+     "gate": "fail: package_install",
+     "disposition": "benign",
+     "alerts": [],
+     "context": [
+      "TA0007",
+      "TA0011"
+     ],
+     "selected": 0,
+     "malicious_selected": 0,
+     "malicious": 0,
+     "blind_spots": [],
+     "claims": 1008
+    },
+    {
+     "window": "run1_ws-dev01_1330",
+     "category": "attack",
+     "gate": "pass",
+     "disposition": "malicious",
+     "alerts": [
+      "llm.credential-dump-etc-master-passwd.60d65985b1.r1",
+      "llm.llm-llm-credential-dump-passwd-e29b984306-71ac01.831b8b4306.r2",
+      "llm.read-passwd-to-tmp.952833f90c"
+     ],
+     "context": [
+      "TA0011",
+      "TA0007"
+     ],
+     "selected": 3,
+     "malicious_selected": 3,
+     "malicious": 13,
+     "blind_spots": [],
+     "claims": 632
+    },
+    {
+     "window": "run1_ws-dev01_1400",
+     "category": "benign",
+     "gate": "fail: log_collection",
+     "disposition": "benign",
+     "alerts": [],
+     "context": [],
+     "selected": 0,
+     "malicious_selected": 0,
+     "malicious": 0,
+     "blind_spots": [],
+     "claims": 24
+    },
+    {
+     "window": "run1_ws-fin01_1200",
+     "category": "benign",
+     "gate": "fail: first_boot, package_install",
+     "disposition": "benign",
+     "alerts": [],
+     "context": [
+      "TA0011",
+      "TA0007"
+     ],
+     "selected": 0,
+     "malicious_selected": 0,
+     "malicious": 0,
+     "blind_spots": [
+      "auditd: not recording 2026-10-07 12:07:18 to 12:07:18 UTC (under 1 s): audit rule removed",
+      "auditd: not recording 2026-10-07 12:15:46 to 12:15:46 UTC (under 1 s): audit rule removed"
+     ],
+     "claims": 1573
+    },
+    {
+     "window": "run1_ws-fin01_1230",
+     "category": "attack",
+     "gate": "pass",
+     "disposition": "malicious",
+     "alerts": [
+      "llm.clear-bash-history-6f2c1d.b1bd756a50.r1",
+      "llm.llm-discovery-from-user-writable-ancestor-e333f0.b528532a21.r1",
+      "llm.llm-user-writable-outbound-connection-b85e043ed0.9811af3ed0.r1",
+      "llm.llm-user-writable-outbound-server-c5a7a22a21.174bd32a21.r1",
+      "llm.user-writable-discovery-commands.604cde8671"
+     ],
+     "context": [
+      "TA0011",
+      "TA0010"
+     ],
+     "selected": 7,
+     "malicious_selected": 7,
+     "malicious": 10,
+     "blind_spots": [],
+     "claims": 63
+    },
+    {
+     "window": "run1_ws-fin01_1300",
+     "category": "benign",
+     "gate": "fail: package_install",
+     "disposition": "suspicious",
+     "alerts": [
+      "KILLCHAIN"
+     ],
+     "context": [
+      "TA0011",
+      "TA0007"
+     ],
+     "selected": 165,
+     "malicious_selected": 0,
+     "malicious": 0,
+     "blind_spots": [],
+     "claims": 1002
+    },
+    {
+     "window": "run1_ws-fin01_1330",
+     "category": "attack",
+     "gate": "pass",
+     "disposition": "malicious",
+     "alerts": [
+      "KILLCHAIN",
+      "llm.credential-dump-etc-master-passwd.60d65985b1.r1",
+      "llm.llm-llm-credential-dump-passwd-e29b984306-71ac01.831b8b4306.r2",
+      "llm.read-passwd-to-tmp.952833f90c"
+     ],
+     "context": [
+      "TA0011",
+      "TA0007"
+     ],
+     "selected": 136,
+     "malicious_selected": 6,
+     "malicious": 13,
+     "blind_spots": [],
+     "claims": 588
+    },
+    {
+     "window": "run1_ws-fin01_1400",
+     "category": "benign",
+     "gate": "fail: log_collection",
+     "disposition": "benign",
+     "alerts": [],
+     "context": [],
+     "selected": 0,
+     "malicious_selected": 0,
+     "malicious": 0,
+     "blind_spots": [],
+     "claims": 29
+    }
+   ],
+   "steps": [
+    {
+     "window": "run1_app01_1230",
+     "step": "Agent deployment",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": true,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "llm.llm-user-writable-outbound-connection-b85e043ed0.9811af3ed0.r1",
+      "llm.llm-user-writable-outbound-server-c5a7a22a21.174bd32a21.r1"
+     ]
+    },
+    {
+     "window": "run1_app01_1230",
+     "step": "Environment variables discovery on freebsd, macos and linux",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "llm.user-writable-discovery-commands.604cde8671"
+     ]
+    },
+    {
+     "window": "run1_app01_1230",
+     "step": "Current User",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "llm.llm-discovery-from-user-writable-ancestor-e333f0.b528532a21.r1",
+      "llm.user-writable-discovery-commands.604cde8671"
+     ]
+    },
+    {
+     "window": "run1_app01_1230",
+     "step": "Bootstrap T1070.003",
+     "status": "success",
+     "bootstrap": true,
+     "deployment": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "llm.clear-bash-history-6f2c1d.b1bd756a50.r1"
+     ]
+    },
+    {
+     "window": "run1_app01_1330",
+     "step": "IP Neighbour Show",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "run1_app01_1330",
+     "step": "Find System Network Connections",
+     "status": "failed",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "run1_app01_1330",
+     "step": "Enumerate all accounts (Local)",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "llm.llm-llm-credential-dump-passwd-e29b984306-71ac01.831b8b4306.r2",
+      "llm.read-passwd-to-tmp.952833f90c"
+     ]
+    },
+    {
+     "window": "run1_app01_1330",
+     "step": "Check Chrome",
+     "status": "failed",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "run1_app01_1330",
+     "step": "Access /etc/master.passwd (Local)",
+     "status": "no_result",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "llm.credential-dump-etc-master-passwd.60d65985b1.r1",
+      "llm.llm-llm-credential-dump-passwd-e29b984306-71ac01.831b8b4306.r2"
+     ]
+    },
+    {
+     "window": "run1_web01_1230",
+     "step": "Agent deployment",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": true,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "llm.llm-user-writable-outbound-connection-b85e043ed0.9811af3ed0.r1",
+      "llm.llm-user-writable-outbound-server-c5a7a22a21.174bd32a21.r1"
+     ]
+    },
+    {
+     "window": "run1_web01_1230",
+     "step": "Environment variables discovery on freebsd, macos and linux",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "llm.user-writable-discovery-commands.604cde8671"
+     ]
+    },
+    {
+     "window": "run1_web01_1230",
+     "step": "Current User",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "llm.llm-discovery-from-user-writable-ancestor-e333f0.b528532a21.r1",
+      "llm.user-writable-discovery-commands.604cde8671"
+     ]
+    },
+    {
+     "window": "run1_web01_1230",
+     "step": "Bootstrap T1070.003",
+     "status": "success",
+     "bootstrap": true,
+     "deployment": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "llm.clear-bash-history-6f2c1d.b1bd756a50.r1"
+     ]
+    },
+    {
+     "window": "run1_web01_1330",
+     "step": "IP Neighbour Show",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "run1_web01_1330",
+     "step": "Find System Network Connections",
+     "status": "failed",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "run1_web01_1330",
+     "step": "Enumerate all accounts (Local)",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "llm.llm-llm-credential-dump-passwd-e29b984306-71ac01.831b8b4306.r2",
+      "llm.read-passwd-to-tmp.952833f90c"
+     ]
+    },
+    {
+     "window": "run1_web01_1330",
+     "step": "Check Chrome",
+     "status": "failed",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "run1_web01_1330",
+     "step": "Access /etc/master.passwd (Local)",
+     "status": "no_result",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "llm.credential-dump-etc-master-passwd.60d65985b1.r1",
+      "llm.llm-llm-credential-dump-passwd-e29b984306-71ac01.831b8b4306.r2"
+     ]
+    },
+    {
+     "window": "run1_ws-dev01_1230",
+     "step": "Agent deployment",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": true,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "llm.llm-user-writable-outbound-connection-b85e043ed0.9811af3ed0.r1",
+      "llm.llm-user-writable-outbound-server-c5a7a22a21.174bd32a21.r1"
+     ]
+    },
+    {
+     "window": "run1_ws-dev01_1230",
+     "step": "Environment variables discovery on freebsd, macos and linux",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "llm.user-writable-discovery-commands.604cde8671"
+     ]
+    },
+    {
+     "window": "run1_ws-dev01_1230",
+     "step": "Current User",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "llm.llm-discovery-from-user-writable-ancestor-e333f0.b528532a21.r1",
+      "llm.user-writable-discovery-commands.604cde8671"
+     ]
+    },
+    {
+     "window": "run1_ws-dev01_1230",
+     "step": "Bootstrap T1070.003",
+     "status": "success",
+     "bootstrap": true,
+     "deployment": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "llm.clear-bash-history-6f2c1d.b1bd756a50.r1"
+     ]
+    },
+    {
+     "window": "run1_ws-dev01_1330",
+     "step": "IP Neighbour Show",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "run1_ws-dev01_1330",
+     "step": "Find System Network Connections",
+     "status": "failed",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "run1_ws-dev01_1330",
+     "step": "Enumerate all accounts (Local)",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "llm.llm-llm-credential-dump-passwd-e29b984306-71ac01.831b8b4306.r2",
+      "llm.read-passwd-to-tmp.952833f90c"
+     ]
+    },
+    {
+     "window": "run1_ws-dev01_1330",
+     "step": "Check Chrome",
+     "status": "failed",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "run1_ws-dev01_1330",
+     "step": "Access /etc/master.passwd (Local)",
+     "status": "no_result",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "llm.credential-dump-etc-master-passwd.60d65985b1.r1",
+      "llm.llm-llm-credential-dump-passwd-e29b984306-71ac01.831b8b4306.r2"
+     ]
+    },
+    {
+     "window": "run1_ws-fin01_1230",
+     "step": "Agent deployment",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": true,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "llm.llm-user-writable-outbound-connection-b85e043ed0.9811af3ed0.r1",
+      "llm.llm-user-writable-outbound-server-c5a7a22a21.174bd32a21.r1"
+     ]
+    },
+    {
+     "window": "run1_ws-fin01_1230",
+     "step": "Environment variables discovery on freebsd, macos and linux",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "llm.user-writable-discovery-commands.604cde8671"
+     ]
+    },
+    {
+     "window": "run1_ws-fin01_1230",
+     "step": "Current User",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "llm.llm-discovery-from-user-writable-ancestor-e333f0.b528532a21.r1",
+      "llm.user-writable-discovery-commands.604cde8671"
+     ]
+    },
+    {
+     "window": "run1_ws-fin01_1230",
+     "step": "Bootstrap T1070.003",
+     "status": "success",
+     "bootstrap": true,
+     "deployment": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "llm.clear-bash-history-6f2c1d.b1bd756a50.r1"
+     ]
+    },
+    {
+     "window": "run1_ws-fin01_1330",
+     "step": "IP Neighbour Show",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "KILLCHAIN"
+     ]
+    },
+    {
+     "window": "run1_ws-fin01_1330",
+     "step": "Find System Network Connections",
+     "status": "failed",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "run1_ws-fin01_1330",
+     "step": "Enumerate all accounts (Local)",
+     "status": "success",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "KILLCHAIN",
+      "llm.llm-llm-credential-dump-passwd-e29b984306-71ac01.831b8b4306.r2",
+      "llm.read-passwd-to-tmp.952833f90c"
+     ]
+    },
+    {
+     "window": "run1_ws-fin01_1330",
+     "step": "Check Chrome",
+     "status": "failed",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "run1_ws-fin01_1330",
+     "step": "Access /etc/master.passwd (Local)",
+     "status": "no_result",
+     "bootstrap": false,
+     "deployment": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "llm.credential-dump-etc-master-passwd.60d65985b1.r1",
+      "llm.llm-llm-credential-dump-passwd-e29b984306-71ac01.831b8b4306.r2"
+     ]
+    }
+   ]
+  }
+ }
+}

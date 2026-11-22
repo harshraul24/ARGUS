@@ -1,0 +1,14 @@
+{
+  "key": "1975ae20df956a6a99965f7e0b43fc895a6a90a582dfc41486241220fe67ffb9",
+  "provider": "ollama",
+  "model": "gpt-oss:120b-cloud",
+  "prompt_sha": "1975ae20df956a6a",
+  "response": "{\n  \"disposition\": \"malicious\",\n  \"mitre_technique\": \"T1105\",\n  \"severity\": 0.9,\n  \"malicious_events\": [\"e1\", \"e2\", \"e3\", \"e4\", \"e5\", \"e6\", \"e7\"],\n  \"reason\": \"Downloader fetched a binary, set it executable, executed it, and attempted to hide activity by clearing bash history\"\n}",
+  "latency_s": 1.8742997646331787,
+  "created_at": 1791424271.570336,
+  "params": {
+    "temperature": 0.0,
+    "seed": 8,
+    "json_mode": true
+  }
+}

@@ -1,0 +1,23 @@
+#separator \x09
+#set_separator	,
+#empty_field	(empty)
+#unset_field	-
+#path	conn
+#open	2026-09-09-17-26-49
+#fields	ts	uid	id.orig_h	id.orig_p	id.resp_h	id.resp_p	proto	service	duration	orig_bytes	resp_bytes	conn_state	local_orig	local_resp	missed_bytes	history	orig_pkts	orig_ip_bytes	resp_pkts	resp_ip_bytes	tunnel_parents	ip_proto
+#types	time	string	addr	port	addr	port	enum	string	interval	count	count	string	bool	bool	count	string	count	count	count	count	set[string]	count
+1788973144.691223	CpGQ0LXRoxezzuPUf	10.0.2.10	46713	10.0.2.20	2121	tcp	-	0.001743	0	0	RSTO	T	T	0	ShR	2	84	1	44	-	6
+1788973154.804010	COOpZV3SOkmVzp56d1	10.0.2.20	43091	10.0.2.10	113	tcp	-	0.000159	0	0	REJ	T	T	0	Sr	1	60	1	40	-	6
+1788973144.787824	CVU9Qw2m54tV4fuaaj	10.0.2.10	57536	10.0.2.20	2121	tcp	-	10.022492	4	54	SF	T	T	0	ShADadFf	6	324	4	270	-	6
+1788973191.186188	CMLIEr1JTf1nLSkOk3	10.0.2.10	41371	10.0.2.20	21	tcp	ftp	0.223742	30	100	RSTO	T	T	0	ShAdDaFR	9	470	7	472	-	6
+1788973271.327386	Cfg7mW3lcq2ClNKH37	10.0.2.10	44227	10.0.2.20	2121	tcp	-	0.001925	0	0	RSTO	T	T	0	ShR	2	84	1	44	-	6
+1788973281.420413	CpIpNL3755Wr3YVwrl	10.0.2.20	53688	10.0.2.10	113	tcp	-	0.000190	0	0	REJ	T	T	0	Sr	1	60	1	40	-	6
+1788973271.410098	CAf6Ih4ytPkelrvI7d	10.0.2.10	38854	10.0.2.20	2121	tcp	-	10.019805	4	54	SF	T	T	0	ShADadFf	6	324	4	270	-	6
+1788973299.962769	CEPAss1lIWRF9AiRl1	10.0.2.10	38009	10.0.2.20	2121	tcp	-	0.001710	0	0	RSTO	T	T	0	ShR	2	84	1	44	-	6
+1788973310.077535	C1h7or27Hq7Lh1W582	10.0.2.20	46172	10.0.2.10	113	tcp	-	0.000125	0	0	REJ	T	T	0	Sr	1	60	1	40	-	6
+1788973300.074868	C4I4Nup9jeL4JU713	10.0.2.10	44994	10.0.2.20	2121	tcp	-	10.010826	4	54	SF	T	T	0	ShADadFf	6	324	4	270	-	6
+1788973287.483031	Csn7w72QIZIxlhak7a	10.0.2.20	138	10.0.2.255	138	udp	-	-	-	-	S0	T	T	0	D	2	515	0	0	-	17
+1788973423.813411	CmDcqz2gUrwjZPjCa3	10.0.2.10	57508	10.0.2.20	2121	tcp	-	0.001243	0	0	RSTO	T	T	0	ShR	2	84	1	44	-	6
+1788973433.920496	CQgVmU3tO8yYgVpbSa	10.0.2.20	46057	10.0.2.10	113	tcp	-	0.000153	0	0	REJ	T	T	0	Sr	1	60	1	40	-	6
+1788973423.909702	CWNcX33FGW2zWUgw5h	10.0.2.10	48992	10.0.2.20	2121	tcp	-	10.019324	4	54	SF	T	T	0	ShADadFf	6	324	4	270	-	6
+#close	2026-09-09-17-26-49

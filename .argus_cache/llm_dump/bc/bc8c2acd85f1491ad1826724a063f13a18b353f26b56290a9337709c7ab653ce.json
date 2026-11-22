@@ -1,0 +1,14 @@
+{
+  "key": "bc8c2acd85f1491ad1826724a063f13a18b353f26b56290a9337709c7ab653ce",
+  "provider": "ollama",
+  "model": "gpt-oss:120b-cloud",
+  "prompt_sha": "bc8c2acd85f1491a",
+  "response": "{\n  \"disposition\": \"malicious\",\n  \"mitre_technique\": \"T1003\",\n  \"severity\": 0.8,\n  \"malicious_events\": [\"e17\",\"e18\",\"e19\",\"e21\",\"e24\",\"e25\",\"e27\",\"e28\",\"e29\",\"e30\"],\n  \"reason\": \"User svc used sudo to copy authentication logs and read /etc/shadow, then opened outbound connections to an internal host, indicating credential dumping and data exfiltration.\"\n}",
+  "latency_s": 3.061861991882324,
+  "created_at": 1791424114.2004979,
+  "params": {
+    "temperature": 0.0,
+    "seed": 7,
+    "json_mode": true
+  }
+}

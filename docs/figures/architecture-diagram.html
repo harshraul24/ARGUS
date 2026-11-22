@@ -1,0 +1,595 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<meta charset="utf-8">
+<meta name="color-scheme" content="only light">
+<title>ARGUS Architecture</title>
+<style>
+/* Black on white, minimal. Colour marks only the boundary of each lane; everything inside is black. */
+:root {
+  --bg: #ffffff; --ink: #1d1d1f; --ink-2: #424245; --muted: #86868b; --line: #d2d2d7; --hair: #e8e8ed; --fill: #f5f5f7;
+  --sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --display: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --mono: "SF Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  /* one colour per lane boundary */
+  --cap: #2563eb; --conv: #d97706; --eng: #059669; --bench: #7c3aed; --learn: #db2777; --eval: #6b7280;
+  color-scheme: only light;
+}
+* { box-sizing: border-box; }
+html, body { background: #ffffff !important; color: #1d1d1f; }
+body { background: var(--bg); color: var(--ink); font: 400 16px/1.6 var(--sans); letter-spacing: -.01em; margin: 0;
+  -webkit-font-smoothing: antialiased; }
+.page { max-width: 1200px; margin: 0 auto; padding: 72px clamp(16px, 4vw, 40px) 80px; display: grid; gap: 64px; }
+header { display: grid; gap: 12px; max-width: 64ch; }
+.eyebrow { font-size: 13px; color: var(--muted); }
+h1 { font: 700 clamp(34px, 6vw, 52px)/1.05 var(--display); letter-spacing: -.035em; margin: 0; }
+h2 { font: 700 26px/1.2 var(--display); letter-spacing: -.02em; margin: 0; }
+h3 { font: 600 17px/1.35 var(--display); letter-spacing: -.01em; margin: 0; }
+p { margin: 0; }
+.lede { font-size: 19px; color: var(--muted); }
+section { display: grid; gap: 20px; }
+code, .mono { font-family: var(--mono); font-size: .86em; letter-spacing: 0; }
+.key { font-size: 13px; color: var(--muted); }
+
+figure { margin: 0; display: grid; gap: 14px; }
+.scroll { overflow-x: auto; }
+.d { display: block; width: 100%; height: auto; color: var(--ink); }
+.d.wide { min-width: 1000px; } .d.mid { min-width: 920px; }
+figcaption { font-size: 14px; color: var(--muted); max-width: 84ch; }
+
+/* SVG: lanes are hairlines, boxes are thin ink outlines, evaluation-only parts are dashed */
+.d text { font-family: var(--sans); letter-spacing: 0; }
+.d .lt { font: 700 10.5px var(--sans); letter-spacing: .1em; text-transform: uppercase; }
+.d .t { font-weight: 600; font-size: 12.5px; fill: var(--ink); }
+.d .b { font-size: 11.5px; fill: var(--ink-2); }
+.d .s { font-size: 10.5px; fill: var(--ink-2); }
+.d .sb { font-size: 10.5px; font-weight: 600; fill: var(--ink); }
+.d .m { font-family: var(--mono); font-size: 11px; fill: var(--ink); }
+.d .al { font-size: 10.5px; fill: var(--muted); }
+/* labels sit on a halo of the page colour, so a line passing under one never strikes through it */
+.d .lt, .d .al { paint-order: stroke; stroke: var(--bg); stroke-width: 4px; stroke-linejoin: round; }
+.d .box { fill: var(--bg); stroke: var(--ink); stroke-width: 1; }
+.d .box.c-eval { stroke: var(--muted); }
+.d .chip { fill: #ffffff; stroke: var(--line); stroke-width: 1; }
+.d .grp { fill: none; stroke: var(--conv); stroke-width: 1; stroke-dasharray: 3 3; }
+.d .ln { fill: none; stroke: var(--ink); stroke-width: 1.1; }
+.d .dash { stroke-dasharray: 4 4; }
+.f-cap { fill: var(--cap); } .f-conv { fill: var(--conv); } .f-eng { fill: var(--eng); }
+.f-learn { fill: var(--learn); } .f-bench { fill: var(--bench); } .f-eval { fill: var(--eval); }
+.lane-cap, .lane-conv, .lane-eng, .lane-learn, .lane-bench, .lane-eval { fill: none; stroke-width: 1.6; }
+.lane-cap { stroke: var(--cap); } .lane-conv { stroke: var(--conv); } .lane-eng { stroke: var(--eng); }
+.lane-learn { stroke: var(--learn); } .lane-bench { stroke: var(--bench); }
+.lane-eval { stroke: var(--eval); stroke-dasharray: 5 4; }
+/* verdicts, as in the workbench: solid, outlined, quiet, dashed */
+.v-mal { fill: var(--ink); }
+.v-sus { fill: none; stroke: var(--ink); stroke-width: 1.4; }
+.v-ben { fill: var(--line); }
+.v-und { fill: none; stroke: var(--muted); stroke-width: 1.2; stroke-dasharray: 2 2; }
+
+.stages { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: 36px 40px; }
+.stage { border-top: 2px solid var(--c, var(--ink)); padding-top: 16px; display: grid; gap: 8px; align-content: start; min-width: 0; }
+.stage.eval { border-top-style: dashed; }
+.stage .n { font-size: 12px; font-weight: 600; color: var(--c, var(--muted)); letter-spacing: .06em; text-transform: uppercase; }
+.stage.cap { --c: var(--cap); } .stage.conv { --c: var(--conv); } .stage.eng { --c: var(--eng); }
+.stage.bench { --c: var(--bench); } .stage.learn { --c: var(--learn); } .stage.eval { --c: var(--eval); }
+.stage p, .stage li { font-size: 15px; color: var(--ink-2); }
+.stage ul { margin: 0; padding-left: 18px; display: grid; gap: 4px; }
+
+.tablewrap { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; min-width: 640px; font-size: 15px; }
+th, td { text-align: left; padding: 12px 16px 12px 0; border-bottom: 1px solid var(--hair); vertical-align: top; }
+th { font-size: 12px; font-weight: 500; color: var(--muted); border-bottom-color: var(--ink); }
+tr:last-child td { border-bottom: 0; }
+td.f { font-family: var(--mono); font-size: 13.5px; white-space: nowrap; letter-spacing: 0; }
+.pill { font-size: 12px; padding: 2px 9px; border-radius: 999px; border: 1px dashed var(--muted); color: var(--muted); white-space: nowrap; }
+footer { font-size: 13px; color: var(--muted); border-top: 1px solid var(--hair); padding-top: 18px; }
+</style>
+
+<div class="page">
+  <header>
+    <div class="eyebrow">System architecture · Linux · 8 October 2026</div>
+    <h1>ARGUS Architecture</h1>
+    <p class="lede">How ARGUS turns raw Linux logs from the lab into a triage decision an analyst can act on, how it
+      learns new detection rules, and where it says plainly what its sensors could not see.</p>
+  </header>
+
+  <section aria-labelledby="overview">
+    <h2 id="overview">The whole workflow</h2>
+    <p class="key">Each lane has its own outline colour; lanes are numbered in the order data flows. The dashed grey lane is thesis evaluation only, never read by triage.</p>
+    <figure>
+      <div class="scroll">
+        <svg class="d wide" viewBox="0 0 1268 1130" role="img"
+             aria-label="ARGUS workflow: the lab produces logs; the analyst clicks Import capture in the workbench, which cuts a capture into window folders; the triage engine loads each window, builds the process tree, scores hand-written and learned rules and reaches a decision shown in the analyst workbench; a rule-learning loop writes rules from new process trees in the design runs, checks them, and adds them to the rule library that the engine uses.">
+          <defs>
+            <marker id="a1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+              <path d="M0,0 L10,5 L0,10 z" fill="currentColor"/>
+            </marker>
+          </defs>
+          <g transform="translate(28,0)">
+
+          <!-- lanes -->
+          <rect class="lane-cap" x="10" y="10" width="1220" height="200" rx="10"/>
+          <rect class="lane-conv" x="10" y="225" width="1220" height="170" rx="10"/>
+          <rect class="lane-eng" x="10" y="415" width="780" height="445" rx="10"/>
+          <rect class="lane-learn" x="800" y="415" width="430" height="445" rx="10"/>
+          <rect class="lane-bench" x="10" y="875" width="1220" height="140" rx="10"/>
+          <rect class="lane-eval" x="10" y="1030" width="1220" height="90" rx="10"/>
+
+          <!-- 1 lab capture -->
+          <rect class="box c-cap" x="30" y="50" width="230" height="120" rx="8"/>
+          <text class="t" x="44" y="74">CALDERA server</text>
+          <text class="al" x="44" y="91">on the Kali VM</text>
+          <text class="b" x="44" y="115">emulates an attacker</text>
+          <text class="b" x="44" y="132">sends commands to its agents</text>
+          <text class="b" x="44" y="149">writes an operation report</text>
+
+          <rect class="box c-cap" x="330" y="44" width="520" height="152" rx="8"/>
+          <text class="t" x="344" y="68">4 victim VMs</text>
+          <text class="m" x="440" y="68">web01 · app01 · ws-dev01 · ws-fin01</text>
+          <rect class="chip" x="345" y="84" width="160" height="96" rx="6"/>
+          <text class="m" x="357" y="104">auditd</text>
+          <text class="s" x="357" y="124">every command run</text>
+          <text class="s" x="357" y="140">network connections</text>
+          <text class="s" x="357" y="156">sensitive-file access</text>
+          <rect class="chip" x="517" y="84" width="160" height="96" rx="6"/>
+          <text class="m" x="529" y="104">auth.log</text>
+          <text class="s" x="529" y="124">SSH logins</text>
+          <text class="s" x="529" y="140">sudo use</text>
+          <rect class="chip" x="689" y="84" width="146" height="96" rx="6"/>
+          <text class="sb" x="701" y="104">Running on them</text>
+          <text class="s" x="701" y="124">the CALDERA agent</text>
+          <text class="s" x="701" y="140">benign admin and</text>
+          <text class="s" x="701" y="156">user scripts</text>
+
+          <rect class="box c-cap" x="920" y="50" width="290" height="120" rx="8"/>
+          <text class="t" x="934" y="74">Network capture</text>
+          <text class="al" x="934" y="91">on the bridge between the VMs</text>
+          <text class="b" x="934" y="115">pcap → Zeek logs</text>
+          <text class="b" x="934" y="132">read by raw-log cases</text>
+          <text class="b" x="934" y="149">lab windows do not use them yet</text>
+
+          <path class="ln" d="M260,110 H328" marker-end="url(#a1)"/>
+          <text class="al" x="294" y="102" text-anchor="middle">commands</text>
+          <path class="ln" d="M850,110 H918" marker-end="url(#a1)"/>
+          <text class="al" x="884" y="102" text-anchor="middle">traffic</text>
+
+          <!-- 2 convert -->
+          <rect class="box c-conv" x="30" y="262" width="230" height="124" rx="8"/>
+          <text class="t" x="44" y="284">Converter</text>
+          <text class="m" x="44" y="300" style="font-size:10.5px">lab_capture</text>
+          <text class="b" x="44" y="322">rebuilds the process tree</text>
+          <text class="b" x="44" y="339">one folder per host per 30 min</text>
+          <text class="b" x="44" y="356">checks clocks and the capture</text>
+          <text class="b" x="44" y="373">staged, then moved in whole</text>
+
+          <rect class="grp" x="300" y="245" width="760" height="140" rx="10"/>
+          <text class="al" x="312" y="262">one window folder (one host, 30 minutes)</text>
+          <rect class="box c-conv" x="315" y="272" width="172" height="100" rx="7"/>
+          <text class="m" x="327" y="294">events.jsonl</text>
+          <text class="s" x="327" y="314">what happened: commands,</text>
+          <text class="s" x="327" y="330">connections, sensitive-</text>
+          <text class="s" x="327" y="346">file access, with times</text>
+          <rect class="box c-conv" x="502" y="272" width="172" height="100" rx="7"/>
+          <text class="m" x="514" y="294">lineage.json</text>
+          <text class="s" x="514" y="314">which process launched</text>
+          <text class="s" x="514" y="330">which, each program's</text>
+          <text class="s" x="514" y="346">folder and its children</text>
+          <rect class="box c-conv" x="689" y="272" width="172" height="100" rx="7"/>
+          <text class="m" x="701" y="294">meta.json</text>
+          <text class="s" x="701" y="314">what the sensor should</text>
+          <text class="s" x="701" y="330">record, clock offset,</text>
+          <text class="s" x="701" y="346">capture checks</text>
+          <rect class="box c-eval dash" x="876" y="272" width="172" height="100" rx="7"/>
+          <text class="m" x="888" y="294">labels.json</text>
+          <text class="s" x="888" y="314">ground truth built from</text>
+          <text class="s" x="888" y="330">the CALDERA report</text>
+          <text class="s" x="888" y="346">evaluation only</text>
+
+          <path class="ln" d="M420,196 V222 H200 V260" marker-end="url(#a1)"/>
+          <text class="al" x="428" y="206">logs pulled from each VM</text>
+          <path class="ln dash" d="M90,170 V260" marker-end="url(#a1)"/>
+          <text class="al" x="98" y="222">report</text>
+          <path class="ln" d="M260,322 H313" marker-end="url(#a1)"/>
+          <text class="al" x="287" y="314" text-anchor="middle">writes</text>
+
+          <!-- 3 triage engine -->
+          <path class="ln" d="M401,372 V405 H84 V468" marker-end="url(#a1)"/>
+          <text class="al" x="240" y="419" text-anchor="middle">every window</text>
+
+          <rect class="box c-eng" x="22" y="470" width="124" height="170" rx="8"/>
+          <text class="t" x="34" y="492">Load &amp;</text>
+          <text class="t" x="34" y="508">normalise</text>
+          <text class="s" x="34" y="530">claims with typed</text>
+          <text class="s" x="34" y="545">facts and who did</text>
+          <text class="s" x="34" y="560">each event</text>
+          <text class="s" x="34" y="575">secrets redacted</text>
+          <text class="s" x="34" y="590">Sigma tactic tags</text>
+          <text class="s" x="34" y="605">sensor health</text>
+
+          <rect class="box c-eng" x="180" y="470" width="124" height="170" rx="8"/>
+          <text class="t" x="192" y="492">Process</text>
+          <text class="t" x="192" y="508">lineage</text>
+          <text class="s" x="192" y="530">process tree</text>
+          <text class="s" x="192" y="545">session hubs</text>
+          <text class="s" x="192" y="560">(login shells) never</text>
+          <text class="s" x="192" y="575">join stories</text>
+          <text class="s" x="192" y="590">episode roots</text>
+
+          <rect class="box c-eng" x="338" y="470" width="124" height="170" rx="8"/>
+          <text class="t" x="350" y="492">Hypotheses</text>
+          <text class="sb" x="350" y="514">Decide:</text>
+          <text class="s" x="350" y="529">kill chain, brute</text>
+          <text class="s" x="350" y="544">force, port scan,</text>
+          <text class="s" x="350" y="559">exploited service,</text>
+          <text class="s" x="350" y="574">learned rules</text>
+          <text class="sb" x="350" y="596">Context only:</text>
+          <text class="s" x="350" y="611">primitives, novelty</text>
+
+          <rect class="box c-eng" x="496" y="470" width="124" height="170" rx="8"/>
+          <text class="t" x="508" y="492">Reasoning</text>
+          <text class="t" x="508" y="508">engine</text>
+          <text class="s" x="508" y="530">scores evidence</text>
+          <text class="s" x="508" y="545">trusts attacker-</text>
+          <text class="s" x="508" y="560">written text less</text>
+          <text class="s" x="508" y="575">a blind sensor's</text>
+          <text class="s" x="508" y="590">silence is not proof</text>
+
+          <rect class="box c-eng" x="654" y="470" width="124" height="170" rx="8"/>
+          <text class="t" x="666" y="492">Decision</text>
+          <text class="s" x="666" y="514">verdict</text>
+          <text class="s" x="666" y="529">severity, priority</text>
+          <text class="s" x="666" y="544">what ARGUS could</text>
+          <text class="s" x="666" y="559">not see</text>
+          <text class="s" x="666" y="574">next steps</text>
+          <text class="s" x="666" y="589">episode to inspect</text>
+
+          <path class="ln" d="M146,555 H178" marker-end="url(#a1)"/>
+          <text class="al" x="162" y="548" text-anchor="middle">claims</text>
+          <path class="ln" d="M304,555 H336" marker-end="url(#a1)"/>
+          <text class="al" x="320" y="548" text-anchor="middle">tree</text>
+          <path class="ln" d="M462,555 H494" marker-end="url(#a1)"/>
+          <text class="al" x="478" y="548" text-anchor="middle">scored</text>
+          <path class="ln" d="M620,555 H652" marker-end="url(#a1)"/>
+          <text class="al" x="636" y="548" text-anchor="middle">result</text>
+
+          <!-- 5 rule learning loop -->
+          <rect class="box c-learn" x="820" y="450" width="255" height="60" rx="8"/>
+          <text class="t" x="832" y="469">Rule library</text>
+          <text class="s" x="832" y="485">active · awaiting review · retired</text>
+          <text class="s" x="832" y="500">duplicates merged · your decisions kept</text>
+          <rect class="box c-learn" x="820" y="535" width="255" height="60" rx="8"/>
+          <text class="t" x="832" y="554">C4 + C5 checks</text>
+          <text class="s" x="832" y="570">quiet in this host's other windows</text>
+          <text class="s" x="832" y="585">confirmed by a deciding rule, Sigma or you</text>
+          <rect class="box c-learn" x="820" y="620" width="255" height="60" rx="8"/>
+          <text class="t" x="832" y="639">C1–C3 checks</text>
+          <text class="s" x="832" y="655">valid rule · fires on its own episode</text>
+          <text class="s" x="832" y="670">still fires when programs are renamed</text>
+          <rect class="box c-learn" x="820" y="705" width="255" height="60" rx="8"/>
+          <text class="t" x="832" y="724">LLM writes rules</text>
+          <text class="s" x="832" y="740">up to 3 JSON rules per episode</text>
+          <text class="s" x="832" y="755">attacker text fenced · IPs, names hidden</text>
+          <rect class="box c-learn" x="820" y="790" width="255" height="55" rx="8"/>
+          <text class="t" x="832" y="809">Episodes</text>
+          <text class="s" x="832" y="826">process trees new to this host's history</text>
+
+          <path class="ln" d="M947,790 V767" marker-end="url(#a1)"/>
+          <text class="al" x="955" y="782">episode text</text>
+          <path class="ln" d="M947,705 V682" marker-end="url(#a1)"/>
+          <text class="al" x="955" y="697">rules</text>
+          <path class="ln" d="M947,620 V597" marker-end="url(#a1)"/>
+          <text class="al" x="955" y="612">passed</text>
+          <path class="ln" d="M947,535 V512" marker-end="url(#a1)"/>
+          <text class="al" x="955" y="527">active, or awaiting review</text>
+          <path class="ln" d="M820,650 H806 V735 H818" marker-end="url(#a1)"/>
+          <text class="al" x="800" y="697" text-anchor="end">fix &amp; retry ≤ 2</text>
+
+          <rect class="box c-learn" x="1100" y="535" width="115" height="60" rx="8"/>
+          <text class="t" x="1110" y="554">Sigma rules</text>
+          <text class="s" x="1110" y="570">dated snapshot</text>
+          <text class="s" x="1110" y="585">Linux, ≥ medium</text>
+          <path class="ln" d="M1100,565 H1077" marker-end="url(#a1)"/>
+          <rect class="box c-learn" x="1100" y="705" width="115" height="60" rx="8"/>
+          <text class="t" x="1110" y="724">Model service</text>
+          <text class="s" x="1110" y="740">key typed per run</text>
+          <text class="s" x="1110" y="755">answers cached</text>
+          <path class="ln" d="M1077,735 H1098" marker-start="url(#a1)" marker-end="url(#a1)"/>
+
+          <!-- design windows feed the loop; the library feeds the engine -->
+          <path class="ln" d="M1060,315 H1228 V818 H1077" marker-end="url(#a1)"/>
+          <text class="al" x="1222" y="408" text-anchor="end">design runs only</text>
+          <path class="ln" d="M820,455 H400 V468" marker-end="url(#a1)"/>
+          <text class="al" x="612" y="449" text-anchor="middle">active rules decide · shadow rules are only measured</text>
+
+          <!-- 4 analyst workbench -->
+          <rect class="box c-bench" x="24" y="905" width="176" height="98" rx="8"/>
+          <text class="t" x="36" y="928">Import capture</text>
+          <text class="b" x="36" y="950">pick a lab capture folder,</text>
+          <text class="b" x="36" y="967">or copy one in</text>
+          <text class="b" x="36" y="984">add the CALDERA report</text>
+          <rect class="box c-bench" x="214" y="905" width="170" height="98" rx="8"/>
+          <text class="t" x="226" y="928">Coverage</text>
+          <text class="b" x="226" y="950">blind spots that left</text>
+          <text class="b" x="226" y="967">cases undecided, ranked</text>
+          <text class="b" x="226" y="984">across triaged cases</text>
+          <rect class="box c-bench" x="398" y="905" width="392" height="98" rx="8"/>
+          <text class="t" x="410" y="928">Cases</text>
+          <text class="b" x="410" y="950">queue ranked by priority</text>
+          <text class="b" x="410" y="967">case view: verdict, what ARGUS could not see, evidence,</text>
+          <text class="b" x="410" y="984">process tree, timeline · your verdict on the case and rules</text>
+          <rect class="box c-bench" x="820" y="905" width="255" height="98" rx="8"/>
+          <text class="t" x="832" y="928">Rules</text>
+          <text class="b" x="832" y="950">Learn new rules (key per run)</text>
+          <text class="b" x="832" y="967">Approve or Retire each rule</text>
+          <text class="b" x="832" y="984">progress shown while it runs</text>
+          <rect class="box c-bench" x="1090" y="905" width="128" height="98" rx="8"/>
+          <text class="t" x="1102" y="928">Other ways in</text>
+          <text class="b" x="1102" y="950">HTTP API</text>
+          <text class="b" x="1102" y="967">TheHive (Cortex)</text>
+          <text class="b" x="1102" y="984">command line</text>
+          <path class="ln" d="M398,955 H386" marker-end="url(#a1)"/>
+
+          <!-- the workbench starts an import: up the left gutter to the converter -->
+          <path class="ln" d="M24,945 H-12 V321 H28" marker-end="url(#a1)"/>
+          <text class="al" transform="translate(-17,640) rotate(-90)" text-anchor="middle">Import capture starts the converter</text>
+
+          <path class="ln" d="M700,640 V903" marker-end="url(#a1)"/>
+          <text class="al" x="707" y="780">verdict + reasons</text>
+          <path class="ln" d="M900,905 V847" marker-end="url(#a1)"/>
+          <text class="al" x="907" y="880">start a run</text>
+
+          <!-- thesis evaluation -->
+          <rect class="box c-eval dash" x="24" y="1064" width="270" height="44" rx="7"/>
+          <text class="m" x="36" y="1083">labels.json</text>
+          <text class="s" x="36" y="1099">ground truth from the CALDERA report</text>
+          <rect class="box c-eval dash" x="310" y="1064" width="300" height="44" rx="7"/>
+          <text class="m" x="322" y="1083">lab_split.json</text>
+          <text class="s" x="322" y="1099">Import adds runs in order: 1–3 design, later test</text>
+          <rect class="box c-eval dash" x="626" y="1064" width="280" height="44" rx="7"/>
+          <text class="m" x="638" y="1083">eval_lab</text>
+          <text class="s" x="638" y="1099">scores every window once, after the freeze</text>
+          <rect class="box c-eval dash" x="922" y="1064" width="296" height="44" rx="7"/>
+          <text class="m" x="934" y="1083">ARGUS_FREEZE_*.json</text>
+          <text class="s" x="934" y="1099">hash of every source file a result used</text>
+
+          <!-- lane labels last, so their halo masks any line beneath -->
+          <text class="lt f-cap" x="24" y="34">1 · Lab capture</text>
+          <text class="lt f-conv" x="24" y="248">2 · Import</text>
+          <text class="lt f-eng" x="24" y="437">3 · Triage engine</text>
+          <text class="lt f-learn" x="814" y="437">5 · Rule learning loop</text>
+          <text class="lt f-bench" x="24" y="896">4 · Analyst workbench</text>
+          <text class="al" x="226" y="896">opens with a double-click on Start ARGUS</text>
+          <text class="lt f-eval" x="24" y="1052">Thesis evaluation only</text>
+          <text class="al" x="220" y="1052">never read by triage</text>
+          </g>
+        </svg>
+      </div>
+      <figcaption>Figure 1. Logs flow down from the lab. The analyst imports a capture from the workbench (the arrow up
+        the left edge), which cuts it into one folder per host per 30 minutes, and every folder is triaged by the engine, whose decision appears in the analyst's case queue. On the right, the learning loop reads
+        only the design runs, writes rules with a language model, checks them without labels, and feeds the survivors back
+        into the engine. Dashed parts exist only to grade ARGUS for the thesis.</figcaption>
+    </figure>
+  </section>
+
+  <section aria-labelledby="stages">
+    <h2 id="stages">Stage by stage</h2>
+    <div class="stages">
+      <article class="stage cap">
+        <div class="n">1 · Lab capture</div>
+        <h3>Real attacks on real machines</h3>
+        <p>Four Debian victim VMs run ordinary admin and user activity. CALDERA, on a Kali VM, plays the attacker
+          through an agent on each victim. Every victim records what it does with auditd and auth.log; a packet capture
+          watches the network between them.</p>
+      </article>
+      <article class="stage conv">
+        <div class="n">2 · Import</div>
+        <h3>One folder per host per half hour</h3>
+        <p>The analyst clicks Import capture in the workbench and picks a capture folder, or copies one in from their
+          computer. ARGUS reads the audit logs, rebuilds which process launched which, and writes a window folder for
+          every host and 30 minutes. It records what the sensor was set up to record, so a missing kind of event becomes
+          a reported blind spot, and checks that the clocks agreed. With a CALDERA report, the run joins the evaluation
+          in the order it was imported; without one, its cases are for triage only.</p>
+      </article>
+      <article class="stage eng">
+        <div class="n">3 · Triage engine</div>
+        <h3>A verdict that states what it could not see</h3>
+        <ul>
+          <li>Events become claims: typed facts with the process that did them.</li>
+          <li>The process tree links commands into stories; a login shell never joins two stories.</li>
+          <li>Hand-written and learned rules are scored against the claims.</li>
+          <li>Missing evidence counts against an attack only if the sensor was able to see it.</li>
+        </ul>
+      </article>
+      <article class="stage bench">
+        <div class="n">4 · Analyst workbench</div>
+        <h3>Everything in the browser</h3>
+        <p>Captures come in through Import capture. Cases arrive ranked by priority. Each case shows the verdict, what
+          ARGUS could not see, the evidence, the process tree and a timeline. The analyst records a verdict, reviews
+          coverage, and runs rule learning from the Rules page. No terminal is needed.</p>
+      </article>
+      <article class="stage learn">
+        <div class="n">5 · Rule learning</div>
+        <h3>The model proposes, the checks decide</h3>
+        <p>ARGUS shows a language model process trees that are new to a host, with attacker text fenced off and
+          identities hidden. Each rule it writes must pass five checks without labels. Rules no independent source
+          confirms wait for the analyst to approve them.</p>
+      </article>
+      <article class="stage eval">
+        <div class="n">Thesis evaluation</div>
+        <h3>Graded once, on runs it never learned from</h3>
+        <p>Ground truth comes from the CALDERA report and is used only for grading. The first three runs are for
+          learning, later runs are the test, in the order they were imported, and every result names the frozen code it
+          was produced with.</p>
+      </article>
+    </div>
+  </section>
+
+  <section aria-labelledby="decision">
+    <h2 id="decision">Inside one decision</h2>
+    <figure>
+      <div class="scroll">
+        <svg class="d mid" viewBox="0 0 1240 370" role="img"
+             aria-label="Inside one decision: each hypothesis is scored from the claims with less trust for attacker-written fields; every piece of expected evidence is either seen, missing from a blind sensor (a blind spot, not counted against), or missing from a working sensor (counter-evidence); only deciding hypotheses set the verdict.">
+          <defs>
+            <marker id="a2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+              <path d="M0,0 L10,5 L0,10 z" fill="currentColor"/>
+            </marker>
+          </defs>
+          <rect class="box c-eng" x="20" y="125" width="150" height="120" rx="8"/>
+          <text class="t" x="34" y="149">Claims</text>
+          <text class="b" x="34" y="171">typed facts</text>
+          <text class="b" x="34" y="188">who did each event</text>
+          <text class="b" x="34" y="205">process tree</text>
+          <text class="b" x="34" y="222">sensor health</text>
+          <path class="ln" d="M170,185 H203" marker-end="url(#a2)"/>
+
+          <rect class="box c-eng" x="205" y="95" width="230" height="180" rx="8"/>
+          <text class="t" x="219" y="119">Score each hypothesis</text>
+          <text class="b" x="219" y="141">indicators matched → strength 0–1</text>
+          <text class="b" x="219" y="164">trust by who wrote the field:</text>
+          <text class="s" x="227" y="183">recorded by the kernel</text><text class="m" x="423" y="183" text-anchor="end">×1.00</text>
+          <text class="s" x="227" y="199">picked from a fixed set</text><text class="m" x="423" y="199" text-anchor="end">×0.95</text>
+          <text class="s" x="227" y="215">attacker-written text</text><text class="m" x="423" y="215" text-anchor="end">×0.85</text>
+          <text class="b" x="219" y="240">kill chain: stages must share</text>
+          <text class="b" x="219" y="257">one non-hub process tree</text>
+
+          <path class="ln" d="M435,185 H455 V70 H473" marker-end="url(#a2)"/>
+          <path class="ln" d="M455,185 H473" marker-end="url(#a2)"/>
+          <path class="ln" d="M455,185 V300 H473" marker-end="url(#a2)"/>
+          <text class="al" x="462" y="25">for each piece of expected evidence</text>
+
+          <rect class="box c-eng" x="475" y="33" width="260" height="74" rx="8"/>
+          <text class="t" x="489" y="57">Seen</text>
+          <text class="b" x="489" y="79">supports the hypothesis</text>
+          <rect class="box c-eng" x="475" y="148" width="260" height="74" rx="8"/>
+          <text class="t" x="489" y="172">Missing, sensor was blind</text>
+          <text class="b" x="489" y="193">blind spot: not counted against</text>
+          <text class="b" x="489" y="210">shown to the analyst, priority −20%</text>
+          <rect class="box c-eng" x="475" y="263" width="260" height="74" rx="8"/>
+          <text class="t" x="489" y="287">Missing, sensor was working</text>
+          <text class="b" x="489" y="308">counter-evidence: score lowered by</text>
+          <text class="b" x="489" y="325">up to 0.12, by how often it emits</text>
+
+          <path class="ln" d="M735,70 H755 V185" />
+          <path class="ln" d="M735,300 H755 V185" />
+          <path class="ln" d="M735,185 H773" marker-end="url(#a2)"/>
+
+          <rect class="box c-eng" x="775" y="80" width="205" height="210" rx="8"/>
+          <text class="t" x="789" y="104">Who decides</text>
+          <text class="sb" x="789" y="127">Decide</text>
+          <text class="s" x="789" y="143">kill chain · brute force</text>
+          <text class="s" x="789" y="159">port scan · exploited service</text>
+          <text class="s" x="789" y="175">active learned rules</text>
+          <text class="sb" x="789" y="199">Context only</text>
+          <text class="s" x="789" y="215">discovery, staging, exfiltration,</text>
+          <text class="s" x="789" y="231">beacon, novelty</text>
+          <text class="sb" x="789" y="255">Measured only</text>
+          <text class="s" x="789" y="271">shadow rules</text>
+          <path class="ln" d="M980,185 H1008" marker-end="url(#a2)"/>
+          <text class="al" x="994" y="177" text-anchor="middle">top</text>
+
+          <rect class="box c-eng" x="1010" y="55" width="210" height="260" rx="8"/>
+          <text class="t" x="1024" y="79">Verdict</text>
+          <text class="s" x="1024" y="98">top deciding score × severity</text>
+          <rect class="v-mal" x="1024" y="116" width="12" height="12" rx="2"/>
+          <text class="t" x="1044" y="127">Malicious</text><text class="m" x="1206" y="127" text-anchor="end">≥ 0.50</text>
+          <rect class="v-sus" x="1024" y="146" width="12" height="12" rx="2"/>
+          <text class="t" x="1044" y="157">Suspicious</text><text class="m" x="1206" y="157" text-anchor="end">≥ 0.25</text>
+          <rect class="v-ben" x="1024" y="176" width="12" height="12" rx="2"/>
+          <text class="t" x="1044" y="187">Benign</text><text class="m" x="1206" y="187" text-anchor="end">&lt; 0.25</text>
+          <rect class="v-und" x="1024" y="206" width="12" height="12" rx="2"/>
+          <text class="t" x="1044" y="217">Undecidable</text>
+          <text class="s" x="1044" y="234">would be benign, but some</text>
+          <text class="s" x="1044" y="249">support was cut off by a</text>
+          <text class="s" x="1044" y="264">blind spot</text>
+          <text class="s" x="1024" y="296">priority drops 20% with blind spots</text>
+        </svg>
+      </div>
+      <figcaption>Figure 2. The middle column is the core idea: when evidence an attack would leave is missing, ARGUS
+        asks whether the sensor could have recorded it. A blind sensor's silence becomes a reported blind spot, never
+        proof that nothing happened.</figcaption>
+    </figure>
+  </section>
+
+  <section aria-labelledby="life">
+    <h2 id="life">A learned rule's life</h2>
+    <figure>
+      <div class="scroll">
+        <svg class="d mid" viewBox="0 0 1240 300" role="img"
+             aria-label="Rule lifecycle: a candidate that passes checks C1 to C4 becomes shadow, otherwise rejected; a shadow rule becomes active when it passes C5: a deciding rule or a Sigma rule confirms it, or the analyst approves it, which is recorded as its C5 pass; shadow and active rules are retired by the analyst or as duplicates.">
+          <defs>
+            <marker id="a3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+              <path d="M0,0 L10,5 L0,10 z" fill="currentColor"/>
+            </marker>
+          </defs>
+          <rect class="box c-learn" x="30" y="100" width="200" height="70" rx="10"/>
+          <text class="t" x="130" y="128" text-anchor="middle">Candidate</text>
+          <text class="s" x="130" y="148" text-anchor="middle">just written by the model</text>
+
+          <rect class="box c-learn" x="390" y="100" width="220" height="70" rx="10"/>
+          <text class="t" x="500" y="124" text-anchor="middle">Shadow</text>
+          <text class="s" x="500" y="142" text-anchor="middle">awaiting review · scored on</text>
+          <text class="s" x="500" y="157" text-anchor="middle">every case, never decides</text>
+
+          <rect class="box c-eng" x="760" y="100" width="180" height="70" rx="10"/>
+          <text class="t" x="850" y="128" text-anchor="middle">Active</text>
+          <text class="s" x="850" y="148" text-anchor="middle">decides cases</text>
+
+          <rect class="box c-eval" x="1040" y="100" width="180" height="70" rx="10"/>
+          <text class="t" x="1130" y="128" text-anchor="middle">Retired</text>
+          <text class="s" x="1130" y="148" text-anchor="middle">kept in the history</text>
+
+          <rect class="box c-eval" x="390" y="215" width="220" height="60" rx="10"/>
+          <text class="t" x="500" y="240" text-anchor="middle">Rejected</text>
+          <text class="s" x="500" y="258" text-anchor="middle">failed a check</text>
+
+          <path class="ln" d="M230,135 H388" marker-end="url(#a3)"/>
+          <text class="al" x="310" y="127" text-anchor="middle">passes C1–C4</text>
+          <path class="ln" d="M610,135 H758" marker-end="url(#a3)"/>
+          <text class="al" x="685" y="113" text-anchor="middle">C5 confirms it,</text>
+          <text class="al" x="685" y="127" text-anchor="middle">or you approve it</text>
+          <path class="ln" d="M940,135 H1038" marker-end="url(#a3)"/>
+          <text class="al" x="990" y="113" text-anchor="middle">you retire it,</text>
+          <text class="al" x="990" y="127" text-anchor="middle">or a duplicate</text>
+          <path class="ln" d="M500,100 V55 H1130 V98" marker-end="url(#a3)"/>
+          <text class="al" x="815" y="48" text-anchor="middle">you retire it, or it fires on exactly the same events as another rule</text>
+          <path class="ln" d="M130,170 V245 H388" marker-end="url(#a3)"/>
+          <text class="al" x="258" y="238" text-anchor="middle">fails a check after up to 2 repairs</text>
+        </svg>
+      </div>
+      <figcaption>Figure 3. Every transition is written into the rule's history with its reason. A judged rule is never
+        edited: a better rule is a new rule.</figcaption>
+    </figure>
+  </section>
+
+  <section aria-labelledby="checks">
+    <h2 id="checks">The five checks a learned rule must pass</h2>
+    <p class="key">They run in order and stop where a rule fails; a check never reached is not counted as failed. A rule is shadow only with C1–C4 passed and active only with C5 passed.</p>
+    <div class="tablewrap">
+      <table>
+        <tr><th>Check</th><th>Question it answers</th><th>Without labels because</th></tr>
+        <tr><td class="f">C1 valid</td><td>Can ARGUS run the rule as written?</td><td>It reads only the rule.</td></tr>
+        <tr><td class="f">C2 own evidence</td><td>Does the rule fire on the episode it was written from, using values that really occur there?</td><td>It reads only that episode.</td></tr>
+        <tr><td class="f">C3 robust</td><td>Does it still fire when the attacker renames their programs, runs them by full path, or renames the files they create?</td><td>The renamed copies are made from the telemetry itself.</td></tr>
+        <tr><td class="f">C4 quiet</td><td>Does it stay silent on at least three quarters of this host's other windows?</td><td>Most of a host's history is ordinary activity.</td></tr>
+        <tr><td class="f">C5 confirmed</td><td>Does a source that may decide on its own flag the same events: a deciding hand-written rule or a dated community Sigma rule rated medium or higher, each itself quiet on that host, or the analyst?</td><td>Agreement with another model-written rule is noted and never counts. Your approval is recorded as the C5 pass.</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <section aria-labelledby="window">
+    <h2 id="window">What one window folder holds</h2>
+    <div class="tablewrap">
+      <table>
+        <tr><th>File</th><th>Holds</th><th>Read by</th></tr>
+        <tr><td class="f">events.jsonl</td><td>Each command, network connection and sensitive-file access, with its time and program.</td><td>Triage, rule learning</td></tr>
+        <tr><td class="f">lineage.json</td><td>Which process launched which, each program's folder, and its children over its life.</td><td>Triage (process tree, hubs), rule learning</td></tr>
+        <tr><td class="f">meta.json</td><td>Host and time window, what the sensor was set up to record, clock offset, capture checks.</td><td>Triage (blind spots)</td></tr>
+        <tr><td class="f">labels.json</td><td>Ground truth built from the CALDERA operation report.</td><td><span class="pill eval">evaluation only</span></td></tr>
+      </table>
+    </div>
+  </section>
+
+  <footer>Drawn from the code at freeze <span class="mono">ARGUS_FREEZE_2026-10-14-checks</span>. The Windows/CITAR
+    prototype is no longer part of ARGUS.</footer>
+</div>
+
+</body></html>

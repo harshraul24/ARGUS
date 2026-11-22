@@ -1,0 +1,9 @@
+Mar  1 02:15:00 appsrv01 sshd[6100]: Accepted publickey for backup from 10.0.2.6 port 39900 ssh2: RSA SHA256:aa41
+Mar  1 02:15:00 appsrv01 sshd[6100]: pam_unix(sshd:session): session opened for user backup by (uid=0)
+Mar  1 02:53:00 appsrv01 sshd[6100]: pam_unix(sshd:session): session closed for user backup
+Mar  2 02:15:00 appsrv01 sshd[6101]: Accepted publickey for backup from 10.0.2.6 port 39900 ssh2: RSA SHA256:aa41
+Mar  2 02:15:00 appsrv01 sshd[6101]: pam_unix(sshd:session): session opened for user backup by (uid=0)
+Mar  2 02:53:00 appsrv01 sshd[6101]: pam_unix(sshd:session): session closed for user backup
+Mar  3 02:15:00 appsrv01 sshd[6102]: Accepted publickey for backup from 10.0.2.6 port 39900 ssh2: RSA SHA256:aa41
+Mar  3 02:15:00 appsrv01 sshd[6102]: pam_unix(sshd:session): session opened for user backup by (uid=0)
+Mar  3 02:53:00 appsrv01 sshd[6102]: pam_unix(sshd:session): session closed for user backup

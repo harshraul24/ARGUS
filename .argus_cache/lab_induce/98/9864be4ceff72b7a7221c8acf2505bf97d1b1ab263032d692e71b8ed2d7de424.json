@@ -1,0 +1,14 @@
+{
+  "key": "9864be4ceff72b7a7221c8acf2505bf97d1b1ab263032d692e71b8ed2d7de424",
+  "provider": "ollama",
+  "model": "gpt-oss:120b-cloud",
+  "prompt_sha": "9864be4ceff72b7a",
+  "response": "{\n  \"rules\": [\n    {\n      \"id\": \"shadow-read-detection\",\n      \"technique\": \"T1555.004\",\n      \"name\": \"Read /etc/shadow by non\u2011authenticator process\",\n      \"tactic\": \"credential-access\",\n      \"severity\": 0.9,\n      \"evidence\": [\"ev_000038\"],\n      \"indicators\": [\n        {\n          \"name\": \"shadow_file_read\",\n          \"weight\": 1.0,\n          \"required\": true,\n          \"select\": {\n            \"claim_type\": \"file_read\",\n            \"facts.file_path\": { \"contains_any\": [\"shadow\"] },\n            \"facts.image\": { \"not_in\": [\"login\", \"sshd\", \"passwd\", \"su\", \"sudo\", \"systemd\", \"polkit\"] }\n          },\n          \"score\": { \"op\": \"threshold\", \"value\": \"n\", \"at\": 1 }\n        }\n      ]\n    }\n  ],\n  \"reasoning\": \"The episode includes a perl process (invoked by dpkg-preconfigure) that reads /etc/shadow, a credential store that is normally accessed only by privileged authentication utilities. Detecting any file_read claim where the file path contains \\\"shadow\\\" and the accessing program is not a known authentication daemon flags this suspicious credential\u2011access behavior while remaining robust to path variations and user\u2011writable executable renaming.\"\n}",
+  "latency_s": 15.576704978942871,
+  "created_at": 1791394625.59863,
+  "params": {
+    "temperature": 0.0,
+    "seed": 7,
+    "json_mode": true
+  }
+}

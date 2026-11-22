@@ -1,0 +1,43 @@
+{
+  "category": "attack",
+  "campaign_start": "2026-10-06T12:34:58Z",
+  "techniques": [
+    "T1033",
+    "T1057",
+    "T1070",
+    "T1087"
+  ],
+  "primary_technique": "T1033",
+  "objective_reached": false,
+  "source": "caldera operation 'smoke-discovery'",
+  "actions": [
+    {
+      "time": "2026-10-06T12:20:24Z",
+      "tactic": "defense-evasion",
+      "technique": "T1070.003",
+      "detail": "> $HOME/.bash_history && unset HISTFILE",
+      "result": "success"
+    },
+    {
+      "time": "2026-10-06T12:20:26Z",
+      "tactic": "defense-evasion",
+      "technique": "T1070.003",
+      "detail": "> $HOME/.bash_history && unset HISTFILE",
+      "result": "success"
+    },
+    {
+      "time": "2026-10-06T12:20:32Z",
+      "tactic": "defense-evasion",
+      "technique": "T1070.003",
+      "detail": "> $HOME/.bash_history && unset HISTFILE",
+      "result": "success"
+    },
+    {
+      "time": "2026-10-06T12:20:36Z",
+      "tactic": "defense-evasion",
+      "technique": "T1070.003",
+      "detail": "> $HOME/.bash_history && unset HISTFILE",
+      "result": "success"
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+Sep  8 16:27:58 metasploitable sshd[16402]: Received disconnect from 10.0.2.10: 11: disconnected by user
+Sep  8 16:27:58 metasploitable sshd[16402]: pam_unix(sshd:session): session closed for user msfadmin
+Sep  8 16:28:08 metasploitable sshd[16408]: Accepted password for msfadmin from 10.0.2.10 port 46512 ssh2
+Sep  8 16:28:08 metasploitable sshd[16411]: pam_unix(sshd:session): session opened for user msfadmin by (uid=0)
+Sep  8 16:28:08 metasploitable sshd[16411]: Received disconnect from 10.0.2.10: 11: disconnected by user
+Sep  8 16:28:08 metasploitable sshd[16411]: pam_unix(sshd:session): session closed for user msfadmin
+Sep  8 16:33:23 metasploitable sshd[16424]: Accepted password for msfadmin from 10.0.2.10 port 56518 ssh2
+Sep  8 16:33:23 metasploitable sshd[16426]: pam_unix(sshd:session): session opened for user msfadmin by (uid=0)

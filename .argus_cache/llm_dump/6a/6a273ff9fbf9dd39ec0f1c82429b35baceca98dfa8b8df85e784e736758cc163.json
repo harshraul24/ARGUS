@@ -1,0 +1,14 @@
+{
+  "key": "6a273ff9fbf9dd39ec0f1c82429b35baceca98dfa8b8df85e784e736758cc163",
+  "provider": "ollama",
+  "model": "gpt-oss:120b-cloud",
+  "prompt_sha": "6a273ff9fbf9dd39",
+  "response": "{\n  \"disposition\": \"malicious\",\n  \"mitre_technique\": \"T1005\",\n  \"severity\": 0.7,\n  \"malicious_events\": [\"e4\", \"e5\"],\n  \"reason\": \"User alice used sudo to copy the system audit log to /tmp, indicating unauthorized collection of sensitive log data.\"\n}",
+  "latency_s": 2.0463922023773193,
+  "created_at": 1791424268.293072,
+  "params": {
+    "temperature": 0.0,
+    "seed": 7,
+    "json_mode": true
+  }
+}

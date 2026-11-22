@@ -1,0 +1,14 @@
+{
+  "key": "619fc9304c222830b5f4f029b66d3b01b9ba778b99599f74423d9e080c385ef3",
+  "provider": "ollama",
+  "model": "gpt-oss:120b-cloud",
+  "prompt_sha": "619fc9304c222830",
+  "response": "{\n  \"disposition\": \"malicious\",\n  \"mitre_technique\": \"T1003\",\n  \"severity\": 0.95,\n  \"malicious_events\": [\n    \"e52\",\n    \"e103\",\n    \"e158\",\n    \"e226\",\n    \"e263\",\n    \"e301\",\n    \"e338\",\n    \"e375\",\n    \"e474\",\n    \"e575\",\n    \"e576\",\n    \"e580\",\n    \"e581\",\n    \"e584\",\n    \"e571\",\n    \"e573\"\n  ],\n  \"reason\": \"Repeated SSH connection attempts with credential\u2011dumping commands (cat /etc/passwd, sudo cat /etc/shadow) and sudo usage indicate credential access and remote service abuse.\"\n}",
+  "latency_s": 4.664126873016357,
+  "created_at": 1791424164.645803,
+  "params": {
+    "temperature": 0.0,
+    "seed": 7,
+    "json_mode": true
+  }
+}

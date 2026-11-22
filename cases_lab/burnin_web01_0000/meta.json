@@ -1,0 +1,59 @@
+{
+ "scenario_id": "burnin_web01_0000",
+ "dataset": "lab",
+ "campaign": "burnin",
+ "host": "web01",
+ "format": "argus-events-v1",
+ "generated_by": "argus/collectors/lab_capture.py (real auditd capture)",
+ "capture": {
+  "window": {
+   "start": "2026-10-15T00:00:00+00:00",
+   "end": "2026-10-15T00:30:00+00:00"
+  }
+ },
+ "events": 578,
+ "event_types": {
+  "file_read": 39,
+  "network_connection": 67,
+  "process_create": 472
+ },
+ "sensor": "auditd",
+ "audit_rules_loaded": [
+  "auditconfig",
+  "auditlog",
+  "exec",
+  "identity",
+  "net",
+  "privilege",
+  "schedule",
+  "service",
+  "sshkeys"
+ ],
+ "sensor_contract": [
+  "process_create",
+  "network_connection"
+ ],
+ "sensor_gaps": [
+  {
+   "start": "2026-10-15T00:11:11.638000+00:00",
+   "end": "2026-10-15T00:18:19.147000+00:00",
+   "seconds": 427.5,
+   "types": [
+    "network_connection",
+    "process_create"
+   ],
+   "cause": "audit daemon stopped"
+  }
+ ],
+ "captured_not_ingested": [
+  "auth.log"
+ ],
+ "clock_offset_vs_caldera_s": 0.0,
+ "protocol_activity": {
+  "persona_control": 1,
+  "power": 1,
+  "log_collection": 3
+ },
+ "capture_gate": "fail: log_collection, persona_control, power",
+ "capture_folder": "burnin"
+}

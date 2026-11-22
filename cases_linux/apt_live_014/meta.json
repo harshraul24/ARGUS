@@ -1,0 +1,107 @@
+{
+  "meta_version": "v0.2",
+  "scenario_id": "apt_live_014",
+  "category": "attack",
+  "title": "APT-Agent vsftpd_backdoor (live Metasploitable2)",
+  "generated_by": "APT-Agent + apt_capture harness",
+  "topology": {
+    "hosts": [
+      {
+        "name": "attacker",
+        "ip": "10.0.2.10",
+        "role": "attacker",
+        "os": "Linux"
+      },
+      {
+        "name": "target",
+        "ip": "10.0.2.20",
+        "role": "victim",
+        "os": "Linux"
+      }
+    ],
+    "zeek_sensor": {
+      "host": "capture",
+      "position": "attacker-target path"
+    }
+  },
+  "capture": {
+    "window": {
+      "start": "2026-09-09T16:53:09Z",
+      "end": "2026-09-09T16:57:06.167800Z"
+    },
+    "clean_capture": true
+  },
+  "expected_observables": {
+    "authlog": {
+      "logon_failure": false,
+      "logon_success": true
+    },
+    "zeek": {
+      "conn": true,
+      "ssh": true
+    }
+  },
+  "mitre": {
+    "technique": "T1210"
+  },
+  "ground_truth": {
+    "category": "attack",
+    "campaign_start": "2026-09-09T16:53:09Z",
+    "techniques": [
+      "T1046",
+      "T1210"
+    ],
+    "primary_technique": "T1210",
+    "objective_reached": false,
+    "actions": [
+      {
+        "iter": 1,
+        "tactic": "RECON",
+        "time": "2026-09-09T16:53:09Z",
+        "technique": "T1046",
+        "detail": "reconnaissance",
+        "result": "n/a"
+      },
+      {
+        "iter": 2,
+        "tactic": "EXPLOIT",
+        "time": "2026-09-09T16:53:27.157800Z",
+        "technique": "T1210",
+        "detail": "use exploit/unix/ftp/vsftpd_234_backdoor",
+        "result": "fail"
+      },
+      {
+        "iter": 3,
+        "tactic": "EXPLOIT",
+        "time": "2026-09-09T16:55:09.293800Z",
+        "technique": "T1210",
+        "detail": "use exploit/unix/ftp/vsftpd_234_backdoor",
+        "result": "fail"
+      },
+      {
+        "iter": 4,
+        "tactic": "RECON",
+        "time": "2026-09-09T16:56:46.764100Z",
+        "technique": "T1046",
+        "detail": "reconnaissance",
+        "result": "n/a"
+      },
+      {
+        "iter": 5,
+        "tactic": "RECON",
+        "time": "2026-09-09T16:57:02.626200Z",
+        "technique": "T1046",
+        "detail": "reconnaissance",
+        "result": "n/a"
+      },
+      {
+        "iter": 6,
+        "tactic": "RECON",
+        "time": "2026-09-09T16:57:06.167800Z",
+        "technique": "T1046",
+        "detail": "reconnaissance",
+        "result": "n/a"
+      }
+    ]
+  }
+}

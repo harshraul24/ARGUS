@@ -1,0 +1,14 @@
+{
+  "key": "972bfb61188293accbfc94995db25f188ced2553cd5dbe76a4f34e5630a9a001",
+  "provider": "ollama",
+  "model": "gpt-oss:120b-cloud",
+  "prompt_sha": "972bfb61188293ac",
+  "response": "{\n  \"rules\": [\n    {\n      \"id\": \"credential-dump-passwd\",\n      \"technique\": \"T1003.001\",\n      \"name\": \"Read /etc/passwd and write to temporary location\",\n      \"tactic\": \"credential-access\",\n      \"severity\": 0.8,\n      \"evidence\": [\"ev_000574\", \"ev_000575\", \"ev_000576\"],\n      \"indicators\": [\n        {\n          \"name\": \"suspicious_passwd_dump\",\n          \"weight\": 1.0,\n          \"required\": true,\n          \"select\": {\n            \"claim_type\": \"process_create\",\n            \"any_of\": [\n              { \"facts.image\": \"cat\" },\n              { \"facts.image\": \"sh\" }\n            ],\n            \"facts.command\": {\n              \"all_of\": [\n                { \"contains_any\": [\"passwd\"] },\n                { \"contains_any\": [\"/tmp\"] }\n              ]\n            },\n            \"behaviour.tactics\": {\n              \"in\": [\"credential-access\"]\n            }\n          },\n          \"aggregate\": [\n            {\n              \"as\": \"n\",\n              \"op\": \"count\"\n            }\n          ],\n          \"score\": {\n            \"op\": \"threshold\",\n            \"value\": \"n\",\n            \"at\": 1\n          }\n        }\n      ]\n    }\n  ],\n  \"reasoning\": \"The episode shows a shell launching \\\"cat /etc/passwd\\\" and redirecting the output to a file in /tmp, then reading that file. Accessing the password file and storing it in a writable temporary location is a classic credential\u2011dumping pattern (T1003.001). The rule looks for a process (cat or sh) whose command line contains both the token \\\"passwd\\\" and a temporary path (\\\"/tmp\\\"), and tags it with the credential\u2011access tactic, ensuring it fires on this episode while remaining robust to path variations and unlikely to trigger on routine activity.\"\n}",
+  "latency_s": 11.386954307556152,
+  "created_at": 1791394681.871943,
+  "params": {
+    "temperature": 0.0,
+    "seed": 7,
+    "json_mode": true
+  }
+}

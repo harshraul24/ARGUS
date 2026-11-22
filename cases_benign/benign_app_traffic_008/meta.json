@@ -1,0 +1,60 @@
+{
+  "meta_version": "v0.2",
+  "scenario_id": "benign_app_traffic_008",
+  "category": "benign",
+  "title": "Application-tier traffic: HTTPS clients and a database backend",
+  "generated_by": "tools/make_benign_cases.py (synthetic benign corpus)",
+  "topology": {
+    "hosts": [
+      {
+        "name": "target",
+        "ip": "10.0.2.20",
+        "role": "victim",
+        "os": "Linux"
+      },
+      {
+        "name": "jumphost",
+        "ip": "10.0.2.5",
+        "role": "admin",
+        "os": "Linux"
+      }
+    ],
+    "zeek_sensor": {
+      "host": "capture",
+      "position": "target segment"
+    }
+  },
+  "capture": {
+    "window": {
+      "start": "2026-03-10T10:00:00Z",
+      "end": "2026-03-10T10:40:00Z"
+    },
+    "clean_capture": true
+  },
+  "expected_observables": {
+    "authlog": {
+      "logon_success": false,
+      "logon_failure": false
+    },
+    "zeek": {
+      "conn": true,
+      "dns": true
+    }
+  },
+  "mitre": {
+    "technique": null
+  },
+  "ground_truth": {
+    "category": "benign",
+    "objective_reached": false,
+    "techniques": [],
+    "primary_technique": null,
+    "why_benign": "Two service ports, stable peers, steady rate \u2014 the host's normal production traffic profile with no authentication events at all.",
+    "confounds": [
+      "high connection volume",
+      "repeated connections to a database port",
+      "no host telemetry to corroborate the network view"
+    ],
+    "actions": []
+  }
+}

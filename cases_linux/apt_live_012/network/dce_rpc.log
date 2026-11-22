@@ -1,0 +1,30 @@
+#separator \x09
+#set_separator	,
+#empty_field	(empty)
+#unset_field	-
+#path	dce_rpc
+#open	2026-09-09-17-26-49
+#fields	ts	uid	id.orig_h	id.orig_p	id.resp_h	id.resp_p	rtt	named_pipe	endpoint	operation
+#types	time	string	addr	port	addr	port	interval	string	string	string
+1788973534.534509	C9DdBd3fUJ4FM3yU5b	10.0.2.10	46471	10.0.2.20	445	0.001875	\\PIPE\\ntsvcs	srvsvc	NetrShareEnum
+1788973534.960238	C1RHkU1BFojl7It3X	10.0.2.10	35063	10.0.2.20	445	0.002654	\\PIPE\\ntsvcs	srvsvc	NetrShareGetInfo
+1788973660.035043	CaeuiR3G5YdOAIUxNl	10.0.2.10	41093	10.0.2.20	445	0.002763	\\PIPE\\ntsvcs	srvsvc	NetrShareEnum
+1788973660.179036	CJj9md1KIhYl5TLJx	10.0.2.10	32951	10.0.2.20	445	0.001422	\\PIPE\\ntsvcs	srvsvc	NetrShareGetInfo
+1788973744.714707	CpTcBt4RqWM3hrCakl	10.0.2.10	34958	10.0.2.20	445	0.009339	\\PIPE\\ntsvcs	srvsvc	NetrShareEnum
+1788973744.723910	CemRIi3m7Sd1hr9IE4	10.0.2.10	34960	10.0.2.20	445	0.003615	\\PIPE\\lsass	samr	SamrConnect4
+1788973744.728726	CemRIi3m7Sd1hr9IE4	10.0.2.10	34960	10.0.2.20	445	0.002817	\\PIPE\\lsass	samr	SamrEnumerateDomainsInSamServer
+1788973744.734550	CemRIi3m7Sd1hr9IE4	10.0.2.10	34960	10.0.2.20	445	0.004290	\\PIPE\\lsass	samr	SamrLookupDomainInSamServer
+1788973744.739834	CemRIi3m7Sd1hr9IE4	10.0.2.10	34960	10.0.2.20	445	0.049926	\\PIPE\\lsass	samr	SamrOpenDomain
+1788973744.835403	CemRIi3m7Sd1hr9IE4	10.0.2.10	34960	10.0.2.20	445	0.006871	\\PIPE\\lsass	samr	SamrQueryDisplayInformation
+1788973744.842950	CemRIi3m7Sd1hr9IE4	10.0.2.10	34960	10.0.2.20	445	0.007577	\\PIPE\\lsass	samr	SamrQueryDisplayInformation
+1788973744.851058	CemRIi3m7Sd1hr9IE4	10.0.2.10	34960	10.0.2.20	445	0.056554	\\PIPE\\lsass	samr	SamrQueryDisplayInformation
+1788973744.935076	CemRIi3m7Sd1hr9IE4	10.0.2.10	34960	10.0.2.20	445	0.003618	\\PIPE\\lsass	samr	SamrCloseHandle
+1788973744.940968	CemRIi3m7Sd1hr9IE4	10.0.2.10	34960	10.0.2.20	445	0.003372	\\PIPE\\lsass	samr	SamrCloseHandle
+1788973744.968495	CD4tPn6GXXhkvv0cb	10.0.2.10	35050	10.0.2.20	445	0.003514	\\PIPE\\lsass	lsarpc	LsarOpenPolicy2
+1788973744.990177	C3syJU3MACx4JPS26	10.0.2.10	35092	10.0.2.20	445	0.000853	\\PIPE\\ntsvcs	srvsvc	NetrShareGetInfo
+1788973745.035396	CXDeQz35asT8visph3	10.0.2.10	35138	10.0.2.20	445	0.000690	\\PIPE\\ntsvcs	srvsvc	NetrShareGetInfo
+1788973745.079714	Cm7Iiq34SaWtd5jrU9	10.0.2.10	35188	10.0.2.20	445	0.000726	\\PIPE\\ntsvcs	srvsvc	NetrShareGetInfo
+1788973745.119736	CKAvXs2R6tEZGn0x95	10.0.2.10	35242	10.0.2.20	445	0.000811	\\PIPE\\ntsvcs	srvsvc	NetrShareGetInfo
+1788973745.202503	Cuk8B11u9nF7zWZrwg	10.0.2.10	35306	10.0.2.20	445	0.000689	\\PIPE\\ntsvcs	srvsvc	NetrShareGetInfo
+1788973744.972241	CD4tPn6GXXhkvv0cb	10.0.2.10	35050	10.0.2.20	445	0.003514	\\PIPE\\lsass	lsarpc	LsarOpenPolicy2
+#close	2026-09-09-17-26-49

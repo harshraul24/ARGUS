@@ -1,0 +1,14 @@
+{
+  "key": "407b5f940815baff9253403597927469aa5c07058e643aee5dfe452c4f1f107f",
+  "provider": "ollama",
+  "model": "gpt-oss:120b-cloud",
+  "prompt_sha": "407b5f940815baff",
+  "response": "{\n  \"rules\": [\n    {\n      \"id\": \"network-neighbor-discovery\",\n      \"technique\": \"T1016.001\",\n      \"name\": \"Network Neighbor Discovery via ip/arp\",\n      \"tactic\": \"discovery\",\n      \"severity\": 0.6,\n      \"evidence\": [\"ev_000598\"],\n      \"indicators\": [\n        {\n          \"name\": \"ip-neighbor-show\",\n          \"weight\": 1.0,\n          \"required\": true,\n          \"select\": {\n            \"claim_type\": \"process_create\",\n            \"any_of\": [\n              { \"facts.image\": \"ip\" },\n              { \"facts.image\": \"arp\" }\n            ],\n            \"facts.command\": { \"contains_any\": [\"neighbour\", \"neighbor\", \"arp\"] }\n          },\n          \"exclude\": {\n            \"lineage.parent_user_writable\": { \"truthy\": true }\n          },\n          \"score\": { \"op\": \"threshold\", \"value\": \"n\", \"at\": 1 }\n        }\n      ]\n    }\n  ],\n  \"reasoning\": \"The episode shows a process invoking \\\"ip neighbour show\\\", which enumerates the ARP/neighbor table \u2013 a classic network discovery technique (MITRE ATT&CK T1016.001). The rule captures this behaviour by matching system binaries \\\"ip\\\" or \\\"arp\\\" and command tokens that indicate neighbor discovery, while excluding cases where the parent process originates from a user\u2011writable location to reduce false positives. This pattern is recognised by existing community Sigma rules for network neighbor discovery, satisfying the CONFIRMED criterion, and it is uncommon enough to meet the QUIET requirement.\"\n}",
+  "latency_s": 19.67422580718994,
+  "created_at": 1791394556.927619,
+  "params": {
+    "temperature": 0.0,
+    "seed": 7,
+    "json_mode": true
+  }
+}

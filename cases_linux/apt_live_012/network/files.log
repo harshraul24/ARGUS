@@ -1,0 +1,43 @@
+#separator \x09
+#set_separator	,
+#empty_field	(empty)
+#unset_field	-
+#path	files
+#open	2026-09-09-17-26-49
+#fields	ts	fuid	uid	id.orig_h	id.orig_p	id.resp_h	id.resp_p	source	depth	analyzers	mime_type	filename	duration	local_orig	is_orig	seen_bytes	total_bytes	missing_bytes	overflow_bytes	timedout	parent_fuid	md5	sha1	sha256	extracted	extracted_cutoff	extracted_size
+#types	time	string	string	addr	port	addr	port	string	count	set[string]	string	string	interval	bool	bool	count	count	count	count	bool	string	string	string	string	string	bool	count
+1788973534.924413	FcjFvZ28ZK7FeSUh61	C1RHkU1BFojl7It3X	10.0.2.10	35063	10.0.2.20	445	SMB	0	(empty)	-	JxQmU.txt	0.000000	T	T	8	-	0	0	F	-	-	-	-	-	-	-
+1788973534.997193	F4ei5b1z4uBNV2ILs8	Ci7pZa1Uw9CHvt11m6	10.0.2.10	45853	10.0.2.20	445	SMB	0	(empty)	application/x-sharedlib	nrFDAVed.so	0.000000	T	T	8400	-	0	0	F	-	-	-	-	-	-	-
+1788973535.109453	FT5vqn22jj3Lom3pAe	CQie6h2MwklaI4KSU5	10.0.2.10	38985	10.0.2.20	445	SMB	0	(empty)	application/x-sharedlib	QwtRNTtu.so	0.000000	T	T	7268	-	0	0	F	-	-	-	-	-	-	-
+1788973535.231367	F80q5W2G4IwMRP4qMk	CHxrom2NmhltNX3pH7	10.0.2.10	37319	10.0.2.20	445	SMB	0	(empty)	application/x-sharedlib	ZjsHKNPB.so	0.000000	T	T	7880	-	0	0	F	-	-	-	-	-	-	-
+1788973535.335155	FSM7qx4qzSpVVnRSEd	CMRozw4cDv6czYMrq	10.0.2.10	36857	10.0.2.20	445	SMB	0	(empty)	application/x-sharedlib	RiJQNNyI.so	0.000000	T	T	7860	-	0	0	F	-	-	-	-	-	-	-
+1788973535.450826	FlwXbS101JhcNW9042	CILTpKO7uLdZWHTU8	10.0.2.10	45657	10.0.2.20	445	SMB	0	(empty)	application/x-sharedlib	wJlLDbye.so	0.000000	T	T	7588	-	0	0	F	-	-	-	-	-	-	-
+1788973535.554216	FU7RNE3WNk8vKP3EA9	CU8Ijd4ICrNYq0SlZ4	10.0.2.10	34939	10.0.2.20	445	SMB	0	(empty)	application/x-sharedlib	zNfCfivK.so	0.000000	T	T	7588	-	0	0	F	-	-	-	-	-	-	-
+1788973535.670804	FC56po1O4j47dNFAJ9	CWdtQP3V7Y1YWGCQD1	10.0.2.10	35005	10.0.2.20	445	SMB	0	(empty)	application/x-sharedlib	EnZeHzik.so	0.000000	T	T	8832	-	0	0	F	-	-	-	-	-	-	-
+1788973535.774431	F2Me262Zw4JTrWm2Y6	CTYjtg3OSlf8BjQrUe	10.0.2.10	43675	10.0.2.20	445	SMB	0	(empty)	application/x-sharedlib	FionmGSH.so	0.000000	T	T	8832	-	0	0	F	-	-	-	-	-	-	-
+1788973535.891821	FfLXLW1PdoNVlrcaHc	CBnzdj1dc68EJTyDGb	10.0.2.10	45671	10.0.2.20	445	SMB	0	(empty)	application/x-sharedlib	qKOwudrG.so	0.001464	T	T	69016	-	0	0	F	-	-	-	-	-	-	-
+1788973535.997044	FFCMb71G7jOW0juIb9	CG59UD2dZaY2f4Yu2d	10.0.2.10	36103	10.0.2.20	445	SMB	0	(empty)	application/x-sharedlib	RJIziWlB.so	0.003023	T	T	70176	-	0	0	F	-	-	-	-	-	-	-
+1788973536.115388	FT8Hpl48l3pZdXSrmb	CNxVOx31hV7QVRB1t4	10.0.2.10	43143	10.0.2.20	445	SMB	0	(empty)	application/x-sharedlib	XypAVBqh.so	0.002550	T	T	69968	-	0	0	F	-	-	-	-	-	-	-
+1788973536.229332	FEok7G44lygqevLLcc	CSFtel1kgqSiUCGQT2	10.0.2.10	35513	10.0.2.20	445	SMB	0	(empty)	application/x-sharedlib	pHCPUiqk.so	0.000000	T	T	11432	-	0	0	F	-	-	-	-	-	-	-
+1788973536.337616	FIxQi23KEbbAUBSzFb	C086df1piIu0myubkk	10.0.2.10	42379	10.0.2.20	445	SMB	0	(empty)	application/x-sharedlib	BbQuVvrl.so	0.000000	T	T	13136	-	0	0	F	-	-	-	-	-	-	-
+1788973536.449134	FQ8MUR2yDAWbhXdcLg	CVMvMA1JMJtdGxIXuk	10.0.2.10	46591	10.0.2.20	445	SMB	0	(empty)	application/x-sharedlib	bunMaQiS.so	0.000000	T	T	8904	-	0	0	F	-	-	-	-	-	-	-
+1788973536.574751	Fz3Dx93HTe8736QYRd	CGdg8E3dLHJwfmRati	10.0.2.10	44017	10.0.2.20	445	SMB	0	(empty)	application/x-sharedlib	zamcvSJn.so	0.000000	T	T	8448	-	0	0	F	-	-	-	-	-	-	-
+1788973660.154795	FVMGyY2rgwOH3QsOs9	CJj9md1KIhYl5TLJx	10.0.2.10	32951	10.0.2.20	445	SMB	0	(empty)	-	BxuRX.txt	0.000000	T	T	8	-	0	0	F	-	-	-	-	-	-	-
+1788973660.208392	F7xfxl43hsYmMbiAYe	ClFjko1XdLc96MA01g	10.0.2.10	46347	10.0.2.20	445	SMB	0	(empty)	application/x-sharedlib	ctZgMxaJ.so	0.000000	T	T	8400	-	0	0	F	-	-	-	-	-	-	-
+1788973660.320235	FA0fqo1gEsokTOeWa7	CUMXKX3aX3TpeWBDk1	10.0.2.10	43359	10.0.2.20	445	SMB	0	(empty)	application/x-sharedlib	wUtKkcyh.so	0.000000	T	T	7268	-	0	0	F	-	-	-	-	-	-	-
+1788973660.428470	Fgu0Fc4MMJlcJM1oo	CreUp91aaKtAPwD3J2	10.0.2.10	40275	10.0.2.20	445	SMB	0	(empty)	application/x-sharedlib	AqNuFMZp.so	0.000000	T	T	7880	-	0	0	F	-	-	-	-	-	-	-
+1788973660.544505	FTMyxp3xJmOtJCY8r1	CBrVzK1HGB7aCueWhi	10.0.2.10	44599	10.0.2.20	445	SMB	0	(empty)	application/x-sharedlib	NAkTRTMJ.so	0.000000	T	T	7860	-	0	0	F	-	-	-	-	-	-	-
+1788973660.709739	FZqoXQ3xWcwqd4iaS8	ClnN8P3kjhPhhdKpdd	10.0.2.10	41831	10.0.2.20	445	SMB	0	(empty)	application/x-sharedlib	mXGvOXXw.so	0.000000	T	T	7588	-	0	0	F	-	-	-	-	-	-	-
+1788973660.825254	FA34282ArssWU88rji	Cs3H7222rp1dZb5JK1	10.0.2.10	42043	10.0.2.20	445	SMB	0	(empty)	application/x-sharedlib	uxVXYgOp.so	0.000000	T	T	7588	-	0	0	F	-	-	-	-	-	-	-
+1788973660.937823	FCmI774j3dwoZtSSo3	CX4ZNi24onmRXE0FKc	10.0.2.10	38637	10.0.2.20	445	SMB	0	(empty)	application/x-sharedlib	aCfeKegI.so	0.000000	T	T	8832	-	0	0	F	-	-	-	-	-	-	-
+1788973661.039604	F6Vmql2WPPtzux3w27	Cho89e25N303GxwaGe	10.0.2.10	38669	10.0.2.20	445	SMB	0	(empty)	application/x-sharedlib	CYkScgsO.so	0.000000	T	T	8832	-	0	0	F	-	-	-	-	-	-	-
+1788973661.159373	Fqjo9M2VfbU9v2ZxFi	CUsvjwdKjlFn4Ez2a	10.0.2.10	44921	10.0.2.20	445	SMB	0	(empty)	application/x-sharedlib	sCJdFZUO.so	0.001646	T	T	69016	-	0	0	F	-	-	-	-	-	-	-
+1788973661.266496	F6vIGb4H3x2cTYQ7Nh	CeKUso2je9RSPv6vZ2	10.0.2.10	39429	10.0.2.20	445	SMB	0	(empty)	application/x-sharedlib	nklzPFTD.so	0.001675	T	T	70176	-	0	0	F	-	-	-	-	-	-	-
+1788973661.385337	FioxbPmvULqidkaB6	CXJIBe29O6onLUR71l	10.0.2.10	34227	10.0.2.20	445	SMB	0	(empty)	application/x-sharedlib	tuzoBJgp.so	0.002020	T	T	69968	-	0	0	F	-	-	-	-	-	-	-
+1788973661.491494	FjAfRZ1SgX82ebpLF8	CdoOe8pZ5uyVwZJ3b	10.0.2.10	39203	10.0.2.20	445	SMB	0	(empty)	application/x-sharedlib	xgGOnmyC.so	0.000000	T	T	11432	-	0	0	F	-	-	-	-	-	-	-
+1788973661.603065	F0tVhu28NBZcbC1GDk	CXqUFVXgdEh0POAn3	10.0.2.10	41873	10.0.2.20	445	SMB	0	(empty)	application/x-sharedlib	tWyoNfoL.so	0.000000	T	T	13136	-	0	0	F	-	-	-	-	-	-	-
+1788973661.718755	F44c8S3iQtjHLIuqBb	CKuysM1o71Q5BWOA6i	10.0.2.10	38563	10.0.2.20	445	SMB	0	(empty)	application/x-sharedlib	ivRNNzfp.so	0.000000	T	T	8904	-	0	0	F	-	-	-	-	-	-	-
+1788973661.823757	Fk6boA1eWx1p9Bmgpl	CgSLwc1hkgeDsdHLK3	10.0.2.10	45169	10.0.2.20	445	SMB	0	(empty)	application/x-sharedlib	oKJdVKrJ.so	0.000000	T	T	8448	-	0	0	F	-	-	-	-	-	-	-
+1788973745.160272	Fceag54WStIwVtKwv1	CExjoaW5AJ5xPNDkj	10.0.2.10	35260	10.0.2.20	445	SMB	0	(empty)	text/plain	nmap-test-file	0.000000	T	T	260	-	0	0	F	-	-	-	-	-	-	-
+1788973745.180336	Fceag54WStIwVtKwv1	CnLNkni06RPa73XRa	10.0.2.10	35292	10.0.2.20	445	SMB	0	(empty)	text/plain	nmap-test-file	0.000000	T	T	260	-	0	0	F	-	-	-	-	-	-	-
+#close	2026-09-09-17-26-49

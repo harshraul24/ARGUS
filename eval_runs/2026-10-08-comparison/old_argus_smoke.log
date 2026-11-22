@@ -1,0 +1,42 @@
+ARGUS freeze None matches=False · 14 windows
+
+[argus]
+  all: {"attack_windows_flagged": "7/8", "benign_windows_flagged": "5/6", "steps_detected": "64/68", "step_recall_ci95": [0.858, 0.977], "event_precision": 0.1086, "steps_by_rule": {"NOVELTY": 61, "TA0010": 4}}
+  gate_pass: {"attack_windows_flagged": "7/8", "benign_windows_flagged": "4/5", "steps_detected": "64/68", "step_recall_ci95": [0.858, 0.977], "event_precision": 0.3125, "steps_by_rule": {"NOVELTY": 61, "TA0010": 4}}
+  steps_by_status: {"success": "64/68"}
+  bootstrap_steps: "1/4"
+  smoke_app01_1100         benign  -> suspicious   alerts ['NOVELTY'] sel 94 (mal 0/0)
+  smoke_app01_1200         attack  -> suspicious   alerts ['TA0010'] sel 1 (mal 1/7)
+  smoke_app01_1230         attack  -> suspicious   alerts ['NOVELTY'] sel 47 (mal 45/45)
+  smoke_web01_1100         benign  -> suspicious   alerts ['NOVELTY'] sel 166 (mal 0/0)
+  smoke_web01_1200         attack  -> suspicious   alerts ['TA0010'] sel 1 (mal 1/11)
+  smoke_web01_1230         attack  -> suspicious   alerts ['NOVELTY'] sel 71 (mal 45/45)
+  smoke_ws-dev01_1100      benign  -> suspicious   alerts ['NOVELTY'] sel 87 (mal 0/0)
+  smoke_ws-dev01_1130      benign  -> benign       alerts [] sel 0 (mal 0/0)
+  smoke_ws-dev01_1200      attack  -> suspicious   alerts ['TA0010'] sel 1 (mal 1/5)
+  smoke_ws-dev01_1230      attack  -> suspicious   alerts ['NOVELTY'] sel 47 (mal 45/45)
+  smoke_ws-fin01_1100      benign  -> suspicious   alerts ['NOVELTY'] sel 1111 (mal 0/0)  [gate fail: first_boot]
+  smoke_ws-fin01_1130      benign  -> suspicious   alerts ['NOVELTY'] sel 30 (mal 0/0)
+  smoke_ws-fin01_1200      attack  -> suspicious   alerts ['NOVELTY', 'TA0010'] sel 47 (mal 47/47)
+  smoke_ws-fin01_1230      attack  -> benign       alerts [] sel 0 (mal 0/3)
+
+[argus_s3]
+  all: {"attack_windows_flagged": "7/8", "benign_windows_flagged": "5/6", "steps_detected": "64/68", "step_recall_ci95": [0.858, 0.977], "event_precision": 0.1086, "steps_by_rule": {"NOVELTY": 61, "TA0010": 4}}
+  gate_pass: {"attack_windows_flagged": "7/8", "benign_windows_flagged": "4/5", "steps_detected": "64/68", "step_recall_ci95": [0.858, 0.977], "event_precision": 0.3125, "steps_by_rule": {"NOVELTY": 61, "TA0010": 4}}
+  steps_by_status: {"success": "64/68"}
+  bootstrap_steps: "1/4"
+  smoke_app01_1100         benign  -> suspicious   alerts ['NOVELTY'] sel 94 (mal 0/0)
+  smoke_app01_1200         attack  -> suspicious   alerts ['TA0010'] sel 1 (mal 1/7)
+  smoke_app01_1230         attack  -> suspicious   alerts ['NOVELTY'] sel 47 (mal 45/45)
+  smoke_web01_1100         benign  -> suspicious   alerts ['NOVELTY'] sel 166 (mal 0/0)
+  smoke_web01_1200         attack  -> suspicious   alerts ['TA0010'] sel 1 (mal 1/11)
+  smoke_web01_1230         attack  -> suspicious   alerts ['NOVELTY'] sel 71 (mal 45/45)
+  smoke_ws-dev01_1100      benign  -> suspicious   alerts ['NOVELTY'] sel 87 (mal 0/0)
+  smoke_ws-dev01_1130      benign  -> benign       alerts [] sel 0 (mal 0/0)
+  smoke_ws-dev01_1200      attack  -> suspicious   alerts ['TA0010'] sel 1 (mal 1/5)
+  smoke_ws-dev01_1230      attack  -> suspicious   alerts ['NOVELTY'] sel 47 (mal 45/45)
+  smoke_ws-fin01_1100      benign  -> suspicious   alerts ['NOVELTY'] sel 1111 (mal 0/0)  [gate fail: first_boot]
+  smoke_ws-fin01_1130      benign  -> suspicious   alerts ['NOVELTY'] sel 30 (mal 0/0)
+  smoke_ws-fin01_1200      attack  -> suspicious   alerts ['NOVELTY', 'TA0010'] sel 47 (mal 47/47)
+  smoke_ws-fin01_1230      attack  -> benign       alerts [] sel 0 (mal 0/3)
+wrote /private/tmp/claude-501/-Users-harshraul-Educational-ARGUS-odin/6a46bd39-d946-4646-8eb5-a5eca60e6915/scratchpad/old/results_smoke/summary.json

@@ -1,0 +1,14 @@
+{
+  "key": "e2c5da1a781a2dba5a6e5b116aa084fd7739220d405cc3012a860fd073c044e6",
+  "provider": "ollama",
+  "model": "gpt-oss:120b-cloud",
+  "prompt_sha": "e2c5da1a781a2dba",
+  "response": "{\n  \"disposition\": \"benign\",\n  \"mitre_technique\": \"none\",\n  \"severity\": 0.0,\n  \"malicious_events\": [],\n  \"reason\": \"All observed processes are normal system maintenance (package installation, auditd reload, cloud\u2011init generators) with no evidence of exploitation, data exfiltration, or privilege abuse.\"\n}",
+  "latency_s": 2.533007860183716,
+  "created_at": 1791424248.430677,
+  "params": {
+    "temperature": 0.0,
+    "seed": 7,
+    "json_mode": true
+  }
+}

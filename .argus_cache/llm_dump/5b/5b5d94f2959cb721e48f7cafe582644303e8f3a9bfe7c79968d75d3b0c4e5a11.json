@@ -1,0 +1,14 @@
+{
+  "key": "5b5d94f2959cb721e48f7cafe582644303e8f3a9bfe7c79968d75d3b0c4e5a11",
+  "provider": "ollama",
+  "model": "gpt-oss:120b-cloud",
+  "prompt_sha": "5b5d94f2959cb721",
+  "response": "{\n  \"disposition\": \"malicious\",\n  \"mitre_technique\": \"T1105\",\n  \"severity\": 0.9,\n  \"malicious_events\": [\"e1\", \"e2\", \"e3\", \"e4\", \"e5\"],\n  \"reason\": \"Attacker fetched a binary from a remote server, made it executable, ran it, and cleared bash history to hide activity.\"\n}",
+  "latency_s": 1.916025161743164,
+  "created_at": 1791424286.830454,
+  "params": {
+    "temperature": 0.0,
+    "seed": 8,
+    "json_mode": true
+  }
+}

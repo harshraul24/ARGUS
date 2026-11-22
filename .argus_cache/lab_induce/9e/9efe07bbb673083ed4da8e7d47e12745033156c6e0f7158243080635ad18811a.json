@@ -1,0 +1,14 @@
+{
+  "key": "9efe07bbb673083ed4da8e7d47e12745033156c6e0f7158243080635ad18811a",
+  "provider": "ollama",
+  "model": "gpt-oss:120b-cloud",
+  "prompt_sha": "9efe07bbb673083e",
+  "response": "{\n  \"rules\": [\n    {\n      \"id\": \"user-writable-outbound-connection\",\n      \"technique\": \"T1041\",\n      \"name\": \"User\u2011writable executable makes outbound network connection\",\n      \"tactic\": \"command-and-control\",\n      \"severity\": 0.8,\n      \"evidence\": [\n        \"ev_000040\"\n      ],\n      \"indicators\": [\n        {\n          \"name\": \"outbound-from-user-writable\",\n          \"weight\": 1.0,\n          \"required\": true,\n          \"select\": {\n            \"claim_type\": \"host_network_connection\",\n            \"facts.direction\": \"outbound\",\n            \"lineage.user_writable\": {\n              \"truthy\": true\n            }\n          },\n          \"score\": {\n            \"op\": \"threshold\",\n            \"value\": \"n\",\n            \"at\": 1\n          }\n        }\n      ]\n    }\n  ],\n  \"reasoning\": \"The episode shows a process launched from a user\u2011writable location (splunkd) establishing an outbound connection on port 8888. A robust indicator is to flag any outbound host_network_connection claim whose originating process is marked as user\u2011writable via the lineage.user_writable flag, avoiding reliance on executable names. This captures the suspicious behaviour while remaining quiet for routine traffic.\"\n}",
+  "latency_s": 14.432179927825928,
+  "created_at": 1791394690.538422,
+  "params": {
+    "temperature": 0.0,
+    "seed": 7,
+    "json_mode": true
+  }
+}

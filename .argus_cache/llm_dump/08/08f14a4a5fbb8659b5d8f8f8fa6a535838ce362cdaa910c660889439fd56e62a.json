@@ -1,0 +1,14 @@
+{
+  "key": "08f14a4a5fbb8659b5d8f8f8fa6a535838ce362cdaa910c660889439fd56e62a",
+  "provider": "ollama",
+  "model": "gpt-oss:120b-cloud",
+  "prompt_sha": "08f14a4a5fbb8659",
+  "response": "{\n  \"disposition\": \"suspicious\",\n  \"mitre_technique\": \"T1548.003\",\n  \"severity\": 0.6,\n  \"malicious_events\": [\"e10\", \"e21\", \"e87\", \"e98\"],\n  \"reason\": \"Web\u2011user 'www' repeatedly invoked sudo to load audit rules and enable auditd, indicating possible abuse of sudo for privilege escalation.\"\n}",
+  "latency_s": 2.330688714981079,
+  "created_at": 1791424277.108214,
+  "params": {
+    "temperature": 0.0,
+    "seed": 8,
+    "json_mode": true
+  }
+}

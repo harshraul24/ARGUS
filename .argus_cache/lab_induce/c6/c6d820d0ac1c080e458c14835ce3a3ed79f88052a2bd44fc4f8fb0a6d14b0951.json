@@ -1,0 +1,14 @@
+{
+  "key": "c6d820d0ac1c080e458c14835ce3a3ed79f88052a2bd44fc4f8fb0a6d14b0951",
+  "provider": "ollama",
+  "model": "gpt-oss:120b-cloud",
+  "prompt_sha": "c6d820d0ac1c080e",
+  "response": "{\n  \"rules\": [\n    {\n      \"id\": \"read-passwd-to-tmp\",\n      \"technique\": \"T1003.006\",\n      \"name\": \"Read /etc/passwd and copy to temporary location\",\n      \"tactic\": \"credential-access\",\n      \"severity\": 0.7,\n      \"evidence\": [\"ev_000623\", \"ev_000624\", \"ev_000625\"],\n      \"indicators\": [\n        {\n          \"name\": \"read-passwd-temp\",\n          \"weight\": 1.0,\n          \"required\": true,\n          \"select\": {\n            \"claim_type\": \"process_create\",\n            \"facts.command\": {\n              \"all_of\": [\n                { \"contains_any\": [\"/etc/passwd\"] },\n                { \"contains_any\": [\"/tmp/\"] }\n              ]\n            }\n          },\n          \"aggregate\": [\n            { \"as\": \"n\", \"op\": \"count\" }\n          ],\n          \"score\": { \"op\": \"threshold\", \"value\": \"n\", \"at\": 1 }\n        }\n      ]\n    }\n  ],\n  \"reasoning\": \"The episode shows a new shell process that reads the system password file (/etc/passwd) and writes its contents to a file in a user\u2011writable temporary directory (/tmp). Copying credential data to a writable location is a classic credential\u2011access technique (T1003.006). The rule looks for any process_create claim whose command line contains both the '/etc/passwd' path and a '/tmp/' path, which captures the suspicious behavior while remaining robust to renamed binaries or full\u2011path invocations, and aligns with known community detections of passwd dumping.\"\n}",
+  "latency_s": 14.426332950592041,
+  "created_at": 1791394631.4811451,
+  "params": {
+    "temperature": 0.0,
+    "seed": 7,
+    "json_mode": true
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "case_id": "apt_live_011",
+  "disposition": "malicious",
+  "hypotheses": [
+    {
+      "technique": "T1210",
+      "name": "Exploitation of a remote service",
+      "tactic": "Lateral Movement",
+      "score": 0.8333333333333334,
+      "support": [
+        "auth_00001",
+        "auth_00002",
+        "auth_00003",
+        "auth_00004",
+        "net_00004"
+      ],
+      "defeaters": [],
+      "rationale": [
+        "post-exploitation session or privileged commands: 4 claim(s), strength 1.00",
+        "prior service probing: 1 claim(s), strength 0.33"
+      ],
+      "coverage_gaps": []
+    }
+  ],
+  "severity": 0.708,
+  "priority": 0.708,
+  "claims_total": 18,
+  "claims_considered": 18,
+  "blind_spots": [],
+  "next_actions": [],
+  "notes": [],
+  "config": {
+    "enable_coverage": true,
+    "enable_baseline": true,
+    "enable_semantics": true,
+    "malicious_threshold": 0.5,
+    "suspicious_threshold": 0.25,
+    "confound_artifacts": [],
+    "observability_model": true,
+    "enable_observability": true
+  },
+  "suppressed": [],
+  "llm": {
+    "provider": "ollama",
+    "model": "gpt-oss:120b-cloud",
+    "is_test_double": false,
+    "proposed": 0,
+    "accepted": 0,
+    "applied": 0,
+    "verification": {},
+    "notes": [
+      "no undecomposed command lines in this case"
+    ]
+  }
+}

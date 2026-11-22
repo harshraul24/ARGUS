@@ -1,0 +1,59 @@
+{
+  "meta_version": "v0.2",
+  "scenario_id": "benign_helpdesk_lockout_007",
+  "category": "benign",
+  "title": "Forgotten password: sparse failures, then a help-desk reset",
+  "generated_by": "tools/make_benign_cases.py (synthetic benign corpus)",
+  "topology": {
+    "hosts": [
+      {
+        "name": "target",
+        "ip": "10.0.2.20",
+        "role": "victim",
+        "os": "Linux"
+      },
+      {
+        "name": "jumphost",
+        "ip": "10.0.2.5",
+        "role": "admin",
+        "os": "Linux"
+      }
+    ],
+    "zeek_sensor": {
+      "host": "capture",
+      "position": "target segment"
+    }
+  },
+  "capture": {
+    "window": {
+      "start": "2026-03-09T07:55:00Z",
+      "end": "2026-03-09T12:05:00Z"
+    },
+    "clean_capture": true
+  },
+  "expected_observables": {
+    "authlog": {
+      "logon_success": true,
+      "logon_failure": true
+    },
+    "zeek": {
+      "conn": true,
+      "ssh": true
+    }
+  },
+  "mitre": {
+    "technique": null
+  },
+  "ground_truth": {
+    "category": "benign",
+    "objective_reached": false,
+    "techniques": [],
+    "primary_technique": null,
+    "why_benign": "Four failures for one account from that user's own workstation over 3.5 hours, resolved by a password change and a successful login.",
+    "confounds": [
+      "four logon failures (crosses a naive count threshold)",
+      "failure sequence terminating in success"
+    ],
+    "actions": []
+  }
+}

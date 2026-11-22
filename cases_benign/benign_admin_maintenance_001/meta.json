@@ -1,0 +1,61 @@
+{
+  "meta_version": "v0.2",
+  "scenario_id": "benign_admin_maintenance_001",
+  "category": "benign",
+  "title": "Scheduled patching window by an administrator",
+  "generated_by": "tools/make_benign_cases.py (synthetic benign corpus)",
+  "topology": {
+    "hosts": [
+      {
+        "name": "target",
+        "ip": "10.0.2.20",
+        "role": "victim",
+        "os": "Linux"
+      },
+      {
+        "name": "jumphost",
+        "ip": "10.0.2.5",
+        "role": "admin",
+        "os": "Linux"
+      }
+    ],
+    "zeek_sensor": {
+      "host": "capture",
+      "position": "target segment"
+    }
+  },
+  "capture": {
+    "window": {
+      "start": "2026-03-04T08:12:00Z",
+      "end": "2026-03-04T09:32:00Z"
+    },
+    "clean_capture": true
+  },
+  "expected_observables": {
+    "authlog": {
+      "logon_success": true,
+      "logon_failure": false
+    },
+    "zeek": {
+      "conn": true,
+      "ssh": true,
+      "dns": true
+    }
+  },
+  "mitre": {
+    "technique": null
+  },
+  "ground_truth": {
+    "category": "benign",
+    "objective_reached": false,
+    "techniques": [],
+    "primary_technique": null,
+    "why_benign": "Key-based login by a known admin from the jump host, followed by package-manager and service-restart commands inside the change window.",
+    "confounds": [
+      "remote logon success",
+      "privileged commands as root",
+      "service stop/start pair resembling service tampering"
+    ],
+    "actions": []
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "meta_version": "v0.2",
+  "scenario_id": "apt_live_011",
+  "category": "attack",
+  "title": "APT-Agent proftpd_backdoor (live Metasploitable2)",
+  "generated_by": "APT-Agent + apt_capture harness",
+  "topology": {
+    "hosts": [
+      {
+        "name": "attacker",
+        "ip": "10.0.2.10",
+        "role": "attacker",
+        "os": "Linux"
+      },
+      {
+        "name": "target",
+        "ip": "10.0.2.20",
+        "role": "victim",
+        "os": "Linux"
+      }
+    ],
+    "zeek_sensor": {
+      "host": "capture",
+      "position": "attacker-target path"
+    }
+  },
+  "capture": {
+    "window": {
+      "start": "2026-09-09T16:58:59Z",
+      "end": "2026-09-09T17:03:40.264000Z"
+    },
+    "clean_capture": true
+  },
+  "expected_observables": {
+    "authlog": {
+      "logon_failure": false,
+      "logon_success": true
+    },
+    "zeek": {
+      "conn": true,
+      "ssh": true
+    }
+  },
+  "mitre": {
+    "technique": "T1210"
+  },
+  "ground_truth": {
+    "category": "attack",
+    "campaign_start": "2026-09-09T16:58:59Z",
+    "techniques": [
+      "T1046",
+      "T1210"
+    ],
+    "primary_technique": "T1210",
+    "objective_reached": false,
+    "actions": [
+      {
+        "iter": 1,
+        "tactic": "RECON",
+        "time": "2026-09-09T16:58:59Z",
+        "technique": "T1046",
+        "detail": "reconnaissance",
+        "result": "n/a"
+      },
+      {
+        "iter": 2,
+        "tactic": "EXPLOIT",
+        "time": "2026-09-09T16:59:29.280200Z",
+        "technique": null,
+        "detail": "use exploit/unix/ftp/proftpd_modcopy_exec",
+        "result": "fail"
+      },
+      {
+        "iter": 3,
+        "tactic": "RECON",
+        "time": "2026-09-09T17:01:07.769600Z",
+        "technique": "T1046",
+        "detail": "reconnaissance",
+        "result": "n/a"
+      },
+      {
+        "iter": 4,
+        "tactic": "RECON",
+        "time": "2026-09-09T17:01:32.842500Z",
+        "technique": "T1046",
+        "detail": "reconnaissance",
+        "result": "n/a"
+      },
+      {
+        "iter": 5,
+        "tactic": "RECON",
+        "time": "2026-09-09T17:01:36.398200Z",
+        "technique": "T1046",
+        "detail": "reconnaissance",
+        "result": "n/a"
+      },
+      {
+        "iter": 6,
+        "tactic": "EXPLOIT",
+        "time": "2026-09-09T17:02:02.659300Z",
+        "technique": "T1210",
+        "detail": "use exploit/unix/ftp/proftpd_133c_backdoor",
+        "result": "fail"
+      },
+      {
+        "iter": 7,
+        "tactic": "RECON",
+        "time": "2026-09-09T17:03:40.264000Z",
+        "technique": "T1046",
+        "detail": "reconnaissance",
+        "result": "n/a"
+      }
+    ]
+  }
+}

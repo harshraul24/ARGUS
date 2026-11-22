@@ -1,0 +1,14 @@
+{
+  "key": "bec488190bfb7b3e167249ad2c130a39741af6bb6e04f999cf40b4538d4b1a18",
+  "provider": "ollama",
+  "model": "gpt-oss:120b-cloud",
+  "prompt_sha": "bec488190bfb7b3e",
+  "response": "{\n  \"disposition\": \"malicious\",\n  \"mitre_technique\": \"T1003\",\n  \"severity\": 0.85,\n  \"malicious_events\": [\n    \"e13\",\"e14\",\"e15\",\n    \"e31\",\"e32\",\"e33\",\n    \"e49\",\"e50\",\"e51\",\n    \"e71\",\"e72\",\"e73\",\n    \"e59\",\"e60\",\"e61\",\"e62\",\"e63\",\"e64\",\n    \"e85\",\"e86\",\"e87\",\"e88\",\"e89\",\"e90\",\"e91\",\n    \"e92\"\n  ],\n  \"reason\": \"Repeated reads of /etc/shadow by sshd and sudo\u2011driven copying of auth/audit logs followed by outbound connections indicate credential dumping and log exfiltration.\"\n}",
+  "latency_s": 2.7435507774353027,
+  "created_at": 1791424131.667818,
+  "params": {
+    "temperature": 0.0,
+    "seed": 7,
+    "json_mode": true
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "key": "636048ed3ba1144f4b44c3a752fe7c9e1c5e224e4c89add491034efedd99e70b",
+  "provider": "ollama",
+  "model": "gpt-oss:120b-cloud",
+  "prompt_sha": "636048ed3ba1144f",
+  "response": "{\n  \"disposition\": \"malicious\",\n  \"mitre_technique\": \"T1041\",\n  \"severity\": 0.8,\n  \"malicious_events\": [\n    \"e59\",\n    \"e60\",\n    \"e61\",\n    \"e62\",\n    \"e63\",\n    \"e64\",\n    \"e85\",\n    \"e86\",\n    \"e87\",\n    \"e88\",\n    \"e89\",\n    \"e90\",\n    \"e91\"\n  ],\n  \"reason\": \"Log files are copied to /tmp and exfiltrated via outbound connections, indicating credential/trace harvesting and data exfiltration.\"\n}",
+  "latency_s": 2.2925009727478027,
+  "created_at": 1791424198.223389,
+  "params": {
+    "temperature": 0.0,
+    "seed": 8,
+    "json_mode": true
+  }
+}

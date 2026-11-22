@@ -1,0 +1,14 @@
+{
+  "key": "1f3fc7c059d2e93b2a795cbef2577e395b881bea43d14b953af04bb457b95017",
+  "provider": "ollama",
+  "model": "gpt-oss:120b-cloud",
+  "prompt_sha": "1f3fc7c059d2e93b",
+  "response": "{\n  \"rules\": [],\n  \"reasoning\": \"The episode consists of standard package configuration utilities (dpkg-preconfigure, locale, stty, whiptail) invoked by the system during a package install or update. All binaries are from system directories, no user\u2011writable executables are involved, and the commands are typical discovery/version checks performed by package scripts. This is routine host activity, not suspicious behavior, so no detection rule is generated.\"\n}",
+  "latency_s": 12.506371974945068,
+  "created_at": 1791394672.954512,
+  "params": {
+    "temperature": 0.0,
+    "seed": 7,
+    "json_mode": true
+  }
+}

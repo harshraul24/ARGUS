@@ -1,0 +1,205 @@
+{
+ "freeze": {
+  "manifest": "ARGUS_FREEZE_2026-10-15-burnin.json",
+  "matches": false,
+  "aggregate_sha256": "4cd540d9c01aa87a6f992a18449576b25369b35a89f13727e9ce6ec8272b2ec9",
+  "changed": [
+   "argus/api/static/app.css",
+   "argus/api/static/app.js",
+   "argus/api/static/index.html",
+   "argus/api/store.py",
+   "argus/api/workbench.py",
+   "argus/collectors/events.py",
+   "argus/collectors/lab_capture.py",
+   "argus/live/__init__.py",
+   "argus/live/feed.py",
+   "argus/live/loop.py"
+  ]
+ },
+ "arms": {
+  "argus": {
+   "burnin": {
+    "tp": 0,
+    "fp": 0,
+    "fn": 0,
+    "tn": 34401,
+    "events": 34401,
+    "precision": null,
+    "precision_ci95": null,
+    "recall": null,
+    "recall_ci95": null,
+    "f1": null,
+    "fpr": 0.0,
+    "fpr_ci95": [
+     0.0,
+     0.0
+    ],
+    "false_alarms_per_10k_benign_events": 0.0
+   },
+   "pooled": {
+    "tp": 3,
+    "fp": 295,
+    "fn": 298,
+    "tn": 44354,
+    "events": 44950,
+    "precision": 0.0101,
+    "precision_ci95": [
+     0.003,
+     0.029
+    ],
+    "recall": 0.01,
+    "recall_ci95": [
+     0.003,
+     0.029
+    ],
+    "f1": 0.01,
+    "fpr": 0.006607,
+    "fpr_ci95": [
+     0.006,
+     0.007
+    ],
+    "false_alarms_per_10k_benign_events": 66.07
+   },
+   "run1": {
+    "tp": 3,
+    "fp": 295,
+    "fn": 90,
+    "tn": 8430,
+    "events": 8818,
+    "precision": 0.0101,
+    "precision_ci95": [
+     0.003,
+     0.029
+    ],
+    "recall": 0.0323,
+    "recall_ci95": [
+     0.011,
+     0.091
+    ],
+    "f1": 0.0153,
+    "fpr": 0.033811,
+    "fpr_ci95": [
+     0.03,
+     0.038
+    ],
+    "false_alarms_per_10k_benign_events": 338.11
+   },
+   "smoke": {
+    "tp": 0,
+    "fp": 0,
+    "fn": 208,
+    "tn": 1523,
+    "events": 1731,
+    "precision": null,
+    "precision_ci95": null,
+    "recall": 0.0,
+    "recall_ci95": [
+     0.0,
+     0.018
+    ],
+    "f1": null,
+    "fpr": 0.0,
+    "fpr_ci95": [
+     0.0,
+     0.003
+    ],
+    "false_alarms_per_10k_benign_events": 0.0
+   }
+  },
+  "argus_s3": {
+   "burnin": {
+    "tp": 0,
+    "fp": 11,
+    "fn": 0,
+    "tn": 34390,
+    "events": 34401,
+    "precision": 0.0,
+    "precision_ci95": [
+     0.0,
+     0.259
+    ],
+    "recall": null,
+    "recall_ci95": null,
+    "f1": null,
+    "fpr": 0.00032,
+    "fpr_ci95": [
+     0.0,
+     0.001
+    ],
+    "false_alarms_per_10k_benign_events": 3.2
+   },
+   "pooled": {
+    "tp": 62,
+    "fp": 306,
+    "fn": 239,
+    "tn": 44343,
+    "events": 44950,
+    "precision": 0.1685,
+    "precision_ci95": [
+     0.134,
+     0.21
+    ],
+    "recall": 0.206,
+    "recall_ci95": [
+     0.164,
+     0.255
+    ],
+    "f1": 0.1854,
+    "fpr": 0.006853,
+    "fpr_ci95": [
+     0.006,
+     0.008
+    ],
+    "false_alarms_per_10k_benign_events": 68.53
+   },
+   "run1": {
+    "tp": 46,
+    "fp": 295,
+    "fn": 47,
+    "tn": 8430,
+    "events": 8818,
+    "precision": 0.1349,
+    "precision_ci95": [
+     0.103,
+     0.175
+    ],
+    "recall": 0.4946,
+    "recall_ci95": [
+     0.395,
+     0.594
+    ],
+    "f1": 0.212,
+    "fpr": 0.033811,
+    "fpr_ci95": [
+     0.03,
+     0.038
+    ],
+    "false_alarms_per_10k_benign_events": 338.11
+   },
+   "smoke": {
+    "tp": 16,
+    "fp": 0,
+    "fn": 192,
+    "tn": 1523,
+    "events": 1731,
+    "precision": 1.0,
+    "precision_ci95": [
+     0.806,
+     1.0
+    ],
+    "recall": 0.0769,
+    "recall_ci95": [
+     0.048,
+     0.121
+    ],
+    "f1": 0.1429,
+    "fpr": 0.0,
+    "fpr_ci95": [
+     0.0,
+     0.003
+    ],
+    "false_alarms_per_10k_benign_events": 0.0
+   }
+  }
+ }
+}

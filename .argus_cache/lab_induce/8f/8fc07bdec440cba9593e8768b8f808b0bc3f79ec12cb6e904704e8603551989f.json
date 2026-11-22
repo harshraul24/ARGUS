@@ -1,0 +1,14 @@
+{
+  "key": "8fc07bdec440cba9593e8768b8f808b0bc3f79ec12cb6e904704e8603551989f",
+  "provider": "ollama",
+  "model": "gpt-oss:120b-cloud",
+  "prompt_sha": "8fc07bdec440cba9",
+  "response": "{\n  \"rules\": [\n    {\n      \"id\": \"user-writable-outbound-connection.c031a58671\",\n      \"technique\": \"T1041\",\n      \"name\": \"User\u2011writable executable makes outbound network connection\",\n      \"tactic\": \"command-and-control\",\n      \"severity\": 0.8,\n      \"evidence\": [\n        \"ev_000040\"\n      ],\n      \"indicators\": [\n        {\n          \"name\": \"outbound-from-user-writable\",\n          \"weight\": 1.0,\n          \"required\": true,\n          \"select\": {\n            \"claim_type\": \"host_network_connection\",\n            \"facts.direction\": \"outbound\",\n            \"lineage.ancestor_user_writable\": {\n              \"truthy\": true\n            }\n          },\n          \"score\": {\n            \"op\": \"threshold\",\n            \"value\": \"n\",\n            \"at\": 1\n          }\n        }\n      ]\n    }\n  ],\n  \"reasoning\": \"The rule captures the suspicious behaviour of a process that originated from a user\u2011writable location (identified via lineage.ancestor_user_writable) establishing an outbound network connection. This pattern is uncommon on typical hosts, aligns with the command\u2011and\u2011control tactic (T1041), and is corroborated by community detections of outbound traffic from non\u2011system binaries.\"\n}",
+  "latency_s": 7.11152195930481,
+  "created_at": 1791394676.1041842,
+  "params": {
+    "temperature": 0.0,
+    "seed": 7,
+    "json_mode": true
+  }
+}

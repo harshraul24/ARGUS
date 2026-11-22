@@ -1,0 +1,5856 @@
+{
+ "generated": "2026-10-08T03:38:25",
+ "freeze": {
+  "manifest": "ARGUS_FREEZE_2026-10-08-a2.json",
+  "matches": true,
+  "aggregate_sha256": "e90472c9de76097c5b35d503b0ea7bd8cbd643465ac0becba927ba56094f83e7",
+  "changed": []
+ },
+ "provider": "ollama",
+ "model": "gpt-oss:120b-cloud",
+ "max_rate": 0.25,
+ "max_repairs": 2,
+ "design_operations": [
+  "run1"
+ ],
+ "design_windows": 20,
+ "hosts": [
+  "app01",
+  "web01",
+  "ws-dev01",
+  "ws-fin01"
+ ],
+ "sigma_rules": 89,
+ "sigma_quiet": 0,
+ "approval": "simulated from design labels (F8)",
+ "approvals": [
+  {
+   "uid": "llm.clear-bash-history-6f2c1d.b1bd756a50.r1",
+   "to": "active",
+   "why": "analyst verdicts 4 malicious / 0 benign (mean 0.83, lower 0.51; all 4 alert(s) reviewed)"
+  },
+  {
+   "uid": "llm.clear-bash-history.f07f113ed0",
+   "to": "active",
+   "why": "analyst verdicts 4 malicious / 0 benign (mean 0.83, lower 0.51; all 4 alert(s) reviewed)"
+  },
+  {
+   "uid": "llm.clear-bash-history.f07f116a50",
+   "to": "active",
+   "why": "analyst verdicts 4 malicious / 0 benign (mean 0.83, lower 0.51; all 4 alert(s) reviewed)"
+  },
+  {
+   "uid": "llm.copy-auth-logs-to-tmp.1aee330795",
+   "to": "retired",
+   "why": "analyst verdicts 0 malicious / 5 benign (mean 0.14, lower 0.00; all 5 alert(s) reviewed)"
+  },
+  {
+   "uid": "llm.credential-dump-etc-master-passwd.60d65985b1.r1",
+   "to": "active",
+   "why": "analyst verdicts 4 malicious / 0 benign (mean 0.83, lower 0.51; all 4 alert(s) reviewed)"
+  },
+  {
+   "uid": "llm.credential-dump-etc-passwd.33e7af8567",
+   "to": "active",
+   "why": "analyst verdicts 4 malicious / 0 benign (mean 0.83, lower 0.51; all 4 alert(s) reviewed)"
+  },
+  {
+   "uid": "llm.credential-dump-master-passwd.a769aceab0",
+   "to": "active",
+   "why": "analyst verdicts 4 malicious / 0 benign (mean 0.83, lower 0.51; all 4 alert(s) reviewed)"
+  },
+  {
+   "uid": "llm.llm-clear-bash-history-547eba2a21.f68ca72a21.r1",
+   "to": "active",
+   "why": "analyst verdicts 4 malicious / 0 benign (mean 0.83, lower 0.51; all 4 alert(s) reviewed)"
+  },
+  {
+   "uid": "llm.llm-credential-dump-passwd-414cfd5de7.0d5af25de7.r1",
+   "to": "active",
+   "why": "analyst verdicts 4 malicious / 0 benign (mean 0.83, lower 0.51; all 4 alert(s) reviewed)"
+  },
+  {
+   "uid": "llm.llm-discovery-from-user-writable-ancestor-e333f0.b528532a21.r1",
+   "to": "active",
+   "why": "analyst verdicts 4 malicious / 0 benign (mean 0.83, lower 0.51; all 4 alert(s) reviewed)"
+  },
+  {
+   "uid": "llm.llm-llm-credential-dump-master-passwd-b0f086460c.18b09c460c.r2",
+   "to": "active",
+   "why": "analyst verdicts 4 malicious / 0 benign (mean 0.83, lower 0.51; all 4 alert(s) reviewed)"
+  },
+  {
+   "uid": "llm.llm-llm-credential-dump-passwd-e29b984306-71ac01.831b8b4306.r2",
+   "to": "active",
+   "why": "analyst verdicts 4 malicious / 0 benign (mean 0.83, lower 0.51; all 4 alert(s) reviewed)"
+  },
+  {
+   "uid": "llm.llm-user-writable-outbound-connection-b85e043ed0.9811af3ed0.r1",
+   "to": "active",
+   "why": "analyst verdicts 4 malicious / 0 benign (mean 0.83, lower 0.51; all 4 alert(s) reviewed)"
+  },
+  {
+   "uid": "llm.llm-user-writable-outbound-server-c5a7a22a21.174bd32a21.r1",
+   "to": "active",
+   "why": "analyst verdicts 4 malicious / 0 benign (mean 0.83, lower 0.51; all 4 alert(s) reviewed)"
+  },
+  {
+   "uid": "llm.read-passwd-to-tmp.952833f90c",
+   "to": "active",
+   "why": "analyst verdicts 4 malicious / 0 benign (mean 0.83, lower 0.51; all 4 alert(s) reviewed)"
+  },
+  {
+   "uid": "llm.shadow-read-detection.c794b7815c",
+   "to": "retired",
+   "why": "analyst verdicts 0 malicious / 5 benign (mean 0.14, lower 0.00; all 5 alert(s) reviewed)"
+  },
+  {
+   "uid": "llm.user-writable-discovery-commands.604cde8671",
+   "to": "active",
+   "why": "analyst verdicts 4 malicious / 0 benign (mean 0.83, lower 0.51; all 4 alert(s) reviewed)"
+  },
+  {
+   "uid": "llm.user-writable-history-clear.7670068671",
+   "to": "active",
+   "why": "analyst verdicts 4 malicious / 0 benign (mean 0.83, lower 0.51; all 4 alert(s) reviewed)"
+  },
+  {
+   "uid": "llm.user-writable-outbound-connection-b85e046a50.9811af6a50.r1",
+   "to": "active",
+   "why": "analyst verdicts 4 malicious / 0 benign (mean 0.83, lower 0.51; all 4 alert(s) reviewed)"
+  },
+  {
+   "uid": "llm.user-writable-outbound-connection.89fb558671.r2",
+   "to": "active",
+   "why": "analyst verdicts 4 malicious / 0 benign (mean 0.83, lower 0.51; all 4 alert(s) reviewed)"
+  },
+  {
+   "uid": "llm.whoami-from-user-writable-ancestor.5f35e53ed0",
+   "to": "active",
+   "why": "analyst verdicts 4 malicious / 0 benign (mean 0.83, lower 0.51; all 4 alert(s) reviewed)"
+  },
+  {
+   "uid": "llm.whoami-from-user-writable-ancestor.5f35e56a50",
+   "to": "active",
+   "why": "analyst verdicts 4 malicious / 0 benign (mean 0.83, lower 0.51; all 4 alert(s) reviewed)"
+  }
+ ],
+ "memory_from": null,
+ "memory_chars": 0,
+ "episodes": [
+  {
+   "eid": "run1_app01_1200#app01/997@1791375309.004",
+   "capture": "run1_app01_1200",
+   "root": "app01/997@1791375309.004",
+   "root_image": "systemctl",
+   "novel_launches": 8,
+   "processes": 8,
+   "claims": 8,
+   "text_chars": 1149
+  },
+  {
+   "eid": "run1_app01_1200#app01/967@1791375308.388",
+   "capture": "run1_app01_1200",
+   "root": "app01/967@1791375308.388",
+   "root_image": "dash",
+   "novel_launches": 3,
+   "processes": 2,
+   "claims": 3,
+   "text_chars": 322
+  },
+  {
+   "eid": "run1_app01_1200#app01/1005@1791375309.072",
+   "capture": "run1_app01_1200",
+   "root": "app01/1005@1791375309.072",
+   "root_image": "generate",
+   "novel_launches": 2,
+   "processes": 2,
+   "claims": 2,
+   "text_chars": 345
+  },
+  {
+   "eid": "run1_app01_1230#app01/1094@1791377547.402",
+   "capture": "run1_app01_1230",
+   "root": "app01/1094@1791377547.402",
+   "root_image": "splunkd",
+   "novel_launches": 5,
+   "processes": 6,
+   "claims": 7,
+   "text_chars": 850
+  },
+  {
+   "eid": "run1_app01_1300#app01/1198@1791378378.713",
+   "capture": "run1_app01_1300",
+   "root": "app01/1198@1791378378.713",
+   "root_image": "dpkg",
+   "novel_launches": 22,
+   "processes": 20,
+   "claims": 22,
+   "text_chars": 3391
+  },
+  {
+   "eid": "run1_app01_1300#app01/1120@1791378378.545",
+   "capture": "run1_app01_1300",
+   "root": "app01/1120@1791378378.545",
+   "root_image": "dash",
+   "novel_launches": 8,
+   "processes": 8,
+   "claims": 9,
+   "text_chars": 1134
+  },
+  {
+   "eid": "run1_app01_1300#app01/1335@1791378567.953",
+   "capture": "run1_app01_1300",
+   "root": "app01/1335@1791378567.953",
+   "root_image": "dash",
+   "novel_launches": 8,
+   "processes": 8,
+   "claims": 9,
+   "text_chars": 1134
+  },
+  {
+   "eid": "run1_app01_1330#app01/2359@1791380802.237",
+   "capture": "run1_app01_1330",
+   "root": "app01/2359@1791380802.237",
+   "root_image": "dash",
+   "novel_launches": 3,
+   "processes": 3,
+   "claims": 3,
+   "text_chars": 384
+  },
+  {
+   "eid": "run1_app01_1330#app01/2354@1791380703.197",
+   "capture": "run1_app01_1330",
+   "root": "app01/2354@1791380703.197",
+   "root_image": "dash",
+   "novel_launches": 2,
+   "processes": 2,
+   "claims": 2,
+   "text_chars": 302
+  },
+  {
+   "eid": "run1_app01_1330#app01/2364@1791380894.309",
+   "capture": "run1_app01_1330",
+   "root": "app01/2364@1791380894.309",
+   "root_image": "dash",
+   "novel_launches": 2,
+   "processes": 2,
+   "claims": 5,
+   "text_chars": 346
+  },
+  {
+   "eid": "run1_web01_1200#web01/1001@1791375237.285",
+   "capture": "run1_web01_1200",
+   "root": "web01/1001@1791375237.285",
+   "root_image": "systemctl",
+   "novel_launches": 8,
+   "processes": 8,
+   "claims": 8,
+   "text_chars": 1149
+  },
+  {
+   "eid": "run1_web01_1200#web01/1086@1791375264.494",
+   "capture": "run1_web01_1200",
+   "root": "web01/1086@1791375264.494",
+   "root_image": "systemctl",
+   "novel_launches": 8,
+   "processes": 8,
+   "claims": 8,
+   "text_chars": 1149
+  },
+  {
+   "eid": "run1_web01_1200#web01/968@1791375236.649",
+   "capture": "run1_web01_1200",
+   "root": "web01/968@1791375236.649",
+   "root_image": "dash",
+   "novel_launches": 3,
+   "processes": 2,
+   "claims": 3,
+   "text_chars": 322
+  },
+  {
+   "eid": "run1_web01_1230#web01/1187@1791377542.462",
+   "capture": "run1_web01_1230",
+   "root": "web01/1187@1791377542.462",
+   "root_image": "splunkd",
+   "novel_launches": 5,
+   "processes": 6,
+   "claims": 7,
+   "text_chars": 850
+  },
+  {
+   "eid": "run1_web01_1300#web01/1295@1791378369.435",
+   "capture": "run1_web01_1300",
+   "root": "web01/1295@1791378369.435",
+   "root_image": "dpkg",
+   "novel_launches": 22,
+   "processes": 20,
+   "claims": 22,
+   "text_chars": 3391
+  },
+  {
+   "eid": "run1_web01_1300#web01/1217@1791378369.283",
+   "capture": "run1_web01_1300",
+   "root": "web01/1217@1791378369.283",
+   "root_image": "dash",
+   "novel_launches": 8,
+   "processes": 8,
+   "claims": 9,
+   "text_chars": 1134
+  },
+  {
+   "eid": "run1_web01_1300#web01/1440@1791378564.786",
+   "capture": "run1_web01_1300",
+   "root": "web01/1440@1791378564.786",
+   "root_image": "dash",
+   "novel_launches": 8,
+   "processes": 8,
+   "claims": 9,
+   "text_chars": 1134
+  },
+  {
+   "eid": "run1_web01_1330#web01/2397@1791380790.049",
+   "capture": "run1_web01_1330",
+   "root": "web01/2397@1791380790.049",
+   "root_image": "dash",
+   "novel_launches": 3,
+   "processes": 3,
+   "claims": 3,
+   "text_chars": 384
+  },
+  {
+   "eid": "run1_web01_1330#web01/2393@1791380706.961",
+   "capture": "run1_web01_1330",
+   "root": "web01/2393@1791380706.961",
+   "root_image": "dash",
+   "novel_launches": 2,
+   "processes": 2,
+   "claims": 2,
+   "text_chars": 302
+  },
+  {
+   "eid": "run1_web01_1330#web01/2402@1791380892.117",
+   "capture": "run1_web01_1330",
+   "root": "web01/2402@1791380892.117",
+   "root_image": "dash",
+   "novel_launches": 2,
+   "processes": 2,
+   "claims": 6,
+   "text_chars": 346
+  },
+  {
+   "eid": "run1_web01_1400#web01/2411@1791382313.661",
+   "capture": "run1_web01_1400",
+   "root": "web01/2411@1791382313.661",
+   "root_image": "sshd",
+   "novel_launches": 6,
+   "processes": 6,
+   "claims": 16,
+   "text_chars": 1283
+  },
+  {
+   "eid": "run1_web01_1400#web01/2420@1791382387.282",
+   "capture": "run1_web01_1400",
+   "root": "web01/2420@1791382387.282",
+   "root_image": "sshd",
+   "novel_launches": 6,
+   "processes": 6,
+   "claims": 16,
+   "text_chars": 1283
+  },
+  {
+   "eid": "run1_web01_1400#web01/2430@1791382549.862",
+   "capture": "run1_web01_1400",
+   "root": "web01/2430@1791382549.862",
+   "root_image": "sshd",
+   "novel_launches": 6,
+   "processes": 6,
+   "claims": 16,
+   "text_chars": 1283
+  },
+  {
+   "eid": "run1_ws-dev01_1200#ws-dev01/1060@1791375328.379",
+   "capture": "run1_ws-dev01_1200",
+   "root": "ws-dev01/1060@1791375328.379",
+   "root_image": "systemctl",
+   "novel_launches": 8,
+   "processes": 8,
+   "claims": 8,
+   "text_chars": 1149
+  },
+  {
+   "eid": "run1_ws-dev01_1200#ws-dev01/985@1791375322.614",
+   "capture": "run1_ws-dev01_1200",
+   "root": "ws-dev01/985@1791375322.614",
+   "root_image": "systemctl",
+   "novel_launches": 8,
+   "processes": 8,
+   "claims": 8,
+   "text_chars": 1149
+  },
+  {
+   "eid": "run1_ws-dev01_1200#ws-dev01/955@1791375321.978",
+   "capture": "run1_ws-dev01_1200",
+   "root": "ws-dev01/955@1791375321.978",
+   "root_image": "dash",
+   "novel_launches": 3,
+   "processes": 2,
+   "claims": 3,
+   "text_chars": 322
+  },
+  {
+   "eid": "run1_ws-dev01_1230#ws-dev01/1157@1791377549.712",
+   "capture": "run1_ws-dev01_1230",
+   "root": "ws-dev01/1157@1791377549.712",
+   "root_image": "splunkd",
+   "novel_launches": 5,
+   "processes": 6,
+   "claims": 7,
+   "text_chars": 850
+  },
+  {
+   "eid": "run1_ws-dev01_1300#ws-dev01/1278@1791378383.500",
+   "capture": "run1_ws-dev01_1300",
+   "root": "ws-dev01/1278@1791378383.500",
+   "root_image": "dpkg",
+   "novel_launches": 22,
+   "processes": 20,
+   "claims": 22,
+   "text_chars": 3391
+  },
+  {
+   "eid": "run1_ws-dev01_1300#ws-dev01/1200@1791378383.340",
+   "capture": "run1_ws-dev01_1300",
+   "root": "ws-dev01/1200@1791378383.340",
+   "root_image": "dash",
+   "novel_launches": 8,
+   "processes": 8,
+   "claims": 9,
+   "text_chars": 1134
+  },
+  {
+   "eid": "run1_ws-dev01_1300#ws-dev01/1415@1791378571.051",
+   "capture": "run1_ws-dev01_1300",
+   "root": "ws-dev01/1415@1791378571.051",
+   "root_image": "dash",
+   "novel_launches": 8,
+   "processes": 8,
+   "claims": 9,
+   "text_chars": 1134
+  },
+  {
+   "eid": "run1_ws-dev01_1330#ws-dev01/2408@1791380796.651",
+   "capture": "run1_ws-dev01_1330",
+   "root": "ws-dev01/2408@1791380796.651",
+   "root_image": "dash",
+   "novel_launches": 3,
+   "processes": 3,
+   "claims": 3,
+   "text_chars": 384
+  },
+  {
+   "eid": "run1_ws-dev01_1330#ws-dev01/2404@1791380699.574",
+   "capture": "run1_ws-dev01_1330",
+   "root": "ws-dev01/2404@1791380699.574",
+   "root_image": "dash",
+   "novel_launches": 2,
+   "processes": 2,
+   "claims": 2,
+   "text_chars": 302
+  },
+  {
+   "eid": "run1_ws-dev01_1330#ws-dev01/2413@1791380888.731",
+   "capture": "run1_ws-dev01_1330",
+   "root": "ws-dev01/2413@1791380888.731",
+   "root_image": "dash",
+   "novel_launches": 2,
+   "processes": 2,
+   "claims": 5,
+   "text_chars": 346
+  },
+  {
+   "eid": "run1_ws-dev01_1400#ws-dev01/2419@1791382468.694",
+   "capture": "run1_ws-dev01_1400",
+   "root": "ws-dev01/2419@1791382468.694",
+   "root_image": "sshd",
+   "novel_launches": 6,
+   "processes": 6,
+   "claims": 16,
+   "text_chars": 1283
+  },
+  {
+   "eid": "run1_ws-dev01_1400#ws-dev01/2428@1791382477.698",
+   "capture": "run1_ws-dev01_1400",
+   "root": "ws-dev01/2428@1791382477.698",
+   "root_image": "bash",
+   "novel_launches": 2,
+   "processes": 2,
+   "claims": 7,
+   "text_chars": 430
+  },
+  {
+   "eid": "run1_ws-fin01_1200#ws-fin01/9960@1791374832.687",
+   "capture": "run1_ws-fin01_1200",
+   "root": "ws-fin01/9960@1791374832.687",
+   "root_image": "dash",
+   "novel_launches": 47,
+   "processes": 68,
+   "claims": 68,
+   "text_chars": 5097
+  },
+  {
+   "eid": "run1_ws-fin01_1200#ws-fin01/9793@1791374832.303",
+   "capture": "run1_ws-fin01_1200",
+   "root": "ws-fin01/9793@1791374832.303",
+   "root_image": "perl",
+   "novel_launches": 23,
+   "processes": 21,
+   "claims": 24,
+   "text_chars": 3493
+  },
+  {
+   "eid": "run1_ws-fin01_1200#ws-fin01/10789@1791374838.175",
+   "capture": "run1_ws-fin01_1200",
+   "root": "ws-fin01/10789@1791374838.175",
+   "root_image": "dash",
+   "novel_launches": 16,
+   "processes": 14,
+   "claims": 16,
+   "text_chars": 2297
+  },
+  {
+   "eid": "run1_ws-fin01_1230#ws-fin01/11544@1791377551.823",
+   "capture": "run1_ws-fin01_1230",
+   "root": "ws-fin01/11544@1791377551.823",
+   "root_image": "splunkd",
+   "novel_launches": 5,
+   "processes": 6,
+   "claims": 7,
+   "text_chars": 850
+  },
+  {
+   "eid": "run1_ws-fin01_1300#ws-fin01/11663@1791378391.163",
+   "capture": "run1_ws-fin01_1300",
+   "root": "ws-fin01/11663@1791378391.163",
+   "root_image": "dpkg",
+   "novel_launches": 22,
+   "processes": 20,
+   "claims": 22,
+   "text_chars": 3391
+  },
+  {
+   "eid": "run1_ws-fin01_1300#ws-fin01/11582@1791378390.891",
+   "capture": "run1_ws-fin01_1300",
+   "root": "ws-fin01/11582@1791378390.891",
+   "root_image": "dash",
+   "novel_launches": 9,
+   "processes": 9,
+   "claims": 10,
+   "text_chars": 1250
+  },
+  {
+   "eid": "run1_ws-fin01_1300#ws-fin01/11799@1791378573.532",
+   "capture": "run1_ws-fin01_1300",
+   "root": "ws-fin01/11799@1791378573.532",
+   "root_image": "dash",
+   "novel_launches": 9,
+   "processes": 9,
+   "claims": 10,
+   "text_chars": 1250
+  },
+  {
+   "eid": "run1_ws-fin01_1330#ws-fin01/12754@1791380833.890",
+   "capture": "run1_ws-fin01_1330",
+   "root": "ws-fin01/12754@1791380833.890",
+   "root_image": "dash",
+   "novel_launches": 3,
+   "processes": 3,
+   "claims": 3,
+   "text_chars": 384
+  },
+  {
+   "eid": "run1_ws-fin01_1330#ws-fin01/12750@1791380715.806",
+   "capture": "run1_ws-fin01_1330",
+   "root": "ws-fin01/12750@1791380715.806",
+   "root_image": "dash",
+   "novel_launches": 2,
+   "processes": 2,
+   "claims": 2,
+   "text_chars": 302
+  },
+  {
+   "eid": "run1_ws-fin01_1330#ws-fin01/12759@1791380924.911",
+   "capture": "run1_ws-fin01_1330",
+   "root": "ws-fin01/12759@1791380924.911",
+   "root_image": "dash",
+   "novel_launches": 2,
+   "processes": 2,
+   "claims": 5,
+   "text_chars": 346
+  }
+ ],
+ "inductions": {
+  "run1_app01_1200#app01/1005@1791375309.072": {
+   "calls": 1,
+   "errors": [],
+   "reasoning": [
+    "The episode only contains a systemd netplan generator execution and a udevadm control reload, both standard system processes that run from system directories and are common during boot or configuration changes. No user\u2011writable executables, network activity, credential access, or other suspicious techniques are observed. Therefore the behavior is routine and does not merit a detection rule."
+   ],
+   "attempts": 0
+  },
+  "run1_app01_1200#app01/967@1791375308.388": {
+   "calls": 1,
+   "errors": [],
+   "reasoning": [
+    "The episode only shows a package post\u2011installation script (man-db) invoking setpriv and mandb, which are standard system utilities run from system directories during a normal package update. This behavior is routine and not indicative of suspicious activity, so no detection rule is warranted."
+   ],
+   "attempts": 0
+  },
+  "run1_app01_1200#app01/997@1791375309.004": {
+   "calls": 1,
+   "errors": [],
+   "reasoning": [
+    "The episode consists of standard system administration actions: enabling the auditd service via systemctl, updating init scripts with update-rc.d, and reloading the systemd daemon. These are common, benign operations performed during legitimate configuration changes and do not exhibit suspicious behaviour. Therefore, no detection rules are generated."
+   ],
+   "attempts": 0
+  },
+  "run1_app01_1230#app01/1094@1791377547.402": {
+   "calls": 2,
+   "errors": [],
+   "reasoning": [
+    "The episode shows a newly seen binary launched from a user\u2011writable location that contacts a remote server (\u2011server flag) and then runs shell commands to erase bash history and query system identity (whoami). These behaviours map to ATT&CK techniques for command\u2011and\u2011control, defense evasion, and discovery. The rules focus on the class of actions (user\u2011writable execution with outbound connection, history clearing, and discovery from a child of a user\u2011writable process) rather than specific filenames, making them robust and low\u2011noise.",
+    "The first rule flags any user\u2011writable executable that runs with a \"-server\" argument, a pattern typical of C2 agents and rare in normal activity. The second rule detects a shell explicitly erasing bash history and unsetting HISTFILE, a known defense\u2011evasion technique. The third rule captures discovery commands (e.g., whoami) that are executed by processes whose ancestry includes a user\u2011writable binary, indicating potential post\u2011compromise reconnaissance. All rules now use a valid threshold scorer, avoid hard\u2011coded user\u2011writable names, and rely on robust lineage fields."
+   ],
+   "attempts": 6
+  },
+  "run1_app01_1300#app01/1120@1791378378.545": {
+   "calls": 1,
+   "errors": [],
+   "reasoning": [
+    "The episode consists of standard system utilities (dpkg-preconfigure, perl, stty, whiptail) being invoked during package configuration. These commands are typical for package management and system setup, involve only system\u2011folder binaries, and do not exhibit suspicious behaviours such as credential dumping, network communication, or execution from user\u2011writable locations. Therefore no detection rule is warranted."
+   ],
+   "attempts": 0
+  },
+  "run1_app01_1300#app01/1198@1791378378.713": {
+   "calls": 1,
+   "errors": [],
+   "reasoning": [
+    "The episode consists entirely of standard package management and system maintenance actions (dpkg configuration, logrotate timer setup, systemd daemon reload, ldconfig, mandb). All processes are system binaries run from trusted locations and there is no use of user\u2011writable executables, unusual network activity, credential dumping, or other techniques that would be considered suspicious. Therefore no detection rule is appropriate."
+   ],
+   "attempts": 0
+  },
+  "run1_app01_1300#app01/1335@1791378567.953": {
+   "calls": 1,
+   "errors": [],
+   "reasoning": [
+    "The episode consists of a dpkg-preconfigure invocation that runs a Perl script, reads /etc/shadow (a common step for package configuration that may need to verify password policies), and executes harmless utilities (stty, whiptail) to query terminal settings and version information. All processes run from standard system directories and represent typical package management or system configuration activity, not anomalous or malicious behavior. Therefore no detection rule is warranted."
+   ],
+   "attempts": 0
+  },
+  "run1_app01_1330#app01/2354@1791380703.197": {
+   "calls": 1,
+   "errors": [],
+   "reasoning": [
+    "The episode shows a process invoking \"ip neighbour show\", which enumerates the ARP/neighbor table \u2013 a classic network discovery technique (MITRE ATT&CK T1016.001). The rule captures this behaviour by matching system binaries \"ip\" or \"arp\" and command tokens that indicate neighbor discovery, while excluding cases where the parent process originates from a user\u2011writable location to reduce false positives. This pattern is recognised by existing community Sigma rules for network neighbor discovery, satisfying the CONFIRMED criterion, and it is uncommon enough to meet the QUIET requirement."
+   ],
+   "attempts": 1
+  },
+  "run1_app01_1330#app01/2359@1791380802.237": {
+   "calls": 1,
+   "errors": [],
+   "reasoning": [
+    "The episode shows a shell process reading /etc/passwd and redirecting the output to a file under /tmp, a classic technique for credential dumping on Linux. Detecting any process that references both \"passwd\" and a temporary path (e.g., \"/tmp/\") captures this behavior while avoiding common benign uses, satisfies robustness (does not rely on executable names or full paths), and aligns with community Sigma rules for Linux credential dumping, providing an independent confirmation."
+   ],
+   "attempts": 1
+  },
+  "run1_app01_1330#app01/2364@1791380894.309": {
+   "calls": 2,
+   "errors": [],
+   "reasoning": [
+    "The episode shows a process using sudo to read the system password file (/etc/master.passwd) and write it to a temporary location. Accessing the password file is a classic credential\u2011dumping behavior (T1003.008) and is rare in normal host activity, satisfying the QUIET requirement. The rule matches the file_read claim for /etc/master.passwd by the \"cat\" utility, tags it with the credential\u2011access tactic, and fires on the provided evidence claims.",
+    "The episode shows processes invoking \"cat /etc/master.passwd\" (directly via sudo and indirectly via a shell). Detecting any process_create whose command line contains the path \"/etc/master.passwd\" captures this credential\u2011access behavior while remaining robust to renamed binaries, full\u2011path invocations, and unrelated activity."
+   ],
+   "attempts": 2
+  },
+  "run1_web01_1200#web01/1001@1791375237.285": {
+   "calls": 1,
+   "errors": [],
+   "reasoning": [
+    "The episode consists of standard system administration actions: enabling the auditd service via systemctl and update-rc.d, reloading the systemd daemon, and invoking the systemd password agent. These are routine, expected operations on a Linux host and do not exhibit suspicious behavior such as credential dumping, lateral movement, or unauthorized persistence. Therefore no detection rule is warranted."
+   ],
+   "attempts": 0
+  },
+  "run1_web01_1200#web01/1086@1791375264.494": {
+   "calls": 1,
+   "errors": [],
+   "reasoning": [
+    "The episode consists of systemd and init scripts enabling and reloading the auditd service using standard system utilities (systemctl, update-rc.d, getopt, perl). These are typical administrative actions for configuring a Linux host and are not indicative of suspicious behaviour. No rule is needed."
+   ],
+   "attempts": 0
+  },
+  "run1_web01_1200#web01/968@1791375236.649": {
+   "calls": 1,
+   "errors": [],
+   "reasoning": [
+    "The episode only shows a package post\u2011installation script (man-db) invoking setpriv and mandb, which are standard system utilities run from system directories during a normal package update. This behavior is routine and not indicative of suspicious activity, so no detection rule is warranted."
+   ],
+   "attempts": 0
+  },
+  "run1_web01_1230#web01/1187@1791377542.462": {
+   "calls": 2,
+   "errors": [],
+   "reasoning": [
+    "The episode shows a user\u2011writable binary launching an outbound connection, a shell clearing its bash history, and a whoami call\u2014all typical post\u2011exploitation actions. Rule 1 flags clearing of command history, rule 2 flags any outbound network traffic originating from a process whose ancestry includes a user\u2011writable executable, and rule 3 flags user\u2011identity discovery (whoami) performed by such a process. These behaviours are suspicious on any Linux host while remaining specific enough to stay quiet on normal activity.",
+    "The episode shows a network connection (outbound on port 8888) made by a process that was executed from a user\u2011writable directory (the splunkd binary). Using the lineage.user_writable flag captures the behaviour without relying on the binary name, satisfying robustness, while the direction outbound and host_network_connection claim type ensure the rule fires on this specific event and remains quiet for routine traffic. This matches the ATT&CK technique T1041 (Command\u2011and\u2011Control) and is corroborated by community knowledge of outbound C2 traffic from non\u2011system binaries."
+   ],
+   "attempts": 4
+  },
+  "run1_web01_1300#web01/1217@1791378369.283": {
+   "calls": 1,
+   "errors": [],
+   "reasoning": [
+    "The episode consists of a package pre\u2011configuration script (dpkg-preconfigure) invoking perl, stty and whiptail version checks. These are standard system utilities run from system directories during package installation and do not exhibit atypical or malicious patterns. The file read of /etc/shadow is performed by a privileged system process as part of its normal operation. Therefore the behaviour is routine and no detection rule is warranted."
+   ],
+   "attempts": 0
+  },
+  "run1_web01_1300#web01/1295@1791378369.435": {
+   "calls": 1,
+   "errors": [],
+   "reasoning": [
+    "The episode consists entirely of standard package management and system maintenance actions: dpkg configuring pending packages, logrotate timer setup via deb-systemd-helper, systemctl preset and status checks, daemon-reload, ldconfig, and mandb indexing. All processes run from system directories and no user-writable executables are involved. This behavior matches normal software update/install routines and does not exhibit any suspicious tactics, so no detection rule is appropriate."
+   ],
+   "attempts": 0
+  },
+  "run1_web01_1300#web01/1440@1791378564.786": {
+   "calls": 1,
+   "errors": [],
+   "reasoning": [
+    "The episode consists of standard system utilities (dpkg-preconfigure, perl, stty, whiptail) being invoked during package configuration, including a harmless read of /etc/shadow for identity verification. All binaries are from system directories, no user\u2011writable executables are involved, and the actions match normal package management behavior. Therefore the behavior is routine and does not warrant a detection rule."
+   ],
+   "attempts": 0
+  },
+  "run1_web01_1330#web01/2393@1791380706.961": {
+   "calls": 1,
+   "errors": [],
+   "reasoning": [
+    "The captured episode installs (if needed) and runs \"ip neighbour show\", which enumerates the system's ARP/neighbor table\u2014a classic network discovery technique (MITRE ATT&CK T1018). Detecting the execution of the ip utility with the tokens \"neighbour\" and \"show\" captures this behavior across different command variations while avoiding noisy short tokens. The rule is based on system\u2011folder binaries, uses only stable literals from the episode, and aligns with existing community detections for network discovery."
+   ],
+   "attempts": 1
+  },
+  "run1_web01_1330#web01/2397@1791380790.049": {
+   "calls": 2,
+   "errors": [],
+   "reasoning": [
+    "The episode shows a newly seen shell process that reads the system password file (/etc/passwd) and redirects the output to a file in /tmp, a user\u2011writable directory, before displaying it. Accessing /etc/passwd and writing its contents to a temporary location is a classic credential\u2011access technique (OS Credential Dumping). The rule captures this behaviour by requiring both the \"etc/passwd\" and \"/tmp/\" substrings in the command line, ensuring it fires on the observed event while remaining robust to renaming of user\u2011writable executables and avoiding overly generic tokens.",
+    "The episode shows a shell process that reads the system password file (/etc/passwd) and redirects the output to a file in /tmp, a user\u2011writable directory. This combination of accessing credential data and writing it to a non\u2011system location is a classic credential\u2011dumping behavior and is uncommon in routine activity, satisfying the QUIET requirement. The rule avoids reliance on behaviour.tactics (not present in the capture) and uses robust selectors (shell image names and command tokens) that remain valid if user\u2011writable binaries are renamed."
+   ],
+   "attempts": 2
+  },
+  "run1_web01_1330#web01/2402@1791380892.117": {
+   "calls": 1,
+   "errors": [],
+   "reasoning": [
+    "The episode shows a process that invokes sudo to read the system password file (/etc/master.passwd) using cat. Accessing the password database via elevated privileges is a classic credential\u2011dumping behavior (T1003.008) and is rare in normal host activity, making the rule both specific and quiet. The rule matches any process_create where the command line contains the tokens \"sudo\", \"cat\", and \"master.passwd\", covering variations in how the command is invoked while ignoring user\u2011writable executable names."
+   ],
+   "attempts": 1
+  },
+  "run1_web01_1400#web01/2411@1791382313.661": {
+   "calls": 1,
+   "errors": [],
+   "reasoning": [
+    "The episode only shows normal system processes: sshd handling connections and reading /etc/shadow for authentication, and the standard update\u2011motd mechanism executed via run\u2011parts and dash scripts. All binaries are from system directories, no user\u2011writable executables are involved, and there is no unusual network activity or file manipulation. This behavior matches routine OS maintenance and login handling, so no detection rule is warranted."
+   ],
+   "attempts": 0
+  },
+  "run1_web01_1400#web01/2420@1791382387.282": {
+   "calls": 1,
+   "errors": [],
+   "reasoning": [
+    "The episode consists of standard system processes (sshd, dash, env, run-parts, uname) executing the update\u2011motd scripts that generate the dynamic message of the day. These actions are typical for routine system maintenance and not indicative of suspicious behaviour, so no detection rule is warranted."
+   ],
+   "attempts": 0
+  },
+  "run1_web01_1400#web01/2430@1791382549.862": {
+   "calls": 1,
+   "errors": [],
+   "reasoning": [
+    "The episode consists of standard system processes (sshd, dash, env, run-parts, uname) executing update\u2011motd scripts. These are routine activities for generating the login message of the day and do not exhibit suspicious behaviour. Therefore no detection rule is appropriate."
+   ],
+   "attempts": 0
+  },
+  "run1_ws-dev01_1200#ws-dev01/1060@1791375328.379": {
+   "calls": 1,
+   "errors": [],
+   "reasoning": [
+    "The episode consists of standard system administration actions: enabling the auditd service via systemctl and update-rc.d, reloading the systemd daemon, and invoking a systemd password agent. These are common, expected operations on a Linux host and do not exhibit suspicious techniques such as credential dumping, lateral movement, or unauthorized persistence. Therefore no detection rule is warranted."
+   ],
+   "attempts": 0
+  },
+  "run1_ws-dev01_1200#ws-dev01/955@1791375321.978": {
+   "calls": 1,
+   "errors": [],
+   "reasoning": [
+    "The episode only shows a package post\u2011installation script (man-db) invoking setpriv and mandb, which are standard system utilities run from system directories during a normal package update. This behavior is routine and not indicative of suspicious activity, so no detection rule is warranted."
+   ],
+   "attempts": 0
+  },
+  "run1_ws-dev01_1200#ws-dev01/985@1791375322.614": {
+   "calls": 1,
+   "errors": [],
+   "reasoning": [
+    "The episode consists of standard system administration commands (systemctl enable auditd, update-rc.d, daemon-reload) that are typical for configuring the audit daemon on a Linux host. These actions are routine, not indicative of malicious behaviour, and would fire on many legitimate captures, violating the QUIET requirement. Therefore no detection rule is generated."
+   ],
+   "attempts": 0
+  },
+  "run1_ws-dev01_1230#ws-dev01/1157@1791377549.712": {
+   "calls": 2,
+   "errors": [],
+   "reasoning": [
+    "The episode shows a user\u2011writable binary launching an outbound connection, a shell clearing its bash history, and a whoami call\u2014all typical post\u2011exploitation actions. Rule 1 flags clearing of command history, rule 2 flags any outbound network traffic originating from a process whose ancestry includes a user\u2011writable executable, and rule 3 flags user\u2011identity discovery (whoami) performed by such a process. These behaviours are suspicious on any Linux host while remaining specific enough to stay quiet on normal activity.",
+    "The first rule captures the suspicious pattern of a network connection initiated by a binary that resides in a user\u2011writable location, which is a common indicator of malicious C2 activity and is confirmed by community detections. The second rule flags the deliberate clearing of the Bash history (redirection to .bash_history and unsetting HISTFILE), a known defense\u2011evasion technique (T1070.003). Both rules use lineage or command\u2011content tokens that remain valid even if the binaries or temporary files are renamed, satisfying robustness, and they fire on the provided episode while remaining rare on typical host activity."
+   ],
+   "attempts": 5
+  },
+  "run1_ws-dev01_1300#ws-dev01/1200@1791378383.340": {
+   "calls": 1,
+   "errors": [],
+   "reasoning": [
+    "The episode includes a perl process (invoked by dpkg-preconfigure) that reads /etc/shadow, a credential store that is normally accessed only by privileged authentication utilities. Detecting any file_read claim where the file path contains \"shadow\" and the accessing program is not a known authentication daemon flags this suspicious credential\u2011access behavior while remaining robust to path variations and user\u2011writable executable renaming."
+   ],
+   "attempts": 1
+  },
+  "run1_ws-dev01_1300#ws-dev01/1278@1791378383.500": {
+   "calls": 1,
+   "errors": [],
+   "reasoning": [
+    "The episode consists of standard package management actions (dpkg configuring pending packages, logrotate timer setup, ldconfig, mandb) and systemd service handling. These are routine system maintenance operations that occur during normal updates and are not indicative of suspicious behavior."
+   ],
+   "attempts": 0
+  },
+  "run1_ws-dev01_1300#ws-dev01/1415@1791378571.051": {
+   "calls": 1,
+   "errors": [],
+   "reasoning": [
+    "The episode consists of standard system utilities (dpkg-preconfigure, perl, stty, whiptail) being invoked during package configuration. These are common, benign operations that occur during updates or installations and do not exhibit suspicious behaviour such as credential dumping, remote code execution, or persistence mechanisms. Therefore no detection rule is warranted."
+   ],
+   "attempts": 0
+  },
+  "run1_ws-dev01_1330#ws-dev01/2404@1791380699.574": {
+   "calls": 2,
+   "errors": [],
+   "reasoning": [
+    "The episode shows a shell checking for the presence of the ip command, installing the iproute2 package if missing, and then running 'ip neighbour show' to enumerate the ARP table. This combines opportunistic package installation (a technique for obtaining capabilities) with network neighbor discovery, both of which are recognized suspicious behaviors on Linux hosts. The rules capture the core actions\u2014installing iproute2 via apt-get and invoking ip/arp to list neighbors\u2014while using generic tokens and system\u2011binary names to remain robust and avoid false positives from routine activity.",
+    "The episode shows a shell (dash/sh) invoking apt-get to install the iproute2 package, a behavior that can be used to acquire tools on a compromised host. The rule captures the specific combination of a package manager command (apt-get install iproute2) while allowing for the common shells that may launch it, ensuring it fires on this event, remains robust to renaming of user\u2011writable binaries, and stays quiet enough to avoid routine activity noise."
+   ],
+   "attempts": 3
+  },
+  "run1_ws-dev01_1330#ws-dev01/2408@1791380796.651": {
+   "calls": 1,
+   "errors": [],
+   "reasoning": [
+    "The episode shows a new shell process that reads the system password file (/etc/passwd) and writes its contents to a file in a user\u2011writable temporary directory (/tmp). Copying credential data to a writable location is a classic credential\u2011access technique (T1003.006). The rule looks for any process_create claim whose command line contains both the '/etc/passwd' path and a '/tmp/' path, which captures the suspicious behavior while remaining robust to renamed binaries or full\u2011path invocations, and aligns with known community detections of passwd dumping."
+   ],
+   "attempts": 1
+  },
+  "run1_ws-dev01_1330#ws-dev01/2413@1791380888.731": {
+   "calls": 3,
+   "errors": [],
+   "reasoning": [
+    "The episode shows a process invoking \"sudo cat /etc/master.passwd\", which is a classic credential\u2011dumping technique (T1003.008). The rule looks for any process_create claim whose command line contains the substring \"master.passwd\" and is associated with the credential\u2011access tactic, ensuring it fires on this event while remaining robust to renamed binaries or full\u2011path invocations and staying quiet for routine activity.",
+    "The rule now correctly matches any process creation whose command line contains the substring \"master.passwd\", which is the hallmark of credential dumping from the system password file. The selector no longer relies on optional behaviour.tactics metadata, ensuring the rule fires on the observed episode. The score definition uses a numeric value, fixing the syntax error. This behaviour is rare on typical hosts, satisfying the quiet requirement, and aligns with the ATT&CK technique T1003.008.",
+    "The rule captures the suspicious behaviour of reading the system password database file /etc/master.passwd, a classic credential\u2011dumping technique (T1003.008). It fires on the process_create claim where the command line contains the token \"master.passwd\", which is present in the observed episode (ev_000629). The rule uses only stable indicators (command token) and does not depend on executable names or user\u2011writable paths, satisfying robustness, and it is a low\u2011frequency event on typical hosts, meeting the quiet requirement. A known community detection for credential dumping of /etc/passwd validates the CONFIRMED check."
+   ],
+   "attempts": 3
+  },
+  "run1_ws-dev01_1400#ws-dev01/2419@1791382468.694": {
+   "calls": 1,
+   "errors": [],
+   "reasoning": [
+    "The episode consists of standard system processes (sshd, dash, env, run-parts, uname) executing update\u2011motd scripts, which are common during login and system maintenance. No user\u2011writable executables are involved, and the behavior matches routine OS activity rather than suspicious or novel techniques. Therefore, no detection rule is appropriate."
+   ],
+   "attempts": 0
+  },
+  "run1_ws-dev01_1400#ws-dev01/2428@1791382477.698": {
+   "calls": 1,
+   "errors": [],
+   "reasoning": [
+    "The episode shows a privileged process (sudo or a bash shell invoking sudo) copying the system authentication logs (/var/log/auth.log and /var/log/audit.log) into /tmp, a user\u2011writable location. Moving sensitive credential logs to a temporary directory is a classic data\u2011collection technique used for credential harvesting or later exfiltration, and is uncommon in normal system operation, making it a suitable indicator of suspicious behaviour."
+   ],
+   "attempts": 1
+  },
+  "run1_ws-fin01_1200#ws-fin01/10789@1791374838.175": {
+   "calls": 1,
+   "errors": [],
+   "reasoning": [
+    "The episode includes a file_read claim where a Perl script (part of a package post\u2011install) accesses /etc/shadow. Direct reads of the shadow password file by processes that are not standard authentication daemons (login, sshd, su, passwd, pam_unix, systemd, init) are rare and are flagged by community Sigma rules as credential\u2011access activity. This rule captures that suspicious class while remaining robust to renaming of the executing binary and avoids over\u2011matching routine system behavior."
+   ],
+   "attempts": 1
+  },
+  "run1_ws-fin01_1200#ws-fin01/9793@1791374832.303": {
+   "calls": 1,
+   "errors": [],
+   "reasoning": [
+    "The episode consists of standard package installation and configuration steps (dpkg-trigger, perl postinst scripts, touch, dpkg-query) that are typical for system updates on a Linux host. These actions are routine, not suspicious, and would fire on many legitimate captures, so no detection rule is appropriate."
+   ],
+   "attempts": 0
+  },
+  "run1_ws-fin01_1200#ws-fin01/9960@1791374832.687": {
+   "calls": 1,
+   "errors": [],
+   "reasoning": [
+    "The episode consists of standard package management activity: the post\u2011inst script for a font package invokes /bin/sh (dash) to run dpkg\u2011maintscript\u2011helper, which in turn calls basename and dpkg to validate versions and remove configuration files. All binaries are from system directories and the pattern matches normal dpkg post\u2011install processing, not a suspicious behaviour class. Therefore no detection rule is appropriate."
+   ],
+   "attempts": 0
+  },
+  "run1_ws-fin01_1230#ws-fin01/11544@1791377551.823": {
+   "calls": 3,
+   "errors": [],
+   "reasoning": [
+    "The episode shows a binary executed from a user\u2011writable location (splunkd) that contacts an internal service, then spawns a shell which both clears command history and runs basic discovery commands (whoami, env). These three rules capture the suspicious pattern of a user\u2011writable ancestor performing outbound communication, erasing its command trace, and gathering system information\u2014behaviours that map to ATT&CK techniques T1041, T1070.003, and T1082 and are uncommon in routine system activity.",
+    "The rule captures the suspicious behaviour of a process that originated from a user\u2011writable location (identified via lineage.ancestor_user_writable) establishing an outbound network connection. This pattern is uncommon on typical hosts, aligns with the command\u2011and\u2011control tactic (T1041), and is corroborated by community detections of outbound traffic from non\u2011system binaries.",
+    "The episode shows a process launched from a user\u2011writable location (splunkd) establishing an outbound connection on port 8888. A robust indicator is to flag any outbound host_network_connection claim whose originating process is marked as user\u2011writable via the lineage.user_writable flag, avoiding reliance on executable names. This captures the suspicious behaviour while remaining quiet for routine traffic."
+   ],
+   "attempts": 5
+  },
+  "run1_ws-fin01_1300#ws-fin01/11582@1791378390.891": {
+   "calls": 1,
+   "errors": [],
+   "reasoning": [
+    "The episode consists of standard system utilities (dpkg-preconfigure, perl, locale, stty, whiptail) being invoked during a package configuration step. All binaries run from system directories, no user\u2011writable executables are involved, and the commands are typical for package installation or system information gathering. This behavior is routine and does not exhibit suspicious techniques, so no detection rule is generated."
+   ],
+   "attempts": 0
+  },
+  "run1_ws-fin01_1300#ws-fin01/11663@1791378391.163": {
+   "calls": 1,
+   "errors": [],
+   "reasoning": [
+    "The episode consists entirely of standard package management and system maintenance actions (dpkg configuration, logrotate timer setup, systemd daemon-reload, ldconfig, mandb). These are routine, expected behaviors on a Linux host after package updates and do not exhibit suspicious techniques such as credential dumping, network exfiltration, or privilege escalation. Therefore no detection rule is warranted."
+   ],
+   "attempts": 0
+  },
+  "run1_ws-fin01_1300#ws-fin01/11799@1791378573.532": {
+   "calls": 1,
+   "errors": [],
+   "reasoning": [
+    "The episode consists of standard package configuration utilities (dpkg-preconfigure, locale, stty, whiptail) invoked by the system during a package install or update. All binaries are from system directories, no user\u2011writable executables are involved, and the commands are typical discovery/version checks performed by package scripts. This is routine host activity, not suspicious behavior, so no detection rule is generated."
+   ],
+   "attempts": 0
+  },
+  "run1_ws-fin01_1330#ws-fin01/12750@1791380715.806": {
+   "calls": 1,
+   "errors": [],
+   "reasoning": [
+    "The episode consists of a shell script that checks for the presence of the standard 'ip' utility, optionally installs the iproute2 package, and then runs 'ip neighbour show' to list ARP entries. This is a common administrative or diagnostic activity for network discovery and package management on Linux systems. No independent external rule or community detection source flags this specific pattern as malicious, and the behavior aligns with routine system maintenance. Therefore, creating a detection rule would likely generate many false positives and fail the QUIET requirement."
+   ],
+   "attempts": 0
+  },
+  "run1_ws-fin01_1330#ws-fin01/12754@1791380833.890": {
+   "calls": 3,
+   "errors": [],
+   "reasoning": [
+    "The episode shows a shell launching \"cat /etc/passwd\" and redirecting the output to a file in /tmp, then reading that file. Accessing the password file and storing it in a writable temporary location is a classic credential\u2011dumping pattern (T1003.001). The rule looks for a process (cat or sh) whose command line contains both the token \"passwd\" and a temporary path (\"/tmp\"), and tags it with the credential\u2011access tactic, ensuring it fires on this episode while remaining robust to path variations and unlikely to trigger on routine activity.",
+    "The rule captures the suspicious behaviour of reading the system password file and redirecting its contents to a temporary location, a common technique for credential harvesting. It matches processes that invoke either 'cat' or 'sh' and whose command line contains both the token 'passwd' and a temporary path token '/tmp', ensuring the rule fires on the observed episode while remaining robust to renaming of user\u2011writable binaries and quiet enough to avoid routine activity.",
+    "The episode shows a shell invoking \"cat /etc/passwd\" and redirecting the output to a file under /tmp, a classic credential\u2011access technique (T1003.001). By focusing on the command line containing the substrings \"passwd\", \"/tmp\", and \"cat\" we capture the behavior regardless of the exact executable name, satisfying robustness while remaining specific enough to stay quiet on normal host activity."
+   ],
+   "attempts": 3
+  },
+  "run1_ws-fin01_1330#ws-fin01/12759@1791380924.911": {
+   "calls": 1,
+   "errors": [],
+   "reasoning": [
+    "The episode shows a sudo\u2011invoked cat reading the system password file (/etc/master.passwd) and writing it to a temporary location. Accessing the password database with elevated privileges is a classic credential\u2011dumping behavior (ATT&CK T1003.008). The rule looks for either a sudo process executing a cat command or a direct file read of the password file, ensuring it fires on this event while remaining specific enough to avoid routine activity."
+   ],
+   "attempts": 1
+  }
+ },
+ "meter": {
+  "calls": 57,
+  "failed_calls": 0,
+  "live_calls": 54,
+  "cache_hits": 3,
+  "model_seconds": 664.5,
+  "prompt_chars": 463866,
+  "response_chars": 61411,
+  "approx_tokens_in": 115966,
+  "approx_tokens_out": 15352
+ },
+ "library": {
+  "candidate": 0,
+  "shadow": 0,
+  "active": 20,
+  "retired": 5,
+  "rejected": 17
+ },
+ "attempts_by_round": {
+  "0": 27,
+  "1": 12,
+  "2": 3
+ },
+ "first_failed_check": {
+  "repaired": 14,
+  "C4_rare_history": 3
+ },
+ "c2_causes": {
+  "wrong_field": 1,
+  "not_observed": 4,
+  "jointly_unsatisfied": 4,
+  "partial": 1
+ },
+ "sets_design": {
+  "C1\u2013C3 survivors (after repair)": {
+   "rules": 28,
+   "attack_windows": "8/8",
+   "benign_windows": "12/12",
+   "event_precision": 0.2643,
+   "steps_detected": "28/36",
+   "steps": [
+    28,
+    36
+   ]
+  },
+  "C1\u2013C4 (shadow + active)": {
+   "rules": 25,
+   "attack_windows": "8/8",
+   "benign_windows": "9/12",
+   "event_precision": 0.5867,
+   "steps_detected": "28/36",
+   "steps": [
+    28,
+    36
+   ]
+  },
+  "C1\u2013C5 active (non-LLM confirmation)": {
+   "rules": 20,
+   "attack_windows": "8/8",
+   "benign_windows": "0/12",
+   "event_precision": 1.0,
+   "steps_detected": "28/36",
+   "steps": [
+    28,
+    36
+   ]
+  },
+  "C1\u2013C5 if any source promoted": {
+   "rules": 3,
+   "attack_windows": "4/8",
+   "benign_windows": "0/12",
+   "event_precision": 1.0,
+   "steps_detected": "4/36",
+   "steps": [
+    4,
+    36
+   ]
+  },
+  "hand-written tactic primitives (C5 source)": {
+   "rules": 5,
+   "attack_windows": "8/8",
+   "benign_windows": "8/12",
+   "event_precision": 0.011,
+   "steps_detected": "12/36",
+   "steps": [
+    12,
+    36
+   ]
+  },
+  "Sigma >= medium, quiet (C5 source)": {
+   "rules": 0,
+   "attack_windows": "0/8",
+   "benign_windows": "0/12",
+   "event_precision": null,
+   "steps_detected": "0/36",
+   "steps": [
+    0,
+    36
+   ]
+  },
+  "hand-written + C1\u2013C5 active": {
+   "rules": 25,
+   "attack_windows": "8/8",
+   "benign_windows": "8/12",
+   "event_precision": 0.0374,
+   "steps_detected": "28/36",
+   "steps": [
+    28,
+    36
+   ]
+  }
+ },
+ "rules": [
+  {
+   "uid": "llm.clear-bash-history-6f2c1d.b1bd756a50.r1",
+   "status": "active",
+   "technique": "T1070.003",
+   "name": "Clear Bash History",
+   "origin": {
+    "capture": "run1_ws-dev01_1230",
+    "recording": "run1",
+    "host": "ws-dev01",
+    "episode": "run1_ws-dev01_1230#ws-dev01/1157@1791377549.712",
+    "episode_root_image": "splunkd",
+    "round": 1
+   },
+   "reason": "analyst-approved: analyst verdicts 4 malicious / 0 benign (mean 0.83, lower 0.51; all 4 alert(s) reviewed)",
+   "checks": {
+    "C1_valid": {
+     "check": "C1_valid",
+     "passed": true,
+     "detail": "",
+     "errors": []
+    },
+    "C2_own_evidence": {
+     "check": "C2_own_evidence",
+     "passed": true,
+     "detail": "",
+     "hard": [],
+     "soft": [],
+     "causes": {},
+     "origin_score": 1.0
+    },
+    "C3_robust": {
+     "check": "C3_robust",
+     "passed": true,
+     "detail": "",
+     "lost_under": [],
+     "static_rename_survival": 0.0,
+     "static_brittle": true,
+     "breaking_literals": {
+      "bash_history_cleared": [
+       "facts.command contains_any 'bash_history'"
+      ]
+     }
+    },
+    "C4_rare_history": {
+     "check": "C4_rare_history",
+     "passed": true,
+     "detail": "",
+     "history_rate": 0.0,
+     "fired_on": []
+    },
+    "C5_agreement": {
+     "check": "C5_agreement",
+     "passed": false,
+     "detail": "no independent source flags the same events",
+     "agreed_with": []
+    },
+    "C5_any_source": {
+     "check": "C5_agreement",
+     "passed": false,
+     "detail": "no independent source flags the same events",
+     "agreed_with": []
+    }
+   },
+   "grade": {
+    "rules": 1,
+    "attack_windows": "4/8",
+    "benign_windows": "0/12",
+    "event_precision": 1.0,
+    "steps_detected": "4/36",
+    "steps": [
+     4,
+     36
+    ],
+    "good": true
+   },
+   "rule": {
+    "id": "llm.clear-bash-history-6f2c1d.b1bd756a50.r1",
+    "technique": "T1070.003",
+    "name": "Clear Bash History",
+    "tactic": "defense-evasion",
+    "severity": 0.6,
+    "evidence": [
+     "ev_000012"
+    ],
+    "indicators": [
+     {
+      "name": "bash_history_cleared",
+      "weight": 1.0,
+      "required": true,
+      "select": {
+       "claim_type": "process_create",
+       "facts.command": {
+        "contains_any": [
+         "bash_history"
+        ]
+       }
+      },
+      "score": {
+       "op": "threshold",
+       "value": "n",
+       "at": 1
+      }
+     }
+    ],
+    "provenance": {
+     "authored_by": "argus.rules.induce",
+     "model": "gpt-oss:120b-cloud",
+     "origin": "run1_ws-dev01_1230#ws-dev01/1157@1791377549.712",
+     "round": 1,
+     "semantic_id": "b1bd753fcf51",
+     "evidence": [
+      "ev_000012"
+     ]
+    }
+   }
+  },
+  {
+   "uid": "llm.clear-bash-history.f07f113ed0",
+   "status": "active",
+   "technique": "T1070.003",
+   "name": "Clear Bash History",
+   "origin": {
+    "capture": "run1_web01_1230",
+    "recording": "run1",
+    "host": "web01",
+    "episode": "run1_web01_1230#web01/1187@1791377542.462",
+    "episode_root_image": "splunkd",
+    "round": 0
+   },
+   "reason": "analyst-approved: analyst verdicts 4 malicious / 0 benign (mean 0.83, lower 0.51; all 4 alert(s) reviewed)",
+   "checks": {
+    "C1_valid": {
+     "check": "C1_valid",
+     "passed": true,
+     "detail": "",
+     "errors": []
+    },
+    "C2_own_evidence": {
+     "check": "C2_own_evidence",
+     "passed": true,
+     "detail": "",
+     "hard": [],
+     "soft": [],
+     "causes": {},
+     "origin_score": 1.0
+    },
+    "C3_robust": {
+     "check": "C3_robust",
+     "passed": true,
+     "detail": "",
+     "lost_under": [],
+     "static_rename_survival": 0.0,
+     "static_brittle": true,
+     "breaking_literals": {
+      "clear_history": [
+       "facts.command contains_any 'bash_history'",
+       "facts.command contains_any 'unset'"
+      ]
+     }
+    },
+    "C4_rare_history": {
+     "check": "C4_rare_history",
+     "passed": true,
+     "detail": "",
+     "history_rate": 0.0,
+     "fired_on": []
+    },
+    "C5_agreement": {
+     "check": "C5_agreement",
+     "passed": false,
+     "detail": "no independent source flags the same events",
+     "agreed_with": []
+    },
+    "C5_any_source": {
+     "check": "C5_agreement",
+     "passed": false,
+     "detail": "no independent source flags the same events",
+     "agreed_with": []
+    }
+   },
+   "grade": {
+    "rules": 1,
+    "attack_windows": "4/8",
+    "benign_windows": "0/12",
+    "event_precision": 1.0,
+    "steps_detected": "4/36",
+    "steps": [
+     4,
+     36
+    ],
+    "good": true
+   },
+   "rule": {
+    "id": "llm.clear-bash-history.f07f113ed0",
+    "technique": "T1070.003",
+    "name": "Clear Bash History",
+    "tactic": "defense-evasion",
+    "severity": 0.7,
+    "evidence": [
+     "ev_000012"
+    ],
+    "indicators": [
+     {
+      "name": "clear_history",
+      "weight": 1.0,
+      "required": true,
+      "select": {
+       "claim_type": "process_create",
+       "facts.command": {
+        "contains_any": [
+         "bash_history",
+         "unset"
+        ]
+       }
+      },
+      "score": {
+       "op": "threshold",
+       "value": "n",
+       "at": 1
+      }
+     }
+    ],
+    "provenance": {
+     "authored_by": "argus.rules.induce",
+     "model": "gpt-oss:120b-cloud",
+     "origin": "run1_web01_1230#web01/1187@1791377542.462",
+     "round": 0,
+     "semantic_id": "f07f11bfcc7d",
+     "evidence": [
+      "ev_000012"
+     ]
+    }
+   }
+  },
+  {
+   "uid": "llm.credential-dump-etc-master-passwd.60d65985b1.r1",
+   "status": "active",
+   "technique": "T1003.008",
+   "name": "Read /etc/master.passwd",
+   "origin": {
+    "capture": "run1_app01_1330",
+    "recording": "run1",
+    "host": "app01",
+    "episode": "run1_app01_1330#app01/2364@1791380894.309",
+    "episode_root_image": "dash",
+    "round": 1
+   },
+   "reason": "analyst-approved: analyst verdicts 4 malicious / 0 benign (mean 0.83, lower 0.51; all 4 alert(s) reviewed)",
+   "checks": {
+    "C1_valid": {
+     "check": "C1_valid",
+     "passed": true,
+     "detail": "",
+     "errors": []
+    },
+    "C2_own_evidence": {
+     "check": "C2_own_evidence",
+     "passed": true,
+     "detail": "",
+     "hard": [],
+     "soft": [],
+     "causes": {},
+     "origin_score": 1.0
+    },
+    "C3_robust": {
+     "check": "C3_robust",
+     "passed": true,
+     "detail": "",
+     "lost_under": [],
+     "static_rename_survival": 0.0,
+     "static_brittle": true,
+     "breaking_literals": {
+      "read-master-passwd": [
+       "facts.command contains_any '/etc/master.passwd'"
+      ]
+     }
+    },
+    "C4_rare_history": {
+     "check": "C4_rare_history",
+     "passed": true,
+     "detail": "",
+     "history_rate": 0.0,
+     "fired_on": []
+    },
+    "C5_agreement": {
+     "check": "C5_agreement",
+     "passed": false,
+     "detail": "no independent source flags the same events",
+     "agreed_with": []
+    },
+    "C5_any_source": {
+     "check": "C5_agreement",
+     "passed": false,
+     "detail": "no independent source flags the same events",
+     "agreed_with": []
+    }
+   },
+   "grade": {
+    "rules": 1,
+    "attack_windows": "4/8",
+    "benign_windows": "0/12",
+    "event_precision": 1.0,
+    "steps_detected": "4/36",
+    "steps": [
+     4,
+     36
+    ],
+    "good": true
+   },
+   "rule": {
+    "id": "llm.credential-dump-etc-master-passwd.60d65985b1.r1",
+    "technique": "T1003.008",
+    "name": "Read /etc/master.passwd",
+    "tactic": "credential-access",
+    "severity": 0.9,
+    "evidence": [
+     "ev_000605",
+     "ev_000606"
+    ],
+    "indicators": [
+     {
+      "name": "read-master-passwd",
+      "weight": 1.0,
+      "required": true,
+      "select": {
+       "claim_type": "process_create",
+       "facts.command": {
+        "contains_any": [
+         "/etc/master.passwd"
+        ]
+       }
+      },
+      "aggregate": [
+       {
+        "as": "n",
+        "op": "count"
+       }
+      ],
+      "score": {
+       "op": "threshold",
+       "value": "n",
+       "at": 1
+      }
+     }
+    ],
+    "provenance": {
+     "authored_by": "argus.rules.induce",
+     "model": "gpt-oss:120b-cloud",
+     "origin": "run1_app01_1330#app01/2364@1791380894.309",
+     "round": 1,
+     "semantic_id": "60d65952c91c",
+     "evidence": [
+      "ev_000605",
+      "ev_000606"
+     ]
+    }
+   }
+  },
+  {
+   "uid": "llm.credential-dump-etc-passwd.33e7af8567",
+   "status": "active",
+   "technique": "T1003.008",
+   "name": "Read /etc/master.passwd via sudo",
+   "origin": {
+    "capture": "run1_ws-fin01_1330",
+    "recording": "run1",
+    "host": "ws-fin01",
+    "episode": "run1_ws-fin01_1330#ws-fin01/12759@1791380924.911",
+    "episode_root_image": "dash",
+    "round": 0
+   },
+   "reason": "analyst-approved: analyst verdicts 4 malicious / 0 benign (mean 0.83, lower 0.51; all 4 alert(s) reviewed)",
+   "checks": {
+    "C1_valid": {
+     "check": "C1_valid",
+     "passed": true,
+     "detail": "",
+     "errors": []
+    },
+    "C2_own_evidence": {
+     "check": "C2_own_evidence",
+     "passed": true,
+     "detail": "",
+     "hard": [],
+     "soft": [],
+     "causes": {},
+     "origin_score": 1.0
+    },
+    "C3_robust": {
+     "check": "C3_robust",
+     "passed": true,
+     "detail": "",
+     "lost_under": [],
+     "static_rename_survival": 0.0,
+     "static_brittle": true,
+     "breaking_literals": {
+      "read-etc-passwd": [
+       "facts.command contains_any 'cat'",
+       "facts.file_path contains_any '/etc/master.passwd'",
+       "facts.image eq 'sudo'"
+      ]
+     }
+    },
+    "C4_rare_history": {
+     "check": "C4_rare_history",
+     "passed": true,
+     "detail": "",
+     "history_rate": 0.0,
+     "fired_on": []
+    },
+    "C5_agreement": {
+     "check": "C5_agreement",
+     "passed": false,
+     "detail": "no independent source flags the same events",
+     "agreed_with": []
+    },
+    "C5_any_source": {
+     "check": "C5_agreement",
+     "passed": false,
+     "detail": "no independent source flags the same events",
+     "agreed_with": []
+    }
+   },
+   "grade": {
+    "rules": 1,
+    "attack_windows": "4/8",
+    "benign_windows": "0/12",
+    "event_precision": 1.0,
+    "steps_detected": "4/36",
+    "steps": [
+     4,
+     36
+    ],
+    "good": true
+   },
+   "rule": {
+    "id": "llm.credential-dump-etc-passwd.33e7af8567",
+    "technique": "T1003.008",
+    "name": "Read /etc/master.passwd via sudo",
+    "tactic": "credential-access",
+    "severity": 0.9,
+    "evidence": [
+     "ev_000581"
+    ],
+    "indicators": [
+     {
+      "name": "read-etc-passwd",
+      "weight": 1.0,
+      "required": true,
+      "select": {
+       "any_of": [
+        {
+         "claim_type": "process_create",
+         "facts.image": [
+          "sudo"
+         ],
+         "facts.command": {
+          "contains_any": [
+           "cat"
+          ]
+         }
+        },
+        {
+         "claim_type": "file_read",
+         "facts.file_path": {
+          "contains_any": [
+           "/etc/master.passwd"
+          ]
+         }
+        }
+       ]
+      },
+      "score": {
+       "op": "threshold",
+       "value": "n",
+       "at": 1
+      }
+     }
+    ],
+    "provenance": {
+     "authored_by": "argus.rules.induce",
+     "model": "gpt-oss:120b-cloud",
+     "origin": "run1_ws-fin01_1330#ws-fin01/12759@1791380924.911",
+     "round": 0,
+     "semantic_id": "33e7af19a400",
+     "evidence": [
+      "ev_000581"
+     ]
+    }
+   }
+  },
+  {
+   "uid": "llm.credential-dump-master-passwd.a769aceab0",
+   "status": "active",
+   "technique": "T1003.008",
+   "name": "Read /etc/master.passwd via sudo",
+   "origin": {
+    "capture": "run1_web01_1330",
+    "recording": "run1",
+    "host": "web01",
+    "episode": "run1_web01_1330#web01/2402@1791380892.117",
+    "episode_root_image": "dash",
+    "round": 0
+   },
+   "reason": "analyst-approved: analyst verdicts 4 malicious / 0 benign (mean 0.83, lower 0.51; all 4 alert(s) reviewed)",
+   "checks": {
+    "C1_valid": {
+     "check": "C1_valid",
+     "passed": true,
+     "detail": "",
+     "errors": []
+    },
+    "C2_own_evidence": {
+     "check": "C2_own_evidence",
+     "passed": true,
+     "detail": "",
+     "hard": [],
+     "soft": [],
+     "causes": {},
+     "origin_score": 1.0
+    },
+    "C3_robust": {
+     "check": "C3_robust",
+     "passed": true,
+     "detail": "",
+     "lost_under": [],
+     "static_rename_survival": 0.0,
+     "static_brittle": true,
+     "breaking_literals": {
+      "sudo cat master.passwd": [
+       "facts.command contains_any 'cat'",
+       "facts.command contains_any 'master.passwd'",
+       "facts.command contains_any 'sudo'"
+      ]
+     }
+    },
+    "C4_rare_history": {
+     "check": "C4_rare_history",
+     "passed": true,
+     "detail": "",
+     "history_rate": 0.0,
+     "fired_on": []
+    },
+    "C5_agreement": {
+     "check": "C5_agreement",
+     "passed": false,
+     "detail": "no independent source flags the same events",
+     "agreed_with": []
+    },
+    "C5_any_source": {
+     "check": "C5_agreement",
+     "passed": false,
+     "detail": "no independent source flags the same events",
+     "agreed_with": []
+    }
+   },
+   "grade": {
+    "rules": 1,
+    "attack_windows": "4/8",
+    "benign_windows": "0/12",
+    "event_precision": 1.0,
+    "steps_detected": "4/36",
+    "steps": [
+     4,
+     36
+    ],
+    "good": true
+   },
+   "rule": {
+    "id": "llm.credential-dump-master-passwd.a769aceab0",
+    "technique": "T1003.008",
+    "name": "Read /etc/master.passwd via sudo",
+    "tactic": "credential-access",
+    "severity": 0.9,
+    "evidence": [
+     "ev_000611",
+     "ev_000612"
+    ],
+    "indicators": [
+     {
+      "name": "sudo cat master.passwd",
+      "weight": 1.0,
+      "required": true,
+      "select": {
+       "claim_type": "process_create",
+       "facts.command": {
+        "all_of": [
+         {
+          "contains_any": [
+           "sudo"
+          ]
+         },
+         {
+          "contains_any": [
+           "cat"
+          ]
+         },
+         {
+          "contains_any": [
+           "master.passwd"
+          ]
+         }
+        ]
+       }
+      },
+      "aggregate": [
+       {
+        "as": "n",
+        "op": "count"
+       }
+      ],
+      "score": {
+       "op": "threshold",
+       "value": "n",
+       "at": 1
+      }
+     }
+    ],
+    "provenance": {
+     "authored_by": "argus.rules.induce",
+     "model": "gpt-oss:120b-cloud",
+     "origin": "run1_web01_1330#web01/2402@1791380892.117",
+     "round": 0,
+     "semantic_id": "a769ac576ca6",
+     "evidence": [
+      "ev_000611",
+      "ev_000612"
+     ]
+    }
+   }
+  },
+  {
+   "uid": "llm.llm-clear-bash-history-547eba2a21.f68ca72a21.r1",
+   "status": "active",
+   "technique": "T1070.003",
+   "name": "Shell clears bash history and unsets HISTFILE",
+   "origin": {
+    "capture": "run1_app01_1230",
+    "recording": "run1",
+    "host": "app01",
+    "episode": "run1_app01_1230#app01/1094@1791377547.402",
+    "episode_root_image": "splunkd",
+    "round": 1
+   },
+   "reason": "analyst-approved: analyst verdicts 4 malicious / 0 benign (mean 0.83, lower 0.51; all 4 alert(s) reviewed)",
+   "checks": {
+    "C1_valid": {
+     "check": "C1_valid",
+     "passed": true,
+     "detail": "",
+     "errors": []
+    },
+    "C2_own_evidence": {
+     "check": "C2_own_evidence",
+     "passed": true,
+     "detail": "",
+     "hard": [],
+     "soft": [],
+     "causes": {},
+     "origin_score": 1.0
+    },
+    "C3_robust": {
+     "check": "C3_robust",
+     "passed": true,
+     "detail": "",
+     "lost_under": [],
+     "static_rename_survival": 0.0,
+     "static_brittle": true,
+     "breaking_literals": {
+      "history_erase_command": [
+       "facts.command contains_any 'HISTFILE'",
+       "facts.command contains_any 'bash_history'",
+       "facts.image eq 'dash'"
+      ]
+     }
+    },
+    "C4_rare_history": {
+     "check": "C4_rare_history",
+     "passed": true,
+     "detail": "",
+     "history_rate": 0.0,
+     "fired_on": []
+    },
+    "C5_agreement": {
+     "check": "C5_agreement",
+     "passed": false,
+     "detail": "no independent source flags the same events",
+     "agreed_with": []
+    },
+    "C5_any_source": {
+     "check": "C5_agreement",
+     "passed": false,
+     "detail": "no independent source flags the same events",
+     "agreed_with": []
+    }
+   },
+   "grade": {
+    "rules": 1,
+    "attack_windows": "4/8",
+    "benign_windows": "0/12",
+    "event_precision": 1.0,
+    "steps_detected": "4/36",
+    "steps": [
+     4,
+     36
+    ],
+    "good": true
+   },
+   "rule": {
+    "id": "llm.llm-clear-bash-history-547eba2a21.f68ca72a21.r1",
+    "technique": "T1070.003",
+    "name": "Shell clears bash history and unsets HISTFILE",
+    "tactic": "defense-evasion",
+    "severity": 0.6,
+    "evidence": [
+     "ev_000027"
+    ],
+    "indicators": [
+     {
+      "name": "history_erase_command",
+      "weight": 1.0,
+      "required": true,
+      "select": {
+       "claim_type": "process_create",
+       "facts.image": [
+        "dash"
+       ],
+       "facts.command": {
+        "contains_any": [
+         "HISTFILE",
+         "bash_history"
+        ]
+       }
+      },
+      "score": {
+       "op": "threshold",
+       "value": "n",
+       "at": 1
+      }
+     }
+    ],
+    "provenance": {
+     "authored_by": "argus.rules.induce",
+     "model": "gpt-oss:120b-cloud",
+     "origin": "run1_app01_1230#app01/1094@1791377547.402",
+     "round": 1,
+     "semantic_id": "f68ca73465e6",
+     "evidence": [
+      "ev_000027"
+     ]
+    }
+   }
+  },
+  {
+   "uid": "llm.llm-credential-dump-passwd-414cfd5de7.0d5af25de7.r1",
+   "status": "active",
+   "technique": "T1003.001",
+   "name": "Read /etc/passwd and write to a user\u2011writable location",
+   "origin": {
+    "capture": "run1_web01_1330",
+    "recording": "run1",
+    "host": "web01",
+    "episode": "run1_web01_1330#web01/2397@1791380790.049",
+    "episode_root_image": "dash",
+    "round": 1
+   },
+   "reason": "analyst-approved: analyst verdicts 4 malicious / 0 benign (mean 0.83, lower 0.51; all 4 alert(s) reviewed)",
+   "checks": {
+    "C1_valid": {
+     "check": "C1_valid",
+     "passed": true,
+     "detail": "",
+     "errors": []
+    },
+    "C2_own_evidence": {
+     "check": "C2_own_evidence",
+     "passed": true,
+     "detail": "",
+     "hard": [],
+     "soft": [],
+     "causes": {},
+     "origin_score": 1.0
+    },
+    "C3_robust": {
+     "check": "C3_robust",
+     "passed": true,
+     "detail": "",
+     "lost_under": [],
+     "static_rename_survival": 0.0,
+     "static_brittle": true,
+     "breaking_literals": {
+      "passwd-to-tmp": [
+       "facts.command contains_any '/tmp/'",
+       "facts.command contains_any 'passwd'",
+       "facts.image eq 'bash'",
+       "facts.image eq 'dash'",
+       "facts.image eq 'sh'",
+       "facts.image eq 'zsh'"
+      ]
+     }
+    },
+    "C4_rare_history": {
+     "check": "C4_rare_history",
+     "passed": true,
+     "detail": "",
+     "history_rate": 0.0,
+     "fired_on": []
+    },
+    "C5_agreement": {
+     "check": "C5_agreement",
+     "passed": false,
+     "detail": "no independent source flags the same events",
+     "agreed_with": []
+    },
+    "C5_any_source": {
+     "check": "C5_agreement",
+     "passed": false,
+     "detail": "no independent source flags the same events",
+     "agreed_with": []
+    }
+   },
+   "grade": {
+    "rules": 1,
+    "attack_windows": "4/8",
+    "benign_windows": "0/12",
+    "event_precision": 1.0,
+    "steps_detected": "8/36",
+    "steps": [
+     8,
+     36
+    ],
+    "good": true
+   },
+   "rule": {
+    "id": "llm.llm-credential-dump-passwd-414cfd5de7.0d5af25de7.r1",
+    "technique": "T1003.001",
+    "name": "Read /etc/passwd and write to a user\u2011writable location",
+    "tactic": "credential-access",
+    "severity": 0.7,
+    "evidence": [
+     "ev_000606"
+    ],
+    "indicators": [
+     {
+      "name": "passwd-to-tmp",
+      "weight": 1.0,
+      "required": true,
+      "select": {
+       "claim_type": "process_create",
+       "facts.image": {
+        "in": [
+         "sh",
+         "dash",
+         "bash",
+         "zsh"
+        ]
+       },
+       "facts.command": {
+        "all_of": [
+         {
+          "contains_any": [
+           "passwd"
+          ]
+         },
+         {
+          "contains_any": [
+           "/tmp/"
+          ]
+         }
+        ]
+       }
+      },
+      "score": {
+       "op": "threshold",
+       "value": "n",
+       "at": 1
+      }
+     }
+    ],
+    "provenance": {
+     "authored_by": "argus.rules.induce",
+     "model": "gpt-oss:120b-cloud",
+     "origin": "run1_web01_1330#web01/2397@1791380790.049",
+     "round": 1,
+     "semantic_id": "0d5af2f83a6a",
+     "evidence": [
+      "ev_000606"
+     ]
+    }
+   }
+  },
+  {
+   "uid": "llm.llm-discovery-from-user-writable-ancestor-e333f0.b528532a21.r1",
+   "status": "active",
+   "technique": "T1082",
+   "name": "Discovery commands executed by descendant of user\u2011writable process",
+   "origin": {
+    "capture": "run1_app01_1230",
+    "recording": "run1",
+    "host": "app01",
+    "episode": "run1_app01_1230#app01/1094@1791377547.402",
+    "episode_root_image": "splunkd",
+    "round": 1
+   },
+   "reason": "analyst-approved: analyst verdicts 4 malicious / 0 benign (mean 0.83, lower 0.51; all 4 alert(s) reviewed)",
+   "checks": {
+    "C1_valid": {
+     "check": "C1_valid",
+     "passed": true,
+     "detail": "",
+     "errors": []
+    },
+    "C2_own_evidence": {
+     "check": "C2_own_evidence",
+     "passed": true,
+     "detail": "",
+     "hard": [],
+     "soft": [],
+     "causes": {},
+     "origin_score": 1.0
+    },
+    "C3_robust": {
+     "check": "C3_robust",
+     "passed": true,
+     "detail": "",
+     "lost_under": [],
+     "static_rename_survival": 0.0,
+     "static_brittle": true,
+     "breaking_literals": {
+      "whoami_from_user_writable_ancestor": [
+       "facts.command contains_any 'whoami'"
+      ]
+     }
+    },
+    "C4_rare_history": {
+     "check": "C4_rare_history",
+     "passed": true,
+     "detail": "",
+     "history_rate": 0.0,
+     "fired_on": []
+    },
+    "C5_agreement": {
+     "check": "C5_agreement",
+     "passed": false,
+     "detail": "no independent source flags the same events",
+     "agreed_with": []
+    },
+    "C5_any_source": {
+     "check": "C5_agreement",
+     "passed": false,
+     "detail": "no independent source flags the same events",
+     "agreed_with": []
+    }
+   },
+   "grade": {
+    "rules": 1,
+    "attack_windows": "4/8",
+    "benign_windows": "0/12",
+    "event_precision": 1.0,
+    "steps_detected": "4/36",
+    "steps": [
+     4,
+     36
+    ],
+    "good": true
+   },
+   "rule": {
+    "id": "llm.llm-discovery-from-user-writable-ancestor-e333f0.b528532a21.r1",
+    "technique": "T1082",
+    "name": "Discovery commands executed by descendant of user\u2011writable process",
+    "tactic": "discovery",
+    "severity": 0.6,
+    "evidence": [
+     "ev_000031"
+    ],
+    "indicators": [
+     {
+      "name": "whoami_from_user_writable_ancestor",
+      "weight": 1.0,
+      "required": true,
+      "select": {
+       "claim_type": "process_create",
+       "lineage.ancestor_user_writable": {
+        "truthy": true
+       },
+       "facts.command": {
+        "contains_any": [
+         "whoami"
+        ]
+       }
+      },
+      "score": {
+       "op": "threshold",
+       "value": "n",
+       "at": 1
+      }
+     }
+    ],
+    "provenance": {
+     "authored_by": "argus.rules.induce",
+     "model": "gpt-oss:120b-cloud",
+     "origin": "run1_app01_1230#app01/1094@1791377547.402",
+     "round": 1,
+     "semantic_id": "b528538f06df",
+     "evidence": [
+      "ev_000031"
+     ]
+    }
+   }
+  },
+  {
+   "uid": "llm.llm-llm-credential-dump-master-passwd-b0f086460c.18b09c460c.r2",
+   "status": "active",
+   "technique": "T1003.008",
+   "name": "Read /etc/master.passwd (credential dumping)",
+   "origin": {
+    "capture": "run1_ws-dev01_1330",
+    "recording": "run1",
+    "host": "ws-dev01",
+    "episode": "run1_ws-dev01_1330#ws-dev01/2413@1791380888.731",
+    "episode_root_image": "dash",
+    "round": 2
+   },
+   "reason": "analyst-approved: analyst verdicts 4 malicious / 0 benign (mean 0.83, lower 0.51; all 4 alert(s) reviewed)",
+   "checks": {
+    "C1_valid": {
+     "check": "C1_valid",
+     "passed": true,
+     "detail": "",
+     "errors": []
+    },
+    "C2_own_evidence": {
+     "check": "C2_own_evidence",
+     "passed": true,
+     "detail": "",
+     "hard": [],
+     "soft": [],
+     "causes": {},
+     "origin_score": 1.0
+    },
+    "C3_robust": {
+     "check": "C3_robust",
+     "passed": true,
+     "detail": "",
+     "lost_under": [],
+     "static_rename_survival": 0.0,
+     "static_brittle": true,
+     "breaking_literals": {
+      "access_master_passwd": [
+       "facts.command contains_any 'master.passwd'"
+      ]
+     }
+    },
+    "C4_rare_history": {
+     "check": "C4_rare_history",
+     "passed": true,
+     "detail": "",
+     "history_rate": 0.0,
+     "fired_on": []
+    },
+    "C5_agreement": {
+     "check": "C5_agreement",
+     "passed": false,
+     "detail": "no independent source flags the same events",
+     "agreed_with": []
+    },
+    "C5_any_source": {
+     "check": "C5_agreement",
+     "passed": false,
+     "detail": "no independent source flags the same events",
+     "agreed_with": []
+    }
+   },
+   "grade": {
+    "rules": 1,
+    "attack_windows": "4/8",
+    "benign_windows": "0/12",
+    "event_precision": 1.0,
+    "steps_detected": "4/36",
+    "steps": [
+     4,
+     36
+    ],
+    "good": true
+   },
+   "rule": {
+    "id": "llm.llm-llm-credential-dump-master-passwd-b0f086460c.18b09c460c.r2",
+    "technique": "T1003.008",
+    "name": "Read /etc/master.passwd (credential dumping)",
+    "tactic": "credential-access",
+    "severity": 0.9,
+    "evidence": [
+     "ev_000629"
+    ],
+    "indicators": [
+     {
+      "name": "access_master_passwd",
+      "weight": 1.0,
+      "required": true,
+      "select": {
+       "claim_type": "process_create",
+       "facts.command": {
+        "contains_any": [
+         "master.passwd"
+        ]
+       }
+      },
+      "score": {
+       "op": "threshold",
+       "value": "n",
+       "at": 1
+      }
+     }
+    ],
+    "provenance": {
+     "authored_by": "argus.rules.induce",
+     "model": "gpt-oss:120b-cloud",
+     "origin": "run1_ws-dev01_1330#ws-dev01/2413@1791380888.731",
+     "round": 2,
+     "semantic_id": "18b09cbbbb35",
+     "evidence": [
+      "ev_000629"
+     ]
+    }
+   }
+  },
+  {
+   "uid": "llm.llm-llm-credential-dump-passwd-e29b984306-71ac01.831b8b4306.r2",
+   "status": "active",
+   "technique": "T1003.001",
+   "name": "Read /etc/passwd and write to temporary location",
+   "origin": {
+    "capture": "run1_ws-fin01_1330",
+    "recording": "run1",
+    "host": "ws-fin01",
+    "episode": "run1_ws-fin01_1330#ws-fin01/12754@1791380833.890",
+    "episode_root_image": "dash",
+    "round": 2
+   },
+   "reason": "analyst-approved: analyst verdicts 4 malicious / 0 benign (mean 0.83, lower 0.51; all 4 alert(s) reviewed)",
+   "checks": {
+    "C1_valid": {
+     "check": "C1_valid",
+     "passed": true,
+     "detail": "",
+     "errors": []
+    },
+    "C2_own_evidence": {
+     "check": "C2_own_evidence",
+     "passed": true,
+     "detail": "",
+     "hard": [],
+     "soft": [],
+     "causes": {},
+     "origin_score": 1.0
+    },
+    "C3_robust": {
+     "check": "C3_robust",
+     "passed": true,
+     "detail": "",
+     "lost_under": [],
+     "static_rename_survival": 0.0,
+     "static_brittle": true,
+     "breaking_literals": {
+      "suspicious_passwd_dump": [
+       "facts.command contains_any '/tmp'",
+       "facts.command contains_any 'cat'",
+       "facts.command contains_any 'passwd'"
+      ]
+     }
+    },
+    "C4_rare_history": {
+     "check": "C4_rare_history",
+     "passed": true,
+     "detail": "",
+     "history_rate": 0.0,
+     "fired_on": []
+    },
+    "C5_agreement": {
+     "check": "C5_agreement",
+     "passed": false,
+     "detail": "no independent source flags the same events",
+     "agreed_with": []
+    },
+    "C5_any_source": {
+     "check": "C5_agreement",
+     "passed": false,
+     "detail": "no independent source flags the same events",
+     "agreed_with": []
+    }
+   },
+   "grade": {
+    "rules": 1,
+    "attack_windows": "4/8",
+    "benign_windows": "0/12",
+    "event_precision": 1.0,
+    "steps_detected": "8/36",
+    "steps": [
+     8,
+     36
+    ],
+    "good": true
+   },
+   "rule": {
+    "id": "llm.llm-llm-credential-dump-passwd-e29b984306-71ac01.831b8b4306.r2",
+    "technique": "T1003.001",
+    "name": "Read /etc/passwd and write to temporary location",
+    "tactic": "credential-access",
+    "severity": 0.8,
+    "evidence": [
+     "ev_000574",
+     "ev_000575",
+     "ev_000576"
+    ],
+    "indicators": [
+     {
+      "name": "suspicious_passwd_dump",
+      "weight": 1.0,
+      "required": true,
+      "select": {
+       "claim_type": "process_create",
+       "facts.command": {
+        "all_of": [
+         {
+          "contains_any": [
+           "passwd"
+          ]
+         },
+         {
+          "contains_any": [
+           "/tmp"
+          ]
+         },
+         {
+          "contains_any": [
+           "cat"
+          ]
+         }
+        ]
+       }
+      },
+      "aggregate": [
+       {
+        "as": "n",
+        "op": "count"
+       }
+      ],
+      "score": {
+       "op": "threshold",
+       "value": "n",
+       "at": 1
+      }
+     }
+    ],
+    "provenance": {
+     "authored_by": "argus.rules.induce",
+     "model": "gpt-oss:120b-cloud",
+     "origin": "run1_ws-fin01_1330#ws-fin01/12754@1791380833.890",
+     "round": 2,
+     "semantic_id": "831b8bb4986e",
+     "evidence": [
+      "ev_000574",
+      "ev_000575",
+      "ev_000576"
+     ]
+    }
+   }
+  },
+  {
+   "uid": "llm.llm-user-writable-outbound-connection-b85e043ed0.9811af3ed0.r1",
+   "status": "active",
+   "technique": "T1041",
+   "name": "Outbound Connection from User\u2011Writable Binary",
+   "origin": {
+    "capture": "run1_web01_1230",
+    "recording": "run1",
+    "host": "web01",
+    "episode": "run1_web01_1230#web01/1187@1791377542.462",
+    "episode_root_image": "splunkd",
+    "round": 1
+   },
+   "reason": "analyst-approved: analyst verdicts 4 malicious / 0 benign (mean 0.83, lower 0.51; all 4 alert(s) reviewed)",
+   "checks": {
+    "C1_valid": {
+     "check": "C1_valid",
+     "passed": true,
+     "detail": "",
+     "errors": []
+    },
+    "C2_own_evidence": {
+     "check": "C2_own_evidence",
+     "passed": true,
+     "detail": "",
+     "hard": [],
+     "soft": [],
+     "causes": {},
+     "origin_score": 1.0
+    },
+    "C3_robust": {
+     "check": "C3_robust",
+     "passed": true,
+     "detail": "",
+     "lost_under": [],
+     "static_rename_survival": 1.0,
+     "static_brittle": false,
+     "breaking_literals": {}
+    },
+    "C4_rare_history": {
+     "check": "C4_rare_history",
+     "passed": true,
+     "detail": "",
+     "history_rate": 0.0,
+     "fired_on": []
+    },
+    "C5_agreement": {
+     "check": "C5_agreement",
+     "passed": false,
+     "detail": "no independent source flags the same events",
+     "agreed_with": []
+    },
+    "C5_any_source": {
+     "check": "C5_agreement",
+     "passed": false,
+     "detail": "no independent source flags the same events",
+     "agreed_with": []
+    }
+   },
+   "grade": {
+    "rules": 1,
+    "attack_windows": "4/8",
+    "benign_windows": "0/12",
+    "event_precision": 1.0,
+    "steps_detected": "4/36",
+    "steps": [
+     4,
+     36
+    ],
+    "good": true
+   },
+   "rule": {
+    "id": "llm.llm-user-writable-outbound-connection-b85e043ed0.9811af3ed0.r1",
+    "technique": "T1041",
+    "name": "Outbound Connection from User\u2011Writable Binary",
+    "tactic": "command-and-control",
+    "severity": 0.8,
+    "evidence": [
+     "ev_000011"
+    ],
+    "indicators": [
+     {
+      "name": "uw_outbound",
+      "weight": 1.0,
+      "required": true,
+      "select": {
+       "claim_type": "host_network_connection",
+       "lineage.user_writable": {
+        "truthy": true
+       },
+       "facts.direction": "outbound"
+      },
+      "score": {
+       "op": "threshold",
+       "value": "n",
+       "at": 1
+      }
+     }
+    ],
+    "provenance": {
+     "authored_by": "argus.rules.induce",
+     "model": "gpt-oss:120b-cloud",
+     "origin": "run1_web01_1230#web01/1187@1791377542.462",
+     "round": 1,
+     "semantic_id": "9811af59839a",
+     "evidence": [
+      "ev_000011"
+     ]
+    }
+   }
+  },
+  {
+   "uid": "llm.llm-user-writable-outbound-server-c5a7a22a21.174bd32a21.r1",
+   "status": "active",
+   "technique": "T1041",
+   "name": "User\u2011writable binary initiates outbound connection with server flag",
+   "origin": {
+    "capture": "run1_app01_1230",
+    "recording": "run1",
+    "host": "app01",
+    "episode": "run1_app01_1230#app01/1094@1791377547.402",
+    "episode_root_image": "splunkd",
+    "round": 1
+   },
+   "reason": "analyst-approved: analyst verdicts 4 malicious / 0 benign (mean 0.83, lower 0.51; all 4 alert(s) reviewed)",
+   "checks": {
+    "C1_valid": {
+     "check": "C1_valid",
+     "passed": true,
+     "detail": "",
+     "errors": []
+    },
+    "C2_own_evidence": {
+     "check": "C2_own_evidence",
+     "passed": true,
+     "detail": "",
+     "hard": [],
+     "soft": [],
+     "causes": {},
+     "origin_score": 1.0
+    },
+    "C3_robust": {
+     "check": "C3_robust",
+     "passed": true,
+     "detail": "",
+     "lost_under": [],
+     "static_rename_survival": 0.0,
+     "static_brittle": true,
+     "breaking_literals": {
+      "user_writable_server_process": [
+       "facts.command contains_any '-server'"
+      ]
+     }
+    },
+    "C4_rare_history": {
+     "check": "C4_rare_history",
+     "passed": true,
+     "detail": "",
+     "history_rate": 0.0,
+     "fired_on": []
+    },
+    "C5_agreement": {
+     "check": "C5_agreement",
+     "passed": false,
+     "detail": "no independent source flags the same events",
+     "agreed_with": []
+    },
+    "C5_any_source": {
+     "check": "C5_agreement",
+     "passed": false,
+     "detail": "no independent source flags the same events",
+     "agreed_with": []
+    }
+   },
+   "grade": {
+    "rules": 1,
+    "attack_windows": "4/8",
+    "benign_windows": "0/12",
+    "event_precision": 1.0,
+    "steps_detected": "4/36",
+    "steps": [
+     4,
+     36
+    ],
+    "good": true
+   },
+   "rule": {
+    "id": "llm.llm-user-writable-outbound-server-c5a7a22a21.174bd32a21.r1",
+    "technique": "T1041",
+    "name": "User\u2011writable binary initiates outbound connection with server flag",
+    "tactic": "command-and-control",
+    "severity": 0.7,
+    "evidence": [
+     "ev_000025"
+    ],
+    "indicators": [
+     {
+      "name": "user_writable_server_process",
+      "weight": 1.0,
+      "required": true,
+      "select": {
+       "claim_type": "process_create",
+       "lineage.user_writable": {
+        "truthy": true
+       },
+       "facts.command": {
+        "contains_any": [
+         "-server"
+        ]
+       }
+      },
+      "score": {
+       "op": "threshold",
+       "value": "n",
+       "at": 1
+      }
+     }
+    ],
+    "provenance": {
+     "authored_by": "argus.rules.induce",
+     "model": "gpt-oss:120b-cloud",
+     "origin": "run1_app01_1230#app01/1094@1791377547.402",
+     "round": 1,
+     "semantic_id": "174bd3dad3d1",
+     "evidence": [
+      "ev_000025"
+     ]
+    }
+   }
+  },
+  {
+   "uid": "llm.network-neighbor-discovery.60f1e49074",
+   "status": "active",
+   "technique": "T1016.001",
+   "name": "Network Neighbor Discovery via ip/arp",
+   "origin": {
+    "capture": "run1_app01_1330",
+    "recording": "run1",
+    "host": "app01",
+    "episode": "run1_app01_1330#app01/2354@1791380703.197",
+    "episode_root_image": "dash",
+    "round": 0
+   },
+   "reason": "passed C5: agrees with hand:TA0007@run1_app01_1330, hand:KILLCHAIN@run1_ws-fin01_1330",
+   "checks": {
+    "C1_valid": {
+     "check": "C1_valid",
+     "passed": true,
+     "detail": "",
+     "errors": []
+    },
+    "C2_own_evidence": {
+     "check": "C2_own_evidence",
+     "passed": true,
+     "detail": "",
+     "hard": [],
+     "soft": [],
+     "causes": {},
+     "origin_score": 1.0
+    },
+    "C3_robust": {
+     "check": "C3_robust",
+     "passed": true,
+     "detail": "",
+     "lost_under": [],
+     "static_rename_survival": 0.0,
+     "static_brittle": true,
+     "breaking_literals": {
+      "ip-neighbor-show": [
+       "facts.command contains_any 'arp'",
+       "facts.command contains_any 'neighbor'",
+       "facts.command contains_any 'neighbour'",
+       "facts.image eq 'arp'",
+       "facts.image eq 'ip'"
+      ]
+     }
+    },
+    "C4_rare_history": {
+     "check": "C4_rare_history",
+     "passed": true,
+     "detail": "",
+     "history_rate": 0.0,
+     "fired_on": []
+    },
+    "C5_agreement": {
+     "check": "C5_agreement",
+     "passed": true,
+     "detail": "",
+     "agreed_with": [
+      "hand:TA0007@run1_app01_1330",
+      "hand:KILLCHAIN@run1_ws-fin01_1330"
+     ]
+    },
+    "C5_any_source": {
+     "check": "C5_agreement",
+     "passed": true,
+     "detail": "",
+     "agreed_with": [
+      "hand:TA0007@run1_app01_1330",
+      "hand:KILLCHAIN@run1_ws-fin01_1330"
+     ]
+    }
+   },
+   "grade": {
+    "rules": 1,
+    "attack_windows": "4/8",
+    "benign_windows": "0/12",
+    "event_precision": 1.0,
+    "steps_detected": "4/36",
+    "steps": [
+     4,
+     36
+    ],
+    "good": true
+   },
+   "rule": {
+    "id": "llm.network-neighbor-discovery.60f1e49074",
+    "technique": "T1016.001",
+    "name": "Network Neighbor Discovery via ip/arp",
+    "tactic": "discovery",
+    "severity": 0.6,
+    "evidence": [
+     "ev_000598"
+    ],
+    "indicators": [
+     {
+      "name": "ip-neighbor-show",
+      "weight": 1.0,
+      "required": true,
+      "select": {
+       "claim_type": "process_create",
+       "any_of": [
+        {
+         "facts.image": "ip"
+        },
+        {
+         "facts.image": "arp"
+        }
+       ],
+       "facts.command": {
+        "contains_any": [
+         "neighbour",
+         "neighbor",
+         "arp"
+        ]
+       }
+      },
+      "exclude": {
+       "lineage.parent_user_writable": {
+        "truthy": true
+       }
+      },
+      "score": {
+       "op": "threshold",
+       "value": "n",
+       "at": 1
+      }
+     }
+    ],
+    "provenance": {
+     "authored_by": "argus.rules.induce",
+     "model": "gpt-oss:120b-cloud",
+     "origin": "run1_app01_1330#app01/2354@1791380703.197",
+     "round": 0,
+     "semantic_id": "60f1e49871fd",
+     "evidence": [
+      "ev_000598"
+     ]
+    }
+   }
+  },
+  {
+   "uid": "llm.network-neighbor-discovery.9c1dbbce38",
+   "status": "active",
+   "technique": "T1016.001",
+   "name": "Network Neighbor Discovery via ip/arp",
+   "origin": {
+    "capture": "run1_ws-dev01_1330",
+    "recording": "run1",
+    "host": "ws-dev01",
+    "episode": "run1_ws-dev01_1330#ws-dev01/2404@1791380699.574",
+    "episode_root_image": "dash",
+    "round": 0
+   },
+   "reason": "passed C5: agrees with hand:TA0007@run1_app01_1330, hand:KILLCHAIN@run1_ws-fin01_1330",
+   "checks": {
+    "C1_valid": {
+     "check": "C1_valid",
+     "passed": true,
+     "detail": "",
+     "errors": []
+    },
+    "C2_own_evidence": {
+     "check": "C2_own_evidence",
+     "passed": true,
+     "detail": "",
+     "hard": [],
+     "soft": [],
+     "causes": {},
+     "origin_score": 1.0
+    },
+    "C3_robust": {
+     "check": "C3_robust",
+     "passed": true,
+     "detail": "",
+     "lost_under": [],
+     "static_rename_survival": 0.0,
+     "static_brittle": true,
+     "breaking_literals": {
+      "ip-or-arp-neighbor-show": [
+       "facts.command contains_any '-a'",
+       "facts.command contains_any 'neighbour'",
+       "facts.image eq 'arp'",
+       "facts.image eq 'ip'"
+      ]
+     }
+    },
+    "C4_rare_history": {
+     "check": "C4_rare_history",
+     "passed": true,
+     "detail": "",
+     "history_rate": 0.0,
+     "fired_on": []
+    },
+    "C5_agreement": {
+     "check": "C5_agreement",
+     "passed": true,
+     "detail": "",
+     "agreed_with": [
+      "hand:TA0007@run1_app01_1330",
+      "hand:KILLCHAIN@run1_ws-fin01_1330"
+     ]
+    },
+    "C5_any_source": {
+     "check": "C5_agreement",
+     "passed": true,
+     "detail": "",
+     "agreed_with": [
+      "hand:TA0007@run1_app01_1330",
+      "hand:KILLCHAIN@run1_ws-fin01_1330"
+     ]
+    }
+   },
+   "grade": {
+    "rules": 1,
+    "attack_windows": "4/8",
+    "benign_windows": "0/12",
+    "event_precision": 1.0,
+    "steps_detected": "4/36",
+    "steps": [
+     4,
+     36
+    ],
+    "good": true
+   },
+   "rule": {
+    "id": "llm.network-neighbor-discovery.9c1dbbce38",
+    "technique": "T1016.001",
+    "name": "Network Neighbor Discovery via ip/arp",
+    "tactic": "discovery",
+    "severity": 0.7,
+    "evidence": [
+     "ev_000621"
+    ],
+    "indicators": [
+     {
+      "name": "ip-or-arp-neighbor-show",
+      "weight": 1.0,
+      "required": true,
+      "select": {
+       "claim_type": "process_create",
+       "facts.image": [
+        "ip",
+        "arp"
+       ],
+       "facts.command": {
+        "contains_any": [
+         "neighbour",
+         "-a"
+        ]
+       }
+      },
+      "aggregate": [
+       {
+        "as": "n",
+        "op": "count"
+       }
+      ],
+      "score": {
+       "op": "threshold",
+       "value": "n",
+       "at": 1
+      }
+     }
+    ],
+    "provenance": {
+     "authored_by": "argus.rules.induce",
+     "model": "gpt-oss:120b-cloud",
+     "origin": "run1_ws-dev01_1330#ws-dev01/2404@1791380699.574",
+     "round": 0,
+     "semantic_id": "9c1dbb977404",
+     "evidence": [
+      "ev_000621"
+     ]
+    }
+   }
+  },
+  {
+   "uid": "llm.network-neighbor-discovery.fa93f564ae",
+   "status": "active",
+   "technique": "T1018",
+   "name": "Network Neighbor Table Discovery",
+   "origin": {
+    "capture": "run1_web01_1330",
+    "recording": "run1",
+    "host": "web01",
+    "episode": "run1_web01_1330#web01/2393@1791380706.961",
+    "episode_root_image": "dash",
+    "round": 0
+   },
+   "reason": "passed C5: agrees with hand:TA0007@run1_app01_1330, hand:KILLCHAIN@run1_ws-fin01_1330",
+   "checks": {
+    "C1_valid": {
+     "check": "C1_valid",
+     "passed": true,
+     "detail": "",
+     "errors": []
+    },
+    "C2_own_evidence": {
+     "check": "C2_own_evidence",
+     "passed": true,
+     "detail": "",
+     "hard": [],
+     "soft": [],
+     "causes": {},
+     "origin_score": 1.0
+    },
+    "C3_robust": {
+     "check": "C3_robust",
+     "passed": true,
+     "detail": "",
+     "lost_under": [],
+     "static_rename_survival": 0.0,
+     "static_brittle": true,
+     "breaking_literals": {
+      "ip_neighbor_show": [
+       "facts.command contains_any 'neighbour'",
+       "facts.command contains_any 'show'",
+       "facts.image eq 'ip'"
+      ]
+     }
+    },
+    "C4_rare_history": {
+     "check": "C4_rare_history",
+     "passed": true,
+     "detail": "",
+     "history_rate": 0.0,
+     "fired_on": []
+    },
+    "C5_agreement": {
+     "check": "C5_agreement",
+     "passed": true,
+     "detail": "",
+     "agreed_with": [
+      "hand:TA0007@run1_app01_1330",
+      "hand:KILLCHAIN@run1_ws-fin01_1330"
+     ]
+    },
+    "C5_any_source": {
+     "check": "C5_agreement",
+     "passed": true,
+     "detail": "",
+     "agreed_with": [
+      "hand:TA0007@run1_app01_1330",
+      "hand:KILLCHAIN@run1_ws-fin01_1330"
+     ]
+    }
+   },
+   "grade": {
+    "rules": 1,
+    "attack_windows": "4/8",
+    "benign_windows": "0/12",
+    "event_precision": 1.0,
+    "steps_detected": "4/36",
+    "steps": [
+     4,
+     36
+    ],
+    "good": true
+   },
+   "rule": {
+    "id": "llm.network-neighbor-discovery.fa93f564ae",
+    "technique": "T1018",
+    "name": "Network Neighbor Table Discovery",
+    "tactic": "discovery",
+    "severity": 0.6,
+    "evidence": [
+     "ev_000604"
+    ],
+    "indicators": [
+     {
+      "name": "ip_neighbor_show",
+      "weight": 1.0,
+      "required": true,
+      "select": {
+       "claim_type": "process_create",
+       "facts.image": [
+        "ip"
+       ],
+       "facts.command": {
+        "contains_any": [
+         "neighbour",
+         "show"
+        ]
+       }
+      },
+      "score": {
+       "op": "threshold",
+       "value": "n",
+       "at": 1
+      }
+     }
+    ],
+    "provenance": {
+     "authored_by": "argus.rules.induce",
+     "model": "gpt-oss:120b-cloud",
+     "origin": "run1_web01_1330#web01/2393@1791380706.961",
+     "round": 0,
+     "semantic_id": "fa93f5ecb906",
+     "evidence": [
+      "ev_000604"
+     ]
+    }
+   }
+  },
+  {
+   "uid": "llm.read-passwd-to-tmp.952833f90c",
+   "status": "active",
+   "technique": "T1003.006",
+   "name": "Read /etc/passwd and copy to temporary location",
+   "origin": {
+    "capture": "run1_ws-dev01_1330",
+    "recording": "run1",
+    "host": "ws-dev01",
+    "episode": "run1_ws-dev01_1330#ws-dev01/2408@1791380796.651",
+    "episode_root_image": "dash",
+    "round": 0
+   },
+   "reason": "analyst-approved: analyst verdicts 4 malicious / 0 benign (mean 0.83, lower 0.51; all 4 alert(s) reviewed)",
+   "checks": {
+    "C1_valid": {
+     "check": "C1_valid",
+     "passed": true,
+     "detail": "",
+     "errors": []
+    },
+    "C2_own_evidence": {
+     "check": "C2_own_evidence",
+     "passed": true,
+     "detail": "",
+     "hard": [],
+     "soft": [],
+     "causes": {},
+     "origin_score": 1.0
+    },
+    "C3_robust": {
+     "check": "C3_robust",
+     "passed": true,
+     "detail": "",
+     "lost_under": [],
+     "static_rename_survival": 0.0,
+     "static_brittle": true,
+     "breaking_literals": {
+      "read-passwd-temp": [
+       "facts.command contains_any '/etc/passwd'",
+       "facts.command contains_any '/tmp/'"
+      ]
+     }
+    },
+    "C4_rare_history": {
+     "check": "C4_rare_history",
+     "passed": true,
+     "detail": "",
+     "history_rate": 0.0,
+     "fired_on": []
+    },
+    "C5_agreement": {
+     "check": "C5_agreement",
+     "passed": false,
+     "detail": "no independent source flags the same events",
+     "agreed_with": []
+    },
+    "C5_any_source": {
+     "check": "C5_agreement",
+     "passed": false,
+     "detail": "no independent source flags the same events",
+     "agreed_with": []
+    }
+   },
+   "grade": {
+    "rules": 1,
+    "attack_windows": "4/8",
+    "benign_windows": "0/12",
+    "event_precision": 1.0,
+    "steps_detected": "4/36",
+    "steps": [
+     4,
+     36
+    ],
+    "good": true
+   },
+   "rule": {
+    "id": "llm.read-passwd-to-tmp.952833f90c",
+    "technique": "T1003.006",
+    "name": "Read /etc/passwd and copy to temporary location",
+    "tactic": "credential-access",
+    "severity": 0.7,
+    "evidence": [
+     "ev_000623",
+     "ev_000624",
+     "ev_000625"
+    ],
+    "indicators": [
+     {
+      "name": "read-passwd-temp",
+      "weight": 1.0,
+      "required": true,
+      "select": {
+       "claim_type": "process_create",
+       "facts.command": {
+        "all_of": [
+         {
+          "contains_any": [
+           "/etc/passwd"
+          ]
+         },
+         {
+          "contains_any": [
+           "/tmp/"
+          ]
+         }
+        ]
+       }
+      },
+      "aggregate": [
+       {
+        "as": "n",
+        "op": "count"
+       }
+      ],
+      "score": {
+       "op": "threshold",
+       "value": "n",
+       "at": 1
+      }
+     }
+    ],
+    "provenance": {
+     "authored_by": "argus.rules.induce",
+     "model": "gpt-oss:120b-cloud",
+     "origin": "run1_ws-dev01_1330#ws-dev01/2408@1791380796.651",
+     "round": 0,
+     "semantic_id": "952833528b1e",
+     "evidence": [
+      "ev_000623",
+      "ev_000624",
+      "ev_000625"
+     ]
+    }
+   }
+  },
+  {
+   "uid": "llm.user-writable-discovery-commands.604cde8671",
+   "status": "active",
+   "technique": "T1082",
+   "name": "User\u2011writable ancestor runs discovery commands (whoami, env)",
+   "origin": {
+    "capture": "run1_ws-fin01_1230",
+    "recording": "run1",
+    "host": "ws-fin01",
+    "episode": "run1_ws-fin01_1230#ws-fin01/11544@1791377551.823",
+    "episode_root_image": "splunkd",
+    "round": 0
+   },
+   "reason": "analyst-approved: analyst verdicts 4 malicious / 0 benign (mean 0.83, lower 0.51; all 4 alert(s) reviewed)",
+   "checks": {
+    "C1_valid": {
+     "check": "C1_valid",
+     "passed": true,
+     "detail": "",
+     "errors": []
+    },
+    "C2_own_evidence": {
+     "check": "C2_own_evidence",
+     "passed": true,
+     "detail": "",
+     "hard": [],
+     "soft": [],
+     "causes": {},
+     "origin_score": 1.0
+    },
+    "C3_robust": {
+     "check": "C3_robust",
+     "passed": true,
+     "detail": "",
+     "lost_under": [],
+     "static_rename_survival": 0.0,
+     "static_brittle": true,
+     "breaking_literals": {
+      "discovery-from-user-writable-ancestor": [
+       "facts.command contains_any 'env'",
+       "facts.command contains_any 'whoami'"
+      ]
+     }
+    },
+    "C4_rare_history": {
+     "check": "C4_rare_history",
+     "passed": true,
+     "detail": "",
+     "history_rate": 0.0,
+     "fired_on": []
+    },
+    "C5_agreement": {
+     "check": "C5_agreement",
+     "passed": false,
+     "detail": "no independent source flags the same events",
+     "agreed_with": []
+    },
+    "C5_any_source": {
+     "check": "C5_agreement",
+     "passed": false,
+     "detail": "no independent source flags the same events",
+     "agreed_with": []
+    }
+   },
+   "grade": {
+    "rules": 1,
+    "attack_windows": "4/8",
+    "benign_windows": "0/12",
+    "event_precision": 1.0,
+    "steps_detected": "8/36",
+    "steps": [
+     8,
+     36
+    ],
+    "good": true
+   },
+   "rule": {
+    "id": "llm.user-writable-discovery-commands.604cde8671",
+    "technique": "T1082",
+    "name": "User\u2011writable ancestor runs discovery commands (whoami, env)",
+    "tactic": "discovery",
+    "severity": 0.7,
+    "evidence": [
+     "ev_000045",
+     "ev_000047"
+    ],
+    "indicators": [
+     {
+      "name": "discovery-from-user-writable-ancestor",
+      "weight": 1.0,
+      "required": true,
+      "select": {
+       "claim_type": "process_create",
+       "lineage.ancestor_user_writable": {
+        "truthy": true
+       },
+       "facts.command": {
+        "contains_any": [
+         "whoami",
+         "env"
+        ]
+       }
+      },
+      "score": {
+       "op": "threshold",
+       "value": "n",
+       "at": 1
+      }
+     }
+    ],
+    "provenance": {
+     "authored_by": "argus.rules.induce",
+     "model": "gpt-oss:120b-cloud",
+     "origin": "run1_ws-fin01_1230#ws-fin01/11544@1791377551.823",
+     "round": 0,
+     "semantic_id": "604cde41c700",
+     "evidence": [
+      "ev_000045",
+      "ev_000047"
+     ]
+    }
+   }
+  },
+  {
+   "uid": "llm.user-writable-history-clear.7670068671",
+   "status": "active",
+   "technique": "T1070.003",
+   "name": "User\u2011writable parent spawns shell that clears command history",
+   "origin": {
+    "capture": "run1_ws-fin01_1230",
+    "recording": "run1",
+    "host": "ws-fin01",
+    "episode": "run1_ws-fin01_1230#ws-fin01/11544@1791377551.823",
+    "episode_root_image": "splunkd",
+    "round": 0
+   },
+   "reason": "analyst-approved: analyst verdicts 4 malicious / 0 benign (mean 0.83, lower 0.51; all 4 alert(s) reviewed)",
+   "checks": {
+    "C1_valid": {
+     "check": "C1_valid",
+     "passed": true,
+     "detail": "",
+     "errors": []
+    },
+    "C2_own_evidence": {
+     "check": "C2_own_evidence",
+     "passed": true,
+     "detail": "",
+     "hard": [],
+     "soft": [],
+     "causes": {},
+     "origin_score": 1.0
+    },
+    "C3_robust": {
+     "check": "C3_robust",
+     "passed": true,
+     "detail": "",
+     "lost_under": [],
+     "static_rename_survival": 0.0,
+     "static_brittle": true,
+     "breaking_literals": {
+      "history-clear-from-user-writable-parent": [
+       "facts.command contains_any 'bash_history'",
+       "facts.command contains_any 'unset'",
+       "facts.image eq 'dash'",
+       "facts.image eq 'sh'"
+      ]
+     }
+    },
+    "C4_rare_history": {
+     "check": "C4_rare_history",
+     "passed": true,
+     "detail": "",
+     "history_rate": 0.0,
+     "fired_on": []
+    },
+    "C5_agreement": {
+     "check": "C5_agreement",
+     "passed": false,
+     "detail": "no independent source flags the same events",
+     "agreed_with": []
+    },
+    "C5_any_source": {
+     "check": "C5_agreement",
+     "passed": false,
+     "detail": "no independent source flags the same events",
+     "agreed_with": []
+    }
+   },
+   "grade": {
+    "rules": 1,
+    "attack_windows": "4/8",
+    "benign_windows": "0/12",
+    "event_precision": 1.0,
+    "steps_detected": "4/36",
+    "steps": [
+     4,
+     36
+    ],
+    "good": true
+   },
+   "rule": {
+    "id": "llm.user-writable-history-clear.7670068671",
+    "technique": "T1070.003",
+    "name": "User\u2011writable parent spawns shell that clears command history",
+    "tactic": "defense-evasion",
+    "severity": 0.7,
+    "evidence": [
+     "ev_000041"
+    ],
+    "indicators": [
+     {
+      "name": "history-clear-from-user-writable-parent",
+      "weight": 1.0,
+      "required": true,
+      "select": {
+       "claim_type": "process_create",
+       "facts.image": [
+        "dash",
+        "sh"
+       ],
+       "lineage.parent_user_writable": {
+        "truthy": true
+       },
+       "facts.command": {
+        "all_of": [
+         {
+          "contains_any": [
+           "bash_history"
+          ]
+         },
+         {
+          "contains_any": [
+           "unset"
+          ]
+         }
+        ]
+       }
+      },
+      "score": {
+       "op": "threshold",
+       "value": "n",
+       "at": 1
+      }
+     }
+    ],
+    "provenance": {
+     "authored_by": "argus.rules.induce",
+     "model": "gpt-oss:120b-cloud",
+     "origin": "run1_ws-fin01_1230#ws-fin01/11544@1791377551.823",
+     "round": 0,
+     "semantic_id": "767006bf03fd",
+     "evidence": [
+      "ev_000041"
+     ]
+    }
+   }
+  },
+  {
+   "uid": "llm.user-writable-outbound-connection.89fb558671.r2",
+   "status": "active",
+   "technique": "T1041",
+   "name": "User\u2011writable executable makes outbound network connection",
+   "origin": {
+    "capture": "run1_ws-fin01_1230",
+    "recording": "run1",
+    "host": "ws-fin01",
+    "episode": "run1_ws-fin01_1230#ws-fin01/11544@1791377551.823",
+    "episode_root_image": "splunkd",
+    "round": 2
+   },
+   "reason": "analyst-approved: analyst verdicts 4 malicious / 0 benign (mean 0.83, lower 0.51; all 4 alert(s) reviewed)",
+   "checks": {
+    "C1_valid": {
+     "check": "C1_valid",
+     "passed": true,
+     "detail": "",
+     "errors": []
+    },
+    "C2_own_evidence": {
+     "check": "C2_own_evidence",
+     "passed": true,
+     "detail": "",
+     "hard": [],
+     "soft": [],
+     "causes": {},
+     "origin_score": 1.0
+    },
+    "C3_robust": {
+     "check": "C3_robust",
+     "passed": true,
+     "detail": "",
+     "lost_under": [],
+     "static_rename_survival": 1.0,
+     "static_brittle": false,
+     "breaking_literals": {}
+    },
+    "C4_rare_history": {
+     "check": "C4_rare_history",
+     "passed": true,
+     "detail": "",
+     "history_rate": 0.0,
+     "fired_on": []
+    },
+    "C5_agreement": {
+     "check": "C5_agreement",
+     "passed": false,
+     "detail": "no independent source flags the same events",
+     "agreed_with": []
+    },
+    "C5_any_source": {
+     "check": "C5_agreement",
+     "passed": false,
+     "detail": "no independent source flags the same events",
+     "agreed_with": []
+    }
+   },
+   "grade": {
+    "rules": 1,
+    "attack_windows": "4/8",
+    "benign_windows": "0/12",
+    "event_precision": 1.0,
+    "steps_detected": "4/36",
+    "steps": [
+     4,
+     36
+    ],
+    "good": true
+   },
+   "rule": {
+    "id": "llm.user-writable-outbound-connection.89fb558671.r2",
+    "technique": "T1041",
+    "name": "User\u2011writable executable makes outbound network connection",
+    "tactic": "command-and-control",
+    "severity": 0.8,
+    "evidence": [
+     "ev_000040"
+    ],
+    "indicators": [
+     {
+      "name": "outbound-from-user-writable",
+      "weight": 1.0,
+      "required": true,
+      "select": {
+       "claim_type": "host_network_connection",
+       "facts.direction": "outbound",
+       "lineage.user_writable": {
+        "truthy": true
+       }
+      },
+      "score": {
+       "op": "threshold",
+       "value": "n",
+       "at": 1
+      }
+     }
+    ],
+    "provenance": {
+     "authored_by": "argus.rules.induce",
+     "model": "gpt-oss:120b-cloud",
+     "origin": "run1_ws-fin01_1230#ws-fin01/11544@1791377551.823",
+     "round": 2,
+     "semantic_id": "89fb55efaedb",
+     "evidence": [
+      "ev_000040"
+     ]
+    }
+   }
+  },
+  {
+   "uid": "llm.whoami-from-user-writable-ancestor.5f35e53ed0",
+   "status": "active",
+   "technique": "T1033",
+   "name": "User Identity Discovery via User-Writable Ancestor",
+   "origin": {
+    "capture": "run1_web01_1230",
+    "recording": "run1",
+    "host": "web01",
+    "episode": "run1_web01_1230#web01/1187@1791377542.462",
+    "episode_root_image": "splunkd",
+    "round": 0
+   },
+   "reason": "analyst-approved: analyst verdicts 4 malicious / 0 benign (mean 0.83, lower 0.51; all 4 alert(s) reviewed)",
+   "checks": {
+    "C1_valid": {
+     "check": "C1_valid",
+     "passed": true,
+     "detail": "",
+     "errors": []
+    },
+    "C2_own_evidence": {
+     "check": "C2_own_evidence",
+     "passed": true,
+     "detail": "",
+     "hard": [],
+     "soft": [],
+     "causes": {},
+     "origin_score": 1.0
+    },
+    "C3_robust": {
+     "check": "C3_robust",
+     "passed": true,
+     "detail": "",
+     "lost_under": [],
+     "static_rename_survival": 0.0,
+     "static_brittle": true,
+     "breaking_literals": {
+      "whoami_uw": [
+       "facts.command contains_any 'whoami'"
+      ]
+     }
+    },
+    "C4_rare_history": {
+     "check": "C4_rare_history",
+     "passed": true,
+     "detail": "",
+     "history_rate": 0.0,
+     "fired_on": []
+    },
+    "C5_agreement": {
+     "check": "C5_agreement",
+     "passed": false,
+     "detail": "no independent source flags the same events",
+     "agreed_with": []
+    },
+    "C5_any_source": {
+     "check": "C5_agreement",
+     "passed": false,
+     "detail": "no independent source flags the same events",
+     "agreed_with": []
+    }
+   },
+   "grade": {
+    "rules": 1,
+    "attack_windows": "4/8",
+    "benign_windows": "0/12",
+    "event_precision": 1.0,
+    "steps_detected": "4/36",
+    "steps": [
+     4,
+     36
+    ],
+    "good": true
+   },
+   "rule": {
+    "id": "llm.whoami-from-user-writable-ancestor.5f35e53ed0",
+    "technique": "T1033",
+    "name": "User Identity Discovery via User-Writable Ancestor",
+    "tactic": "discovery",
+    "severity": 0.6,
+    "evidence": [
+     "ev_000015"
+    ],
+    "indicators": [
+     {
+      "name": "whoami_uw",
+      "weight": 1.0,
+      "required": true,
+      "select": {
+       "claim_type": "process_create",
+       "facts.command": {
+        "contains_any": [
+         "whoami"
+        ]
+       },
+       "lineage.ancestor_user_writable": {
+        "truthy": true
+       }
+      },
+      "score": {
+       "op": "threshold",
+       "value": "n",
+       "at": 1
+      }
+     }
+    ],
+    "provenance": {
+     "authored_by": "argus.rules.induce",
+     "model": "gpt-oss:120b-cloud",
+     "origin": "run1_web01_1230#web01/1187@1791377542.462",
+     "round": 0,
+     "semantic_id": "5f35e5bb818c",
+     "evidence": [
+      "ev_000015"
+     ]
+    }
+   }
+  },
+  {
+   "uid": "llm.clear-bash-history.f07f116a50",
+   "status": "retired",
+   "technique": "T1070.003",
+   "name": "Clear Bash History",
+   "origin": {
+    "capture": "run1_ws-dev01_1230",
+    "recording": "run1",
+    "host": "ws-dev01",
+    "episode": "run1_ws-dev01_1230#ws-dev01/1157@1791377549.712",
+    "episode_root_image": "splunkd",
+    "round": 0
+   },
+   "reason": "duplicate of llm.clear-bash-history.f07f113ed0",
+   "checks": {
+    "C1_valid": {
+     "check": "C1_valid",
+     "passed": true,
+     "detail": "",
+     "errors": []
+    },
+    "C2_own_evidence": {
+     "check": "C2_own_evidence",
+     "passed": true,
+     "detail": "",
+     "hard": [],
+     "soft": [],
+     "causes": {},
+     "origin_score": 1.0
+    },
+    "C3_robust": {
+     "check": "C3_robust",
+     "passed": true,
+     "detail": "",
+     "lost_under": [],
+     "static_rename_survival": 0.0,
+     "static_brittle": true,
+     "breaking_literals": {
+      "clear_history": [
+       "facts.command contains_any 'bash_history'",
+       "facts.command contains_any 'unset'"
+      ]
+     }
+    },
+    "C4_rare_history": {
+     "check": "C4_rare_history",
+     "passed": true,
+     "detail": "",
+     "history_rate": 0.0,
+     "fired_on": []
+    },
+    "C5_agreement": {
+     "check": "C5_agreement",
+     "passed": false,
+     "detail": "no independent source flags the same events",
+     "agreed_with": []
+    },
+    "C5_any_source": {
+     "check": "C5_agreement",
+     "passed": false,
+     "detail": "no independent source flags the same events",
+     "agreed_with": []
+    }
+   },
+   "grade": {
+    "rules": 1,
+    "attack_windows": "4/8",
+    "benign_windows": "0/12",
+    "event_precision": 1.0,
+    "steps_detected": "4/36",
+    "steps": [
+     4,
+     36
+    ],
+    "good": true
+   },
+   "rule": {
+    "id": "llm.clear-bash-history.f07f116a50",
+    "technique": "T1070.003",
+    "name": "Clear Bash History",
+    "tactic": "defense-evasion",
+    "severity": 0.7,
+    "evidence": [
+     "ev_000012"
+    ],
+    "indicators": [
+     {
+      "name": "clear_history",
+      "weight": 1.0,
+      "required": true,
+      "select": {
+       "claim_type": "process_create",
+       "facts.command": {
+        "contains_any": [
+         "bash_history",
+         "unset"
+        ]
+       }
+      },
+      "score": {
+       "op": "threshold",
+       "value": "n",
+       "at": 1
+      }
+     }
+    ],
+    "provenance": {
+     "authored_by": "argus.rules.induce",
+     "model": "gpt-oss:120b-cloud",
+     "origin": "run1_ws-dev01_1230#ws-dev01/1157@1791377549.712",
+     "round": 0,
+     "semantic_id": "f07f11bfcc7d",
+     "evidence": [
+      "ev_000012"
+     ]
+    }
+   }
+  },
+  {
+   "uid": "llm.copy-auth-logs-to-tmp.1aee330795",
+   "status": "retired",
+   "technique": "T1005",
+   "name": "Copy authentication logs to a user\u2011writable directory",
+   "origin": {
+    "capture": "run1_ws-dev01_1400",
+    "recording": "run1",
+    "host": "ws-dev01",
+    "episode": "run1_ws-dev01_1400#ws-dev01/2428@1791382477.698",
+    "episode_root_image": "bash",
+    "round": 0
+   },
+   "reason": "analyst: analyst verdicts 0 malicious / 5 benign (mean 0.14, lower 0.00; all 5 alert(s) reviewed)",
+   "checks": {
+    "C1_valid": {
+     "check": "C1_valid",
+     "passed": true,
+     "detail": "",
+     "errors": []
+    },
+    "C2_own_evidence": {
+     "check": "C2_own_evidence",
+     "passed": true,
+     "detail": "",
+     "hard": [],
+     "soft": [],
+     "causes": {},
+     "origin_score": 1.0
+    },
+    "C3_robust": {
+     "check": "C3_robust",
+     "passed": true,
+     "detail": "",
+     "lost_under": [],
+     "static_rename_survival": 0.0,
+     "static_brittle": true,
+     "breaking_literals": {
+      "auth_log_copy": [
+       "facts.command contains_any '/tmp'",
+       "facts.command contains_any 'auth.log'",
+       "facts.command contains_any 'cp'",
+       "facts.command contains_any 'sudo'",
+       "facts.image eq 'bash'",
+       "facts.image eq 'sudo'"
+      ]
+     }
+    },
+    "C4_rare_history": {
+     "check": "C4_rare_history",
+     "passed": true,
+     "detail": "",
+     "history_rate": 0.0,
+     "fired_on": []
+    },
+    "C5_agreement": {
+     "check": "C5_agreement",
+     "passed": false,
+     "detail": "no independent source flags the same events",
+     "agreed_with": []
+    },
+    "C5_any_source": {
+     "check": "C5_agreement",
+     "passed": false,
+     "detail": "no independent source flags the same events",
+     "agreed_with": []
+    }
+   },
+   "grade": {
+    "rules": 1,
+    "attack_windows": "1/8",
+    "benign_windows": "4/12",
+    "event_precision": 0.0,
+    "steps_detected": "0/36",
+    "steps": [
+     0,
+     36
+    ],
+    "good": false
+   },
+   "rule": {
+    "id": "llm.copy-auth-logs-to-tmp.1aee330795",
+    "technique": "T1005",
+    "name": "Copy authentication logs to a user\u2011writable directory",
+    "tactic": "collection",
+    "severity": 0.8,
+    "evidence": [
+     "ev_000017",
+     "ev_000018"
+    ],
+    "indicators": [
+     {
+      "name": "auth_log_copy",
+      "weight": 1.0,
+      "required": true,
+      "select": {
+       "claim_type": "process_create",
+       "any_of": [
+        {
+         "facts.image": "sudo",
+         "facts.command": {
+          "all_of": [
+           {
+            "contains_any": [
+             "cp"
+            ]
+           },
+           {
+            "contains_any": [
+             "auth.log"
+            ]
+           },
+           {
+            "contains_any": [
+             "/tmp"
+            ]
+           }
+          ]
+         }
+        },
+        {
+         "facts.image": "bash",
+         "facts.command": {
+          "all_of": [
+           {
+            "contains_any": [
+             "sudo"
+            ]
+           },
+           {
+            "contains_any": [
+             "cp"
+            ]
+           },
+           {
+            "contains_any": [
+             "auth.log"
+            ]
+           },
+           {
+            "contains_any": [
+             "/tmp"
+            ]
+           }
+          ]
+         }
+        }
+       ]
+      },
+      "aggregate": [
+       {
+        "as": "n",
+        "op": "count"
+       }
+      ],
+      "score": {
+       "op": "threshold",
+       "value": "n",
+       "at": 1
+      }
+     }
+    ],
+    "provenance": {
+     "authored_by": "argus.rules.induce",
+     "model": "gpt-oss:120b-cloud",
+     "origin": "run1_ws-dev01_1400#ws-dev01/2428@1791382477.698",
+     "round": 0,
+     "semantic_id": "1aee33fa8f30",
+     "evidence": [
+      "ev_000017",
+      "ev_000018"
+     ]
+    }
+   }
+  },
+  {
+   "uid": "llm.shadow-read-detection.c794b7815c",
+   "status": "retired",
+   "technique": "T1555.004",
+   "name": "Read /etc/shadow by non\u2011authenticator process",
+   "origin": {
+    "capture": "run1_ws-dev01_1300",
+    "recording": "run1",
+    "host": "ws-dev01",
+    "episode": "run1_ws-dev01_1300#ws-dev01/1200@1791378383.340",
+    "episode_root_image": "dash",
+    "round": 0
+   },
+   "reason": "analyst: analyst verdicts 0 malicious / 5 benign (mean 0.14, lower 0.00; all 5 alert(s) reviewed)",
+   "checks": {
+    "C1_valid": {
+     "check": "C1_valid",
+     "passed": true,
+     "detail": "",
+     "errors": []
+    },
+    "C2_own_evidence": {
+     "check": "C2_own_evidence",
+     "passed": true,
+     "detail": "",
+     "hard": [],
+     "soft": [
+      "excludes facts.image eq 'login', never seen in the origin capture",
+      "excludes facts.image eq 'sshd', never seen in the origin capture",
+      "excludes facts.image eq 'passwd', never seen in the origin capture",
+      "excludes facts.image eq 'su', never seen in the origin capture",
+      "excludes facts.image eq 'sudo', never seen in the origin capture",
+      "excludes facts.image eq 'systemd', never seen in the origin capture",
+      "excludes facts.image eq 'polkit', never seen in the origin capture"
+     ],
+     "causes": {},
+     "origin_score": 1.0
+    },
+    "C3_robust": {
+     "check": "C3_robust",
+     "passed": true,
+     "detail": "",
+     "lost_under": [],
+     "static_rename_survival": 0.0,
+     "static_brittle": true,
+     "breaking_literals": {
+      "shadow_file_read": [
+       "facts.file_path contains_any 'shadow'"
+      ]
+     }
+    },
+    "C4_rare_history": {
+     "check": "C4_rare_history",
+     "passed": true,
+     "detail": "",
+     "history_rate": 0.0,
+     "fired_on": []
+    },
+    "C5_agreement": {
+     "check": "C5_agreement",
+     "passed": false,
+     "detail": "no independent source flags the same events",
+     "agreed_with": []
+    },
+    "C5_any_source": {
+     "check": "C5_agreement",
+     "passed": false,
+     "detail": "no independent source flags the same events",
+     "agreed_with": []
+    }
+   },
+   "grade": {
+    "rules": 1,
+    "attack_windows": "0/8",
+    "benign_windows": "5/12",
+    "event_precision": 0.0,
+    "steps_detected": "0/36",
+    "steps": [
+     0,
+     36
+    ],
+    "good": false
+   },
+   "rule": {
+    "id": "llm.shadow-read-detection.c794b7815c",
+    "technique": "T1555.004",
+    "name": "Read /etc/shadow by non\u2011authenticator process",
+    "tactic": "credential-access",
+    "severity": 0.9,
+    "evidence": [
+     "ev_000038"
+    ],
+    "indicators": [
+     {
+      "name": "shadow_file_read",
+      "weight": 1.0,
+      "required": true,
+      "select": {
+       "claim_type": "file_read",
+       "facts.file_path": {
+        "contains_any": [
+         "shadow"
+        ]
+       },
+       "facts.image": {
+        "not_in": [
+         "login",
+         "sshd",
+         "passwd",
+         "su",
+         "sudo",
+         "systemd",
+         "polkit"
+        ]
+       }
+      },
+      "score": {
+       "op": "threshold",
+       "value": "n",
+       "at": 1
+      }
+     }
+    ],
+    "provenance": {
+     "authored_by": "argus.rules.induce",
+     "model": "gpt-oss:120b-cloud",
+     "origin": "run1_ws-dev01_1300#ws-dev01/1200@1791378383.340",
+     "round": 0,
+     "semantic_id": "c794b7af4f31",
+     "evidence": [
+      "ev_000038"
+     ]
+    }
+   }
+  },
+  {
+   "uid": "llm.user-writable-outbound-connection-b85e046a50.9811af6a50.r1",
+   "status": "retired",
+   "technique": "T1041",
+   "name": "Outbound Connection from User-Writable Binary",
+   "origin": {
+    "capture": "run1_ws-dev01_1230",
+    "recording": "run1",
+    "host": "ws-dev01",
+    "episode": "run1_ws-dev01_1230#ws-dev01/1157@1791377549.712",
+    "episode_root_image": "splunkd",
+    "round": 1
+   },
+   "reason": "duplicate of llm.llm-user-writable-outbound-connection-b85e043ed0.9811af3ed0.r1",
+   "checks": {
+    "C1_valid": {
+     "check": "C1_valid",
+     "passed": true,
+     "detail": "",
+     "errors": []
+    },
+    "C2_own_evidence": {
+     "check": "C2_own_evidence",
+     "passed": true,
+     "detail": "",
+     "hard": [],
+     "soft": [],
+     "causes": {},
+     "origin_score": 1.0
+    },
+    "C3_robust": {
+     "check": "C3_robust",
+     "passed": true,
+     "detail": "",
+     "lost_under": [],
+     "static_rename_survival": 1.0,
+     "static_brittle": false,
+     "breaking_literals": {}
+    },
+    "C4_rare_history": {
+     "check": "C4_rare_history",
+     "passed": true,
+     "detail": "",
+     "history_rate": 0.0,
+     "fired_on": []
+    },
+    "C5_agreement": {
+     "check": "C5_agreement",
+     "passed": false,
+     "detail": "no independent source flags the same events",
+     "agreed_with": []
+    },
+    "C5_any_source": {
+     "check": "C5_agreement",
+     "passed": false,
+     "detail": "no independent source flags the same events",
+     "agreed_with": []
+    }
+   },
+   "grade": {
+    "rules": 1,
+    "attack_windows": "4/8",
+    "benign_windows": "0/12",
+    "event_precision": 1.0,
+    "steps_detected": "4/36",
+    "steps": [
+     4,
+     36
+    ],
+    "good": true
+   },
+   "rule": {
+    "id": "llm.user-writable-outbound-connection-b85e046a50.9811af6a50.r1",
+    "technique": "T1041",
+    "name": "Outbound Connection from User-Writable Binary",
+    "tactic": "command-and-control",
+    "severity": 0.8,
+    "evidence": [
+     "ev_000011"
+    ],
+    "indicators": [
+     {
+      "name": "uw_outbound",
+      "weight": 1.0,
+      "required": true,
+      "select": {
+       "claim_type": "host_network_connection",
+       "lineage.user_writable": {
+        "truthy": true
+       },
+       "facts.direction": "outbound"
+      },
+      "score": {
+       "op": "threshold",
+       "value": "n",
+       "at": 1
+      }
+     }
+    ],
+    "provenance": {
+     "authored_by": "argus.rules.induce",
+     "model": "gpt-oss:120b-cloud",
+     "origin": "run1_ws-dev01_1230#ws-dev01/1157@1791377549.712",
+     "round": 1,
+     "semantic_id": "9811af59839a",
+     "evidence": [
+      "ev_000011"
+     ]
+    }
+   }
+  },
+  {
+   "uid": "llm.whoami-from-user-writable-ancestor.5f35e56a50",
+   "status": "retired",
+   "technique": "T1033",
+   "name": "User Identity Discovery via User-Writable Ancestor",
+   "origin": {
+    "capture": "run1_ws-dev01_1230",
+    "recording": "run1",
+    "host": "ws-dev01",
+    "episode": "run1_ws-dev01_1230#ws-dev01/1157@1791377549.712",
+    "episode_root_image": "splunkd",
+    "round": 0
+   },
+   "reason": "duplicate of llm.whoami-from-user-writable-ancestor.5f35e53ed0",
+   "checks": {
+    "C1_valid": {
+     "check": "C1_valid",
+     "passed": true,
+     "detail": "",
+     "errors": []
+    },
+    "C2_own_evidence": {
+     "check": "C2_own_evidence",
+     "passed": true,
+     "detail": "",
+     "hard": [],
+     "soft": [],
+     "causes": {},
+     "origin_score": 1.0
+    },
+    "C3_robust": {
+     "check": "C3_robust",
+     "passed": true,
+     "detail": "",
+     "lost_under": [],
+     "static_rename_survival": 0.0,
+     "static_brittle": true,
+     "breaking_literals": {
+      "whoami_uw": [
+       "facts.command contains_any 'whoami'"
+      ]
+     }
+    },
+    "C4_rare_history": {
+     "check": "C4_rare_history",
+     "passed": true,
+     "detail": "",
+     "history_rate": 0.0,
+     "fired_on": []
+    },
+    "C5_agreement": {
+     "check": "C5_agreement",
+     "passed": false,
+     "detail": "no independent source flags the same events",
+     "agreed_with": []
+    },
+    "C5_any_source": {
+     "check": "C5_agreement",
+     "passed": false,
+     "detail": "no independent source flags the same events",
+     "agreed_with": []
+    }
+   },
+   "grade": {
+    "rules": 1,
+    "attack_windows": "4/8",
+    "benign_windows": "0/12",
+    "event_precision": 1.0,
+    "steps_detected": "4/36",
+    "steps": [
+     4,
+     36
+    ],
+    "good": true
+   },
+   "rule": {
+    "id": "llm.whoami-from-user-writable-ancestor.5f35e56a50",
+    "technique": "T1033",
+    "name": "User Identity Discovery via User-Writable Ancestor",
+    "tactic": "discovery",
+    "severity": 0.6,
+    "evidence": [
+     "ev_000015"
+    ],
+    "indicators": [
+     {
+      "name": "whoami_uw",
+      "weight": 1.0,
+      "required": true,
+      "select": {
+       "claim_type": "process_create",
+       "facts.command": {
+        "contains_any": [
+         "whoami"
+        ]
+       },
+       "lineage.ancestor_user_writable": {
+        "truthy": true
+       }
+      },
+      "score": {
+       "op": "threshold",
+       "value": "n",
+       "at": 1
+      }
+     }
+    ],
+    "provenance": {
+     "authored_by": "argus.rules.induce",
+     "model": "gpt-oss:120b-cloud",
+     "origin": "run1_ws-dev01_1230#ws-dev01/1157@1791377549.712",
+     "round": 0,
+     "semantic_id": "5f35e5bb818c",
+     "evidence": [
+      "ev_000015"
+     ]
+    }
+   }
+  },
+  {
+   "uid": "llm.clear-bash-history.547eba2a21",
+   "status": "rejected",
+   "technique": "T1070.003",
+   "name": "Shell clears bash history and unsets HISTFILE",
+   "origin": {
+    "capture": "run1_app01_1230",
+    "recording": "run1",
+    "host": "app01",
+    "episode": "run1_app01_1230#app01/1094@1791377547.402",
+    "episode_root_image": "splunkd",
+    "round": 0
+   },
+   "reason": "repaired: superseded by llm.llm-user-writable-outbound-server-c5a7a22a21.174bd32a21.r1,llm.llm-clear-bash-history-547eba2a21.f68ca72a21.r1,llm.llm-discovery-from-user-writable-ancestor-e333f0.b528532a21.r1",
+   "checks": {
+    "C1_valid": {
+     "check": "C1_valid",
+     "passed": false,
+     "detail": "indicator[0].score: references undefined value '1'",
+     "errors": [
+      "indicator[0].score: references undefined value '1'"
+     ]
+    }
+   },
+   "grade": null,
+   "rule": {
+    "id": "llm.clear-bash-history.547eba2a21",
+    "technique": "T1070.003",
+    "name": "Shell clears bash history and unsets HISTFILE",
+    "tactic": "defense-evasion",
+    "severity": 0.6,
+    "evidence": [
+     "ev_000027"
+    ],
+    "indicators": [
+     {
+      "name": "history_erase_command",
+      "weight": 1.0,
+      "required": true,
+      "select": {
+       "claim_type": "process_create",
+       "facts.image": [
+        "dash"
+       ],
+       "facts.command": {
+        "contains_any": [
+         "HISTFILE",
+         "bash_history"
+        ]
+       }
+      },
+      "score": {
+       "op": "threshold",
+       "value": "1",
+       "at": 1
+      }
+     }
+    ],
+    "provenance": {
+     "authored_by": "argus.rules.induce",
+     "model": "gpt-oss:120b-cloud",
+     "origin": "run1_app01_1230#app01/1094@1791377547.402",
+     "round": 0,
+     "semantic_id": "547eba5ecec9",
+     "evidence": [
+      "ev_000027"
+     ]
+    }
+   }
+  },
+  {
+   "uid": "llm.credential-dump-etc-passwd.69392085b1",
+   "status": "rejected",
+   "technique": "T1003.008",
+   "name": "Read /etc/master.passwd via sudo",
+   "origin": {
+    "capture": "run1_app01_1330",
+    "recording": "run1",
+    "host": "app01",
+    "episode": "run1_app01_1330#app01/2364@1791380894.309",
+    "episode_root_image": "dash",
+    "round": 0
+   },
+   "reason": "repaired: superseded by llm.credential-dump-etc-master-passwd.60d65985b1.r1",
+   "checks": {
+    "C1_valid": {
+     "check": "C1_valid",
+     "passed": true,
+     "detail": "",
+     "errors": []
+    },
+    "C2_own_evidence": {
+     "check": "C2_own_evidence",
+     "passed": false,
+     "detail": "[etc-passwd-read] requires facts.file_path contains_any '/etc/master.passwd': no claim of the origin capture satisfies it (wrong_field); [etc-passwd-read] requires facts.image eq 'cat': no claim of the origin capture satisfies it (not_observed)",
+     "hard": [
+      "[etc-passwd-read] requires facts.file_path contains_any '/etc/master.passwd': no claim of the origin capture satisfies it (wrong_field)",
+      "[etc-passwd-read] requires facts.image eq 'cat': no claim of the origin capture satisfies it (not_observed)",
+      "[etc-passwd-read] requires behaviour.tactics eq 'credential-access': no claim of the origin capture satisfies it (not_observed)"
+     ],
+     "soft": [],
+     "causes": {
+      "wrong_field": 1,
+      "not_observed": 2
+     },
+     "origin_score": 0.0
+    },
+    "C3_robust": {
+     "check": "C3_robust",
+     "passed": false,
+     "detail": "not applicable: the rule does not fire",
+     "lost_under": [],
+     "not_applicable": true
+    }
+   },
+   "grade": null,
+   "rule": {
+    "id": "llm.credential-dump-etc-passwd.69392085b1",
+    "technique": "T1003.008",
+    "name": "Read /etc/master.passwd via sudo",
+    "tactic": "credential-access",
+    "severity": 0.9,
+    "evidence": [
+     "ev_000605",
+     "ev_000606"
+    ],
+    "indicators": [
+     {
+      "name": "etc-passwd-read",
+      "weight": 1.0,
+      "required": true,
+      "select": {
+       "claim_type": "file_read",
+       "facts.file_path": {
+        "contains_any": [
+         "/etc/master.passwd"
+        ]
+       },
+       "facts.image": [
+        "cat"
+       ],
+       "behaviour.tactics": {
+        "in": [
+         "credential-access"
+        ]
+       }
+      },
+      "aggregate": [
+       {
+        "as": "n",
+        "op": "count"
+       }
+      ],
+      "score": {
+       "op": "threshold",
+       "value": "n",
+       "at": 1
+      }
+     }
+    ],
+    "provenance": {
+     "authored_by": "argus.rules.induce",
+     "model": "gpt-oss:120b-cloud",
+     "origin": "run1_app01_1330#app01/2364@1791380894.309",
+     "round": 0,
+     "semantic_id": "693920a76932",
+     "evidence": [
+      "ev_000605",
+      "ev_000606"
+     ]
+    }
+   }
+  },
+  {
+   "uid": "llm.credential-dump-master-passwd.b0f086460c",
+   "status": "rejected",
+   "technique": "T1003.008",
+   "name": "Read /etc/master.passwd (credential dumping)",
+   "origin": {
+    "capture": "run1_ws-dev01_1330",
+    "recording": "run1",
+    "host": "ws-dev01",
+    "episode": "run1_ws-dev01_1330#ws-dev01/2413@1791380888.731",
+    "episode_root_image": "dash",
+    "round": 0
+   },
+   "reason": "repaired: superseded by llm.llm-credential-dump-master-passwd-b0f086460c.dfe510460c.r1",
+   "checks": {
+    "C1_valid": {
+     "check": "C1_valid",
+     "passed": false,
+     "detail": "indicator[0].score: references undefined value '1'",
+     "errors": [
+      "indicator[0].score: references undefined value '1'"
+     ]
+    }
+   },
+   "grade": null,
+   "rule": {
+    "id": "llm.credential-dump-master-passwd.b0f086460c",
+    "technique": "T1003.008",
+    "name": "Read /etc/master.passwd (credential dumping)",
+    "tactic": "credential-access",
+    "severity": 0.9,
+    "evidence": [
+     "ev_000629"
+    ],
+    "indicators": [
+     {
+      "name": "access_master_passwd",
+      "weight": 1.0,
+      "required": true,
+      "select": {
+       "claim_type": "process_create",
+       "facts.command": {
+        "contains_any": [
+         "master.passwd"
+        ]
+       },
+       "behaviour.tactics": {
+        "in": [
+         "credential-access"
+        ]
+       }
+      },
+      "score": {
+       "op": "threshold",
+       "value": "1",
+       "at": 1
+      }
+     }
+    ],
+    "provenance": {
+     "authored_by": "argus.rules.induce",
+     "model": "gpt-oss:120b-cloud",
+     "origin": "run1_ws-dev01_1330#ws-dev01/2413@1791380888.731",
+     "round": 0,
+     "semantic_id": "b0f086306a73",
+     "evidence": [
+      "ev_000629"
+     ]
+    }
+   }
+  },
+  {
+   "uid": "llm.credential-dump-passwd.414cfd5de7",
+   "status": "rejected",
+   "technique": "T1003.001",
+   "name": "Read /etc/passwd and write to user-writable location",
+   "origin": {
+    "capture": "run1_web01_1330",
+    "recording": "run1",
+    "host": "web01",
+    "episode": "run1_web01_1330#web01/2397@1791380790.049",
+    "episode_root_image": "dash",
+    "round": 0
+   },
+   "reason": "repaired: superseded by llm.llm-credential-dump-passwd-414cfd5de7.0d5af25de7.r1",
+   "checks": {
+    "C1_valid": {
+     "check": "C1_valid",
+     "passed": true,
+     "detail": "",
+     "errors": []
+    },
+    "C2_own_evidence": {
+     "check": "C2_own_evidence",
+     "passed": false,
+     "detail": "[passwd-to-tmp] requires behaviour.tactics eq 'credential-access': no claim of the origin capture satisfies it (not_observed)",
+     "hard": [
+      "[passwd-to-tmp] requires behaviour.tactics eq 'credential-access': no claim of the origin capture satisfies it (not_observed)"
+     ],
+     "soft": [],
+     "causes": {
+      "not_observed": 1
+     },
+     "origin_score": 0.0
+    },
+    "C3_robust": {
+     "check": "C3_robust",
+     "passed": false,
+     "detail": "not applicable: the rule does not fire",
+     "lost_under": [],
+     "not_applicable": true
+    }
+   },
+   "grade": null,
+   "rule": {
+    "id": "llm.credential-dump-passwd.414cfd5de7",
+    "technique": "T1003.001",
+    "name": "Read /etc/passwd and write to user-writable location",
+    "tactic": "credential-access",
+    "severity": 0.7,
+    "evidence": [
+     "ev_000606"
+    ],
+    "indicators": [
+     {
+      "name": "passwd-to-tmp",
+      "weight": 1.0,
+      "required": true,
+      "select": {
+       "claim_type": "process_create",
+       "facts.command": {
+        "all_of": [
+         {
+          "contains_any": [
+           "etc/passwd"
+          ]
+         },
+         {
+          "contains_any": [
+           "/tmp/"
+          ]
+         }
+        ]
+       },
+       "behaviour.tactics": {
+        "in": [
+         "credential-access"
+        ]
+       }
+      },
+      "score": {
+       "op": "threshold",
+       "value": "n",
+       "at": 1
+      }
+     }
+    ],
+    "provenance": {
+     "authored_by": "argus.rules.induce",
+     "model": "gpt-oss:120b-cloud",
+     "origin": "run1_web01_1330#web01/2397@1791380790.049",
+     "round": 0,
+     "semantic_id": "414cfd3ccddb",
+     "evidence": [
+      "ev_000606"
+     ]
+    }
+   }
+  },
+  {
+   "uid": "llm.credential-dump-passwd.e29b984306",
+   "status": "rejected",
+   "technique": "T1003.001",
+   "name": "Read /etc/passwd and write to temporary location",
+   "origin": {
+    "capture": "run1_ws-fin01_1330",
+    "recording": "run1",
+    "host": "ws-fin01",
+    "episode": "run1_ws-fin01_1330#ws-fin01/12754@1791380833.890",
+    "episode_root_image": "dash",
+    "round": 0
+   },
+   "reason": "repaired: superseded by llm.llm-credential-dump-passwd-e29b984306.71ac014306.r1",
+   "checks": {
+    "C1_valid": {
+     "check": "C1_valid",
+     "passed": true,
+     "detail": "",
+     "errors": []
+    },
+    "C2_own_evidence": {
+     "check": "C2_own_evidence",
+     "passed": false,
+     "detail": "[suspicious_passwd_dump] requires behaviour.tactics eq 'credential-access': no claim of the origin capture satisfies it (not_observed)",
+     "hard": [
+      "[suspicious_passwd_dump] requires behaviour.tactics eq 'credential-access': no claim of the origin capture satisfies it (not_observed)"
+     ],
+     "soft": [],
+     "causes": {
+      "not_observed": 1
+     },
+     "origin_score": 0.0
+    },
+    "C3_robust": {
+     "check": "C3_robust",
+     "passed": false,
+     "detail": "not applicable: the rule does not fire",
+     "lost_under": [],
+     "not_applicable": true
+    }
+   },
+   "grade": null,
+   "rule": {
+    "id": "llm.credential-dump-passwd.e29b984306",
+    "technique": "T1003.001",
+    "name": "Read /etc/passwd and write to temporary location",
+    "tactic": "credential-access",
+    "severity": 0.8,
+    "evidence": [
+     "ev_000574",
+     "ev_000575",
+     "ev_000576"
+    ],
+    "indicators": [
+     {
+      "name": "suspicious_passwd_dump",
+      "weight": 1.0,
+      "required": true,
+      "select": {
+       "claim_type": "process_create",
+       "any_of": [
+        {
+         "facts.image": "cat"
+        },
+        {
+         "facts.image": "sh"
+        }
+       ],
+       "facts.command": {
+        "all_of": [
+         {
+          "contains_any": [
+           "passwd"
+          ]
+         },
+         {
+          "contains_any": [
+           "/tmp"
+          ]
+         }
+        ]
+       },
+       "behaviour.tactics": {
+        "in": [
+         "credential-access"
+        ]
+       }
+      },
+      "aggregate": [
+       {
+        "as": "n",
+        "op": "count"
+       }
+      ],
+      "score": {
+       "op": "threshold",
+       "value": "n",
+       "at": 1
+      }
+     }
+    ],
+    "provenance": {
+     "authored_by": "argus.rules.induce",
+     "model": "gpt-oss:120b-cloud",
+     "origin": "run1_ws-fin01_1330#ws-fin01/12754@1791380833.890",
+     "round": 0,
+     "semantic_id": "e29b9845de91",
+     "evidence": [
+      "ev_000574",
+      "ev_000575",
+      "ev_000576"
+     ]
+    }
+   }
+  },
+  {
+   "uid": "llm.discovery-from-user-writable-parent.e333f02a21",
+   "status": "rejected",
+   "technique": "T1082",
+   "name": "Discovery commands executed by child of user\u2011writable process",
+   "origin": {
+    "capture": "run1_app01_1230",
+    "recording": "run1",
+    "host": "app01",
+    "episode": "run1_app01_1230#app01/1094@1791377547.402",
+    "episode_root_image": "splunkd",
+    "round": 0
+   },
+   "reason": "repaired: superseded by llm.llm-user-writable-outbound-server-c5a7a22a21.174bd32a21.r1,llm.llm-clear-bash-history-547eba2a21.f68ca72a21.r1,llm.llm-discovery-from-user-writable-ancestor-e333f0.b528532a21.r1",
+   "checks": {
+    "C1_valid": {
+     "check": "C1_valid",
+     "passed": false,
+     "detail": "indicator[0].score: references undefined value '1'",
+     "errors": [
+      "indicator[0].score: references undefined value '1'"
+     ]
+    }
+   },
+   "grade": null,
+   "rule": {
+    "id": "llm.discovery-from-user-writable-parent.e333f02a21",
+    "technique": "T1082",
+    "name": "Discovery commands executed by child of user\u2011writable process",
+    "tactic": "discovery",
+    "severity": 0.6,
+    "evidence": [
+     "ev_000031"
+    ],
+    "indicators": [
+     {
+      "name": "whoami_from_user_writable_parent",
+      "weight": 1.0,
+      "required": true,
+      "select": {
+       "claim_type": "process_create",
+       "lineage.parent_user_writable": {
+        "truthy": true
+       },
+       "facts.command": {
+        "contains_any": [
+         "whoami"
+        ]
+       }
+      },
+      "score": {
+       "op": "threshold",
+       "value": "1",
+       "at": 1
+      }
+     }
+    ],
+    "provenance": {
+     "authored_by": "argus.rules.induce",
+     "model": "gpt-oss:120b-cloud",
+     "origin": "run1_app01_1230#app01/1094@1791377547.402",
+     "round": 0,
+     "semantic_id": "e333f0534405",
+     "evidence": [
+      "ev_000031"
+     ]
+    }
+   }
+  },
+  {
+   "uid": "llm.install-iproute2-apt-get.adfcdace38.r1",
+   "status": "rejected",
+   "technique": "T1588.002",
+   "name": "Install iproute2 via package manager",
+   "origin": {
+    "capture": "run1_ws-dev01_1330",
+    "recording": "run1",
+    "host": "ws-dev01",
+    "episode": "run1_ws-dev01_1330#ws-dev01/2404@1791380699.574",
+    "episode_root_image": "dash",
+    "round": 1
+   },
+   "reason": "C4_rare_history: fires on 50% of the host's other captures (max 25%)",
+   "checks": {
+    "C1_valid": {
+     "check": "C1_valid",
+     "passed": true,
+     "detail": "",
+     "errors": []
+    },
+    "C2_own_evidence": {
+     "check": "C2_own_evidence",
+     "passed": true,
+     "detail": "",
+     "hard": [],
+     "soft": [],
+     "causes": {},
+     "origin_score": 1.0
+    },
+    "C3_robust": {
+     "check": "C3_robust",
+     "passed": true,
+     "detail": "",
+     "lost_under": [],
+     "static_rename_survival": 0.0,
+     "static_brittle": true,
+     "breaking_literals": {
+      "apt-get-install-iproute2": [
+       "facts.command contains_any 'apt-get'",
+       "facts.command contains_any 'install'",
+       "facts.command contains_any 'iproute2'",
+       "facts.image eq 'bash'",
+       "facts.image eq 'dash'",
+       "facts.image eq 'sh'"
+      ]
+     }
+    },
+    "C4_rare_history": {
+     "check": "C4_rare_history",
+     "passed": false,
+     "detail": "fires on 50% of the host's other captures (max 25%)",
+     "history_rate": 0.5,
+     "fired_on": [
+      "run1_ws-dev01_1200",
+      "run1_ws-dev01_1300"
+     ]
+    },
+    "C5_agreement": {
+     "check": "C5_agreement",
+     "passed": false,
+     "detail": "no independent source flags the same events",
+     "agreed_with": []
+    },
+    "C5_any_source": {
+     "check": "C5_agreement",
+     "passed": false,
+     "detail": "no independent source flags the same events",
+     "agreed_with": []
+    }
+   },
+   "grade": {
+    "rules": 1,
+    "attack_windows": "4/8",
+    "benign_windows": "8/12",
+    "event_precision": 0.1667,
+    "steps_detected": "4/36",
+    "steps": [
+     4,
+     36
+    ],
+    "good": false
+   },
+   "rule": {
+    "id": "llm.install-iproute2-apt-get.adfcdace38.r1",
+    "technique": "T1588.002",
+    "name": "Install iproute2 via package manager",
+    "tactic": "defense-evasion",
+    "severity": 0.6,
+    "evidence": [
+     "ev_000620"
+    ],
+    "indicators": [
+     {
+      "name": "apt-get-install-iproute2",
+      "weight": 1.0,
+      "required": true,
+      "select": {
+       "claim_type": "process_create",
+       "facts.image": [
+        "dash",
+        "sh",
+        "bash"
+       ],
+       "facts.command": {
+        "contains_any": [
+         "apt-get",
+         "install",
+         "iproute2"
+        ]
+       }
+      },
+      "aggregate": [
+       {
+        "as": "n",
+        "op": "count"
+       }
+      ],
+      "score": {
+       "op": "threshold",
+       "value": "n",
+       "at": 1
+      }
+     }
+    ],
+    "provenance": {
+     "authored_by": "argus.rules.induce",
+     "model": "gpt-oss:120b-cloud",
+     "origin": "run1_ws-dev01_1330#ws-dev01/2404@1791380699.574",
+     "round": 1,
+     "semantic_id": "adfcda59a724",
+     "evidence": [
+      "ev_000620"
+     ]
+    }
+   }
+  },
+  {
+   "uid": "llm.install-iproute2-apt.4452b6ce38",
+   "status": "rejected",
+   "technique": "T1588.002",
+   "name": "Package Installation of iproute2 via apt-get",
+   "origin": {
+    "capture": "run1_ws-dev01_1330",
+    "recording": "run1",
+    "host": "ws-dev01",
+    "episode": "run1_ws-dev01_1330#ws-dev01/2404@1791380699.574",
+    "episode_root_image": "dash",
+    "round": 0
+   },
+   "reason": "repaired: superseded by llm.install-iproute2-apt-get.adfcdace38.r1",
+   "checks": {
+    "C1_valid": {
+     "check": "C1_valid",
+     "passed": true,
+     "detail": "",
+     "errors": []
+    },
+    "C2_own_evidence": {
+     "check": "C2_own_evidence",
+     "passed": false,
+     "detail": "[apt-get-install-iproute2] none of facts.image eq 'sh', facts.image eq 'bash' occurs in the origin capture",
+     "hard": [
+      "[apt-get-install-iproute2] none of facts.image eq 'sh', facts.image eq 'bash' occurs in the origin capture"
+     ],
+     "soft": [],
+     "causes": {
+      "partial": 1
+     },
+     "origin_score": 0.0
+    },
+    "C3_robust": {
+     "check": "C3_robust",
+     "passed": false,
+     "detail": "not applicable: the rule does not fire",
+     "lost_under": [],
+     "not_applicable": true
+    }
+   },
+   "grade": null,
+   "rule": {
+    "id": "llm.install-iproute2-apt.4452b6ce38",
+    "technique": "T1588.002",
+    "name": "Package Installation of iproute2 via apt-get",
+    "tactic": "credential-access",
+    "severity": 0.6,
+    "evidence": [
+     "ev_000620"
+    ],
+    "indicators": [
+     {
+      "name": "apt-get-install-iproute2",
+      "weight": 1.0,
+      "required": true,
+      "select": {
+       "claim_type": "process_create",
+       "facts.image": [
+        "sh",
+        "bash"
+       ],
+       "facts.command": {
+        "contains_any": [
+         "apt-get",
+         "install",
+         "iproute2"
+        ]
+       }
+      },
+      "aggregate": [
+       {
+        "as": "n",
+        "op": "count"
+       }
+      ],
+      "score": {
+       "op": "threshold",
+       "value": "n",
+       "at": 1
+      }
+     }
+    ],
+    "provenance": {
+     "authored_by": "argus.rules.induce",
+     "model": "gpt-oss:120b-cloud",
+     "origin": "run1_ws-dev01_1330#ws-dev01/2404@1791380699.574",
+     "round": 0,
+     "semantic_id": "4452b6c65cd1",
+     "evidence": [
+      "ev_000620"
+     ]
+    }
+   }
+  },
+  {
+   "uid": "llm.linux-etc-passwd-temp-dump.4fd26e7236",
+   "status": "rejected",
+   "technique": "T1003.001",
+   "name": "Linux /etc/passwd credential dump to temporary file",
+   "origin": {
+    "capture": "run1_app01_1330",
+    "recording": "run1",
+    "host": "app01",
+    "episode": "run1_app01_1330#app01/2359@1791380802.237",
+    "episode_root_image": "dash",
+    "round": 0
+   },
+   "reason": "C4_rare_history: fires on 75% of the host's other captures (max 25%)",
+   "checks": {
+    "C1_valid": {
+     "check": "C1_valid",
+     "passed": true,
+     "detail": "",
+     "errors": []
+    },
+    "C2_own_evidence": {
+     "check": "C2_own_evidence",
+     "passed": true,
+     "detail": "",
+     "hard": [],
+     "soft": [],
+     "causes": {},
+     "origin_score": 1.0
+    },
+    "C3_robust": {
+     "check": "C3_robust",
+     "passed": true,
+     "detail": "",
+     "lost_under": [],
+     "static_rename_survival": 0.0,
+     "static_brittle": true,
+     "breaking_literals": {
+      "dump_passwd_to_tmp": [
+       "facts.command contains_any '/tmp/'",
+       "facts.command contains_any 'passwd'"
+      ]
+     }
+    },
+    "C4_rare_history": {
+     "check": "C4_rare_history",
+     "passed": false,
+     "detail": "fires on 75% of the host's other captures (max 25%)",
+     "history_rate": 0.75,
+     "fired_on": [
+      "run1_app01_1200",
+      "run1_app01_1230",
+      "run1_app01_1400"
+     ]
+    },
+    "C5_agreement": {
+     "check": "C5_agreement",
+     "passed": true,
+     "detail": "",
+     "agreed_with": [
+      "hand:TA0007@run1_app01_1330",
+      "hand:KILLCHAIN@run1_ws-fin01_1330"
+     ]
+    },
+    "C5_any_source": {
+     "check": "C5_agreement",
+     "passed": true,
+     "detail": "",
+     "agreed_with": [
+      "hand:TA0007@run1_app01_1330",
+      "hand:KILLCHAIN@run1_ws-fin01_1330"
+     ]
+    }
+   },
+   "grade": {
+    "rules": 1,
+    "attack_windows": "5/8",
+    "benign_windows": "8/12",
+    "event_precision": 0.2469,
+    "steps_detected": "8/36",
+    "steps": [
+     8,
+     36
+    ],
+    "good": false
+   },
+   "rule": {
+    "id": "llm.linux-etc-passwd-temp-dump.4fd26e7236",
+    "technique": "T1003.001",
+    "name": "Linux /etc/passwd credential dump to temporary file",
+    "tactic": "credential-access",
+    "severity": 0.7,
+    "evidence": [
+     "ev_000600"
+    ],
+    "indicators": [
+     {
+      "name": "dump_passwd_to_tmp",
+      "weight": 1.0,
+      "required": true,
+      "select": {
+       "claim_type": "process_create",
+       "facts.command": {
+        "contains_any": [
+         "passwd",
+         "/tmp/"
+        ]
+       }
+      },
+      "score": {
+       "op": "threshold",
+       "value": "n",
+       "at": 1
+      }
+     }
+    ],
+    "provenance": {
+     "authored_by": "argus.rules.induce",
+     "model": "gpt-oss:120b-cloud",
+     "origin": "run1_app01_1330#app01/2359@1791380802.237",
+     "round": 0,
+     "semantic_id": "4fd26e376885",
+     "evidence": [
+      "ev_000600"
+     ]
+    }
+   }
+  },
+  {
+   "uid": "llm.llm-credential-dump-master-passwd-b0f086460c.dfe510460c.r1",
+   "status": "rejected",
+   "technique": "T1003.008",
+   "name": "Read /etc/master.passwd (credential dumping)",
+   "origin": {
+    "capture": "run1_ws-dev01_1330",
+    "recording": "run1",
+    "host": "ws-dev01",
+    "episode": "run1_ws-dev01_1330#ws-dev01/2413@1791380888.731",
+    "episode_root_image": "dash",
+    "round": 1
+   },
+   "reason": "repaired: superseded by llm.llm-llm-credential-dump-master-passwd-b0f086460c.18b09c460c.r2",
+   "checks": {
+    "C1_valid": {
+     "check": "C1_valid",
+     "passed": false,
+     "detail": "indicator[0].score: references undefined value 1",
+     "errors": [
+      "indicator[0].score: references undefined value 1"
+     ]
+    }
+   },
+   "grade": null,
+   "rule": {
+    "id": "llm.llm-credential-dump-master-passwd-b0f086460c.dfe510460c.r1",
+    "technique": "T1003.008",
+    "name": "Read /etc/master.passwd (credential dumping)",
+    "tactic": "credential-access",
+    "severity": 0.9,
+    "evidence": [
+     "ev_000629"
+    ],
+    "indicators": [
+     {
+      "name": "access_master_passwd",
+      "weight": 1.0,
+      "required": true,
+      "select": {
+       "claim_type": "process_create",
+       "facts.command": {
+        "contains_any": [
+         "master.passwd"
+        ]
+       }
+      },
+      "score": {
+       "op": "threshold",
+       "value": 1,
+       "at": 1
+      }
+     }
+    ],
+    "provenance": {
+     "authored_by": "argus.rules.induce",
+     "model": "gpt-oss:120b-cloud",
+     "origin": "run1_ws-dev01_1330#ws-dev01/2413@1791380888.731",
+     "round": 1,
+     "semantic_id": "dfe5100fee8b",
+     "evidence": [
+      "ev_000629"
+     ]
+    }
+   }
+  },
+  {
+   "uid": "llm.llm-credential-dump-passwd-e29b984306.71ac014306.r1",
+   "status": "rejected",
+   "technique": "T1003.001",
+   "name": "Read /etc/passwd and write to temporary location",
+   "origin": {
+    "capture": "run1_ws-fin01_1330",
+    "recording": "run1",
+    "host": "ws-fin01",
+    "episode": "run1_ws-fin01_1330#ws-fin01/12754@1791380833.890",
+    "episode_root_image": "dash",
+    "round": 1
+   },
+   "reason": "repaired: superseded by llm.llm-llm-credential-dump-passwd-e29b984306-71ac01.831b8b4306.r2",
+   "checks": {
+    "C1_valid": {
+     "check": "C1_valid",
+     "passed": true,
+     "detail": "",
+     "errors": []
+    },
+    "C2_own_evidence": {
+     "check": "C2_own_evidence",
+     "passed": false,
+     "detail": "[suspicious_passwd_dump] is required but selects no claim of the origin capture",
+     "hard": [
+      "[suspicious_passwd_dump] is required but selects no claim of the origin capture"
+     ],
+     "soft": [],
+     "causes": {
+      "jointly_unsatisfied": 1
+     },
+     "origin_score": 0.0
+    },
+    "C3_robust": {
+     "check": "C3_robust",
+     "passed": false,
+     "detail": "not applicable: the rule does not fire",
+     "lost_under": [],
+     "not_applicable": true
+    }
+   },
+   "grade": null,
+   "rule": {
+    "id": "llm.llm-credential-dump-passwd-e29b984306.71ac014306.r1",
+    "technique": "T1003.001",
+    "name": "Read /etc/passwd and write to temporary location",
+    "tactic": "credential-access",
+    "severity": 0.8,
+    "evidence": [
+     "ev_000574",
+     "ev_000575",
+     "ev_000576"
+    ],
+    "indicators": [
+     {
+      "name": "suspicious_passwd_dump",
+      "weight": 1.0,
+      "required": true,
+      "select": {
+       "claim_type": "process_create",
+       "any_of": [
+        {
+         "facts.image": "cat"
+        },
+        {
+         "facts.image": "sh"
+        }
+       ],
+       "facts.command": {
+        "all_of": [
+         {
+          "contains_any": [
+           "passwd"
+          ]
+         },
+         {
+          "contains_any": [
+           "/tmp"
+          ]
+         }
+        ]
+       }
+      },
+      "aggregate": [
+       {
+        "as": "n",
+        "op": "count"
+       }
+      ],
+      "score": {
+       "op": "threshold",
+       "value": "n",
+       "at": 1
+      }
+     }
+    ],
+    "provenance": {
+     "authored_by": "argus.rules.induce",
+     "model": "gpt-oss:120b-cloud",
+     "origin": "run1_ws-fin01_1330#ws-fin01/12754@1791380833.890",
+     "round": 1,
+     "semantic_id": "71ac010cb582",
+     "evidence": [
+      "ev_000574",
+      "ev_000575",
+      "ev_000576"
+     ]
+    }
+   }
+  },
+  {
+   "uid": "llm.shadow-file-read.27bd464f25",
+   "status": "rejected",
+   "technique": "T1552.004",
+   "name": "Read of /etc/shadow by non-authentication process",
+   "origin": {
+    "capture": "run1_ws-fin01_1200",
+    "recording": "run1",
+    "host": "ws-fin01",
+    "episode": "run1_ws-fin01_1200#ws-fin01/10789@1791374838.175",
+    "episode_root_image": "dash",
+    "round": 0
+   },
+   "reason": "C4_rare_history: fires on 100% of the host's other captures (max 25%)",
+   "checks": {
+    "C1_valid": {
+     "check": "C1_valid",
+     "passed": true,
+     "detail": "",
+     "errors": []
+    },
+    "C2_own_evidence": {
+     "check": "C2_own_evidence",
+     "passed": true,
+     "detail": "",
+     "hard": [],
+     "soft": [
+      "excludes facts.image eq 'login', never seen in the origin capture",
+      "excludes facts.image eq 'sshd', never seen in the origin capture",
+      "excludes facts.image eq 'su', never seen in the origin capture",
+      "excludes facts.image eq 'passwd', never seen in the origin capture",
+      "excludes facts.image eq 'pam_unix', never seen in the origin capture",
+      "excludes facts.image eq 'systemd', never seen in the origin capture",
+      "excludes facts.image eq 'init', never seen in the origin capture"
+     ],
+     "causes": {},
+     "origin_score": 1.0
+    },
+    "C3_robust": {
+     "check": "C3_robust",
+     "passed": true,
+     "detail": "",
+     "lost_under": [],
+     "static_rename_survival": 0.0,
+     "static_brittle": true,
+     "breaking_literals": {
+      "shadow-read": [
+       "facts.file_path eq '/etc/shadow'"
+      ]
+     }
+    },
+    "C4_rare_history": {
+     "check": "C4_rare_history",
+     "passed": false,
+     "detail": "fires on 100% of the host's other captures (max 25%)",
+     "history_rate": 1.0,
+     "fired_on": [
+      "run1_ws-fin01_1230",
+      "run1_ws-fin01_1300",
+      "run1_ws-fin01_1330",
+      "run1_ws-fin01_1400"
+     ]
+    },
+    "C5_agreement": {
+     "check": "C5_agreement",
+     "passed": false,
+     "detail": "no independent source flags the same events",
+     "agreed_with": []
+    },
+    "C5_any_source": {
+     "check": "C5_agreement",
+     "passed": false,
+     "detail": "no independent source flags the same events",
+     "agreed_with": []
+    }
+   },
+   "grade": {
+    "rules": 1,
+    "attack_windows": "7/8",
+    "benign_windows": "12/12",
+    "event_precision": 0.0444,
+    "steps_detected": "4/36",
+    "steps": [
+     4,
+     36
+    ],
+    "good": false
+   },
+   "rule": {
+    "id": "llm.shadow-file-read.27bd464f25",
+    "technique": "T1552.004",
+    "name": "Read of /etc/shadow by non-authentication process",
+    "tactic": "credential-access",
+    "severity": 0.8,
+    "evidence": [
+     "ev_000843"
+    ],
+    "indicators": [
+     {
+      "name": "shadow-read",
+      "weight": 1.0,
+      "required": true,
+      "select": {
+       "claim_type": "file_read",
+       "facts.file_path": "/etc/shadow",
+       "facts.image": {
+        "not_in": [
+         "login",
+         "sshd",
+         "su",
+         "passwd",
+         "pam_unix",
+         "systemd",
+         "init"
+        ]
+       }
+      },
+      "aggregate": [
+       {
+        "as": "n",
+        "op": "count"
+       }
+      ],
+      "score": {
+       "op": "threshold",
+       "value": "n",
+       "at": 1
+      }
+     }
+    ],
+    "provenance": {
+     "authored_by": "argus.rules.induce",
+     "model": "gpt-oss:120b-cloud",
+     "origin": "run1_ws-fin01_1200#ws-fin01/10789@1791374838.175",
+     "round": 0,
+     "semantic_id": "27bd46ffdf10",
+     "evidence": [
+      "ev_000843"
+     ]
+    }
+   }
+  },
+  {
+   "uid": "llm.user-writable-outbound-connection-c031a58671.5f1dd48671.r1",
+   "status": "rejected",
+   "technique": "T1041",
+   "name": "User\u2011writable executable makes outbound network connection",
+   "origin": {
+    "capture": "run1_ws-fin01_1230",
+    "recording": "run1",
+    "host": "ws-fin01",
+    "episode": "run1_ws-fin01_1230#ws-fin01/11544@1791377551.823",
+    "episode_root_image": "splunkd",
+    "round": 1
+   },
+   "reason": "repaired: superseded by llm.user-writable-outbound-connection.89fb558671.r2",
+   "checks": {
+    "C1_valid": {
+     "check": "C1_valid",
+     "passed": true,
+     "detail": "",
+     "errors": []
+    },
+    "C2_own_evidence": {
+     "check": "C2_own_evidence",
+     "passed": false,
+     "detail": "[outbound-from-user-writable] is required but selects no claim of the origin capture",
+     "hard": [
+      "[outbound-from-user-writable] is required but selects no claim of the origin capture"
+     ],
+     "soft": [],
+     "causes": {
+      "jointly_unsatisfied": 1
+     },
+     "origin_score": 0.0
+    },
+    "C3_robust": {
+     "check": "C3_robust",
+     "passed": false,
+     "detail": "not applicable: the rule does not fire",
+     "lost_under": [],
+     "not_applicable": true
+    }
+   },
+   "grade": null,
+   "rule": {
+    "id": "llm.user-writable-outbound-connection-c031a58671.5f1dd48671.r1",
+    "technique": "T1041",
+    "name": "User\u2011writable executable makes outbound network connection",
+    "tactic": "command-and-control",
+    "severity": 0.8,
+    "evidence": [
+     "ev_000040"
+    ],
+    "indicators": [
+     {
+      "name": "outbound-from-user-writable",
+      "weight": 1.0,
+      "required": true,
+      "select": {
+       "claim_type": "host_network_connection",
+       "facts.direction": "outbound",
+       "lineage.ancestor_user_writable": {
+        "truthy": true
+       }
+      },
+      "score": {
+       "op": "threshold",
+       "value": "n",
+       "at": 1
+      }
+     }
+    ],
+    "provenance": {
+     "authored_by": "argus.rules.induce",
+     "model": "gpt-oss:120b-cloud",
+     "origin": "run1_ws-fin01_1230#ws-fin01/11544@1791377551.823",
+     "round": 1,
+     "semantic_id": "5f1dd4b4d368",
+     "evidence": [
+      "ev_000040"
+     ]
+    }
+   }
+  },
+  {
+   "uid": "llm.user-writable-outbound-connection.b85e043ed0",
+   "status": "rejected",
+   "technique": "T1041",
+   "name": "Outbound Connection from User-Writable Binary",
+   "origin": {
+    "capture": "run1_web01_1230",
+    "recording": "run1",
+    "host": "web01",
+    "episode": "run1_web01_1230#web01/1187@1791377542.462",
+    "episode_root_image": "splunkd",
+    "round": 0
+   },
+   "reason": "repaired: superseded by llm.llm-user-writable-outbound-connection-b85e043ed0.9811af3ed0.r1",
+   "checks": {
+    "C1_valid": {
+     "check": "C1_valid",
+     "passed": true,
+     "detail": "",
+     "errors": []
+    },
+    "C2_own_evidence": {
+     "check": "C2_own_evidence",
+     "passed": false,
+     "detail": "[uw_outbound] is required but selects no claim of the origin capture",
+     "hard": [
+      "[uw_outbound] is required but selects no claim of the origin capture"
+     ],
+     "soft": [],
+     "causes": {
+      "jointly_unsatisfied": 1
+     },
+     "origin_score": 0.0
+    },
+    "C3_robust": {
+     "check": "C3_robust",
+     "passed": false,
+     "detail": "not applicable: the rule does not fire",
+     "lost_under": [],
+     "not_applicable": true
+    }
+   },
+   "grade": null,
+   "rule": {
+    "id": "llm.user-writable-outbound-connection.b85e043ed0",
+    "technique": "T1041",
+    "name": "Outbound Connection from User-Writable Binary",
+    "tactic": "command-and-control",
+    "severity": 0.8,
+    "evidence": [
+     "ev_000011"
+    ],
+    "indicators": [
+     {
+      "name": "uw_outbound",
+      "weight": 1.0,
+      "required": true,
+      "select": {
+       "claim_type": "host_network_connection",
+       "lineage.ancestor_user_writable": {
+        "truthy": true
+       },
+       "facts.direction": "outbound"
+      },
+      "score": {
+       "op": "threshold",
+       "value": "n",
+       "at": 1
+      }
+     }
+    ],
+    "provenance": {
+     "authored_by": "argus.rules.induce",
+     "model": "gpt-oss:120b-cloud",
+     "origin": "run1_web01_1230#web01/1187@1791377542.462",
+     "round": 0,
+     "semantic_id": "b85e04ffc5f5",
+     "evidence": [
+      "ev_000011"
+     ]
+    }
+   }
+  },
+  {
+   "uid": "llm.user-writable-outbound-connection.b85e046a50",
+   "status": "rejected",
+   "technique": "T1041",
+   "name": "Outbound Connection from User-Writable Binary",
+   "origin": {
+    "capture": "run1_ws-dev01_1230",
+    "recording": "run1",
+    "host": "ws-dev01",
+    "episode": "run1_ws-dev01_1230#ws-dev01/1157@1791377549.712",
+    "episode_root_image": "splunkd",
+    "round": 0
+   },
+   "reason": "repaired: superseded by llm.user-writable-outbound-connection-b85e046a50.9811af6a50.r1,llm.clear-bash-history-6f2c1d.b1bd756a50.r1",
+   "checks": {
+    "C1_valid": {
+     "check": "C1_valid",
+     "passed": true,
+     "detail": "",
+     "errors": []
+    },
+    "C2_own_evidence": {
+     "check": "C2_own_evidence",
+     "passed": false,
+     "detail": "[uw_outbound] is required but selects no claim of the origin capture",
+     "hard": [
+      "[uw_outbound] is required but selects no claim of the origin capture"
+     ],
+     "soft": [],
+     "causes": {
+      "jointly_unsatisfied": 1
+     },
+     "origin_score": 0.0
+    },
+    "C3_robust": {
+     "check": "C3_robust",
+     "passed": false,
+     "detail": "not applicable: the rule does not fire",
+     "lost_under": [],
+     "not_applicable": true
+    }
+   },
+   "grade": null,
+   "rule": {
+    "id": "llm.user-writable-outbound-connection.b85e046a50",
+    "technique": "T1041",
+    "name": "Outbound Connection from User-Writable Binary",
+    "tactic": "command-and-control",
+    "severity": 0.8,
+    "evidence": [
+     "ev_000011"
+    ],
+    "indicators": [
+     {
+      "name": "uw_outbound",
+      "weight": 1.0,
+      "required": true,
+      "select": {
+       "claim_type": "host_network_connection",
+       "lineage.ancestor_user_writable": {
+        "truthy": true
+       },
+       "facts.direction": "outbound"
+      },
+      "score": {
+       "op": "threshold",
+       "value": "n",
+       "at": 1
+      }
+     }
+    ],
+    "provenance": {
+     "authored_by": "argus.rules.induce",
+     "model": "gpt-oss:120b-cloud",
+     "origin": "run1_ws-dev01_1230#ws-dev01/1157@1791377549.712",
+     "round": 0,
+     "semantic_id": "b85e04ffc5f5",
+     "evidence": [
+      "ev_000011"
+     ]
+    }
+   }
+  },
+  {
+   "uid": "llm.user-writable-outbound-connection.c031a58671",
+   "status": "rejected",
+   "technique": "T1041",
+   "name": "User\u2011writable executable makes outbound network connection",
+   "origin": {
+    "capture": "run1_ws-fin01_1230",
+    "recording": "run1",
+    "host": "ws-fin01",
+    "episode": "run1_ws-fin01_1230#ws-fin01/11544@1791377551.823",
+    "episode_root_image": "splunkd",
+    "round": 0
+   },
+   "reason": "repaired: superseded by llm.user-writable-outbound-connection-c031a58671.5f1dd48671.r1",
+   "checks": {
+    "C1_valid": {
+     "check": "C1_valid",
+     "passed": false,
+     "detail": "indicator[0].select: unknown field path 'direction' \u2014 use ['claim_id', 'claim_type', 'entity', 'event', 'modality', 'time'], ['baseline.image_seen', 'baseline.lineage_seen', 'behaviour.tactics', 'lineage.ancestor_user_writable', 'lineage.parent_user_writable', 'lineage.user_writable', 'provenance.sensor_id'] or \"facts.<name>\"; combine clauses with ['any_of', 'all_of', 'none_of']",
+     "errors": [
+      "indicator[0].select: unknown field path 'direction' \u2014 use ['claim_id', 'claim_type', 'entity', 'event', 'modality', 'time'], ['baseline.image_seen', 'baseline.lineage_seen', 'behaviour.tactics', 'lineage.ancestor_user_writable', 'lineage.parent_user_writable', 'lineage.user_writable', 'provenance.sensor_id'] or \"facts.<name>\"; combine clauses with ['any_of', 'all_of', 'none_of']"
+     ]
+    }
+   },
+   "grade": null,
+   "rule": {
+    "id": "llm.user-writable-outbound-connection.c031a58671",
+    "technique": "T1041",
+    "name": "User\u2011writable executable makes outbound network connection",
+    "tactic": "command-and-control",
+    "severity": 0.8,
+    "evidence": [
+     "ev_000040"
+    ],
+    "indicators": [
+     {
+      "name": "outbound-from-user-writable",
+      "weight": 1.0,
+      "required": true,
+      "select": {
+       "claim_type": "host_network_connection",
+       "direction": "outbound",
+       "lineage.ancestor_user_writable": {
+        "truthy": true
+       }
+      },
+      "score": {
+       "op": "threshold",
+       "value": "n",
+       "at": 1
+      }
+     }
+    ],
+    "provenance": {
+     "authored_by": "argus.rules.induce",
+     "model": "gpt-oss:120b-cloud",
+     "origin": "run1_ws-fin01_1230#ws-fin01/11544@1791377551.823",
+     "round": 0,
+     "semantic_id": "c031a55fb513",
+     "evidence": [
+      "ev_000040"
+     ]
+    }
+   }
+  },
+  {
+   "uid": "llm.user-writable-outbound-server.c5a7a22a21",
+   "status": "rejected",
+   "technique": "T1041",
+   "name": "User\u2011writable binary initiates outbound connection with server flag",
+   "origin": {
+    "capture": "run1_app01_1230",
+    "recording": "run1",
+    "host": "app01",
+    "episode": "run1_app01_1230#app01/1094@1791377547.402",
+    "episode_root_image": "splunkd",
+    "round": 0
+   },
+   "reason": "repaired: superseded by llm.llm-user-writable-outbound-server-c5a7a22a21.174bd32a21.r1,llm.llm-clear-bash-history-547eba2a21.f68ca72a21.r1,llm.llm-discovery-from-user-writable-ancestor-e333f0.b528532a21.r1",
+   "checks": {
+    "C1_valid": {
+     "check": "C1_valid",
+     "passed": false,
+     "detail": "indicator[0].score: references undefined value '1'",
+     "errors": [
+      "indicator[0].score: references undefined value '1'"
+     ]
+    }
+   },
+   "grade": null,
+   "rule": {
+    "id": "llm.user-writable-outbound-server.c5a7a22a21",
+    "technique": "T1041",
+    "name": "User\u2011writable binary initiates outbound connection with server flag",
+    "tactic": "command-and-control",
+    "severity": 0.7,
+    "evidence": [
+     "ev_000025"
+    ],
+    "indicators": [
+     {
+      "name": "user_writable_server_process",
+      "weight": 1.0,
+      "required": true,
+      "select": {
+       "claim_type": "process_create",
+       "lineage.user_writable": {
+        "truthy": true
+       },
+       "facts.command": {
+        "contains_any": [
+         "-server"
+        ]
+       }
+      },
+      "score": {
+       "op": "threshold",
+       "value": "1",
+       "at": 1
+      }
+     }
+    ],
+    "provenance": {
+     "authored_by": "argus.rules.induce",
+     "model": "gpt-oss:120b-cloud",
+     "origin": "run1_app01_1230#app01/1094@1791377547.402",
+     "round": 0,
+     "semantic_id": "c5a7a232f23d",
+     "evidence": [
+      "ev_000025"
+     ]
+    }
+   }
+  }
+ ],
+ "seconds": 209.9
+}

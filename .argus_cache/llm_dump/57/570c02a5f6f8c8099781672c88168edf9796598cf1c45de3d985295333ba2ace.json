@@ -1,0 +1,14 @@
+{
+  "key": "570c02a5f6f8c8099781672c88168edf9796598cf1c45de3d985295333ba2ace",
+  "provider": "ollama",
+  "model": "gpt-oss:120b-cloud",
+  "prompt_sha": "570c02a5f6f8c809",
+  "response": "{\n  \"disposition\": \"malicious\",\n  \"mitre_technique\": \"T1105\",\n  \"severity\": 0.9,\n  \"malicious_events\": [\"e1\", \"e2\", \"e3\", \"e4\", \"e5\"],\n  \"reason\": \"Attacker downloaded and executed a suspicious binary (splunkd) from an internal server and cleared bash history to hide activity.\"\n}",
+  "latency_s": 2.090972900390625,
+  "created_at": 1791424256.235501,
+  "params": {
+    "temperature": 0.0,
+    "seed": 7,
+    "json_mode": true
+  }
+}

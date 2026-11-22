@@ -1,0 +1,14 @@
+{
+  "key": "6ad4df9ac789b19a4f14835bf0c23df8fb57fd8cc74ce0d0910d8e79e9bc0c9c",
+  "provider": "ollama",
+  "model": "gpt-oss:120b-cloud",
+  "prompt_sha": "6ad4df9ac789b19a",
+  "response": "{\n  \"disposition\": \"malicious\",\n  \"mitre_technique\": \"T1003\",\n  \"severity\": 0.8,\n  \"malicious_events\": [\n    \"e16\",\n    \"e28\",\n    \"e99\",\n    \"e170\",\n    \"e14\",\n    \"e26\",\n    \"e97\",\n    \"e98\",\n    \"e168\",\n    \"e169\"\n  ],\n  \"reason\": \"User bob repeatedly used sudo to read /etc/shadow (credential dumping) and made outbound connections to an internal IP, indicating malicious activity.\"\n}",
+  "latency_s": 2.3937489986419678,
+  "created_at": 1791424200.632,
+  "params": {
+    "temperature": 0.0,
+    "seed": 8,
+    "json_mode": true
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "key": "0487f899b86fbb1f72febd5397b188dd2e72286ba685c6a7d20b6d7d8d595b7c",
+  "provider": "ollama",
+  "model": "gpt-oss:120b-cloud",
+  "prompt_sha": "0487f899b86fbb1f",
+  "response": "{\n  \"disposition\": \"malicious\",\n  \"mitre_technique\": \"T1003.006\",\n  \"severity\": 0.85,\n  \"malicious_events\": [\n    \"e9\",\n    \"e15\",\n    \"e19\",\n    \"e38\",\n    \"e174\",\n    \"e200\",\n    \"e210\",\n    \"e229\",\n    \"e226\",\n    \"e207\",\n    \"e211\",\n    \"e212\",\n    \"e213\",\n    \"e214\",\n    \"e215\",\n    \"e216\",\n    \"e217\",\n    \"e218\",\n    \"e219\",\n    \"e220\",\n    \"e221\",\n    \"e222\",\n    \"e223\",\n    \"e224\",\n    \"e225\"\n  ],\n  \"reason\": \"Repeated sudo reads of /etc/shadow and installation of credential\u2011stealing tools (sshpass) indicate credential dumping and preparation for lateral movement.\"\n}",
+  "latency_s": 3.6550021171569824,
+  "created_at": 1791424207.490149,
+  "params": {
+    "temperature": 0.0,
+    "seed": 8,
+    "json_mode": true
+  }
+}

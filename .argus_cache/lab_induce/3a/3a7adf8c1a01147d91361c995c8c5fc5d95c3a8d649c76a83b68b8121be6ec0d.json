@@ -1,0 +1,14 @@
+{
+  "key": "3a7adf8c1a01147d91361c995c8c5fc5d95c3a8d649c76a83b68b8121be6ec0d",
+  "provider": "ollama",
+  "model": "gpt-oss:120b-cloud",
+  "prompt_sha": "3a7adf8c1a01147d",
+  "response": "{\n  \"rules\": [],\n  \"reasoning\": \"The episode consists entirely of standard package management and system maintenance actions (dpkg configuration, logrotate timer setup, systemd daemon-reload, ldconfig, mandb). These are routine, expected behaviors on a Linux host after package updates and do not exhibit suspicious techniques such as credential dumping, network exfiltration, or privilege escalation. Therefore no detection rule is warranted.\"\n}",
+  "latency_s": 16.618201971054077,
+  "created_at": 1791394670.483382,
+  "params": {
+    "temperature": 0.0,
+    "seed": 7,
+    "json_mode": true
+  }
+}

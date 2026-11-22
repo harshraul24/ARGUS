@@ -1,0 +1,14 @@
+{
+  "key": "1241d25e35ac32d9cf83b9d5236d9b1696342f5ed2d6f8631ff186d722faaab7",
+  "provider": "ollama",
+  "model": "gpt-oss:120b-cloud",
+  "prompt_sha": "1241d25e35ac32d9",
+  "response": "{\n  \"disposition\": \"malicious\",\n  \"mitre_technique\": \"T1105\",\n  \"severity\": 0.9,\n  \"malicious_events\": [\"e1\",\"e2\",\"e3\",\"e4\",\"e5\",\"e6\",\"e7\",\"e8\",\"e9\",\"e10\",\"e11\"],\n  \"reason\": \"Repeated curl downloads of sandcat.go (a known Cobalt Strike payload), chmod +x and execution of a malicious splunkd binary with remote server parameters, followed by clearing bash history, indicate attacker activity.\"\n}",
+  "latency_s": 2.1342883110046387,
+  "created_at": 1791424279.2474391,
+  "params": {
+    "temperature": 0.0,
+    "seed": 8,
+    "json_mode": true
+  }
+}

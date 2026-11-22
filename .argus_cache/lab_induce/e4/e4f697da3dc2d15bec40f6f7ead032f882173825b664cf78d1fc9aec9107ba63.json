@@ -1,0 +1,14 @@
+{
+  "key": "e4f697da3dc2d15bec40f6f7ead032f882173825b664cf78d1fc9aec9107ba63",
+  "provider": "ollama",
+  "model": "gpt-oss:120b-cloud",
+  "prompt_sha": "e4f697da3dc2d15b",
+  "response": "{\n  \"rules\": [],\n  \"reasoning\": \"The episode consists of a package pre\u2011configuration script (dpkg-preconfigure) invoking perl, stty and whiptail version checks. These are standard system utilities run from system directories during package installation and do not exhibit atypical or malicious patterns. The file read of /etc/shadow is performed by a privileged system process as part of its normal operation. Therefore the behaviour is routine and no detection rule is warranted.\"\n}",
+  "latency_s": 13.9743070602417,
+  "created_at": 1791394578.5296168,
+  "params": {
+    "temperature": 0.0,
+    "seed": 7,
+    "json_mode": true
+  }
+}

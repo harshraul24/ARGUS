@@ -1,0 +1,143 @@
+{
+  "case_id": "apt_live_004",
+  "disposition": "malicious",
+  "hypotheses": [
+    {
+      "technique": "T1210",
+      "name": "Exploitation of a remote service",
+      "tactic": "Lateral Movement",
+      "score": 0.6375,
+      "support": [
+        "auth_00001",
+        "auth_00002",
+        "auth_00003",
+        "auth_00004",
+        "auth_00005",
+        "auth_00006",
+        "auth_00007",
+        "auth_00008",
+        "auth_00009",
+        "auth_00010",
+        "auth_00011",
+        "auth_00012",
+        "auth_00013",
+        "auth_00014",
+        "auth_00015",
+        "auth_00016",
+        "auth_00017",
+        "auth_00018",
+        "auth_00019",
+        "auth_00020",
+        "auth_00021",
+        "auth_00022",
+        "auth_00023",
+        "auth_00024",
+        "auth_00025",
+        "auth_00026",
+        "auth_00027",
+        "auth_00028",
+        "auth_00029",
+        "auth_00030",
+        "auth_00031",
+        "auth_00042",
+        "auth_00043",
+        "auth_00046",
+        "auth_00047",
+        "auth_00048",
+        "auth_00049",
+        "auth_00050",
+        "auth_00051",
+        "auth_00052"
+      ],
+      "defeaters": [
+        {
+          "kind": "undermine",
+          "reason": "premise 'post-exploitation session or privileged commands' is adversary-authored (L2) \u2014 trust discounted, conclusion not attacked",
+          "weight": 0.15,
+          "claim_ids": [
+            "auth_00001",
+            "auth_00002",
+            "auth_00003",
+            "auth_00004",
+            "auth_00005",
+            "auth_00006"
+          ]
+        }
+      ],
+      "rationale": [
+        "post-exploitation session or privileged commands: 79 claim(s), strength 1.00 (premise trust x0.85, L2)"
+      ],
+      "coverage_gaps": []
+    },
+    {
+      "technique": "T1110",
+      "name": "Brute force",
+      "tactic": "Credential Access",
+      "score": 0.4454166666666667,
+      "support": [
+        "auth_00032",
+        "auth_00033",
+        "auth_00034",
+        "auth_00035",
+        "auth_00036",
+        "auth_00037",
+        "auth_00038",
+        "auth_00039",
+        "auth_00040",
+        "auth_00041",
+        "auth_00044",
+        "auth_00045",
+        "auth_00042",
+        "auth_00046",
+        "auth_00053",
+        "auth_00055",
+        "auth_00058",
+        "auth_00063",
+        "auth_00065",
+        "auth_00067",
+        "auth_00072",
+        "auth_00074",
+        "auth_00076",
+        "auth_00090"
+      ],
+      "defeaters": [
+        {
+          "kind": "undermine",
+          "reason": "premise 'logon failure burst from a single source' is adversary-authored (L1) \u2014 trust discounted, conclusion not attacked",
+          "weight": 0.05,
+          "claim_ids": [
+            "auth_00032",
+            "auth_00033",
+            "auth_00034",
+            "auth_00035",
+            "auth_00036",
+            "auth_00037"
+          ]
+        }
+      ],
+      "rationale": [
+        "logon failure burst from a single source: 12 claim(s), strength 0.43 (premise trust x0.95, L1)",
+        "remote logon success (possible success): 12 claim(s), strength 1.00"
+      ],
+      "coverage_gaps": []
+    }
+  ],
+  "severity": 0.542,
+  "priority": 0.542,
+  "claims_total": 107,
+  "claims_considered": 107,
+  "blind_spots": [],
+  "next_actions": [],
+  "notes": [],
+  "config": {
+    "enable_coverage": true,
+    "enable_baseline": true,
+    "enable_semantics": true,
+    "malicious_threshold": 0.5,
+    "suspicious_threshold": 0.25,
+    "confound_artifacts": [],
+    "observability_model": true,
+    "enable_observability": true
+  },
+  "suppressed": []
+}

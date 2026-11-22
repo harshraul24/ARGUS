@@ -1,0 +1,14 @@
+{
+  "key": "efbf8572919b50d8bccbeb485c4d41d51ec7e649c47f2edfe07919ce1af9dc02",
+  "provider": "ollama",
+  "model": "gpt-oss:120b-cloud",
+  "prompt_sha": "efbf8572919b50d8",
+  "response": "{\n  \"rules\": [],\n  \"reasoning\": \"The episode consists of a dpkg-preconfigure invocation that runs a Perl script, reads /etc/shadow (a common step for package configuration that may need to verify password policies), and executes harmless utilities (stty, whiptail) to query terminal settings and version information. All processes run from standard system directories and represent typical package management or system configuration activity, not anomalous or malicious behavior. Therefore no detection rule is warranted.\"\n}",
+  "latency_s": 10.889400959014893,
+  "created_at": 1791394538.437509,
+  "params": {
+    "temperature": 0.0,
+    "seed": 7,
+    "json_mode": true
+  }
+}

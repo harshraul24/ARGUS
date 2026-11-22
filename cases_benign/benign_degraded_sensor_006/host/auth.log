@@ -1,0 +1,4 @@
+Mar  8 14:02:00 appsrv01 sshd[8110]: Accepted publickey for sysadmin from 10.0.2.5 port 52210 ssh2: RSA SHA256:9c1f
+Mar  8 14:02:00 appsrv01 sshd[8110]: pam_unix(sshd:session): session opened for user sysadmin by (uid=0)
+Mar  8 14:05:00 appsrv01 sudo: sysadmin : TTY=pts/1 ; PWD=/var/log ; USER=root ; COMMAND=/usr/bin/tail -n 200 /var/log/nginx/error.log
+Mar  8 14:11:00 appsrv01 sshd[8110]: pam_unix(sshd:session): session closed for user sysadmin

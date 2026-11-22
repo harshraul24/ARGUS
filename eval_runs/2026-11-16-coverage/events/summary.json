@@ -1,0 +1,191 @@
+{
+ "freeze": {
+  "manifest": "ARGUS_FREEZE_2026-11-16-coverage.json",
+  "matches": true,
+  "aggregate_sha256": "bf8f0ad1efc8089225cdb163ebce69709450ca6579d78f1b26b05e9f4ae664d6",
+  "changed": []
+ },
+ "arms": {
+  "argus": {
+   "burnin": {
+    "tp": 0,
+    "fp": 0,
+    "fn": 0,
+    "tn": 34401,
+    "events": 34401,
+    "precision": null,
+    "precision_ci95": null,
+    "recall": null,
+    "recall_ci95": null,
+    "f1": null,
+    "fpr": 0.0,
+    "fpr_ci95": [
+     0.0,
+     0.0
+    ],
+    "false_alarms_per_10k_benign_events": 0.0
+   },
+   "pooled": {
+    "tp": 3,
+    "fp": 295,
+    "fn": 298,
+    "tn": 44354,
+    "events": 44950,
+    "precision": 0.0101,
+    "precision_ci95": [
+     0.003,
+     0.029
+    ],
+    "recall": 0.01,
+    "recall_ci95": [
+     0.003,
+     0.029
+    ],
+    "f1": 0.01,
+    "fpr": 0.006607,
+    "fpr_ci95": [
+     0.006,
+     0.007
+    ],
+    "false_alarms_per_10k_benign_events": 66.07
+   },
+   "run1": {
+    "tp": 3,
+    "fp": 295,
+    "fn": 90,
+    "tn": 8430,
+    "events": 8818,
+    "precision": 0.0101,
+    "precision_ci95": [
+     0.003,
+     0.029
+    ],
+    "recall": 0.0323,
+    "recall_ci95": [
+     0.011,
+     0.091
+    ],
+    "f1": 0.0153,
+    "fpr": 0.033811,
+    "fpr_ci95": [
+     0.03,
+     0.038
+    ],
+    "false_alarms_per_10k_benign_events": 338.11
+   },
+   "smoke": {
+    "tp": 0,
+    "fp": 0,
+    "fn": 208,
+    "tn": 1523,
+    "events": 1731,
+    "precision": null,
+    "precision_ci95": null,
+    "recall": 0.0,
+    "recall_ci95": [
+     0.0,
+     0.018
+    ],
+    "f1": null,
+    "fpr": 0.0,
+    "fpr_ci95": [
+     0.0,
+     0.003
+    ],
+    "false_alarms_per_10k_benign_events": 0.0
+   }
+  },
+  "argus_s3": {
+   "burnin": {
+    "tp": 0,
+    "fp": 0,
+    "fn": 0,
+    "tn": 34401,
+    "events": 34401,
+    "precision": null,
+    "precision_ci95": null,
+    "recall": null,
+    "recall_ci95": null,
+    "f1": null,
+    "fpr": 0.0,
+    "fpr_ci95": [
+     0.0,
+     0.0
+    ],
+    "false_alarms_per_10k_benign_events": 0.0
+   },
+   "pooled": {
+    "tp": 59,
+    "fp": 295,
+    "fn": 242,
+    "tn": 44354,
+    "events": 44950,
+    "precision": 0.1667,
+    "precision_ci95": [
+     0.131,
+     0.209
+    ],
+    "recall": 0.196,
+    "recall_ci95": [
+     0.155,
+     0.245
+    ],
+    "f1": 0.1802,
+    "fpr": 0.006607,
+    "fpr_ci95": [
+     0.006,
+     0.007
+    ],
+    "false_alarms_per_10k_benign_events": 66.07
+   },
+   "run1": {
+    "tp": 43,
+    "fp": 295,
+    "fn": 50,
+    "tn": 8430,
+    "events": 8818,
+    "precision": 0.1272,
+    "precision_ci95": [
+     0.096,
+     0.167
+    ],
+    "recall": 0.4624,
+    "recall_ci95": [
+     0.365,
+     0.563
+    ],
+    "f1": 0.1995,
+    "fpr": 0.033811,
+    "fpr_ci95": [
+     0.03,
+     0.038
+    ],
+    "false_alarms_per_10k_benign_events": 338.11
+   },
+   "smoke": {
+    "tp": 16,
+    "fp": 0,
+    "fn": 192,
+    "tn": 1523,
+    "events": 1731,
+    "precision": 1.0,
+    "precision_ci95": [
+     0.806,
+     1.0
+    ],
+    "recall": 0.0769,
+    "recall_ci95": [
+     0.048,
+     0.121
+    ],
+    "f1": 0.1429,
+    "fpr": 0.0,
+    "fpr_ci95": [
+     0.0,
+     0.003
+    ],
+    "false_alarms_per_10k_benign_events": 0.0
+   }
+  }
+ }
+}

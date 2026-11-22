@@ -1,0 +1,14 @@
+{
+  "key": "0d2e17d63e435f0911b7c8a9cb0bd0457ef6287184a545ced1f98a22e1c02553",
+  "provider": "ollama",
+  "model": "gpt-oss:120b-cloud",
+  "prompt_sha": "0d2e17d63e435f09",
+  "response": "{\n  \"rules\": [\n    {\n      \"id\": \"linux-etc-passwd-temp-dump\",\n      \"technique\": \"T1003.001\",\n      \"name\": \"Linux /etc/passwd credential dump to temporary file\",\n      \"tactic\": \"credential-access\",\n      \"severity\": 0.7,\n      \"evidence\": [\"ev_000600\"],\n      \"indicators\": [\n        {\n          \"name\": \"dump_passwd_to_tmp\",\n          \"weight\": 1.0,\n          \"required\": true,\n          \"select\": {\n            \"claim_type\": \"process_create\",\n            \"facts.command\": {\n              \"contains_any\": [\n                \"passwd\",\n                \"/tmp/\"\n              ]\n            }\n          },\n          \"score\": {\n            \"op\": \"threshold\",\n            \"value\": \"n\",\n            \"at\": 1\n          }\n        }\n      ]\n    }\n  ],\n  \"reasoning\": \"The episode shows a shell process reading /etc/passwd and redirecting the output to a file under /tmp, a classic technique for credential dumping on Linux. Detecting any process that references both \\\"passwd\\\" and a temporary path (e.g., \\\"/tmp/\\\") captures this behavior while avoiding common benign uses, satisfies robustness (does not rely on executable names or full paths), and aligns with community Sigma rules for Linux credential dumping, providing an independent confirmation.\"\n}",
+  "latency_s": 15.69314193725586,
+  "created_at": 1791394551.639872,
+  "params": {
+    "temperature": 0.0,
+    "seed": 7,
+    "json_mode": true
+  }
+}

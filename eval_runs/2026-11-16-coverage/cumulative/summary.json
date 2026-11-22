@@ -1,0 +1,99 @@
+{
+ "freeze": {
+  "manifest": "ARGUS_FREEZE_2026-11-16-coverage.json",
+  "matches": true,
+  "aggregate_sha256": "bf8f0ad1efc8089225cdb163ebce69709450ca6579d78f1b26b05e9f4ae664d6",
+  "changed": []
+ },
+ "counts": {
+  "lab_windows": {
+   "burnin": 34401,
+   "run1": 8818,
+   "smoke": 1731
+  },
+  "live": {
+   "adhoc1": 2223,
+   "demo-20261022-1200": 341,
+   "run1": 8765
+  },
+  "cases_linux": 1162,
+  "cases_benign": 172
+ },
+ "total_events_lab_and_live": 56279,
+ "arms": {
+  "argus": {
+   "lab_windows": 94,
+   "attack_windows_flagged": "1/16",
+   "benign_windows_flagged": "1/78",
+   "benign_clean_windows_flagged": "0/50",
+   "benign_per_20_host_windows": 0.26,
+   "attack_steps_detected": "2/104",
+   "step_recall_ci95": [
+    0.005,
+    0.067
+   ],
+   "event_precision": 0.0101,
+   "earlier_attack_captures_flagged": "9/12",
+   "attack_units_flagged_all": "10/28",
+   "per_capture": {
+    "run1": {
+     "benign": 12,
+     "benign_flagged": 1,
+     "steps": 36,
+     "steps_detected": 2,
+     "attack": 8,
+     "attack_flagged": 1
+    },
+    "smoke": {
+     "benign": 6,
+     "benign_flagged": 0,
+     "steps": 68,
+     "steps_detected": 0,
+     "attack": 8,
+     "attack_flagged": 0
+    },
+    "burnin": {
+     "benign": 60,
+     "benign_flagged": 0
+    }
+   }
+  },
+  "argus_s3": {
+   "lab_windows": 94,
+   "attack_windows_flagged": "15/16",
+   "benign_windows_flagged": "1/78",
+   "benign_clean_windows_flagged": "0/50",
+   "benign_per_20_host_windows": 0.26,
+   "attack_steps_detected": "37/104",
+   "step_recall_ci95": [
+    0.27,
+    0.451
+   ],
+   "event_precision": 0.1667,
+   "earlier_attack_captures_flagged": "9/12",
+   "attack_units_flagged_all": "24/28",
+   "per_capture": {
+    "run1": {
+     "benign": 12,
+     "benign_flagged": 1,
+     "steps": 36,
+     "steps_detected": 25,
+     "attack": 8,
+     "attack_flagged": 8
+    },
+    "smoke": {
+     "benign": 6,
+     "benign_flagged": 0,
+     "steps": 68,
+     "steps_detected": 12,
+     "attack": 8,
+     "attack_flagged": 7
+    },
+    "burnin": {
+     "benign": 60,
+     "benign_flagged": 0
+    }
+   }
+  }
+ }
+}

@@ -1,0 +1,1995 @@
+{
+ "as_of": "2026-10-06",
+ "binaries": {
+  "aircrack-ng": {
+   "rules": 1,
+   "tactic_weights": {
+    "execution": 0.0208,
+    "resource_development": 0.0208
+   },
+   "tactics": [
+    "execution",
+    "resource_development"
+   ],
+   "weight": 0.0208
+  },
+  "amazon-ssm-agent": {
+   "rules": 1,
+   "tactic_weights": {
+    "command_and_control": 1.0,
+    "persistence": 1.0
+   },
+   "tactics": [
+    "command_and_control",
+    "persistence"
+   ],
+   "weight": 1.0
+  },
+  "apt": {
+   "rules": 1,
+   "tactic_weights": {
+    "discovery": 0.5
+   },
+   "tactics": [
+    "discovery"
+   ],
+   "weight": 0.5
+  },
+  "apt-get": {
+   "rules": 1,
+   "tactic_weights": {
+    "discovery": 0.5
+   },
+   "tactics": [
+    "discovery"
+   ],
+   "weight": 0.5
+  },
+  "arp": {
+   "rules": 1,
+   "tactic_weights": {
+    "discovery": 0.5
+   },
+   "tactics": [
+    "discovery"
+   ],
+   "weight": 0.5
+  },
+  "ash": {
+   "rules": 1,
+   "tactic_weights": {
+    "execution": 0.125
+   },
+   "tactics": [
+    "execution"
+   ],
+   "weight": 0.125
+  },
+  "at": {
+   "rules": 1,
+   "tactic_weights": {
+    "execution": 0.5,
+    "persistence": 0.5,
+    "privilege_escalation": 0.5
+   },
+   "tactics": [
+    "execution",
+    "persistence",
+    "privilege_escalation"
+   ],
+   "weight": 0.5
+  },
+  "atd": {
+   "rules": 1,
+   "tactic_weights": {
+    "execution": 0.5,
+    "persistence": 0.5,
+    "privilege_escalation": 0.5
+   },
+   "tactics": [
+    "execution",
+    "persistence",
+    "privilege_escalation"
+   ],
+   "weight": 0.5
+  },
+  "autorecon": {
+   "rules": 2,
+   "tactic_weights": {
+    "discovery": 0.0769,
+    "execution": 0.0208,
+    "resource_development": 0.0208
+   },
+   "tactics": [
+    "discovery"
+   ],
+   "weight": 0.0978
+  },
+  "awk": {
+   "rules": 2,
+   "tactic_weights": {
+    "discovery": 0.125,
+    "execution": 0.25
+   },
+   "tactics": [
+    "discovery",
+    "execution"
+   ],
+   "weight": 0.375
+  },
+  "bash": {
+   "rules": 5,
+   "tactic_weights": {
+    "execution": 1.744
+   },
+   "tactics": [
+    "execution"
+   ],
+   "weight": 1.744
+  },
+  "bloodhound-python": {
+   "rules": 1,
+   "tactic_weights": {
+    "execution": 0.0208,
+    "resource_development": 0.0208
+   },
+   "tactics": [
+    "execution",
+    "resource_development"
+   ],
+   "weight": 0.0208
+  },
+  "bpfdos": {
+   "rules": 1,
+   "tactic_weights": {
+    "execution": 0.0208,
+    "resource_development": 0.0208
+   },
+   "tactics": [
+    "execution",
+    "resource_development"
+   ],
+   "weight": 0.0208
+  },
+  "bpftrace": {
+   "rules": 1,
+   "tactic_weights": {
+    "execution": 1.0
+   },
+   "tactics": [
+    "execution"
+   ],
+   "weight": 1.0
+  },
+  "c89": {
+   "rules": 1,
+   "tactic_weights": {
+    "discovery": 0.3333
+   },
+   "tactics": [
+    "discovery"
+   ],
+   "weight": 0.3333
+  },
+  "c99": {
+   "rules": 1,
+   "tactic_weights": {
+    "discovery": 0.3333
+   },
+   "tactics": [
+    "discovery"
+   ],
+   "weight": 0.3333
+  },
+  "capsh": {
+   "rules": 1,
+   "tactic_weights": {
+    "execution": 1.0
+   },
+   "tactics": [
+    "execution"
+   ],
+   "weight": 1.0
+  },
+  "cat": {
+   "rules": 8,
+   "tactic_weights": {
+    "discovery": 0.4345,
+    "impact": 0.0909,
+    "persistence": 0.0909,
+    "reconnaissance": 0.3409
+   },
+   "tactics": [
+    "discovery",
+    "reconnaissance"
+   ],
+   "weight": 0.9573
+  },
+  "chkconfig": {
+   "rules": 1,
+   "tactic_weights": {
+    "impact": 0.3333
+   },
+   "tactics": [
+    "impact"
+   ],
+   "weight": 0.3333
+  },
+  "cp": {
+   "rules": 1,
+   "tactic_weights": {
+    "credential_access": 1.0
+   },
+   "tactics": [
+    "credential_access"
+   ],
+   "weight": 1.0
+  },
+  "crackmapexec": {
+   "rules": 1,
+   "tactic_weights": {
+    "execution": 0.0208,
+    "resource_development": 0.0208
+   },
+   "tactics": [
+    "execution",
+    "resource_development"
+   ],
+   "weight": 0.0208
+  },
+  "crontab": {
+   "rules": 3,
+   "tactic_weights": {
+    "discovery": 1.0,
+    "execution": 1.0,
+    "persistence": 1.0909,
+    "privilege_escalation": 1.0
+   },
+   "tactics": [
+    "discovery",
+    "execution",
+    "persistence",
+    "privilege_escalation"
+   ],
+   "weight": 2.0909
+  },
+  "csh": {
+   "rules": 3,
+   "tactic_weights": {
+    "execution": 0.4107
+   },
+   "tactics": [
+    "execution"
+   ],
+   "weight": 0.4107
+  },
+  "curl": {
+   "rules": 3,
+   "tactic_weights": {
+    "command_and_control": 3.0,
+    "exfiltration": 1.0
+   },
+   "tactics": [
+    "command_and_control",
+    "exfiltration"
+   ],
+   "weight": 3.0
+  },
+  "dash": {
+   "rules": 3,
+   "tactic_weights": {
+    "execution": 0.4107
+   },
+   "tactics": [
+    "execution"
+   ],
+   "weight": 0.4107
+  },
+  "dd": {
+   "rules": 2,
+   "tactic_weights": {
+    "impact": 1.0,
+    "privilege_escalation": 1.0
+   },
+   "tactics": [
+    "impact",
+    "privilege_escalation"
+   ],
+   "weight": 2.0
+  },
+  "dir": {
+   "rules": 1,
+   "tactic_weights": {
+    "discovery": 0.1429
+   },
+   "tactics": [
+    "discovery"
+   ],
+   "weight": 0.1429
+  },
+  "dirb": {
+   "rules": 1,
+   "tactic_weights": {
+    "execution": 0.0208,
+    "resource_development": 0.0208
+   },
+   "tactics": [
+    "execution",
+    "resource_development"
+   ],
+   "weight": 0.0208
+  },
+  "dirbuster": {
+   "rules": 1,
+   "tactic_weights": {
+    "execution": 0.0208,
+    "resource_development": 0.0208
+   },
+   "tactics": [
+    "execution",
+    "resource_development"
+   ],
+   "weight": 0.0208
+  },
+  "dmidecode": {
+   "rules": 1,
+   "tactic_weights": {
+    "discovery": 0.1429
+   },
+   "tactics": [
+    "discovery"
+   ],
+   "weight": 0.1429
+  },
+  "doas": {
+   "rules": 1,
+   "tactic_weights": {
+    "privilege_escalation": 1.0
+   },
+   "tactics": [
+    "privilege_escalation"
+   ],
+   "weight": 1.0
+  },
+  "ebpfki": {
+   "rules": 1,
+   "tactic_weights": {
+    "execution": 0.0208,
+    "resource_development": 0.0208
+   },
+   "tactics": [
+    "execution",
+    "resource_development"
+   ],
+   "weight": 0.0208
+  },
+  "echo": {
+   "rules": 1,
+   "tactic_weights": {
+    "impact": 0.0909
+   },
+   "tactics": [
+    "impact"
+   ],
+   "weight": 0.0909
+  },
+  "ed": {
+   "rules": 3,
+   "tactic_weights": {
+    "discovery": 0.1667,
+    "reconnaissance": 0.0909
+   },
+   "tactics": [
+    "discovery",
+    "reconnaissance"
+   ],
+   "weight": 0.2576
+  },
+  "egrep": {
+   "rules": 2,
+   "tactic_weights": {
+    "discovery": 0.5,
+    "reconnaissance": 0.0909
+   },
+   "tactics": [
+    "discovery"
+   ],
+   "weight": 0.5909
+  },
+  "emacs": {
+   "rules": 3,
+   "tactic_weights": {
+    "discovery": 0.0667,
+    "impact": 0.0909,
+    "reconnaissance": 0.0909
+   },
+   "tactics": [
+    "discovery",
+    "impact",
+    "reconnaissance"
+   ],
+   "weight": 0.2485
+  },
+  "env": {
+   "rules": 1,
+   "tactic_weights": {
+    "execution": 1.0
+   },
+   "tactics": [
+    "execution"
+   ],
+   "weight": 1.0
+  },
+  "esxcli": {
+   "rules": 9,
+   "tactic_weights": {
+    "discovery": 5.0,
+    "execution": 9.0,
+    "impact": 1.0,
+    "persistence": 2.0,
+    "privilege_escalation": 1.0
+   },
+   "tactics": [
+    "discovery",
+    "execution"
+   ],
+   "weight": 9.0
+  },
+  "evil-winrm": {
+   "rules": 1,
+   "tactic_weights": {
+    "execution": 0.0208,
+    "resource_development": 0.0208
+   },
+   "tactics": [
+    "execution",
+    "resource_development"
+   ],
+   "weight": 0.0208
+  },
+  "eyewitness": {
+   "rules": 1,
+   "tactic_weights": {
+    "execution": 0.0208,
+    "resource_development": 0.0208
+   },
+   "tactics": [
+    "execution",
+    "resource_development"
+   ],
+   "weight": 0.0208
+  },
+  "feroxbuster": {
+   "rules": 1,
+   "tactic_weights": {
+    "execution": 0.0208,
+    "resource_development": 0.0208
+   },
+   "tactics": [
+    "execution",
+    "resource_development"
+   ],
+   "weight": 0.0208
+  },
+  "ffuf": {
+   "rules": 1,
+   "tactic_weights": {
+    "execution": 0.0208,
+    "resource_development": 0.0208
+   },
+   "tactics": [
+    "execution",
+    "resource_development"
+   ],
+   "weight": 0.0208
+  },
+  "fgrep": {
+   "rules": 1,
+   "tactic_weights": {
+    "reconnaissance": 0.0909
+   },
+   "tactics": [
+    "reconnaissance"
+   ],
+   "weight": 0.0909
+  },
+  "file": {
+   "rules": 1,
+   "tactic_weights": {
+    "discovery": 0.1667
+   },
+   "tactics": [
+    "discovery"
+   ],
+   "weight": 0.1667
+  },
+  "find": {
+   "rules": 4,
+   "tactic_weights": {
+    "discovery": 2.3095
+   },
+   "tactics": [
+    "discovery"
+   ],
+   "weight": 2.3095
+  },
+  "findmnt": {
+   "rules": 1,
+   "tactic_weights": {
+    "discovery": 0.1667
+   },
+   "tactics": [
+    "discovery"
+   ],
+   "weight": 0.1667
+  },
+  "firewall-cmd": {
+   "rules": 1,
+   "tactic_weights": {
+    "discovery": 0.1111
+   },
+   "tactics": [
+    "discovery"
+   ],
+   "weight": 0.1111
+  },
+  "fish": {
+   "rules": 2,
+   "tactic_weights": {
+    "execution": 0.2857
+   },
+   "tactics": [
+    "execution"
+   ],
+   "weight": 0.2857
+  },
+  "flock": {
+   "rules": 1,
+   "tactic_weights": {
+    "discovery": 1.0
+   },
+   "tactics": [
+    "discovery"
+   ],
+   "weight": 1.0
+  },
+  "gawk": {
+   "rules": 1,
+   "tactic_weights": {
+    "execution": 0.25
+   },
+   "tactics": [
+    "execution"
+   ],
+   "weight": 0.25
+  },
+  "gcc": {
+   "rules": 1,
+   "tactic_weights": {
+    "discovery": 0.3333
+   },
+   "tactics": [
+    "discovery"
+   ],
+   "weight": 0.3333
+  },
+  "getcap": {
+   "rules": 1,
+   "tactic_weights": {
+    "discovery": 1.0
+   },
+   "tactics": [
+    "discovery"
+   ],
+   "weight": 1.0
+  },
+  "git": {
+   "rules": 1,
+   "tactic_weights": {
+    "reconnaissance": 1.0
+   },
+   "tactics": [
+    "reconnaissance"
+   ],
+   "weight": 1.0
+  },
+  "gitleaks": {
+   "rules": 1,
+   "tactic_weights": {
+    "collection": 0.5,
+    "credential_access": 0.5,
+    "execution": 0.5
+   },
+   "tactics": [
+    "collection",
+    "credential_access",
+    "execution"
+   ],
+   "weight": 0.5
+  },
+  "gobuster": {
+   "rules": 1,
+   "tactic_weights": {
+    "execution": 0.0208,
+    "resource_development": 0.0208
+   },
+   "tactics": [
+    "execution",
+    "resource_development"
+   ],
+   "weight": 0.0208
+  },
+  "grep": {
+   "rules": 7,
+   "tactic_weights": {
+    "discovery": 2.7679,
+    "impact": 0.0909,
+    "reconnaissance": 0.0909
+   },
+   "tactics": [
+    "discovery"
+   ],
+   "weight": 2.9497
+  },
+  "groupdel": {
+   "rules": 1,
+   "tactic_weights": {
+    "impact": 1.0
+   },
+   "tactics": [
+    "impact"
+   ],
+   "weight": 1.0
+  },
+  "groups": {
+   "rules": 1,
+   "tactic_weights": {
+    "discovery": 0.1
+   },
+   "tactics": [
+    "discovery"
+   ],
+   "weight": 0.1
+  },
+  "hashcat": {
+   "rules": 1,
+   "tactic_weights": {
+    "execution": 0.0208,
+    "resource_development": 0.0208
+   },
+   "tactics": [
+    "execution",
+    "resource_development"
+   ],
+   "weight": 0.0208
+  },
+  "havoc": {
+   "rules": 1,
+   "tactic_weights": {
+    "execution": 0.0208,
+    "resource_development": 0.0208
+   },
+   "tactics": [
+    "execution",
+    "resource_development"
+   ],
+   "weight": 0.0208
+  },
+  "head": {
+   "rules": 6,
+   "tactic_weights": {
+    "discovery": 0.2917,
+    "impact": 0.0909,
+    "reconnaissance": 0.3409
+   },
+   "tactics": [
+    "discovery",
+    "reconnaissance"
+   ],
+   "weight": 0.7235
+  },
+  "hoaxshell.py": {
+   "rules": 1,
+   "tactic_weights": {
+    "execution": 0.0208,
+    "resource_development": 0.0208
+   },
+   "tactics": [
+    "execution",
+    "resource_development"
+   ],
+   "weight": 0.0208
+  },
+  "hostname": {
+   "rules": 2,
+   "tactic_weights": {
+    "discovery": 0.1429,
+    "persistence": 0.0909
+   },
+   "tactics": [
+    "discovery",
+    "persistence"
+   ],
+   "weight": 0.2338
+  },
+  "hping": {
+   "rules": 1,
+   "tactic_weights": {
+    "discovery": 0.0769
+   },
+   "tactics": [
+    "discovery"
+   ],
+   "weight": 0.0769
+  },
+  "hping2": {
+   "rules": 1,
+   "tactic_weights": {
+    "discovery": 0.0769
+   },
+   "tactics": [
+    "discovery"
+   ],
+   "weight": 0.0769
+  },
+  "hping3": {
+   "rules": 1,
+   "tactic_weights": {
+    "discovery": 0.0769
+   },
+   "tactics": [
+    "discovery"
+   ],
+   "weight": 0.0769
+  },
+  "httpx": {
+   "rules": 1,
+   "tactic_weights": {
+    "execution": 0.0208,
+    "resource_development": 0.0208
+   },
+   "tactics": [
+    "execution",
+    "resource_development"
+   ],
+   "weight": 0.0208
+  },
+  "hydra": {
+   "rules": 1,
+   "tactic_weights": {
+    "execution": 0.0208,
+    "resource_development": 0.0208
+   },
+   "tactics": [
+    "execution",
+    "resource_development"
+   ],
+   "weight": 0.0208
+  },
+  "id": {
+   "rules": 1,
+   "tactic_weights": {
+    "discovery": 0.0667
+   },
+   "tactics": [
+    "discovery"
+   ],
+   "weight": 0.0667
+  },
+  "ifconfig": {
+   "rules": 2,
+   "tactic_weights": {
+    "discovery": 0.1111,
+    "persistence": 0.0909
+   },
+   "tactics": [
+    "discovery",
+    "persistence"
+   ],
+   "weight": 0.202
+  },
+  "ip": {
+   "rules": 2,
+   "tactic_weights": {
+    "discovery": 0.1111,
+    "persistence": 0.0909
+   },
+   "tactics": [
+    "discovery",
+    "persistence"
+   ],
+   "weight": 0.202
+  },
+  "iptables": {
+   "rules": 3,
+   "tactic_weights": {
+    "discovery": 0.1111,
+    "execution": 0.2,
+    "persistence": 0.0909
+   },
+   "tactics": [
+    "discovery",
+    "execution"
+   ],
+   "weight": 0.402
+  },
+  "john": {
+   "rules": 1,
+   "tactic_weights": {
+    "execution": 0.0208,
+    "resource_development": 0.0208
+   },
+   "tactics": [
+    "execution",
+    "resource_development"
+   ],
+   "weight": 0.0208
+  },
+  "joomscan": {
+   "rules": 1,
+   "tactic_weights": {
+    "execution": 0.0208,
+    "resource_development": 0.0208
+   },
+   "tactics": [
+    "execution",
+    "resource_development"
+   ],
+   "weight": 0.0208
+  },
+  "ksh": {
+   "rules": 3,
+   "tactic_weights": {
+    "execution": 0.4107
+   },
+   "tactics": [
+    "execution"
+   ],
+   "weight": 0.4107
+  },
+  "last": {
+   "rules": 1,
+   "tactic_weights": {
+    "discovery": 0.2
+   },
+   "tactics": [
+    "discovery"
+   ],
+   "weight": 0.2
+  },
+  "lastlog": {
+   "rules": 1,
+   "tactic_weights": {
+    "discovery": 0.0667
+   },
+   "tactics": [
+    "discovery"
+   ],
+   "weight": 0.0667
+  },
+  "legion": {
+   "rules": 1,
+   "tactic_weights": {
+    "execution": 0.0208,
+    "resource_development": 0.0208
+   },
+   "tactics": [
+    "execution",
+    "resource_development"
+   ],
+   "weight": 0.0208
+  },
+  "less": {
+   "rules": 4,
+   "tactic_weights": {
+    "discovery": 0.2917,
+    "reconnaissance": 0.0909
+   },
+   "tactics": [
+    "discovery"
+   ],
+   "weight": 0.3826
+  },
+  "ls": {
+   "rules": 3,
+   "tactic_weights": {
+    "discovery": 1.3095
+   },
+   "tactics": [
+    "discovery"
+   ],
+   "weight": 1.3095
+  },
+  "lscpu": {
+   "rules": 1,
+   "tactic_weights": {
+    "discovery": 0.1429
+   },
+   "tactics": [
+    "discovery"
+   ],
+   "weight": 0.1429
+  },
+  "lsmod": {
+   "rules": 1,
+   "tactic_weights": {
+    "discovery": 0.1429
+   },
+   "tactics": [
+    "discovery"
+   ],
+   "weight": 0.1429
+  },
+  "lsof": {
+   "rules": 2,
+   "tactic_weights": {
+    "discovery": 0.2667
+   },
+   "tactics": [
+    "discovery"
+   ],
+   "weight": 0.2667
+  },
+  "lspci": {
+   "rules": 1,
+   "tactic_weights": {
+    "discovery": 0.1429
+   },
+   "tactics": [
+    "discovery"
+   ],
+   "weight": 0.1429
+  },
+  "makemap": {
+   "rules": 1,
+   "tactic_weights": {
+    "discovery": 0.0667
+   },
+   "tactics": [
+    "discovery"
+   ],
+   "weight": 0.0667
+  },
+  "mawk": {
+   "rules": 1,
+   "tactic_weights": {
+    "execution": 0.25
+   },
+   "tactics": [
+    "execution"
+   ],
+   "weight": 0.25
+  },
+  "merlin-agent": {
+   "rules": 1,
+   "tactic_weights": {
+    "execution": 0.0208,
+    "resource_development": 0.0208
+   },
+   "tactics": [
+    "execution",
+    "resource_development"
+   ],
+   "weight": 0.0208
+  },
+  "merlinserver-linux-x64": {
+   "rules": 1,
+   "tactic_weights": {
+    "execution": 0.0208,
+    "resource_development": 0.0208
+   },
+   "tactics": [
+    "execution",
+    "resource_development"
+   ],
+   "weight": 0.0208
+  },
+  "mkfifo": {
+   "rules": 2,
+   "tactic_weights": {
+    "execution": 2.0
+   },
+   "tactics": [
+    "execution"
+   ],
+   "weight": 2.0
+  },
+  "mlocate": {
+   "rules": 1,
+   "tactic_weights": {
+    "discovery": 0.1667
+   },
+   "tactics": [
+    "discovery"
+   ],
+   "weight": 0.1667
+  },
+  "more": {
+   "rules": 6,
+   "tactic_weights": {
+    "discovery": 0.2917,
+    "impact": 0.0909,
+    "reconnaissance": 0.3409
+   },
+   "tactics": [
+    "discovery",
+    "reconnaissance"
+   ],
+   "weight": 0.7235
+  },
+  "mount": {
+   "rules": 1,
+   "tactic_weights": {
+    "credential_access": 1.0
+   },
+   "tactics": [
+    "credential_access"
+   ],
+   "weight": 1.0
+  },
+  "msfconsole": {
+   "rules": 1,
+   "tactic_weights": {
+    "execution": 0.0208,
+    "resource_development": 0.0208
+   },
+   "tactics": [
+    "execution",
+    "resource_development"
+   ],
+   "weight": 0.0208
+  },
+  "msfvenom": {
+   "rules": 1,
+   "tactic_weights": {
+    "execution": 0.0208,
+    "resource_development": 0.0208
+   },
+   "tactics": [
+    "execution",
+    "resource_development"
+   ],
+   "weight": 0.0208
+  },
+  "naabu": {
+   "rules": 2,
+   "tactic_weights": {
+    "discovery": 0.0769,
+    "execution": 0.0208,
+    "resource_development": 0.0208
+   },
+   "tactics": [
+    "discovery"
+   ],
+   "weight": 0.0978
+  },
+  "nano": {
+   "rules": 4,
+   "tactic_weights": {
+    "discovery": 0.1667,
+    "impact": 0.0909,
+    "reconnaissance": 0.0909
+   },
+   "tactics": [
+    "discovery",
+    "impact",
+    "reconnaissance"
+   ],
+   "weight": 0.3485
+  },
+  "nawk": {
+   "rules": 1,
+   "tactic_weights": {
+    "execution": 0.25
+   },
+   "tactics": [
+    "execution"
+   ],
+   "weight": 0.25
+  },
+  "nc": {
+   "rules": 3,
+   "tactic_weights": {
+    "discovery": 0.0769,
+    "execution": 0.3429
+   },
+   "tactics": [
+    "execution"
+   ],
+   "weight": 0.4198
+  },
+  "nc.openbsd": {
+   "rules": 1,
+   "tactic_weights": {
+    "execution": 0.1429
+   },
+   "tactics": [
+    "execution"
+   ],
+   "weight": 0.1429
+  },
+  "nc.traditional": {
+   "rules": 1,
+   "tactic_weights": {
+    "execution": 0.1429
+   },
+   "tactics": [
+    "execution"
+   ],
+   "weight": 0.1429
+  },
+  "ncat": {
+   "rules": 3,
+   "tactic_weights": {
+    "discovery": 0.0769,
+    "execution": 0.3429
+   },
+   "tactics": [
+    "execution"
+   ],
+   "weight": 0.4198
+  },
+  "ncrack": {
+   "rules": 1,
+   "tactic_weights": {
+    "execution": 0.0208,
+    "resource_development": 0.0208
+   },
+   "tactics": [
+    "execution",
+    "resource_development"
+   ],
+   "weight": 0.0208
+  },
+  "netcat": {
+   "rules": 3,
+   "tactic_weights": {
+    "discovery": 0.0769,
+    "execution": 0.3429
+   },
+   "tactics": [
+    "execution"
+   ],
+   "weight": 0.4198
+  },
+  "netcat.openbsd": {
+   "rules": 1,
+   "tactic_weights": {
+    "execution": 0.1429
+   },
+   "tactics": [
+    "execution"
+   ],
+   "weight": 0.1429
+  },
+  "netcat.traditional": {
+   "rules": 1,
+   "tactic_weights": {
+    "execution": 0.1429
+   },
+   "tactics": [
+    "execution"
+   ],
+   "weight": 0.1429
+  },
+  "netdiscover": {
+   "rules": 1,
+   "tactic_weights": {
+    "execution": 0.0208,
+    "resource_development": 0.0208
+   },
+   "tactics": [
+    "execution",
+    "resource_development"
+   ],
+   "weight": 0.0208
+  },
+  "netstat": {
+   "rules": 3,
+   "tactic_weights": {
+    "discovery": 0.3111,
+    "persistence": 0.0909
+   },
+   "tactics": [
+    "discovery"
+   ],
+   "weight": 0.402
+  },
+  "nice": {
+   "rules": 1,
+   "tactic_weights": {
+    "discovery": 1.0
+   },
+   "tactics": [
+    "discovery"
+   ],
+   "weight": 1.0
+  },
+  "nikto": {
+   "rules": 1,
+   "tactic_weights": {
+    "execution": 0.0208,
+    "resource_development": 0.0208
+   },
+   "tactics": [
+    "execution",
+    "resource_development"
+   ],
+   "weight": 0.0208
+  },
+  "nl": {
+   "rules": 1,
+   "tactic_weights": {
+    "discovery": 0.125
+   },
+   "tactics": [
+    "discovery"
+   ],
+   "weight": 0.125
+  },
+  "nmap": {
+   "rules": 1,
+   "tactic_weights": {
+    "discovery": 0.0769
+   },
+   "tactics": [
+    "discovery"
+   ],
+   "weight": 0.0769
+  },
+  "nohup": {
+   "rules": 2,
+   "tactic_weights": {
+    "execution": 2.0
+   },
+   "tactics": [
+    "execution"
+   ],
+   "weight": 2.0
+  },
+  "nping": {
+   "rules": 1,
+   "tactic_weights": {
+    "discovery": 0.0769
+   },
+   "tactics": [
+    "discovery"
+   ],
+   "weight": 0.0769
+  },
+  "nuclei": {
+   "rules": 1,
+   "tactic_weights": {
+    "execution": 0.0208,
+    "resource_development": 0.0208
+   },
+   "tactics": [
+    "execution",
+    "resource_development"
+   ],
+   "weight": 0.0208
+  },
+  "nxc-ubuntu-latest": {
+   "rules": 1,
+   "tactic_weights": {
+    "execution": 0.0208,
+    "resource_development": 0.0208
+   },
+   "tactics": [
+    "execution",
+    "resource_development"
+   ],
+   "weight": 0.0208
+  },
+  "perl": {
+   "rules": 1,
+   "tactic_weights": {
+    "execution": 1.0
+   },
+   "tactics": [
+    "execution"
+   ],
+   "weight": 1.0
+  },
+  "pidhide": {
+   "rules": 1,
+   "tactic_weights": {
+    "execution": 0.0208,
+    "resource_development": 0.0208
+   },
+   "tactics": [
+    "execution",
+    "resource_development"
+   ],
+   "weight": 0.0208
+  },
+  "ping": {
+   "rules": 1,
+   "tactic_weights": {
+    "discovery": 0.5
+   },
+   "tactics": [
+    "discovery"
+   ],
+   "weight": 0.5
+  },
+  "ps-empire": {
+   "rules": 1,
+   "tactic_weights": {
+    "execution": 0.0208,
+    "resource_development": 0.0208
+   },
+   "tactics": [
+    "execution",
+    "resource_development"
+   ],
+   "weight": 0.0208
+  },
+  "ps-empire server": {
+   "rules": 1,
+   "tactic_weights": {
+    "execution": 0.0208,
+    "resource_development": 0.0208
+   },
+   "tactics": [
+    "execution",
+    "resource_development"
+   ],
+   "weight": 0.0208
+  },
+  "pspy32": {
+   "rules": 1,
+   "tactic_weights": {
+    "execution": 0.0208,
+    "resource_development": 0.0208
+   },
+   "tactics": [
+    "execution",
+    "resource_development"
+   ],
+   "weight": 0.0208
+  },
+  "pspy32s": {
+   "rules": 1,
+   "tactic_weights": {
+    "execution": 0.0208,
+    "resource_development": 0.0208
+   },
+   "tactics": [
+    "execution",
+    "resource_development"
+   ],
+   "weight": 0.0208
+  },
+  "pspy64": {
+   "rules": 1,
+   "tactic_weights": {
+    "execution": 0.0208,
+    "resource_development": 0.0208
+   },
+   "tactics": [
+    "execution",
+    "resource_development"
+   ],
+   "weight": 0.0208
+  },
+  "pspy64s": {
+   "rules": 1,
+   "tactic_weights": {
+    "execution": 0.0208,
+    "resource_development": 0.0208
+   },
+   "tactics": [
+    "execution",
+    "resource_development"
+   ],
+   "weight": 0.0208
+  },
+  "pwd": {
+   "rules": 1,
+   "tactic_weights": {
+    "persistence": 0.0909
+   },
+   "tactics": [
+    "persistence"
+   ],
+   "weight": 0.0909
+  },
+  "python": {
+   "rules": 3,
+   "tactic_weights": {
+    "execution": 0.6667,
+    "exfiltration": 0.3333
+   },
+   "tactics": [
+    "execution",
+    "exfiltration"
+   ],
+   "weight": 1.0
+  },
+  "python2": {
+   "rules": 3,
+   "tactic_weights": {
+    "execution": 0.6667,
+    "exfiltration": 0.3333
+   },
+   "tactics": [
+    "execution",
+    "exfiltration"
+   ],
+   "weight": 1.0
+  },
+  "python3": {
+   "rules": 3,
+   "tactic_weights": {
+    "execution": 0.6667,
+    "exfiltration": 0.3333
+   },
+   "tactics": [
+    "execution",
+    "exfiltration"
+   ],
+   "weight": 1.0
+  },
+  "recon-ng": {
+   "rules": 1,
+   "tactic_weights": {
+    "execution": 0.0208,
+    "resource_development": 0.0208
+   },
+   "tactics": [
+    "execution",
+    "resource_development"
+   ],
+   "weight": 0.0208
+  },
+  "rm": {
+   "rules": 1,
+   "tactic_weights": {
+    "impact": 0.3333
+   },
+   "tactics": [
+    "impact"
+   ],
+   "weight": 0.3333
+  },
+  "route": {
+   "rules": 2,
+   "tactic_weights": {
+    "discovery": 0.1111,
+    "persistence": 0.0909
+   },
+   "tactics": [
+    "discovery",
+    "persistence"
+   ],
+   "weight": 0.202
+  },
+  "rsync": {
+   "rules": 1,
+   "tactic_weights": {
+    "execution": 0.5
+   },
+   "tactics": [
+    "execution"
+   ],
+   "weight": 0.5
+  },
+  "rsyncd": {
+   "rules": 1,
+   "tactic_weights": {
+    "execution": 0.5
+   },
+   "tactics": [
+    "execution"
+   ],
+   "weight": 0.5
+  },
+  "rvim": {
+   "rules": 1,
+   "tactic_weights": {
+    "discovery": 0.25,
+    "execution": 0.25
+   },
+   "tactics": [
+    "discovery",
+    "execution"
+   ],
+   "weight": 0.25
+  },
+  "sed": {
+   "rules": 1,
+   "tactic_weights": {
+    "impact": 0.0909
+   },
+   "tactics": [
+    "impact"
+   ],
+   "weight": 0.0909
+  },
+  "service": {
+   "rules": 1,
+   "tactic_weights": {
+    "impact": 0.3333
+   },
+   "tactics": [
+    "impact"
+   ],
+   "weight": 0.3333
+  },
+  "setcap": {
+   "rules": 2,
+   "tactic_weights": {
+    "persistence": 2.0,
+    "privilege_escalation": 2.0
+   },
+   "tactics": [
+    "persistence",
+    "privilege_escalation"
+   ],
+   "weight": 2.0
+  },
+  "setoolkit": {
+   "rules": 1,
+   "tactic_weights": {
+    "execution": 0.0208,
+    "resource_development": 0.0208
+   },
+   "tactics": [
+    "execution",
+    "resource_development"
+   ],
+   "weight": 0.0208
+  },
+  "sh": {
+   "rules": 4,
+   "tactic_weights": {
+    "execution": 0.744
+   },
+   "tactics": [
+    "execution"
+   ],
+   "weight": 0.744
+  },
+  "shred": {
+   "rules": 1,
+   "tactic_weights": {
+    "impact": 0.3333
+   },
+   "tactics": [
+    "impact"
+   ],
+   "weight": 0.3333
+  },
+  "sliver-client": {
+   "rules": 1,
+   "tactic_weights": {
+    "execution": 0.0208,
+    "resource_development": 0.0208
+   },
+   "tactics": [
+    "execution",
+    "resource_development"
+   ],
+   "weight": 0.0208
+  },
+  "sliver-server": {
+   "rules": 1,
+   "tactic_weights": {
+    "execution": 0.0208,
+    "resource_development": 0.0208
+   },
+   "tactics": [
+    "execution",
+    "resource_development"
+   ],
+   "weight": 0.0208
+  },
+  "socat": {
+   "rules": 1,
+   "tactic_weights": {
+    "discovery": 0.0769
+   },
+   "tactics": [
+    "discovery"
+   ],
+   "weight": 0.0769
+  },
+  "sqlite3": {
+   "rules": 1,
+   "tactic_weights": {
+    "discovery": 0.0667
+   },
+   "tactics": [
+    "discovery"
+   ],
+   "weight": 0.0667
+  },
+  "sqlmap": {
+   "rules": 1,
+   "tactic_weights": {
+    "execution": 0.0208,
+    "resource_development": 0.0208
+   },
+   "tactics": [
+    "execution",
+    "resource_development"
+   ],
+   "weight": 0.0208
+  },
+  "ss": {
+   "rules": 1,
+   "tactic_weights": {
+    "discovery": 0.1111
+   },
+   "tactics": [
+    "discovery"
+   ],
+   "weight": 0.1111
+  },
+  "ssh": {
+   "rules": 1,
+   "tactic_weights": {
+    "execution": 1.0
+   },
+   "tactics": [
+    "execution"
+   ],
+   "weight": 1.0
+  },
+  "stat": {
+   "rules": 1,
+   "tactic_weights": {
+    "discovery": 0.1429
+   },
+   "tactics": [
+    "discovery"
+   ],
+   "weight": 0.1429
+  },
+  "sudo": {
+   "rules": 2,
+   "tactic_weights": {
+    "privilege_escalation": 2.0
+   },
+   "tactics": [
+    "privilege_escalation"
+   ],
+   "weight": 2.0
+  },
+  "systemctl": {
+   "rules": 3,
+   "tactic_weights": {
+    "execution": 0.3333,
+    "impact": 1.3333,
+    "persistence": 1.0
+   },
+   "tactics": [
+    "impact",
+    "persistence"
+   ],
+   "weight": 1.6667
+  },
+  "systemd-resolve": {
+   "rules": 1,
+   "tactic_weights": {
+    "discovery": 0.1111
+   },
+   "tactics": [
+    "discovery"
+   ],
+   "weight": 0.1111
+  },
+  "tail": {
+   "rules": 6,
+   "tactic_weights": {
+    "discovery": 0.2917,
+    "impact": 0.0909,
+    "reconnaissance": 0.3409
+   },
+   "tactics": [
+    "discovery",
+    "reconnaissance"
+   ],
+   "weight": 0.7235
+  },
+  "tcsh": {
+   "rules": 1,
+   "tactic_weights": {
+    "execution": 0.125
+   },
+   "tactics": [
+    "execution"
+   ],
+   "weight": 0.125
+  },
+  "teamviewer_desktop": {
+   "rules": 1,
+   "tactic_weights": {
+    "initial_access": 1.0,
+    "persistence": 1.0
+   },
+   "tactics": [
+    "initial_access",
+    "persistence"
+   ],
+   "weight": 1.0
+  },
+  "telnet": {
+   "rules": 1,
+   "tactic_weights": {
+    "discovery": 0.0769
+   },
+   "tactics": [
+    "discovery"
+   ],
+   "weight": 0.0769
+  },
+  "test": {
+   "rules": 1,
+   "tactic_weights": {
+    "discovery": 0.1429
+   },
+   "tactics": [
+    "discovery"
+   ],
+   "weight": 0.1429
+  },
+  "tree": {
+   "rules": 1,
+   "tactic_weights": {
+    "discovery": 0.1667
+   },
+   "tactics": [
+    "discovery"
+   ],
+   "weight": 0.1667
+  },
+  "trufflehog": {
+   "rules": 2,
+   "tactic_weights": {
+    "collection": 0.5,
+    "credential_access": 1.5,
+    "discovery": 1.0,
+    "execution": 0.5
+   },
+   "tactics": [
+    "collection",
+    "credential_access",
+    "discovery",
+    "execution"
+   ],
+   "weight": 1.5
+  },
+  "ufw": {
+   "rules": 1,
+   "tactic_weights": {
+    "discovery": 0.1111
+   },
+   "tactics": [
+    "discovery"
+   ],
+   "weight": 0.1111
+  },
+  "uname": {
+   "rules": 2,
+   "tactic_weights": {
+    "discovery": 0.1429,
+    "persistence": 0.0909
+   },
+   "tactics": [
+    "discovery",
+    "persistence"
+   ],
+   "weight": 0.2338
+  },
+  "unlink": {
+   "rules": 1,
+   "tactic_weights": {
+    "impact": 0.3333
+   },
+   "tactics": [
+    "impact"
+   ],
+   "weight": 0.3333
+  },
+  "uptime": {
+   "rules": 1,
+   "tactic_weights": {
+    "discovery": 0.1429
+   },
+   "tactics": [
+    "discovery"
+   ],
+   "weight": 0.1429
+  },
+  "userdel": {
+   "rules": 1,
+   "tactic_weights": {
+    "impact": 1.0
+   },
+   "tactics": [
+    "impact"
+   ],
+   "weight": 1.0
+  },
+  "usermod": {
+   "rules": 1,
+   "tactic_weights": {
+    "persistence": 1.0,
+    "privilege_escalation": 1.0
+   },
+   "tactics": [
+    "persistence",
+    "privilege_escalation"
+   ],
+   "weight": 1.0
+  },
+  "vi": {
+   "rules": 4,
+   "tactic_weights": {
+    "discovery": 0.4167,
+    "execution": 0.25,
+    "impact": 0.0909
+   },
+   "tactics": [
+    "discovery",
+    "execution"
+   ],
+   "weight": 0.5076
+  },
+  "villain.py": {
+   "rules": 1,
+   "tactic_weights": {
+    "execution": 0.0208,
+    "resource_development": 0.0208
+   },
+   "tactics": [
+    "execution",
+    "resource_development"
+   ],
+   "weight": 0.0208
+  },
+  "vim": {
+   "rules": 4,
+   "tactic_weights": {
+    "discovery": 0.4167,
+    "execution": 0.25,
+    "impact": 0.0909
+   },
+   "tactics": [
+    "discovery",
+    "execution"
+   ],
+   "weight": 0.5076
+  },
+  "vimdiff": {
+   "rules": 1,
+   "tactic_weights": {
+    "discovery": 0.25,
+    "execution": 0.25
+   },
+   "tactics": [
+    "discovery",
+    "execution"
+   ],
+   "weight": 0.25
+  },
+  "w": {
+   "rules": 1,
+   "tactic_weights": {
+    "discovery": 0.2
+   },
+   "tactics": [
+    "discovery"
+   ],
+   "weight": 0.2
+  },
+  "wfuzz": {
+   "rules": 1,
+   "tactic_weights": {
+    "execution": 0.0208,
+    "resource_development": 0.0208
+   },
+   "tactics": [
+    "execution",
+    "resource_development"
+   ],
+   "weight": 0.0208
+  },
+  "wget": {
+   "rules": 1,
+   "tactic_weights": {
+    "command_and_control": 1.0
+   },
+   "tactics": [
+    "command_and_control"
+   ],
+   "weight": 1.0
+  },
+  "whatweb": {
+   "rules": 1,
+   "tactic_weights": {
+    "execution": 0.0208,
+    "resource_development": 0.0208
+   },
+   "tactics": [
+    "execution",
+    "resource_development"
+   ],
+   "weight": 0.0208
+  },
+  "who": {
+   "rules": 1,
+   "tactic_weights": {
+    "discovery": 0.2
+   },
+   "tactics": [
+    "discovery"
+   ],
+   "weight": 0.2
+  },
+  "whoami": {
+   "rules": 2,
+   "tactic_weights": {
+    "execution": 0.2,
+    "persistence": 0.0909
+   },
+   "tactics": [
+    "execution",
+    "persistence"
+   ],
+   "weight": 0.2909
+  },
+  "wpscan": {
+   "rules": 1,
+   "tactic_weights": {
+    "execution": 0.0208,
+    "resource_development": 0.0208
+   },
+   "tactics": [
+    "execution",
+    "resource_development"
+   ],
+   "weight": 0.0208
+  },
+  "writeblocker": {
+   "rules": 1,
+   "tactic_weights": {
+    "execution": 0.0208,
+    "resource_development": 0.0208
+   },
+   "tactics": [
+    "execution",
+    "resource_development"
+   ],
+   "weight": 0.0208
+  },
+  "zenmap": {
+   "rules": 1,
+   "tactic_weights": {
+    "discovery": 0.0769
+   },
+   "tactics": [
+    "discovery"
+   ],
+   "weight": 0.0769
+  },
+  "zsh": {
+   "rules": 3,
+   "tactic_weights": {
+    "execution": 0.4107
+   },
+   "tactics": [
+    "execution"
+   ],
+   "weight": 0.4107
+  }
+ },
+ "format": "argus-behaviour-vocab/1",
+ "min_share": 0.25,
+ "platform": "linux",
+ "rules_used": 84,
+ "sigma_commit": "ca24243a6e3f94353a54176f83c4c3b7f579224a",
+ "snapshot": "lab"
+}

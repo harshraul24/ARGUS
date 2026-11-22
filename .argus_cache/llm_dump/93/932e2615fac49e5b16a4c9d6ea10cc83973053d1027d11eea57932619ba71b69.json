@@ -1,0 +1,14 @@
+{
+  "key": "932e2615fac49e5b16a4c9d6ea10cc83973053d1027d11eea57932619ba71b69",
+  "provider": "ollama",
+  "model": "gpt-oss:120b-cloud",
+  "prompt_sha": "932e2615fac49e5b",
+  "response": "{\n  \"disposition\": \"benign\",\n  \"mitre_technique\": \"none\",\n  \"severity\": 0.1,\n  \"malicious_events\": [],\n  \"reason\": \"All observed activity corresponds to normal system package installations, updates, and service management; no anomalous outbound connections or credential dumping beyond expected system processes.\"\n}",
+  "latency_s": 2.4831058979034424,
+  "created_at": 1791424226.415555,
+  "params": {
+    "temperature": 0.0,
+    "seed": 8,
+    "json_mode": true
+  }
+}

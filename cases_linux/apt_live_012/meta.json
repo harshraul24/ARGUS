@@ -1,0 +1,115 @@
+{
+  "meta_version": "v0.2",
+  "scenario_id": "apt_live_012",
+  "category": "attack",
+  "title": "APT-Agent samba_usermap (live Metasploitable2)",
+  "generated_by": "APT-Agent + apt_capture harness",
+  "topology": {
+    "hosts": [
+      {
+        "name": "attacker",
+        "ip": "10.0.2.10",
+        "role": "attacker",
+        "os": "Linux"
+      },
+      {
+        "name": "target",
+        "ip": "10.0.2.20",
+        "role": "victim",
+        "os": "Linux"
+      }
+    ],
+    "zeek_sensor": {
+      "host": "capture",
+      "position": "attacker-target path"
+    }
+  },
+  "capture": {
+    "window": {
+      "start": "2026-09-09T17:04:48Z",
+      "end": "2026-09-09T17:09:01.203200Z"
+    },
+    "clean_capture": true
+  },
+  "expected_observables": {
+    "authlog": {
+      "logon_failure": false,
+      "logon_success": true
+    },
+    "zeek": {
+      "conn": true,
+      "ssh": true
+    }
+  },
+  "mitre": {
+    "technique": "T1210"
+  },
+  "ground_truth": {
+    "category": "attack",
+    "campaign_start": "2026-09-09T17:04:48Z",
+    "techniques": [
+      "T1046",
+      "T1210"
+    ],
+    "primary_technique": "T1210",
+    "objective_reached": false,
+    "actions": [
+      {
+        "iter": 1,
+        "tactic": "RECON",
+        "time": "2026-09-09T17:04:48Z",
+        "technique": "T1046",
+        "detail": "reconnaissance",
+        "result": "n/a"
+      },
+      {
+        "iter": 2,
+        "tactic": "EXPLOIT",
+        "time": "2026-09-09T17:05:13.508500Z",
+        "technique": null,
+        "detail": "use exploit/linux/samba/is_known_pipename",
+        "result": "fail"
+      },
+      {
+        "iter": 3,
+        "tactic": "RECON",
+        "time": "2026-09-09T17:06:51.065300Z",
+        "technique": "T1046",
+        "detail": "reconnaissance",
+        "result": "n/a"
+      },
+      {
+        "iter": 4,
+        "tactic": "RECON",
+        "time": "2026-09-09T17:06:55.320500Z",
+        "technique": "T1046",
+        "detail": "reconnaissance",
+        "result": "n/a"
+      },
+      {
+        "iter": 5,
+        "tactic": "EXPLOIT",
+        "time": "2026-09-09T17:07:18.278300Z",
+        "technique": null,
+        "detail": "use exploit/linux/samba/is_known_pipename",
+        "result": "fail"
+      },
+      {
+        "iter": 6,
+        "tactic": "RECON",
+        "time": "2026-09-09T17:08:57.296100Z",
+        "technique": "T1046",
+        "detail": "reconnaissance",
+        "result": "n/a"
+      },
+      {
+        "iter": 7,
+        "tactic": "RECON",
+        "time": "2026-09-09T17:09:01.203200Z",
+        "technique": "T1046",
+        "detail": "reconnaissance",
+        "result": "n/a"
+      }
+    ]
+  }
+}

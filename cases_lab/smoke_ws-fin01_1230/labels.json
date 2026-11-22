@@ -1,0 +1,29 @@
+{
+ "category": "attack",
+ "malicious_event_ids": [
+  "smoke_ws-fin01_1230:auditd:0",
+  "smoke_ws-fin01_1230:auditd:1",
+  "smoke_ws-fin01_1230:auditd:2"
+ ],
+ "abilities": [
+  {
+   "name": "Find user processes",
+   "status": "success",
+   "technique_id": "T1057",
+   "command": "ps aux | grep www-data",
+   "event_ids": [
+    "smoke_ws-fin01_1230:auditd:0",
+    "smoke_ws-fin01_1230:auditd:1",
+    "smoke_ws-fin01_1230:auditd:2"
+   ],
+   "bootstrap": false,
+   "deployment": false,
+   "process_event_ids": [
+    "smoke_ws-fin01_1230:auditd:0",
+    "smoke_ws-fin01_1230:auditd:1",
+    "smoke_ws-fin01_1230:auditd:2"
+   ]
+  }
+ ],
+ "source": "CALDERA report smoke-discovery_report.json + bootstrap actions from ground_truth.json: step pid + descendants, agent lineage"
+}

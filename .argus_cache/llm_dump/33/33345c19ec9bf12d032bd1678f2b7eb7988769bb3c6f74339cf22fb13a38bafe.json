@@ -1,0 +1,14 @@
+{
+  "key": "33345c19ec9bf12d032bd1678f2b7eb7988769bb3c6f74339cf22fb13a38bafe",
+  "provider": "ollama",
+  "model": "gpt-oss:120b-cloud",
+  "prompt_sha": "33345c19ec9bf12d",
+  "response": "{\n  \"disposition\": \"malicious\",\n  \"mitre_technique\": \"T1548.003\",\n  \"severity\": 0.8,\n  \"malicious_events\": [\n    \"e16\",\n    \"e29\",\n    \"e101\",\n    \"e110\",\n    \"e181\",\n    \"e95\",\n    \"e105\",\n    \"e176\",\n    \"e25\",\n    \"e30\",\n    \"e95\",\n    \"e105\",\n    \"e176\"\n  ],\n  \"reason\": \"User www repeatedly uses sudo to read /etc/shadow and manipulate auditd, indicating privilege escalation and credential dumping.\"\n}",
+  "latency_s": 2.600858211517334,
+  "created_at": 1791424116.8159091,
+  "params": {
+    "temperature": 0.0,
+    "seed": 7,
+    "json_mode": true
+  }
+}

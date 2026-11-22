@@ -1,0 +1,2101 @@
+{
+ "freeze": {
+  "manifest": null,
+  "matches": false,
+  "aggregate_sha256": "48143ba32948bce7f638583311069a48a11afbbbfdb342c25cb320b7866723c8",
+  "changed": [
+   "no freeze manifest found"
+  ]
+ },
+ "windows": {},
+ "arms": {
+  "argus": {
+   "metrics": {
+    "all": {
+     "attack_windows_flagged": "7/8",
+     "benign_windows_flagged": "5/6",
+     "steps_detected": "64/68",
+     "step_recall_ci95": [
+      0.858,
+      0.977
+     ],
+     "event_precision": 0.1086,
+     "steps_by_rule": {
+      "NOVELTY": 61,
+      "TA0010": 4
+     }
+    },
+    "gate_pass": {
+     "attack_windows_flagged": "7/8",
+     "benign_windows_flagged": "4/5",
+     "steps_detected": "64/68",
+     "step_recall_ci95": [
+      0.858,
+      0.977
+     ],
+     "event_precision": 0.3125,
+     "steps_by_rule": {
+      "NOVELTY": 61,
+      "TA0010": 4
+     }
+    },
+    "steps_by_status": {
+     "success": "64/68"
+    },
+    "bootstrap_steps": "1/4"
+   },
+   "windows": [
+    {
+     "window": "smoke_app01_1100",
+     "category": "benign",
+     "gate": "pass",
+     "disposition": "suspicious",
+     "alerts": [
+      "NOVELTY"
+     ],
+     "selected": 94,
+     "malicious_selected": 0,
+     "malicious": 0,
+     "blind_spots": [
+      "ecar: recorded no file_create events in this capture",
+      "ecar: recorded no file_delete events in this capture",
+      "ecar: recorded no file_read events in this capture",
+      "ecar: recorded no file_rename events in this capture"
+     ],
+     "claims": 94
+    },
+    {
+     "window": "smoke_app01_1200",
+     "category": "attack",
+     "gate": "pass",
+     "disposition": "suspicious",
+     "alerts": [
+      "TA0010"
+     ],
+     "selected": 1,
+     "malicious_selected": 1,
+     "malicious": 7,
+     "blind_spots": [
+      "ecar: an outbound network connection carrying the upload \u2014 ecar recorded no host_network_connection events in this capture",
+      "ecar: recorded no file_create events in this capture",
+      "ecar: recorded no file_delete events in this capture",
+      "ecar: recorded no file_read events in this capture"
+     ],
+     "claims": 7
+    },
+    {
+     "window": "smoke_app01_1230",
+     "category": "attack",
+     "gate": "pass",
+     "disposition": "suspicious",
+     "alerts": [
+      "NOVELTY"
+     ],
+     "selected": 47,
+     "malicious_selected": 45,
+     "malicious": 45,
+     "blind_spots": [
+      "ecar: recorded no file_create events in this capture",
+      "ecar: recorded no file_delete events in this capture",
+      "ecar: recorded no file_read events in this capture",
+      "ecar: recorded no file_rename events in this capture"
+     ],
+     "claims": 47
+    },
+    {
+     "window": "smoke_web01_1100",
+     "category": "benign",
+     "gate": "pass",
+     "disposition": "suspicious",
+     "alerts": [
+      "NOVELTY"
+     ],
+     "selected": 166,
+     "malicious_selected": 0,
+     "malicious": 0,
+     "blind_spots": [
+      "ecar: recorded no file_create events in this capture",
+      "ecar: recorded no file_delete events in this capture",
+      "ecar: recorded no file_read events in this capture",
+      "ecar: recorded no file_rename events in this capture"
+     ],
+     "claims": 166
+    },
+    {
+     "window": "smoke_web01_1200",
+     "category": "attack",
+     "gate": "pass",
+     "disposition": "suspicious",
+     "alerts": [
+      "TA0010"
+     ],
+     "selected": 1,
+     "malicious_selected": 1,
+     "malicious": 11,
+     "blind_spots": [
+      "ecar: an outbound network connection carrying the upload \u2014 ecar recorded no host_network_connection events in this capture",
+      "ecar: recorded no file_create events in this capture",
+      "ecar: recorded no file_delete events in this capture",
+      "ecar: recorded no file_read events in this capture"
+     ],
+     "claims": 11
+    },
+    {
+     "window": "smoke_web01_1230",
+     "category": "attack",
+     "gate": "pass",
+     "disposition": "suspicious",
+     "alerts": [
+      "NOVELTY"
+     ],
+     "selected": 71,
+     "malicious_selected": 45,
+     "malicious": 45,
+     "blind_spots": [
+      "ecar: recorded no file_create events in this capture",
+      "ecar: recorded no file_delete events in this capture",
+      "ecar: recorded no file_read events in this capture",
+      "ecar: recorded no file_rename events in this capture"
+     ],
+     "claims": 71
+    },
+    {
+     "window": "smoke_ws-dev01_1100",
+     "category": "benign",
+     "gate": "pass",
+     "disposition": "suspicious",
+     "alerts": [
+      "NOVELTY"
+     ],
+     "selected": 87,
+     "malicious_selected": 0,
+     "malicious": 0,
+     "blind_spots": [
+      "ecar: recorded no file_create events in this capture",
+      "ecar: recorded no file_delete events in this capture",
+      "ecar: recorded no file_read events in this capture",
+      "ecar: recorded no file_rename events in this capture"
+     ],
+     "claims": 87
+    },
+    {
+     "window": "smoke_ws-dev01_1130",
+     "category": "benign",
+     "gate": "pass",
+     "disposition": "benign",
+     "alerts": [],
+     "selected": 0,
+     "malicious_selected": 0,
+     "malicious": 0,
+     "blind_spots": [
+      "ecar: recorded no file_create events in this capture",
+      "ecar: recorded no file_delete events in this capture",
+      "ecar: recorded no file_read events in this capture",
+      "ecar: recorded no file_rename events in this capture"
+     ],
+     "claims": 3
+    },
+    {
+     "window": "smoke_ws-dev01_1200",
+     "category": "attack",
+     "gate": "pass",
+     "disposition": "suspicious",
+     "alerts": [
+      "TA0010"
+     ],
+     "selected": 1,
+     "malicious_selected": 1,
+     "malicious": 5,
+     "blind_spots": [
+      "ecar: an outbound network connection carrying the upload \u2014 ecar recorded no host_network_connection events in this capture",
+      "ecar: recorded no file_create events in this capture",
+      "ecar: recorded no file_delete events in this capture",
+      "ecar: recorded no file_read events in this capture"
+     ],
+     "claims": 5
+    },
+    {
+     "window": "smoke_ws-dev01_1230",
+     "category": "attack",
+     "gate": "pass",
+     "disposition": "suspicious",
+     "alerts": [
+      "NOVELTY"
+     ],
+     "selected": 47,
+     "malicious_selected": 45,
+     "malicious": 45,
+     "blind_spots": [
+      "ecar: recorded no file_create events in this capture",
+      "ecar: recorded no file_delete events in this capture",
+      "ecar: recorded no file_read events in this capture",
+      "ecar: recorded no file_rename events in this capture"
+     ],
+     "claims": 47
+    },
+    {
+     "window": "smoke_ws-fin01_1100",
+     "category": "benign",
+     "gate": "fail: first_boot",
+     "disposition": "suspicious",
+     "alerts": [
+      "NOVELTY"
+     ],
+     "selected": 1111,
+     "malicious_selected": 0,
+     "malicious": 0,
+     "blind_spots": [
+      "ecar: recorded no file_create events in this capture",
+      "ecar: recorded no file_delete events in this capture",
+      "ecar: recorded no file_read events in this capture",
+      "ecar: recorded no file_rename events in this capture"
+     ],
+     "claims": 1111
+    },
+    {
+     "window": "smoke_ws-fin01_1130",
+     "category": "benign",
+     "gate": "pass",
+     "disposition": "suspicious",
+     "alerts": [
+      "NOVELTY"
+     ],
+     "selected": 30,
+     "malicious_selected": 0,
+     "malicious": 0,
+     "blind_spots": [
+      "ecar: recorded no file_create events in this capture",
+      "ecar: recorded no file_delete events in this capture",
+      "ecar: recorded no file_read events in this capture",
+      "ecar: recorded no file_rename events in this capture"
+     ],
+     "claims": 30
+    },
+    {
+     "window": "smoke_ws-fin01_1200",
+     "category": "attack",
+     "gate": "pass",
+     "disposition": "suspicious",
+     "alerts": [
+      "NOVELTY",
+      "TA0010"
+     ],
+     "selected": 47,
+     "malicious_selected": 47,
+     "malicious": 47,
+     "blind_spots": [
+      "ecar: an outbound network connection carrying the upload \u2014 ecar recorded no host_network_connection events in this capture",
+      "ecar: recorded no file_create events in this capture",
+      "ecar: recorded no file_delete events in this capture",
+      "ecar: recorded no file_read events in this capture"
+     ],
+     "claims": 47
+    },
+    {
+     "window": "smoke_ws-fin01_1230",
+     "category": "attack",
+     "gate": "pass",
+     "disposition": "benign",
+     "alerts": [],
+     "selected": 0,
+     "malicious_selected": 0,
+     "malicious": 3,
+     "blind_spots": [
+      "ecar: recorded no file_create events in this capture",
+      "ecar: recorded no file_delete events in this capture",
+      "ecar: recorded no file_read events in this capture",
+      "ecar: recorded no file_rename events in this capture"
+     ],
+     "claims": 5
+    }
+   ],
+   "steps": [
+    {
+     "window": "smoke_app01_1200",
+     "step": "Agent deployment",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "TA0010"
+     ]
+    },
+    {
+     "window": "smoke_app01_1200",
+     "step": "Bootstrap T1070.003",
+     "status": "success",
+     "bootstrap": true,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "smoke_app01_1230",
+     "step": "Identify active user",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "smoke_app01_1230",
+     "step": "Find local users",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "smoke_app01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "smoke_app01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "smoke_app01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "smoke_app01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "smoke_app01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "smoke_app01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "smoke_app01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "smoke_app01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "smoke_app01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "smoke_app01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "smoke_app01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "smoke_app01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "smoke_app01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "smoke_web01_1200",
+     "step": "Agent deployment",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "TA0010"
+     ]
+    },
+    {
+     "window": "smoke_web01_1200",
+     "step": "Bootstrap T1070.003",
+     "status": "success",
+     "bootstrap": true,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "smoke_web01_1230",
+     "step": "Identify active user",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "smoke_web01_1230",
+     "step": "Find local users",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "smoke_web01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "smoke_web01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "smoke_web01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "smoke_web01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "smoke_web01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "smoke_web01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "smoke_web01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "smoke_web01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "smoke_web01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "smoke_web01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "smoke_web01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "smoke_web01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "smoke_web01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "smoke_ws-dev01_1200",
+     "step": "Agent deployment",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "TA0010"
+     ]
+    },
+    {
+     "window": "smoke_ws-dev01_1200",
+     "step": "Bootstrap T1070.003",
+     "status": "success",
+     "bootstrap": true,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "smoke_ws-dev01_1230",
+     "step": "Identify active user",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "smoke_ws-dev01_1230",
+     "step": "Find local users",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "smoke_ws-dev01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "smoke_ws-dev01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "smoke_ws-dev01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "smoke_ws-dev01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "smoke_ws-dev01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "smoke_ws-dev01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "smoke_ws-dev01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "smoke_ws-dev01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "smoke_ws-dev01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "smoke_ws-dev01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "smoke_ws-dev01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "smoke_ws-dev01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "smoke_ws-dev01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "smoke_ws-fin01_1200",
+     "step": "Agent deployment",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY",
+      "TA0010"
+     ]
+    },
+    {
+     "window": "smoke_ws-fin01_1200",
+     "step": "Identify active user",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "smoke_ws-fin01_1200",
+     "step": "Find local users",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "smoke_ws-fin01_1200",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "smoke_ws-fin01_1200",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "smoke_ws-fin01_1200",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "smoke_ws-fin01_1200",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "smoke_ws-fin01_1200",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "smoke_ws-fin01_1200",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "smoke_ws-fin01_1200",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "smoke_ws-fin01_1200",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "smoke_ws-fin01_1200",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "smoke_ws-fin01_1200",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "smoke_ws-fin01_1200",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "smoke_ws-fin01_1200",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "smoke_ws-fin01_1200",
+     "step": "Bootstrap T1070.003",
+     "status": "success",
+     "bootstrap": true,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "smoke_ws-fin01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    }
+   ]
+  },
+  "argus_s3": {
+   "metrics": {
+    "all": {
+     "attack_windows_flagged": "7/8",
+     "benign_windows_flagged": "5/6",
+     "steps_detected": "64/68",
+     "step_recall_ci95": [
+      0.858,
+      0.977
+     ],
+     "event_precision": 0.1086,
+     "steps_by_rule": {
+      "NOVELTY": 61,
+      "TA0010": 4
+     }
+    },
+    "gate_pass": {
+     "attack_windows_flagged": "7/8",
+     "benign_windows_flagged": "4/5",
+     "steps_detected": "64/68",
+     "step_recall_ci95": [
+      0.858,
+      0.977
+     ],
+     "event_precision": 0.3125,
+     "steps_by_rule": {
+      "NOVELTY": 61,
+      "TA0010": 4
+     }
+    },
+    "steps_by_status": {
+     "success": "64/68"
+    },
+    "bootstrap_steps": "1/4"
+   },
+   "windows": [
+    {
+     "window": "smoke_app01_1100",
+     "category": "benign",
+     "gate": "pass",
+     "disposition": "suspicious",
+     "alerts": [
+      "NOVELTY"
+     ],
+     "selected": 94,
+     "malicious_selected": 0,
+     "malicious": 0,
+     "blind_spots": [
+      "ecar: recorded no file_create events in this capture",
+      "ecar: recorded no file_delete events in this capture",
+      "ecar: recorded no file_read events in this capture",
+      "ecar: recorded no file_rename events in this capture"
+     ],
+     "claims": 94
+    },
+    {
+     "window": "smoke_app01_1200",
+     "category": "attack",
+     "gate": "pass",
+     "disposition": "suspicious",
+     "alerts": [
+      "TA0010"
+     ],
+     "selected": 1,
+     "malicious_selected": 1,
+     "malicious": 7,
+     "blind_spots": [
+      "ecar: an outbound network connection carrying the upload \u2014 ecar recorded no host_network_connection events in this capture",
+      "ecar: recorded no file_create events in this capture",
+      "ecar: recorded no file_delete events in this capture",
+      "ecar: recorded no file_read events in this capture"
+     ],
+     "claims": 7
+    },
+    {
+     "window": "smoke_app01_1230",
+     "category": "attack",
+     "gate": "pass",
+     "disposition": "suspicious",
+     "alerts": [
+      "NOVELTY"
+     ],
+     "selected": 47,
+     "malicious_selected": 45,
+     "malicious": 45,
+     "blind_spots": [
+      "ecar: recorded no file_create events in this capture",
+      "ecar: recorded no file_delete events in this capture",
+      "ecar: recorded no file_read events in this capture",
+      "ecar: recorded no file_rename events in this capture"
+     ],
+     "claims": 47
+    },
+    {
+     "window": "smoke_web01_1100",
+     "category": "benign",
+     "gate": "pass",
+     "disposition": "suspicious",
+     "alerts": [
+      "NOVELTY"
+     ],
+     "selected": 166,
+     "malicious_selected": 0,
+     "malicious": 0,
+     "blind_spots": [
+      "ecar: recorded no file_create events in this capture",
+      "ecar: recorded no file_delete events in this capture",
+      "ecar: recorded no file_read events in this capture",
+      "ecar: recorded no file_rename events in this capture"
+     ],
+     "claims": 166
+    },
+    {
+     "window": "smoke_web01_1200",
+     "category": "attack",
+     "gate": "pass",
+     "disposition": "suspicious",
+     "alerts": [
+      "TA0010"
+     ],
+     "selected": 1,
+     "malicious_selected": 1,
+     "malicious": 11,
+     "blind_spots": [
+      "ecar: an outbound network connection carrying the upload \u2014 ecar recorded no host_network_connection events in this capture",
+      "ecar: recorded no file_create events in this capture",
+      "ecar: recorded no file_delete events in this capture",
+      "ecar: recorded no file_read events in this capture"
+     ],
+     "claims": 11
+    },
+    {
+     "window": "smoke_web01_1230",
+     "category": "attack",
+     "gate": "pass",
+     "disposition": "suspicious",
+     "alerts": [
+      "NOVELTY"
+     ],
+     "selected": 71,
+     "malicious_selected": 45,
+     "malicious": 45,
+     "blind_spots": [
+      "ecar: recorded no file_create events in this capture",
+      "ecar: recorded no file_delete events in this capture",
+      "ecar: recorded no file_read events in this capture",
+      "ecar: recorded no file_rename events in this capture"
+     ],
+     "claims": 71
+    },
+    {
+     "window": "smoke_ws-dev01_1100",
+     "category": "benign",
+     "gate": "pass",
+     "disposition": "suspicious",
+     "alerts": [
+      "NOVELTY"
+     ],
+     "selected": 87,
+     "malicious_selected": 0,
+     "malicious": 0,
+     "blind_spots": [
+      "ecar: recorded no file_create events in this capture",
+      "ecar: recorded no file_delete events in this capture",
+      "ecar: recorded no file_read events in this capture",
+      "ecar: recorded no file_rename events in this capture"
+     ],
+     "claims": 87
+    },
+    {
+     "window": "smoke_ws-dev01_1130",
+     "category": "benign",
+     "gate": "pass",
+     "disposition": "benign",
+     "alerts": [],
+     "selected": 0,
+     "malicious_selected": 0,
+     "malicious": 0,
+     "blind_spots": [
+      "ecar: recorded no file_create events in this capture",
+      "ecar: recorded no file_delete events in this capture",
+      "ecar: recorded no file_read events in this capture",
+      "ecar: recorded no file_rename events in this capture"
+     ],
+     "claims": 3
+    },
+    {
+     "window": "smoke_ws-dev01_1200",
+     "category": "attack",
+     "gate": "pass",
+     "disposition": "suspicious",
+     "alerts": [
+      "TA0010"
+     ],
+     "selected": 1,
+     "malicious_selected": 1,
+     "malicious": 5,
+     "blind_spots": [
+      "ecar: an outbound network connection carrying the upload \u2014 ecar recorded no host_network_connection events in this capture",
+      "ecar: recorded no file_create events in this capture",
+      "ecar: recorded no file_delete events in this capture",
+      "ecar: recorded no file_read events in this capture"
+     ],
+     "claims": 5
+    },
+    {
+     "window": "smoke_ws-dev01_1230",
+     "category": "attack",
+     "gate": "pass",
+     "disposition": "suspicious",
+     "alerts": [
+      "NOVELTY"
+     ],
+     "selected": 47,
+     "malicious_selected": 45,
+     "malicious": 45,
+     "blind_spots": [
+      "ecar: recorded no file_create events in this capture",
+      "ecar: recorded no file_delete events in this capture",
+      "ecar: recorded no file_read events in this capture",
+      "ecar: recorded no file_rename events in this capture"
+     ],
+     "claims": 47
+    },
+    {
+     "window": "smoke_ws-fin01_1100",
+     "category": "benign",
+     "gate": "fail: first_boot",
+     "disposition": "suspicious",
+     "alerts": [
+      "NOVELTY"
+     ],
+     "selected": 1111,
+     "malicious_selected": 0,
+     "malicious": 0,
+     "blind_spots": [
+      "ecar: recorded no file_create events in this capture",
+      "ecar: recorded no file_delete events in this capture",
+      "ecar: recorded no file_read events in this capture",
+      "ecar: recorded no file_rename events in this capture"
+     ],
+     "claims": 1111
+    },
+    {
+     "window": "smoke_ws-fin01_1130",
+     "category": "benign",
+     "gate": "pass",
+     "disposition": "suspicious",
+     "alerts": [
+      "NOVELTY"
+     ],
+     "selected": 30,
+     "malicious_selected": 0,
+     "malicious": 0,
+     "blind_spots": [
+      "ecar: recorded no file_create events in this capture",
+      "ecar: recorded no file_delete events in this capture",
+      "ecar: recorded no file_read events in this capture",
+      "ecar: recorded no file_rename events in this capture"
+     ],
+     "claims": 30
+    },
+    {
+     "window": "smoke_ws-fin01_1200",
+     "category": "attack",
+     "gate": "pass",
+     "disposition": "suspicious",
+     "alerts": [
+      "NOVELTY",
+      "TA0010"
+     ],
+     "selected": 47,
+     "malicious_selected": 47,
+     "malicious": 47,
+     "blind_spots": [
+      "ecar: an outbound network connection carrying the upload \u2014 ecar recorded no host_network_connection events in this capture",
+      "ecar: recorded no file_create events in this capture",
+      "ecar: recorded no file_delete events in this capture",
+      "ecar: recorded no file_read events in this capture"
+     ],
+     "claims": 47
+    },
+    {
+     "window": "smoke_ws-fin01_1230",
+     "category": "attack",
+     "gate": "pass",
+     "disposition": "benign",
+     "alerts": [],
+     "selected": 0,
+     "malicious_selected": 0,
+     "malicious": 3,
+     "blind_spots": [
+      "ecar: recorded no file_create events in this capture",
+      "ecar: recorded no file_delete events in this capture",
+      "ecar: recorded no file_read events in this capture",
+      "ecar: recorded no file_rename events in this capture"
+     ],
+     "claims": 5
+    }
+   ],
+   "steps": [
+    {
+     "window": "smoke_app01_1200",
+     "step": "Agent deployment",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "TA0010"
+     ]
+    },
+    {
+     "window": "smoke_app01_1200",
+     "step": "Bootstrap T1070.003",
+     "status": "success",
+     "bootstrap": true,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "smoke_app01_1230",
+     "step": "Identify active user",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "smoke_app01_1230",
+     "step": "Find local users",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "smoke_app01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "smoke_app01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "smoke_app01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "smoke_app01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "smoke_app01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "smoke_app01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "smoke_app01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "smoke_app01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "smoke_app01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "smoke_app01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "smoke_app01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "smoke_app01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "smoke_app01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "smoke_web01_1200",
+     "step": "Agent deployment",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "TA0010"
+     ]
+    },
+    {
+     "window": "smoke_web01_1200",
+     "step": "Bootstrap T1070.003",
+     "status": "success",
+     "bootstrap": true,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "smoke_web01_1230",
+     "step": "Identify active user",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "smoke_web01_1230",
+     "step": "Find local users",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "smoke_web01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "smoke_web01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "smoke_web01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "smoke_web01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "smoke_web01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "smoke_web01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "smoke_web01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "smoke_web01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "smoke_web01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "smoke_web01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "smoke_web01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "smoke_web01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "smoke_web01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "smoke_ws-dev01_1200",
+     "step": "Agent deployment",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "TA0010"
+     ]
+    },
+    {
+     "window": "smoke_ws-dev01_1200",
+     "step": "Bootstrap T1070.003",
+     "status": "success",
+     "bootstrap": true,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    },
+    {
+     "window": "smoke_ws-dev01_1230",
+     "step": "Identify active user",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "smoke_ws-dev01_1230",
+     "step": "Find local users",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "smoke_ws-dev01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "smoke_ws-dev01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "smoke_ws-dev01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "smoke_ws-dev01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "smoke_ws-dev01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "smoke_ws-dev01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "smoke_ws-dev01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "smoke_ws-dev01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "smoke_ws-dev01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "smoke_ws-dev01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "smoke_ws-dev01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "smoke_ws-dev01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "smoke_ws-dev01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "smoke_ws-fin01_1200",
+     "step": "Agent deployment",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY",
+      "TA0010"
+     ]
+    },
+    {
+     "window": "smoke_ws-fin01_1200",
+     "step": "Identify active user",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "smoke_ws-fin01_1200",
+     "step": "Find local users",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "smoke_ws-fin01_1200",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "smoke_ws-fin01_1200",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "smoke_ws-fin01_1200",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "smoke_ws-fin01_1200",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "smoke_ws-fin01_1200",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "smoke_ws-fin01_1200",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "smoke_ws-fin01_1200",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "smoke_ws-fin01_1200",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "smoke_ws-fin01_1200",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "smoke_ws-fin01_1200",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "smoke_ws-fin01_1200",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "smoke_ws-fin01_1200",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "smoke_ws-fin01_1200",
+     "step": "Bootstrap T1070.003",
+     "status": "success",
+     "bootstrap": true,
+     "gate": "pass",
+     "detected": true,
+     "by": [
+      "NOVELTY"
+     ]
+    },
+    {
+     "window": "smoke_ws-fin01_1230",
+     "step": "Find user processes",
+     "status": "success",
+     "bootstrap": false,
+     "gate": "pass",
+     "detected": false,
+     "by": []
+    }
+   ]
+  }
+ }
+}

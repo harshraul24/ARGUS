@@ -1,0 +1,14 @@
+{
+  "key": "3b123cade14945dc336b32395ab708eaf6ef162ecec737a1f662a1c8527fccfd",
+  "provider": "ollama",
+  "model": "gpt-oss:120b-cloud",
+  "prompt_sha": "3b123cade14945dc",
+  "response": "{\n  \"disposition\": \"malicious\",\n  \"mitre_technique\": \"T1003.006\",\n  \"severity\": 0.85,\n  \"malicious_events\": [\"e17\",\"e18\",\"e19\",\"e21\",\"e22\",\"e23\",\"e24\"],\n  \"reason\": \"Bob used sudo to copy authentication logs and read /etc/shadow, then attempted an outbound connection, indicating credential dumping and data exfiltration.\"\n}",
+  "latency_s": 3.130601167678833,
+  "created_at": 1791424223.874162,
+  "params": {
+    "temperature": 0.0,
+    "seed": 8,
+    "json_mode": true
+  }
+}

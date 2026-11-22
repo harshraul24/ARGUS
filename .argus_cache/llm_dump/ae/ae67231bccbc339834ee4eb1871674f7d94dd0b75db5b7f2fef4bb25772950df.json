@@ -1,0 +1,14 @@
+{
+  "key": "ae67231bccbc339834ee4eb1871674f7d94dd0b75db5b7f2fef4bb25772950df",
+  "provider": "ollama",
+  "model": "gpt-oss:120b-cloud",
+  "prompt_sha": "ae67231bccbc3398",
+  "response": "{\n  \"disposition\": \"malicious\",\n  \"mitre_technique\": \"T1003\",\n  \"severity\": 0.9,\n  \"malicious_events\": [\n    \"e597\",\n    \"e598\",\n    \"e599\",\n    \"e600\",\n    \"e601\",\n    \"e602\",\n    \"e603\",\n    \"e604\",\n    \"e605\",\n    \"e606\",\n    \"e607\",\n    \"e608\",\n    \"e609\"\n  ],\n  \"reason\": \"Credential dumping observed (cat /etc/passwd and /etc/master.passwd) and suspicious privileged commands indicate attacker activity.\"\n}",
+  "latency_s": 2.34183406829834,
+  "created_at": 1791424183.721601,
+  "params": {
+    "temperature": 0.0,
+    "seed": 8,
+    "json_mode": true
+  }
+}

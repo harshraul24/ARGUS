@@ -1,0 +1,14 @@
+{
+  "key": "0f4cb7e712947e25c7cf0b7f2e8a81c74a09dd39d53b5fb767dca2f09f06f8b6",
+  "provider": "ollama",
+  "model": "gpt-oss:120b-cloud",
+  "prompt_sha": "0f4cb7e712947e25",
+  "response": "{\n  \"rules\": [],\n  \"reasoning\": \"The episode consists of standard system processes (sshd, dash, env, run-parts, uname) executing update\u2011motd scripts. These are routine activities for generating the login message of the day and do not exhibit suspicious behaviour. Therefore no detection rule is appropriate.\"\n}",
+  "latency_s": 7.53521203994751,
+  "created_at": 1791394609.293237,
+  "params": {
+    "temperature": 0.0,
+    "seed": 7,
+    "json_mode": true
+  }
+}

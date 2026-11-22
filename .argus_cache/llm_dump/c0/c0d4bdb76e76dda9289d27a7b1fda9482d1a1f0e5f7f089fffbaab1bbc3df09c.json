@@ -1,0 +1,14 @@
+{
+  "key": "c0d4bdb76e76dda9289d27a7b1fda9482d1a1f0e5f7f089fffbaab1bbc3df09c",
+  "provider": "ollama",
+  "model": "gpt-oss:120b-cloud",
+  "prompt_sha": "c0d4bdb76e76dda9",
+  "response": "{\n  \"disposition\": \"malicious\",\n  \"mitre_technique\": \"T1105\",\n  \"severity\": 0.9,\n  \"malicious_events\": [\"e1\",\"e2\",\"e3\",\"e4\",\"e5\",\"e6\",\"e7\",\"e8\",\"e9\",\"e10\",\"e11\",\"e12\"],\n  \"reason\": \"Repeated curl downloads of a suspicious Go payload, chmod to make it executable, execution of the payload with remote server parameters, and clearing of bash history indicate attacker tool transfer and execution.\"\n}",
+  "latency_s": 1.6099920272827148,
+  "created_at": 1791424250.0441852,
+  "params": {
+    "temperature": 0.0,
+    "seed": 7,
+    "json_mode": true
+  }
+}

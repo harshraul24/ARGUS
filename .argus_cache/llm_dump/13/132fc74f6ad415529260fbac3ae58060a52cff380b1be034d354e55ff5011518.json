@@ -1,0 +1,14 @@
+{
+  "key": "132fc74f6ad415529260fbac3ae58060a52cff380b1be034d354e55ff5011518",
+  "provider": "ollama",
+  "model": "gpt-oss:120b-cloud",
+  "prompt_sha": "132fc74f6ad41552",
+  "response": "{\n  \"disposition\": \"suspicious\",\n  \"mitre_technique\": \"T1005\",\n  \"severity\": 0.4,\n  \"malicious_events\": [\"e4\", \"e5\"],\n  \"reason\": \"User copied the system audit log to /tmp, a typical step for log harvesting before exfiltration.\"\n}",
+  "latency_s": 2.8817038536071777,
+  "created_at": 1791424297.685258,
+  "params": {
+    "temperature": 0.0,
+    "seed": 8,
+    "json_mode": true
+  }
+}

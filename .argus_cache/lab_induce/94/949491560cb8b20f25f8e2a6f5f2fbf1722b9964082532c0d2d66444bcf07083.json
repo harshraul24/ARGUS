@@ -1,0 +1,14 @@
+{
+  "key": "949491560cb8b20f25f8e2a6f5f2fbf1722b9964082532c0d2d66444bcf07083",
+  "provider": "ollama",
+  "model": "gpt-oss:120b-cloud",
+  "prompt_sha": "949491560cb8b20f",
+  "response": "{\n  \"rules\": [],\n  \"reasoning\": \"The episode only contains a systemd netplan generator execution and a udevadm control reload, both standard system processes that run from system directories and are common during boot or configuration changes. No user\u2011writable executables, network activity, credential access, or other suspicious techniques are observed. Therefore the behavior is routine and does not merit a detection rule.\"\n}",
+  "latency_s": 2.14518404006958,
+  "created_at": 1791394526.726711,
+  "params": {
+    "temperature": 0.0,
+    "seed": 7,
+    "json_mode": true
+  }
+}

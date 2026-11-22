@@ -1,0 +1,5 @@
+Mar  5 08:41:12 appsrv01 sshd[3310]: Failed password for jdoe from 10.0.2.31 port 44810 ssh2
+Mar  5 08:41:21 appsrv01 sshd[3310]: Failed password for jdoe from 10.0.2.31 port 44812 ssh2
+Mar  5 08:41:33 appsrv01 sshd[3312]: Accepted password for jdoe from 10.0.2.31 port 44814 ssh2
+Mar  5 08:41:33 appsrv01 sshd[3312]: pam_unix(sshd:session): session opened for user jdoe by (uid=0)
+Mar  5 08:47:12 appsrv01 sshd[3312]: pam_unix(sshd:session): session closed for user jdoe

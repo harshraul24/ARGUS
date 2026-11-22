@@ -1,0 +1,22 @@
+{
+  "_comment": "Metasploit module / action -> MITRE ATT&CK technique. Seeded from the APT-Agent SQL `test` table (the curated Metasploitable-2 playbook) plus recon/exfil. Matching is by substring, longest match wins.",
+  "nmap": "T1046",
+  "ping": "T1046",
+  "scanner/ssh/ssh_login": "T1110",
+  "scanner/ftp/ftp_login": "T1110",
+  "scanner/mysql/mysql_login": "T1110",
+  "scanner/postgres/postgres_login": "T1110",
+  "ftp/proftpd_133c_backdoor": "T1210",
+  "unix/ftp/vsftpd_234_backdoor": "T1210",
+  "multi/samba/usermap_script": "T1210",
+  "samba/usermap_script": "T1210",
+  "unix/irc/unreal_ircd_3281_backdoor": "T1210",
+  "linux/postgres/postgres_payload": "T1210",
+  "multi/misc/java_rmi_server": "T1210",
+  "linux/misc/drb_remote_codeexec": "T1210",
+  "flag.txt": "T1041",
+  "/etc/shadow": "T1041",
+  "/root/": "T1041",
+  "scp": "T1041",
+  "exfil": "T1041"
+}

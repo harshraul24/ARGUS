@@ -1,0 +1,60 @@
+{
+  "meta_version": "v0.2",
+  "scenario_id": "benign_nightly_backup_003",
+  "category": "benign",
+  "title": "Nightly rsync backup over SSH by a service account",
+  "generated_by": "tools/make_benign_cases.py (synthetic benign corpus)",
+  "topology": {
+    "hosts": [
+      {
+        "name": "target",
+        "ip": "10.0.2.20",
+        "role": "victim",
+        "os": "Linux"
+      },
+      {
+        "name": "jumphost",
+        "ip": "10.0.2.5",
+        "role": "admin",
+        "os": "Linux"
+      }
+    ],
+    "zeek_sensor": {
+      "host": "capture",
+      "position": "target segment"
+    }
+  },
+  "capture": {
+    "window": {
+      "start": "2026-03-01T01:15:00Z",
+      "end": "2026-03-03T03:15:00Z"
+    },
+    "clean_capture": true
+  },
+  "expected_observables": {
+    "authlog": {
+      "logon_success": true,
+      "logon_failure": false
+    },
+    "zeek": {
+      "conn": true,
+      "ssh": true
+    }
+  },
+  "mitre": {
+    "technique": null
+  },
+  "ground_truth": {
+    "category": "benign",
+    "objective_reached": false,
+    "techniques": [],
+    "primary_technique": null,
+    "why_benign": "Same service account, same source, same schedule, three nights running; the long sessions are the backup transferring data.",
+    "confounds": [
+      "repeated remote logon success",
+      "off-hours activity",
+      "long-lived session moving large volume (exfiltration shape)"
+    ],
+    "actions": []
+  }
+}

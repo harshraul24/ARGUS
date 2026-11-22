@@ -1,0 +1,7 @@
+#separator \x09
+#fields	ts	uid	id.orig_h	id.orig_p	id.resp_h	id.resp_p	proto	service	duration	conn_state
+#types	time	string	addr	port	addr	port	enum	string	interval	string
+1772485805.10	Cxx1	10.0.2.10	40112	10.0.2.20	22	tcp	ssh	0.3	REJ
+1772485806.10	Cxx2	10.0.2.10	40114	10.0.2.20	22	tcp	ssh	0.3	REJ
+1772485807.10	Cxx3	10.0.2.10	40116	10.0.2.20	22	tcp	ssh	0.3	REJ
+1772485880.10	Cxx9	10.0.2.10	40130	10.0.2.20	22	tcp	ssh	40.0	SF

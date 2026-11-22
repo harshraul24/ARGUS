@@ -1,0 +1,14 @@
+{
+  "key": "f5f4257fa4aa7c6a0da4718329559de667d6ebb8524020d4801d332670753299",
+  "provider": "ollama",
+  "model": "gpt-oss:120b-cloud",
+  "prompt_sha": "f5f4257fa4aa7c6a",
+  "response": "{\n  \"rules\": [\n    {\n      \"id\": \"user-writable-outbound-connection.b85e046a50\",\n      \"technique\": \"T1041\",\n      \"name\": \"Outbound Connection from User-Writable Binary\",\n      \"tactic\": \"command-and-control\",\n      \"severity\": 0.8,\n      \"evidence\": [\n        \"ev_000011\"\n      ],\n      \"indicators\": [\n        {\n          \"name\": \"uw_outbound\",\n          \"weight\": 1.0,\n          \"required\": true,\n          \"select\": {\n            \"claim_type\": \"host_network_connection\",\n            \"lineage.user_writable\": {\n              \"truthy\": true\n            },\n            \"facts.direction\": \"outbound\"\n          },\n          \"score\": {\n            \"op\": \"threshold\",\n            \"value\": \"n\",\n            \"at\": 1\n          }\n        }\n      ]\n    },\n    {\n      \"id\": \"clear-bash-history.6f2c1d\",\n      \"technique\": \"T1070.003\",\n      \"name\": \"Clear Bash History\",\n      \"tactic\": \"defense-evasion\",\n      \"severity\": 0.6,\n      \"evidence\": [\n        \"ev_000012\"\n      ],\n      \"indicators\": [\n        {\n          \"name\": \"bash_history_cleared\",\n          \"weight\": 1.0,\n          \"required\": true,\n          \"select\": {\n            \"claim_type\": \"process_create\",\n            \"facts.command\": {\n              \"contains_any\": [\n                \"bash_history\"\n              ]\n            }\n          },\n          \"score\": {\n            \"op\": \"threshold\",\n            \"value\": \"n\",\n            \"at\": 1\n          }\n        }\n      ]\n    }\n  ],\n  \"reasoning\": \"The first rule captures the suspicious pattern of a network connection initiated by a binary that resides in a user\u2011writable location, which is a common indicator of malicious C2 activity and is confirmed by community detections. The second rule flags the deliberate clearing of the Bash history (redirection to .bash_history and unsetting HISTFILE), a known defense\u2011evasion technique (T1070.003). Both rules use lineage or command\u2011content tokens that remain valid even if the binaries or temporary files are renamed, satisfying robustness, and they fire on the provided episode while remaining rare on typical host activity.\"\n}",
+  "latency_s": 9.005649328231812,
+  "created_at": 1791394617.05113,
+  "params": {
+    "temperature": 0.0,
+    "seed": 7,
+    "json_mode": true
+  }
+}

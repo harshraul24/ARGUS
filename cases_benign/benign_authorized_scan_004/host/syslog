@@ -1,0 +1,8 @@
+Mar  6 01:25:00 appsrv01 systemd: Started Scheduled vulnerability scan window.
+Mar  6 02:30:00 appsrv01 systemd: Stopped Scheduled vulnerability scan window.
+Mar  6 01:30:00 appsrv01 CRON[5000]: pam_unix(cron:session): session opened for user root by (uid=0)
+Mar  6 01:30:01 appsrv01 CRON[5000]: pam_unix(cron:session): session closed for user root
+Mar  6 02:30:00 appsrv01 CRON[5001]: pam_unix(cron:session): session opened for user root by (uid=0)
+Mar  6 02:30:01 appsrv01 CRON[5001]: pam_unix(cron:session): session closed for user root
+Mar  6 03:30:00 appsrv01 CRON[5002]: pam_unix(cron:session): session opened for user root by (uid=0)
+Mar  6 03:30:01 appsrv01 CRON[5002]: pam_unix(cron:session): session closed for user root

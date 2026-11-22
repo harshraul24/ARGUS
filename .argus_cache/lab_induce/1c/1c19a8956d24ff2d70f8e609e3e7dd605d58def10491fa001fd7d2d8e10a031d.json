@@ -1,0 +1,14 @@
+{
+  "key": "1c19a8956d24ff2d70f8e609e3e7dd605d58def10491fa001fd7d2d8e10a031d",
+  "provider": "ollama",
+  "model": "gpt-oss:120b-cloud",
+  "prompt_sha": "1c19a8956d24ff2d",
+  "response": "{\n  \"rules\": [\n    {\n      \"id\": \"credential-dump-master-passwd\",\n      \"technique\": \"T1003.008\",\n      \"name\": \"Read /etc/master.passwd (credential dumping)\",\n      \"tactic\": \"credential-access\",\n      \"severity\": 0.9,\n      \"evidence\": [\"ev_000629\"],\n      \"indicators\": [\n        {\n          \"name\": \"access_master_passwd\",\n          \"weight\": 1.0,\n          \"required\": true,\n          \"select\": {\n            \"claim_type\": \"process_create\",\n            \"facts.command\": {\n              \"contains_any\": [\"master.passwd\"]\n            },\n            \"behaviour.tactics\": {\n              \"in\": [\"credential-access\"]\n            }\n          },\n          \"score\": {\n            \"op\": \"threshold\",\n            \"value\": \"1\",\n            \"at\": 1\n          }\n        }\n      ]\n    }\n  ],\n  \"reasoning\": \"The episode shows a process invoking \\\"sudo cat /etc/master.passwd\\\", which is a classic credential\u2011dumping technique (T1003.008). The rule looks for any process_create claim whose command line contains the substring \\\"master.passwd\\\" and is associated with the credential\u2011access tactic, ensuring it fires on this event while remaining robust to renamed binaries or full\u2011path invocations and staying quiet for routine activity.\"\n}",
+  "latency_s": 20.5541090965271,
+  "created_at": 1791394640.564971,
+  "params": {
+    "temperature": 0.0,
+    "seed": 7,
+    "json_mode": true
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "key": "ae9674a1d56a15e605af1eeb0feed7e11bc70dacb7d5a620c8f437f734148adc",
+  "provider": "ollama",
+  "model": "gpt-oss:120b-cloud",
+  "prompt_sha": "ae9674a1d56a15e6",
+  "response": "{\n  \"rules\": [\n    {\n      \"id\": \"install-iproute2-apt-get\",\n      \"technique\": \"T1588.002\",\n      \"name\": \"Install iproute2 via package manager\",\n      \"tactic\": \"defense-evasion\",\n      \"severity\": 0.6,\n      \"evidence\": [\n        \"ev_000620\"\n      ],\n      \"indicators\": [\n        {\n          \"name\": \"apt-get-install-iproute2\",\n          \"weight\": 1.0,\n          \"required\": true,\n          \"select\": {\n            \"claim_type\": \"process_create\",\n            \"facts.image\": [\n              \"dash\",\n              \"sh\",\n              \"bash\"\n            ],\n            \"facts.command\": {\n              \"contains_any\": [\n                \"apt-get\",\n                \"install\",\n                \"iproute2\"\n              ]\n            }\n          },\n          \"aggregate\": [\n            {\n              \"as\": \"n\",\n              \"op\": \"count\"\n            }\n          ],\n          \"score\": {\n            \"op\": \"threshold\",\n            \"value\": \"n\",\n            \"at\": 1\n          }\n        }\n      ]\n    }\n  ],\n  \"reasoning\": \"The episode shows a shell (dash/sh) invoking apt-get to install the iproute2 package, a behavior that can be used to acquire tools on a compromised host. The rule captures the specific combination of a package manager command (apt-get install iproute2) while allowing for the common shells that may launch it, ensuring it fires on this event, remains robust to renaming of user\u2011writable binaries, and stays quiet enough to avoid routine activity noise.\"\n}",
+  "latency_s": 12.992851972579956,
+  "created_at": 1791394650.047691,
+  "params": {
+    "temperature": 0.0,
+    "seed": 7,
+    "json_mode": true
+  }
+}

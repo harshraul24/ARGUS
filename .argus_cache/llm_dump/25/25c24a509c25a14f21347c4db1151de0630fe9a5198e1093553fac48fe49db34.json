@@ -1,0 +1,14 @@
+{
+  "key": "25c24a509c25a14f21347c4db1151de0630fe9a5198e1093553fac48fe49db34",
+  "provider": "ollama",
+  "model": "gpt-oss:120b-cloud",
+  "prompt_sha": "25c24a509c25a14f",
+  "response": "{\n  \"disposition\": \"benign\",\n  \"mitre_technique\": \"none\",\n  \"severity\": 0.0,\n  \"malicious_events\": [],\n  \"reason\": \"All observed processes are standard system utilities (dpkg, systemd generators, auditctl, systemctl, ls, ip) with no abnormal behavior, privilege escalation, or suspicious network activity.\"\n}",
+  "latency_s": 1.3929111957550049,
+  "created_at": 1791424269.6932821,
+  "params": {
+    "temperature": 0.0,
+    "seed": 8,
+    "json_mode": true
+  }
+}

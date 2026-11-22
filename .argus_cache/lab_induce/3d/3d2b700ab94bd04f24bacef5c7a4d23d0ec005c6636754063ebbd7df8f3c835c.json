@@ -1,0 +1,14 @@
+{
+  "key": "3d2b700ab94bd04f24bacef5c7a4d23d0ec005c6636754063ebbd7df8f3c835c",
+  "provider": "ollama",
+  "model": "gpt-oss:120b-cloud",
+  "prompt_sha": "3d2b700ab94bd04f",
+  "response": "{\n  \"rules\": [\n    {\n      \"id\": \"network-neighbor-discovery\",\n      \"technique\": \"T1016.001\",\n      \"name\": \"Network Neighbor Discovery via ip/arp\",\n      \"tactic\": \"discovery\",\n      \"severity\": 0.7,\n      \"evidence\": [\"ev_000621\"],\n      \"indicators\": [\n        {\n          \"name\": \"ip-or-arp-neighbor-show\",\n          \"weight\": 1.0,\n          \"required\": true,\n          \"select\": {\n            \"claim_type\": \"process_create\",\n            \"facts.image\": [\"ip\", \"arp\"],\n            \"facts.command\": {\n              \"contains_any\": [\"neighbour\", \"-a\"]\n            }\n          },\n          \"aggregate\": [\n            {\n              \"as\": \"n\",\n              \"op\": \"count\"\n            }\n          ],\n          \"score\": {\n            \"op\": \"threshold\",\n            \"value\": \"n\",\n            \"at\": 1\n          }\n        }\n      ]\n    },\n    {\n      \"id\": \"install-iproute2-apt\",\n      \"technique\": \"T1588.002\",\n      \"name\": \"Package Installation of iproute2 via apt-get\",\n      \"tactic\": \"credential-access\",\n      \"severity\": 0.6,\n      \"evidence\": [\"ev_000620\"],\n      \"indicators\": [\n        {\n          \"name\": \"apt-get-install-iproute2\",\n          \"weight\": 1.0,\n          \"required\": true,\n          \"select\": {\n            \"claim_type\": \"process_create\",\n            \"facts.image\": [\"sh\", \"bash\"],\n            \"facts.command\": {\n              \"contains_any\": [\"apt-get\", \"install\", \"iproute2\"]\n            }\n          },\n          \"aggregate\": [\n            {\n              \"as\": \"n\",\n              \"op\": \"count\"\n            }\n          ],\n          \"score\": {\n            \"op\": \"threshold\",\n            \"value\": \"n\",\n            \"at\": 1\n          }\n        }\n      ]\n    }\n  ],\n  \"reasoning\": \"The episode shows a shell checking for the presence of the ip command, installing the iproute2 package if missing, and then running 'ip neighbour show' to enumerate the ARP table. This combines opportunistic package installation (a technique for obtaining capabilities) with network neighbor discovery, both of which are recognized suspicious behaviors on Linux hosts. The rules capture the core actions\u2014installing iproute2 via apt-get and invoking ip/arp to list neighbors\u2014while using generic tokens and system\u2011binary names to remain robust and avoid false positives from routine activity.\"\n}",
+  "latency_s": 18.455039024353027,
+  "created_at": 1791394637.0526268,
+  "params": {
+    "temperature": 0.0,
+    "seed": 7,
+    "json_mode": true
+  }
+}

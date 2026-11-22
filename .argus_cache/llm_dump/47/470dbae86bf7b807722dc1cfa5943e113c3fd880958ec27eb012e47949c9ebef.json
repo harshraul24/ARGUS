@@ -1,0 +1,14 @@
+{
+  "key": "470dbae86bf7b807722dc1cfa5943e113c3fd880958ec27eb012e47949c9ebef",
+  "provider": "ollama",
+  "model": "gpt-oss:120b-cloud",
+  "prompt_sha": "470dbae86bf7b807",
+  "response": "{\n  \"disposition\": \"malicious\",\n  \"mitre_technique\": \"T1003\",\n  \"severity\": 0.9,\n  \"malicious_events\": [\n    \"e32\",\n    \"e35\",\n    \"e85\",\n    \"e88\",\n    \"e140\",\n    \"e141\",\n    \"e191\",\n    \"e194\",\n    \"e284\",\n    \"e321\",\n    \"e358\",\n    \"e395\",\n    \"e405\",\n    \"e511\",\n    \"e564\",\n    \"e606\",\n    \"e607\",\n    \"e608\",\n    \"e611\",\n    \"e612\",\n    \"e616\"\n  ],\n  \"reason\": \"Repeated unauthorized SSH connections to internal hosts and credential dumping (cat /etc/passwd and /etc/master.passwd) indicate attacker activity.\"\n}",
+  "latency_s": 3.750602960586548,
+  "created_at": 1791424128.9165409,
+  "params": {
+    "temperature": 0.0,
+    "seed": 7,
+    "json_mode": true
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "key": "3281e300c973dd4089b48ce041fab719d1a3479d923f997072c7eca8b1551f63",
+  "provider": "ollama",
+  "model": "gpt-oss:120b-cloud",
+  "prompt_sha": "3281e300c973dd40",
+  "response": "{\n  \"rules\": [],\n  \"reasoning\": \"The episode only shows a package post\u2011installation script (man-db) invoking setpriv and mandb, which are standard system utilities run from system directories during a normal package update. This behavior is routine and not indicative of suspicious activity, so no detection rule is warranted.\"\n}",
+  "latency_s": 1.408818244934082,
+  "created_at": 1791394525.987349,
+  "params": {
+    "temperature": 0.0,
+    "seed": 7,
+    "json_mode": true
+  }
+}

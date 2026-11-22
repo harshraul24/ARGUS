@@ -1,0 +1,14 @@
+{
+  "key": "9cfd2c7911c563e3685bd8e3b57c2163f4f1bf9f5a7de3f16b04f10211af8715",
+  "provider": "ollama",
+  "model": "gpt-oss:120b-cloud",
+  "prompt_sha": "9cfd2c7911c563e3",
+  "response": "{\n  \"disposition\": \"suspicious\",\n  \"mitre_technique\": \"T1005\",\n  \"severity\": 0.4,\n  \"malicious_events\": [\"e46\", \"e47\"],\n  \"reason\": \"A sudo command copies the audit log to /tmp, indicating possible data staging for exfiltration, while the rest of the activity appears to be routine system monitoring.\"\n}",
+  "latency_s": 2.090075969696045,
+  "created_at": 1791424288.924428,
+  "params": {
+    "temperature": 0.0,
+    "seed": 8,
+    "json_mode": true
+  }
+}

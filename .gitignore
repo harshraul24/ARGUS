@@ -1,0 +1,31 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# macOS
+.DS_Store
+
+# Runtime output: live triage decisions and receiver logs, ad-hoc evaluation output
+live/
+out/
+
+# Raw lab captures and victim disks (large; contain unredacted lab telemetry)
+Test Setup/lab/captured/*
+!Test Setup/lab/captured/ground_truth.json
+!Test Setup/lab/captured/smoke-discovery_report.json
+Test Setup/lab/victims
+*.qcow2
+*.iso
+*.pcap
+
+# Full intelligence sources (rebuilt by tools/intel_snapshot.py from the pinned commits)
+intel/snapshots/*/sigma/
+intel/snapshots/*/gtfobins/
+intel/snapshots/*/attack/
+
+# Secrets never belong here
+.env
+*.key
+docs/THESIS.md

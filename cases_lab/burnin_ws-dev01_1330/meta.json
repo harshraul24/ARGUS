@@ -1,0 +1,68 @@
+{
+ "scenario_id": "burnin_ws-dev01_1330",
+ "dataset": "lab",
+ "campaign": "burnin",
+ "host": "ws-dev01",
+ "format": "argus-events-v1",
+ "generated_by": "argus/collectors/lab_capture.py (real auditd capture)",
+ "capture": {
+  "window": {
+   "start": "2026-10-14T13:30:00+00:00",
+   "end": "2026-10-14T14:00:00+00:00"
+  }
+ },
+ "events": 307,
+ "event_types": {
+  "file_read": 20,
+  "network_connection": 22,
+  "process_create": 265
+ },
+ "sensor": "auditd",
+ "audit_rules_loaded": [
+  "auditconfig",
+  "auditlog",
+  "exec",
+  "identity",
+  "net",
+  "privilege",
+  "schedule",
+  "service",
+  "sshkeys"
+ ],
+ "sensor_contract": [
+  "process_create",
+  "network_connection"
+ ],
+ "sensor_gaps": [
+  {
+   "start": "2026-10-14T13:46:20.728000+00:00",
+   "end": "2026-10-14T13:46:20.984000+00:00",
+   "seconds": 0.3,
+   "types": [
+    "network_connection",
+    "process_create"
+   ],
+   "cause": "audit rule removed"
+  },
+  {
+   "start": "2026-10-14T13:47:01.977000+00:00",
+   "end": "2026-10-14T13:47:02.333000+00:00",
+   "seconds": 0.4,
+   "types": [
+    "network_connection",
+    "process_create"
+   ],
+   "cause": "audit daemon stopped; audit rule removed"
+  }
+ ],
+ "captured_not_ingested": [
+  "auth.log"
+ ],
+ "clock_offset_vs_caldera_s": 0.0,
+ "protocol_activity": {
+  "provisioning": 2,
+  "sensor_check": 1
+ },
+ "capture_gate": "fail: provisioning, sensor_check",
+ "capture_folder": "burnin"
+}

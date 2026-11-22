@@ -1,0 +1,44 @@
+{
+ "scenario_id": "burnin_app01_2100",
+ "dataset": "lab",
+ "campaign": "burnin",
+ "host": "app01",
+ "format": "argus-events-v1",
+ "generated_by": "argus/collectors/lab_capture.py (real auditd capture)",
+ "capture": {
+  "window": {
+   "start": "2026-10-14T21:00:00+00:00",
+   "end": "2026-10-14T21:30:00+00:00"
+  }
+ },
+ "events": 521,
+ "event_types": {
+  "file_read": 2,
+  "network_connection": 16,
+  "process_create": 503
+ },
+ "sensor": "auditd",
+ "audit_rules_loaded": [
+  "auditconfig",
+  "auditlog",
+  "exec",
+  "identity",
+  "net",
+  "privilege",
+  "schedule",
+  "service",
+  "sshkeys"
+ ],
+ "sensor_contract": [
+  "process_create",
+  "network_connection"
+ ],
+ "sensor_gaps": [],
+ "captured_not_ingested": [
+  "auth.log"
+ ],
+ "clock_offset_vs_caldera_s": 0.0,
+ "protocol_activity": {},
+ "capture_gate": "pass",
+ "capture_folder": "burnin"
+}

@@ -1,0 +1,10 @@
+Mar  4 08:12:00 appsrv01 systemd: Started Session of user root.
+Mar  4 08:12:02 appsrv01 systemd: Stopped Session of user root.
+Mar  4 08:29:00 appsrv01 systemd: Started Session of user root.
+Mar  4 08:29:02 appsrv01 systemd: Stopped Session of user root.
+Mar  4 08:46:00 appsrv01 systemd: Started Session of user root.
+Mar  4 08:46:02 appsrv01 systemd: Stopped Session of user root.
+Mar  4 09:03:00 appsrv01 systemd: Started Session of user root.
+Mar  4 09:03:02 appsrv01 systemd: Stopped Session of user root.
+Mar  4 09:23:00 appsrv01 systemd: Stopped A high performance web server.
+Mar  4 09:23:02 appsrv01 systemd: Started A high performance web server.

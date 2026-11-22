@@ -1,0 +1,90 @@
+{
+  "case_id": "apt_live_012",
+  "disposition": "malicious",
+  "hypotheses": [
+    {
+      "technique": "T1210",
+      "name": "Exploitation of a remote service",
+      "tactic": "Lateral Movement",
+      "score": 1.0,
+      "support": [
+        "auth_00001",
+        "auth_00002",
+        "auth_00003",
+        "auth_00004",
+        "auth_00005",
+        "net_00001",
+        "net_00002",
+        "net_00003",
+        "net_00004",
+        "net_00005",
+        "net_00006",
+        "net_00007",
+        "net_00008",
+        "net_00009",
+        "net_00010",
+        "net_00011",
+        "net_00012",
+        "net_00013",
+        "net_00014",
+        "net_00015",
+        "net_00016",
+        "net_00017",
+        "net_00018",
+        "net_00019",
+        "net_00020",
+        "net_00021",
+        "net_00022",
+        "net_00023",
+        "net_00024",
+        "net_00025",
+        "net_00026",
+        "net_00027",
+        "net_00028",
+        "net_00029",
+        "net_00030",
+        "net_00031",
+        "net_00032",
+        "net_00033",
+        "net_00034",
+        "net_00035"
+      ],
+      "defeaters": [],
+      "rationale": [
+        "post-exploitation session or privileged commands: 5 claim(s), strength 1.00",
+        "prior service probing: 169 claim(s), strength 1.00"
+      ],
+      "coverage_gaps": []
+    }
+  ],
+  "severity": 0.85,
+  "priority": 0.85,
+  "claims_total": 503,
+  "claims_considered": 503,
+  "blind_spots": [],
+  "next_actions": [],
+  "notes": [],
+  "config": {
+    "enable_coverage": true,
+    "enable_baseline": true,
+    "enable_semantics": true,
+    "malicious_threshold": 0.5,
+    "suspicious_threshold": 0.25,
+    "confound_artifacts": [],
+    "observability_model": true,
+    "enable_observability": true
+  },
+  "suppressed": [],
+  "llm": {
+    "provider": "ollama",
+    "model": "gpt-oss:120b-cloud",
+    "is_test_double": false,
+    "proposed": 0,
+    "accepted": 0,
+    "applied": 0,
+    "verification": {},
+    "notes": [
+      "no undecomposed command lines in this case"
+    ]
+  }
+}

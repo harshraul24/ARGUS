@@ -1,0 +1,6 @@
+{
+ "category": "benign",
+ "malicious_event_ids": [],
+ "abilities": [],
+ "source": "CALDERA report smoke-discovery_report.json + bootstrap actions from ground_truth.json: step pid + descendants, agent lineage"
+}

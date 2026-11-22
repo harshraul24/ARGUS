@@ -1,0 +1,14 @@
+{
+  "key": "5dc0b38b1c68dadd09e705380a5824e0969a123a3dccc7884f26fabc781cac2f",
+  "provider": "ollama",
+  "model": "gpt-oss:120b-cloud",
+  "prompt_sha": "5dc0b38b1c68dadd",
+  "response": "{\n  \"rules\": [],\n  \"reasoning\": \"The episode consists of systemd and init scripts enabling and reloading the auditd service using standard system utilities (systemctl, update-rc.d, getopt, perl). These are typical administrative actions for configuring a Linux host and are not indicative of suspicious behaviour. No rule is needed.\"\n}",
+  "latency_s": 12.911115169525146,
+  "created_at": 1791394564.55342,
+  "params": {
+    "temperature": 0.0,
+    "seed": 7,
+    "json_mode": true
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "key": "69a32eddb1043dbb36bd3fbed0423f4c25e9dbc2d7d3782ab05f98b9749db81b",
+  "provider": "ollama",
+  "model": "gpt-oss:120b-cloud",
+  "prompt_sha": "69a32eddb1043dbb",
+  "response": "{\n  \"rules\": [],\n  \"reasoning\": \"The episode consists entirely of standard package management and system maintenance actions (dpkg configuration, logrotate timer setup, systemd daemon reload, ldconfig, mandb). All processes are system binaries run from trusted locations and there is no use of user\u2011writable executables, unusual network activity, credential dumping, or other techniques that would be considered suspicious. Therefore no detection rule is appropriate.\"\n}",
+  "latency_s": 9.955347776412964,
+  "created_at": 1791394535.94507,
+  "params": {
+    "temperature": 0.0,
+    "seed": 7,
+    "json_mode": true
+  }
+}

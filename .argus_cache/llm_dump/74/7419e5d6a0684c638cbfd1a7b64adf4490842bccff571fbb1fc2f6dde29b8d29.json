@@ -1,0 +1,14 @@
+{
+  "key": "7419e5d6a0684c638cbfd1a7b64adf4490842bccff571fbb1fc2f6dde29b8d29",
+  "provider": "ollama",
+  "model": "gpt-oss:120b-cloud",
+  "prompt_sha": "7419e5d6a0684c63",
+  "response": "{\n  \"disposition\": \"malicious\",\n  \"mitre_technique\": \"T1105\",\n  \"severity\": 0.9,\n  \"malicious_events\": [\"e7\",\"e9\",\"e10\",\"e12\",\"e13\",\"e14\",\"e15\",\"e16\",\"e17\",\"e18\",\"e19\",\"e21\",\"e22\",\"e23\",\"e24\"],\n  \"reason\": \"Downloader fetched a payload, executed a suspicious binary, cleared bash history, enumerated the system, used sudo to read auth logs and /etc/shadow, indicating credential dumping and post\u2011exploitation activity.\"\n}",
+  "latency_s": 3.1573801040649414,
+  "created_at": 1791424203.793134,
+  "params": {
+    "temperature": 0.0,
+    "seed": 8,
+    "json_mode": true
+  }
+}

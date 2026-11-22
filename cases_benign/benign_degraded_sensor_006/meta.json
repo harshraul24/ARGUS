@@ -1,0 +1,61 @@
+{
+  "meta_version": "v0.2",
+  "scenario_id": "benign_degraded_sensor_006",
+  "category": "benign",
+  "title": "Routine admin session captured by a degraded Zeek sensor",
+  "generated_by": "tools/make_benign_cases.py (synthetic benign corpus)",
+  "topology": {
+    "hosts": [
+      {
+        "name": "target",
+        "ip": "10.0.2.20",
+        "role": "victim",
+        "os": "Linux"
+      },
+      {
+        "name": "jumphost",
+        "ip": "10.0.2.5",
+        "role": "admin",
+        "os": "Linux"
+      }
+    ],
+    "zeek_sensor": {
+      "host": "capture",
+      "position": "target segment"
+    }
+  },
+  "capture": {
+    "window": {
+      "start": "2026-03-08T13:57:00Z",
+      "end": "2026-03-08T14:47:00Z"
+    },
+    "clean_capture": false,
+    "sensor_note": "zeek reported 41.2% loss; segment coverage partial"
+  },
+  "expected_observables": {
+    "authlog": {
+      "logon_success": true,
+      "logon_failure": false
+    },
+    "zeek": {
+      "conn": true,
+      "ssh": false
+    }
+  },
+  "mitre": {
+    "technique": null
+  },
+  "ground_truth": {
+    "category": "benign",
+    "objective_reached": false,
+    "techniques": [],
+    "primary_technique": null,
+    "why_benign": "A single key-based admin session and one read-only log-inspection command. The sensor reports 41.2% packet loss, so most flows are missing from conn.log \u2014 absence here carries no information.",
+    "confounds": [
+      "41.2% measured packet loss",
+      "CaptureLoss::Too_Much_Loss notice",
+      "network evidence largely missing for a host-visible session"
+    ],
+    "actions": []
+  }
+}
